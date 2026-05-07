@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitchen Animation</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            background: #000;
+        }
+        .container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+        .bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: zoomPan 10s ease-in-out infinite alternate;
+        }
+        @keyframes zoomPan {
+            0% {
+                transform: scale(1) translate(0, 0);
+            }
+            100% {
+                transform: scale(1.15) translate(-2%, 2%);
+            }
+        }
+        .overlay {
+            position: absolute;
+            bottom: 10%;
+            left: 10%;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            opacity: 0;
+            animation: fadeIn 2s forwards 1s;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(-10px); }
+        }
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 0 4px 12px rgba(0,0,0,0.5);
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+        p {
+            font-size: 1.5rem;
+            margin-top: 10px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+            font-weight: 500;
+        }
+        .shimmer {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+            transform: skewX(-20deg);
+            animation: shimmerSweep 3s forwards 2s;
+        }
+        @keyframes shimmerSweep {
+            to { left: 200%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- We use the image from the local public path assuming dev server -->
+        <!-- Oh wait, the image is in src/assets/images. We should copy it to public for easy access -->
+        <img src="urban_penthouse_kitchen.png" class="bg-image" alt="Kitchen">
+        <div class="shimmer"></div>
+        <div class="overlay">
+            <h1>Quartz Perfection</h1>
+            <p>Built for the modern home.</p>
+        </div>
+    </div>
+</body>
+</html>
