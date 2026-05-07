@@ -37,7 +37,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-[10px] font-bold text-text-muted uppercase tracking-[0.2em] mb-1">Email Our Specialists</p>
-                  <p className="text-xl font-bold text-text-primary">hello@auracabinetry.com</p>
+                  <p className="text-xl font-bold text-text-primary">hello@quartzinternational.ca</p>
                 </div>
               </div>
             </div>

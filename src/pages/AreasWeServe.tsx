@@ -9,7 +9,7 @@ const AREAS = [
   { name: 'Pickering', path: '/quartz-countertops-pickering' },
   { name: 'Markham', path: '/quartz-countertops-markham' },
   { name: 'Mississauga', path: '/mississauga' },
-  { name: 'Vaughan', path: '/vaughan' },
+  { name: 'Vaughan', path: '/quartz-countertops-vaughan' },
   { name: 'Richmond Hill', path: '/richmond-hill' },
   { name: 'Oakville', path: '/oakville' },
 ];

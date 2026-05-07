@@ -21,6 +21,7 @@ import Toronto from './pages/Toronto';
 import Pickering from './pages/Pickering';
 import Scarborough from './pages/Scarborough';
 import Markham from './pages/Markham';
+import Vaughan from './pages/Vaughan';
 import Gallery from './pages/Gallery';
 import About from './pages/About';
 import Blog from './pages/Blog';
@@ -48,6 +49,8 @@ export default function App() {
           <Route path="/quartz-countertops-pickering" element={<Pickering />} />
           <Route path="/quartz-countertops-scarborough" element={<Scarborough />} />
           <Route path="/quartz-countertops-markham" element={<Markham />} />
+          <Route path="/vaughan" element={<Vaughan />} />
+          <Route path="/quartz-countertops-vaughan" element={<Vaughan />} />
           
           {/* Dynamic City SEO Pages */}
           <Route path="/quartz-countertop-cost/:city" element={<CityCostPage />} />

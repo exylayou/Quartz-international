@@ -17,7 +17,7 @@ export default function About() {
           </motion.div>
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8 text-text-primary uppercase">Crafting Excellence Since 2006</h1>
           <p className="text-xl text-text-muted leading-relaxed mb-12">
-            Aura Cabinetry (Solid State Interiors) has been at the forefront of kitchen renovation across the Toronto & GTA region for nearly two decades. We specialize in the precision fabrication and installation of premium quartz surfaces.
+            Quartz International (Solid State Interiors) has been at the forefront of kitchen renovation across the Toronto & GTA region for nearly two decades. We specialize in the precision fabrication and installation of premium quartz surfaces.
           </p>
         </div>
 

@@ -35,7 +35,7 @@ export default function Cabinets() {
     <div className="bg-white min-h-screen">
       
       {/* 1. CabinetsHero */}
-      <section className="relative pt-32 pb-24 overflow-hidden">
+      <section className="relative pt-40 pb-32 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2 text-black">
@@ -45,7 +45,7 @@ export default function Cabinets() {
                 transition={{ duration: 0.8 }}
               >
                 <h1 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight leading-[1.1] text-text-primary">
-                  Modern Kitchen Cabinets in Toronto — <span className="text-accent">European Style</span>, Built to Fit
+                  Modern Kitchen Cabinets in Toronto, <span className="text-accent">European Style</span>, Built to Fit
                 </h1>
                 <p className="text-gray-600 text-xl font-medium mb-10 max-w-xl leading-relaxed">
                   High-quality semi-custom cabinets designed for your kitchen, installed by professionals — without custom pricing.
@@ -84,7 +84,7 @@ export default function Cabinets() {
                 className="aspect-[4/5] rounded-[var(--radius-card)] overflow-hidden shadow-2xl relative"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&q=80&w=1200" 
+                  src="/images/cabinets-hero.png" 
                   alt="Modern European Style Kitchen Cabinets" 
                   className="w-full h-full object-cover"
                 />
@@ -95,7 +95,7 @@ export default function Cabinets() {
             {/* Mobile Hero Image */}
             <div className="lg:hidden w-full">
               <img 
-                src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&q=80&w=1200" 
+                src="/images/cabinets-hero.png" 
                 alt="Modern European Style Kitchen Cabinets" 
                 className="w-full aspect-[16/9] object-cover rounded-[var(--radius-card)]"
               />
@@ -105,7 +105,7 @@ export default function Cabinets() {
       </section>
 
       {/* 2. TrustBar */}
-      <section className="border-y border-border-custom bg-white py-12">
+      <section className="border-y border-border-custom bg-white py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             <div className="flex flex-col items-center text-center">
@@ -135,9 +135,9 @@ export default function Cabinets() {
       </section>
 
       {/* 3. CabinetPositioningSection */}
-      <section className="py-32 bg-gray-50">
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-16 items-center mb-24">
+          <div className="flex flex-col lg:flex-row gap-16 items-center mb-16">
             <div className="lg:w-1/2">
               <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-8 tracking-tight">
                 The Smart Alternative to Expensive Custom Cabinets
@@ -178,9 +178,9 @@ export default function Cabinets() {
       </section>
 
       {/* 4. Unified Cabinet Styles Section */}
-      <section id="cabinet-styles" className="py-32 bg-white overflow-hidden">
+      <section id="cabinet-styles" className="py-24 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
+          <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6 tracking-tight">Choose Your Cabinet Style</h2>
             <p className="text-gray-600 text-lg max-w-2xl mx-auto">
               Pricing is based on linear footage and depends on the styling tier you choose. We’ll help you finalize every detail after your estimate.
@@ -194,7 +194,7 @@ export default function Cabinets() {
                 desc: 'Clean European look, most affordable option.',
                 benefits: ['Ultra-modern look', 'Works in most kitchens', 'Excellent value'],
                 price: '$300 – $600',
-                img: 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&q=80&w=600',
+                img: '/images/modern-flat-panel.png',
                 popular: true
               },
               {
@@ -202,21 +202,21 @@ export default function Cabinets() {
                 desc: 'Timeless framed look, most popular for family homes.',
                 benefits: ['Classic versatility', 'High resale appeal', 'Durable framed design'],
                 price: '$400 – $800',
-                img: '/src/assets/images/regenerated_image_1777832168684.jpg'
+                img: '/images/white-shaker.png'
               },
               {
-                title: 'Matte / Textured',
-                desc: 'Premium soft-touch or natural wood designer look.',
-                benefits: ['Fingerprint resistant', 'Natural wood feel', 'Designer finishes'],
+                title: 'Slim Shaker',
+                desc: 'Modern minimalist frame with a trendy two-tone design: White uppers and Natural Wood grain lowers.',
+                benefits: ['Sleek designer look', 'Textured wood finish', 'The new modern classic'],
                 price: '$500 – $1,000',
-                img: 'https://images.unsplash.com/photo-1556912167-75b84294edf3?auto=format&fit=crop&q=80&w=600'
+                img: '/images/slim-shaker.png'
               },
               {
-                title: 'High Gloss',
-                desc: 'Bright reflective finishes that maximize light and space.',
+                title: 'High Gloss Ash',
+                desc: 'Bright reflective finishes in Glossy Ash grey that maximize light and space.',
                 benefits: ['Reflective surfaces', 'Luxury aesthetic', 'Easy maintenance'],
                 price: '$500 – $1,000',
-                img: 'https://images.unsplash.com/photo-1565183928294-7065123ee2e4?auto=format&fit=crop&q=80&w=600'
+                img: '/images/high-gloss-ash.png'
               }
             ].map((style, idx) => (
               <motion.div 
@@ -265,7 +265,7 @@ export default function Cabinets() {
       </section>
 
       {/* 5. CabinetCostExplainer */}
-      <section className="py-32 bg-[#F8F9FA] border-y border-border-custom">
+      <section className="py-24 bg-[#F8F9FA] border-y border-border-custom">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-4xl font-bold text-text-primary mb-6">How Much Do Kitchen Cabinets Cost in Toronto?</h2>
@@ -301,7 +301,7 @@ export default function Cabinets() {
       </section>
 
       {/* 6. FullKitchenEstimatorCTA */}
-      <section className="py-32 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
             whileHover={{ y: -5 }}
@@ -352,7 +352,7 @@ export default function Cabinets() {
       </section>
 
       {/* 7. Project Examples Section */}
-      <section className="py-32 bg-gray-50">
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center mb-16 gap-6">
             <h2 className="text-4xl font-bold text-text-primary tracking-tight">Real Kitchen Projects in Toronto & GTA</h2>
@@ -363,7 +363,7 @@ export default function Cabinets() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: 'Modern Condo Kitchen', price: '$8,500 – $11,500', img: 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&q=80&w=600' },
+              { title: 'Modern Kitchen', price: '$8,500 – $11,500', img: '/images/modern-kitchen-project.png' },
               { title: 'Family Kitchen Upgrade', price: '$12,000 – $17,000', img: '/src/assets/images/regenerated_image_1777832169581.jpg' },
               { title: 'Full Custom-Style Kitchen', price: '$18,000 – $28,000', img: 'https://images.unsplash.com/photo-1565183928294-7065123ee2e4?auto=format&fit=crop&q=80&w=600' },
             ].map((p, idx) => (
@@ -382,7 +382,7 @@ export default function Cabinets() {
       </section>
 
       {/* 8. WhyChooseSection */}
-      <section className="py-32 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="lg:w-1/2">
@@ -420,7 +420,7 @@ export default function Cabinets() {
       </section>
 
       {/* 9. CountertopCrossSellSection */}
-      <section className="py-32 bg-[#F8F9FA] overflow-hidden">
+      <section className="py-24 bg-[#F8F9FA] overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
            <div className="flex flex-col lg:flex-row items-center gap-20">
               <div className="lg:w-1/2 order-2 lg:order-1">
@@ -447,9 +447,9 @@ export default function Cabinets() {
       </section>
 
       {/* 10. SimpleProcessSection */}
-      <section className="py-32 bg-white">
+      <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-           <div className="text-center mb-20">
+          <div className="text-center mb-16">
               <h2 className="text-4xl md:text-5xl font-bold text-text-primary mb-6 tracking-tight">How It Works</h2>
            </div>
            
@@ -476,7 +476,7 @@ export default function Cabinets() {
       </section>
 
       {/* 11. TestimonialsSection */}
-      <section className="py-32 bg-gray-50">
+      <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
              {[

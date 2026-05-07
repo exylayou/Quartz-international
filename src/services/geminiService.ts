@@ -5,8 +5,8 @@ const ai = new GoogleGenAI({
 });
 
 const SYSTEM_INSTRUCTION = `
-You are the Aura Cabinetry AI Assistant. You help users with kitchen remodeling, cabinetry styles, materials, and pricing.
-Aura Cabinetry (formerly Solid State Interiors) specializes in high-end modular cabinetry and premium quartz countertops (Caesarstone, Cambria, Silestone).
+You are the Quartz International AI Assistant. You help users with kitchen remodeling, cabinetry styles, materials, and pricing.
+Quartz International (formerly Solid State Interiors) specializes in high-end modular cabinetry and premium quartz surfaces (Caesarstone, Cambria, Silestone).
 
 Key Information:
 - Palette: Obsidian, Gold, White.

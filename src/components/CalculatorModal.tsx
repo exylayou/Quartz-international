@@ -174,7 +174,7 @@ export default function CalculatorModal() {
         pdf.addImage(dataUrl, 'PNG', 0, 0, pdfWidth, pdfHeight);
       }
       
-      pdf.save(`Aura_Budgetary_Estimate_${formData.name.replace(/\s+/g, '_')}.pdf`);
+      pdf.save(`Quartz_International_Budgetary_Estimate_${formData.name.replace(/\s+/g, '_')}.pdf`);
     } catch (err) {
       console.error('PDF Generation failed:', err);
     } finally {
@@ -213,7 +213,7 @@ export default function CalculatorModal() {
               <div className="w-[210mm] h-[297mm] bg-white p-20 flex flex-col justify-between text-[#1A1A1A] font-sans">
                 <div className="flex justify-between items-start">
                    <div>
-                      <h1 className="text-5xl font-black tracking-tighter mb-2 uppercase">AURA <span className="text-accent underline decoration-accent/30 decoration-8 underline-offset-8">CABINETRY</span></h1>
+                      <h1 className="text-5xl font-black tracking-tighter mb-2 uppercase">QUARTZ <span className="text-accent underline decoration-accent/30 decoration-8 underline-offset-8">INTERNATIONAL</span></h1>
                       <p className="text-[10px] font-black text-gray-400 uppercase tracking-[0.3em]">Kitchens • Countertops • Interiors</p>
                    </div>
                    <div className="text-right">
@@ -252,8 +252,8 @@ export default function CalculatorModal() {
 
                 <div className="flex justify-between items-center pt-12 border-t border-[#E5E2DC]">
                    <div className="space-y-1">
-                      <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Aura Cabinetry GTA HQ</p>
-                      <p className="text-xs font-bold">(905) 660-1100 • auracabinetry.ca</p>
+                      <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest">Quartz International GTA HQ</p>
+                      <p className="text-xs font-bold">(905) 660-1100 • quartzinternational.ca</p>
                    </div>
                    <div className="flex items-center gap-6">
                       <div className="flex items-center gap-2 text-[10px] font-black text-gray-500 uppercase tracking-widest">
@@ -368,7 +368,7 @@ export default function CalculatorModal() {
               {/* PAGE 3: STYLE DIRECTION */}
               <div className="w-[210mm] h-[297mm] bg-[#1A1A1A] p-20 flex flex-col text-white font-sans">
                  <div className="mb-12">
-                   <p className="text-[10px] font-black text-accent uppercase tracking-[0.3em] mb-4">Aura Design Studio</p>
+                   <p className="text-[10px] font-black text-accent uppercase tracking-[0.3em] mb-4">Quartz Design Studio</p>
                    <h3 className="text-6xl font-black tracking-tighter leading-none italic uppercase">Your Style Direction</h3>
                  </div>
 
@@ -389,7 +389,7 @@ export default function CalculatorModal() {
                             </p>
                           </div>
                           <div>
-                            <h5 className="text-lg font-black text-accent italic uppercase mb-4">Aura Advantages</h5>
+                            <h5 className="text-lg font-black text-accent italic uppercase mb-4">Quartz Advantages</h5>
                             <ul className="space-y-3">
                                <li className="flex items-center gap-3 text-xs font-bold text-gray-300"><Check size={14} className="text-accent" /> Antimicrobial Surfaces</li>
                                <li className="flex items-center gap-3 text-xs font-bold text-gray-300"><Check size={14} className="text-accent" /> Zero-maintenance Finish</li>
@@ -415,14 +415,14 @@ export default function CalculatorModal() {
 
                  <div className="mt-12 flex justify-between items-center opacity-40">
                     <p className="text-[10px] font-black uppercase tracking-[0.2em]">03 / Visual Direction</p>
-                    <p className="text-[10px] font-black uppercase tracking-[0.2em]">Aura Budgetary Estimator</p>
+                    <p className="text-[10px] font-black uppercase tracking-[0.2em]">Quartz Budgetary Estimator</p>
                  </div>
               </div>
 
               {/* PAGE 4: WHY CHOOSE US */}
               <div className="w-[210mm] h-[297mm] bg-white p-20 flex flex-col text-[#1A1A1A] font-sans">
                  <div className="mb-20 text-center">
-                   <h3 className="text-5xl font-black tracking-tighter mb-4 italic uppercase">Why Homeowners Trust Aura</h3>
+                   <h3 className="text-5xl font-black tracking-tighter mb-4 italic uppercase">Why Homeowners Trust Quartz International</h3>
                    <p className="text-sm font-bold text-gray-400 uppercase tracking-widest italic">GTA's Premier Interior Surface & Cabinetry Partner</p>
                  </div>
 
@@ -478,7 +478,7 @@ export default function CalculatorModal() {
                     </div>
                     <div>
                        <p className="text-2xl font-black tracking-tight leading-tight mb-2">
-                          "Aura took the stress out of our renovation. The transparency in their initial estimate was matched only by the quality of the install."
+                          "Quartz International took the stress out of our renovation. The transparency in their initial estimate was matched only by the quality of the install."
                        </p>
                        <p className="text-xs font-black text-accent uppercase tracking-widest text-right">— Sarah M., Markham Resident</p>
                     </div>
@@ -494,7 +494,7 @@ export default function CalculatorModal() {
 
                  <div className="space-y-12 mb-20 flex-grow">
                     {[
-                      { step: '01', title: 'Book Consultation', desc: 'Secure a free 15-minute call with an Aura designer to review your needs.' },
+                      { step: '01', title: 'Book Consultation', desc: 'Secure a free 15-minute call with a Quartz designer to review your needs.' },
                       { step: '02', title: 'Confirm Measurements', desc: 'Our technicians visit your home for a sub-millimeter precision site scan.' },
                       { step: '03', title: 'Final Slab Selection', desc: 'Visit our showroom to see your specific slabs and confirm cabinet finishes.' },
                       { step: '04', title: 'Professional Installation', desc: 'Our white-glove team installs your kitchen in 5–7 business days.' },
@@ -521,12 +521,12 @@ export default function CalculatorModal() {
                           <p className="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1 italic text-center">Contact Priority Line</p>
                           <p className="text-2xl font-black text-[#1A1A1A]">(905) 660-1100</p>
                        </div>
-                       <p className="text-xs font-black text-accent uppercase tracking-widest">www.auracabinetry.ca</p>
+                       <p className="text-xs font-black text-accent uppercase tracking-widest">www.quartzinternational.ca</p>
                     </div>
                  </div>
 
                  <div className="mt-12 flex justify-between items-center text-[10px] font-black text-gray-400 uppercase tracking-widest">
-                    <p>© 2026 Aura Cabinetry / Solid State Interiors</p>
+                    <p>© 2026 Quartz International / Solid State Interiors</p>
                     <div className="flex items-center gap-2">
                        <MapPin size={12} className="text-accent" /> Toronto • Markham • Vaughan
                     </div>

@@ -13,7 +13,7 @@ export const AIChat: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [input, setInput] = useState('');
   const [messages, setMessages] = useState<Message[]>([
-    { role: 'model', text: 'Hi! I\'m your Aura assistant. How can I help with your project today?' }
+    { role: 'model', text: "Hi! I'm your Quartz assistant. How can I help with your project today?" }
   ]);
   const [isLoading, setIsLoading] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -73,7 +73,7 @@ export const AIChat: React.FC = () => {
                   <Bot size={22} />
                 </div>
                 <div>
-                  <p className="text-sm font-black uppercase tracking-widest">Aura AI</p>
+                  <p className="text-sm font-black uppercase tracking-widest">Quartz AI</p>
                   <p className="text-[10px] text-white/70 font-bold uppercase tracking-tight italic">Design Assistant</p>
                 </div>
               </div>

@@ -23,7 +23,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           <div className="flex justify-between items-center h-20">
             <Link to="/" className="flex items-center space-x-2">
               <span className="text-xl sm:text-2xl font-black tracking-tighter text-text-primary uppercase leading-none">
-                Quartz<span className="text-accent underline decoration-4 underline-offset-4">Countertops</span>
+                Quartz<span className="text-accent underline decoration-4 underline-offset-4">International</span>
               </span>
             </Link>
 
@@ -99,7 +99,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
               <div className="col-span-1 md:col-span-2">
                 <span className="text-2xl font-black tracking-tighter mb-8 block uppercase">
-                  Quartz<span className="text-accent underline underline-offset-4 decoration-2">Countertops</span>
+                  Quartz<span className="text-accent underline underline-offset-4 decoration-2">International</span>
                 </span>
                 <p className="text-gray-400 max-w-sm mb-10 leading-relaxed">
                   Leading the GTA in premium kitchen surfaces and custom cabinetry since 2006. 5,000+ kitchens installed with perfection.
@@ -152,7 +152,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
             
             <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.3em] font-bold text-gray-600">
-              <p>© 2026 AURA CABINETRY. ALL RIGHTS RESERVED.</p>
+              <p>© 2026 QUARTZ INTERNATIONAL. ALL RIGHTS RESERVED.</p>
               <div className="flex gap-10">
                 <a href="#" className="hover:text-white transition-colors">Privacy</a>
                 <a href="#" className="hover:text-white transition-colors">Terms</a>
