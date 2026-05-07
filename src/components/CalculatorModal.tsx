@@ -535,7 +535,7 @@ export default function CalculatorModal() {
             </div>
 
             {/* Main Content Area */}
-          <div className="flex-grow p-5 md:p-12 overflow-y-auto max-h-screen">
+          <div className="flex-grow p-5 pb-32 md:p-12 overflow-y-auto max-h-screen">
           <div className="flex justify-between items-center mb-6 md:mb-8">
             <div>
               <h2 className="text-xl md:text-2xl font-bold tracking-tight text-[#1A1A1A]">Get Your Kitchen Estimate</h2>
@@ -1060,7 +1060,7 @@ export default function CalculatorModal() {
 
           {/* Navigation Buttons */}
           {state.step < 9 && (
-            <div className="flex justify-between items-center mt-12 pt-8 border-t border-[#E5E2DC]">
+            <div className="hidden lg:flex justify-between items-center mt-12 pt-8 border-t border-[#E5E2DC]">
               <button 
                 onClick={handleBack}
                 disabled={state.step === 1}
@@ -1147,14 +1147,24 @@ export default function CalculatorModal() {
         {/* Mobile Sticky bottom price bar */}
         {state.step < 9 && (
           <div className="lg:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-[#E5E2DC] p-6 flex justify-between items-center z-50">
-             <div>
-                <p className="text-[8px] font-black text-gray-400 uppercase tracking-widest">Estimated Total</p>
-                <p className="text-xl font-black text-[#C6A87D] tracking-tighter">
-                  ${results.total.low.toLocaleString()} – ${results.total.high.toLocaleString()}
-                </p>
+             <div className="flex items-center gap-5">
+                {state.step > 1 && (
+                  <button 
+                    onClick={handleBack}
+                    className="p-3 bg-gray-50 rounded-2xl text-gray-400 active:bg-gray-100 transition-colors"
+                  >
+                    <ChevronLeft size={20} />
+                  </button>
+                )}
+                <div>
+                   <p className="text-[8px] font-black text-gray-400 uppercase tracking-widest">Estimated Total</p>
+                   <p className="text-xl font-black text-[#C6A87D] tracking-tighter leading-none">
+                     ${results.total.low.toLocaleString()} – ${results.total.high.toLocaleString()}
+                   </p>
+                </div>
              </div>
-             <button onClick={handleNext} className="btn-primary py-3 px-6 text-sm">
-                {state.step === 9 ? 'See Results' : 'Next'}
+             <button onClick={handleNext} className="btn-primary py-4 px-8 text-sm uppercase font-black tracking-tighter italic">
+                Next
              </button>
           </div>
           )}
