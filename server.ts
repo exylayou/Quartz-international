@@ -41,16 +41,11 @@ if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
   console.warn("SMTP credentials (SMTP_USER/SMTP_PASS) are not defined. Lead notification emails will be skipped.");
 }
 
-async function startServer() {
-  const app = express();
-  const PORT = 3000;
+const app = express();
+app.use(express.json());
 
-  app.use(express.json());
-
-  // API routes
-
-  // Submit new lead from Estimator or manual creation
-  app.post("/api/leads", async (req, res) => {
+// API routes
+app.post("/api/leads", async (req, res) => {
     const raw = req.body;
     
     const leadData: Lead = {
@@ -120,36 +115,124 @@ async function startServer() {
       console.log("Lead saved successfully:", leadData.id);
       
       if (process.env.SMTP_USER && process.env.SMTP_PASS) {
-        try {
-          const mailOptions = {
-            from: process.env.SMTP_FROM || `"Quartz International Estimator" <no-reply@quartzinternational.ca>`,
-            to: process.env.NOTIFICATION_EMAIL || process.env.SMTP_USER,
-            subject: `New Lead Received: ${leadData.name}`,
+        // Send email to admin (non-blocking)
+        const adminMailOptions = {
+          from: process.env.SMTP_FROM || `"Quartz International Estimator" <no-reply@quartzinternational.ca>`,
+          to: process.env.NOTIFICATION_EMAIL || process.env.SMTP_USER,
+          subject: `New Lead Received: ${leadData.name}`,
+          html: `
+            <h2>New Lead Details</h2>
+            <table border="1" cellpadding="8" style="border-collapse: collapse; width: 100%; max-width: 600px; font-family: sans-serif; border-color: #E5E2DC;">
+              <tr style="background-color: #C6A87D; color: white;">
+                <th colspan="2" style="text-align: left; padding: 10px;">Contact Information</th>
+              </tr>
+              <tr><td><strong>Name</strong></td><td>${leadData.name}</td></tr>
+              <tr><td><strong>Email</strong></td><td>${leadData.email}</td></tr>
+              <tr><td><strong>Phone</strong></td><td>${leadData.phone}</td></tr>
+              <tr style="background-color: #FAF8F5;"><td colspan="2"><strong>Layout details:</strong></td></tr>
+              <tr><td><strong>Countertops</strong></td><td>${leadData.countertopLinearFt} ft (${leadData.countertopSqFt} sq ft)</td></tr>
+              <tr><td><strong>Quartz Level</strong></td><td>${leadData.quartzLevel}</td></tr>
+              <tr><td><strong>Island Type</strong></td><td>${leadData.islandType}</td></tr>
+              <tr><td><strong>Cabinets</strong></td><td>${leadData.includeCabinets ? `${leadData.cabinetLinearFt} ft (${leadData.cabinetStyle})` : 'No'}</td></tr>
+              <tr style="font-weight: bold; background-color: #f9f9f9;">
+                <td><strong>Total Estimated Range</strong></td>
+                <td>$${leadData.totalCostLow?.toLocaleString()} - $${leadData.totalCostHigh?.toLocaleString()}</td>
+              </tr>
+            </table>
+          `
+        };
+        transporter.sendMail(adminMailOptions)
+          .then(() => console.log("Admin email notification sent successfully."))
+          .catch(err => console.error("Failed to send admin email notification:", err));
+
+        // Send email to customer (non-blocking)
+        if (leadData.email) {
+          const clientMailOptions = {
+            from: process.env.SMTP_FROM || `"Quartz International" <no-reply@quartzinternational.ca>`,
+            to: leadData.email,
+            subject: `Your Personalized Kitchen Estimate - Quartz International`,
             html: `
-              <h2>New Lead Details</h2>
-              <table border="1" cellpadding="8" style="border-collapse: collapse; width: 100%; max-width: 600px; font-family: sans-serif; border-color: #E5E2DC;">
-                <tr style="background-color: #C6A87D; color: white;">
-                  <th colspan="2" style="text-align: left; padding: 10px;">Contact Information</th>
-                </tr>
-                <tr><td><strong>Name</strong></td><td>${leadData.name}</td></tr>
-                <tr><td><strong>Email</strong></td><td>${leadData.email}</td></tr>
-                <tr><td><strong>Phone</strong></td><td>${leadData.phone}</td></tr>
-                <tr style="background-color: #FAF8F5;"><td colspan="2"><strong>Layout details:</strong></td></tr>
-                <tr><td><strong>Countertops</strong></td><td>${leadData.countertopLinearFt} ft (${leadData.countertopSqFt} sq ft)</td></tr>
-                <tr><td><strong>Quartz Level</strong></td><td>${leadData.quartzLevel}</td></tr>
-                <tr><td><strong>Island Type</strong></td><td>${leadData.islandType}</td></tr>
-                <tr><td><strong>Cabinets</strong></td><td>${leadData.includeCabinets ? `${leadData.cabinetLinearFt} ft (${leadData.cabinetStyle})` : 'No'}</td></tr>
-                <tr style="font-weight: bold; background-color: #f9f9f9;">
-                  <td><strong>Total Estimated Range</strong></td>
-                  <td>$${leadData.totalCostLow?.toLocaleString()} - $${leadData.totalCostHigh?.toLocaleString()}</td>
-                </tr>
-              </table>
+              <div style="font-family: sans-serif; color: #1A1A1A; max-width: 600px; margin: 0 auto; border: 1px solid #E5E2DC; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                <div style="background-color: #1A1A1A; padding: 30px; text-align: center;">
+                  <h1 style="color: #FFFFFF; font-size: 24px; margin: 0; font-weight: 900; letter-spacing: 2px;">QUARTZ INTERNATIONAL</h1>
+                  <p style="color: #C6A87D; font-size: 10px; margin: 5px 0 0 0; font-weight: bold; letter-spacing: 3px;">BUDGETARY ESTIMATE</p>
+                </div>
+                <div style="padding: 30px; background-color: #FFFFFF;">
+                  <h2 style="font-size: 20px; font-weight: bold; margin-top: 0; color: #1A1A1A;">Hello ${leadData.name || 'Client'},</h2>
+                  <p style="font-size: 14px; color: #555555; line-height: 1.6;">Thank you for requesting an estimate from Quartz International. Here is the custom budgetary range for your kitchen project based on the specifications provided:</p>
+                  
+                  <div style="background-color: #1A1A1A; color: #FFFFFF; padding: 25px; border-radius: 12px; text-align: center; margin: 25px 0;">
+                    <p style="font-size: 10px; color: #C6A87D; font-weight: bold; margin: 0 0 5px 0; letter-spacing: 2px; text-transform: uppercase;">Estimated Project Range</p>
+                    <h3 style="font-size: 36px; font-weight: 900; margin: 0; color: #FFFFFF; font-style: italic;">
+                      $${leadData.totalCostLow?.toLocaleString()} - $${leadData.totalCostHigh?.toLocaleString()}
+                    </h3>
+                    <p style="font-size: 10px; color: #888888; margin: 5px 0 0 0;">Includes Materials & Professional Installation</p>
+                  </div>
+
+                  <h3 style="font-size: 16px; font-weight: bold; border-bottom: 1px solid #E5E2DC; padding-bottom: 8px; margin-top: 0; color: #1A1A1A; text-transform: uppercase; letter-spacing: 1px;">Project Specifications</h3>
+                  <table style="width: 100%; border-collapse: collapse; font-size: 13px; color: #555555; margin-bottom: 25px;">
+                    ${leadData.includeCountertops ? `
+                    <tr style="border-bottom: 1px solid #FAF8F5;">
+                      <td style="padding: 10px 0; font-weight: bold;">Countertops Area</td>
+                      <td style="padding: 10px 0; text-align: right;">${leadData.countertopLinearFt} ft (${leadData.countertopSqFt} sq ft)</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #FAF8F5;">
+                      <td style="padding: 10px 0; font-weight: bold;">Quartz Material Tier</td>
+                      <td style="padding: 10px 0; text-align: right; text-transform: capitalize;">${leadData.quartzLevel}</td>
+                    </tr>
+                    ${leadData.selectedSlab ? `
+                    <tr style="border-bottom: 1px solid #FAF8F5;">
+                      <td style="padding: 10px 0; font-weight: bold;">Selected Slab</td>
+                      <td style="padding: 10px 0; text-align: right;">${leadData.selectedSlab}</td>
+                    </tr>
+                    ` : ''}
+                    <tr style="border-bottom: 1px solid #FAF8F5;">
+                      <td style="padding: 10px 0; font-weight: bold;">Island / Peninsula</td>
+                      <td style="padding: 10px 0; text-align: right; text-transform: capitalize;">${leadData.islandType || 'None'}</td>
+                    </tr>
+                    ` : ''}
+                    ${leadData.includeCabinets ? `
+                    <tr style="border-bottom: 1px solid #FAF8F5;">
+                      <td style="padding: 10px 0; font-weight: bold;">Cabinets Area</td>
+                      <td style="padding: 10px 0; text-align: right;">${leadData.cabinetLinearFt} ft</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #FAF8F5;">
+                      <td style="padding: 10px 0; font-weight: bold;">Cabinets Collection</td>
+                      <td style="padding: 10px 0; text-align: right; text-transform: capitalize;">${leadData.cabinetStyle}</td>
+                    </tr>
+                    <tr style="border-bottom: 1px solid #FAF8F5;">
+                      <td style="padding: 10px 0; font-weight: bold;">Delivery Method</td>
+                      <td style="padding: 10px 0; text-align: right; text-transform: uppercase;">${leadData.deliveryMethod || 'Installed'}</td>
+                    </tr>
+                    ` : ''}
+                    ${leadData.extras && leadData.extras.length > 0 ? `
+                    <tr style="border-bottom: 1px solid #FAF8F5;">
+                      <td style="padding: 10px 0; font-weight: bold;">Selected Details</td>
+                      <td style="padding: 10px 0; text-align: right; font-size: 11px;">${leadData.extras.map(e => e.replace(/([A-Z])/g, ' $1').trim()).join(', ')}</td>
+                    </tr>
+                    ` : ''}
+                  </table>
+
+                  <div style="background-color: #FAF8F5; padding: 20px; border-radius: 12px; border: 1px solid #E5E2DC; text-align: center; margin-bottom: 25px;">
+                    <h4 style="margin: 0 0 8px 0; font-size: 14px; color: #1A1A1A; font-weight: bold;">Ready to Lock In Your Price?</h4>
+                    <p style="font-size: 12px; color: #666666; margin: 0 0 15px 0; line-height: 1.5;">Book a free 15-minute consultation to review your project specifications and lock in current material rates for 30 days.</p>
+                    <a href="https://quartzinternational.ca/contact" style="display: inline-block; background-color: #C6A87D; color: #FFFFFF; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Book Free Consultation</a>
+                  </div>
+
+                  <p style="font-size: 11px; color: #999999; line-height: 1.5; margin: 0;">
+                    * This is a budgetary estimate for planning purposes. Final pricing is subject to physical site measure and exact slab selection.
+                  </p>
+                </div>
+                <div style="background-color: #F8F9FA; border-top: 1px solid #E5E2DC; padding: 20px; text-align: center; font-size: 11px; color: #888888;">
+                  <p style="margin: 0 0 5px 0; font-weight: bold;">Quartz International GTA HQ</p>
+                  <p style="margin: 0;">(647) 370-6938 • info@quartzinternational.ca • Toronto • Markham • Vaughan</p>
+                </div>
+              </div>
             `
           };
-          await transporter.sendMail(mailOptions);
-          console.log("Email notification sent successfully.");
-        } catch (mailErr) {
-          console.error("Failed to send email notification:", mailErr);
+          transporter.sendMail(clientMailOptions)
+            .then(() => console.log("Client estimate email sent successfully."))
+            .catch(err => console.error("Failed to send client estimate email:", err));
         }
       }
 
@@ -183,6 +266,103 @@ async function startServer() {
     const updates = req.body;
     const updated = await updateLead(id, updates);
     if (updated) {
+      if (updates.quoteStatus === 'sent' && process.env.SMTP_USER && process.env.SMTP_PASS) {
+        getLeads().then(leads => {
+          const lead = leads.find(l => l.id === id);
+          if (lead && lead.email) {
+            const signUrl = `${process.env.APP_URL || 'http://localhost:3000'}/quote/${id}`;
+            const mailOptions = {
+              from: process.env.SMTP_FROM || `"Quartz International Quotes" <no-reply@quartzinternational.ca>`,
+              to: lead.email,
+              subject: `Your Project Proposal & Quote: ${updates.quoteNumber || lead.quoteNumber || 'Quote'} - Quartz International`,
+              html: `
+                <div style="font-family: sans-serif; color: #1A1A1A; max-width: 600px; margin: 0 auto; border: 1px solid #E5E2DC; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                  <div style="background-color: #1A1A1A; padding: 30px; text-align: center;">
+                    <h1 style="color: #FFFFFF; font-size: 24px; margin: 0; font-weight: 900; letter-spacing: 2px;">QUARTZ INTERNATIONAL</h1>
+                    <p style="color: #C6A87D; font-size: 10px; margin: 5px 0 0 0; font-weight: bold; letter-spacing: 3px;">OFFICIAL PROJECT PROPOSAL</p>
+                  </div>
+                  <div style="padding: 30px; background-color: #FFFFFF;">
+                    <h2 style="font-size: 20px; font-weight: bold; margin-top: 0; color: #1A1A1A;">Hello ${lead.name || 'Client'},</h2>
+                    <p style="font-size: 14px; color: #555555; line-height: 1.6;">Our team has compiled your official project proposal and pricing quote. Please find the details below:</p>
+                    
+                    <div style="background-color: #FAF8F5; border: 1px solid #E5E2DC; border-radius: 12px; padding: 20px; margin: 20px 0;">
+                      <table style="width: 100%; border-collapse: collapse; font-size: 13px;">
+                        <tr>
+                          <td style="padding: 5px 0; color: #888888;">Quote Reference:</td>
+                          <td style="padding: 5px 0; text-align: right; font-weight: bold; font-family: monospace;">${updates.quoteNumber || lead.quoteNumber || 'N/A'}</td>
+                        </tr>
+                        <tr>
+                          <td style="padding: 5px 0; color: #888888;">Date Generated:</td>
+                          <td style="padding: 5px 0; text-align: right; font-weight: bold;">${new Date().toLocaleDateString()}</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                    <h3 style="font-size: 15px; font-weight: bold; border-bottom: 1px solid #E5E2DC; padding-bottom: 8px; margin-top: 0; color: #1A1A1A;">PROPOSED LINE ITEMS</h3>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 13px; color: #555555; margin-bottom: 25px;">
+                      <thead>
+                        <tr style="border-bottom: 1px solid #E5E2DC; font-weight: bold; color: #1A1A1A;">
+                          <th style="padding: 10px 0; text-align: left;">Description</th>
+                          <th style="padding: 10px 0; text-align: center; width: 60px;">Qty</th>
+                          <th style="padding: 10px 0; text-align: right; width: 100px;">Total</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        ${(updates.quoteItems || lead.quoteItems || []).map((item: any) => `
+                          <tr style="border-bottom: 1px solid #FAF8F5;">
+                            <td style="padding: 10px 0; line-height: 1.4;">${item.description}</td>
+                            <td style="padding: 10px 0; text-align: center;">${item.quantity}</td>
+                            <td style="padding: 10px 0; text-align: right;">$${item.total?.toLocaleString()}</td>
+                          </tr>
+                        `).join('')}
+                      </tbody>
+                    </table>
+
+                    <div style="background-color: #FAF8F5; border-radius: 12px; padding: 20px; margin-bottom: 25px; border: 1px solid #E5E2DC;">
+                      <table style="width: 100%; border-collapse: collapse; font-size: 13px; color: #555555;">
+                        <tr>
+                          <td style="padding: 6px 0;">Subtotal</td>
+                          <td style="padding: 6px 0; text-align: right; font-weight: bold; color: #1A1A1A;">$${(updates.quoteSubtotal || lead.quoteSubtotal || 0).toLocaleString()}</td>
+                        </tr>
+                        ${(updates.quoteDiscount || lead.quoteDiscount || 0) > 0 ? `
+                        <tr>
+                          <td style="padding: 6px 0; color: #27AE60;">Discount Applied</td>
+                          <td style="padding: 6px 0; text-align: right; font-weight: bold; color: #27AE60;">-$${(updates.quoteDiscount || lead.quoteDiscount || 0).toLocaleString()}</td>
+                        </tr>
+                        ` : ''}
+                        <tr>
+                          <td style="padding: 6px 0;">Tax (HST 13%)</td>
+                          <td style="padding: 6px 0; text-align: right; font-weight: bold; color: #1A1A1A;">$${(updates.quoteTax || lead.quoteTax || 0).toLocaleString()}</td>
+                        </tr>
+                        <tr style="border-top: 1px solid #E5E2DC; font-size: 16px; font-weight: bold; color: #1A1A1A;">
+                          <td style="padding: 15px 0 0 0; color: #C6A87D;">Proposal Total</td>
+                          <td style="padding: 15px 0 0 0; text-align: right; color: #C6A87D;">$${(updates.quoteTotal || lead.quoteTotal || 0).toLocaleString()}</td>
+                        </tr>
+                      </table>
+                    </div>
+
+                    <div style="text-align: center; margin: 30px 0;">
+                      <p style="font-size: 13px; color: #666666; margin-bottom: 15px; line-height: 1.5;">To lock in this proposal, schedule your project, and initiate production, please review and electronically sign the quote here:</p>
+                      <a href="${signUrl}" style="display: inline-block; background-color: #C6A87D; color: #FFFFFF; padding: 15px 35px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 10px rgba(198, 168, 125, 0.3);">Review & Sign Proposal</a>
+                    </div>
+
+                    <p style="font-size: 11px; color: #999999; line-height: 1.5; margin: 0; text-align: center;">
+                      This proposal is valid for 30 days from the date of generation.
+                    </p>
+                  </div>
+                  <div style="background-color: #F8F9FA; border-top: 1px solid #E5E2DC; padding: 20px; text-align: center; font-size: 11px; color: #888888;">
+                    <p style="margin: 0 0 5px 0; font-weight: bold;">Quartz International GTA HQ</p>
+                    <p style="margin: 0;">(647) 370-6938 • info@quartzinternational.ca • Toronto • Markham • Vaughan</p>
+                  </div>
+                </div>
+              `
+            };
+            transporter.sendMail(mailOptions)
+              .then(() => console.log(`Quote proposal email sent to customer successfully (Lead: ${id}).`))
+              .catch(err => console.error("Error sending quote email to customer:", err));
+          }
+        }).catch(err => console.error("Error fetching leads for quote email:", err));
+      }
       res.json({ status: "success", message: "Quote saved successfully" });
     } else {
       res.status(500).json({ error: "Failed to save quote" });
@@ -249,29 +429,92 @@ async function startServer() {
 
     if (updated) {
       if (process.env.SMTP_USER && process.env.SMTP_PASS) {
-        try {
-          const mailOptions = {
+        // Send email to admin (non-blocking)
+        const adminMailOptions = {
+          from: process.env.SMTP_FROM || `"Quartz International Quotes" <no-reply@quartzinternational.ca>`,
+          to: process.env.NOTIFICATION_EMAIL || process.env.SMTP_USER || "info@quartzinternational.ca",
+          subject: `Quote Approved & Signed: ${lead.quoteNumber || "Quote"} - ${lead.name}`,
+          html: `
+            <h2>Quote Signed & Approved</h2>
+            <p>The client has reviewed and electronically signed their proposal.</p>
+            <table border="1" cellpadding="8" style="border-collapse: collapse; width: 100%; max-width: 600px; font-family: sans-serif; border-color: #E5E2DC;">
+              <tr style="background-color: #C6A87D; color: white;">
+                <th colspan="2" style="text-align: left; padding: 10px;">Approval Details</th>
+              </tr>
+              <tr><td><strong>Quote Number</strong></td><td>${lead.quoteNumber || "N/A"}</td></tr>
+              <tr><td><strong>Customer Name</strong></td><td>${lead.name}</td></tr>
+              <tr><td><strong>E-Signature</strong></td><td><em>${signatureName}</em></td></tr>
+              <tr><td><strong>Signed At</strong></td><td>${new Date(clientSignedAt).toLocaleString()}</td></tr>
+            </table>
+          `
+        };
+        transporter.sendMail(adminMailOptions)
+          .then(() => console.log("Approval notification email sent successfully."))
+          .catch(err => console.error("Error sending approval email to admin:", err));
+
+        // Send confirmation email to customer (non-blocking)
+        if (lead.email) {
+          const clientMailOptions = {
             from: process.env.SMTP_FROM || `"Quartz International Quotes" <no-reply@quartzinternational.ca>`,
-            to: process.env.NOTIFICATION_EMAIL || process.env.SMTP_USER || "info@quartzinternational.ca",
-            subject: `Quote Approved & Signed: ${lead.quoteNumber || "Quote"} - ${lead.name}`,
+            to: lead.email,
+            subject: `Proposal Approved & Signed: ${lead.quoteNumber || 'Quote'} - Quartz International`,
             html: `
-              <h2>Quote Signed & Approved</h2>
-              <p>The client has reviewed and electronically signed their proposal.</p>
-              <table border="1" cellpadding="8" style="border-collapse: collapse; width: 100%; max-width: 600px; font-family: sans-serif; border-color: #E5E2DC;">
-                <tr style="background-color: #C6A87D; color: white;">
-                  <th colspan="2" style="text-align: left; padding: 10px;">Approval Details</th>
-                </tr>
-                <tr><td><strong>Quote Number</strong></td><td>${lead.quoteNumber || "N/A"}</td></tr>
-                <tr><td><strong>Customer Name</strong></td><td>${lead.name}</td></tr>
-                <tr><td><strong>E-Signature</strong></td><td><em>${signatureName}</em></td></tr>
-                <tr><td><strong>Signed At</strong></td><td>${new Date(clientSignedAt).toLocaleString()}</td></tr>
-              </table>
+              <div style="font-family: sans-serif; color: #1A1A1A; max-width: 600px; margin: 0 auto; border: 1px solid #E5E2DC; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                <div style="background-color: #1A1A1A; padding: 30px; text-align: center;">
+                  <h1 style="color: #FFFFFF; font-size: 24px; margin: 0; font-weight: 900; letter-spacing: 2px;">QUARTZ INTERNATIONAL</h1>
+                  <p style="color: #C6A87D; font-size: 10px; margin: 5px 0 0 0; font-weight: bold; letter-spacing: 3px;">PROPOSAL APPROVED & SIGNED</p>
+                </div>
+                <div style="padding: 30px; background-color: #FFFFFF; text-align: center;">
+                  <div style="background-color: #2ECC71; color: #FFFFFF; border-radius: 50%; width: 60px; height: 60px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 20px; font-size: 30px; font-weight: bold;">✓</div>
+                  <h2 style="font-size: 20px; font-weight: bold; margin-top: 0; color: #1A1A1A;">Thank you, ${lead.name || 'Client'}!</h2>
+                  <p style="font-size: 14px; color: #555555; line-height: 1.6;">We have received your electronically signed proposal. Your project details are now locked in, and we are preparing for the next phases.</p>
+                  
+                  <div style="background-color: #FAF8F5; border: 1px solid #E5E2DC; border-radius: 12px; padding: 20px; margin: 25px 0; text-align: left;">
+                    <h4 style="margin: 0 0 10px 0; font-size: 14px; color: #1A1A1A; font-weight: bold; border-bottom: 1px solid #E5E2DC; padding-bottom: 5px;">Approval Details</h4>
+                    <table style="width: 100%; border-collapse: collapse; font-size: 13px; color: #555555;">
+                      <tr>
+                        <td style="padding: 5px 0;">Quote Number:</td>
+                        <td style="padding: 5px 0; text-align: right; font-weight: bold; color: #1A1A1A;">${lead.quoteNumber || "N/A"}</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 5px 0;">E-Signature:</td>
+                        <td style="padding: 5px 0; text-align: right; font-weight: bold; font-style: italic; color: #1A1A1A;">${signatureName}</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 5px 0;">Signed At:</td>
+                        <td style="padding: 5px 0; text-align: right; font-weight: bold; color: #1A1A1A;">${new Date(clientSignedAt).toLocaleString()}</td>
+                      </tr>
+                      <tr style="border-top: 1px solid #E5E2DC; font-weight: bold;">
+                        <td style="padding: 10px 0 0 0; color: #C6A87D;">Total Amount:</td>
+                        <td style="padding: 10px 0 0 0; text-align: right; color: #C6A87D;">$${(lead.quoteTotal || 0).toLocaleString()}</td>
+                      </tr>
+                    </table>
+                  </div>
+
+                  <div style="background-color: #F8FDF9; border: 1px solid #D1EAD8; padding: 20px; border-radius: 12px; text-align: left; margin-bottom: 25px;">
+                    <h4 style="margin: 0 0 8px 0; font-size: 14px; color: #27AE60; font-weight: bold;">What Happens Next?</h4>
+                    <ol style="font-size: 13px; color: #555555; margin: 0; padding-left: 20px; line-height: 1.6;">
+                      <li><strong>Project Coordinator Contact</strong>: A project manager will call you within 24 business hours to confirm details.</li>
+                      <li><strong>Precision Site Scan</strong>: We will schedule our technicians to visit your home and complete a sub-millimeter laser scan.</li>
+                      <li><strong>Material Procurement & Fabrication</strong>: Once dimensions are scanned, your selected slabs will be cut and polished.</li>
+                      <li><strong>Turnkey Installation</strong>: Our white-glove installation team will deliver and install your countertops and cabinetry.</li>
+                    </ol>
+                  </div>
+
+                  <p style="font-size: 12px; color: #888888; line-height: 1.5; margin: 0;">
+                    If you have any immediate questions, please call us directly at (647) 370-6938.
+                  </p>
+                </div>
+                <div style="background-color: #F8F9FA; border-top: 1px solid #E5E2DC; padding: 20px; text-align: center; font-size: 11px; color: #888888;">
+                  <p style="margin: 0 0 5px 0; font-weight: bold;">Quartz International GTA HQ</p>
+                  <p style="margin: 0;">(647) 370-6938 • info@quartzinternational.ca • Toronto • Markham • Vaughan</p>
+                </div>
+              </div>
             `
           };
-          await transporter.sendMail(mailOptions);
-          console.log("Approval notification email sent successfully.");
-        } catch (mailErr) {
-          console.error("Error sending approval email:", mailErr);
+          transporter.sendMail(clientMailOptions)
+            .then(() => console.log(`Quote approval confirmation email sent to customer (Lead: ${id})`))
+            .catch(err => console.error("Error sending quote approval confirmation email to customer:", err));
         }
       }
       res.json({ status: "success", message: "Quote approved and signed successfully" });
@@ -406,6 +649,42 @@ async function startServer() {
     
     const saved = await saveMessage(message);
     if (saved) {
+      if (channel === 'email' && process.env.SMTP_USER && process.env.SMTP_PASS) {
+        getCustomers().then(customers => {
+          const cust = customers.find(c => c.id === customerId);
+          if (cust && cust.email) {
+            const mailOptions = {
+              from: process.env.SMTP_FROM || `"Quartz International Support" <no-reply@quartzinternational.ca>`,
+              to: cust.email,
+              subject: `Message from Quartz International`,
+              html: `
+                <div style="font-family: sans-serif; color: #1A1A1A; max-width: 600px; margin: 0 auto; border: 1px solid #E5E2DC; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+                  <div style="background-color: #1A1A1A; padding: 25px; text-align: center;">
+                    <h1 style="color: #FFFFFF; font-size: 20px; margin: 0; font-weight: 900; letter-spacing: 2px;">QUARTZ INTERNATIONAL</h1>
+                  </div>
+                  <div style="padding: 30px; background-color: #FFFFFF;">
+                    <h2 style="font-size: 18px; font-weight: bold; margin-top: 0; color: #1A1A1A;">Hello ${cust.name || 'Client'},</h2>
+                    <p style="font-size: 14px; color: #333333; line-height: 1.6; white-space: pre-line;">${text}</p>
+                    
+                    <hr style="border: 0; border-top: 1px solid #E5E2DC; margin: 25px 0;">
+                    <p style="font-size: 12px; color: #888888; line-height: 1.5; margin: 0;">
+                      You have received this email from your Quartz International project coordinator. To reply, simply email us at info@quartzinternational.ca or call (647) 370-6938.
+                    </p>
+                  </div>
+                  <div style="background-color: #F8F9FA; border-top: 1px solid #E5E2DC; padding: 20px; text-align: center; font-size: 11px; color: #888888;">
+                    <p style="margin: 0 0 5px 0; font-weight: bold;">Quartz International GTA HQ</p>
+                    <p style="margin: 0;">(647) 370-6938 • info@quartzinternational.ca • Toronto • Markham • Vaughan</p>
+                  </div>
+                </div>
+              `
+            };
+            transporter.sendMail(mailOptions)
+              .then(() => console.log(`Outbound message email successfully sent to customer ${customerId}`))
+              .catch(err => console.error("Error sending outbound message email to customer:", err));
+          }
+        }).catch(err => console.error("Error fetching customers for outbound message email:", err));
+      }
+
       // Simulate client inbound response after 5 seconds
       setTimeout(async () => {
         try {
@@ -453,6 +732,10 @@ async function startServer() {
     res.json({ status: "ok" });
   });
 
+export default app;
+
+if (!process.env.VERCEL) {
+  const PORT = process.env.PORT || 3000;
   // Vite middleware for development
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({
@@ -472,5 +755,3 @@ async function startServer() {
     console.log(`Server running on http://localhost:${PORT}`);
   });
 }
-
-startServer();

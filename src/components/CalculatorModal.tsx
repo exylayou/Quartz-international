@@ -34,6 +34,7 @@ export default function CalculatorModal() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '' });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [emailError, setEmailError] = useState(false);
   const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
   const pdfTemplateRef = useRef<HTMLDivElement>(null);
 
@@ -172,6 +173,7 @@ export default function CalculatorModal() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setEmailError(false);
     
     try {
       const response = await fetch('/api/leads', {
@@ -188,9 +190,13 @@ export default function CalculatorModal() {
         setIsSubmitted(true);
       } else {
         console.error('Failed to submit lead');
+        setEmailError(true);
+        setIsSubmitted(true); // Fallback so they can download PDF
       }
     } catch (error) {
       console.error('Error submitting lead:', error);
+      setEmailError(true);
+      setIsSubmitted(true); // Fallback so they can download PDF
     } finally {
       setIsSubmitting(false);
     }
@@ -1176,11 +1182,24 @@ export default function CalculatorModal() {
                        <Check size={48} strokeWidth={3} />
                     </div>
                     <div className="space-y-2">
-                       <h3 className="text-4xl font-black tracking-tighter italic uppercase text-[#1A1A1A]">Estimate Sent!</h3>
+                       <h3 className="text-4xl font-black tracking-tighter italic uppercase text-[#1A1A1A]">
+                         {emailError ? 'Estimate Saved!' : 'Estimate Sent!'}
+                       </h3>
                        <p className="text-lg text-gray-500 max-w-xs mx-auto font-medium">
-                          Check your email for your formal budgetary estimate.
+                          {emailError 
+                            ? "We've saved your estimate. Download your PDF breakdown below!"
+                            : "Check your email for your formal budgetary estimate."}
                        </p>
                     </div>
+
+                    {emailError && (
+                      <div className="bg-yellow-50 border border-yellow-200 text-yellow-800 text-xs px-4 py-3 rounded-2xl max-w-sm mx-auto text-left flex items-start gap-2.5">
+                        <Info size={16} className="text-yellow-600 shrink-0 mt-0.5" />
+                        <p style={{ margin: 0 }} className="font-medium">
+                          We saved your estimate details, but encountered a connection issue delivering the confirmation email. You can still download your detailed PDF breakdown directly below!
+                        </p>
+                      </div>
+                    )}
 
                     <div className="bg-white p-10 rounded-[3rem] border-4 border-dashed border-[#E5E2DC] max-w-sm mx-auto space-y-6">
                        <div className="w-16 h-16 rounded-2xl bg-[#C6A87D]/10 flex items-center justify-center text-[#C6A87D] mx-auto">

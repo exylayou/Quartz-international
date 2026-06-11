@@ -81,7 +81,8 @@ export interface Lead {
   customerId?: string; // Links lead/quote to a specific customer profile
 }
 
-const DB_DIR = path.resolve(process.cwd(), 'data');
+const isVercel = !!process.env.VERCEL;
+const DB_DIR = isVercel ? '/tmp/data' : path.resolve(process.cwd(), 'data');
 const DB_FILE = path.resolve(DB_DIR, 'leads.json');
 const CUSTOMERS_FILE = path.resolve(DB_DIR, 'customers.json');
 const MESSAGES_FILE = path.resolve(DB_DIR, 'messages.json');
@@ -92,6 +93,27 @@ let writeQueue = Promise.resolve();
 async function ensureDbInitialized() {
   try {
     await fs.mkdir(DB_DIR, { recursive: true });
+    
+    // Copy seed files on Vercel if not already present in /tmp/data
+    if (isVercel) {
+      const srcDir = path.resolve(process.cwd(), 'data');
+      const filesToCopy = ['leads.json', 'customers.json', 'messages.json'];
+      for (const file of filesToCopy) {
+        const destPath = path.resolve(DB_DIR, file);
+        try {
+          await fs.access(destPath);
+        } catch {
+          try {
+            const srcPath = path.resolve(srcDir, file);
+            const content = await fs.readFile(srcPath, 'utf-8');
+            await fs.writeFile(destPath, content, 'utf-8');
+            console.log(`Copied seed ${file} to /tmp/data on Vercel successfully.`);
+          } catch (copyErr) {
+            console.error(`Failed to copy seed ${file} to /tmp/data:`, copyErr);
+          }
+        }
+      }
+    }
     
     // Initialize leads database
     try {
