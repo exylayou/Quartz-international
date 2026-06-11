@@ -1,0 +1,446 @@
+import fs from 'fs/promises';
+import path from 'path';
+
+export interface QuoteItem {
+  description: string;
+  quantity: number;
+  unitPrice: number;
+  total: number;
+}
+
+export interface CustomerFile {
+  id: string;
+  name: string;
+  size: string;
+  uploadedAt: string;
+  url: string;
+}
+
+export interface Customer {
+  id: string;
+  createdAt: string;
+  name: string;
+  email: string;
+  phone: string;
+  notes?: string;
+  files?: CustomerFile[];
+}
+
+export interface Message {
+  id: string;
+  customerId: string;
+  channel: 'email' | 'sms' | 'whatsapp';
+  direction: 'inbound' | 'outbound';
+  sender: string;
+  text: string;
+  timestamp: string;
+  isRead?: boolean;
+}
+
+export interface Lead {
+  id: string;
+  createdAt: string;
+  name: string;
+  email: string;
+  phone: string;
+  notes?: string;
+  layout?: string;
+  quartzLevel?: string;
+  selectedSlab?: string;
+  countertopSqFt?: number;
+  countertopLinearFt?: number;
+  hasIsland?: boolean;
+  islandType?: string;
+  includeCabinets?: boolean;
+  cabinetLinearFt?: number;
+  cabinetStyle?: string;
+  deliveryMethod?: string;
+  selectedCabinetStyle?: string;
+  timeline?: string;
+  extras?: string[];
+  cabinetExtras?: string[];
+  countertopCostLow?: number;
+  countertopCostHigh?: number;
+  cabinetCostLow?: number;
+  cabinetCostHigh?: number;
+  totalCostLow?: number;
+  totalCostHigh?: number;
+  includeCountertops?: boolean;
+  
+  // Quote / Invoicing System Fields
+  quoteStatus?: 'draft' | 'sent' | 'approved' | 'invoiced' | 'paid';
+  quoteNumber?: string;
+  quoteItems?: QuoteItem[];
+  quoteTaxRate?: number;
+  quoteDiscount?: number;
+  quoteSubtotal?: number;
+  quoteTax?: number;
+  quoteTotal?: number;
+  clientSignedAt?: string;
+  clientSignatureName?: string;
+  customerId?: string; // Links lead/quote to a specific customer profile
+}
+
+const DB_DIR = path.resolve(process.cwd(), 'data');
+const DB_FILE = path.resolve(DB_DIR, 'leads.json');
+const CUSTOMERS_FILE = path.resolve(DB_DIR, 'customers.json');
+const MESSAGES_FILE = path.resolve(DB_DIR, 'messages.json');
+
+// Promise chain to serialise database writes and prevent race conditions/corruption
+let writeQueue = Promise.resolve();
+
+async function ensureDbInitialized() {
+  try {
+    await fs.mkdir(DB_DIR, { recursive: true });
+    
+    // Initialize leads database
+    try {
+      await fs.access(DB_FILE);
+    } catch {
+      await fs.writeFile(DB_FILE, JSON.stringify([], null, 2), 'utf-8');
+    }
+
+    // Initialize customers database
+    try {
+      await fs.access(CUSTOMERS_FILE);
+      const customersData = await fs.readFile(CUSTOMERS_FILE, 'utf-8');
+      const parsed = JSON.parse(customersData);
+      if (parsed.length === 0) {
+        // Auto-migrate unique clients from leads
+        const leadsData = await fs.readFile(DB_FILE, 'utf-8');
+        const leads = JSON.parse(leadsData) as Lead[];
+        const uniqueCustomersMap = new Map<string, Customer>();
+        
+        let needsLeadsUpdate = false;
+        for (const lead of leads) {
+          if (lead.email) {
+            const emailKey = lead.email.toLowerCase();
+            if (!uniqueCustomersMap.has(emailKey)) {
+              const customerId = lead.customerId || Math.random().toString(36).substr(2, 9);
+              if (!lead.customerId) {
+                lead.customerId = customerId;
+                needsLeadsUpdate = true;
+              }
+              
+              const mockFiles: CustomerFile[] = [
+                {
+                  id: Math.random().toString(36).substr(2, 9),
+                  name: "kitchen_layout_schematics.pdf",
+                  size: "1.4 MB",
+                  uploadedAt: new Date(Date.now() - 2 * 24 * 3600000).toISOString(),
+                  url: "#"
+                },
+                {
+                  id: Math.random().toString(36).substr(2, 9),
+                  name: "veining_selection_photo.jpg",
+                  size: "2.8 MB",
+                  uploadedAt: new Date(Date.now() - 1 * 24 * 3600000).toISOString(),
+                  url: "#"
+                }
+              ];
+
+              uniqueCustomersMap.set(emailKey, {
+                id: customerId,
+                createdAt: lead.createdAt || new Date().toISOString(),
+                name: lead.name || "Customer",
+                email: lead.email,
+                phone: lead.phone || "",
+                notes: lead.notes || "Imported from past lead inquiry.",
+                files: mockFiles
+              });
+            } else {
+              // Same customer, ensure lead has same customerId
+              const existingCust = uniqueCustomersMap.get(emailKey)!;
+              if (lead.customerId !== existingCust.id) {
+                lead.customerId = existingCust.id;
+                needsLeadsUpdate = true;
+              }
+            }
+          }
+        }
+        
+        if (uniqueCustomersMap.size > 0) {
+          const initialCustomers = Array.from(uniqueCustomersMap.values());
+          await fs.writeFile(CUSTOMERS_FILE, JSON.stringify(initialCustomers, null, 2), 'utf-8');
+          if (needsLeadsUpdate) {
+            await fs.writeFile(DB_FILE, JSON.stringify(leads, null, 2), 'utf-8');
+          }
+          console.log(`Auto-migration complete: Synced ${uniqueCustomersMap.size} customer records from leads database.`);
+        }
+      }
+    } catch {
+      await fs.writeFile(CUSTOMERS_FILE, JSON.stringify([], null, 2), 'utf-8');
+    }
+
+    // Initialize messages database
+    try {
+      await fs.access(MESSAGES_FILE);
+      const data = await fs.readFile(MESSAGES_FILE, 'utf-8');
+      if (JSON.parse(data).length === 0) {
+        throw new Error('initialize');
+      }
+    } catch {
+      const customersData = await fs.readFile(CUSTOMERS_FILE, 'utf-8');
+      const customers = JSON.parse(customersData) as Customer[];
+      const mockMessages: Message[] = [];
+      
+      for (const customer of customers) {
+        const name = customer.name || "Customer";
+        if (name.toLowerCase().includes("ken")) {
+          mockMessages.push(
+            {
+              id: Math.random().toString(36).substr(2, 9),
+              customerId: customer.id,
+              channel: 'email',
+              direction: 'inbound',
+              sender: customer.email,
+              text: "Hi Quartz International, I am planning a kitchen renovation in Markham. Do you have a rough timeline for measurements? I'm looking at standard or premium quartz.",
+              timestamp: new Date(Date.now() - 3 * 3600000).toISOString()
+            },
+            {
+              id: Math.random().toString(36).substr(2, 9),
+              customerId: customer.id,
+              channel: 'email',
+              direction: 'outbound',
+              sender: 'info@quartzinternational.ca',
+              text: "Hi Ken, thanks for reaching out! We can schedule a technician for a precision site scan within 5-7 days. Are you looking to bundle countertops with custom cabinetry?",
+              timestamp: new Date(Date.now() - 2.5 * 3600000).toISOString()
+            },
+            {
+              id: Math.random().toString(36).substr(2, 9),
+              customerId: customer.id,
+              channel: 'whatsapp',
+              direction: 'inbound',
+              sender: customer.phone,
+              text: "Hey! Ken here, following up from my email. Can we do WhatsApp instead? It's easier to send photos here. I'm thinking of standard layout with a mitered waterfall edge.",
+              timestamp: new Date(Date.now() - 2 * 3600000).toISOString()
+            },
+            {
+              id: Math.random().toString(36).substr(2, 9),
+              customerId: customer.id,
+              channel: 'whatsapp',
+              direction: 'outbound',
+              sender: 'info@quartzinternational.ca',
+              text: "Absolutely, Ken! WhatsApp works great. We've received your dimensions. A waterfall edge looks stunning in modern layouts. I've drafted an initial proposal for you.",
+              timestamp: new Date(Date.now() - 1.8 * 3600000).toISOString()
+            },
+            {
+              id: Math.random().toString(36).substr(2, 9),
+              customerId: customer.id,
+              channel: 'sms',
+              direction: 'inbound',
+              sender: customer.phone,
+              text: "Thanks, just saw the quote link. Monday at 10 AM works for the site measure. Let me know if that's confirmed.",
+              timestamp: new Date(Date.now() - 1 * 3600000).toISOString(),
+              isRead: false
+            }
+          );
+        } else {
+          mockMessages.push(
+            {
+              id: Math.random().toString(36).substr(2, 9),
+              customerId: customer.id,
+              channel: 'email',
+              direction: 'inbound',
+              sender: customer.email,
+              text: `Hi, I submitted an estimate request for my kitchen countertop. Can you tell me if the price includes removal of my old countertops? Thank you. - ${name}`,
+              timestamp: new Date(Date.now() - 5 * 3600000).toISOString()
+            },
+            {
+              id: Math.random().toString(36).substr(2, 9),
+              customerId: customer.id,
+              channel: 'email',
+              direction: 'outbound',
+              sender: 'info@quartzinternational.ca',
+              text: "Hello! Our base estimator provides options to add demolition and disposal. Standard removal is generally $400. Let me know if you would like me to add this to your proposal details.",
+              timestamp: new Date(Date.now() - 4 * 3600000).toISOString()
+            },
+            {
+              id: Math.random().toString(36).substr(2, 9),
+              customerId: customer.id,
+              channel: 'whatsapp',
+              direction: 'inbound',
+              sender: customer.phone || customer.name,
+              text: "Yes please, let's include removal. Also interested in looking at TCE 4052 Pure White slabs in your showroom.",
+              timestamp: new Date(Date.now() - 20 * 60000).toISOString(),
+              isRead: false
+            }
+          );
+        }
+      }
+      
+      await fs.writeFile(MESSAGES_FILE, JSON.stringify(mockMessages, null, 2), 'utf-8');
+      console.log(`Initialized messages database with ${mockMessages.length} mock communications.`);
+    }
+
+  } catch (error) {
+    console.error('Failed to initialize database directories:', error);
+  }
+}
+
+export async function getLeads(): Promise<Lead[]> {
+  await ensureDbInitialized();
+  try {
+    const data = await fs.readFile(DB_FILE, 'utf-8');
+    return JSON.parse(data) as Lead[];
+  } catch (error) {
+    console.error('Failed to read leads from database:', error);
+    return [];
+  }
+}
+
+export async function saveLead(lead: Lead): Promise<boolean> {
+  await ensureDbInitialized();
+  return new Promise((resolve) => {
+    // Append the write operation to the queue
+    writeQueue = writeQueue
+      .then(async () => {
+        try {
+          const leads = await getLeads();
+          leads.unshift(lead); // Prepend new lead so the newest leads are first
+          await fs.writeFile(DB_FILE, JSON.stringify(leads, null, 2), 'utf-8');
+          resolve(true);
+        } catch (error) {
+          console.error('Failed to save lead to database:', error);
+          resolve(false);
+        }
+      });
+  });
+}
+
+export async function updateLead(id: string, updates: Partial<Lead>): Promise<boolean> {
+  await ensureDbInitialized();
+  return new Promise((resolve) => {
+    writeQueue = writeQueue
+      .then(async () => {
+        try {
+          const leads = await getLeads();
+          const index = leads.findIndex(l => l.id === id);
+          if (index === -1) {
+            resolve(false);
+            return;
+          }
+          leads[index] = { ...leads[index], ...updates };
+          await fs.writeFile(DB_FILE, JSON.stringify(leads, null, 2), 'utf-8');
+          resolve(true);
+        } catch (error) {
+          console.error(`Failed to update lead ${id} in database:`, error);
+          resolve(false);
+        }
+      });
+  });
+}
+
+export async function getCustomers(): Promise<Customer[]> {
+  await ensureDbInitialized();
+  try {
+    const data = await fs.readFile(CUSTOMERS_FILE, 'utf-8');
+    return JSON.parse(data) as Customer[];
+  } catch (error) {
+    console.error('Failed to read customers from database:', error);
+    return [];
+  }
+}
+
+export async function saveCustomer(customer: Customer): Promise<boolean> {
+  await ensureDbInitialized();
+  return new Promise((resolve) => {
+    writeQueue = writeQueue
+      .then(async () => {
+        try {
+          const customers = await getCustomers();
+          // Check if customer already exists (by id or email)
+          const exists = customers.some(c => c.id === customer.id || (c.email.toLowerCase() === customer.email.toLowerCase() && c.email !== ''));
+          if (exists) {
+            resolve(false);
+            return;
+          }
+          customers.unshift(customer); // Prepend new customer
+          await fs.writeFile(CUSTOMERS_FILE, JSON.stringify(customers, null, 2), 'utf-8');
+          resolve(true);
+        } catch (error) {
+          console.error('Failed to save customer to database:', error);
+          resolve(false);
+        }
+      });
+  });
+}
+
+export async function updateCustomer(id: string, updates: Partial<Customer>): Promise<boolean> {
+  await ensureDbInitialized();
+  return new Promise((resolve) => {
+    writeQueue = writeQueue
+      .then(async () => {
+        try {
+          const customers = await getCustomers();
+          const index = customers.findIndex(c => c.id === id);
+          if (index === -1) {
+            resolve(false);
+            return;
+          }
+          customers[index] = { ...customers[index], ...updates };
+          await fs.writeFile(CUSTOMERS_FILE, JSON.stringify(customers, null, 2), 'utf-8');
+          resolve(true);
+        } catch (error) {
+          console.error(`Failed to update customer ${id} in database:`, error);
+          resolve(false);
+        }
+      });
+  });
+}
+
+export async function getMessages(): Promise<Message[]> {
+  await ensureDbInitialized();
+  try {
+    const data = await fs.readFile(MESSAGES_FILE, 'utf-8');
+    return JSON.parse(data) as Message[];
+  } catch (error) {
+    console.error('Failed to read messages from database:', error);
+    return [];
+  }
+}
+
+export async function saveMessage(message: Message): Promise<boolean> {
+  await ensureDbInitialized();
+  return new Promise((resolve) => {
+    writeQueue = writeQueue
+      .then(async () => {
+        try {
+          const messages = await getMessages();
+          messages.push(message); // Chronological order (append)
+          await fs.writeFile(MESSAGES_FILE, JSON.stringify(messages, null, 2), 'utf-8');
+          resolve(true);
+        } catch (error) {
+          console.error('Failed to save message to database:', error);
+          resolve(false);
+        }
+      });
+  });
+}
+
+export async function markMessagesAsRead(customerId: string): Promise<boolean> {
+  await ensureDbInitialized();
+  return new Promise((resolve) => {
+    writeQueue = writeQueue
+      .then(async () => {
+        try {
+          const messages = await getMessages();
+          let changed = false;
+          for (const msg of messages) {
+            if (msg.customerId === customerId && msg.isRead === false) {
+              msg.isRead = true;
+              changed = true;
+            }
+          }
+          if (changed) {
+            await fs.writeFile(MESSAGES_FILE, JSON.stringify(messages, null, 2), 'utf-8');
+          }
+          resolve(true);
+        } catch (error) {
+          console.error(`Failed to mark messages as read for customer ${customerId}:`, error);
+          resolve(false);
+        }
+      });
+  });
+}
+

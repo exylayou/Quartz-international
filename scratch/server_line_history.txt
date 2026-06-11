@@ -1,0 +1,3558 @@
+=== Line 1 ===
+  Step 5335 (2026-06-03T22:25:33Z): 
+  Step 4980 (2026-06-03T22:13:57Z): import express from "express";
+  Step 4365 (2026-06-03T18:01:02Z): import express from "express";
+  Step 4077 (2026-06-03T16:23:01Z): import express from "express";
+  Step 2250 (2026-06-01T18:26:42Z): import express from "express";
+  Step 2111 (2026-06-01T18:22:19Z): import express from "express";
+  Step 2095 (2026-06-01T18:20:27Z): import express from "express";
+  Step 1976 (2026-06-01T16:58:54Z): import express from "express";
+  Step 1353 (2026-05-31T18:27:57Z): import express from "express";
+  Step 1082 (2026-05-31T17:47:52Z): import express from "express";
+  Step 388 (2026-05-30T14:37:22Z): import express from "express";
+  Step 54 (2026-05-29T10:53:39Z): import express from "express";
+
+=== Line 2 ===
+  Step 5335 (2026-06-03T22:25:33Z): > react-example@0.0.0 dev
+  Step 4980 (2026-06-03T22:13:57Z): import { createServer as createViteServer } from "vite";
+  Step 4365 (2026-06-03T18:01:02Z): import { createServer as createViteServer } from "vite";
+  Step 4077 (2026-06-03T16:23:01Z): import { createServer as createViteServer } from "vite";
+  Step 2250 (2026-06-01T18:26:42Z): import { createServer as createViteServer } from "vite";
+  Step 2111 (2026-06-01T18:22:19Z): import { createServer as createViteServer } from "vite";
+  Step 2095 (2026-06-01T18:20:27Z): import { createServer as createViteServer } from "vite";
+  Step 1976 (2026-06-01T16:58:54Z): import { createServer as createViteServer } from "vite";
+  Step 1353 (2026-05-31T18:27:57Z): import { createServer as createViteServer } from "vite";
+  Step 1082 (2026-05-31T17:47:52Z): import { createServer as createViteServer } from "vite";
+  Step 388 (2026-05-30T14:37:22Z): import { createServer as createViteServer } from "vite";
+  Step 54 (2026-05-29T10:53:39Z): import { createServer as createViteServer } from "vite";
+
+=== Line 3 ===
+  Step 5335 (2026-06-03T22:25:33Z): > tsx server.ts
+  Step 4980 (2026-06-03T22:13:57Z): import path from "path";
+  Step 4365 (2026-06-03T18:01:02Z): import path from "path";
+  Step 4077 (2026-06-03T16:23:01Z): import path from "path";
+  Step 2250 (2026-06-01T18:26:42Z): import path from "path";
+  Step 2111 (2026-06-01T18:22:19Z): import path from "path";
+  Step 2095 (2026-06-01T18:20:27Z): import path from "path";
+  Step 1976 (2026-06-01T16:58:54Z): import path from "path";
+  Step 1353 (2026-05-31T18:27:57Z): import path from "path";
+  Step 1082 (2026-05-31T17:47:52Z): import path from "path";
+  Step 388 (2026-05-30T14:37:22Z): import path from "path";
+  Step 54 (2026-05-29T10:53:39Z): import path from "path";
+
+=== Line 4 ===
+  Step 5335 (2026-06-03T22:25:33Z): ◇ injecting env (9) from .env.local // tip: ◈ encrypted .env [www.dotenvx.com]
+  Step 4980 (2026-06-03T22:13:57Z): import { fileURLToPath } from "url";
+  Step 4365 (2026-06-03T18:01:02Z): import { fileURLToPath } from "url";
+  Step 4077 (2026-06-03T16:23:01Z): import { fileURLToPath } from "url";
+  Step 2250 (2026-06-01T18:26:42Z): import { fileURLToPath } from "url";
+  Step 2111 (2026-06-01T18:22:19Z): import { fileURLToPath } from "url";
+  Step 2095 (2026-06-01T18:20:27Z): import { fileURLToPath } from "url";
+  Step 1976 (2026-06-01T16:58:54Z): import { fileURLToPath } from "url";
+  Step 1353 (2026-05-31T18:27:57Z): import { fileURLToPath } from "url";
+  Step 1082 (2026-05-31T17:47:52Z): import { fileURLToPath } from "url";
+  Step 388 (2026-05-30T14:37:22Z): import { fileURLToPath } from "url";
+  Step 54 (2026-05-29T10:53:39Z): import { fileURLToPath } from "url";
+
+=== Line 5 ===
+  Step 5335 (2026-06-03T22:25:33Z): ◇ injecting env (0) from .env // tip: ⌘ override existing { override: true }
+  Step 4980 (2026-06-03T22:13:57Z): import nodemailer from "nodemailer";
+  Step 4365 (2026-06-03T18:01:02Z): import nodemailer from "nodemailer";
+  Step 4077 (2026-06-03T16:23:01Z): import nodemailer from "nodemailer";
+  Step 2250 (2026-06-01T18:26:42Z): import nodemailer from "nodemailer";
+  Step 2111 (2026-06-01T18:22:19Z): import nodemailer from "nodemailer";
+  Step 2095 (2026-06-01T18:20:27Z): import nodemailer from "nodemailer";
+  Step 1976 (2026-06-01T16:58:54Z): import nodemailer from "nodemailer";
+  Step 1353 (2026-05-31T18:27:57Z): import nodemailer from "nodemailer";
+  Step 1082 (2026-05-31T17:47:52Z): import nodemailer from "nodemailer";
+  Step 388 (2026-05-30T14:37:22Z): import nodemailer from "nodemailer";
+  Step 54 (2026-05-29T10:53:39Z): import nodemailer from "nodemailer";
+
+=== Line 6 ===
+  Step 5335 (2026-06-03T22:25:33Z): Server running on http://localhost:3000
+  Step 4980 (2026-06-03T22:13:57Z): import dotenv from "dotenv";
+  Step 4365 (2026-06-03T18:01:02Z): import dotenv from "dotenv";
+  Step 4077 (2026-06-03T16:23:01Z): import dotenv from "dotenv";
+  Step 2250 (2026-06-01T18:26:42Z): import dotenv from "dotenv";
+  Step 2111 (2026-06-01T18:22:19Z): import dotenv from "dotenv";
+  Step 2095 (2026-06-01T18:20:27Z): import dotenv from "dotenv";
+  Step 1976 (2026-06-01T16:58:54Z): import dotenv from "dotenv";
+  Step 1353 (2026-05-31T18:27:57Z): import dotenv from "dotenv";
+  Step 1082 (2026-05-31T17:47:52Z): import dotenv from "dotenv";
+  Step 388 (2026-05-30T14:37:22Z): import dotenv from "dotenv";
+  Step 54 (2026-05-29T10:53:39Z): import dotenv from "dotenv";
+
+=== Line 7 ===
+  Step 5335 (2026-06-03T22:25:33Z): Initialized messages database with 14 mock communications.
+  Step 4980 (2026-06-03T22:13:57Z): import {
+  Step 4365 (2026-06-03T18:01:02Z): import { getLeads, saveLead, updateLead, Lead, getCustomers, saveCustomer, updateCustomer, Customer } from "./src/services/dbService";
+  Step 4077 (2026-06-03T16:23:01Z): import { getLeads, saveLead, updateLead, Lead, getCustomers, saveCustomer, updateCustomer, Customer } from "./src/services/dbService";
+  Step 2250 (2026-06-01T18:26:42Z): import { getLeads, saveLead, updateLead, Lead, getCustomers, saveCustomer, updateCustomer, Customer } from "./src/services/dbService";
+  Step 2111 (2026-06-01T18:22:19Z): import { getLeads, saveLead, updateLead, Lead, getCustomers, saveCustomer, updateCustomer, Customer } from "./src/services/dbService";
+  Step 2095 (2026-06-01T18:20:27Z): import { getLeads, saveLead, updateLead, Lead } from "./src/services/dbService";
+  Step 1976 (2026-06-01T16:58:54Z): import { getLeads, saveLead, Lead } from "./src/services/dbService";
+  Step 1353 (2026-05-31T18:27:57Z): import { getLeads, saveLead, Lead } from "./src/services/dbService";
+  Step 1082 (2026-05-31T17:47:52Z): 
+  Step 388 (2026-05-30T14:37:22Z): 
+  Step 54 (2026-05-29T10:53:39Z): 
+
+=== Line 8 ===
+  Step 5335 (2026-06-03T22:25:33Z): 
+  Step 4980 (2026-06-03T22:13:57Z):   getLeads,
+  Step 4365 (2026-06-03T18:01:02Z): 
+  Step 4077 (2026-06-03T16:23:01Z): 
+  Step 2250 (2026-06-01T18:26:42Z): 
+  Step 2111 (2026-06-01T18:22:19Z): 
+  Step 2095 (2026-06-01T18:20:27Z): 
+  Step 1976 (2026-06-01T16:58:54Z): 
+  Step 1353 (2026-05-31T18:27:57Z): 
+  Step 1082 (2026-05-31T17:47:52Z): const __filename = fileURLToPath(import.meta.url);
+  Step 388 (2026-05-30T14:37:22Z): const __filename = fileURLToPath(import.meta.url);
+  Step 54 (2026-05-29T10:53:39Z): const __filename = fileURLToPath(import.meta.url);
+
+=== Line 9 ===
+  Step 5335 (2026-06-03T22:25:33Z): 
+  Step 4980 (2026-06-03T22:13:57Z):   saveLead,
+  Step 4365 (2026-06-03T18:01:02Z): const __filename = fileURLToPath(import.meta.url);
+  Step 4077 (2026-06-03T16:23:01Z): const __filename = fileURLToPath(import.meta.url);
+  Step 2250 (2026-06-01T18:26:42Z): const __filename = fileURLToPath(import.meta.url);
+  Step 2111 (2026-06-01T18:22:19Z): const __filename = fileURLToPath(import.meta.url);
+  Step 2095 (2026-06-01T18:20:27Z): const __filename = fileURLToPath(import.meta.url);
+  Step 1976 (2026-06-01T16:58:54Z): const __filename = fileURLToPath(import.meta.url);
+  Step 1353 (2026-05-31T18:27:57Z): const __filename = fileURLToPath(import.meta.url);
+  Step 1082 (2026-05-31T17:47:52Z): const __dirname = path.dirname(__filename);
+  Step 388 (2026-05-30T14:37:22Z): const __dirname = path.dirname(__filename);
+  Step 54 (2026-05-29T10:53:39Z): const __dirname = path.dirname(__filename);
+
+=== Line 10 ===
+  Step 5335 (2026-06-03T22:25:33Z): 
+  Step 4980 (2026-06-03T22:13:57Z):   updateLead,
+  Step 4365 (2026-06-03T18:01:02Z): const __dirname = path.dirname(__filename);
+  Step 4077 (2026-06-03T16:23:01Z): const __dirname = path.dirname(__filename);
+  Step 2250 (2026-06-01T18:26:42Z): const __dirname = path.dirname(__filename);
+  Step 2111 (2026-06-01T18:22:19Z): const __dirname = path.dirname(__filename);
+  Step 2095 (2026-06-01T18:20:27Z): const __dirname = path.dirname(__filename);
+  Step 1976 (2026-06-01T16:58:54Z): const __dirname = path.dirname(__filename);
+  Step 1353 (2026-05-31T18:27:57Z): const __dirname = path.dirname(__filename);
+  Step 1082 (2026-05-31T17:47:52Z): 
+  Step 388 (2026-05-30T14:37:22Z): 
+  Step 54 (2026-05-29T10:53:39Z): 
+
+=== Line 11 ===
+  Step 5335 (2026-06-03T22:25:33Z): 
+  Step 4980 (2026-06-03T22:13:57Z):   Lead,
+  Step 4365 (2026-06-03T18:01:02Z): 
+  Step 4077 (2026-06-03T16:23:01Z): 
+  Step 2250 (2026-06-01T18:26:42Z): 
+  Step 2111 (2026-06-01T18:22:19Z): 
+  Step 2095 (2026-06-01T18:20:27Z): 
+  Step 1976 (2026-06-01T16:58:54Z): 
+  Step 1353 (2026-05-31T18:27:57Z): 
+  Step 1082 (2026-05-31T17:47:52Z): // Load environment variables
+  Step 388 (2026-05-30T14:37:22Z): // Load environment variables
+  Step 54 (2026-05-29T10:53:39Z): // Load environment variables
+
+=== Line 12 ===
+  Step 5335 (2026-06-03T22:25:33Z): 
+  Step 4980 (2026-06-03T22:13:57Z):   getCustomers,
+  Step 4365 (2026-06-03T18:01:02Z): // Load environment variables
+  Step 4077 (2026-06-03T16:23:01Z): // Load environment variables
+  Step 2250 (2026-06-01T18:26:42Z): // Load environment variables
+  Step 2111 (2026-06-01T18:22:19Z): // Load environment variables
+  Step 2095 (2026-06-01T18:20:27Z): // Load environment variables
+  Step 1976 (2026-06-01T16:58:54Z): // Load environment variables
+  Step 1353 (2026-05-31T18:27:57Z): // Load environment variables
+  Step 1082 (2026-05-31T17:47:52Z): dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
+  Step 388 (2026-05-30T14:37:22Z): dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
+  Step 54 (2026-05-29T10:53:39Z): dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
+
+=== Line 13 ===
+  Step 5335 (2026-06-03T22:25:33Z): 
+  Step 4980 (2026-06-03T22:13:57Z):   saveCustomer,
+  Step 4365 (2026-06-03T18:01:02Z): dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
+  Step 4077 (2026-06-03T16:23:01Z): dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
+  Step 2250 (2026-06-01T18:26:42Z): dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
+  Step 2111 (2026-06-01T18:22:19Z): dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
+  Step 2095 (2026-06-01T18:20:27Z): dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
+  Step 1976 (2026-06-01T16:58:54Z): dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
+  Step 1353 (2026-05-31T18:27:57Z): dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
+  Step 1082 (2026-05-31T17:47:52Z): dotenv.config();
+  Step 388 (2026-05-30T14:37:22Z): dotenv.config();
+  Step 54 (2026-05-29T10:53:39Z): dotenv.config();
+
+=== Line 14 ===
+  Step 5335 (2026-06-03T22:25:33Z): 
+  Step 4980 (2026-06-03T22:13:57Z):   updateCustomer,
+  Step 4365 (2026-06-03T18:01:02Z): dotenv.config();
+  Step 4077 (2026-06-03T16:23:01Z): dotenv.config();
+  Step 2250 (2026-06-01T18:26:42Z): dotenv.config();
+  Step 2111 (2026-06-01T18:22:19Z): dotenv.config();
+  Step 2095 (2026-06-01T18:20:27Z): dotenv.config();
+  Step 1976 (2026-06-01T16:58:54Z): dotenv.config();
+  Step 1353 (2026-05-31T18:27:57Z): dotenv.config();
+  Step 1082 (2026-05-31T17:47:52Z): 
+  Step 388 (2026-05-30T14:37:22Z): 
+  Step 54 (2026-05-29T10:53:39Z): 
+
+=== Line 15 ===
+  Step 5335 (2026-06-03T22:25:33Z): 2:25:47 PM [vite] (client) hmr update /src/pages/Admin.tsx, /src/index.css
+  Step 4980 (2026-06-03T22:13:57Z):   Customer,
+  Step 4365 (2026-06-03T18:01:02Z): 
+  Step 4077 (2026-06-03T16:23:01Z): 
+  Step 2250 (2026-06-01T18:26:42Z): 
+  Step 2111 (2026-06-01T18:22:19Z): 
+  Step 2095 (2026-06-01T18:20:27Z): 
+  Step 1976 (2026-06-01T16:58:54Z): 
+  Step 1353 (2026-05-31T18:27:57Z): 
+  Step 1082 (2026-05-31T17:47:52Z): // Create Nodemailer transporter
+  Step 388 (2026-05-30T14:37:22Z): // Create Nodemailer transporter
+  Step 54 (2026-05-29T10:53:39Z): // Create Nodemailer transporter
+
+=== Line 16 ===
+  Step 5335 (2026-06-03T22:25:33Z): 
+  Step 4980 (2026-06-03T22:13:57Z):   getMessages,
+  Step 4365 (2026-06-03T18:01:02Z): // Create Nodemailer transporter
+  Step 4077 (2026-06-03T16:23:01Z): // Create Nodemailer transporter
+  Step 2250 (2026-06-01T18:26:42Z): // Create Nodemailer transporter
+  Step 2111 (2026-06-01T18:22:19Z): // Create Nodemailer transporter
+  Step 2095 (2026-06-01T18:20:27Z): // Create Nodemailer transporter
+  Step 1976 (2026-06-01T16:58:54Z): // Create Nodemailer transporter
+  Step 1353 (2026-05-31T18:27:57Z): // Create Nodemailer transporter
+  Step 1082 (2026-05-31T17:47:52Z): const transporter = nodemailer.createTransport({
+  Step 388 (2026-05-30T14:37:22Z): const transporter = nodemailer.createTransport({
+  Step 54 (2026-05-29T10:53:39Z): const transporter = nodemailer.createTransport({
+
+=== Line 17 ===
+  Step 5335 (2026-06-03T22:25:33Z): 
+  Step 4980 (2026-06-03T22:13:57Z):   saveMessage,
+  Step 4365 (2026-06-03T18:01:02Z): const transporter = nodemailer.createTransport({
+  Step 4077 (2026-06-03T16:23:01Z): const transporter = nodemailer.createTransport({
+  Step 2250 (2026-06-01T18:26:42Z): const transporter = nodemailer.createTransport({
+  Step 2111 (2026-06-01T18:22:19Z): const transporter = nodemailer.createTransport({
+  Step 2095 (2026-06-01T18:20:27Z): const transporter = nodemailer.createTransport({
+  Step 1976 (2026-06-01T16:58:54Z): const transporter = nodemailer.createTransport({
+  Step 1353 (2026-05-31T18:27:57Z): const transporter = nodemailer.createTransport({
+  Step 1082 (2026-05-31T17:47:52Z):   host: process.env.SMTP_HOST || "smtp.gmail.com",
+  Step 388 (2026-05-30T14:37:22Z):   host: process.env.SMTP_HOST || "smtp.gmail.com",
+  Step 54 (2026-05-29T10:53:39Z):   host: process.env.SMTP_HOST || "smtp.gmail.com",
+
+=== Line 18 ===
+  Step 5335 (2026-06-03T22:25:33Z): 
+  Step 4980 (2026-06-03T22:13:57Z):   markMessagesAsRead,
+  Step 4365 (2026-06-03T18:01:02Z):   host: process.env.SMTP_HOST || "smtp.gmail.com",
+  Step 4077 (2026-06-03T16:23:01Z):   host: process.env.SMTP_HOST || "smtp.gmail.com",
+  Step 2250 (2026-06-01T18:26:42Z):   host: process.env.SMTP_HOST || "smtp.gmail.com",
+  Step 2111 (2026-06-01T18:22:19Z):   host: process.env.SMTP_HOST || "smtp.gmail.com",
+  Step 2095 (2026-06-01T18:20:27Z):   host: process.env.SMTP_HOST || "smtp.gmail.com",
+  Step 1976 (2026-06-01T16:58:54Z):   host: process.env.SMTP_HOST || "smtp.gmail.com",
+  Step 1353 (2026-05-31T18:27:57Z):   host: process.env.SMTP_HOST || "smtp.gmail.com",
+  Step 1082 (2026-05-31T17:47:52Z):   port: parseInt(process.env.SMTP_PORT || "587"),
+  Step 388 (2026-05-30T14:37:22Z):   port: parseInt(process.env.SMTP_PORT || "587"),
+  Step 54 (2026-05-29T10:53:39Z):   port: parseInt(process.env.SMTP_PORT || "587"),
+
+=== Line 19 ===
+  Step 5335 (2026-06-03T22:25:33Z): 
+  Step 4980 (2026-06-03T22:13:57Z):   Message,
+  Step 4365 (2026-06-03T18:01:02Z):   port: parseInt(process.env.SMTP_PORT || "587"),
+  Step 4077 (2026-06-03T16:23:01Z):   port: parseInt(process.env.SMTP_PORT || "587"),
+  Step 2250 (2026-06-01T18:26:42Z):   port: parseInt(process.env.SMTP_PORT || "587"),
+  Step 2111 (2026-06-01T18:22:19Z):   port: parseInt(process.env.SMTP_PORT || "587"),
+  Step 2095 (2026-06-01T18:20:27Z):   port: parseInt(process.env.SMTP_PORT || "587"),
+  Step 1976 (2026-06-01T16:58:54Z):   port: parseInt(process.env.SMTP_PORT || "587"),
+  Step 1353 (2026-05-31T18:27:57Z):   port: parseInt(process.env.SMTP_PORT || "587"),
+  Step 1082 (2026-05-31T17:47:52Z):   secure: process.env.SMTP_SECURE === "true",
+  Step 388 (2026-05-30T14:37:22Z):   secure: process.env.SMTP_SECURE === "true",
+  Step 54 (2026-05-29T10:53:39Z):   secure: process.env.SMTP_SECURE === "true",
+
+=== Line 20 ===
+  Step 5335 (2026-06-03T22:25:33Z): 
+  Step 4980 (2026-06-03T22:13:57Z):   CustomerFile
+  Step 4365 (2026-06-03T18:01:02Z):   secure: process.env.SMTP_SECURE === "true",
+  Step 4077 (2026-06-03T16:23:01Z):   secure: process.env.SMTP_SECURE === "true",
+  Step 2250 (2026-06-01T18:26:42Z):   secure: process.env.SMTP_SECURE === "true",
+  Step 2111 (2026-06-01T18:22:19Z):   secure: process.env.SMTP_SECURE === "true",
+  Step 2095 (2026-06-01T18:20:27Z):   secure: process.env.SMTP_SECURE === "true",
+  Step 1976 (2026-06-01T16:58:54Z):   secure: process.env.SMTP_SECURE === "true",
+  Step 1353 (2026-05-31T18:27:57Z):   secure: process.env.SMTP_SECURE === "true",
+  Step 1082 (2026-05-31T17:47:52Z):   auth: {
+  Step 388 (2026-05-30T14:37:22Z):   auth: {
+  Step 54 (2026-05-29T10:53:39Z):   auth: {
+
+=== Line 21 ===
+  Step 4980 (2026-06-03T22:13:57Z): } from "./src/services/dbService";
+  Step 4365 (2026-06-03T18:01:02Z):   auth: {
+  Step 4077 (2026-06-03T16:23:01Z):   auth: {
+  Step 2250 (2026-06-01T18:26:42Z):   auth: {
+  Step 2111 (2026-06-01T18:22:19Z):   auth: {
+  Step 2095 (2026-06-01T18:20:27Z):   auth: {
+  Step 1976 (2026-06-01T16:58:54Z):   auth: {
+  Step 1353 (2026-05-31T18:27:57Z):   auth: {
+  Step 1082 (2026-05-31T17:47:52Z):     user: process.env.SMTP_USER,
+  Step 388 (2026-05-30T14:37:22Z):     user: process.env.SMTP_USER,
+  Step 54 (2026-05-29T10:53:39Z):     user: process.env.SMTP_USER,
+
+=== Line 22 ===
+  Step 4980 (2026-06-03T22:13:57Z): 
+  Step 4365 (2026-06-03T18:01:02Z):     user: process.env.SMTP_USER,
+  Step 4077 (2026-06-03T16:23:01Z):     user: process.env.SMTP_USER,
+  Step 2250 (2026-06-01T18:26:42Z):     user: process.env.SMTP_USER,
+  Step 2111 (2026-06-01T18:22:19Z):     user: process.env.SMTP_USER,
+  Step 2095 (2026-06-01T18:20:27Z):     user: process.env.SMTP_USER,
+  Step 1976 (2026-06-01T16:58:54Z):     user: process.env.SMTP_USER,
+  Step 1353 (2026-05-31T18:27:57Z):     user: process.env.SMTP_USER,
+  Step 1082 (2026-05-31T17:47:52Z):     pass: process.env.SMTP_PASS,
+  Step 388 (2026-05-30T14:37:22Z):     pass: process.env.SMTP_PASS,
+  Step 54 (2026-05-29T10:53:39Z):     pass: process.env.SMTP_PASS,
+
+=== Line 23 ===
+  Step 4980 (2026-06-03T22:13:57Z): const __filename = fileURLToPath(import.meta.url);
+  Step 4365 (2026-06-03T18:01:02Z):     pass: process.env.SMTP_PASS,
+  Step 4077 (2026-06-03T16:23:01Z):     pass: process.env.SMTP_PASS,
+  Step 2250 (2026-06-01T18:26:42Z):     pass: process.env.SMTP_PASS,
+  Step 2111 (2026-06-01T18:22:19Z):     pass: process.env.SMTP_PASS,
+  Step 2095 (2026-06-01T18:20:27Z):     pass: process.env.SMTP_PASS,
+  Step 1976 (2026-06-01T16:58:54Z):     pass: process.env.SMTP_PASS,
+  Step 1353 (2026-05-31T18:27:57Z):     pass: process.env.SMTP_PASS,
+  Step 1082 (2026-05-31T17:47:52Z):   },
+  Step 388 (2026-05-30T14:37:22Z):   },
+  Step 54 (2026-05-29T10:53:39Z):   },
+
+=== Line 24 ===
+  Step 4980 (2026-06-03T22:13:57Z): const __dirname = path.dirname(__filename);
+  Step 4365 (2026-06-03T18:01:02Z):   },
+  Step 4077 (2026-06-03T16:23:01Z):   },
+  Step 2250 (2026-06-01T18:26:42Z):   },
+  Step 2111 (2026-06-01T18:22:19Z):   },
+  Step 2095 (2026-06-01T18:20:27Z):   },
+  Step 1976 (2026-06-01T16:58:54Z):   },
+  Step 1353 (2026-05-31T18:27:57Z):   },
+  Step 1082 (2026-05-31T17:47:52Z): });
+  Step 388 (2026-05-30T14:37:22Z): });
+  Step 54 (2026-05-29T10:53:39Z): });
+
+=== Line 25 ===
+  Step 4980 (2026-06-03T22:13:57Z): 
+  Step 4365 (2026-06-03T18:01:02Z): });
+  Step 4077 (2026-06-03T16:23:01Z): });
+  Step 2250 (2026-06-01T18:26:42Z): });
+  Step 2111 (2026-06-01T18:22:19Z): });
+  Step 2095 (2026-06-01T18:20:27Z): });
+  Step 1976 (2026-06-01T16:58:54Z): });
+  Step 1353 (2026-05-31T18:27:57Z): });
+  Step 1082 (2026-05-31T17:47:52Z): 
+  Step 388 (2026-05-30T14:37:22Z): 
+  Step 54 (2026-05-29T10:53:39Z): 
+
+=== Line 26 ===
+  Step 4980 (2026-06-03T22:13:57Z): // Load environment variables
+  Step 4365 (2026-06-03T18:01:02Z): 
+  Step 4077 (2026-06-03T16:23:01Z): 
+  Step 2250 (2026-06-01T18:26:42Z): 
+  Step 2111 (2026-06-01T18:22:19Z): 
+  Step 2095 (2026-06-01T18:20:27Z): 
+  Step 1976 (2026-06-01T16:58:54Z): 
+  Step 1353 (2026-05-31T18:27:57Z): 
+  Step 1082 (2026-05-31T17:47:52Z): if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+  Step 388 (2026-05-30T14:37:22Z): if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+  Step 54 (2026-05-29T10:53:39Z): if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+
+=== Line 27 ===
+  Step 4980 (2026-06-03T22:13:57Z): dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
+  Step 4365 (2026-06-03T18:01:02Z): if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+  Step 4077 (2026-06-03T16:23:01Z): if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+  Step 2250 (2026-06-01T18:26:42Z): if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+  Step 2111 (2026-06-01T18:22:19Z): if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+  Step 2095 (2026-06-01T18:20:27Z): if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+  Step 1976 (2026-06-01T16:58:54Z): if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+  Step 1353 (2026-05-31T18:27:57Z): if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+  Step 1082 (2026-05-31T17:47:52Z):   console.warn("SMTP credentials (SMTP_USER/SMTP_PASS) are not defined. Lead notification emails will be skipped.");
+  Step 388 (2026-05-30T14:37:22Z):   console.warn("SMTP credentials (SMTP_USER/SMTP_PASS) are not defined. Lead notification emails will be skipped.");
+  Step 54 (2026-05-29T10:53:39Z):   console.warn("SMTP credentials (SMTP_USER/SMTP_PASS) are not defined. Lead notification emails will be skipped.");
+
+=== Line 28 ===
+  Step 4980 (2026-06-03T22:13:57Z): dotenv.config();
+  Step 4365 (2026-06-03T18:01:02Z):   console.warn("SMTP credentials (SMTP_USER/SMTP_PASS) are not defined. Lead notification emails will be skipped.");
+  Step 4077 (2026-06-03T16:23:01Z):   console.warn("SMTP credentials (SMTP_USER/SMTP_PASS) are not defined. Lead notification emails will be skipped.");
+  Step 2250 (2026-06-01T18:26:42Z):   console.warn("SMTP credentials (SMTP_USER/SMTP_PASS) are not defined. Lead notification emails will be skipped.");
+  Step 2111 (2026-06-01T18:22:19Z):   console.warn("SMTP credentials (SMTP_USER/SMTP_PASS) are not defined. Lead notification emails will be skipped.");
+  Step 2095 (2026-06-01T18:20:27Z):   console.warn("SMTP credentials (SMTP_USER/SMTP_PASS) are not defined. Lead notification emails will be skipped.");
+  Step 1976 (2026-06-01T16:58:54Z):   console.warn("SMTP credentials (SMTP_USER/SMTP_PASS) are not defined. Lead notification emails will be skipped.");
+  Step 1353 (2026-05-31T18:27:57Z):   console.warn("SMTP credentials (SMTP_USER/SMTP_PASS) are not defined. Lead notification emails will be skipped.");
+  Step 1082 (2026-05-31T17:47:52Z): }
+  Step 388 (2026-05-30T14:37:22Z): }
+  Step 54 (2026-05-29T10:53:39Z): }
+
+=== Line 29 ===
+  Step 4980 (2026-06-03T22:13:57Z): 
+  Step 4365 (2026-06-03T18:01:02Z): }
+  Step 4077 (2026-06-03T16:23:01Z): }
+  Step 2250 (2026-06-01T18:26:42Z): }
+  Step 2111 (2026-06-01T18:22:19Z): }
+  Step 2095 (2026-06-01T18:20:27Z): }
+  Step 1976 (2026-06-01T16:58:54Z): }
+  Step 1353 (2026-05-31T18:27:57Z): }
+  Step 1082 (2026-05-31T17:47:52Z): 
+  Step 388 (2026-05-30T14:37:22Z): 
+  Step 54 (2026-05-29T10:53:39Z): 
+
+=== Line 30 ===
+  Step 4980 (2026-06-03T22:13:57Z): // Create Nodemailer transporter
+  Step 4365 (2026-06-03T18:01:02Z): 
+  Step 4077 (2026-06-03T16:23:01Z): 
+  Step 2250 (2026-06-01T18:26:42Z): 
+  Step 2111 (2026-06-01T18:22:19Z): 
+  Step 2095 (2026-06-01T18:20:27Z): 
+  Step 2093 (2026-06-01T18:20:26Z): 
+  Step 1976 (2026-06-01T16:58:54Z): 
+  Step 1353 (2026-05-31T18:27:57Z): 
+  Step 1086 (2026-05-31T17:48:01Z): async function startServer() {
+  Step 1082 (2026-05-31T17:47:52Z): async function startServer() {
+  Step 388 (2026-05-30T14:37:22Z): async function startServer() {
+  Step 54 (2026-05-29T10:53:39Z): async function startServer() {
+
+=== Line 31 ===
+  Step 4980 (2026-06-03T22:13:57Z): const transporter = nodemailer.createTransport({
+  Step 4365 (2026-06-03T18:01:02Z): async function startServer() {
+  Step 4077 (2026-06-03T16:23:01Z): async function startServer() {
+  Step 2250 (2026-06-01T18:26:42Z): async function startServer() {
+  Step 2111 (2026-06-01T18:22:19Z): async function startServer() {
+  Step 2093 (2026-06-01T18:20:26Z): async function startServer() {
+  Step 1976 (2026-06-01T16:58:54Z): async function startServer() {
+  Step 1353 (2026-05-31T18:27:57Z): async function startServer() {
+  Step 1086 (2026-05-31T17:48:01Z):   const app = express();
+  Step 1082 (2026-05-31T17:47:52Z):   const app = express();
+  Step 388 (2026-05-30T14:37:22Z):   const app = express();
+  Step 54 (2026-05-29T10:53:39Z):   const app = express();
+
+=== Line 32 ===
+  Step 4980 (2026-06-03T22:13:57Z):   host: process.env.SMTP_HOST || "smtp.gmail.com",
+  Step 4365 (2026-06-03T18:01:02Z):   const app = express();
+  Step 4077 (2026-06-03T16:23:01Z):   const app = express();
+  Step 2250 (2026-06-01T18:26:42Z):   const app = express();
+  Step 2111 (2026-06-01T18:22:19Z):   const app = express();
+  Step 2093 (2026-06-01T18:20:26Z):   const app = express();
+  Step 1976 (2026-06-01T16:58:54Z):   const app = express();
+  Step 1353 (2026-05-31T18:27:57Z):   const app = express();
+  Step 1086 (2026-05-31T17:48:01Z):   const PORT = 3000;
+  Step 1082 (2026-05-31T17:47:52Z):   const PORT = 3000;
+  Step 388 (2026-05-30T14:37:22Z):   const PORT = 3000;
+  Step 54 (2026-05-29T10:53:39Z):   const PORT = 3000;
+
+=== Line 33 ===
+  Step 4980 (2026-06-03T22:13:57Z):   port: parseInt(process.env.SMTP_PORT || "587"),
+  Step 4365 (2026-06-03T18:01:02Z):   const PORT = 3000;
+  Step 4077 (2026-06-03T16:23:01Z):   const PORT = 3000;
+  Step 2250 (2026-06-01T18:26:42Z):   const PORT = 3000;
+  Step 2111 (2026-06-01T18:22:19Z):   const PORT = 3000;
+  Step 2093 (2026-06-01T18:20:26Z):   const PORT = 3000;
+  Step 1976 (2026-06-01T16:58:54Z):   const PORT = 3000;
+  Step 1353 (2026-05-31T18:27:57Z):   const PORT = 3000;
+  Step 1086 (2026-05-31T17:48:01Z): 
+  Step 1082 (2026-05-31T17:47:52Z): 
+  Step 388 (2026-05-30T14:37:22Z): 
+  Step 54 (2026-05-29T10:53:39Z): 
+
+=== Line 34 ===
+  Step 4980 (2026-06-03T22:13:57Z):   secure: process.env.SMTP_SECURE === "true",
+  Step 4365 (2026-06-03T18:01:02Z): 
+  Step 4077 (2026-06-03T16:23:01Z): 
+  Step 2250 (2026-06-01T18:26:42Z): 
+  Step 2111 (2026-06-01T18:22:19Z): 
+  Step 2093 (2026-06-01T18:20:26Z): 
+  Step 1976 (2026-06-01T16:58:54Z): 
+  Step 1353 (2026-05-31T18:27:57Z): 
+  Step 1086 (2026-05-31T17:48:01Z):   app.use(express.json());
+  Step 1082 (2026-05-31T17:47:52Z):   app.use(express.json());
+  Step 388 (2026-05-30T14:37:22Z):   app.use(express.json());
+  Step 54 (2026-05-29T10:53:39Z):   app.use(express.json());
+
+=== Line 35 ===
+  Step 4980 (2026-06-03T22:13:57Z):   auth: {
+  Step 4365 (2026-06-03T18:01:02Z):   app.use(express.json());
+  Step 4077 (2026-06-03T16:23:01Z):   app.use(express.json());
+  Step 2250 (2026-06-01T18:26:42Z):   app.use(express.json());
+  Step 2111 (2026-06-01T18:22:19Z):   app.use(express.json());
+  Step 2093 (2026-06-01T18:20:26Z):   app.use(express.json());
+  Step 1976 (2026-06-01T16:58:54Z):   app.use(express.json());
+  Step 1353 (2026-05-31T18:27:57Z):   app.use(express.json());
+  Step 1086 (2026-05-31T17:48:01Z): 
+  Step 1082 (2026-05-31T17:47:52Z): 
+  Step 1044 (2026-05-31T17:45:02Z): 
+  Step 388 (2026-05-30T14:37:22Z): 
+  Step 54 (2026-05-29T10:53:39Z): 
+
+=== Line 36 ===
+  Step 4980 (2026-06-03T22:13:57Z):     user: process.env.SMTP_USER,
+  Step 4365 (2026-06-03T18:01:02Z): 
+  Step 4077 (2026-06-03T16:23:01Z): 
+  Step 2250 (2026-06-01T18:26:42Z): 
+  Step 2111 (2026-06-01T18:22:19Z): 
+  Step 2093 (2026-06-01T18:20:26Z): 
+  Step 1976 (2026-06-01T16:58:54Z): 
+  Step 1353 (2026-05-31T18:27:57Z): 
+  Step 1086 (2026-05-31T17:48:01Z):   const leads: any[] = [];
+  Step 1082 (2026-05-31T17:47:52Z):   const leads: any[] = [];
+  Step 1044 (2026-05-31T17:45:02Z):   const leads: any[] = [];
+  Step 388 (2026-05-30T14:37:22Z):   const leads: any[] = [];
+  Step 54 (2026-05-29T10:53:39Z):   const leads: any[] = [];
+
+=== Line 37 ===
+  Step 4980 (2026-06-03T22:13:57Z):     pass: process.env.SMTP_PASS,
+  Step 4365 (2026-06-03T18:01:02Z):   // API routes
+  Step 4077 (2026-06-03T16:23:01Z):   // API routes
+  Step 2250 (2026-06-01T18:26:42Z):   // API routes
+  Step 2111 (2026-06-01T18:22:19Z):   // API routes
+  Step 2093 (2026-06-01T18:20:26Z):   // API routes
+  Step 1976 (2026-06-01T16:58:54Z):   // API routes
+  Step 1353 (2026-05-31T18:27:57Z):   // API routes
+  Step 1086 (2026-05-31T17:48:01Z): 
+  Step 1082 (2026-05-31T17:47:52Z): 
+  Step 1044 (2026-05-31T17:45:02Z): 
+  Step 388 (2026-05-30T14:37:22Z): 
+  Step 54 (2026-05-29T10:53:39Z): 
+
+=== Line 38 ===
+  Step 4980 (2026-06-03T22:13:57Z):   },
+  Step 4365 (2026-06-03T18:01:02Z):   app.post("/api/leads", async (req, res) => {
+  Step 4077 (2026-06-03T16:23:01Z):   app.post("/api/leads", async (req, res) => {
+  Step 2723 (2026-06-02T19:07:11Z):   app.post("/api/leads", async (req, res) => {
+  Step 2250 (2026-06-01T18:26:42Z):   app.post("/api/leads", async (req, res) => {
+  Step 2111 (2026-06-01T18:22:19Z):   app.post("/api/leads", async (req, res) => {
+  Step 2093 (2026-06-01T18:20:26Z):   app.post("/api/leads", async (req, res) => {
+  Step 1976 (2026-06-01T16:58:54Z):   app.post("/api/leads", async (req, res) => {
+  Step 1353 (2026-05-31T18:27:57Z):   app.post("/api/leads", async (req, res) => {
+  Step 1086 (2026-05-31T17:48:01Z):   // API routes
+  Step 1082 (2026-05-31T17:47:52Z):   // API routes
+  Step 1044 (2026-05-31T17:45:02Z):   // API routes
+  Step 388 (2026-05-30T14:37:22Z):   // API routes
+  Step 54 (2026-05-29T10:53:39Z):   // API routes
+
+=== Line 39 ===
+  Step 4980 (2026-06-03T22:13:57Z): });
+  Step 4365 (2026-06-03T18:01:02Z):     const raw = req.body;
+  Step 4077 (2026-06-03T16:23:01Z):     const raw = req.body;
+  Step 2723 (2026-06-02T19:07:11Z):     const raw = req.body;
+  Step 2250 (2026-06-01T18:26:42Z):     const raw = req.body;
+  Step 2111 (2026-06-01T18:22:19Z):     const raw = req.body;
+  Step 2093 (2026-06-01T18:20:26Z):     const raw = req.body;
+  Step 1976 (2026-06-01T16:58:54Z):     const raw = req.body;
+  Step 1353 (2026-05-31T18:27:57Z):     const raw = req.body;
+  Step 1086 (2026-05-31T17:48:01Z):   app.post("/api/leads", (req, res) => {
+  Step 1082 (2026-05-31T17:47:52Z):   app.post("/api/leads", (req, res) => {
+  Step 1044 (2026-05-31T17:45:02Z):   app.post("/api/leads", (req, res) => {
+  Step 388 (2026-05-30T14:37:22Z):   app.post("/api/leads", (req, res) => {
+  Step 54 (2026-05-29T10:53:39Z):   app.post("/api/leads", (req, res) => {
+
+=== Line 40 ===
+  Step 4980 (2026-06-03T22:13:57Z): 
+  Step 4365 (2026-06-03T18:01:02Z):     const adminSecret = req.headers['x-admin-secret'];
+  Step 4077 (2026-06-03T16:23:01Z):     const adminSecret = req.headers['x-admin-secret'];
+  Step 2723 (2026-06-02T19:07:11Z):     const adminSecret = req.headers['x-admin-secret'];
+  Step 2250 (2026-06-01T18:26:42Z):     const adminSecret = req.headers['x-admin-secret'];
+  Step 2111 (2026-06-01T18:22:19Z):     const adminSecret = req.headers['x-admin-secret'];
+  Step 2093 (2026-06-01T18:20:26Z): 
+  Step 1976 (2026-06-01T16:58:54Z): 
+  Step 1353 (2026-05-31T18:27:57Z): 
+  Step 1086 (2026-05-31T17:48:01Z):     const leadData = {
+  Step 1082 (2026-05-31T17:47:52Z):     const leadData = {
+  Step 1044 (2026-05-31T17:45:02Z):     const leadData = {
+  Step 388 (2026-05-30T14:37:22Z):     const leadData = {
+  Step 54 (2026-05-29T10:53:39Z):     const leadData = {
+
+=== Line 41 ===
+  Step 4980 (2026-06-03T22:13:57Z): if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
+  Step 4365 (2026-06-03T18:01:02Z):     const isAdmin = adminSecret === 'qi-admin-2026';
+  Step 4077 (2026-06-03T16:23:01Z):     const isAdmin = adminSecret === 'qi-admin-2026';
+  Step 2723 (2026-06-02T19:07:11Z):     const isAdmin = adminSecret === 'qi-admin-2026';
+  Step 2250 (2026-06-01T18:26:42Z):     const isAdmin = adminSecret === 'qi-admin-2026';
+  Step 2111 (2026-06-01T18:22:19Z):     const isAdmin = adminSecret === 'qi-admin-2026';
+  Step 2093 (2026-06-01T18:20:26Z):     // Normalize nested (CalculatorModal) or flat (Results) payload format
+  Step 1976 (2026-06-01T16:58:54Z):     // Normalize nested (CalculatorModal) or flat (Results) payload format
+  Step 1353 (2026-05-31T18:27:57Z):     // Normalize nested (CalculatorModal) or flat (Results) payload format
+  Step 1086 (2026-05-31T17:48:01Z):       ...req.body,
+  Step 1044 (2026-05-31T17:45:02Z):       ...req.body,
+  Step 388 (2026-05-30T14:37:22Z):       ...req.body,
+  Step 54 (2026-05-29T10:53:39Z):       ...req.body,
+
+=== Line 42 ===
+  Step 4980 (2026-06-03T22:13:57Z):   console.warn("SMTP credentials (SMTP_USER/SMTP_PASS) are not defined. Lead notification emails will be skipped.");
+  Step 4365 (2026-06-03T18:01:02Z): 
+  Step 4077 (2026-06-03T16:23:01Z): 
+  Step 2723 (2026-06-02T19:07:11Z): 
+  Step 2250 (2026-06-01T18:26:42Z): 
+  Step 2111 (2026-06-01T18:22:19Z): 
+  Step 2093 (2026-06-01T18:20:26Z):     const name = raw.name || "";
+  Step 1976 (2026-06-01T16:58:54Z):     const name = raw.name || "";
+  Step 1353 (2026-05-31T18:27:57Z):     const name = raw.name || "";
+  Step 1086 (2026-05-31T17:48:01Z):       id: Math.random().toString(36).substr(2, 9),
+  Step 1044 (2026-05-31T17:45:02Z):       id: Math.random().toString(36).substr(2, 9),
+  Step 388 (2026-05-30T14:37:22Z):       id: Math.random().toString(36).substr(2, 9),
+  Step 54 (2026-05-29T10:53:39Z):       id: Math.random().toString(36).substr(2, 9),
+
+=== Line 43 ===
+  Step 4980 (2026-06-03T22:13:57Z): }
+  Step 4365 (2026-06-03T18:01:02Z):     // Normalize nested (CalculatorModal) or flat (Results) payload
+  Step 4077 (2026-06-03T16:23:01Z):     // Normalize nested (CalculatorModal) or flat (Results) payload
+  Step 2723 (2026-06-02T19:07:11Z):     // Normalize nested (CalculatorModal) or flat (Results) payload format
+  Step 2250 (2026-06-01T18:26:42Z):     // Normalize nested (CalculatorModal) or flat (Results) payload
+  Step 2111 (2026-06-01T18:22:19Z):     // Normalize nested (CalculatorModal) or flat (Results) payload
+  Step 2093 (2026-06-01T18:20:26Z):     const email = raw.email || "";
+  Step 1976 (2026-06-01T16:58:54Z):     const email = raw.email || "";
+  Step 1353 (2026-05-31T18:27:57Z):     const email = raw.email || "";
+  Step 1086 (2026-05-31T17:48:01Z):       createdAt: new Date().toISOString()
+  Step 1044 (2026-05-31T17:45:02Z):       createdAt: new Date().toISOString()
+  Step 388 (2026-05-30T14:37:22Z):       createdAt: new Date().toISOString()
+  Step 54 (2026-05-29T10:53:39Z):       createdAt: new Date().toISOString()
+
+=== Line 44 ===
+  Step 4980 (2026-06-03T22:13:57Z): 
+  Step 2723 (2026-06-02T19:07:11Z):     let name = raw.name || "";
+  Step 2093 (2026-06-01T18:20:26Z):     const phone = raw.phone || "";
+  Step 1976 (2026-06-01T16:58:54Z):     const phone = raw.phone || "";
+  Step 1353 (2026-05-31T18:27:57Z):     const phone = raw.phone || "";
+  Step 1086 (2026-05-31T17:48:01Z):     };
+  Step 1044 (2026-05-31T17:45:02Z):     };
+  Step 388 (2026-05-30T14:37:22Z):     };
+  Step 54 (2026-05-29T10:53:39Z):     };
+
+=== Line 45 ===
+  Step 4980 (2026-06-03T22:13:57Z): async function startServer() {
+  Step 2723 (2026-06-02T19:07:11Z):     let email = raw.email || "";
+  Step 2093 (2026-06-01T18:20:26Z):     const notes = raw.notes || raw.state?.notes || "";
+  Step 1976 (2026-06-01T16:58:54Z):     const notes = raw.notes || raw.state?.notes || "";
+  Step 1353 (2026-05-31T18:27:57Z):     const notes = raw.notes || raw.state?.notes || "";
+  Step 1086 (2026-05-31T17:48:01Z):     leads.push(leadData);
+  Step 1044 (2026-05-31T17:45:02Z):     leads.push(leadData);
+  Step 960 (2026-05-31T17:26:30Z):     leads.push(leadData);
+  Step 388 (2026-05-30T14:37:22Z):     leads.push(leadData);
+  Step 54 (2026-05-29T10:53:39Z):     leads.push(leadData);
+
+=== Line 46 ===
+  Step 4980 (2026-06-03T22:13:57Z):   const app = express();
+  Step 2723 (2026-06-02T19:07:11Z):     let phone = raw.phone || "";
+  Step 2093 (2026-06-01T18:20:26Z): 
+  Step 1086 (2026-05-31T17:48:01Z):     console.log("New Lead Received:", leadData);
+  Step 1044 (2026-05-31T17:45:02Z):     console.log("New Lead Received:", leadData);
+  Step 960 (2026-05-31T17:26:30Z):     console.log("New Lead Received:", leadData);
+  Step 388 (2026-05-30T14:37:22Z):     console.log("New Lead Received:", leadData);
+  Step 54 (2026-05-29T10:53:39Z):     console.log("New Lead Received:", leadData);
+
+=== Line 47 ===
+  Step 4980 (2026-06-03T22:13:57Z):   const PORT = 3000;
+  Step 2723 (2026-06-02T19:07:11Z):     const notes = raw.notes || raw.state?.notes || "";
+  Step 2093 (2026-06-01T18:20:26Z):     const state = raw.state || {};
+  Step 1086 (2026-05-31T17:48:01Z): 
+  Step 1044 (2026-05-31T17:45:02Z): 
+  Step 960 (2026-05-31T17:26:30Z): 
+  Step 388 (2026-05-30T14:37:22Z): 
+  Step 54 (2026-05-29T10:53:39Z): 
+
+=== Line 48 ===
+  Step 4980 (2026-06-03T22:13:57Z): 
+  Step 2723 (2026-06-02T19:07:11Z): 
+  Step 2093 (2026-06-01T18:20:26Z): 
+  Step 1086 (2026-05-31T17:48:01Z):     // Send email notification to admin
+  Step 1044 (2026-05-31T17:45:02Z):     // Send email notification to admin
+  Step 960 (2026-05-31T17:26:30Z):     // Send email notification to admin
+  Step 388 (2026-05-30T14:37:22Z):     // Send email notification to admin
+  Step 54 (2026-05-29T10:53:39Z):     // Send email notification to admin
+
+=== Line 49 ===
+  Step 4980 (2026-06-03T22:13:57Z):   app.use(express.json());
+  Step 2723 (2026-06-02T19:07:11Z):     const state = raw.state || {};
+  Step 2093 (2026-06-01T18:20:26Z):     const layout = state.layout || raw.layout || "";
+  Step 1086 (2026-05-31T17:48:01Z):     const mailOptions = {
+  Step 1044 (2026-05-31T17:45:02Z):     const mailOptions = {
+  Step 960 (2026-05-31T17:26:30Z):     const mailOptions = {
+  Step 388 (2026-05-30T14:37:22Z):     const mailOptions = {
+  Step 54 (2026-05-29T10:53:39Z):     const mailOptions = {
+
+=== Line 50 ===
+  Step 4980 (2026-06-03T22:13:57Z): 
+  Step 2723 (2026-06-02T19:07:11Z): 
+  Step 2093 (2026-06-01T18:20:26Z):     const quartzLevel = state.quartzLevel || raw.quartzLevel || "";
+  Step 1086 (2026-05-31T17:48:01Z):       from: process.env.SMTP_FROM || `"Quartz International Leads" <no-reply@quartzinternational.ca>`,
+  Step 1044 (2026-05-31T17:45:02Z):       from: process.env.SMTP_FROM || `"Quartz International Leads" <no-reply@quartzinternational.ca>`,
+  Step 960 (2026-05-31T17:26:30Z):       from: process.env.SMTP_FROM || `"Aura Cabinetry Leads" <no-reply@auracabinetry.ca>`,
+  Step 388 (2026-05-30T14:37:22Z):       fro
+  Step 54 (2026-05-29T10:53:39Z):       fro
+
+=== Line 51 ===
+  Step 4980 (2026-06-03T22:13:57Z):   // API routes
+  Step 2723 (2026-06-02T19:07:11Z):     const layout = state.layout || raw.layout || "";
+  Step 2093 (2026-06-01T18:20:26Z):     const selectedSlab = state.selectedSlab || raw.selectedSlab || "";
+  Step 1086 (2026-05-31T17:48:01Z):       to: process.env.NOTIFICATION_EMAIL || process.env.SMTP_USER || "info@quartzinternational.ca",
+  Step 1044 (2026-05-31T17:45:02Z):       to: process.env.NOTIFICATION_EMAIL || process.env.SMTP_USER || "info@quartzinternational.ca",
+  Step 960 (2026-05-31T17:26:30Z):       to: process.env.NOTIFICATION_EMAIL || process.env.SMTP_USER || "info@auracabinetry.ca",
+
+=== Line 52 ===
+  Step 4980 (2026-06-03T22:13:57Z):   app.post("/api/leads", async (req, res) => {
+  Step 2723 (2026-06-02T19:07:11Z):     const quartzLevel = state.quartzLevel || raw.quartzLevel || "";
+  Step 2093 (2026-06-01T18:20:26Z): 
+  Step 1086 (2026-05-31T17:48:01Z):       subject: `New Lead Captured: ${leadData.name || "Anonymous"}`,
+  Step 1044 (2026-05-31T17:45:02Z):       subject: `New Lead Captured: ${leadData.name || "Anonymous"}`,
+  Step 960 (2026-05-31T17:26:30Z):       subject: `New Lead Captured: ${leadData.name || "Anonymous"}`,
+
+=== Line 53 ===
+  Step 4980 (2026-06-03T22:13:57Z):     const raw = req.body;
+  Step 2723 (2026-06-02T19:07:11Z):     const selectedSlab = state.selectedSlab || raw.selectedSlab || "";
+  Step 2093 (2026-06-01T18:20:26Z):     const countertopSqFt = Number(state.countertopSqFt || raw.countertopSqFt || raw.kitchenSize || 0);
+  Step 1044 (2026-05-31T17:45:02Z):       html: `
+  Step 960 (2026-05-31T17:26:30Z):       html: `
+
+=== Line 54 ===
+  Step 4980 (2026-06-03T22:13:57Z):     const adminSecret = req.header
+  Step 2723 (2026-06-02T19:07:11Z): 
+  Step 2093 (2026-06-01T18:20:26Z):     const hasIsland = Boolean(state.hasIsland || raw.hasIsland || false);
+  Step 1044 (2026-05-31T17:45:02Z):         <h2>New Lead Details</h2>
+  Step 960 (2026-05-31T17:26:30Z):         <h2>New Lead Details</h2>
+
+=== Line 55 ===
+  Step 2723 (2026-06-02T19:07:11Z):     const countertopSqFt = Number(state.countertopSqFt || raw.countertopSqFt || raw.kitchenSize || 0);
+  Step 2093 (2026-06-01T18:20:26Z):     const includeCabinets = Boolean(state.includeCabinets || raw.includeCabinets || false);
+  Step 1044 (2026-05-31T17:45:02Z):         <table border="1" cellpadding="8" style="border-collapse: collapse; width: 100%; max-width: 600px; font-family: sans-serif; border-color: #E5E2DC;">
+  Step 960 (2026-05-31T17:26:30Z):         <table border="1" cellpadding="8" style="border-collapse: collapse; width: 100%; max-width: 600px; font-family: sans-serif; border-color: #E5E2DC;">
+
+=== Line 56 ===
+  Step 2723 (2026-06-02T19:07:11Z):     const hasIsland = Boolean(state.hasIsland || raw.hasIsland || false);
+  Step 2093 (2026-06-01T18:20:26Z):     const cabinetLinearFt = Number(state.cabinetLinearFt || raw.cabinetLinearFt || raw.cabinetSize || 0);
+  Step 1044 (2026-05-31T17:45:02Z):           <tr>
+  Step 960 (2026-05-31T17:26:30Z):           <tr>
+
+=== Line 57 ===
+  Step 2723 (2026-06-02T19:07:11Z):     const includeCabinets = Boolean(state.includeCabinets || raw.includeCabinets || false);
+  Step 2093 (2026-06-01T18:20:26Z):     const cabinetStyle = state.cabinetStyle || raw.cabinetStyle || "";
+  Step 1044 (2026-05-31T17:45:02Z):             <th colspan="2" style="background-color: #C6A87D; color: white; text-align: left; padding: 10px;">Contact Information</th>
+  Step 960 (2026-05-31T17:26:30Z):             <th colspan="2" style="background-color: #C6A87D; color: white; text-align: left; padding: 10px;">Contact Information</th>
+
+=== Line 58 ===
+  Step 2723 (2026-06-02T19:07:11Z):     const cabinetLinearFt = Number(state.cabinetLinearFt || raw.cabinetLinearFt || raw.cabinetSize || 0);
+  Step 2093 (2026-06-01T18:20:26Z):     const timeline = state.timeline || raw.timeline || "";
+  Step 1044 (2026-05-31T17:45:02Z):           </tr>
+  Step 960 (2026-05-31T17:26:30Z):           </tr>
+
+=== Line 59 ===
+  Step 2723 (2026-06-02T19:07:11Z):     const cabinetStyle = state.cabinetStyle || raw.cabinetStyle || "";
+  Step 2093 (2026-06-01T18:20:26Z): 
+  Step 1044 (2026-05-31T17:45:02Z):           <tr>
+  Step 960 (2026-05-31T17:26:30Z):           <tr>
+
+=== Line 60 ===
+  Step 2723 (2026-06-02T19:07:11Z):     const timeline = state.timeline || raw.timeline || "";
+  Step 2093 (2026-06-01T18:20:26Z):     let extras: string[] = [];
+  Step 1044 (2026-05-31T17:45:02Z):             <td><strong>Name</strong></td>
+  Step 960 (2026-05-31T17:26:30Z):             <td><strong>Name</strong></td>
+
+=== Line 61 ===
+  Step 2723 (2026-06-02T19:07:11Z): 
+  Step 2093 (2026-06-01T18:20:26Z):     const rawExtras = state.extras || raw.extras;
+  Step 1044 (2026-05-31T17:45:02Z):             <td>${leadData.name || "N/A"}</td>
+
+=== Line 62 ===
+  Step 2723 (2026-06-02T19:07:11Z):     let extras: string[] = [];
+  Step 2093 (2026-06-01T18:20:26Z):     if (rawExtras) {
+  Step 1044 (2026-05-31T17:45:02Z):           </tr>
+
+=== Line 63 ===
+  Step 2723 (2026-06-02T19:07:11Z):     const rawExtras = state.extras || raw.extras;
+  Step 2093 (2026-06-01T18:20:26Z):       if (Array.isArray(rawExtras)) {
+  Step 1044 (2026-05-31T17:45:02Z):           <tr>
+
+=== Line 64 ===
+  Step 2723 (2026-06-02T19:07:11Z):     if (rawExtras) {
+  Step 2093 (2026-06-01T18:20:26Z):         extras = rawExtras;
+  Step 1044 (2026-05-31T17:45:02Z):             <td><strong>Email</strong></td>
+
+=== Line 65 ===
+  Step 2723 (2026-06-02T19:07:11Z):       if (Array.isArray(rawExtras)) {
+  Step 2093 (2026-06-01T18:20:26Z):       } else {
+  Step 1044 (2026-05-31T17:45:02Z):             <td><a href="mailto:${leadData.email || ""}">${leadData.email || "N/A"}</a></td>
+
+=== Line 66 ===
+  Step 2723 (2026-06-02T19:07:11Z):         extras = rawExtras;
+  Step 2093 (2026-06-01T18:20:26Z):         extras = Object.entries(rawExtras).filter(([_, v]) => v).map(([k]) => k);
+  Step 1044 (2026-05-31T17:45:02Z):           </tr>
+
+=== Line 67 ===
+  Step 2723 (2026-06-02T19:07:11Z):       } else {
+  Step 2093 (2026-06-01T18:20:26Z):       }
+  Step 1044 (2026-05-31T17:45:02Z):           <tr>
+
+=== Line 68 ===
+  Step 2723 (2026-06-02T19:07:11Z):         extras = Object.entries(rawExtras).filter(([_, v]) => v).map(([k]) => k);
+  Step 2093 (2026-06-01T18:20:26Z):     }
+  Step 1044 (2026-05-31T17:45:02Z):             <td><strong>Phone</strong></td>
+
+=== Line 69 ===
+  Step 2723 (2026-06-02T19:07:11Z):       }
+  Step 2093 (2026-06-01T18:20:26Z): 
+  Step 1044 (2026-05-31T17:45:02Z):             <td><a href="tel:${leadData.phone || ""}">${leadData.phone || "N/A"}</a></td>
+
+=== Line 70 ===
+  Step 2723 (2026-06-02T19:07:11Z):     }
+  Step 2093 (2026-06-01T18:20:26Z):     let cabinetExtras: string[] = [];
+  Step 1084 (2026-05-31T17:47:58Z):           </tr>
+  Step 1044 (2026-05-31T17:45:02Z):           </tr>
+
+=== Line 71 ===
+  Step 2723 (2026-06-02T19:07:11Z): 
+  Step 2093 (2026-06-01T18:20:26Z):     const rawCabinetExtras = state.cabinetExtras || raw.cabinetExtras;
+  Step 1084 (2026-05-31T17:47:58Z):           <tr>
+  Step 1044 (2026-05-31T17:45:02Z):           <tr>
+
+=== Line 72 ===
+  Step 2723 (2026-06-02T19:07:11Z): 
+  Step 2093 (2026-06-01T18:20:26Z):     if (rawCabinetExtras) {
+  Step 1084 (2026-05-31T17:47:58Z):             <th colspan="2" style="background-color: #C6A87D; color: white; text-align: left; padding: 10px;">Project Configuration</th>
+  Step 1044 (2026-05-31T17:45:02Z):             <th colspan="2" style="background-color: #C6A87D; color: white; text-align: left; padding: 10px;">Project Configuration</th>
+
+=== Line 73 ===
+  Step 2093 (2026-06-01T18:20:26Z):       if (Array.isArray(rawCabinetExtras)) {
+  Step 1084 (2026-05-31T17:47:58Z):           </tr>
+  Step 1044 (2026-05-31T17:45:02Z):           </tr>
+
+=== Line 74 ===
+  Step 2093 (2026-06-01T18:20:26Z):         cabinetExtras = rawCabinetExtras;
+  Step 1084 (2026-05-31T17:47:58Z):           <tr>
+  Step 1044 (2026-05-31T17:45:02Z):           <tr>
+
+=== Line 75 ===
+  Step 2093 (2026-06-01T18:20:26Z):       } else {
+  Step 1084 (2026-05-31T17:47:58Z):             <td><strong>Layout</strong></td>
+  Step 1044 (2026-05-31T17:45:02Z):             <td><strong>Layout</strong></td>
+
+=== Line 76 ===
+  Step 2093 (2026-06-01T18:20:26Z):         cabinetExtras = Object.entries(rawCabinetExtras).filter(([_, v]) => v).map(([k]) => k);
+  Step 1084 (2026-05-31T17:47:58Z):             <td>${leadData.state?.layout || 'N/A'}</td>
+  Step 1044 (2026-05-31T17:45:02Z):             <td>${leadData.state?.layout || 'N/A'}</td>
+
+=== Line 77 ===
+  Step 2093 (2026-06-01T18:20:26Z):       }
+  Step 1084 (2026-05-31T17:47:58Z):           </tr>
+  Step 1044 (2026-05-31T17:45:02Z):           </tr>
+
+=== Line 78 ===
+  Step 2093 (2026-06-01T18:20:26Z):     }
+  Step 1084 (2026-05-31T17:47:58Z):           <tr>
+  Step 1044 (2026-05-31T17:45:02Z):           <tr>
+
+=== Line 79 ===
+  Step 2093 (2026-06-01T18:20:26Z): 
+  Step 1084 (2026-05-31T17:47:58Z):             <td><strong>Quartz Level</strong></td>
+  Step 1044 (2026-05-31T17:45:02Z):             <td><strong>Quartz Level</strong></td>
+
+=== Line 80 ===
+  Step 2093 (2026-06-01T18:20:26Z):     const results = raw.results || {};
+  Step 1084 (2026-05-31T17:47:58Z):             <td>${leadData.state?.quartzLevel || 'N/A'}</td>
+  Step 1046 (2026-05-31T17:45:05Z):             <td>${leadData.state?.quartzLevel || 'N/A'}</td>
+  Step 1044 (2026-05-31T17:45:02Z):             <td>${leadData.state?.quartzLevel || 'N/A'}</td>
+
+=== Line 81 ===
+  Step 2093 (2026-06-01T18:20:26Z):     const finalPrice = raw.finalPrice || {};
+  Step 1084 (2026-05-31T17:47:58Z):           </tr>
+  Step 1046 (2026-05-31T17:45:05Z):           </tr>
+
+=== Line 82 ===
+  Step 2093 (2026-06-01T18:20:26Z): 
+  Step 1084 (2026-05-31T17:47:58Z):           <tr>
+  Step 1046 (2026-05-31T17:45:05Z):           <tr>
+
+=== Line 83 ===
+  Step 2093 (2026-06-01T18:20:26Z):     const countertopCostLow = Number(results.countertop?.low ?? finalPrice.countertopLow ?? 0);
+  Step 1084 (2026-05-31T17:47:58Z):             <td><strong>Slab Selection</strong></td>
+  Step 1046 (2026-05-31T17:45:05Z):             <td><strong>Slab Selection</strong></td>
+
+=== Line 84 ===
+  Step 2093 (2026-06-01T18:20:26Z):     const countertopCostHigh = Number(results.countertop?.high ?? finalPrice.countertopHigh ?? 0);
+  Step 1084 (2026-05-31T17:47:58Z):             <td>${leadData.state?.selectedSlab || 'None'}</td>
+  Step 1046 (2026-05-31T17:45:05Z):             <td>${leadData.state?.selectedSlab || 'None'}</td>
+
+=== Line 85 ===
+  Step 2093 (2026-06-01T18:20:26Z):     const cabinetCostLow = Number(results.cabinets?.low ?? finalPrice.cabinetLow ?? 0);
+  Step 1084 (2026-05-31T17:47:58Z):           </tr>
+  Step 1046 (2026-05-31T17:45:05Z):           </tr>
+
+=== Line 86 ===
+  Step 2093 (2026-06-01T18:20:26Z):     const cabinetCostHigh = Number(results.cabinets?.high ?? finalPrice.cabinetHigh ?? 0);
+  Step 1084 (2026-05-31T17:47:58Z):           <tr>
+  Step 1046 (2026-05-31T17:45:05Z):           <tr>
+
+=== Line 87 ===
+  Step 2093 (2026-06-01T18:20:26Z):     const totalCostLow = Number(results.total?.low ?? finalPrice.totalLow ?? 0);
+  Step 1084 (2026-05-31T17:47:58Z):             <td><strong>Countertop Size</strong></td>
+  Step 1046 (2026-05-31T17:45:05Z):             <td><strong>Countertop Size</strong></td>
+
+=== Line 88 ===
+  Step 2093 (2026-06-01T18:20:26Z):     const totalCostHigh = Number(results.total?.high ?? finalPrice.totalHigh ?? 0);
+  Step 1084 (2026-05-31T17:47:58Z):             <td>${leadData.state?.countertopSqFt || '0'} sq ft</td>
+  Step 1046 (2026-05-31T17:45:05Z):             <td>${leadData.state?.countertopSqFt || '0'} sq ft</td>
+
+=== Line 89 ===
+  Step 2093 (2026-06-01T18:20:26Z): 
+  Step 1084 (2026-05-31T17:47:58Z):           </tr>
+  Step 1046 (2026-05-31T17:45:05Z):           </tr>
+
+=== Line 90 ===
+  Step 2097 (2026-06-01T18:20:31Z):     const leadData: Lead = {
+  Step 2093 (2026-06-01T18:20:26Z):     const leadData: Lead = {
+  Step 1084 (2026-05-31T17:47:58Z):           <tr>
+  Step 1046 (2026-05-31T17:45:05Z):           <tr>
+
+=== Line 91 ===
+  Step 2097 (2026-06-01T18:20:31Z):       id: Math.random().toString(36).substr(2, 9),
+  Step 2093 (2026-06-01T18:20:26Z):       id: Math.random().toString(36).substr(2, 9),
+  Step 1084 (2026-05-31T17:47:58Z):             <td><strong>Has Island</strong></td>
+  Step 1046 (2026-05-31T17:45:05Z):             <td><strong>Has Island</strong></td>
+
+=== Line 92 ===
+  Step 2097 (2026-06-01T18:20:31Z):       createdAt: new Date().toISOString(),
+  Step 2093 (2026-06-01T18:20:26Z):       createdAt: new Date().toISOString(),
+  Step 1084 (2026-05-31T17:47:58Z):             <td>${leadData.state?.hasIsland ? 'Yes' : 'No'}</td>
+  Step 1046 (2026-05-31T17:45:05Z):             <td>${leadData.state?.hasIsland ? 'Yes' : 'No'}</td>
+
+=== Line 93 ===
+  Step 2097 (2026-06-01T18:20:31Z):       name,
+  Step 2093 (2026-06-01T18:20:26Z):       name,
+  Step 1084 (2026-05-31T17:47:58Z):           </tr>
+  Step 1046 (2026-05-31T17:45:05Z):           </tr>
+
+=== Line 94 ===
+  Step 2097 (2026-06-01T18:20:31Z):       email,
+  Step 2093 (2026-06-01T18:20:26Z):       email,
+  Step 1084 (2026-05-31T17:47:58Z):           <tr>
+  Step 1046 (2026-05-31T17:45:05Z):           <tr>
+
+=== Line 95 ===
+  Step 2097 (2026-06-01T18:20:31Z):       phone,
+  Step 2093 (2026-06-01T18:20:26Z):       phone,
+  Step 1084 (2026-05-31T17:47:58Z):             <td><strong>Include Cabinets</strong></td>
+  Step 1046 (2026-05-31T17:45:05Z):             <td><strong>Include Cabinets</strong></td>
+
+=== Line 96 ===
+  Step 2097 (2026-06-01T18:20:31Z):       notes,
+  Step 2093 (2026-06-01T18:20:26Z):       notes,
+  Step 1084 (2026-05-31T17:47:58Z):             <td>${leadData.state?.includeCabinets ? 'Yes' : 'No'}</td>
+  Step 1046 (2026-05-31T17:45:05Z):             <td>${leadData.state?.includeCabinets ? 'Yes' : 'No'}</td>
+
+=== Line 97 ===
+  Step 2723 (2026-06-02T19:07:11Z):       const customer = customers.find(c => c.id === customerId);
+  Step 2097 (2026-06-01T18:20:31Z):       layout,
+  Step 2093 (2026-06-01T18:20:26Z):       layout,
+  Step 1084 (2026-05-31T17:47:58Z):           </tr>
+  Step 1046 (2026-05-31T17:45:05Z):           </tr>
+
+=== Line 98 ===
+  Step 2723 (2026-06-02T19:07:11Z):       if (customer) {
+  Step 2097 (2026-06-01T18:20:31Z):       quartzLevel,
+  Step 2093 (2026-06-01T18:20:26Z):       quartzLevel,
+  Step 1084 (2026-05-31T17:47:58Z):           ${leadData.state?.includeCabinets ? `
+  Step 1046 (2026-05-31T17:45:05Z):           ${leadData.state?.includeCabinets ? `
+
+=== Line 99 ===
+  Step 2723 (2026-06-02T19:07:11Z):         name = customer.name;
+  Step 2097 (2026-06-01T18:20:31Z):       selectedSlab,
+  Step 2093 (2026-06-01T18:20:26Z):       selectedSlab,
+  Step 1084 (2026-05-31T17:47:58Z):           <tr>
+  Step 1046 (2026-05-31T17:45:05Z):           <tr>
+
+=== Line 100 ===
+  Step 2723 (2026-06-02T19:07:11Z):         email = customer.email;
+  Step 2097 (2026-06-01T18:20:31Z):       countertopSqFt,
+  Step 2093 (2026-06-01T18:20:26Z):       countertopSqFt,
+  Step 1084 (2026-05-31T17:47:58Z):             <td><strong>Cabinet Linear Feet</strong></td>
+  Step 1046 (2026-05-31T17:45:05Z):             <td><strong>Cabinet Linear Feet</strong></td>
+
+=== Line 101 ===
+  Step 2723 (2026-06-02T19:07:11Z):         phone = customer.phone;
+  Step 2097 (2026-06-01T18:20:31Z):       hasIsland,
+  Step 2093 (2026-06-01T18:20:26Z):       hasIsland,
+  Step 1084 (2026-05-31T17:47:58Z):             <td>${leadData.state?.cabinetLinearFt || '0'} ft</td>
+  Step 1046 (2026-05-31T17:45:05Z):             <td>${leadData.state?.cabinetLinearFt || '0'} ft</td>
+
+=== Line 102 ===
+  Step 2723 (2026-06-02T19:07:11Z):       }
+  Step 2097 (2026-06-01T18:20:31Z):       includeCabinets,
+  Step 2093 (2026-06-01T18:20:26Z):       includeCabinets,
+  Step 1084 (2026-05-31T17:47:58Z):           </tr>
+  Step 1046 (2026-05-31T17:45:05Z):           </tr>
+
+=== Line 103 ===
+  Step 2723 (2026-06-02T19:07:11Z):     } else if (email || phone) {
+  Step 2097 (2026-06-01T18:20:31Z):       cabinetLinearFt,
+  Step 2093 (2026-06-01T18:20:26Z):       cabinetLinearFt,
+  Step 1084 (2026-05-31T17:47:58Z):           <tr>
+  Step 1046 (2026-05-31T17:45:05Z):           <tr>
+
+=== Line 104 ===
+  Step 2723 (2026-06-02T19:07:11Z):       // Find or create customer
+  Step 2097 (2026-06-01T18:20:31Z):       cabinetStyle,
+  Step 2093 (2026-06-01T18:20:26Z):       cabinetStyle,
+  Step 1084 (2026-05-31T17:47:58Z):             <td><strong>Cabinet Style</strong></td>
+  Step 1046 (2026-05-31T17:45:05Z):             <td><strong>Cabinet Style</strong></td>
+
+=== Line 105 ===
+  Step 2723 (2026-06-02T19:07:11Z):       const customers = await getCustomers();
+  Step 2097 (2026-06-01T18:20:31Z):       timeline,
+  Step 2093 (2026-06-01T18:20:26Z):       timeline,
+  Step 1084 (2026-05-31T17:47:58Z):             <td>${leadData.state?.cabinetStyle || 'N/A'}</td>
+  Step 1046 (2026-05-31T17:45:05Z):             <td>${leadData.state?.cabinetStyle || 'N/A'}</td>
+
+=== Line 106 ===
+  Step 2723 (2026-06-02T19:07:11Z):       let customer = customers.find(c =>
+  Step 2097 (2026-06-01T18:20:31Z):       extras,
+  Step 2093 (2026-06-01T18:20:26Z):       extras,
+  Step 1084 (2026-05-31T17:47:58Z):           </tr>
+  Step 1046 (2026-05-31T17:45:05Z):           </tr>
+
+=== Line 107 ===
+  Step 2723 (2026-06-02T19:07:11Z):         (email && c.email.toLowerCase() === email.toLowerCase()) ||
+  Step 2097 (2026-06-01T18:20:31Z):       cabinetExtras,
+  Step 2093 (2026-06-01T18:20:26Z):       cabinetExtras,
+  Step 1084 (2026-05-31T17:47:58Z):           ` : ''}
+  Step 1046 (2026-05-31T17:45:05Z):           ` : ''}
+
+=== Line 108 ===
+  Step 2723 (2026-06-02T19:07:11Z):         (phone && c.phone.replace(/\D/g, '') === phone.replace(/\D/g, ''))
+  Step 2097 (2026-06-01T18:20:31Z):       countertopCostLow,
+  Step 2093 (2026-06-01T18:20:26Z):       countertopCostLow,
+  Step 1084 (2026-05-31T17:47:58Z):           <tr>
+  Step 1046 (2026-05-31T17:45:05Z):           <tr>
+
+=== Line 109 ===
+  Step 2723 (2026-06-02T19:07:11Z):       );
+  Step 2097 (2026-06-01T18:20:31Z):       countertopCostHigh,
+  Step 2093 (2026-06-01T18:20:26Z):       countertopCostHigh,
+  Step 1084 (2026-05-31T17:47:58Z):             <td><strong>Selected Extras</strong></td>
+  Step 1046 (2026-05-31T17:45:05Z):             <td><strong>Selected Extras</strong></td>
+
+=== Line 110 ===
+  Step 2723 (2026-06-02T19:07:11Z):       if (customer) {
+  Step 2101 (2026-06-01T18:20:37Z):       cabinetCostLow,
+  Step 2097 (2026-06-01T18:20:31Z):       cabinetCostLow,
+  Step 2093 (2026-06-01T18:20:26Z):       cabinetCostLow,
+  Step 1084 (2026-05-31T17:47:58Z):             <td>${leadData.state?.extras ? Object.entries(leadData.state.extras).filter(([_, v]) => v).map(([k]) => k.replace(/([A-Z])/g, ' $1').trim()).join(', ') : 'None'}</td>
+  Step 1046 (2026-05-31T17:45:05Z):             <td>${leadData.state?.extras ? Object.entries(leadData.state.extras).filter(([_, v]) => v).map(([k]) => k.replace(/([A-Z])/g, ' $1').trim()).join(', ') : 'None'}</td>
+
+=== Line 111 ===
+  Step 2723 (2026-06-02T19:07:11Z):         customerId = customer.id;
+  Step 2101 (2026-06-01T18:20:37Z):       cabinetCostHigh,
+  Step 2097 (2026-06-01T18:20:31Z):       cabinetCostHigh,
+  Step 1084 (2026-05-31T17:47:58Z):           </tr>
+  Step 1046 (2026-05-31T17:45:05Z):           </tr>
+
+=== Line 112 ===
+  Step 2723 (2026-06-02T19:07:11Z):         if (!name) name = customer.name;
+  Step 2101 (2026-06-01T18:20:37Z):       totalCostLow,
+  Step 2097 (2026-06-01T18:20:31Z):       totalCostLow,
+  Step 1084 (2026-05-31T17:47:58Z):           <tr>
+  Step 1046 (2026-05-31T17:45:05Z):           <tr>
+
+=== Line 113 ===
+  Step 2723 (2026-06-02T19:07:11Z):         if (!email) email = customer.email;
+  Step 2101 (2026-06-01T18:20:37Z):       totalCostHigh
+  Step 2097 (2026-06-01T18:20:31Z):       totalCostHigh
+  Step 1084 (2026-05-31T17:47:58Z):             <th colspan="2" style="background-color: #C6A87D; color: white; text-align: left; padding: 10px;">Pricing Estimates</th>
+  Step 1046 (2026-05-31T17:45:05Z):             <th colspan="2" style="background-color: #C6A87D; color: white; text-align: left; padding: 10px;">Pricing Estimates</th>
+
+=== Line 114 ===
+  Step 2723 (2026-06-02T19:07:11Z):         if (!phone) phone = customer.phone;
+  Step 2101 (2026-06-01T18:20:37Z):     };
+  Step 2097 (2026-06-01T18:20:31Z):     };
+  Step 1084 (2026-05-31T17:47:58Z):           </tr>
+  Step 1046 (2026-05-31T17:45:05Z):           </tr>
+
+=== Line 115 ===
+  Step 2723 (2026-06-02T19:07:11Z):       } else {
+  Step 2101 (2026-06-01T18:20:37Z): 
+  Step 2097 (2026-06-01T18:20:31Z): 
+  Step 1084 (2026-05-31T17:47:58Z):           <tr>
+  Step 1046 (2026-05-31T17:45:05Z):           <tr>
+
+=== Line 116 ===
+  Step 2723 (2026-06-02T19:07:11Z):         // Create new customer
+  Step 2101 (2026-06-01T18:20:37Z):     const saved = await saveLead(leadData);
+  Step 2097 (2026-06-01T18:20:31Z):     const saved = await saveLead(leadData);
+  Step 1084 (2026-05-31T17:47:58Z):             <td><strong>Countertop Cost</strong></td>
+  Step 1046 (2026-05-31T17:45:05Z):             <td><strong>Countertop Cost</strong></td>
+
+=== Line 117 ===
+  Step 2723 (2026-06-02T19:07:11Z):         customerId = Math.random().toString(36).substr(2, 9);
+  Step 2101 (2026-06-01T18:20:37Z):     if (saved) {
+  Step 2097 (2026-06-01T18:20:31Z):     if (saved) {
+  Step 1084 (2026-05-31T17:47:58Z):             <td>$${leadData.results?.countertop?.low?.toLocaleString() || '0'} - $${leadData.results?.countertop?.high?.toLocaleString() || '0'}</td>
+  Step 1046 (2026-05-31T17:45:05Z):             <td>$${leadData.results?.countertop?.low?.toLocaleString() || '0'} - $${leadData.results?.countertop?.high?.toLocaleString() || '0'}</td>
+
+=== Line 118 ===
+  Step 2723 (2026-06-02T19:07:11Z):         const newCustomer: Customer = {
+  Step 2101 (2026-06-01T18:20:37Z):       console.log("Lead saved to database successfully:", leadData.id);
+  Step 2097 (2026-06-01T18:20:31Z):       console.log("Lead saved to database successfully:", leadData.id);
+  Step 1084 (2026-05-31T17:47:58Z):           </tr>
+  Step 1046 (2026-05-31T17:45:05Z):           </tr>
+
+=== Line 119 ===
+  Step 2723 (2026-06-02T19:07:11Z):           id: customerId,
+  Step 2101 (2026-06-01T18:20:37Z):     } else {
+  Step 2097 (2026-06-01T18:20:31Z):     } else {
+  Step 1084 (2026-05-31T17:47:58Z):           ${leadData.state?.includeCabinets ? `
+  Step 1046 (2026-05-31T17:45:05Z):           ${leadData.state?.includeCabinets ? `
+
+=== Line 120 ===
+  Step 2723 (2026-06-02T19:07:11Z):           createdAt: new Date().toISOString(),
+  Step 2101 (2026-06-01T18:20:37Z):       console.error("Failed to save lead to database");
+  Step 2097 (2026-06-01T18:20:31Z):       console.error("Failed to save lead to database");
+  Step 1084 (2026-05-31T17:47:58Z):           <tr>
+  Step 1048 (2026-05-31T17:45:09Z):           <tr>
+  Step 1046 (2026-05-31T17:45:05Z):           <tr>
+
+=== Line 121 ===
+  Step 2723 (2026-06-02T19:07:11Z):           name: name || "New Customer",
+  Step 2101 (2026-06-01T18:20:37Z):     }
+  Step 2097 (2026-06-01T18:20:31Z):     }
+  Step 1084 (2026-05-31T17:47:58Z):             <td><strong>Cabinets Cost</strong></td>
+  Step 1048 (2026-05-31T17:45:09Z):             <td><strong>Cabinets Cost</strong></td>
+
+=== Line 122 ===
+  Step 2723 (2026-06-02T19:07:11Z):           email: email || "",
+  Step 2101 (2026-06-01T18:20:37Z): 
+  Step 2097 (2026-06-01T18:20:31Z): 
+  Step 1084 (2026-05-31T17:47:58Z):             <td>$${leadData.results?.cabinets?.low?.toLocaleString() || '0'} - $${leadData.results?.cabinets?.high?.toLocaleString() || '0'}</td>
+  Step 1048 (2026-05-31T17:45:09Z):             <td>$${leadData.results?.cabinets?.low?.toLocaleString() || '0'} - $${leadData.results?.cabinets?.high?.toLocaleString() || '0'}</td>
+
+=== Line 123 ===
+  Step 2723 (2026-06-02T19:07:11Z):           phone: phone || "",
+  Step 2101 (2026-06-01T18:20:37Z):     // Send email notification to admin
+  Step 2097 (2026-06-01T18:20:31Z):     // Send email notification to admin
+  Step 1084 (2026-05-31T17:47:58Z):           </tr>
+  Step 1048 (2026-05-31T17:45:09Z):           </tr>
+
+=== Line 124 ===
+  Step 2723 (2026-06-02T19:07:11Z):           notes: notes || "Automatically created from lead capture."
+  Step 2101 (2026-06-01T18:20:37Z):     const mailOptions = {
+  Step 2097 (2026-06-01T18:20:31Z):     const mailOptions = {
+  Step 1084 (2026-05-31T17:47:58Z):           ` : ''}
+  Step 1048 (2026-05-31T17:45:09Z):           ` : ''}
+
+=== Line 125 ===
+  Step 2723 (2026-06-02T19:07:11Z):         };
+  Step 2101 (2026-06-01T18:20:37Z):       from: process.env.SMTP_FROM || `"Quartz International Leads" <no-reply@quartzinternational.ca>`,
+  Step 2097 (2026-06-01T18:20:31Z):       from: process.env.SMTP_FROM || `"Quartz International Leads" <no-reply@quartzinternational.ca>`,
+  Step 1084 (2026-05-31T17:47:58Z):           <tr style="font-weight: bold; background-color: #f9f9f9;">
+  Step 1048 (2026-05-31T17:45:09Z):           <tr style="font-weight: bold; background-color: #f9f9f9;">
+
+=== Line 126 ===
+  Step 2723 (2026-06-02T19:07:11Z):         await saveCustomer(newCustomer);
+  Step 2101 (2026-06-01T18:20:37Z):       to: process.env.NOTIFICATION_EMAIL || process.env.SMTP_USER || "info@quartzinternational.ca",
+  Step 2097 (2026-06-01T18:20:31Z):       to: process.env.NOTIFICATION_EMAIL || process.env.SMTP_USER || "info@quartzinternational.ca",
+  Step 1084 (2026-05-31T17:47:58Z):             <td><strong>Total Estimated Range</strong></td>
+  Step 1048 (2026-05-31T17:45:09Z):             <td><strong>Total Estimated Range</strong></td>
+
+=== Line 127 ===
+  Step 2723 (2026-06-02T19:07:11Z):       }
+  Step 2097 (2026-06-01T18:20:31Z):       subject: `New Lead Captured: ${leadData.name || "Anonymous"}`,
+  Step 1084 (2026-05-31T17:47:58Z):             <td>$${leadData.results?.total?.low?.toLocaleString() || '0'} - $${leadData.results?.total?.high?.toLocaleString() || '0'}</td>
+  Step 1048 (2026-05-31T17:45:09Z):             <td>$${leadData.results?.total?.low?.toLocaleString() || '0'} - $${leadData.results?.total?.high?.toLocaleString() || '0'}</td>
+
+=== Line 128 ===
+  Step 2723 (2026-06-02T19:07:11Z):     }
+  Step 2097 (2026-06-01T18:20:31Z):       html: `
+  Step 1084 (2026-05-31T17:47:58Z):           </tr>
+  Step 1048 (2026-05-31T17:45:09Z):           </tr>
+  Step 388 (2026-05-30T14:37:22Z):           </tr>
+  Step 54 (2026-05-29T10:53:39Z):           </tr>
+
+=== Line 129 ===
+  Step 2723 (2026-06-02T19:07:11Z): 
+  Step 2097 (2026-06-01T18:20:31Z):         <h2>New Lead Details</h2>
+  Step 1084 (2026-05-31T17:47:58Z):         </table>
+  Step 1048 (2026-05-31T17:45:09Z):         </table>
+  Step 388 (2026-05-30T14:37:22Z):         </table>
+  Step 54 (2026-05-29T10:53:39Z):         </table>
+
+=== Line 130 ===
+  Step 2723 (2026-06-02T19:07:11Z):     const leadData: Lead = {
+  Step 2107 (2026-06-01T18:20:59Z):     const leadData: Lead = {
+  Step 2097 (2026-06-01T18:20:31Z):         <table border="1" cellpadding="8" style="border-collapse: collapse; width: 100%; max-width: 600px; font-family: sans-serif; border-color: #E5E2DC;">
+  Step 1084 (2026-05-31T17:47:58Z):       `,
+  Step 1048 (2026-05-31T17:45:09Z):       `,
+  Step 388 (2026-05-30T14:37:22Z):       `,
+  Step 54 (2026-05-29T10:53:39Z):       `,
+
+=== Line 131 ===
+  Step 2723 (2026-06-02T19:07:11Z):       id: Math.random().toString(36).substr(2, 9),
+  Step 2107 (2026-06-01T18:20:59Z):       id: Math.random().toString(36).substr(2, 9),
+  Step 2097 (2026-06-01T18:20:31Z):           <tr>
+  Step 1084 (2026-05-31T17:47:58Z):     };
+  Step 1048 (2026-05-31T17:45:09Z):     };
+  Step 388 (2026-05-30T14:37:22Z):     };
+  Step 54 (2026-05-29T10:53:39Z):     };
+
+=== Line 132 ===
+  Step 2723 (2026-06-02T19:07:11Z):       createdAt: new Date().toISOString(),
+  Step 2107 (2026-06-01T18:20:59Z):       createdAt: new Date().toISOString(),
+  Step 2097 (2026-06-01T18:20:31Z):             <th colspan="2" style="background-color: #C6A87D; color: white; text-align: left; padding: 10px;">Contact Information</th>
+  Step 1084 (2026-05-31T17:47:58Z): 
+  Step 1048 (2026-05-31T17:45:09Z): 
+  Step 388 (2026-05-30T14:37:22Z): 
+  Step 54 (2026-05-29T10:53:39Z): 
+
+=== Line 133 ===
+  Step 2723 (2026-06-02T19:07:11Z):       name,
+  Step 2107 (2026-06-01T18:20:59Z):       name,
+  Step 2097 (2026-06-01T18:20:31Z):           </tr>
+  Step 1084 (2026-05-31T17:47:58Z):     if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+  Step 1048 (2026-05-31T17:45:09Z):     if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+  Step 388 (2026-05-30T14:37:22Z):     if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+  Step 54 (2026-05-29T10:53:39Z):     if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+
+=== Line 134 ===
+  Step 2723 (2026-06-02T19:07:11Z):       email,
+  Step 2107 (2026-06-01T18:20:59Z):       email,
+  Step 2097 (2026-06-01T18:20:31Z):           <tr>
+  Step 1084 (2026-05-31T17:47:58Z):       transporter.sendMail(mailOptions, (error, info) => {
+  Step 1048 (2026-05-31T17:45:09Z):       transporter.sendMail(mailOptions, (error, info) => {
+  Step 388 (2026-05-30T14:37:22Z):       transporter.sendMail(mailOptions, (error, info) => {
+  Step 54 (2026-05-29T10:53:39Z):       transporter.sendMail(mailOptions, (error, info) => {
+
+=== Line 135 ===
+  Step 2723 (2026-06-02T19:07:11Z):       phone,
+  Step 2107 (2026-06-01T18:20:59Z):       phone,
+  Step 2097 (2026-06-01T18:20:31Z):             <td><strong>Name</strong></td>
+  Step 1084 (2026-05-31T17:47:58Z):         if (error) {
+  Step 1048 (2026-05-31T17:45:09Z):         if (error) {
+  Step 388 (2026-05-30T14:37:22Z):         if (error) {
+  Step 54 (2026-05-29T10:53:39Z):         if (error) {
+
+=== Line 136 ===
+  Step 2723 (2026-06-02T19:07:11Z):       notes,
+  Step 2107 (2026-06-01T18:20:59Z):       notes,
+  Step 2097 (2026-06-01T18:20:31Z):             <td>${leadData.name || "N/A"}</td>
+  Step 1048 (2026-05-31T17:45:09Z):           console.error("Error sending lead notification email:", error);
+  Step 388 (2026-05-30T14:37:22Z):           console.error("Error sending lead notification email:", error);
+  Step 54 (2026-05-29T10:53:39Z):           console.error("Error sending lead notification email:", error);
+
+=== Line 137 ===
+  Step 2723 (2026-06-02T19:07:11Z):       layout,
+  Step 2107 (2026-06-01T18:20:59Z):       layout,
+  Step 2097 (2026-06-01T18:20:31Z):           </tr>
+  Step 1048 (2026-05-31T17:45:09Z):         } else {
+  Step 388 (2026-05-30T14:37:22Z):         } else {
+  Step 54 (2026-05-29T10:53:39Z):         } else {
+
+=== Line 138 ===
+  Step 2723 (2026-06-02T19:07:11Z):       quartzLevel,
+  Step 2107 (2026-06-01T18:20:59Z):       quartzLevel,
+  Step 2097 (2026-06-01T18:20:31Z):           <tr>
+  Step 1048 (2026-05-31T17:45:09Z):           console.log("Lead notification email sent successfully:", info.response);
+  Step 388 (2026-05-30T14:37:22Z):           console.log("Lead notification email sent successfully:", info.response);
+  Step 54 (2026-05-29T10:53:39Z):           console.log("Lead notification email sent successfully:", info.response);
+
+=== Line 139 ===
+  Step 2723 (2026-06-02T19:07:11Z):       selectedSlab,
+  Step 2107 (2026-06-01T18:20:59Z):       selectedSlab,
+  Step 2097 (2026-06-01T18:20:31Z):             <td><strong>Email</strong></td>
+  Step 1048 (2026-05-31T17:45:09Z):         }
+  Step 388 (2026-05-30T14:37:22Z):         }
+  Step 54 (2026-05-29T10:53:39Z):         }
+
+=== Line 140 ===
+  Step 2723 (2026-06-02T19:07:11Z):       countertopSqFt,
+  Step 2107 (2026-06-01T18:20:59Z):       countertopSqFt,
+  Step 2097 (2026-06-01T18:20:31Z):             <td><a href="mailto:${leadData.email || ""}">${leadData.email || "N/A"}</a></td>
+  Step 1048 (2026-05-31T17:45:09Z):       });
+  Step 388 (2026-05-30T14:37:22Z):       });
+  Step 54 (2026-05-29T10:53:39Z):       });
+
+=== Line 141 ===
+  Step 2723 (2026-06-02T19:07:11Z):       hasIsland,
+  Step 2107 (2026-06-01T18:20:59Z):       hasIsland,
+  Step 1048 (2026-05-31T17:45:09Z):     } else {
+  Step 388 (2026-05-30T14:37:22Z):     } else {
+  Step 54 (2026-05-29T10:53:39Z):     } else {
+
+=== Line 142 ===
+  Step 2723 (2026-06-02T19:07:11Z):       includeCabinets,
+  Step 2107 (2026-06-01T18:20:59Z):       includeCabinets,
+  Step 1048 (2026-05-31T17:45:09Z):       console.log("Skipping email notification: SMTP credentials are not configured.");
+  Step 388 (2026-05-30T14:37:22Z):       console.log("Skipping email notification: SMTP credentials are not configured.");
+  Step 54 (2026-05-29T10:53:39Z):       console.log("Skipping email notification: SMTP credentials are not configured.");
+
+=== Line 143 ===
+  Step 2723 (2026-06-02T19:07:11Z):       cabinetLinearFt,
+  Step 2107 (2026-06-01T18:20:59Z):       cabinetLinearFt,
+  Step 1048 (2026-05-31T17:45:09Z):     }
+  Step 388 (2026-05-30T14:37:22Z):     }
+  Step 54 (2026-05-29T10:53:39Z):     }
+
+=== Line 144 ===
+  Step 2723 (2026-06-02T19:07:11Z):       cabinetStyle,
+  Step 2107 (2026-06-01T18:20:59Z):       cabinetStyle,
+  Step 1048 (2026-05-31T17:45:09Z): 
+  Step 388 (2026-05-30T14:37:22Z): 
+  Step 54 (2026-05-29T10:53:39Z): 
+
+=== Line 145 ===
+  Step 2723 (2026-06-02T19:07:11Z):       timeline,
+  Step 2107 (2026-06-01T18:20:59Z):       timeline,
+  Step 1048 (2026-05-31T17:45:09Z):     res.status(201).json({
+  Step 962 (2026-05-31T17:26:33Z):     res.status(201).json({
+  Step 388 (2026-05-30T14:37:22Z):     res.status(201).json({
+  Step 54 (2026-05-29T10:53:39Z):     res.status(201).json({
+
+=== Line 146 ===
+  Step 2723 (2026-06-02T19:07:11Z):       extras,
+  Step 2107 (2026-06-01T18:20:59Z):       extras,
+  Step 1048 (2026-05-31T17:45:09Z):       status: "success",
+  Step 962 (2026-05-31T17:26:33Z):       status: "success",
+  Step 388 (2026-05-30T14:37:22Z):       status: "success",
+  Step 54 (2026-05-29T10:53:39Z):       status: "success",
+
+=== Line 147 ===
+  Step 2723 (2026-06-02T19:07:11Z):       cabinetExtras,
+  Step 2107 (2026-06-01T18:20:59Z):       cabinetExtras,
+  Step 1048 (2026-05-31T17:45:09Z):       message: "Lead captured successfully",
+  Step 962 (2026-05-31T17:26:33Z):       message: "Lead captured successfully",
+  Step 388 (2026-05-30T14:37:22Z):       message: "Lead captured successfully",
+  Step 54 (2026-05-29T10:53:39Z):       message: "Lead captured successfully",
+
+=== Line 148 ===
+  Step 2723 (2026-06-02T19:07:11Z):       countertopCostLow,
+  Step 2107 (2026-06-01T18:20:59Z):       countertopCostLow,
+  Step 1048 (2026-05-31T17:45:09Z):       leadId: leadData.id
+  Step 962 (2026-05-31T17:26:33Z):       leadId: leadData.id
+  Step 388 (2026-05-30T14:37:22Z):       leadId: leadData.id
+  Step 54 (2026-05-29T10:53:39Z):       leadId: leadData.id
+
+=== Line 149 ===
+  Step 2723 (2026-06-02T19:07:11Z):       countertopCostHigh,
+  Step 2107 (2026-06-01T18:20:59Z):       countertopCostHigh,
+  Step 1048 (2026-05-31T17:45:09Z):     });
+  Step 962 (2026-05-31T17:26:33Z):     });
+  Step 388 (2026-05-30T14:37:22Z):     });
+  Step 54 (2026-05-29T10:53:39Z):     });
+
+=== Line 150 ===
+  Step 2723 (2026-06-02T19:07:11Z):       cabinetCostLow,
+  Step 2107 (2026-06-01T18:20:59Z):       cabinetCostLow,
+  Step 1184 (2026-05-31T18:06:52Z):             <td><strong>Layout</strong></td>
+  Step 1048 (2026-05-31T17:45:09Z):   });
+  Step 962 (2026-05-31T17:26:33Z):   });
+  Step 388 (2026-05-30T14:37:22Z):   });
+  Step 54 (2026-05-29T10:53:39Z):   });
+
+=== Line 151 ===
+  Step 2727 (2026-06-02T19:07:14Z):       cabinetCostHigh,
+  Step 2107 (2026-06-01T18:20:59Z):       cabinetCostHigh,
+  Step 1184 (2026-05-31T18:06:52Z):             <td>${leadData.layout || 'N/A'}</td>
+  Step 962 (2026-05-31T17:26:33Z): 
+  Step 388 (2026-05-30T14:37:22Z): 
+  Step 54 (2026-05-29T10:53:39Z): 
+
+=== Line 152 ===
+  Step 2727 (2026-06-02T19:07:14Z):       totalCostLow,
+  Step 2107 (2026-06-01T18:20:59Z):       totalCostLow,
+  Step 1184 (2026-05-31T18:06:52Z):           </tr>
+  Step 962 (2026-05-31T17:26:33Z):   app.get("/api/leads", (req, res) => {
+  Step 388 (2026-05-30T14:37:22Z):   app.get("/api/leads", (req, res) => {
+  Step 54 (2026-05-29T10:53:39Z):   app.get("/api/leads", (req, res) => {
+
+=== Line 153 ===
+  Step 2727 (2026-06-02T19:07:14Z):       totalCostHigh,
+  Step 2107 (2026-06-01T18:20:59Z):       totalCostHigh,
+  Step 1184 (2026-05-31T18:06:52Z):           <tr>
+  Step 962 (2026-05-31T17:26:33Z):     // Basic protection: check for a secret header
+  Step 388 (2026-05-30T14:37:22Z):     // Basic protection: check for a secret header
+  Step 54 (2026-05-29T10:53:39Z):     // Basic protection: check for a secret header
+
+=== Line 154 ===
+  Step 2727 (2026-06-02T19:07:14Z):       customerId,
+  Step 2107 (2026-06-01T18:20:59Z):       customerId,
+  Step 1184 (2026-05-31T18:06:52Z):             <td><strong>Quartz Level</strong></td>
+  Step 962 (2026-05-31T17:26:33Z):     const adminSecret = req.headers['x-admin-secret'];
+  Step 388 (2026-05-30T14:37:22Z):     const adminSecret = req.headers['x-admin-secret'];
+  Step 54 (2026-05-29T10:53:39Z):     const adminSecret = req.headers['x-admin-secret'];
+
+=== Line 155 ===
+  Step 2727 (2026-06-02T19:07:14Z): 
+  Step 2107 (2026-06-01T18:20:59Z): 
+  Step 1184 (2026-05-31T18:06:52Z):             <td>${leadData.quartzLevel || 'N/A'}</td>
+  Step 962 (2026-05-31T17:26:33Z):     if (adminSecret !== 'aura-admin-2026') {
+  Step 388 (2026-05-30T14:37:22Z):     if (adminSecret !== 'aura-admin-2026') {
+  Step 54 (2026-05-29T10:53:39Z):     if (adminSecret !== 'aura-admin-2026') {
+
+=== Line 156 ===
+  Step 2727 (2026-06-02T19:07:14Z):       // Admin quote override fields
+  Step 2107 (2026-06-01T18:20:59Z):       // Admin quote override fields
+  Step 1184 (2026-05-31T18:06:52Z):           </tr>
+  Step 962 (2026-05-31T17:26:33Z):       return res.status(401).json({ error: "Unauthorized" });
+  Step 388 (2026-05-30T14:37:22Z):       return res.status(401).json({ error: "Unauthorized" });
+  Step 54 (2026-05-29T10:53:39Z):       return res.status(401).json({ error: "Unauthorized" });
+
+=== Line 157 ===
+  Step 2727 (2026-06-02T19:07:14Z):       quoteStatus: isAdmin && raw.quoteStatus ? raw.quoteStatus : (isAdmin ? 'draft' : undefined),
+  Step 2107 (2026-06-01T18:20:59Z):       quoteStatus: isAdmin && raw.quoteStatus ? raw.quoteStatus : (isAdmin ? 'draft' : undefined),
+  Step 1184 (2026-05-31T18:06:52Z):           <tr>
+  Step 962 (2026-05-31T17:26:33Z):     }
+  Step 388 (2026-05-30T14:37:22Z):     }
+  Step 54 (2026-05-29T10:53:39Z):     }
+
+=== Line 158 ===
+  Step 2727 (2026-06-02T19:07:14Z):       quoteNumber: isAdmin ? raw.quoteNumber : undefined,
+  Step 2107 (2026-06-01T18:20:59Z):       quoteNumber: isAdmin ? raw.quoteNumber : undefined,
+  Step 1184 (2026-05-31T18:06:52Z):             <td><strong>Slab Selection</strong></td>
+  Step 962 (2026-05-31T17:26:33Z):     res.json(leads);
+  Step 388 (2026-05-30T14:37:22Z):     res.json(leads);
+  Step 54 (2026-05-29T10:53:39Z):     res.json(leads);
+
+=== Line 159 ===
+  Step 2727 (2026-06-02T19:07:14Z):       quoteItems: isAdmin ? raw.quoteItems : undefined,
+  Step 2107 (2026-06-01T18:20:59Z):       quoteItems: isAdmin ? raw.quoteItems : undefined,
+  Step 1184 (2026-05-31T18:06:52Z):             <td>${leadData.selectedSlab || 'None'}</td>
+  Step 962 (2026-05-31T17:26:33Z):   });
+  Step 388 (2026-05-30T14:37:22Z):   });
+  Step 54 (2026-05-29T10:53:39Z):   });
+
+=== Line 160 ===
+  Step 2727 (2026-06-02T19:07:14Z):       quoteTaxRate: isAdmin ? Number(raw.quoteTaxRate ?? 0.13) : undefined,
+  Step 2107 (2026-06-01T18:20:59Z):       quoteTaxRate: isAdmin ? Number(raw.quoteTaxRate ?? 0.13) : undefined,
+  Step 1184 (2026-05-31T18:06:52Z):           </tr>
+  Step 962 (2026-05-31T17:26:33Z): 
+  Step 388 (2026-05-30T14:37:22Z): 
+  Step 54 (2026-05-29T10:53:39Z): 
+
+=== Line 161 ===
+  Step 2727 (2026-06-02T19:07:14Z):       quoteDiscount: isAdmin ? Number(raw.quoteDiscount ?? 0) : undefined,
+  Step 2107 (2026-06-01T18:20:59Z):       quoteDiscount: isAdmin ? Number(raw.quoteDiscount ?? 0) : undefined,
+  Step 1184 (2026-05-31T18:06:52Z):           <tr>
+  Step 962 (2026-05-31T17:26:33Z):   app.get("/api/health", (req, res) => {
+  Step 388 (2026-05-30T14:37:22Z):   app.get("/api/health", (req, res) => {
+  Step 54 (2026-05-29T10:53:39Z):   app.get("/api/health", (req, res) => {
+
+=== Line 162 ===
+  Step 2727 (2026-06-02T19:07:14Z):       quoteSubtotal: isAdmin ? Number(raw.quoteSubtotal ?? 0) : undefined,
+  Step 2107 (2026-06-01T18:20:59Z):       quoteSubtotal: isAdmin ? Number(raw.quoteSubtotal ?? 0) : undefined,
+  Step 1184 (2026-05-31T18:06:52Z):             <td><strong>Countertop Size</strong></td>
+  Step 962 (2026-05-31T17:26:33Z):     res.json({ status: "ok" });
+  Step 388 (2026-05-30T14:37:22Z):     res.json({ status: "ok" });
+  Step 54 (2026-05-29T10:53:39Z):     res.json({ status: "ok" });
+
+=== Line 163 ===
+  Step 2727 (2026-06-02T19:07:14Z):       quoteTax: isAdmin ? Number(raw.quoteTax ?? 0) : undefined,
+  Step 2107 (2026-06-01T18:20:59Z):       quoteTax: isAdmin ? Number(raw.quoteTax ?? 0) : undefined,
+  Step 1184 (2026-05-31T18:06:52Z):             <td>${leadData.countertopSqFt || '0'} sq ft</td>
+  Step 962 (2026-05-31T17:26:33Z):   });
+  Step 388 (2026-05-30T14:37:22Z):   });
+  Step 54 (2026-05-29T10:53:39Z):   });
+
+=== Line 164 ===
+  Step 2727 (2026-06-02T19:07:14Z):       quoteTotal: isAdmin ? Number(raw.quoteTotal ?? 0) : undefined,
+  Step 2107 (2026-06-01T18:20:59Z):       quoteTotal: isAdmin ? Number(raw.quoteTotal ?? 0) : undefined,
+  Step 1184 (2026-05-31T18:06:52Z):           </tr>
+  Step 962 (2026-05-31T17:26:33Z): 
+  Step 388 (2026-05-30T14:37:22Z): 
+  Step 54 (2026-05-29T10:53:39Z): 
+
+=== Line 165 ===
+  Step 2727 (2026-06-02T19:07:14Z):     };
+  Step 2107 (2026-06-01T18:20:59Z):     };
+  Step 1184 (2026-05-31T18:06:52Z):           <tr>
+  Step 962 (2026-05-31T17:26:33Z):   // Vite middleware for development
+  Step 388 (2026-05-30T14:37:22Z):   // Vite middleware for development
+  Step 54 (2026-05-29T10:53:39Z):   // Vite middleware for development
+
+=== Line 166 ===
+  Step 2727 (2026-06-02T19:07:14Z): 
+  Step 2107 (2026-06-01T18:20:59Z): 
+  Step 1184 (2026-05-31T18:06:52Z):             <td><strong>Has Island</strong></td>
+  Step 388 (2026-05-30T14:37:22Z):   if (process.env.NODE_ENV !== "production") {
+  Step 54 (2026-05-29T10:53:39Z):   if (process.env.NODE_ENV !== "production") {
+
+=== Line 167 ===
+  Step 2727 (2026-06-02T19:07:14Z):     const saved = await saveLead(leadData);
+  Step 2107 (2026-06-01T18:20:59Z):     const saved = await saveLead(leadData);
+  Step 1184 (2026-05-31T18:06:52Z):             <td>${leadData.hasIsland ? 'Yes' : 'No'}</td>
+  Step 388 (2026-05-30T14:37:22Z):     const vite = await createViteServer({
+  Step 54 (2026-05-29T10:53:39Z):     const vite = await createViteServer({
+
+=== Line 168 ===
+  Step 2727 (2026-06-02T19:07:14Z):     if (saved) {
+  Step 2107 (2026-06-01T18:20:59Z):     if (saved) {
+  Step 1184 (2026-05-31T18:06:52Z):           </tr>
+  Step 388 (2026-05-30T14:37:22Z):       server: { middlewareMode: true },
+  Step 54 (2026-05-29T10:53:39Z):       server: { middlewareMode: true },
+
+=== Line 169 ===
+  Step 2727 (2026-06-02T19:07:14Z):       console.log("Lead saved to database successfully:", leadData.id);
+  Step 2107 (2026-06-01T18:20:59Z):       console.log("Lead saved to database successfully:", leadData.id);
+  Step 1184 (2026-05-31T18:06:52Z):           <tr>
+  Step 388 (2026-05-30T14:37:22Z):       appType: "spa",
+  Step 54 (2026-05-29T10:53:39Z):       appType: "spa",
+
+=== Line 170 ===
+  Step 2727 (2026-06-02T19:07:14Z):     } else {
+  Step 2107 (2026-06-01T18:20:59Z):     } else {
+  Step 1184 (2026-05-31T18:06:52Z):             <td><strong>Include Cabinets</strong></td>
+  Step 388 (2026-05-30T14:37:22Z):     });
+  Step 54 (2026-05-29T10:53:39Z):     });
+
+=== Line 171 ===
+  Step 2727 (2026-06-02T19:07:14Z):       console.error("Failed to save lead to database");
+  Step 2107 (2026-06-01T18:20:59Z):       console.error("Failed to save lead to database");
+  Step 1184 (2026-05-31T18:06:52Z):             <td>${leadData.includeCabinets ? 'Yes' : 'No'}</td>
+  Step 388 (2026-05-30T14:37:22Z):     app.use(vite.middlewares);
+  Step 54 (2026-05-29T10:53:39Z):     app.use(vite.middlewares);
+
+=== Line 172 ===
+  Step 2727 (2026-06-02T19:07:14Z):     }
+  Step 2107 (2026-06-01T18:20:59Z):     }
+  Step 1184 (2026-05-31T18:06:52Z):           </tr>
+  Step 388 (2026-05-30T14:37:22Z):   } else {
+  Step 54 (2026-05-29T10:53:39Z):   } else {
+
+=== Line 173 ===
+  Step 2727 (2026-06-02T19:07:14Z): 
+  Step 2107 (2026-06-01T18:20:59Z): 
+  Step 1184 (2026-05-31T18:06:52Z):           ${leadData.includeCabinets ? `
+  Step 388 (2026-05-30T14:37:22Z):     const distPath = path.join(process.cwd(), 'dist');
+  Step 54 (2026-05-29T10:53:39Z):     const distPath = path.join(process.cwd(), 'dist');
+
+=== Line 174 ===
+  Step 2727 (2026-06-02T19:07:14Z):     if (!isAdmin) {
+  Step 1184 (2026-05-31T18:06:52Z):           <tr>
+  Step 388 (2026-05-30T14:37:22Z):     app.use(express.static(distPath));
+  Step 54 (2026-05-29T10:53:39Z):     app.use(express.static(distPath));
+
+=== Line 175 ===
+  Step 2727 (2026-06-02T19:07:14Z):       // Send email notification to admin
+  Step 1184 (2026-05-31T18:06:52Z):             <td><strong>Cabinet Linear Feet</strong></td>
+  Step 388 (2026-05-30T14:37:22Z):     app.get('*', (req, res) => {
+  Step 54 (2026-05-29T10:53:39Z):     app.get('*', (req, res) => {
+
+=== Line 176 ===
+  Step 2727 (2026-06-02T19:07:14Z):       const mailOptions = {
+  Step 1184 (2026-05-31T18:06:52Z):             <td>${leadData.cabinetLinearFt || '0'} ft</td>
+  Step 388 (2026-05-30T14:37:22Z):       res.sendFile(path.join(distPath, 'index.html'));
+  Step 54 (2026-05-29T10:53:39Z):       res.sendFile(path.join(distPath, 'index.html'));
+
+=== Line 177 ===
+  Step 2727 (2026-06-02T19:07:14Z):         from: process.env.SMTP_FROM || `"Quartz International Leads" <no-reply@quartzinternational.ca>`,
+  Step 1184 (2026-05-31T18:06:52Z):           </tr>
+  Step 388 (2026-05-30T14:37:22Z):     });
+  Step 54 (2026-05-29T10:53:39Z):     });
+
+=== Line 178 ===
+  Step 2727 (2026-06-02T19:07:14Z):         to: process.env.NOTIFICATION_EMAIL || process.env.SMTP_USER || "info@quartzinternational.ca",
+  Step 1184 (2026-05-31T18:06:52Z):           <tr>
+  Step 388 (2026-05-30T14:37:22Z):   }
+  Step 54 (2026-05-29T10:53:39Z):   }
+
+=== Line 179 ===
+  Step 2727 (2026-06-02T19:07:14Z):         subject: `New Lead Captured: ${leadData.name || "Anonymous"}`,
+  Step 1184 (2026-05-31T18:06:52Z):             <td><strong>Cabinet Style</strong></td>
+  Step 388 (2026-05-30T14:37:22Z): 
+  Step 54 (2026-05-29T10:53:39Z): 
+
+=== Line 180 ===
+  Step 5341 (2026-06-03T22:25:44Z):         html: `
+  Step 2727 (2026-06-02T19:07:14Z):         html: `
+  Step 1184 (2026-05-31T18:06:52Z):             <td>${leadData.cabinetStyle || 'N/A'}</td>
+  Step 388 (2026-05-30T14:37:22Z):   app.listen(PORT, "0.0.0.0", () => {
+  Step 54 (2026-05-29T10:53:39Z):   app.listen(PORT, "0.0.0.0", () => {
+
+=== Line 181 ===
+  Step 5341 (2026-06-03T22:25:44Z):           <h2>New Lead Details</h2>
+  Step 2727 (2026-06-02T19:07:14Z):           <h2>New Lead Details</h2>
+  Step 1184 (2026-05-31T18:06:52Z):           </tr>
+  Step 388 (2026-05-30T14:37:22Z):     console.log(`Server running on http://localhost:${PORT}`);
+  Step 54 (2026-05-29T10:53:39Z):     console.log(`Server running on http://localhost:${PORT}`);
+
+=== Line 182 ===
+  Step 5341 (2026-06-03T22:25:44Z):           <table border="1" cellpadding="8" style="border-collapse: collapse; width: 100%; max-w
+  Step 2727 (2026-06-02T19:07:14Z):           <table border="1" cellpadding="8" style="border-collapse: collapse; width: 100%; max-w
+  Step 1184 (2026-05-31T18:06:52Z):           ` : ''}
+  Step 388 (2026-05-30T14:37:22Z):   });
+  Step 54 (2026-05-29T10:53:39Z):   });
+
+=== Line 183 ===
+  Step 5341 (2026-06-03T22:25:44Z):           <tr>
+  Step 1184 (2026-05-31T18:06:52Z):           <tr>
+  Step 388 (2026-05-30T14:37:22Z): }
+  Step 54 (2026-05-29T10:53:39Z): }
+
+=== Line 184 ===
+  Step 5341 (2026-06-03T22:25:44Z):             <td><strong>Selected Extras</strong></td>
+  Step 1184 (2026-05-31T18:06:52Z):             <td><strong>Selected Extras</strong></td>
+  Step 388 (2026-05-30T14:37:22Z): 
+  Step 54 (2026-05-29T10:53:39Z): 
+
+=== Line 185 ===
+  Step 5341 (2026-06-03T22:25:44Z):             <td>${leadData.extras && leadData.extras.length > 0 ? leadData.extras.map(k => k.replace(/([A-Z])/g, ' $1').trim()).join(', ') : 'None'}</td>
+  Step 1184 (2026-05-31T18:06:52Z):             <td>${leadData.extras && leadData.extras.length > 0 ? leadData.extras.map(k => k.replace(/([A-Z])/g, ' $1').trim()).join(', ') : 'None'}</td>
+  Step 388 (2026-05-30T14:37:22Z): startServer();
+  Step 54 (2026-05-29T10:53:39Z): startServer();
+
+=== Line 186 ===
+  Step 5341 (2026-06-03T22:25:44Z):           </tr>
+  Step 1184 (2026-05-31T18:06:52Z):           </tr>
+  Step 388 (2026-05-30T14:37:22Z): 
+  Step 54 (2026-05-29T10:53:39Z): 
+
+=== Line 187 ===
+  Step 5341 (2026-06-03T22:25:44Z): // MISSING LINE 187
+
+=== Line 188 ===
+  Step 5341 (2026-06-03T22:25:44Z): // MISSING LINE 188
+
+=== Line 189 ===
+  Step 5341 (2026-06-03T22:25:44Z): // MISSING LINE 189
+
+=== Line 190 ===
+  Step 5341 (2026-06-03T22:25:44Z): // MISSING LINE 190
+
+=== Line 191 ===
+  Step 5341 (2026-06-03T22:25:44Z): // MISSING LINE 191
+
+=== Line 192 ===
+  Step 5341 (2026-06-03T22:25:44Z): // MISSING LINE 192
+
+=== Line 193 ===
+  Step 5341 (2026-06-03T22:25:44Z): // MISSING LINE 193
+
+=== Line 194 ===
+  Step 5341 (2026-06-03T22:25:44Z): // MISSING LINE 194
+
+=== Line 195 ===
+  Step 5341 (2026-06-03T22:25:44Z): // MISSING LINE 195
+
+=== Line 196 ===
+  Step 5341 (2026-06-03T22:25:44Z): // MISSING LINE 196
+
+=== Line 197 ===
+  Step 5341 (2026-06-03T22:25:44Z): // MISSING LINE 197
+
+=== Line 198 ===
+  Step 5341 (2026-06-03T22:25:44Z): // MISSING LINE 198
+
+=== Line 199 ===
+  Step 5341 (2026-06-03T22:25:44Z): // MISSING LINE 199
+
+=== Line 200 ===
+  Step 5341 (2026-06-03T22:25:44Z):           <tr style="font-weight: bold; background-color: #f9f9f9;">
+  Step 2077 (2026-06-01T18:18:36Z):           <tr style="font-weight: bold; background-color: #f9f9f9;">
+
+=== Line 201 ===
+  Step 5341 (2026-06-03T22:25:44Z):             <td><strong>Total Estimated Range</strong></td>
+  Step 2077 (2026-06-01T18:18:36Z):             <td><strong>Total Estimated Range</strong></td>
+
+=== Line 202 ===
+  Step 5341 (2026-06-03T22:25:44Z):             <td>$${leadData.totalCostLow?.toLocaleString() || '0'} - $${leadData.totalCostHigh?.toLocaleString() || '0'}</td>
+  Step 2077 (2026-06-01T18:18:36Z):             <td>$${leadData.totalCostLow?.toLocaleString() || '0'} - $${leadData.totalCostHigh?.toLocaleString() || '0'}</td>
+
+=== Line 203 ===
+  Step 5341 (2026-06-03T22:25:44Z):           </tr>
+  Step 2077 (2026-06-01T18:18:36Z):           </tr>
+  Step 1976 (2026-06-01T16:58:54Z):           </tr>
+  Step 1353 (2026-05-31T18:27:57Z):           </tr>
+
+=== Line 204 ===
+  Step 5341 (2026-06-03T22:25:44Z):         </table>
+  Step 2077 (2026-06-01T18:18:36Z):         </table>
+  Step 1976 (2026-06-01T16:58:54Z):         </table>
+  Step 1353 (2026-05-31T18:27:57Z):         </table>
+
+=== Line 205 ===
+  Step 5341 (2026-06-03T22:25:44Z):       `,
+  Step 2077 (2026-06-01T18:18:36Z):       `,
+  Step 1976 (2026-06-01T16:58:54Z):       `,
+  Step 1353 (2026-05-31T18:27:57Z):       `,
+
+=== Line 206 ===
+  Step 5341 (2026-06-03T22:25:44Z):     };
+  Step 2077 (2026-06-01T18:18:36Z):     };
+  Step 1976 (2026-06-01T16:58:54Z):     };
+  Step 1353 (2026-05-31T18:27:57Z):     };
+
+=== Line 207 ===
+  Step 5341 (2026-06-03T22:25:44Z): 
+  Step 2077 (2026-06-01T18:18:36Z): 
+  Step 1976 (2026-06-01T16:58:54Z): 
+  Step 1353 (2026-05-31T18:27:57Z): 
+
+=== Line 208 ===
+  Step 5341 (2026-06-03T22:25:44Z):     if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+  Step 2077 (2026-06-01T18:18:36Z):     if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+  Step 1976 (2026-06-01T16:58:54Z):     if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+  Step 1353 (2026-05-31T18:27:57Z):     if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+
+=== Line 209 ===
+  Step 5341 (2026-06-03T22:25:44Z):       transporter.sendMail(mailOptions, (error, info) => {
+  Step 2077 (2026-06-01T18:18:36Z):       transporter.sendMail(mailOptions, (error, info) => {
+  Step 1976 (2026-06-01T16:58:54Z):       transporter.sendMail(mailOptions, (error, info) => {
+  Step 1353 (2026-05-31T18:27:57Z):       transporter.sendMail(mailOptions, (error, info) => {
+
+=== Line 210 ===
+  Step 5341 (2026-06-03T22:25:44Z):         if (error) {
+  Step 2077 (2026-06-01T18:18:36Z):         if (error) {
+  Step 1976 (2026-06-01T16:58:54Z):         if (error) {
+  Step 1353 (2026-05-31T18:27:57Z):         if (error) {
+
+=== Line 211 ===
+  Step 2077 (2026-06-01T18:18:36Z):           console.error("Error sending lead notification email:", error);
+  Step 1976 (2026-06-01T16:58:54Z):           console.error("Error sending lead notification email:", error);
+  Step 1353 (2026-05-31T18:27:57Z):           console.error("Error sending lead notification email:", error);
+
+=== Line 212 ===
+  Step 2077 (2026-06-01T18:18:36Z):         } else {
+  Step 1976 (2026-06-01T16:58:54Z):         } else {
+  Step 1353 (2026-05-31T18:27:57Z):         } else {
+
+=== Line 213 ===
+  Step 2077 (2026-06-01T18:18:36Z):           console.log("Lead notification email sent successfully:", info.response);
+  Step 1976 (2026-06-01T16:58:54Z):           console.log("Lead notification email sent successfully:", info.response);
+  Step 1353 (2026-05-31T18:27:57Z):           console.log("Lead notification email sent successfully:", info.response);
+
+=== Line 214 ===
+  Step 2077 (2026-06-01T18:18:36Z):         }
+  Step 1976 (2026-06-01T16:58:54Z):         }
+  Step 1353 (2026-05-31T18:27:57Z):         }
+
+=== Line 215 ===
+  Step 2077 (2026-06-01T18:18:36Z):       });
+  Step 1976 (2026-06-01T16:58:54Z):       });
+  Step 1353 (2026-05-31T18:27:57Z):       });
+
+=== Line 216 ===
+  Step 2077 (2026-06-01T18:18:36Z):     } else {
+  Step 1976 (2026-06-01T16:58:54Z):     } else {
+  Step 1353 (2026-05-31T18:27:57Z):     } else {
+
+=== Line 217 ===
+  Step 2111 (2026-06-01T18:22:19Z):           </tr>
+  Step 2107 (2026-06-01T18:20:59Z):           </tr>
+  Step 2077 (2026-06-01T18:18:36Z):       console.log("Skipping email notification: SMTP credentials are not configured.");
+  Step 1976 (2026-06-01T16:58:54Z):       console.log("Skipping email notification: SMTP credentials are not configured.");
+  Step 1353 (2026-05-31T18:27:57Z):       console.log("Skipping email notification: SMTP credentials are not configured.");
+
+=== Line 218 ===
+  Step 2111 (2026-06-01T18:22:19Z):           ${leadData.includeCabinets ? `
+  Step 2107 (2026-06-01T18:20:59Z):           ${leadData.includeCabinets ? `
+  Step 2077 (2026-06-01T18:18:36Z):     }
+  Step 1976 (2026-06-01T16:58:54Z):     }
+  Step 1353 (2026-05-31T18:27:57Z):     }
+
+=== Line 219 ===
+  Step 2111 (2026-06-01T18:22:19Z):           <tr>
+  Step 2107 (2026-06-01T18:20:59Z):           <tr>
+  Step 2077 (2026-06-01T18:18:36Z): 
+  Step 1976 (2026-06-01T16:58:54Z): 
+  Step 1353 (2026-05-31T18:27:57Z): 
+
+=== Line 220 ===
+  Step 2111 (2026-06-01T18:22:19Z):             <td><strong>Cabinets Cost</strong></td>
+  Step 2107 (2026-06-01T18:20:59Z):             <td><strong>Cabinets Cost</strong></td>
+  Step 2077 (2026-06-01T18:18:36Z):     res.status(201).json({
+  Step 1994 (2026-06-01T17:00:30Z):     res.status(201).json({
+  Step 1976 (2026-06-01T16:58:54Z):     res.status(201).json({
+  Step 1353 (2026-05-31T18:27:57Z):     res.status(201).json({
+  Step 1172 (2026-05-31T18:06:23Z):     res.status(201).json({
+
+=== Line 221 ===
+  Step 2111 (2026-06-01T18:22:19Z):             <td>$${leadData.cabinetCostLow?.toLocaleString() || '0'} - $${leadData.cabinetCostHigh?.toLocaleString() || '0'}</td>
+  Step 2107 (2026-06-01T18:20:59Z):             <td>$${leadData.cabinetCostLow?.toLocaleString() || '0'} - $${leadData.cabinetCostHigh?.toLocaleString() || '0'}</td>
+  Step 2077 (2026-06-01T18:18:36Z):       status: "success",
+  Step 1994 (2026-06-01T17:00:30Z):       status: "success",
+  Step 1976 (2026-06-01T16:58:54Z):       status: "success",
+  Step 1353 (2026-05-31T18:27:57Z):       status: "success",
+  Step 1172 (2026-05-31T18:06:23Z):       status: "success",
+
+=== Line 222 ===
+  Step 2111 (2026-06-01T18:22:19Z):           </tr>
+  Step 2107 (2026-06-01T18:20:59Z):           </tr>
+  Step 2077 (2026-06-01T18:18:36Z):       message: "Lead captured successfully",
+  Step 1994 (2026-06-01T17:00:30Z):       message: "Lead captured successfully",
+  Step 1976 (2026-06-01T16:58:54Z):       message: "Lead captured successfully",
+  Step 1353 (2026-05-31T18:27:57Z):       message: "Lead captured successfully",
+  Step 1172 (2026-05-31T18:06:23Z):       message: "Lead captured successfully",
+
+=== Line 223 ===
+  Step 2111 (2026-06-01T18:22:19Z):           ` : ''}
+  Step 2107 (2026-06-01T18:20:59Z):           ` : ''}
+  Step 2077 (2026-06-01T18:18:36Z):       leadId: leadData.id
+  Step 1994 (2026-06-01T17:00:30Z):       leadId: leadData.id
+  Step 1976 (2026-06-01T16:58:54Z):       leadId: leadData.id
+  Step 1353 (2026-05-31T18:27:57Z):       leadId: leadData.id
+  Step 1172 (2026-05-31T18:06:23Z):       leadId: leadData.id
+
+=== Line 224 ===
+  Step 2111 (2026-06-01T18:22:19Z):           <tr style="font-weight: bold; background-color: #f9f9f9;">
+  Step 2107 (2026-06-01T18:20:59Z):           <tr style="font-weight: bold; background-color: #f9f9f9;">
+  Step 2077 (2026-06-01T18:18:36Z):     });
+  Step 1994 (2026-06-01T17:00:30Z):     });
+  Step 1976 (2026-06-01T16:58:54Z):     });
+  Step 1353 (2026-05-31T18:27:57Z):     });
+  Step 1172 (2026-05-31T18:06:23Z):     });
+
+=== Line 225 ===
+  Step 2111 (2026-06-01T18:22:19Z):             <td><strong>Total Estimated Range</strong></td>
+  Step 2107 (2026-06-01T18:20:59Z):             <td><strong>Total Estimated Range</strong></td>
+  Step 2077 (2026-06-01T18:18:36Z):   });
+  Step 1994 (2026-06-01T17:00:30Z):   });
+  Step 1976 (2026-06-01T16:58:54Z):   });
+  Step 1353 (2026-05-31T18:27:57Z):   });
+  Step 1172 (2026-05-31T18:06:23Z):   });
+
+=== Line 226 ===
+  Step 2111 (2026-06-01T18:22:19Z):             <td>$${leadData.totalCostLow?.toLocaleString() || '0'} - $${leadData.totalCostHigh?.toLocaleString() || '0'}</td>
+  Step 2107 (2026-06-01T18:20:59Z):             <td>$${leadData.totalCostLow?.toLocaleString() || '0'} - $${leadData.totalCostHigh?.toLocaleString() || '0'}</td>
+  Step 2077 (2026-06-01T18:18:36Z): 
+  Step 1994 (2026-06-01T17:00:30Z): 
+  Step 1976 (2026-06-01T16:58:54Z): 
+  Step 1353 (2026-05-31T18:27:57Z): 
+  Step 1172 (2026-05-31T18:06:23Z): 
+
+=== Line 227 ===
+  Step 2111 (2026-06-01T18:22:19Z):           </tr>
+  Step 2107 (2026-06-01T18:20:59Z):           </tr>
+  Step 2077 (2026-06-01T18:18:36Z):   // Save or update quote details for a specific lead (Admin Protected)
+  Step 1994 (2026-06-01T17:00:30Z):   });
+  Step 1976 (2026-06-01T16:58:54Z):   app.get("/api/leads", async (req, res) => {
+  Step 1353 (2026-05-31T18:27:57Z):   app.get("/api/leads", async (req, res) => {
+  Step 1172 (2026-05-31T18:06:23Z):   app.get("/api/leads", async (req, res) => {
+
+=== Line 228 ===
+  Step 2111 (2026-06-01T18:22:19Z):         </table>
+  Step 2107 (2026-06-01T18:20:59Z):         </table>
+  Step 2077 (2026-06-01T18:18:36Z):   app.post("/api/leads/:id/quote", async (req, res) => {
+  Step 1994 (2026-06-01T17:00:30Z): 
+  Step 1976 (2026-06-01T16:58:54Z):     // Basic protection: check for a secret header
+  Step 1353 (2026-05-31T18:27:57Z):     // Basic protection: check for a secret header
+  Step 1172 (2026-05-31T18:06:23Z):     // Basic protection: check for a secret header
+
+=== Line 229 ===
+  Step 2111 (2026-06-01T18:22:19Z):       `,
+  Step 2107 (2026-06-01T18:20:59Z):       `,
+  Step 2077 (2026-06-01T18:18:36Z):     const adminSecret = req.headers['x-admin-secret'];
+  Step 1994 (2026-06-01T17:00:30Z):   // Save or update quote details for a specific lead (Admin Protected)
+  Step 1976 (2026-06-01T16:58:54Z):     const adminSecret = req.headers['x-admin-secret'];
+  Step 1353 (2026-05-31T18:27:57Z):     const adminSecret = req.headers['x-admin-secret'];
+  Step 1172 (2026-05-31T18:06:23Z):     const adminSecret = req.headers['x-admin-secret'];
+
+=== Line 230 ===
+  Step 2111 (2026-06-01T18:22:19Z):     };
+  Step 2107 (2026-06-01T18:20:59Z):     };
+  Step 2077 (2026-06-01T18:18:36Z):     if (adminSecret !== 'qi-admin-2026') {
+  Step 1994 (2026-06-01T17:00:30Z):   app.post("/api/leads/:id/quote", async (req, res) => {
+  Step 1976 (2026-06-01T16:58:54Z):     if (adminSecret !== 'qi-admin-2026') {
+  Step 1353 (2026-05-31T18:27:57Z):     if (adminSecret !== 'qi-admin-2026') {
+  Step 1172 (2026-05-31T18:06:23Z):     if (adminSecret !== 'qi-admin-2026') {
+
+=== Line 231 ===
+  Step 2111 (2026-06-01T18:22:19Z): 
+  Step 2107 (2026-06-01T18:20:59Z): 
+  Step 2077 (2026-06-01T18:18:36Z):       return res.status(401).json({ error: "Unauthorized" });
+  Step 1994 (2026-06-01T17:00:30Z):     const adminSecret = req.headers['x-admin-secret'];
+  Step 1976 (2026-06-01T16:58:54Z):       return res.status(401).json({ error: "Unauthorized" });
+  Step 1353 (2026-05-31T18:27:57Z):       return res.status(401).json({ error: "Unauthorized" });
+  Step 1172 (2026-05-31T18:06:23Z):       return res.status(401).json({ error: "Unauthorized" });
+
+=== Line 232 ===
+  Step 2111 (2026-06-01T18:22:19Z):     if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+  Step 2107 (2026-06-01T18:20:59Z):     if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+  Step 2077 (2026-06-01T18:18:36Z):     }
+  Step 1994 (2026-06-01T17:00:30Z):     if (adminSecret !== 'qi-admin-2026') {
+  Step 1976 (2026-06-01T16:58:54Z):     }
+  Step 1353 (2026-05-31T18:27:57Z):     }
+  Step 1172 (2026-05-31T18:06:23Z):     }
+
+=== Line 233 ===
+  Step 2111 (2026-06-01T18:22:19Z):       transporter.sendMail(mailOptions, (error, info) => {
+  Step 2107 (2026-06-01T18:20:59Z):       transporter.sendMail(mailOptions, (error, info) => {
+  Step 2077 (2026-06-01T18:18:36Z): 
+  Step 1994 (2026-06-01T17:00:30Z):       return res.status(401).json({ error: "Unauthorized" });
+  Step 1976 (2026-06-01T16:58:54Z):     const currentLeads = await getLeads();
+  Step 1353 (2026-05-31T18:27:57Z):     const currentLeads = await getLeads();
+  Step 1172 (2026-05-31T18:06:23Z):     const currentLeads = await getLeads();
+
+=== Line 234 ===
+  Step 2111 (2026-06-01T18:22:19Z):         if (error) {
+  Step 2107 (2026-06-01T18:20:59Z):         if (error) {
+  Step 2077 (2026-06-01T18:18:36Z):     const { id } = req.params;
+  Step 1994 (2026-06-01T17:00:30Z):     }
+  Step 1976 (2026-06-01T16:58:54Z):     res.json(currentLeads);
+  Step 1353 (2026-05-31T18:27:57Z):     res.json(currentLeads);
+  Step 1172 (2026-05-31T18:06:23Z):     res.json(currentLeads);
+
+=== Line 235 ===
+  Step 2111 (2026-06-01T18:22:19Z):           console.error("Error sending lead notification email:", error);
+  Step 2107 (2026-06-01T18:20:59Z):           console.error("Error sending lead notification email:", error);
+  Step 2077 (2026-06-01T18:18:36Z):     const {
+  Step 1994 (2026-06-01T17:00:30Z): 
+  Step 1976 (2026-06-01T16:58:54Z):   });
+  Step 1353 (2026-05-31T18:27:57Z):   });
+  Step 1172 (2026-05-31T18:06:23Z):   });
+
+=== Line 236 ===
+  Step 2111 (2026-06-01T18:22:19Z):         } else {
+  Step 2107 (2026-06-01T18:20:59Z):         } else {
+  Step 2077 (2026-06-01T18:18:36Z):       quoteStatus,
+  Step 1994 (2026-06-01T17:00:30Z):     const { id } = req.params;
+  Step 1976 (2026-06-01T16:58:54Z): 
+  Step 1353 (2026-05-31T18:27:57Z): 
+  Step 1172 (2026-05-31T18:06:23Z): 
+
+=== Line 237 ===
+  Step 2111 (2026-06-01T18:22:19Z):           console.log("Lead notification email sent successfully:", info.response);
+  Step 2107 (2026-06-01T18:20:59Z):           console.log("Lead notification email sent successfully:", info.response);
+  Step 2077 (2026-06-01T18:18:36Z):       quoteNumber,
+  Step 1994 (2026-06-01T17:00:30Z):     const {
+  Step 1976 (2026-06-01T16:58:54Z):   app.get("/api/health", (req, res) => {
+  Step 1353 (2026-05-31T18:27:57Z):   app.get("/api/health", (req, res) => {
+  Step 1172 (2026-05-31T18:06:23Z):   app.get("/api/health", (req, res) => {
+
+=== Line 238 ===
+  Step 2111 (2026-06-01T18:22:19Z):         }
+  Step 2107 (2026-06-01T18:20:59Z):         }
+  Step 2077 (2026-06-01T18:18:36Z):       quoteItems,
+  Step 1994 (2026-06-01T17:00:30Z):       quoteStatus,
+  Step 1976 (2026-06-01T16:58:54Z):     res.json({ status: "ok" });
+  Step 1353 (2026-05-31T18:27:57Z):     res.json({ status: "ok" });
+  Step 1172 (2026-05-31T18:06:23Z):     res.json({ status: "ok" });
+
+=== Line 239 ===
+  Step 2111 (2026-06-01T18:22:19Z):       });
+  Step 2107 (2026-06-01T18:20:59Z):       });
+  Step 2077 (2026-06-01T18:18:36Z):       quoteTaxRate,
+  Step 1994 (2026-06-01T17:00:30Z):       quoteNumber,
+  Step 1976 (2026-06-01T16:58:54Z):   });
+  Step 1353 (2026-05-31T18:27:57Z):   });
+  Step 1172 (2026-05-31T18:06:23Z):   });
+
+=== Line 240 ===
+  Step 2111 (2026-06-01T18:22:19Z):     } else {
+  Step 2107 (2026-06-01T18:20:59Z):     } else {
+  Step 2077 (2026-06-01T18:18:36Z):       quoteDiscount,
+  Step 1994 (2026-06-01T17:00:30Z):       quoteItems,
+  Step 1976 (2026-06-01T16:58:54Z): 
+  Step 1353 (2026-05-31T18:27:57Z): 
+  Step 1186 (2026-05-31T18:06:57Z): 
+  Step 1172 (2026-05-31T18:06:23Z): 
+
+=== Line 241 ===
+  Step 2111 (2026-06-01T18:22:19Z):       console.log("Skipping email notification: SMTP credentials are not configured.");
+  Step 2107 (2026-06-01T18:20:59Z):       console.log("Skipping email notification: SMTP credentials are not configured.");
+  Step 2077 (2026-06-01T18:18:36Z):       quoteSubtotal,
+  Step 1994 (2026-06-01T17:00:30Z):       quoteTaxRate,
+  Step 1976 (2026-06-01T16:58:54Z):   // Vite middleware for development
+  Step 1353 (2026-05-31T18:27:57Z):   // Vite middleware for development
+  Step 1186 (2026-05-31T18:06:57Z):   // Vite middleware for development
+
+=== Line 242 ===
+  Step 2111 (2026-06-01T18:22:19Z):     }
+  Step 2107 (2026-06-01T18:20:59Z):     }
+  Step 2077 (2026-06-01T18:18:36Z):       quoteTax,
+  Step 1994 (2026-06-01T17:00:30Z):       quoteDiscount,
+  Step 1976 (2026-06-01T16:58:54Z):   if (process.env.NODE_ENV !== "production") {
+  Step 1353 (2026-05-31T18:27:57Z):   if (process.env.NODE_ENV !== "production") {
+  Step 1186 (2026-05-31T18:06:57Z):   if (process.env.NODE_ENV !== "production") {
+
+=== Line 243 ===
+  Step 2111 (2026-06-01T18:22:19Z): 
+  Step 2107 (2026-06-01T18:20:59Z): 
+  Step 2077 (2026-06-01T18:18:36Z):       quoteTotal
+  Step 1994 (2026-06-01T17:00:30Z):       quoteSubtotal,
+  Step 1976 (2026-06-01T16:58:54Z):     const vite = await createViteServer({
+  Step 1353 (2026-05-31T18:27:57Z):     const vite = await createViteServer({
+  Step 1186 (2026-05-31T18:06:57Z):     const vite = await createViteServer({
+
+=== Line 244 ===
+  Step 2111 (2026-06-01T18:22:19Z):     res.status(201).json({
+  Step 2107 (2026-06-01T18:20:59Z):     res.status(201).json({
+  Step 2077 (2026-06-01T18:18:36Z):     } = req.body;
+  Step 1994 (2026-06-01T17:00:30Z):       quoteTax,
+  Step 1976 (2026-06-01T16:58:54Z):       server: { middlewareMode: true },
+  Step 1353 (2026-05-31T18:27:57Z):       server: { middlewareMode: true },
+  Step 1186 (2026-05-31T18:06:57Z):       server: { middlewareMode: true },
+
+=== Line 245 ===
+  Step 2111 (2026-06-01T18:22:19Z):       status: "success",
+  Step 2107 (2026-06-01T18:20:59Z):       status: "success",
+  Step 2077 (2026-06-01T18:18:36Z): 
+  Step 1994 (2026-06-01T17:00:30Z):       quoteTotal
+  Step 1976 (2026-06-01T16:58:54Z):       appType: "spa",
+  Step 1353 (2026-05-31T18:27:57Z):       appType: "spa",
+  Step 1186 (2026-05-31T18:06:57Z):       appType: "spa",
+
+=== Line 246 ===
+  Step 2727 (2026-06-02T19:07:14Z):             <tr>
+  Step 2111 (2026-06-01T18:22:19Z):       message: "Lead captured successfully",
+  Step 2107 (2026-06-01T18:20:59Z):       message: "Lead captured successfully",
+  Step 2077 (2026-06-01T18:18:36Z):     const updated = await updateLead(id, {
+  Step 1976 (2026-06-01T16:58:54Z):     });
+  Step 1353 (2026-05-31T18:27:57Z):     });
+  Step 1186 (2026-05-31T18:06:57Z):     });
+
+=== Line 247 ===
+  Step 2727 (2026-06-02T19:07:14Z):               <td><strong>Countertop Cost</strong></td>
+  Step 2111 (2026-06-01T18:22:19Z):       leadId: leadData.id
+  Step 2107 (2026-06-01T18:20:59Z):       leadId: leadData.id
+  Step 2077 (2026-06-01T18:18:36Z):       quoteStatus: quoteStatus || 'draft',
+  Step 1976 (2026-06-01T16:58:54Z):     app.use(vite.middlewares);
+  Step 1353 (2026-05-31T18:27:57Z):     app.use(vite.middlewares);
+  Step 1186 (2026-05-31T18:06:57Z):     app.use(vite.middlewares);
+
+=== Line 248 ===
+  Step 2727 (2026-06-02T19:07:14Z):               <td>$${leadData.countertopCostLow?.toLocaleString() || '0'} - $${leadData.countertopCostHigh?.toLocaleString() || '0'}</td>
+  Step 2111 (2026-06-01T18:22:19Z):     });
+  Step 2107 (2026-06-01T18:20:59Z):     });
+  Step 2077 (2026-06-01T18:18:36Z):       quoteNumber,
+  Step 1976 (2026-06-01T16:58:54Z):   } else {
+  Step 1353 (2026-05-31T18:27:57Z):   } else {
+  Step 1186 (2026-05-31T18:06:57Z):   } else {
+
+=== Line 249 ===
+  Step 2727 (2026-06-02T19:07:14Z):             </tr>
+  Step 2111 (2026-06-01T18:22:19Z):   });
+  Step 2107 (2026-06-01T18:20:59Z):   });
+  Step 2077 (2026-06-01T18:18:36Z):       quoteItems,
+  Step 1976 (2026-06-01T16:58:54Z):     const distPath = path.join(process.cwd(), 'dist');
+  Step 1353 (2026-05-31T18:27:57Z):     const distPath = path.join(process.cwd(), 'dist');
+  Step 1186 (2026-05-31T18:06:57Z):     const distPath = path.join(process.cwd(), 'dist');
+
+=== Line 250 ===
+  Step 2727 (2026-06-02T19:07:14Z):             ${leadData.includeCabinets ? `
+  Step 2111 (2026-06-01T18:22:19Z): 
+  Step 2107 (2026-06-01T18:20:59Z): 
+  Step 2077 (2026-06-01T18:18:36Z):       quoteTaxRate: Number(quoteTaxRate ?? 0.13),
+  Step 1976 (2026-06-01T16:58:54Z):     app.use(express.static(distPath));
+  Step 1353 (2026-05-31T18:27:57Z):     app.use(express.static(distPath));
+  Step 1186 (2026-05-31T18:06:57Z):     app.use(express.static(distPath));
+
+=== Line 251 ===
+  Step 2727 (2026-06-02T19:07:14Z):             <tr>
+  Step 2111 (2026-06-01T18:22:19Z):   // Save or update quote details for a specific lead (Admin Protected)
+  Step 2107 (2026-06-01T18:20:59Z):   // Save or update quote details for a specific lead (Admin Protected)
+  Step 2077 (2026-06-01T18:18:36Z):       quoteDiscount: Number(quoteDiscount ?? 0),
+  Step 1976 (2026-06-01T16:58:54Z):     app.get('*', (req, res) => {
+  Step 1353 (2026-05-31T18:27:57Z):     app.get('*', (req, res) => {
+  Step 1186 (2026-05-31T18:06:57Z):     app.get('*', (req, res) => {
+
+=== Line 252 ===
+  Step 2727 (2026-06-02T19:07:14Z):               <td><strong>Cabinets Cost</strong></td>
+  Step 2111 (2026-06-01T18:22:19Z):   app.post("/api/leads/:id/quote", async (req, res) => {
+  Step 2107 (2026-06-01T18:20:59Z):   app.post("/api/leads/:id/quote", async (req, res) => {
+  Step 2077 (2026-06-01T18:18:36Z):       quoteSubtotal: Number(quoteSubtotal ?? 0),
+  Step 1976 (2026-06-01T16:58:54Z):       res.sendFile(path.join(distPath, 'index.html'));
+  Step 1353 (2026-05-31T18:27:57Z):       res.sendFile(path.join(distPath, 'index.html'));
+  Step 1186 (2026-05-31T18:06:57Z):       res.sendFile(path.join(distPath, 'index.html'));
+
+=== Line 253 ===
+  Step 2727 (2026-06-02T19:07:14Z):               <td>$${leadData.cabinetCostLow?.toLocaleString() || '0'} - $${leadData.cabinetCostHigh?.toLocaleString() || '0'}</td>
+  Step 2111 (2026-06-01T18:22:19Z):     const adminSecret = req.headers['x-admin-secret'];
+  Step 2107 (2026-06-01T18:20:59Z):     const adminSecret = req.headers['x-admin-secret'];
+  Step 2077 (2026-06-01T18:18:36Z):       quoteTax: Number(quoteTax ?? 0),
+  Step 1976 (2026-06-01T16:58:54Z):     });
+  Step 1353 (2026-05-31T18:27:57Z):     });
+  Step 1186 (2026-05-31T18:06:57Z):     });
+
+=== Line 254 ===
+  Step 2727 (2026-06-02T19:07:14Z):             </tr>
+  Step 2111 (2026-06-01T18:22:19Z):     if (adminSecret !== 'qi-admin-2026') {
+  Step 2107 (2026-06-01T18:20:59Z):     if (adminSecret !== 'qi-admin-2026') {
+  Step 2077 (2026-06-01T18:18:36Z):       quoteTotal: Number(quoteTotal ?? 0)
+  Step 1976 (2026-06-01T16:58:54Z):   }
+  Step 1353 (2026-05-31T18:27:57Z):   }
+  Step 1186 (2026-05-31T18:06:57Z):   }
+
+=== Line 255 ===
+  Step 2727 (2026-06-02T19:07:14Z):             ` : ''}
+  Step 2111 (2026-06-01T18:22:19Z):       return res.status(401).json({ error: "Unauthorized" });
+  Step 2107 (2026-06-01T18:20:59Z):       return res.status(401).json({ error: "Unauthorized" });
+  Step 2077 (2026-06-01T18:18:36Z):     });
+  Step 1976 (2026-06-01T16:58:54Z): 
+  Step 1353 (2026-05-31T18:27:57Z): 
+  Step 1186 (2026-05-31T18:06:57Z): 
+
+=== Line 256 ===
+  Step 2727 (2026-06-02T19:07:14Z):             <tr style="font-weight: bold; background-color: #f9f9f9;">
+  Step 2111 (2026-06-01T18:22:19Z):     }
+  Step 2107 (2026-06-01T18:20:59Z):     }
+  Step 2077 (2026-06-01T18:18:36Z): 
+  Step 1976 (2026-06-01T16:58:54Z):   app.listen(PORT, "0.0.0.0", () => {
+  Step 1353 (2026-05-31T18:27:57Z):   app.listen(PORT, "0.0.0.0", () => {
+  Step 1186 (2026-05-31T18:06:57Z):   app.listen(PORT, "0.0.0.0", () => {
+
+=== Line 257 ===
+  Step 2727 (2026-06-02T19:07:14Z):               <td><strong>Total Estimated Range</strong></td>
+  Step 2111 (2026-06-01T18:22:19Z): 
+  Step 2107 (2026-06-01T18:20:59Z): 
+  Step 2077 (2026-06-01T18:18:36Z):     if (updated) {
+  Step 1976 (2026-06-01T16:58:54Z):     console.log(`Server running on http://localhost:${PORT}`);
+  Step 1353 (2026-05-31T18:27:57Z):     console.log(`Server running on http://localhost:${PORT}`);
+  Step 1186 (2026-05-31T18:06:57Z):     console.log(`Server running on http://localhost:${PORT}`);
+
+=== Line 258 ===
+  Step 2727 (2026-06-02T19:07:14Z):               <td>$${leadData.totalCostLow?.toLocaleString() || '0'} - $${leadData.totalCostHigh?.toLocaleString() || '0'}</td>
+  Step 2111 (2026-06-01T18:22:19Z):     const { id } = req.params;
+  Step 2107 (2026-06-01T18:20:59Z):     const { id } = req.params;
+  Step 2077 (2026-06-01T18:18:36Z):       res.json({ status: "success", message: "Quote saved successfully" });
+  Step 1976 (2026-06-01T16:58:54Z):   });
+  Step 1353 (2026-05-31T18:27:57Z):   });
+  Step 1186 (2026-05-31T18:06:57Z):   });
+
+=== Line 259 ===
+  Step 2727 (2026-06-02T19:07:14Z):             </tr>
+  Step 2111 (2026-06-01T18:22:19Z):     const {
+  Step 2107 (2026-06-01T18:20:59Z):     const {
+  Step 2077 (2026-06-01T18:18:36Z):     } else {
+  Step 1976 (2026-06-01T16:58:54Z): }
+  Step 1353 (2026-05-31T18:27:57Z): }
+  Step 1186 (2026-05-31T18:06:57Z): }
+
+=== Line 260 ===
+  Step 2727 (2026-06-02T19:07:14Z):           </table>
+  Step 2111 (2026-06-01T18:22:19Z):       quoteStatus,
+  Step 2107 (2026-06-01T18:20:59Z):       quoteStatus,
+  Step 2077 (2026-06-01T18:18:36Z):       res.status(404).json({ error: "Lead not found" });
+  Step 1976 (2026-06-01T16:58:54Z): 
+  Step 1353 (2026-05-31T18:27:57Z): 
+  Step 1186 (2026-05-31T18:06:57Z): 
+
+=== Line 261 ===
+  Step 2727 (2026-06-02T19:07:14Z):         `,
+  Step 1976 (2026-06-01T16:58:54Z): startServer();
+  Step 1353 (2026-05-31T18:27:57Z): startServer();
+  Step 1186 (2026-05-31T18:06:57Z): startServer();
+
+=== Line 262 ===
+  Step 2727 (2026-06-02T19:07:14Z):       };
+  Step 1976 (2026-06-01T16:58:54Z): 
+  Step 1353 (2026-05-31T18:27:57Z): 
+  Step 1186 (2026-05-31T18:06:57Z): 
+
+=== Line 263 ===
+  Step 2727 (2026-06-02T19:07:14Z): 
+
+=== Line 264 ===
+  Step 2727 (2026-06-02T19:07:14Z):       if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+
+=== Line 265 ===
+  Step 2727 (2026-06-02T19:07:14Z):         transporter.sendMail(mailOptions, (error, info) => {
+
+=== Line 266 ===
+  Step 2727 (2026-06-02T19:07:14Z):           if (error) {
+
+=== Line 267 ===
+  Step 2727 (2026-06-02T19:07:14Z):             console.error("Error sending lead notification email:", error);
+
+=== Line 268 ===
+  Step 2727 (2026-06-02T19:07:14Z):           } else {
+
+=== Line 269 ===
+  Step 2727 (2026-06-02T19:07:14Z):             console.log("Lead notification email sent successfully:", info.response);
+
+=== Line 270 ===
+  Step 2727 (2026-06-02T19:07:14Z):           }
+
+=== Line 271 ===
+  Step 2727 (2026-06-02T19:07:14Z):         });
+
+=== Line 272 ===
+  Step 2727 (2026-06-02T19:07:14Z):       } else {
+
+=== Line 273 ===
+  Step 2727 (2026-06-02T19:07:14Z):         console.log("Skipping email notification: SMTP credentials are not configured.");
+
+=== Line 274 ===
+  Step 2727 (2026-06-02T19:07:14Z):       }
+
+=== Line 275 ===
+  Step 2727 (2026-06-02T19:07:14Z):     } else {
+
+=== Line 276 ===
+  Step 2727 (2026-06-02T19:07:14Z):       console.log("Skipping email notification for admin-created lead/quote.");
+
+=== Line 277 ===
+  Step 2727 (2026-06-02T19:07:14Z):     }
+
+=== Line 278 ===
+  Step 2727 (2026-06-02T19:07:14Z): 
+
+=== Line 279 ===
+  Step 2727 (2026-06-02T19:07:14Z):     res.status(201).json({
+
+=== Line 280 ===
+  Step 5333 (2026-06-03T22:25:29Z):       status: "success",
+  Step 2727 (2026-06-02T19:07:14Z):       status: "success",
+
+=== Line 281 ===
+  Step 5333 (2026-06-03T22:25:29Z):       message: isAdmin ? "Quote/Lead created successfully" : "Lead captured successfully",
+  Step 2727 (2026-06-02T19:07:14Z):       message: isAdmin ? "Quote/Lead created successfully" : "Lead captured successfully",
+
+=== Line 282 ===
+  Step 5333 (2026-06-03T22:25:29Z):       leadId: leadData.id
+  Step 2727 (2026-06-02T19:07:14Z):       leadId: leadData.id
+
+=== Line 283 ===
+  Step 5333 (2026-06-03T22:25:29Z):     });
+  Step 2727 (2026-06-02T19:07:14Z):     });
+
+=== Line 284 ===
+  Step 5333 (2026-06-03T22:25:29Z):   });
+  Step 2727 (2026-06-02T19:07:14Z):   });
+
+=== Line 285 ===
+  Step 5333 (2026-06-03T22:25:29Z): 
+  Step 2727 (2026-06-02T19:07:14Z): 
+
+=== Line 286 ===
+  Step 5333 (2026-06-03T22:25:29Z):   // Save or update quote details for a specific lead (Admin Protected)
+  Step 2727 (2026-06-02T19:07:14Z):   // Save or update quote details for a specific lead (Admin Protected)
+
+=== Line 287 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 287
+
+=== Line 288 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 288
+
+=== Line 289 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 289
+
+=== Line 290 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 290
+
+=== Line 291 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 291
+
+=== Line 292 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 292
+
+=== Line 293 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 293
+
+=== Line 294 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 294
+
+=== Line 295 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 295
+
+=== Line 296 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 296
+
+=== Line 297 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 297
+
+=== Line 298 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 298
+
+=== Line 299 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 299
+
+=== Line 300 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 300
+
+=== Line 301 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 301
+
+=== Line 302 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 302
+
+=== Line 303 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 303
+
+=== Line 304 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 304
+
+=== Line 305 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 305
+
+=== Line 306 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 306
+
+=== Line 307 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 307
+
+=== Line 308 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 308
+
+=== Line 309 ===
+  Step 5333 (2026-06-03T22:25:29Z): // MISSING LINE 309
+
+=== Line 310 ===
+  Step 5333 (2026-06-03T22:25:29Z): 
+
+=== Line 311 ===
+  Step 5333 (2026-06-03T22:25:29Z): 
+
+=== Line 312 ===
+  Step 5333 (2026-06-03T22:25:29Z): 
+
+=== Line 313 ===
+  Step 5333 (2026-06-03T22:25:29Z): 
+
+=== Line 314 ===
+  Step 5333 (2026-06-03T22:25:29Z): 
+
+=== Line 315 ===
+  Step 5333 (2026-06-03T22:25:29Z): 5:25:07 PM [vite] (client) hmr update /src/pages/QuartzBrowse.tsx, /src/index.cs
+
+=== Line 316 ===
+  Step 5333 (2026-06-03T22:25:29Z): s
+
+=== Line 317 ===
+  Step 5333 (2026-06-03T22:25:29Z): 
+
+=== Line 318 ===
+  Step 5333 (2026-06-03T22:25:29Z): 
+
+=== Line 319 ===
+  Step 5333 (2026-06-03T22:25:29Z): 
+
+=== Line 320 ===
+  Step 5333 (2026-06-03T22:25:29Z): 
+
+=== Line 348 ===
+  Step 4980 (2026-06-03T22:13:57Z):     res.json({
+
+=== Line 349 ===
+  Step 4980 (2026-06-03T22:13:57Z):       id: lead.id,
+
+=== Line 350 ===
+  Step 4980 (2026-06-03T22:13:57Z):       createdAt: lead.createdAt,
+
+=== Line 351 ===
+  Step 4980 (2026-06-03T22:13:57Z):       name: lead.name,
+
+=== Line 352 ===
+  Step 4980 (2026-06-03T22:13:57Z):       email: lead.email,
+
+=== Line 353 ===
+  Step 4980 (2026-06-03T22:13:57Z):       phone: lead.phone,
+
+=== Line 354 ===
+  Step 4980 (2026-06-03T22:13:57Z):       layout: lead.layout,
+
+=== Line 355 ===
+  Step 4980 (2026-06-03T22:13:57Z):       quartzLevel: lead.quartzLevel,
+
+=== Line 356 ===
+  Step 4980 (2026-06-03T22:13:57Z):       selectedSlab: lead.selectedSlab,
+
+=== Line 357 ===
+  Step 4980 (2026-06-03T22:13:57Z):       countertopSqFt: lead.countertopSqFt,
+
+=== Line 358 ===
+  Step 4980 (2026-06-03T22:13:57Z):       hasIsland: lead.hasIsland,
+
+=== Line 359 ===
+  Step 4980 (2026-06-03T22:13:57Z):       includeCabinets: lead.includeCabinets,
+
+=== Line 360 ===
+  Step 4980 (2026-06-03T22:13:57Z):       cabinetLinearFt: lead.cabinetLinearFt,
+  Step 4365 (2026-06-03T18:01:02Z):     });
+  Step 2099 (2026-06-01T18:20:35Z):           </table>
+
+=== Line 361 ===
+  Step 4980 (2026-06-03T22:13:57Z):       cabinetStyle: lead.cabinetStyle,
+  Step 4365 (2026-06-03T18:01:02Z):   });
+  Step 2099 (2026-06-01T18:20:35Z):           <p style="margin-top: 20px;">Log in to your admin dashboard to review the project details.</p>
+
+=== Line 362 ===
+  Step 4980 (2026-06-03T22:13:57Z):       timeline: lead.timeline,
+  Step 4365 (2026-06-03T18:01:02Z): 
+  Step 2099 (2026-06-01T18:20:35Z):         `
+
+=== Line 363 ===
+  Step 4980 (2026-06-03T22:13:57Z): 
+  Step 4365 (2026-06-03T18:01:02Z):   // Client signature and quote approval submission
+  Step 2099 (2026-06-01T18:20:35Z):       };
+
+=== Line 364 ===
+  Step 4980 (2026-06-03T22:13:57Z):       quoteStatus: lead.quoteStatus,
+  Step 4365 (2026-06-03T18:01:02Z):   app.post("/api/quotes/:id/approve", async (req, res) => {
+  Step 2099 (2026-06-01T18:20:35Z): 
+
+=== Line 365 ===
+  Step 4980 (2026-06-03T22:13:57Z):       quoteNumber: lead.quoteNumber,
+  Step 4365 (2026-06-03T18:01:02Z):     const { id } = req.params;
+  Step 2099 (2026-06-01T18:20:35Z):       if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+
+=== Line 366 ===
+  Step 4980 (2026-06-03T22:13:57Z):       quoteItems: lead.quoteItems,
+  Step 4365 (2026-06-03T18:01:02Z):     const { signatureName } = req.body;
+  Step 2099 (2026-06-01T18:20:35Z):         transporter.sendMail(mailOptions, (error, info) => {
+
+=== Line 367 ===
+  Step 4980 (2026-06-03T22:13:57Z):       quoteTaxRate: lead.quoteTaxRate,
+  Step 4365 (2026-06-03T18:01:02Z): 
+  Step 2099 (2026-06-01T18:20:35Z):           if (error) {
+
+=== Line 368 ===
+  Step 4980 (2026-06-03T22:13:57Z):       quoteDiscount: lead.quoteDiscount,
+  Step 4365 (2026-06-03T18:01:02Z):     if (!signatureName) {
+  Step 2099 (2026-06-01T18:20:35Z):             console.error("Error sending quote approval email:", error);
+
+=== Line 369 ===
+  Step 4980 (2026-06-03T22:13:57Z):       quoteSubtotal: lead.quoteSubtotal,
+  Step 4365 (2026-06-03T18:01:02Z):       return res.status(400).json({ error: "Signature name is required" });
+  Step 2099 (2026-06-01T18:20:35Z):           } else {
+
+=== Line 370 ===
+  Step 4980 (2026-06-03T22:13:57Z):       quoteTax: lead.quoteTax,
+  Step 4365 (2026-06-03T18:01:02Z):     }
+  Step 2099 (2026-06-01T18:20:35Z):             console.log("Quote approval email sent successfully:", info.response);
+
+=== Line 371 ===
+  Step 4980 (2026-06-03T22:13:57Z):       quoteTotal: lead.quoteTotal,
+  Step 4365 (2026-06-03T18:01:02Z): 
+  Step 2099 (2026-06-01T18:20:35Z):           }
+
+=== Line 372 ===
+  Step 4980 (2026-06-03T22:13:57Z):       clientSignedAt: lead.clientSignedAt,
+  Step 4365 (2026-06-03T18:01:02Z):     const leads = await getLeads();
+  Step 2099 (2026-06-01T18:20:35Z):         });
+
+=== Line 373 ===
+  Step 4980 (2026-06-03T22:13:57Z):       clientSignatureName: lead.clientSignatureName
+  Step 4365 (2026-06-03T18:01:02Z):     const lead = leads.find(l => l.id === id);
+  Step 2099 (2026-06-01T18:20:35Z):       }
+
+=== Line 374 ===
+  Step 4980 (2026-06-03T22:13:57Z):     });
+  Step 4365 (2026-06-03T18:01:02Z): 
+  Step 2099 (2026-06-01T18:20:35Z): 
+
+=== Line 375 ===
+  Step 4980 (2026-06-03T22:13:57Z):   });
+  Step 4365 (2026-06-03T18:01:02Z):     if (!lead) {
+  Step 2115 (2026-06-01T18:22:25Z):     if (!lead) {
+  Step 2099 (2026-06-01T18:20:35Z):       res.json({ status: "success", message: "Quote approved and signed successfully" });
+
+=== Line 376 ===
+  Step 4980 (2026-06-03T22:13:57Z): 
+  Step 4365 (2026-06-03T18:01:02Z):       return res.status(404).json({ error: "Quote not found" });
+  Step 2115 (2026-06-01T18:22:25Z):       return res.status(404).json({ error: "Quote not found" });
+  Step 2099 (2026-06-01T18:20:35Z):     } else {
+
+=== Line 377 ===
+  Step 4980 (2026-06-03T22:13:57Z):   // Client signature and quote approval submission
+  Step 4365 (2026-06-03T18:01:02Z):     }
+  Step 2115 (2026-06-01T18:22:25Z):     }
+  Step 2099 (2026-06-01T18:20:35Z):       res.status(500).json({ error: "Failed to sign quote" });
+
+=== Line 378 ===
+  Step 4980 (2026-06-03T22:13:57Z):   app.post("/api/quotes/:id/approve", async (req, res) => {
+  Step 4365 (2026-06-03T18:01:02Z): 
+  Step 2115 (2026-06-01T18:22:25Z): 
+  Step 2099 (2026-06-01T18:20:35Z):     }
+
+=== Line 379 ===
+  Step 4980 (2026-06-03T22:13:57Z):     const { id } = req.params;
+  Step 4365 (2026-06-03T18:01:02Z):     const clientSignedAt = new Date().toISOString();
+  Step 2115 (2026-06-01T18:22:25Z):     const clientSignedAt = new Date().toISOString();
+  Step 2099 (2026-06-01T18:20:35Z):   });
+
+=== Line 380 ===
+  Step 4980 (2026-06-03T22:13:57Z):     const { signatureName } = req.body;
+  Step 4365 (2026-06-03T18:01:02Z):     const updated = await updateLead(id, {
+  Step 2115 (2026-06-01T18:22:25Z):     const updated = await updateLead(id, {
+  Step 2099 (2026-06-01T18:20:35Z): 
+
+=== Line 381 ===
+  Step 4980 (2026-06-03T22:13:57Z): 
+  Step 4365 (2026-06-03T18:01:02Z):       quoteStatus: 'approved',
+  Step 2115 (2026-06-01T18:22:25Z):       quoteStatus: 'approved',
+  Step 2099 (2026-06-01T18:20:35Z):   app.get("/api/leads", async (req, res) => {
+
+=== Line 382 ===
+  Step 4980 (2026-06-03T22:13:57Z):     if (!signatureName) {
+  Step 4365 (2026-06-03T18:01:02Z):       clientSignedAt,
+  Step 2115 (2026-06-01T18:22:25Z):       clientSignedAt,
+  Step 2099 (2026-06-01T18:20:35Z):     // Basic protection: check for a secret header
+
+=== Line 383 ===
+  Step 4980 (2026-06-03T22:13:57Z):       return res.status(400).json({ error: "Signature name is required" });
+  Step 4365 (2026-06-03T18:01:02Z):       clientSignatureName: signatureName
+  Step 2115 (2026-06-01T18:22:25Z):       clientSignatureName: signatureName
+  Step 2099 (2026-06-01T18:20:35Z):     const adminSecret = req.headers['x-admin-secret'];
+
+=== Line 384 ===
+  Step 4980 (2026-06-03T22:13:57Z):     }
+  Step 4365 (2026-06-03T18:01:02Z):     });
+  Step 2115 (2026-06-01T18:22:25Z):     });
+  Step 2099 (2026-06-01T18:20:35Z):     if (adminSecret !== 'qi-admin-2026') {
+
+=== Line 385 ===
+  Step 4980 (2026-06-03T22:13:57Z): 
+  Step 4365 (2026-06-03T18:01:02Z): 
+  Step 2115 (2026-06-01T18:22:25Z): 
+  Step 2099 (2026-06-01T18:20:35Z):       return res.status(401).json({ error: "Unauthorized" });
+
+=== Line 386 ===
+  Step 4980 (2026-06-03T22:13:57Z):     const leads = await getLeads();
+  Step 4365 (2026-06-03T18:01:02Z):     if (updated) {
+  Step 2115 (2026-06-01T18:22:25Z):     if (updated) {
+  Step 2099 (2026-06-01T18:20:35Z):     }
+
+=== Line 387 ===
+  Step 4980 (2026-06-03T22:13:57Z):     const lead = leads.find(l => l.id === id);
+  Step 4365 (2026-06-03T18:01:02Z):       // Send email notification to admin about signature
+  Step 2115 (2026-06-01T18:22:25Z):       // Send email notification to admin about signature
+  Step 2099 (2026-06-01T18:20:35Z):     const currentLeads = await getLeads();
+
+=== Line 388 ===
+  Step 4980 (2026-06-03T22:13:57Z): 
+  Step 4365 (2026-06-03T18:01:02Z):       const mailOptions = {
+  Step 2115 (2026-06-01T18:22:25Z):       const mailOptions = {
+  Step 2099 (2026-06-01T18:20:35Z):     res.json(currentLeads);
+
+=== Line 389 ===
+  Step 4980 (2026-06-03T22:13:57Z):     if (!lead) {
+  Step 4365 (2026-06-03T18:01:02Z):         from: process.env.SMTP_FROM || `"Quartz International Quotes" <no-reply@quartzinternational.ca>`,
+  Step 2115 (2026-06-01T18:22:25Z):         from: process.env.SMTP_FROM || `"Quartz International Quotes" <no-reply@quartzinternational.ca>`,
+  Step 2099 (2026-06-01T18:20:35Z):   });
+
+=== Line 390 ===
+  Step 4980 (2026-06-03T22:13:57Z):       return res.status(404).json({ error: "Quote not found" });
+  Step 4365 (2026-06-03T18:01:02Z):         to: process.env.NOTIFICATION_EMAIL || process.env.SMTP_USER || "info@quartzinternational.ca",
+  Step 2115 (2026-06-01T18:22:25Z):         to: process.env.NOTIFICATION_EMAIL || process.env.SMTP_USER || "info@quartzinternational.ca",
+  Step 2099 (2026-06-01T18:20:35Z): 
+
+=== Line 391 ===
+  Step 4980 (2026-06-03T22:13:57Z):     }
+  Step 4365 (2026-06-03T18:01:02Z):         subject: `Quote Approved & Signed: ${lead.quoteNumber || "Quote"} - ${lead.name}`,
+  Step 2115 (2026-06-01T18:22:25Z):         subject: `Quote Approved & Signed: ${lead.quoteNumber || "Quote"} - ${lead.name}`,
+  Step 2099 (2026-06-01T18:20:35Z):   app.get("/api/health", (req, res) => {
+
+=== Line 392 ===
+  Step 4980 (2026-06-03T22:13:57Z): 
+  Step 4365 (2026-06-03T18:01:02Z):         html: `
+  Step 2115 (2026-06-01T18:22:25Z):         html: `
+  Step 2099 (2026-06-01T18:20:35Z):     res.json({ status: "ok" });
+
+=== Line 393 ===
+  Step 4980 (2026-06-03T22:13:57Z):     const clientSignedAt = new Date().toISOString();
+  Step 4365 (2026-06-03T18:01:02Z):           <h2>Quote Signed & Approved</h2>
+  Step 2115 (2026-06-01T18:22:25Z):           <h2>Quote Signed & Approved</h2>
+  Step 2099 (2026-06-01T18:20:35Z):   });
+
+=== Line 394 ===
+  Step 4980 (2026-06-03T22:13:57Z):     const updated = await updateLead(id, {
+  Step 4365 (2026-06-03T18:01:02Z):           <p>The client has reviewed and electronically signed their proposal.</p>
+  Step 2115 (2026-06-01T18:22:25Z):           <p>The client has reviewed and electronically signed their proposal.</p>
+  Step 2099 (2026-06-01T18:20:35Z): 
+
+=== Line 395 ===
+  Step 4980 (2026-06-03T22:13:57Z):       quoteStatus: 'approved',
+  Step 4365 (2026-06-03T18:01:02Z):           <table border="1" cellpadding="8" style="border-collapse: collapse; width: 100%; max-width: 600px; font-family: sans-serif; border-color: #E5E2DC;">
+  Step 2115 (2026-06-01T18:22:25Z):           <table border="1" cellpadding="8" style="border-collapse: collapse; width: 100%; max-width: 600px; font-family: sans-serif; border-color: #E5E2DC;">
+  Step 2099 (2026-06-01T18:20:35Z):   // Vite middleware for development
+
+=== Line 396 ===
+  Step 4980 (2026-06-03T22:13:57Z):       clientSignedAt,
+  Step 4365 (2026-06-03T18:01:02Z):             <tr style="background-color: #C6A87D; color: white;">
+  Step 2099 (2026-06-01T18:20:35Z):   if (process.env.NODE_ENV !== "production") {
+
+=== Line 397 ===
+  Step 4980 (2026-06-03T22:13:57Z):       clientSignatureName: signatureName
+  Step 4365 (2026-06-03T18:01:02Z):               <th colspan="2" style="text-align: left; padding: 10px;">Approval Details</th>
+  Step 2099 (2026-06-01T18:20:35Z):     const vite = await createViteServer({
+
+=== Line 398 ===
+  Step 4980 (2026-06-03T22:13:57Z):     });
+  Step 4365 (2026-06-03T18:01:02Z):             </tr>
+  Step 2099 (2026-06-01T18:20:35Z):       server: { middlewareMode: true },
+
+=== Line 399 ===
+  Step 4980 (2026-06-03T22:13:57Z): 
+  Step 4365 (2026-06-03T18:01:02Z):             <tr>
+  Step 2099 (2026-06-01T18:20:35Z):       appType: "spa",
+
+=== Line 400 ===
+  Step 4980 (2026-06-03T22:13:57Z):     if (updated) {
+  Step 4367 (2026-06-03T18:01:04Z):               <td><strong>Quote Number</strong></td>
+  Step 4365 (2026-06-03T18:01:02Z):               <td><strong>Quote Number</strong></td>
+  Step 2099 (2026-06-01T18:20:35Z):     });
+
+=== Line 401 ===
+  Step 4982 (2026-06-03T22:13:58Z):       // Send email notification to admin about signature
+  Step 4367 (2026-06-03T18:01:04Z):               <td>${lead.quoteNumber || "N/A"}</td>
+  Step 2099 (2026-06-01T18:20:35Z):     app.use(vite.middlewares);
+
+=== Line 402 ===
+  Step 4982 (2026-06-03T22:13:58Z):       const mailOptions = {
+  Step 4367 (2026-06-03T18:01:04Z):             </tr>
+  Step 2099 (2026-06-01T18:20:35Z):   } else {
+
+=== Line 403 ===
+  Step 4982 (2026-06-03T22:13:58Z):         from: process.env.SMTP_FROM || `"Quartz International Quotes" <no-reply@quartzinternational.ca>`,
+  Step 4367 (2026-06-03T18:01:04Z):             <tr>
+  Step 2099 (2026-06-01T18:20:35Z):     const distPath = path.join(process.cwd(), 'dist');
+
+=== Line 404 ===
+  Step 4982 (2026-06-03T22:13:58Z):         to: process.env.NOTIFICATION_EMAIL || process.env.SMTP_USER || "info@quartzinternational.ca",
+  Step 4367 (2026-06-03T18:01:04Z):               <td><strong>Customer Name</strong></td>
+  Step 2099 (2026-06-01T18:20:35Z):     app.use(express.static(distPath));
+
+=== Line 405 ===
+  Step 4982 (2026-06-03T22:13:58Z):         subject: `Quote Approved & Signed: ${lead.quoteNumber || "Quote"} - ${lead.name}`,
+  Step 4367 (2026-06-03T18:01:04Z):               <td>${lead.name}</td>
+  Step 2099 (2026-06-01T18:20:35Z):     app.get('*', (req, res) => {
+
+=== Line 406 ===
+  Step 4982 (2026-06-03T22:13:58Z):         html: `
+  Step 4367 (2026-06-03T18:01:04Z):             </tr>
+  Step 2099 (2026-06-01T18:20:35Z):       res.sendFile(path.join(distPath, 'index.html'));
+
+=== Line 407 ===
+  Step 4982 (2026-06-03T22:13:58Z):           <h2>Quote Signed & Approved</h2>
+  Step 4367 (2026-06-03T18:01:04Z):             <tr>
+  Step 2099 (2026-06-01T18:20:35Z):     });
+
+=== Line 408 ===
+  Step 4982 (2026-06-03T22:13:58Z):           <p>The client has reviewed and electronically signed their proposal.</p>
+  Step 4367 (2026-06-03T18:01:04Z):               <td><strong>E-Signature</strong></td>
+  Step 2099 (2026-06-01T18:20:35Z):   }
+
+=== Line 409 ===
+  Step 4982 (2026-06-03T22:13:58Z):           <table border="1" cellpadding="8" style="border-collapse: collapse; width: 100%; max-width: 600px; font-family: sans-serif; border-color: #E5E2DC;">
+  Step 4367 (2026-06-03T18:01:04Z):               <td><em>${signatureName}</em></td>
+  Step 2099 (2026-06-01T18:20:35Z): 
+
+=== Line 410 ===
+  Step 4982 (2026-06-03T22:13:58Z):             <tr style="background-color: #C6A87D; color: white;">
+  Step 4367 (2026-06-03T18:01:04Z):             </tr>
+  Step 2099 (2026-06-01T18:20:35Z):   app.listen(PORT, "0.0.0.0", () => {
+
+=== Line 411 ===
+  Step 4982 (2026-06-03T22:13:58Z):               <th colspan="2" style="text-align: left; padding: 10px;">Approval Details</th>
+  Step 4367 (2026-06-03T18:01:04Z):             <tr>
+  Step 2099 (2026-06-01T18:20:35Z):     console.log(`Server running on http://localhost:${PORT}`);
+
+=== Line 412 ===
+  Step 4982 (2026-06-03T22:13:58Z):             </tr>
+  Step 4367 (2026-06-03T18:01:04Z):               <td><strong>Signed At</strong></td>
+  Step 2099 (2026-06-01T18:20:35Z):   });
+
+=== Line 413 ===
+  Step 4982 (2026-06-03T22:13:58Z):             <tr>
+  Step 4367 (2026-06-03T18:01:04Z):               <td>${new Date(clientSignedAt).toLocaleString()}</td>
+  Step 2099 (2026-06-01T18:20:35Z): }
+
+=== Line 414 ===
+  Step 4982 (2026-06-03T22:13:58Z):               <td><strong>Quote Number</strong></td>
+  Step 4367 (2026-06-03T18:01:04Z):             </tr>
+  Step 2099 (2026-06-01T18:20:35Z): 
+
+=== Line 415 ===
+  Step 4982 (2026-06-03T22:13:58Z):               <td>${lead.quoteNumber || "N/A"}</td>
+  Step 4367 (2026-06-03T18:01:04Z):             <tr style="font-weight: bold; background-color: #f9f9f9;">
+  Step 2117 (2026-06-01T18:22:27Z):             <tr style="font-weight: bold; background-color: #f9f9f9;">
+  Step 2099 (2026-06-01T18:20:35Z): startServer();
+
+=== Line 416 ===
+  Step 4982 (2026-06-03T22:13:58Z):             </tr>
+  Step 4367 (2026-06-03T18:01:04Z):               <td><strong>Total Value</strong></td>
+  Step 2117 (2026-06-01T18:22:27Z):               <td><strong>Total Value</strong></td>
+  Step 2099 (2026-06-01T18:20:35Z): 
+
+=== Line 417 ===
+  Step 4982 (2026-06-03T22:13:58Z):             <tr>
+  Step 4367 (2026-06-03T18:01:04Z):               <td>$${(lead.quoteTotal || 0).toLocaleString()} (HST included)</td>
+  Step 2117 (2026-06-01T18:22:27Z):               <td>$${(lead.quoteTotal || 0).toLocaleString()} (HST included)</td>
+
+=== Line 418 ===
+  Step 4982 (2026-06-03T22:13:58Z):               <td><strong>Customer Name</strong></td>
+  Step 4367 (2026-06-03T18:01:04Z):             </tr>
+  Step 2117 (2026-06-01T18:22:27Z):             </tr>
+
+=== Line 419 ===
+  Step 4982 (2026-06-03T22:13:58Z):               <td>${lead.name}</td>
+  Step 4367 (2026-06-03T18:01:04Z):           </table>
+  Step 2117 (2026-06-01T18:22:27Z):           </table>
+
+=== Line 420 ===
+  Step 4982 (2026-06-03T22:13:58Z):             </tr>
+  Step 4367 (2026-06-03T18:01:04Z):           <p style="margin-top: 20px;">Log in to your admin dashboard to review the project details.</p>
+  Step 2117 (2026-06-01T18:22:27Z):           <p style="margin-top: 20px;">Log in to your admin dashboard to review the project details.</p>
+
+=== Line 421 ===
+  Step 4982 (2026-06-03T22:13:58Z):             <tr>
+  Step 4367 (2026-06-03T18:01:04Z):         `
+  Step 2117 (2026-06-01T18:22:27Z):         `
+
+=== Line 422 ===
+  Step 4982 (2026-06-03T22:13:58Z):               <td><strong>E-Signature</strong></td>
+  Step 4367 (2026-06-03T18:01:04Z):       };
+  Step 2117 (2026-06-01T18:22:27Z):       };
+
+=== Line 423 ===
+  Step 4982 (2026-06-03T22:13:58Z):               <td><em>${signatureName}</em></td>
+  Step 4367 (2026-06-03T18:01:04Z): 
+  Step 2117 (2026-06-01T18:22:27Z): 
+
+=== Line 424 ===
+  Step 4982 (2026-06-03T22:13:58Z):             </tr>
+  Step 4367 (2026-06-03T18:01:04Z):       if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+  Step 2117 (2026-06-01T18:22:27Z):       if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+
+=== Line 425 ===
+  Step 4982 (2026-06-03T22:13:58Z):             <tr>
+  Step 4367 (2026-06-03T18:01:04Z):         transporter.sendMail(mailOptions, (error, info) => {
+  Step 2117 (2026-06-01T18:22:27Z):         transporter.sendMail(mailOptions, (error, info) => {
+
+=== Line 426 ===
+  Step 4982 (2026-06-03T22:13:58Z):               <td><strong>Signed At</strong></td>
+  Step 4367 (2026-06-03T18:01:04Z):           if (error) {
+  Step 2117 (2026-06-01T18:22:27Z):           if (error) {
+
+=== Line 427 ===
+  Step 4982 (2026-06-03T22:13:58Z):               <td>${new Date(clientSignedAt).toLocaleString()}</td>
+  Step 4367 (2026-06-03T18:01:04Z):             console.error("Error sending quote approval email:", error);
+  Step 2117 (2026-06-01T18:22:27Z):             console.error("Error sending quote approval email:", error);
+
+=== Line 428 ===
+  Step 4982 (2026-06-03T22:13:58Z):             </tr>
+  Step 4367 (2026-06-03T18:01:04Z):           } else {
+  Step 2117 (2026-06-01T18:22:27Z):           } else {
+
+=== Line 429 ===
+  Step 4982 (2026-06-03T22:13:58Z):             <tr style="font-we
+  Step 4367 (2026-06-03T18:01:04Z):             console.log("Quote approval email sent successfully:", info.response);
+  Step 2117 (2026-06-01T18:22:27Z):             console.log("Quote approval email sent successfully:", info.response);
+
+=== Line 430 ===
+  Step 4367 (2026-06-03T18:01:04Z):           }
+  Step 2117 (2026-06-01T18:22:27Z):           }
+
+=== Line 431 ===
+  Step 4367 (2026-06-03T18:01:04Z):         });
+  Step 2117 (2026-06-01T18:22:27Z):         });
+
+=== Line 432 ===
+  Step 4367 (2026-06-03T18:01:04Z):       }
+  Step 2117 (2026-06-01T18:22:27Z):       }
+
+=== Line 433 ===
+  Step 4367 (2026-06-03T18:01:04Z): 
+  Step 2117 (2026-06-01T18:22:27Z): 
+
+=== Line 434 ===
+  Step 4367 (2026-06-03T18:01:04Z):       res.json({ status: "success", message: "Quote approved and signed successfully" });
+  Step 2117 (2026-06-01T18:22:27Z):       res.json({ status: "success", message: "Quote approved and signed successfully" });
+
+=== Line 435 ===
+  Step 4367 (2026-06-03T18:01:04Z):     } else {
+  Step 2117 (2026-06-01T18:22:27Z):     } else {
+
+=== Line 436 ===
+  Step 4367 (2026-06-03T18:01:04Z):       res.status(500).json({ error: "Failed to s
+  Step 2117 (2026-06-01T18:22:27Z):       res.status(500).json({ error: "Failed to sign quote" });
+
+=== Line 437 ===
+  Step 2117 (2026-06-01T18:22:27Z):     }
+
+=== Line 438 ===
+  Step 2117 (2026-06-01T18:22:27Z):   });
+
+=== Line 439 ===
+  Step 2117 (2026-06-01T18:22:27Z): 
+
+=== Line 440 ===
+  Step 4385 (2026-06-03T18:02:45Z):           if (error) {
+  Step 2117 (2026-06-01T18:22:27Z):   app.get("/api/leads", async (req, res) => {
+
+=== Line 441 ===
+  Step 4385 (2026-06-03T18:02:45Z):             console.error("Error sending quote approval email:", error);
+  Step 2117 (2026-06-01T18:22:27Z):     // Basic protection: check for a secret header
+
+=== Line 442 ===
+  Step 4385 (2026-06-03T18:02:45Z):           } else {
+  Step 2117 (2026-06-01T18:22:27Z):     const adminSecret = req.headers['x-admin-secret'];
+
+=== Line 443 ===
+  Step 4385 (2026-06-03T18:02:45Z):             console.log("Quote approval email sent successfully:", info.response);
+  Step 2117 (2026-06-01T18:22:27Z):     if (adminSecret !== 'qi-admin-2026') {
+
+=== Line 444 ===
+  Step 4385 (2026-06-03T18:02:45Z):           }
+  Step 2117 (2026-06-01T18:22:27Z):       return res.status(401).json({ error: "Unauthorized" });
+
+=== Line 445 ===
+  Step 4385 (2026-06-03T18:02:45Z):         });
+  Step 2117 (2026-06-01T18:22:27Z):     }
+
+=== Line 446 ===
+  Step 4385 (2026-06-03T18:02:45Z):       }
+  Step 2117 (2026-06-01T18:22:27Z):     const currentLeads = await getLeads();
+
+=== Line 447 ===
+  Step 4385 (2026-06-03T18:02:45Z): 
+  Step 2117 (2026-06-01T18:22:27Z):     res.json(currentLeads);
+
+=== Line 448 ===
+  Step 4385 (2026-06-03T18:02:45Z):       res.json({ status: "success", message: "Quote approved and signed successfully" });
+  Step 2117 (2026-06-01T18:22:27Z):   });
+
+=== Line 449 ===
+  Step 4385 (2026-06-03T18:02:45Z):     } else {
+  Step 2117 (2026-06-01T18:22:27Z): 
+
+=== Line 450 ===
+  Step 4523 (2026-06-03T18:24:41Z):       res.status(500).json({ error: "Failed to sign quote" });
+  Step 4385 (2026-06-03T18:02:45Z):       res.status(500).json({ error: "Failed to sign quote" });
+  Step 2117 (2026-06-01T18:22:27Z):   app.get("/api/health", (req, res) => {
+
+=== Line 451 ===
+  Step 4523 (2026-06-03T18:24:41Z):     }
+  Step 4385 (2026-06-03T18:02:45Z):     }
+
+=== Line 452 ===
+  Step 4523 (2026-06-03T18:24:41Z):   });
+  Step 4385 (2026-06-03T18:02:45Z):   });
+
+=== Line 453 ===
+  Step 4523 (2026-06-03T18:24:41Z): 
+  Step 4385 (2026-06-03T18:02:45Z): 
+
+=== Line 454 ===
+  Step 4523 (2026-06-03T18:24:41Z):   // Get unified messages history (Admin Protected)
+  Step 4385 (2026-06-03T18:02:45Z):   app.get("/api/leads", async (req, res) => {
+
+=== Line 455 ===
+  Step 4523 (2026-06-03T18:24:41Z):   app.get("/api/messages", async (req, res) => {
+  Step 4385 (2026-06-03T18:02:45Z):     // Basic protection: check for a secret header
+
+=== Line 456 ===
+  Step 4523 (2026-06-03T18:24:41Z):     const adminSecret = req.headers['x-admin-secret'];
+  Step 4385 (2026-06-03T18:02:45Z):     const adminSecret = req.headers['x-admin-secret'];
+
+=== Line 457 ===
+  Step 4523 (2026-06-03T18:24:41Z):     if (adminSecret !== 'qi-admin-2026') {
+  Step 4385 (2026-06-03T18:02:45Z):     if (adminSecret !== 'qi-admin-2026') {
+
+=== Line 458 ===
+  Step 4523 (2026-06-03T18:24:41Z):       return res.status(401).json({ error: "Unauthorized" });
+  Step 4385 (2026-06-03T18:02:45Z):       return res.status(401).json({ error: "Unauthorized" });
+
+=== Line 459 ===
+  Step 4523 (2026-06-03T18:24:41Z):     }
+  Step 4385 (2026-06-03T18:02:45Z):     }
+
+=== Line 460 ===
+  Step 4523 (2026-06-03T18:24:41Z):     const messages = await getMessages();
+  Step 4385 (2026-06-03T18:02:45Z):     const currentLeads = await getLeads();
+
+=== Line 461 ===
+  Step 4523 (2026-06-03T18:24:41Z):     res.json(messages);
+  Step 4385 (2026-06-03T18:02:45Z):     res.json(currentLeads);
+
+=== Line 462 ===
+  Step 4523 (2026-06-03T18:24:41Z):   });
+  Step 4385 (2026-06-03T18:02:45Z):   });
+
+=== Line 463 ===
+  Step 4523 (2026-06-03T18:24:41Z): 
+  Step 4385 (2026-06-03T18:02:45Z): 
+
+=== Line 464 ===
+  Step 4523 (2026-06-03T18:24:41Z):   // Save outbound message and simulate delayed mock customer reply (Admin Protected)
+  Step 4385 (2026-06-03T18:02:45Z):   // Get all customers (Admin Protected)
+
+=== Line 465 ===
+  Step 4523 (2026-06-03T18:24:41Z):   app.post("/api/messages", async (req, res) => {
+  Step 4385 (2026-06-03T18:02:45Z):   app.get("/api/customers", async (req, res) => {
+
+=== Line 466 ===
+  Step 4523 (2026-06-03T18:24:41Z):     const adminSecret = req.headers['x-admin-secret'];
+  Step 4385 (2026-06-03T18:02:45Z):     const adminSecret = req.headers['x-admin-secret'];
+
+=== Line 467 ===
+  Step 4523 (2026-06-03T18:24:41Z):     if (adminSecret !== 'qi-admin-2026') {
+  Step 4385 (2026-06-03T18:02:45Z):     if (adminSecret !== 'qi-admin-2026') {
+
+=== Line 468 ===
+  Step 4523 (2026-06-03T18:24:41Z):       return res.status(401).json({ error: "Unauthorized" });
+  Step 4385 (2026-06-03T18:02:45Z):       return res.status(401).json({ error: "Unauthorized" });
+
+=== Line 469 ===
+  Step 4523 (2026-06-03T18:24:41Z):     }
+  Step 4385 (2026-06-03T18:02:45Z):     }
+
+=== Line 470 ===
+  Step 4523 (2026-06-03T18:24:41Z):     const { customerId, channel, text, sender } = req.body;
+  Step 4385 (2026-06-03T18:02:45Z):     const customers = await getCustomers();
+
+=== Line 471 ===
+  Step 4523 (2026-06-03T18:24:41Z):     if (!customerId || !channel || !text) {
+  Step 4385 (2026-06-03T18:02:45Z):     res.json(customers);
+
+=== Line 472 ===
+  Step 4523 (2026-06-03T18:24:41Z):       return res.status(400).json({ error: "Missing fields" });
+  Step 4385 (2026-06-03T18:02:45Z):   });
+
+=== Line 473 ===
+  Step 4523 (2026-06-03T18:24:41Z):     }
+  Step 4385 (2026-06-03T18:02:45Z): 
+
+=== Line 474 ===
+  Step 4523 (2026-06-03T18:24:41Z):     const message: Message = {
+  Step 4385 (2026-06-03T18:02:45Z):   // Create customer manually (Admin Protected)
+
+=== Line 475 ===
+  Step 4523 (2026-06-03T18:24:41Z):       id: Math.random().toString(36).substr(2, 9),
+  Step 4385 (2026-06-03T18:02:45Z):   app.post("/api/customers", async (req, res) => {
+
+=== Line 476 ===
+  Step 4523 (2026-06-03T18:24:41Z):       customerId,
+  Step 4385 (2026-06-03T18:02:45Z):     const adminSecret = req.headers['x-admin-secret'];
+
+=== Line 477 ===
+  Step 4523 (2026-06-03T18:24:41Z):       channel,
+  Step 4385 (2026-06-03T18:02:45Z):     if (adminSecret !== 'qi-admin-2026') {
+
+=== Line 478 ===
+  Step 4523 (2026-06-03T18:24:41Z):       direction: 'outbound',
+  Step 4385 (2026-06-03T18:02:45Z):       return res.status(401).json({ error: "Unauthorized" });
+
+=== Line 479 ===
+  Step 4523 (2026-06-03T18:24:41Z):       sender: sender || 'info@quartzinternational.ca',
+  Step 4385 (2026-06-03T18:02:45Z):     }
+
+=== Line 480 ===
+  Step 4523 (2026-06-03T18:24:41Z):       text,
+  Step 4385 (2026-06-03T18:02:45Z):     const { name, email, phone, notes } = req.body;
+
+=== Line 484 ===
+  Step 4077 (2026-06-03T16:23:01Z):     }
+  Step 2250 (2026-06-01T18:26:42Z):     }
+
+=== Line 485 ===
+  Step 4077 (2026-06-03T16:23:01Z):   });
+  Step 2250 (2026-06-01T18:26:42Z):   });
+
+=== Line 486 ===
+  Step 4077 (2026-06-03T16:23:01Z): 
+  Step 2250 (2026-06-01T18:26:42Z): 
+
+=== Line 487 ===
+  Step 4077 (2026-06-03T16:23:01Z):   // Update customer (Admin Protected)
+  Step 2250 (2026-06-01T18:26:42Z):   // Update customer (Admin Protected)
+
+=== Line 488 ===
+  Step 4077 (2026-06-03T16:23:01Z):   app.put("/api/customers/:id", async (req, res) => {
+  Step 2250 (2026-06-01T18:26:42Z):   app.put("/api/customers/:id", async (req, res) => {
+
+=== Line 489 ===
+  Step 4367 (2026-06-03T18:01:04Z):     const adminSecret = req.headers['x-admin-secret'];
+  Step 4077 (2026-06-03T16:23:01Z):     const adminSecret = req.headers['x-admin-secret'];
+  Step 2250 (2026-06-01T18:26:42Z):     const adminSecret = req.headers['x-admin-secret'];
+
+=== Line 490 ===
+  Step 4367 (2026-06-03T18:01:04Z):     if (adminSecret !== 'qi-admin-2026') {
+  Step 4077 (2026-06-03T16:23:01Z):     if (adminSecret !== 'qi-admin-2026') {
+  Step 2250 (2026-06-01T18:26:42Z):     if (adminSecret !== 'qi-admin-2026') {
+
+=== Line 491 ===
+  Step 4367 (2026-06-03T18:01:04Z):       return res.status(401).json({ error: "Unauthorized" });
+  Step 4077 (2026-06-03T16:23:01Z):       return res.status(401).json({ error: "Unauthorized" });
+  Step 2250 (2026-06-01T18:26:42Z):       return res.status(401).json({ error: "Unauthorized" });
+
+=== Line 492 ===
+  Step 4367 (2026-06-03T18:01:04Z):     }
+  Step 4077 (2026-06-03T16:23:01Z):     }
+  Step 2250 (2026-06-01T18:26:42Z):     }
+
+=== Line 493 ===
+  Step 4367 (2026-06-03T18:01:04Z):     const { id } = req.params;
+  Step 4077 (2026-06-03T16:23:01Z):     const { id } = req.params;
+  Step 2250 (2026-06-01T18:26:42Z):     const { id } = req.params;
+
+=== Line 494 ===
+  Step 4367 (2026-06-03T18:01:04Z):     const { name, email, phone, notes } = req.body;
+  Step 4077 (2026-06-03T16:23:01Z):     const { name, email, phone, notes } = req.body;
+  Step 2250 (2026-06-01T18:26:42Z):     const { name, email, phone, notes } = req.body;
+
+=== Line 495 ===
+  Step 4367 (2026-06-03T18:01:04Z): 
+  Step 4077 (2026-06-03T16:23:01Z): 
+  Step 2250 (2026-06-01T18:26:42Z): 
+
+=== Line 496 ===
+  Step 4367 (2026-06-03T18:01:04Z):     const updated = await updateCustomer(id, { name, email, phone, notes });
+  Step 4077 (2026-06-03T16:23:01Z):     const updated = await updateCustomer(id, { name, email, phone, notes });
+  Step 2250 (2026-06-01T18:26:42Z):     const updated = await updateCustomer(id, { name, email, phone, notes });
+
+=== Line 497 ===
+  Step 4367 (2026-06-03T18:01:04Z):     if (updated) {
+  Step 4077 (2026-06-03T16:23:01Z):     if (updated) {
+  Step 2250 (2026-06-01T18:26:42Z):     if (updated) {
+
+=== Line 498 ===
+  Step 4367 (2026-06-03T18:01:04Z):       // Propagate changes to all associated leads/quotes
+  Step 4077 (2026-06-03T16:23:01Z):       // Propagate changes to all associated leads/quotes
+  Step 2250 (2026-06-01T18:26:42Z):       // Propagate changes to all associated leads/quotes
+
+=== Line 499 ===
+  Step 4367 (2026-06-03T18:01:04Z):       const leads = await getLeads();
+  Step 4077 (2026-06-03T16:23:01Z):       const leads = await getLeads();
+  Step 2250 (2026-06-01T18:26:42Z):       const leads = await getLeads();
+
+=== Line 500 ===
+  Step 4367 (2026-06-03T18:01:04Z):       const associatedLeads = leads.filter(l => l.customerId === id);
+  Step 4077 (2026-06-03T16:23:01Z):       const associatedLeads = leads.filter(l => l.customerId === id);
+  Step 2250 (2026-06-01T18:26:42Z):       const associatedLeads = leads.filter(l => l.customerId === id);
+
+=== Line 501 ===
+  Step 4367 (2026-06-03T18:01:04Z):       for (const lead of associatedLeads) {
+  Step 4077 (2026-06-03T16:23:01Z):       for (const lead of associatedLeads) {
+  Step 2250 (2026-06-01T18:26:42Z):       for (const lead of associatedLeads) {
+
+=== Line 502 ===
+  Step 4367 (2026-06-03T18:01:04Z):         await updateLead(lead.id, {
+  Step 4077 (2026-06-03T16:23:01Z):         await updateLead(lead.id, {
+  Step 2250 (2026-06-01T18:26:42Z):         await updateLead(lead.id, {
+
+=== Line 503 ===
+  Step 4367 (2026-06-03T18:01:04Z):           name: name ?? lead.name,
+  Step 4077 (2026-06-03T16:23:01Z):           name: name ?? lead.name,
+  Step 2250 (2026-06-01T18:26:42Z):           name: name ?? lead.name,
+
+=== Line 504 ===
+  Step 4367 (2026-06-03T18:01:04Z):           email: email ?? lead.email,
+  Step 4077 (2026-06-03T16:23:01Z):           email: email ?? lead.email,
+  Step 2250 (2026-06-01T18:26:42Z):           email: email ?? lead.email,
+
+=== Line 505 ===
+  Step 4367 (2026-06-03T18:01:04Z):           phone: phone ?? lead.phone
+  Step 4077 (2026-06-03T16:23:01Z):           phone: phone ?? lead.phone
+  Step 2250 (2026-06-01T18:26:42Z):           phone: phone ?? lead.phone
+
+=== Line 506 ===
+  Step 4367 (2026-06-03T18:01:04Z):         });
+  Step 4077 (2026-06-03T16:23:01Z):         });
+  Step 2250 (2026-06-01T18:26:42Z):         });
+
+=== Line 507 ===
+  Step 4367 (2026-06-03T18:01:04Z):       }
+  Step 4077 (2026-06-03T16:23:01Z):       }
+  Step 2250 (2026-06-01T18:26:42Z):       }
+
+=== Line 508 ===
+  Step 4367 (2026-06-03T18:01:04Z):       res.json({ status: "success", message: "Customer updated and changes propagated successfully" });
+  Step 4077 (2026-06-03T16:23:01Z):       res.json({ status: "success", message: "Customer updated and changes propagated successfully" });
+  Step 2250 (2026-06-01T18:26:42Z):       res.json({ status: "success", message: "Customer updated and changes propagated successfully" });
+
+=== Line 509 ===
+  Step 4367 (2026-06-03T18:01:04Z):     } else {
+  Step 4077 (2026-06-03T16:23:01Z):     } else {
+  Step 2250 (2026-06-01T18:26:42Z):     } else {
+
+=== Line 510 ===
+  Step 4367 (2026-06-03T18:01:04Z):       res.status(404).json({ error: "Customer not found" });
+  Step 4077 (2026-06-03T16:23:01Z):       res.status(404).json({ error: "Customer not found" });
+  Step 2250 (2026-06-01T18:26:42Z):       res.status(404).json({ error: "Customer not found" });
+
+=== Line 511 ===
+  Step 4367 (2026-06-03T18:01:04Z):     }
+  Step 4077 (2026-06-03T16:23:01Z):     }
+  Step 2250 (2026-06-01T18:26:42Z):     }
+
+=== Line 512 ===
+  Step 4367 (2026-06-03T18:01:04Z):   });
+  Step 4077 (2026-06-03T16:23:01Z):   });
+  Step 2250 (2026-06-01T18:26:42Z):   });
+
+=== Line 513 ===
+  Step 4367 (2026-06-03T18:01:04Z): 
+  Step 4077 (2026-06-03T16:23:01Z): 
+  Step 2250 (2026-06-01T18:26:42Z): 
+
+=== Line 514 ===
+  Step 4367 (2026-06-03T18:01:04Z):   app.get("/api/health", (req, res) => {
+  Step 4077 (2026-06-03T16:23:01Z):   app.get("/api/health", (req, res) => {
+  Step 2250 (2026-06-01T18:26:42Z):   app.get("/api/health", (req, res) => {
+
+=== Line 515 ===
+  Step 4367 (2026-06-03T18:01:04Z):     res.json({ status: "ok" });
+  Step 4077 (2026-06-03T16:23:01Z):     res.json({ status: "ok" });
+  Step 2250 (2026-06-01T18:26:42Z):     res.json({ status: "ok" });
+
+=== Line 516 ===
+  Step 4367 (2026-06-03T18:01:04Z):   });
+  Step 4077 (2026-06-03T16:23:01Z):   });
+  Step 2250 (2026-06-01T18:26:42Z):   });
+
+=== Line 517 ===
+  Step 4367 (2026-06-03T18:01:04Z): 
+  Step 4077 (2026-06-03T16:23:01Z): 
+  Step 2250 (2026-06-01T18:26:42Z): 
+
+=== Line 518 ===
+  Step 4367 (2026-06-03T18:01:04Z):   // Vite middleware for development
+  Step 4077 (2026-06-03T16:23:01Z):   // Vite middleware for development
+  Step 2250 (2026-06-01T18:26:42Z):   // Vite middleware for development
+
+=== Line 519 ===
+  Step 4367 (2026-06-03T18:01:04Z):   if (process.env.NODE_ENV !== "production") {
+  Step 4077 (2026-06-03T16:23:01Z):   if (process.env.NODE_ENV !== "production") {
+  Step 2250 (2026-06-01T18:26:42Z):   if (process.env.NODE_ENV !== "production") {
+
+=== Line 520 ===
+  Step 4367 (2026-06-03T18:01:04Z):     const vite = await createViteServer({
+  Step 4077 (2026-06-03T16:23:01Z):     const vite = await createViteServer({
+  Step 2250 (2026-06-01T18:26:42Z):     const vite = await createViteServer({
+
+=== Line 521 ===
+  Step 4367 (2026-06-03T18:01:04Z):       server: { middlewareMode: true },
+  Step 4077 (2026-06-03T16:23:01Z):       server: { middlewareMode: true },
+  Step 2250 (2026-06-01T18:26:42Z):       server: { middlewareMode: true },
+
+=== Line 522 ===
+  Step 4367 (2026-06-03T18:01:04Z):       appType: "spa",
+  Step 4077 (2026-06-03T16:23:01Z):       appType: "spa",
+  Step 2250 (2026-06-01T18:26:42Z):       appType: "spa",
+
+=== Line 523 ===
+  Step 4367 (2026-06-03T18:01:04Z):     });
+  Step 4077 (2026-06-03T16:23:01Z):     });
+  Step 2250 (2026-06-01T18:26:42Z):     });
+
+=== Line 524 ===
+  Step 4367 (2026-06-03T18:01:04Z):     app.use(vite.middlewares);
+  Step 4077 (2026-06-03T16:23:01Z):     app.use(vite.middlewares);
+  Step 2250 (2026-06-01T18:26:42Z):     app.use(vite.middlewares);
+
+=== Line 525 ===
+  Step 4367 (2026-06-03T18:01:04Z):   } else {
+  Step 4077 (2026-06-03T16:23:01Z):   } else {
+  Step 2250 (2026-06-01T18:26:42Z):   } else {
+
+=== Line 526 ===
+  Step 4367 (2026-06-03T18:01:04Z):     const distPath = path.join(process.cwd(), 'dist');
+  Step 4077 (2026-06-03T16:23:01Z):     const distPath = path.join(process.cwd(), 'dist');
+  Step 2250 (2026-06-01T18:26:42Z):     const distPath = path.join(process.cwd(), 'dist');
+
+=== Line 527 ===
+  Step 4367 (2026-06-03T18:01:04Z):     app.use(express.static(distPath));
+  Step 4077 (2026-06-03T16:23:01Z):     app.use(express.static(distPath));
+  Step 2250 (2026-06-01T18:26:42Z):     app.use(express.static(distPath));
+
+=== Line 528 ===
+  Step 4367 (2026-06-03T18:01:04Z):     app.get('*', (req, res) => {
+  Step 4077 (2026-06-03T16:23:01Z):     app.get('*', (req, res) => {
+  Step 2250 (2026-06-01T18:26:42Z):     app.get('*', (req, res) => {
+
+=== Line 529 ===
+  Step 4367 (2026-06-03T18:01:04Z):       res.sendFile(path.join(distPath, 'index.html'));
+  Step 4077 (2026-06-03T16:23:01Z):       res.sendFile(path.join(distPath, 'index.html'));
+  Step 2250 (2026-06-01T18:26:42Z):       res.sendFile(path.join(distPath, 'index.html'));
+
+=== Line 530 ===
+  Step 4367 (2026-06-03T18:01:04Z):     });
+  Step 4077 (2026-06-03T16:23:01Z):     });
+  Step 2250 (2026-06-01T18:26:42Z):     });
+
+=== Line 531 ===
+  Step 4367 (2026-06-03T18:01:04Z):   }
+  Step 4077 (2026-06-03T16:23:01Z):   }
+  Step 2250 (2026-06-01T18:26:42Z):   }
+
+=== Line 532 ===
+  Step 4367 (2026-06-03T18:01:04Z): 
+  Step 4077 (2026-06-03T16:23:01Z): 
+  Step 2250 (2026-06-01T18:26:42Z): 
+
+=== Line 533 ===
+  Step 4367 (2026-06-03T18:01:04Z):   app.listen(PORT, "0.0.0.0", () => {
+  Step 4077 (2026-06-03T16:23:01Z):   app.listen(PORT, "0.0.0.0", () => {
+  Step 2250 (2026-06-01T18:26:42Z):   app.listen(PORT, "0.0.0.0", () => {
+
+=== Line 534 ===
+  Step 4367 (2026-06-03T18:01:04Z):     console.log(`Server running on http://localhost:${PORT}`);
+  Step 4077 (2026-06-03T16:23:01Z):     console.log(`Server running on http://localhost:${PORT}`);
+  Step 2250 (2026-06-01T18:26:42Z):     console.log(`Server running on http://localhost:${PORT}`);
+
+=== Line 535 ===
+  Step 4367 (2026-06-03T18:01:04Z):   });
+  Step 4077 (2026-06-03T16:23:01Z):   });
+  Step 2250 (2026-06-01T18:26:42Z):   });
+
+=== Line 536 ===
+  Step 4367 (2026-06-03T18:01:04Z): }
+  Step 4077 (2026-06-03T16:23:01Z): }
+  Step 2250 (2026-06-01T18:26:42Z): }
+
+=== Line 537 ===
+  Step 4367 (2026-06-03T18:01:04Z): 
+  Step 4077 (2026-06-03T16:23:01Z): 
+  Step 2250 (2026-06-01T18:26:42Z): 
+
+=== Line 538 ===
+  Step 4367 (2026-06-03T18:01:04Z): startServer();
+  Step 4077 (2026-06-03T16:23:01Z): startServer();
+  Step 2250 (2026-06-01T18:26:42Z): startServer();
+
+=== Line 539 ===
+  Step 4367 (2026-06-03T18:01:04Z): 
+  Step 4077 (2026-06-03T16:23:01Z): 
+  Step 2250 (2026-06-01T18:26:42Z): 
+
+=== Line 560 ===
+  Step 4849 (2026-06-03T19:04:24Z):       uploadedAt: new Date().toISOString(),
+
+=== Line 561 ===
+  Step 4849 (2026-06-03T19:04:24Z):       url: "#"
+
+=== Line 562 ===
+  Step 4849 (2026-06-03T19:04:24Z):     };
+
+=== Line 563 ===
+  Step 4849 (2026-06-03T19:04:24Z): 
+
+=== Line 564 ===
+  Step 4849 (2026-06-03T19:04:24Z):     const files = customer.files || [];
+
+=== Line 565 ===
+  Step 4849 (2026-06-03T19:04:24Z):     files.unshift(newFile);
+
+=== Line 566 ===
+  Step 4849 (2026-06-03T19:04:24Z): 
+
+=== Line 567 ===
+  Step 4849 (2026-06-03T19:04:24Z):     const updated = await updateCustomer(id, { files });
+
+=== Line 568 ===
+  Step 4849 (2026-06-03T19:04:24Z):     if (updated) {
+
+=== Line 569 ===
+  Step 4849 (2026-06-03T19:04:24Z):       res.json({ status: "success", file: newFile });
+
+=== Line 570 ===
+  Step 4849 (2026-06-03T19:04:24Z):     } else {
+
+=== Line 571 ===
+  Step 4849 (2026-06-03T19:04:24Z):       res.status(500).json({ error: "Failed to upload file mock" });
+
+=== Line 572 ===
+  Step 4849 (2026-06-03T19:04:24Z):     }
+
+=== Line 573 ===
+  Step 4849 (2026-06-03T19:04:24Z):   });
+
+=== Line 574 ===
+  Step 4849 (2026-06-03T19:04:24Z): 
+
+=== Line 575 ===
+  Step 4849 (2026-06-03T19:04:24Z):   app.get("/api/leads", async (req, res) => {
+
+=== Line 576 ===
+  Step 4849 (2026-06-03T19:04:24Z):     // Basic protection: check for a secret header
+
+=== Line 577 ===
+  Step 4849 (2026-06-03T19:04:24Z):     const adminSecret = req.headers['x-admin-secret'];
+
+=== Line 578 ===
+  Step 4849 (2026-06-03T19:04:24Z):     if (adminSecret !== 'qi-admin-2026') {
+
+=== Line 579 ===
+  Step 4849 (2026-06-03T19:04:24Z):       return res.status(401).json({ error: "Unauthorized" });
+
+=== Line 580 ===
+  Step 4849 (2026-06-03T19:04:24Z):     }
+  Step 4586 (2026-06-03T18:30:23Z):     }
+
+=== Line 581 ===
+  Step 4849 (2026-06-03T19:04:24Z):     const currentLeads = await getLeads();
+  Step 4586 (2026-06-03T18:30:23Z):     const currentLeads = await getLeads();
+
+=== Line 582 ===
+  Step 4849 (2026-06-03T19:04:24Z):     res.json(currentLeads);
+  Step 4586 (2026-06-03T18:30:23Z):     res.json(currentLeads);
+
+=== Line 583 ===
+  Step 4849 (2026-06-03T19:04:24Z):   });
+  Step 4586 (2026-06-03T18:30:23Z):   });
+
+=== Line 584 ===
+  Step 4849 (2026-06-03T19:04:24Z): 
+  Step 4586 (2026-06-03T18:30:23Z): 
+
+=== Line 585 ===
+  Step 4849 (2026-06-03T19:04:24Z):   // Get all customers (Admin Protected)
+  Step 4586 (2026-06-03T18:30:23Z):   // Get all customers (Admin Protected)
+
+=== Line 586 ===
+  Step 4849 (2026-06-03T19:04:24Z):   app.get("/api/customers", async (req, res) => {
+  Step 4586 (2026-06-03T18:30:23Z):   app.get("/api/customers", async (req, res) => {
+
+=== Line 587 ===
+  Step 4849 (2026-06-03T19:04:24Z):     const adminSecret = req.headers['x-admin-secret'];
+  Step 4586 (2026-06-03T18:30:23Z):     const adminSecret = req.headers['x-admin-secret'];
+
+=== Line 588 ===
+  Step 4849 (2026-06-03T19:04:24Z):     if (adminSecret !== 'qi-admin-2026') {
+  Step 4586 (2026-06-03T18:30:23Z):     if (adminSecret !== 'qi-admin-2026') {
+
+=== Line 589 ===
+  Step 4849 (2026-06-03T19:04:24Z):       return res.status(401).json({ error: "Unauthorized" });
+  Step 4586 (2026-06-03T18:30:23Z):       return res.status(401).json({ error: "Unauthorized" });
+
+=== Line 590 ===
+  Step 4849 (2026-06-03T19:04:24Z):     }
+  Step 4586 (2026-06-03T18:30:23Z):     }
+
+=== Line 591 ===
+  Step 4849 (2026-06-03T19:04:24Z):     const customers = await getCustomers();
+  Step 4586 (2026-06-03T18:30:23Z):     const customers = await getCustomers();
+
+=== Line 592 ===
+  Step 4849 (2026-06-03T19:04:24Z):     res.json(customers);
+  Step 4586 (2026-06-03T18:30:23Z):     res.json(customers);
+
+=== Line 593 ===
+  Step 4849 (2026-06-03T19:04:24Z):   });
+  Step 4586 (2026-06-03T18:30:23Z):   });
+
+=== Line 594 ===
+  Step 4849 (2026-06-03T19:04:24Z): 
+  Step 4586 (2026-06-03T18:30:23Z): 
+
+=== Line 595 ===
+  Step 4849 (2026-06-03T19:04:24Z):   // Create customer manually (Admin Protected)
+  Step 4586 (2026-06-03T18:30:23Z):   // Create customer manually (Admin Protected)
+
+=== Line 596 ===
+  Step 4849 (2026-06-03T19:04:24Z):   app.post("/api/customers", async (req, res) => {
+  Step 4586 (2026-06-03T18:30:23Z):   app.post("/api/customers", async (req, res) => {
+
+=== Line 597 ===
+  Step 4849 (2026-06-03T19:04:24Z):     const adminSecret = req.headers['x-admin-secret'];
+  Step 4586 (2026-06-03T18:30:23Z):     const adminSecret = req.headers['x-admin-secret'];
+
+=== Line 598 ===
+  Step 4849 (2026-06-03T19:04:24Z):     if (adminSecret !== 'qi-admin-2026') {
+  Step 4586 (2026-06-03T18:30:23Z):     if (adminSecret !== 'qi-admin-2026') {
+
+=== Line 599 ===
+  Step 4849 (2026-06-03T19:04:24Z):       return res.status(401).json({ error: "Unauthorized" });
+  Step 4586 (2026-06-03T18:30:23Z):       return res.status(401).json({ error: "Unauthorized" });
+
+=== Line 600 ===
+  Step 4849 (2026-06-03T19:04:24Z):     }
+  Step 4586 (2026-06-03T18:30:23Z):     }
+
+=== Line 620 ===
+  Step 4857 (2026-06-03T19:04:41Z):   });
+
+=== Line 621 ===
+  Step 4857 (2026-06-03T19:04:41Z): 
+
+=== Line 622 ===
+  Step 4857 (2026-06-03T19:04:41Z):   // Update customer (Admin Protected)
+
+=== Line 623 ===
+  Step 4857 (2026-06-03T19:04:41Z):   app.put("/api/customers/:id", async (req, res) => {
+
+=== Line 624 ===
+  Step 4982 (2026-06-03T22:13:58Z):     const adminSecret = req.headers['x-admin-secret'];
+  Step 4857 (2026-06-03T19:04:41Z):     const adminSecret = req.headers['x-admin-secret'];
+
+=== Line 625 ===
+  Step 4982 (2026-06-03T22:13:58Z):     if (adminSecret !== 'qi-admin-2026') {
+  Step 4857 (2026-06-03T19:04:41Z):     if (adminSecret !== 'qi-admin-2026') {
+
+=== Line 626 ===
+  Step 4982 (2026-06-03T22:13:58Z):       return res.status(401).json({ error: "Unauthorized" });
+  Step 4857 (2026-06-03T19:04:41Z):       return res.status(401).json({ error: "Unauthorized" });
+
+=== Line 627 ===
+  Step 4982 (2026-06-03T22:13:58Z):     }
+  Step 4857 (2026-06-03T19:04:41Z):     }
+
+=== Line 628 ===
+  Step 4982 (2026-06-03T22:13:58Z):     const { id } = req.params;
+  Step 4857 (2026-06-03T19:04:41Z):     const { id } = req.params;
+
+=== Line 629 ===
+  Step 4982 (2026-06-03T22:13:58Z):     const { name, email, phone, notes } = req.body;
+  Step 4857 (2026-06-03T19:04:41Z):     const { name, email, phone, notes } = req.body;
+
+=== Line 630 ===
+  Step 4982 (2026-06-03T22:13:58Z): 
+  Step 4857 (2026-06-03T19:04:41Z): 
+
+=== Line 631 ===
+  Step 4982 (2026-06-03T22:13:58Z):     const updated = await updateCustomer(id, { name, email, phone, notes });
+  Step 4857 (2026-06-03T19:04:41Z):     const updated = await updateCustomer(id, { name, email, phone, notes });
+
+=== Line 632 ===
+  Step 4982 (2026-06-03T22:13:58Z):     if (updated) {
+  Step 4857 (2026-06-03T19:04:41Z):     if (updated) {
+
+=== Line 633 ===
+  Step 4982 (2026-06-03T22:13:58Z):       // Propagate changes to all associated leads/quotes
+  Step 4857 (2026-06-03T19:04:41Z):       // Propagate changes to all associated leads/quotes
+
+=== Line 634 ===
+  Step 4982 (2026-06-03T22:13:58Z):       const leads = await getLeads();
+  Step 4857 (2026-06-03T19:04:41Z):       const leads = await getLeads();
+
+=== Line 635 ===
+  Step 4982 (2026-06-03T22:13:58Z):       const associatedLeads = leads.filter(l => l.customerId === id);
+  Step 4857 (2026-06-03T19:04:41Z):       const associatedLeads = leads.filter(l => l.customerId === id);
+
+=== Line 636 ===
+  Step 4982 (2026-06-03T22:13:58Z):       for (const lead of associatedLeads) {
+  Step 4857 (2026-06-03T19:04:41Z):       for (const lead of associatedLeads) {
+
+=== Line 637 ===
+  Step 4982 (2026-06-03T22:13:58Z):         await updateLead(lead.id, {
+  Step 4857 (2026-06-03T19:04:41Z):         await updateLead(lead.id, {
+
+=== Line 638 ===
+  Step 4982 (2026-06-03T22:13:58Z):           name: name ?? lead.name,
+  Step 4857 (2026-06-03T19:04:41Z):           name: name ?? lead.name,
+
+=== Line 639 ===
+  Step 4982 (2026-06-03T22:13:58Z):           email: email ?? lead.email,
+  Step 4857 (2026-06-03T19:04:41Z):           email: email ?? lead.email,
+
+=== Line 640 ===
+  Step 4982 (2026-06-03T22:13:58Z):           phone: phone ?? lead.phone
+  Step 4857 (2026-06-03T19:04:41Z):           phone: phone ?? lead.phone
+
+=== Line 641 ===
+  Step 4982 (2026-06-03T22:13:58Z):         });
+  Step 4857 (2026-06-03T19:04:41Z):         });
+
+=== Line 642 ===
+  Step 4982 (2026-06-03T22:13:58Z):       }
+  Step 4857 (2026-06-03T19:04:41Z):       }
+
+=== Line 643 ===
+  Step 4982 (2026-06-03T22:13:58Z):       res.json({ status: "success", message: "Customer updated and changes propagated successfully" });
+  Step 4857 (2026-06-03T19:04:41Z):       res.json({ status: "success", message: "Customer updated and changes propagated successfully" });
+
+=== Line 644 ===
+  Step 4982 (2026-06-03T22:13:58Z):     } else {
+  Step 4857 (2026-06-03T19:04:41Z):     } else {
+
+=== Line 645 ===
+  Step 4982 (2026-06-03T22:13:58Z):       res.status(404).json({ error: "Customer not found" });
+  Step 4857 (2026-06-03T19:04:41Z):       res.status(404).json({ error: "Customer not found" });
+
+=== Line 646 ===
+  Step 4982 (2026-06-03T22:13:58Z):     }
+  Step 4857 (2026-06-03T19:04:41Z):     }
+
+=== Line 647 ===
+  Step 4982 (2026-06-03T22:13:58Z):   });
+  Step 4857 (2026-06-03T19:04:41Z):   });
+
+=== Line 648 ===
+  Step 4982 (2026-06-03T22:13:58Z): 
+  Step 4857 (2026-06-03T19:04:41Z): 
+
+=== Line 649 ===
+  Step 4982 (2026-06-03T22:13:58Z):   app.get("/api/health", (req, res) => {
+  Step 4857 (2026-06-03T19:04:41Z):   app.get("/api/health", (req, res) => {
+
+=== Line 650 ===
+  Step 4982 (2026-06-03T22:13:58Z):     res.json({ status: "ok" });
+  Step 4857 (2026-06-03T19:04:41Z):     res.json({ status: "ok" });
+
+=== Line 651 ===
+  Step 4982 (2026-06-03T22:13:58Z):   });
+  Step 4857 (2026-06-03T19:04:41Z):   });
+
+=== Line 652 ===
+  Step 4982 (2026-06-03T22:13:58Z): 
+  Step 4857 (2026-06-03T19:04:41Z): 
+
+=== Line 653 ===
+  Step 4982 (2026-06-03T22:13:58Z):   // Vite middleware for development
+  Step 4857 (2026-06-03T19:04:41Z):   // Vite middleware for development
+
+=== Line 654 ===
+  Step 4982 (2026-06-03T22:13:58Z):   if (process.env.NODE_ENV !== "production") {
+  Step 4857 (2026-06-03T19:04:41Z):   if (process.env.NODE_ENV !== "production") {
+
+=== Line 655 ===
+  Step 4982 (2026-06-03T22:13:58Z):     const vite = await createViteServer({
+  Step 4857 (2026-06-03T19:04:41Z):     const vite = await createViteServer({
+
+=== Line 656 ===
+  Step 4982 (2026-06-03T22:13:58Z):       server: { middlewareMode: true },
+  Step 4857 (2026-06-03T19:04:41Z):       server: { middlewareMode: true },
+
+=== Line 657 ===
+  Step 4982 (2026-06-03T22:13:58Z):       appType: "spa",
+  Step 4857 (2026-06-03T19:04:41Z):       appType: "spa",
+
+=== Line 658 ===
+  Step 4982 (2026-06-03T22:13:58Z):     });
+  Step 4857 (2026-06-03T19:04:41Z):     });
+
+=== Line 659 ===
+  Step 4982 (2026-06-03T22:13:58Z):     app.use(vite.middlewares);
+  Step 4857 (2026-06-03T19:04:41Z):     app.use(vite.middlewares);
+
+=== Line 660 ===
+  Step 4982 (2026-06-03T22:13:58Z):   } else {
+  Step 4857 (2026-06-03T19:04:41Z):   } else {
+
+=== Line 661 ===
+  Step 4982 (2026-06-03T22:13:58Z):     const distPath = path.join(process.cwd(), 'dist');
+  Step 4857 (2026-06-03T19:04:41Z):     const distPath = path.join(process.cwd(), 'dist');
+
+=== Line 662 ===
+  Step 4982 (2026-06-03T22:13:58Z):     app.use(express.static(distPath));
+  Step 4857 (2026-06-03T19:04:41Z):     app.use(express.static(distPath));
+
+=== Line 663 ===
+  Step 4982 (2026-06-03T22:13:58Z):     app.get('*', (req, res) => {
+  Step 4857 (2026-06-03T19:04:41Z):     app.get('*', (req, res) => {
+
+=== Line 664 ===
+  Step 4982 (2026-06-03T22:13:58Z):       res.sendFile(path.join(distPath, 'index.html'));
+  Step 4857 (2026-06-03T19:04:41Z):       res.sendFile(path.join(distPath, 'index.html'));
+
+=== Line 665 ===
+  Step 4982 (2026-06-03T22:13:58Z):     });
+  Step 4857 (2026-06-03T19:04:41Z):     });
+
+=== Line 666 ===
+  Step 4982 (2026-06-03T22:13:58Z):   }
+  Step 4857 (2026-06-03T19:04:41Z):   }
+
+=== Line 667 ===
+  Step 4982 (2026-06-03T22:13:58Z): 
+  Step 4857 (2026-06-03T19:04:41Z): 
+
+=== Line 668 ===
+  Step 4982 (2026-06-03T22:13:58Z):   app.listen(PORT, "0.0.0.0", () => {
+  Step 4857 (2026-06-03T19:04:41Z):   app.listen(PORT, "0.0.0.0", () => {
+
+=== Line 669 ===
+  Step 4982 (2026-06-03T22:13:58Z):     console.log(`Server running on http://localhost:${PORT}`);
+  Step 4857 (2026-06-03T19:04:41Z):     console.log(`Server running on http://localhost:${PORT}`);
+
+=== Line 670 ===
+  Step 4982 (2026-06-03T22:13:58Z):   });
+  Step 4857 (2026-06-03T19:04:41Z):   });
+
+=== Line 671 ===
+  Step 4982 (2026-06-03T22:13:58Z): }
+  Step 4857 (2026-06-03T19:04:41Z): }
+
+=== Line 672 ===
+  Step 4982 (2026-06-03T22:13:58Z): 
+  Step 4857 (2026-06-03T19:04:41Z): 
+
+=== Line 673 ===
+  Step 4982 (2026-06-03T22:13:58Z): startServer();
+  Step 4857 (2026-06-03T19:04:41Z): startServer();
+
+=== Line 674 ===
+  Step 4982 (2026-06-03T22:13:58Z): 
+  Step 4857 (2026-06-03T19:04:41Z): 
+

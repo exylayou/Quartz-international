@@ -1,0 +1,28 @@
+[
+  {
+    "id": "gpac6i0f3",
+    "createdAt": "2026-06-03T22:33:37.892Z",
+    "name": "Ken Maingot",
+    "email": "Kenny.maingot@gmail.com",
+    "phone": "6479178192",
+    "notes": "",
+    "layout": "L-Shape",
+    "quartzLevel": "premium",
+    "selectedSlab": "",
+    "countertopSqFt": 40,
+    "hasIsland": false,
+    "includeCabinets": false,
+    "cabinetLinearFt": 20,
+    "cabinetStyle": "flat",
+    "timeline": "asap",
+    "extras": [],
+    "cabinetExtras": [],
+    "countertopCostLow": 2800,
+    "countertopCostHigh": 3800,
+    "cabinetCostLow": 0,
+    "cabinetCostHigh": 0,
+    "totalCostLow": 2800,
+    "totalCostHigh": 3800,
+    "customerId": "u9vaqq2kq"
+  }
+]
