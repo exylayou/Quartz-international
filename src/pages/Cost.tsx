@@ -20,6 +20,17 @@ import {
 import { Link } from 'react-router-dom';
 import { cn } from '../lib/utils';
 
+// Import images
+import heroImg from '../assets/images/regenerated_image_1777741714310.png';
+import condoKitchen from '../assets/images/regenerated_image_1777758978147.png';
+import standardKitchen from '../assets/images/regenerated_image_1777758979417.png';
+import largeKitchen from '../assets/images/regenerated_image_1777759410525.png';
+import quartzImg from '../assets/images/regenerated_image_1777760428513.png';
+import graniteImg from '../assets/images/regenerated_image_1777760429812.png';
+import marbleImg from '../assets/images/regenerated_image_1777760431259.png';
+import laminateImg from '../assets/images/regenerated_image_1777760432651.png';
+import cabinetUpsellImg from '../assets/images/regenerated_image_1777760426998.png';
+
 export default function Cost() {
   const [openFaq, setOpenFaq] = React.useState<number | null>(null);
 
@@ -30,30 +41,30 @@ export default function Cost() {
   ];
 
   const examples = [
-    { title: 'Condo Kitchen', size: '25 – 35 sq ft', price: '$1,500 – $3,500', img: '/src/assets/images/regenerated_image_1777758978147.png' },
-    { title: 'Standard Kitchen', size: '35 – 50 sq ft', price: '$2,000 – $5,000', img: '/src/assets/images/regenerated_image_1777758979417.png' },
-    { title: 'Large Kitchen', size: '50 – 70+ sq ft', price: '$5,000 – $11,000+', img: '/src/assets/images/regenerated_image_1777759410525.png' },
+    { title: 'Condo Kitchen', size: '25 – 35 sq ft', price: '$1,500 – $3,500', img: condoKitchen },
+    { title: 'Standard Kitchen', size: '35 – 50 sq ft', price: '$2,000 – $5,000', img: standardKitchen },
+    { title: 'Large Kitchen', size: '50 – 70+ sq ft', price: '$5,000 – $11,000+', img: largeKitchen },
   ];
 
   const compareCards = [
     { 
       name: 'Quartz', 
-      img: '/src/assets/images/regenerated_image_1777760428513.png',
+      img: quartzImg,
       features: ['Non-porous', 'Low maintenance', 'Stain & scratch resistant', 'Wide range of designs', 'Great value']
     },
     { 
       name: 'Granite', 
-      img: '/src/assets/images/regenerated_image_1777760429812.png',
+      img: graniteImg,
       features: ['Natural stone', 'Requires sealing', 'More pattern variation', 'Higher maintenance', 'Moderate value']
     },
     { 
       name: 'Marble', 
-      img: '/src/assets/images/regenerated_image_1777760431259.png',
+      img: marbleImg,
       features: ['Natural beauty', 'Prone to staining', 'Soft & porous', 'High maintenance', 'Higher cost']
     },
     { 
       name: 'Laminate', 
-      img: '/src/assets/images/regenerated_image_1777760432651.png',
+      img: laminateImg,
       features: ['Budget friendly', 'Limited durability', 'Less heat resistant', 'Fewer design options', 'Lower cost']
     }
   ];
@@ -129,7 +140,7 @@ export default function Cost() {
                 className="aspect-[4/5] rounded-[var(--radius-card)] overflow-hidden shadow-2xl relative"
               >
                 <img 
-                  src="/src/assets/images/regenerated_image_1777741714310.png" 
+                  src={heroImg} 
                   alt="Modern Quartz Countertop" 
                   className="w-full h-full object-cover"
                 />
@@ -140,7 +151,7 @@ export default function Cost() {
             {/* Mobile Hero Image */}
             <div className="lg:hidden w-full">
               <img 
-                src="/src/assets/images/regenerated_image_1777741714310.png" 
+                src={heroImg} 
                 alt="Modern Quartz Countertop" 
                 className="w-full aspect-[16/9] object-cover rounded-[var(--radius-card)]"
               />
@@ -371,7 +382,7 @@ export default function Cost() {
         <div className="bg-[#F8F9FA] rounded-[3rem] p-12 md:p-20 flex flex-col md:flex-row items-center gap-12 relative overflow-hidden border border-border-custom">
           <div className="md:w-1/3">
              <div className="rounded-3xl overflow-hidden shadow-2xl aspect-square border-8 border-white">
-                <img src="/src/assets/images/regenerated_image_1777760426998.png" alt="Cabinet Upsell" className="w-full h-full object-cover" />
+                <img src={cabinetUpsellImg} alt="Cabinet Upsell" className="w-full h-full object-cover" />
              </div>
           </div>
           <div className="md:w-2/3">
