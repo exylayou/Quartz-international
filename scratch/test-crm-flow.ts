@@ -27,7 +27,7 @@ async function run() {
   });
   const newCustData = await newCustRes.json() as any;
   console.log("Customer created:", newCustData);
-  const createdCustId = newCustData.customer.id;
+  const createdCustId = newCustData.id;
 
   console.log("\n3. Creating a new quote/lead associated with this customer...");
   const newLeadRes = await fetch(`${baseUrl}/api/leads`, {

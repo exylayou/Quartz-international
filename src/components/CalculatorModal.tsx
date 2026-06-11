@@ -176,11 +176,41 @@ export default function CalculatorModal() {
     setEmailError(false);
     
     try {
+      // Retrieve UTM and behavior tracking details
+      let utmParams = {};
+      let behaviorMetadata = {};
+      try {
+        const utmRaw = sessionStorage.getItem('qi_utm_data');
+        if (utmRaw) utmParams = JSON.parse(utmRaw);
+
+        const behaviorRaw = sessionStorage.getItem('qi_user_behavior');
+        if (behaviorRaw) {
+          const behavior = JSON.parse(behaviorRaw);
+          const now = Date.now();
+          // Finalize duration of the active page view
+          if (behavior.pageViews && behavior.pageViews.length > 0) {
+            const lastPage = behavior.pageViews[behavior.pageViews.length - 1];
+            if (!lastPage.durationMs) {
+              lastPage.durationMs = now - lastPage.enteredAt;
+            }
+          }
+          // Calculate total duration since start of tracking
+          if (behavior.sessionStart) {
+            behavior.timeSpentMs = now - new Date(behavior.sessionStart).getTime();
+          }
+          behaviorMetadata = behavior;
+        }
+      } catch (err) {
+        console.error('Failed to parse analytics data in modal handleSubmit:', err);
+      }
+
       const response = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...formData,
+          ...utmParams,
+          behavior: behaviorMetadata,
           state,
           results
         })

@@ -9,6 +9,7 @@ import {
   User, 
   Mail, 
   Phone, 
+  TrendingUp,
   Calculator as CalcIcon, 
   X, 
   Users, 
@@ -49,7 +50,9 @@ export default function Admin() {
   const [copied, setCopied] = React.useState(false);
 
   // Multi-tab workspace state
-  const [activeTab, setActiveTab] = React.useState<'inbox' | 'leads' | 'quotes' | 'customers'>('inbox');
+  const [activeTab, setActiveTab] = React.useState<'inbox' | 'leads' | 'quotes' | 'customers' | 'analytics'>('inbox');
+  const [adSpend, setAdSpend] = React.useState(1500);
+  const [closeRate, setCloseRate] = React.useState(15);
   const [customers, setCustomers] = React.useState<any[]>([]);
   const [loadingCustomers, setLoadingCustomers] = React.useState(false);
   const [quoteInvoiceFilter, setQuoteInvoiceFilter] = React.useState<'all' | 'quotes' | 'invoices'>('all');
@@ -1048,6 +1051,136 @@ export default function Admin() {
   const customersWithLeadsCount = customers.filter(c => leads.some(l => l.customerId === c.id || (l.email && c.email && l.email.toLowerCase() === c.email.toLowerCase()))).length;
   const customerApprovedConversion = customers.length ? Math.round((leads.filter(l => l.quoteNumber && l.quoteStatus === 'approved').length / customers.length) * 100) : 0;
 
+  // Google Ads UTM & User Behavior Analytics Calculations
+  const analyticsData = React.useMemo(() => {
+    // 1. Google Ads UTM & attribution counts
+    const adAttributedLeads = leads.filter(l => {
+      const src = (l.utmSource || '').toLowerCase();
+      const med = (l.utmMedium || '').toLowerCase();
+      return src.includes('google') || src.includes('ad') || med === 'cpc' || l.gclid;
+    });
+    const adAttributedLeadsCount = adAttributedLeads.length;
+    const attributionRate = totalLeads ? Math.round((adAttributedLeadsCount / totalLeads) * 100) : 0;
+    
+    // 2. Paid Pipeline Opportunity (using average project value or estimate totals)
+    const paidPipelineValue = adAttributedLeads.reduce((acc, l) => acc + (l.totalCostHigh || 0), 0);
+    const avgAdLeadValue = adAttributedLeadsCount ? Math.round(paidPipelineValue / adAttributedLeadsCount) : 0;
+    
+    // 3. Channels split
+    const channelsMap: Record<string, { count: number; pipeline: number }> = {};
+    leads.forEach(l => {
+      const source = l.utmSource || 'organic / direct';
+      const medium = l.utmMedium || '';
+      const key = `${source}${medium ? ' (' + medium + ')' : ''}`;
+      if (!channelsMap[key]) {
+        channelsMap[key] = { count: 0, pipeline: 0 };
+      }
+      channelsMap[key].count += 1;
+      channelsMap[key].pipeline += (l.totalCostHigh || 0);
+    });
+    
+    const channels = Object.entries(channelsMap).map(([name, data]) => ({
+      name,
+      count: data.count,
+      pipeline: data.pipeline,
+      percentage: totalLeads ? Math.round((data.count / totalLeads) * 100) : 0
+    })).sort((a, b) => b.count - a.count);
+
+    // 4. Campaigns split
+    const campaignsMap: Record<string, { count: number; pipeline: number }> = {};
+    leads.forEach(l => {
+      if (l.utmCampaign) {
+        if (!campaignsMap[l.utmCampaign]) {
+          campaignsMap[l.utmCampaign] = { count: 0, pipeline: 0 };
+        }
+        campaignsMap[l.utmCampaign].count += 1;
+        campaignsMap[l.utmCampaign].pipeline += (l.totalCostHigh || 0);
+      }
+    });
+    
+    const campaigns = Object.entries(campaignsMap).map(([name, data]) => ({
+      name,
+      count: data.count,
+      pipeline: data.pipeline
+    })).sort((a, b) => b.count - a.count);
+
+    // 5. Keywords split
+    const keywordsMap: Record<string, { count: number; pipeline: number }> = {};
+    leads.forEach(l => {
+      if (l.utmTerm) {
+        if (!keywordsMap[l.utmTerm]) {
+          keywordsMap[l.utmTerm] = { count: 0, pipeline: 0 };
+        }
+        keywordsMap[l.utmTerm].count += 1;
+        keywordsMap[l.utmTerm].pipeline += (l.totalCostHigh || 0);
+      }
+    });
+    
+    const keywords = Object.entries(keywordsMap).map(([name, data]) => ({
+      name,
+      count: data.count,
+      pipeline: data.pipeline
+    })).sort((a, b) => b.count - a.count);
+
+    // 6. User page behavior analytics
+    let totalPageViews = 0;
+    let totalSessionDuration = 0;
+    let totalInteractions = 0;
+    let leadsWithBehavior = 0;
+    const landingPagesMap: Record<string, number> = {};
+
+    leads.forEach(l => {
+      if (l.behavior) {
+        leadsWithBehavior += 1;
+        totalPageViews += l.behavior.pageViews?.length || 0;
+        totalSessionDuration += l.behavior.timeSpentMs || 0;
+        totalInteractions += l.behavior.totalInteractions || 0;
+        
+        if (l.behavior.pageViews && l.behavior.pageViews.length > 0) {
+          const landing = l.behavior.pageViews[0].path?.split('?')[0] || '/';
+          landingPagesMap[landing] = (landingPagesMap[landing] || 0) + 1;
+        }
+      }
+    });
+
+    const avgPageViews = leadsWithBehavior ? (totalPageViews / leadsWithBehavior).toFixed(1) : '0';
+    const avgSessionDurationSeconds = leadsWithBehavior ? Math.round((totalSessionDuration / leadsWithBehavior) / 1000) : 0;
+    const avgInteractions = leadsWithBehavior ? (totalInteractions / leadsWithBehavior).toFixed(1) : '0';
+
+    const landingPages = Object.entries(landingPagesMap).map(([path, count]) => ({
+      path,
+      count,
+      percentage: totalLeads ? Math.round((count / totalLeads) * 100) : 0
+    })).sort((a, b) => b.count - a.count);
+
+    return {
+      adAttributedLeadsCount,
+      attributionRate,
+      paidPipelineValue,
+      avgAdLeadValue,
+      channels,
+      campaigns,
+      keywords,
+      avgPageViews,
+      avgSessionDurationSeconds,
+      avgInteractions,
+      landingPages,
+      leadsWithBehavior
+    };
+  }, [leads, totalLeads]);
+
+  // Simulator computations
+  const activeAdLeads = analyticsData.adAttributedLeadsCount;
+  const baselineCpl = activeAdLeads > 0 ? Math.round(1500 / activeAdLeads) : 85;
+  const projectedLeadsCount = Math.max(1, Math.round(adSpend / baselineCpl));
+  const cpl = Math.round(adSpend / projectedLeadsCount);
+  const closingRateDecimal = closeRate / 100;
+  const projectedCustomersCount = Math.round(projectedLeadsCount * closingRateDecimal);
+  const avgRevenueValue = analyticsData.avgAdLeadValue > 0 ? analyticsData.avgAdLeadValue : 4500;
+  const projectedRevenue = projectedCustomersCount * avgRevenueValue;
+  const roas = adSpend > 0 ? (projectedRevenue / adSpend).toFixed(1) : '0.0';
+  const cac = projectedCustomersCount > 0 ? Math.round(adSpend / projectedCustomersCount) : adSpend;
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Admin Header */}
@@ -1130,7 +1263,8 @@ export default function Admin() {
               { id: 'inbox', name: 'Inbox', icon: <MessageSquare size={16} /> },
               { id: 'leads', name: 'Leads & Inquiries', icon: <Mail size={16} /> },
               { id: 'quotes', name: 'Quotes & Invoices', icon: <FileText size={16} /> },
-              { id: 'customers', name: 'Customers', icon: <Users size={16} /> }
+              { id: 'customers', name: 'Customers', icon: <Users size={16} /> },
+              { id: 'analytics', name: 'Google Ads & Analytics', icon: <TrendingUp size={16} /> }
             ].map(tab => (
               <button
                 key={tab.id}
@@ -2347,6 +2481,318 @@ export default function Admin() {
             </div>
           </div>
         )}
+
+        {/* GOOGLE ADS & BEHAVIOR ANALYTICS PANEL */}
+        {activeTab === 'analytics' && (
+          <div className="space-y-8 animate-fade-in text-left">
+            {/* KPI Cards Row */}
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+              {[
+                { label: 'Total Leads Captured', value: totalLeads, desc: 'Overall inquiries in CRM', icon: <Users className="text-[#3B82F6]" size={20} /> },
+                { 
+                  label: 'Ad-Attributed Leads', 
+                  value: analyticsData.adAttributedLeadsCount, 
+                  desc: `${analyticsData.attributionRate}% of total volume`, 
+                  icon: <TrendingUp className="text-accent" size={20} /> 
+                },
+                { 
+                  label: 'Paid Pipeline Value', 
+                  value: `$${analyticsData.paidPipelineValue.toLocaleString()}`, 
+                  desc: 'Inquiries via paid traffic', 
+                  icon: <FileText className="text-[#10B981]" size={20} /> 
+                },
+                { 
+                  label: 'Avg. Ad Lead Value', 
+                  value: `$${analyticsData.avgAdLeadValue.toLocaleString()}`, 
+                  desc: 'Estimated average project size', 
+                  icon: <CalcIcon className="text-[#F59E0B]" size={20} /> 
+                }
+              ].map((kpi, idx) => (
+                <div key={idx} className="bg-white p-6 rounded-3xl border border-border-custom shadow-sm">
+                  <div className="flex justify-between items-start mb-4">
+                    <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">{kpi.label}</span>
+                    <div className="p-2 bg-gray-50 rounded-xl border border-border-custom/50">
+                      {kpi.icon}
+                    </div>
+                  </div>
+                  <h4 className="text-2xl font-black text-gray-850 mb-1">{kpi.value}</h4>
+                  <p className="text-xs text-gray-500 font-semibold">{kpi.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* User Page Behavior Summary Cards */}
+            <div className="bg-white p-6 rounded-3xl border border-border-custom shadow-sm">
+              <h3 className="font-bold text-base text-gray-850 mb-6 flex items-center gap-2">
+                <span>🖱️ User Page Engagement Profile</span>
+                <span className="text-[10px] bg-accent/10 text-accent font-semibold px-2 py-0.5 rounded font-mono">
+                  Based on {analyticsData.leadsWithBehavior} lead journeys
+                </span>
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                <div className="bg-gray-50/50 p-4 rounded-2xl border border-border-custom/60 flex flex-col justify-between">
+                  <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Avg. Pages Visited</span>
+                  <div>
+                    <h5 className="text-3xl font-black text-gray-850 font-mono mb-1">{analyticsData.avgPageViews}</h5>
+                    <p className="text-xs text-gray-500">Pages browsed per session</p>
+                  </div>
+                </div>
+                <div className="bg-gray-50/50 p-4 rounded-2xl border border-border-custom/60 flex flex-col justify-between">
+                  <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Avg. Session Duration</span>
+                  <div>
+                    <h5 className="text-3xl font-black text-gray-850 font-mono mb-1">{analyticsData.avgSessionDurationSeconds}s</h5>
+                    <p className="text-xs text-gray-500">Active engagement time</p>
+                  </div>
+                </div>
+                <div className="bg-gray-50/50 p-4 rounded-2xl border border-border-custom/60 flex flex-col justify-between">
+                  <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Avg. Calculator Clicks</span>
+                  <div>
+                    <h5 className="text-3xl font-black text-gray-850 font-mono mb-1">{analyticsData.avgInteractions}</h5>
+                    <p className="text-xs text-gray-500">Calculator actions count</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Interactive Ad Spend & ROI Simulator */}
+            <div className="bg-[#0E1116] text-white p-8 rounded-3xl border border-border-custom/50 shadow-2xl relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
+              
+              <div className="mb-6">
+                <span className="text-[10px] font-bold uppercase tracking-widest text-accent font-mono">Dynamic Performance Analytics</span>
+                <h3 className="text-xl font-bold mt-1">Google Ads Spend & Conversion Simulator</h3>
+                <p className="text-xs text-gray-400 mt-1 max-w-xl">
+                  Simulate ad budgets and contract closing rates to forecast lead volumes, acquisition costs, revenue growth, and Return on Ad Spend (ROAS).
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+                {/* Sliders (Left) */}
+                <div className="lg:col-span-5 space-y-6">
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-xs font-bold">
+                      <span className="text-gray-400 uppercase tracking-widest text-[9px]">Monthly Google Ads Spend</span>
+                      <span className="text-accent font-mono">${adSpend.toLocaleString()}</span>
+                    </div>
+                    <input 
+                      type="range" 
+                      min="500" 
+                      max="10000" 
+                      step="250"
+                      value={adSpend}
+                      onChange={(e) => setAdSpend(parseInt(e.target.value))}
+                      className="w-full accent-accent bg-white/10 rounded-lg appearance-none h-2"
+                    />
+                    <div className="flex justify-between text-[9px] text-gray-500">
+                      <span>$500</span>
+                      <span>$5,000</span>
+                      <span>$10,000</span>
+                    </div>
+                  </div>
+
+                  <div className="space-y-2">
+                    <div className="flex justify-between text-xs font-bold">
+                      <span className="text-gray-400 uppercase tracking-widest text-[9px]">Sales Close Rate</span>
+                      <span className="text-accent font-mono">{closeRate}%</span>
+                    </div>
+                    <input 
+                      type="range" 
+                      min="5" 
+                      max="50" 
+                      step="1"
+                      value={closeRate}
+                      onChange={(e) => setCloseRate(parseInt(e.target.value))}
+                      className="w-full accent-accent bg-white/10 rounded-lg appearance-none h-2"
+                    />
+                    <div className="flex justify-between text-[9px] text-gray-500">
+                      <span>5% (Conservative)</span>
+                      <span>25%</span>
+                      <span>50% (High Close Rate)</span>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Metrics Results Grid (Right) */}
+                <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-4">
+                  {[
+                    { label: 'Forecasted Leads', value: projectedLeadsCount, desc: `At $${cpl}/lead`, suffix: '' },
+                    { label: 'Projected Closed Deals', value: projectedCustomersCount, desc: `Based on ${closeRate}% close rate`, suffix: '' },
+                    { label: 'Projected Revenue', value: `$${projectedRevenue.toLocaleString()}`, desc: `At $${avgRevenueValue.toLocaleString()}/project`, suffix: '' },
+                    { label: 'Cost Per Lead (CPL)', value: `$${cpl}`, desc: 'Dynamic CPC calculation', suffix: '' },
+                    { label: 'Customer Acq. Cost (CAC)', value: `$${cac}`, desc: 'Total marketing cost per sale', suffix: '' },
+                    { 
+                      label: 'Return on Ad Spend (ROAS)', 
+                      value: `${roas}x`, 
+                      desc: parseFloat(roas) > 3.0 ? '🟢 High Performance' : '🟡 Average Performance', 
+                      suffix: '', 
+                      highlight: true 
+                    }
+                  ].map((res, idx) => (
+                    <div key={idx} className={`p-4 rounded-2xl border ${res.highlight ? 'bg-accent/10 border-accent/30 col-span-2 sm:col-span-1' : 'bg-white/5 border-white/10'} flex flex-col justify-between`}>
+                      <span className="text-[9px] font-bold text-gray-400 uppercase tracking-widest block mb-2">{res.label}</span>
+                      <div>
+                        <h4 className={`text-xl font-black font-mono ${res.highlight ? 'text-accent' : 'text-white'}`}>{res.value}</h4>
+                        <p className="text-[9px] text-gray-400 mt-1 font-semibold">{res.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Channels & Keywords Distribution Panels */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Traffic Channels Distribution */}
+              <div className="bg-white rounded-3xl border border-border-custom shadow-sm overflow-hidden flex flex-col">
+                <div className="p-6 border-b border-border-custom bg-gray-50">
+                  <h3 className="font-bold text-base text-gray-850">Traffic Channels Distribution</h3>
+                  <p className="text-xs text-gray-500 mt-0.5">Where leads are discovering the estimate engine</p>
+                </div>
+                <div className="p-6 space-y-5 flex-1 overflow-y-auto max-h-[350px]">
+                  {analyticsData.channels.length === 0 ? (
+                    <div className="text-center py-12 text-gray-400 text-sm">No channel attributions captured.</div>
+                  ) : (
+                    analyticsData.channels.map((chan, idx) => (
+                      <div key={idx} className="space-y-1">
+                        <div className="flex justify-between items-center text-xs font-bold text-gray-700">
+                          <span className="capitalize">{chan.name}</span>
+                          <span>{chan.count} leads ({chan.percentage}%)</span>
+                        </div>
+                        <div className="w-full bg-gray-100 h-2 rounded-full overflow-hidden">
+                          <div 
+                            className="bg-accent h-full rounded-full transition-all duration-500" 
+                            style={{ width: `${chan.percentage}%` }}
+                          ></div>
+                        </div>
+                        <div className="flex justify-between items-center text-[10px] text-gray-400">
+                          <span>Est. Opportunity Pipeline</span>
+                          <span className="font-semibold font-mono">${chan.pipeline.toLocaleString()}</span>
+                        </div>
+                      </div>
+                    ))
+                  )}
+                </div>
+              </div>
+
+              {/* Active Search Keywords */}
+              <div className="bg-white rounded-3xl border border-border-custom shadow-sm overflow-hidden flex flex-col">
+                <div className="p-6 border-b border-border-custom bg-gray-50">
+                  <h3 className="font-bold text-base text-gray-850">Google Ads Search Keywords</h3>
+                  <p className="text-xs text-gray-500 mt-0.5">Terms and keywords generating lead responses</p>
+                </div>
+                <div className="overflow-x-auto flex-1 max-h-[350px] overflow-y-auto">
+                  <table className="w-full text-left text-xs">
+                    <thead>
+                      <tr className="border-b border-border-custom bg-gray-50/50 font-bold text-gray-400 uppercase tracking-widest text-[9px]">
+                        <th className="px-6 py-3">Search Term / Keyword</th>
+                        <th className="px-6 py-3 text-center">Lead Count</th>
+                        <th className="px-6 py-3 text-right">Pipeline Opportunity</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-border-custom">
+                      {analyticsData.keywords.length === 0 ? (
+                        <tr>
+                          <td colSpan={3} className="px-6 py-12 text-center text-gray-400 font-medium">
+                            No keyword analytics captured yet. Add <code>?utm_term=keyword</code> to landing URLs.
+                          </td>
+                        </tr>
+                      ) : (
+                        analyticsData.keywords.map((kw, idx) => (
+                          <tr key={idx} className="hover:bg-gray-50/50">
+                            <td className="px-6 py-3 font-semibold text-gray-700 font-mono">{kw.name}</td>
+                            <td className="px-6 py-3 text-center font-bold text-gray-800">{kw.count}</td>
+                            <td className="px-6 py-3 text-right font-mono font-semibold text-accent">${kw.pipeline.toLocaleString()}</td>
+                          </tr>
+                        ))
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            {/* Campaign Metrics & Page Journey Rankings */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+              {/* Google Ads Active Campaigns */}
+              <div className="bg-white rounded-3xl border border-border-custom shadow-sm overflow-hidden flex flex-col">
+                <div className="p-6 border-b border-border-custom bg-gray-50">
+                  <h3 className="font-bold text-base text-gray-850">Google Ads Campaigns</h3>
+                  <p className="text-xs text-gray-500 mt-0.5">Campaign performance mapped to lead volume</p>
+                </div>
+                <div className="overflow-x-auto flex-1 max-h-[350px] overflow-y-auto">
+                  <table className="w-full text-left text-xs">
+                    <thead>
+                      <tr className="border-b border-border-custom bg-gray-50/50 font-bold text-gray-400 uppercase tracking-widest text-[9px]">
+                        <th className="px-6 py-3">Campaign Name</th>
+                        <th className="px-6 py-3 text-center">Leads</th>
+                        <th className="px-6 py-3 text-right">Avg. Lead Value</th>
+                        <th className="px-6 py-3 text-right">Total Pipeline</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-border-custom">
+                      {analyticsData.campaigns.length === 0 ? (
+                        <tr>
+                          <td colSpan={4} className="px-6 py-12 text-center text-gray-400 font-medium">
+                            No active campaign data found in submitted leads.
+                          </td>
+                        </tr>
+                      ) : (
+                        analyticsData.campaigns.map((camp, idx) => (
+                          <tr key={idx} className="hover:bg-gray-50/50">
+                            <td className="px-6 py-3 font-bold text-gray-850">{camp.name}</td>
+                            <td className="px-6 py-3 text-center font-bold text-gray-750">{camp.count}</td>
+                            <td className="px-6 py-3 text-right font-mono font-medium text-gray-600">${Math.round(camp.pipeline / camp.count).toLocaleString()}</td>
+                            <td className="px-6 py-3 text-right font-mono font-bold text-accent">${camp.pipeline.toLocaleString()}</td>
+                          </tr>
+                        ))
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* Popular Landing Pages */}
+              <div className="bg-white rounded-3xl border border-border-custom shadow-sm overflow-hidden flex flex-col">
+                <div className="p-6 border-b border-border-custom bg-gray-50">
+                  <h3 className="font-bold text-base text-gray-850">Top Landing Pages for Conversions</h3>
+                  <p className="text-xs text-gray-500 mt-0.5">Initial pages visitors land on before submitting</p>
+                </div>
+                <div className="overflow-x-auto flex-1 max-h-[350px] overflow-y-auto">
+                  <table className="w-full text-left text-xs">
+                    <thead>
+                      <tr className="border-b border-border-custom bg-gray-50/50 font-bold text-gray-400 uppercase tracking-widest text-[9px]">
+                        <th className="px-6 py-3">Page Path</th>
+                        <th className="px-6 py-3 text-center">Conversions</th>
+                        <th className="px-6 py-3 text-right">Conversion Share</th>
+                      </tr>
+                    </thead>
+                    <tbody className="divide-y divide-border-custom">
+                      {analyticsData.landingPages.length === 0 ? (
+                        <tr>
+                          <td colSpan={3} className="px-6 py-12 text-center text-gray-400 font-medium">
+                            No page behavior tracking data found.
+                          </td>
+                        </tr>
+                      ) : (
+                        analyticsData.landingPages.map((lp, idx) => (
+                          <tr key={idx} className="hover:bg-gray-50/50">
+                            <td className="px-6 py-3 font-semibold text-gray-700 font-mono truncate max-w-xs">{lp.path}</td>
+                            <td className="px-6 py-3 text-center font-bold text-gray-850">{lp.count}</td>
+                            <td className="px-6 py-3 text-right">
+                              <span className="inline-block bg-accent/10 text-accent font-semibold px-2 py-0.5 rounded font-mono text-[10px]">
+                                {lp.percentage}%
+                              </span>
+                            </td>
+                          </tr>
+                        ))
+                      )}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
 
       {/* ========================================================================= */}
@@ -3107,6 +3553,91 @@ export default function Admin() {
                     {selectedLead.layout === 'Contact Form' ? 'Message Details' : 'Notes & Details'}
                   </p>
                   <p className="text-sm text-gray-600 leading-relaxed whitespace-pre-wrap">{selectedLead.notes}</p>
+                </div>
+              )}
+
+              {/* Traffic Attribution & Behavior Journey */}
+              {(selectedLead.utmSource || selectedLead.gclid || selectedLead.behavior) && (
+                <div className="bg-[#FAFBFD] p-4 rounded-xl border border-border-custom space-y-4 text-left">
+                  <p className="text-[10px] font-bold text-gray-500 uppercase tracking-widest flex items-center gap-1">
+                    <TrendingUp size={12} className="text-accent" />
+                    🌐 Traffic Attribution & User Behavior Journey
+                  </p>
+                  
+                  {/* UTM Parameters Grid */}
+                  {(selectedLead.utmSource || selectedLead.utmMedium || selectedLead.utmCampaign || selectedLead.utmTerm || selectedLead.utmContent || selectedLead.gclid) && (
+                    <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs bg-white p-3 rounded-lg border border-border-custom/50">
+                      {selectedLead.utmSource && (
+                        <div>
+                          <span className="text-gray-400 block text-[9px] uppercase font-bold">Source</span>
+                          <span className="font-semibold text-gray-700">{selectedLead.utmSource}</span>
+                        </div>
+                      )}
+                      {selectedLead.utmMedium && (
+                        <div>
+                          <span className="text-gray-400 block text-[9px] uppercase font-bold">Medium</span>
+                          <span className="font-semibold text-gray-700">{selectedLead.utmMedium}</span>
+                        </div>
+                      )}
+                      {selectedLead.utmCampaign && (
+                        <div>
+                          <span className="text-gray-400 block text-[9px] uppercase font-bold">Campaign</span>
+                          <span className="font-semibold text-gray-700">{selectedLead.utmCampaign}</span>
+                        </div>
+                      )}
+                      {selectedLead.utmTerm && (
+                        <div>
+                          <span className="text-gray-400 block text-[9px] uppercase font-bold">Keyword / Term</span>
+                          <span className="font-semibold text-gray-700 font-mono">{selectedLead.utmTerm}</span>
+                        </div>
+                      )}
+                      {selectedLead.utmContent && (
+                        <div>
+                          <span className="text-gray-400 block text-[9px] uppercase font-bold">Ad Content</span>
+                          <span className="font-semibold text-gray-700">{selectedLead.utmContent}</span>
+                        </div>
+                      )}
+                      {selectedLead.gclid && (
+                        <div className="col-span-2">
+                          <span className="text-gray-400 block text-[9px] uppercase font-bold">Google Click ID (GCLID)</span>
+                          <span className="font-mono text-[10px] text-accent font-semibold break-all bg-accent/5 px-1.5 py-0.5 rounded">{selectedLead.gclid}</span>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Behavior Journey Timeline */}
+                  {selectedLead.behavior && (
+                    <div className="space-y-3">
+                      <div className="flex justify-between items-center text-xs text-gray-500 bg-white px-3 py-1.5 rounded border border-border-custom/50">
+                        <span>Session Start: <strong>{new Date(selectedLead.behavior.sessionStart).toLocaleString()}</strong></span>
+                        <span>Total Active Time: <strong>{selectedLead.behavior.timeSpentMs ? `${Math.round(selectedLead.behavior.timeSpentMs / 1000)}s` : 'N/A'}</strong></span>
+                      </div>
+                      
+                      <div className="border border-border-custom/50 rounded-lg overflow-hidden bg-white">
+                        <div className="bg-gray-50 px-3 py-2 border-b border-border-custom/50 flex justify-between items-center text-[10px] font-bold text-gray-400 uppercase tracking-wider">
+                          <span>User Page Flow ({selectedLead.behavior.pageViews?.length || 0})</span>
+                          <span className="normal-case font-normal text-gray-500">
+                            Interactions: {selectedLead.behavior.totalInteractions || 0} | Opens: {selectedLead.behavior.calculatorOpenedCount || 0}
+                          </span>
+                        </div>
+                        <div className="divide-y divide-border-custom/30 max-h-48 overflow-y-auto text-xs">
+                          {selectedLead.behavior.pageViews && selectedLead.behavior.pageViews.length > 0 ? (
+                            selectedLead.behavior.pageViews.map((pv: any, index: number) => (
+                              <div key={index} className="px-3 py-2 flex justify-between items-center hover:bg-gray-50/50">
+                                <span className="font-mono text-gray-700 truncate max-w-[75%]">{pv.path}</span>
+                                <span className="text-gray-400 text-[10px] font-semibold bg-gray-100 px-1.5 py-0.5 rounded shrink-0">
+                                  {pv.durationMs ? `${Math.round(pv.durationMs / 1000)}s` : 'active / submit'}
+                                </span>
+                              </div>
+                            ))
+                          ) : (
+                            <div className="p-3 text-center text-gray-400">No page details recorded.</div>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  )}
                 </div>
               )}
 

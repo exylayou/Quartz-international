@@ -86,6 +86,15 @@ app.post("/api/leads", async (req, res) => {
       quoteSubtotal: raw.quoteSubtotal || undefined,
       quoteTax: raw.quoteTax || undefined,
       quoteTotal: raw.quoteTotal || undefined,
+
+      // UTM & Behavior analytics
+      utmSource: raw.utmSource || undefined,
+      utmMedium: raw.utmMedium || undefined,
+      utmCampaign: raw.utmCampaign || undefined,
+      utmTerm: raw.utmTerm || undefined,
+      utmContent: raw.utmContent || undefined,
+      gclid: raw.gclid || undefined,
+      behavior: raw.behavior || undefined,
     };
 
     // Auto link to customer profile

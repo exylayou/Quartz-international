@@ -155,7 +155,20 @@ export const CalculatorProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     }
 
     setState(newState);
-    // Track modal_open
+    
+    // Track modal_open in behavior stats
+    try {
+      const behaviorRaw = sessionStorage.getItem('qi_user_behavior');
+      if (behaviorRaw) {
+        const behavior = JSON.parse(behaviorRaw);
+        behavior.calculatorOpenedCount = (behavior.calculatorOpenedCount || 0) + 1;
+        behavior.totalInteractions = (behavior.totalInteractions || 0) + 1;
+        sessionStorage.setItem('qi_user_behavior', JSON.stringify(behavior));
+      }
+    } catch (e) {
+      console.error('Failed to update modal open behavior stats:', e);
+    }
+
     console.log('Event: modal_open', newState);
   };
 
@@ -163,18 +176,100 @@ export const CalculatorProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     setState(prev => ({ ...prev, isOpen: false }));
   };
 
+  const incrementInteractions = () => {
+    try {
+      const behaviorRaw = sessionStorage.getItem('qi_user_behavior');
+      if (behaviorRaw) {
+        const behavior = JSON.parse(behaviorRaw);
+        behavior.totalInteractions = (behavior.totalInteractions || 0) + 1;
+        sessionStorage.setItem('qi_user_behavior', JSON.stringify(behavior));
+      }
+    } catch (e) {
+      console.error('Failed to increment interactions:', e);
+    }
+  };
+
   const setStep = (step: number) => {
     setState(prev => ({ ...prev, step }));
+    incrementInteractions();
     console.log(`Event: calculator_step_completed`, { step: state.step, nextStep: step });
   };
 
   const updateState = (updates: Partial<CalculatorState>) => {
     setState(prev => ({ ...prev, ...updates }));
+    incrementInteractions();
   };
 
   const resetCalculator = () => {
     setState(INITIAL_STATE);
   };
+
+  // Handle UTM parameters and page behavior tracking
+  useEffect(() => {
+    try {
+      // 1. UTM and Click ID Capturing
+      const searchParams = new URLSearchParams(location.search);
+      const utmSource = searchParams.get('utm_source');
+      const utmMedium = searchParams.get('utm_medium');
+      const utmCampaign = searchParams.get('utm_campaign');
+      const utmTerm = searchParams.get('utm_term');
+      const utmContent = searchParams.get('utm_content');
+      const gclid = searchParams.get('gclid');
+
+      if (utmSource || utmMedium || utmCampaign || utmTerm || utmContent || gclid) {
+        const existingUtm = JSON.parse(sessionStorage.getItem('qi_utm_data') || '{}');
+        const newUtm = {
+          utmSource: utmSource || existingUtm.utmSource,
+          utmMedium: utmMedium || existingUtm.utmMedium,
+          utmCampaign: utmCampaign || existingUtm.utmCampaign,
+          utmTerm: utmTerm || existingUtm.utmTerm,
+          utmContent: utmContent || existingUtm.utmContent,
+          gclid: gclid || existingUtm.gclid,
+        };
+        sessionStorage.setItem('qi_utm_data', JSON.stringify(newUtm));
+      }
+
+      // 2. Page Behavior & Engagement Tracking
+      const path = location.pathname + location.search;
+      const now = Date.now();
+      
+      const behaviorRaw = sessionStorage.getItem('qi_user_behavior');
+      let behavior = behaviorRaw ? JSON.parse(behaviorRaw) : {
+        sessionStart: new Date().toISOString(),
+        pageViews: [],
+        calculatorOpenedCount: 0,
+        totalInteractions: 0,
+        timeSpentMs: 0
+      };
+
+      // Update duration of the previous page view if it exists
+      if (behavior.pageViews.length > 0) {
+        const prevIndex = behavior.pageViews.length - 1;
+        const prevPage = behavior.pageViews[prevIndex];
+        if (!prevPage.durationMs) {
+          prevPage.durationMs = now - prevPage.enteredAt;
+        }
+      }
+
+      // Avoid duplicate consecutive page view entries for the same path
+      const lastPage = behavior.pageViews[behavior.pageViews.length - 1];
+      if (!lastPage || lastPage.path !== path) {
+        behavior.pageViews.push({
+          path,
+          enteredAt: now
+        });
+      }
+
+      // Maintain limit on number of pages stored in history (e.g. max 30)
+      if (behavior.pageViews.length > 30) {
+        behavior.pageViews = behavior.pageViews.slice(-30);
+      }
+
+      sessionStorage.setItem('qi_user_behavior', JSON.stringify(behavior));
+    } catch (e) {
+      console.error('Error tracking behavior/UTM:', e);
+    }
+  }, [location]);
 
   // Handle URL parameters on initial load
   useEffect(() => {

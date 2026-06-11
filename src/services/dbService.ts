@@ -37,6 +37,20 @@ export interface Message {
   isRead?: boolean;
 }
 
+export interface UserPageView {
+  path: string;
+  enteredAt: number;
+  durationMs?: number;
+}
+
+export interface UserBehavior {
+  sessionStart: string;
+  pageViews: UserPageView[];
+  calculatorOpenedCount: number;
+  totalInteractions: number;
+  timeSpentMs: number;
+}
+
 export interface Lead {
   id: string;
   createdAt: string;
@@ -66,6 +80,15 @@ export interface Lead {
   totalCostLow?: number;
   totalCostHigh?: number;
   includeCountertops?: boolean;
+
+  // UTM Attribution & User Behavior Fields
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  utmTerm?: string;
+  utmContent?: string;
+  gclid?: string;
+  behavior?: UserBehavior;
   
   // Quote / Invoicing System Fields
   quoteStatus?: 'draft' | 'sent' | 'approved' | 'invoiced' | 'paid';
