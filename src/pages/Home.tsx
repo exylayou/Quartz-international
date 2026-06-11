@@ -8,7 +8,7 @@ import gallery2 from '../assets/images/regenerated_image_1777699854133.jpg';
 import gallery3 from '../assets/images/regenerated_image_1777930248325.jpg';
 import inspired4 from '../assets/images/regenerated_image_1777760428513.png';
 import suburbanRemodel from '../assets/images/suburban_remodel.png';
-import whyChooseUsImg from '../assets/images/regenerated_image_1777741993217.png';
+import modernKitchenQuartz from '../assets/images/modern_kitchen_quartz.png';
 // Re-aliasing for clarity in the inspired section
 const inspired1 = gallery1;
 const inspired2 = gallery2;
@@ -19,7 +19,6 @@ import { useCalculator } from '../context/CalculatorContext';
 export default function Home() {
   const { openCalculator } = useCalculator();
   const [isScrolled, setIsScrolled] = React.useState(false);
-  const [isPlayingVideo, setIsPlayingVideo] = React.useState(false);
 
   React.useEffect(() => {
     const handleScroll = () => {
@@ -304,40 +303,16 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative aspect-[16/10] rounded-[2rem] overflow-hidden shadow-2xl bg-gray-50">
-              {isPlayingVideo ? (
-                <video 
-                  src="https://assets.mixkit.co/videos/preview/mixkit-kitchen-with-white-cabinets-and-countertops-41008-large.mp4" 
-                  className="w-full h-full object-cover"
-                  controls
-                  autoPlay
-                  playsInline
-                />
-              ) : (
-                <div className="w-full h-full relative cursor-pointer group" onClick={() => setIsPlayingVideo(true)}>
-                  <motion.div 
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 1 }}
-                    viewport={{ once: true }}
-                    className="w-full h-full relative"
-                  >
-                    <motion.img 
-                      src={whyChooseUsImg} 
-                      alt="Modern luxury kitchen with quartz countertops" 
-                      className="w-full h-full object-cover"
-                      referrerPolicy="no-referrer"
-                      animate={{ scale: [1, 1.05] }}
-                      transition={{ duration: 20, repeat: Infinity, repeatType: "reverse", ease: "linear" }}
-                    />
-                    <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors flex items-center justify-center">
-                      <div className="w-16 h-16 rounded-full bg-white/90 backdrop-blur-sm flex items-center justify-center shadow-2xl scale-100 group-hover:scale-110 transition-transform border border-white/20">
-                        <div className="w-0 h-0 border-t-[10px] border-t-transparent border-l-[16px] border-l-text-primary border-b-[10px] border-b-transparent ml-1" />
-                      </div>
-                    </div>
-                  </motion.div>
-                </div>
-              )}
+            <div className="relative aspect-[16/10] rounded-[2rem] overflow-hidden shadow-2xl bg-gray-50 group">
+              <motion.img 
+                src={modernKitchenQuartz} 
+                alt="Modern luxury kitchen with custom dark blue cabinets and white quartz countertops" 
+                className="w-full h-full object-cover"
+                initial={{ opacity: 0, scale: 0.95 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1 }}
+                viewport={{ once: true }}
+              />
             </div>
           </div>
 
