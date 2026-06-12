@@ -4,8 +4,8 @@ const app = express();
 
 app.all('*', async (req, res) => {
   try {
-    // Dynamically import the main server module to catch any initialization errors
-    const serverModule = await import('../server');
+    // Dynamically import the main server module with explicit .js extension
+    const serverModule = await import('../server.js');
     const actualApp = serverModule.default;
     return actualApp(req, res);
   } catch (err: any) {
