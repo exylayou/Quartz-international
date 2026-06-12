@@ -207,8 +207,8 @@ export default function Admin() {
       l.cabinetLinearFt || 0,
       l.cabinetStyle || '',
       l.timeline || '',
-      (l.extras || []).join('; '),
-      (l.cabinetExtras || []).join('; '),
+      Array.isArray(l.extras) ? l.extras.join('; ') : (typeof l.extras === 'object' && l.extras ? Object.keys(l.extras).filter(k => (l.extras as any)[k] === true).join('; ') : ''),
+      Array.isArray(l.cabinetExtras) ? l.cabinetExtras.join('; ') : (typeof l.cabinetExtras === 'object' && l.cabinetExtras ? Object.keys(l.cabinetExtras).filter(k => (l.cabinetExtras as any)[k] === true).join('; ') : ''),
       l.countertopCostLow || 0,
       l.countertopCostHigh || 0,
       l.cabinetCostLow || 0,
@@ -3679,11 +3679,11 @@ export default function Admin() {
                               : (selectedLead.hasIsland ? 'Yes' : 'No')}
                           </p>
                         </div>
-                        {selectedLead.extras && selectedLead.extras.length > 0 && (
+                        {selectedLead.extras && (Array.isArray(selectedLead.extras) ? selectedLead.extras.length > 0 : Object.keys(selectedLead.extras).some(k => (selectedLead.extras as any)[k] === true)) && (
                           <div className="col-span-2">
                             <p className="text-gray-400 text-[10px]">Countertop Extras</p>
                             <div className="flex flex-wrap gap-1 mt-1">
-                              {selectedLead.extras.map((extra: string, idx: number) => (
+                              {(Array.isArray(selectedLead.extras) ? selectedLead.extras : Object.keys(selectedLead.extras).filter(k => (selectedLead.extras as any)[k] === true)).map((extra: string, idx: number) => (
                                 <span key={idx} className="bg-gray-100 text-gray-700 px-2 py-0.5 rounded text-xs font-medium">
                                   {extra}
                                 </span>
@@ -3737,11 +3737,11 @@ export default function Admin() {
                             <p className="font-semibold text-gray-800">{selectedLead.selectedCabinetStyle}</p>
                           </div>
                         )}
-                        {selectedLead.cabinetExtras && selectedLead.cabinetExtras.length > 0 && (
+                         {selectedLead.cabinetExtras && (Array.isArray(selectedLead.cabinetExtras) ? selectedLead.cabinetExtras.length > 0 : Object.keys(selectedLead.cabinetExtras).some(k => (selectedLead.cabinetExtras as any)[k] === true)) && (
                           <div className="col-span-2">
                             <p className="text-gray-400 text-[10px]">Cabinet Additions / Extras</p>
                             <div className="flex flex-wrap gap-1 mt-1">
-                              {selectedLead.cabinetExtras.map((extra: string, idx: number) => (
+                              {(Array.isArray(selectedLead.cabinetExtras) ? selectedLead.cabinetExtras : Object.keys(selectedLead.cabinetExtras).filter(k => (selectedLead.cabinetExtras as any)[k] === true)).map((extra: string, idx: number) => (
                                 <span key={idx} className="bg-gray-100 text-gray-700 px-2 py-0.5 rounded text-xs font-medium">
                                   {extra}
                                 </span>
