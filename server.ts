@@ -15,7 +15,7 @@ import {
   Lead,
   Customer,
   Message
-} from "./src/services/dbService";
+} from "./src/services/dbService.js";
 
 // Load environment variables
 dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
