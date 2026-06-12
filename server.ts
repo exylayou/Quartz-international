@@ -738,6 +738,79 @@ app.post("/api/leads", async (req, res) => {
       res.status(500).json({ error: "Failed to mark messages as read" });
     }
   });
+  app.get("/api/debug", async (req, res) => {
+    const adminSecret = req.headers['x-admin-secret'] || req.query.secret;
+    if (adminSecret !== 'qi-admin-2026') {
+      return res.status(401).json({ error: "Unauthorized" });
+    }
+    
+    const diagnostics: any = {
+      isVercel: !!process.env.VERCEL,
+      cwd: process.cwd(),
+      env: {
+        VERCEL: process.env.VERCEL,
+        NODE_ENV: process.env.NODE_ENV,
+      },
+      paths: {},
+    };
+
+    const pathsToCheck = [
+      'data',
+      'data/leads.json',
+      'api/data',
+      'api/data/leads.json',
+      '../data',
+      '../data/leads.json',
+    ];
+
+    const fsNative = await import('fs');
+    
+    for (const p of pathsToCheck) {
+      const resolved = path.resolve(process.cwd(), p);
+      diagnostics.paths[p] = {
+        resolved,
+        exists: fsNative.existsSync(resolved),
+      };
+      if (diagnostics.paths[p].exists) {
+        try {
+          const stat = fsNative.statSync(resolved);
+          diagnostics.paths[p].isFile = stat.isFile();
+          diagnostics.paths[p].size = stat.size;
+          if (stat.isFile() && p.endsWith('.json') && stat.size < 50000) {
+             const content = fsNative.readFileSync(resolved, 'utf-8');
+             diagnostics.paths[p].preview = JSON.parse(content).slice(0, 1);
+          }
+        } catch (err: any) {
+          diagnostics.paths[p].error = err.message;
+        }
+      }
+    }
+
+    try {
+      diagnostics.cwdFiles = fsNative.readdirSync(process.cwd());
+    } catch (err: any) {
+      diagnostics.cwdFilesError = err.message;
+    }
+
+    const tmpLeadsPath = '/tmp/data/leads.json';
+    diagnostics.tmpLeads = {
+       exists: fsNative.existsSync(tmpLeadsPath),
+    };
+    if (diagnostics.tmpLeads.exists) {
+       try {
+         const stat = fsNative.statSync(tmpLeadsPath);
+         diagnostics.tmpLeads.size = stat.size;
+         const content = fsNative.readFileSync(tmpLeadsPath, 'utf-8');
+         const parsed = JSON.parse(content);
+         diagnostics.tmpLeads.count = parsed.length;
+         diagnostics.tmpLeads.preview = parsed.slice(0, 3);
+       } catch (err: any) {
+         diagnostics.tmpLeads.error = err.message;
+       }
+    }
+
+    res.json(diagnostics);
+  });
 
   app.get("/api/health", (req, res) => {
     res.json({ status: "ok" });
