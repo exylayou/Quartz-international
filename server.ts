@@ -21,16 +21,23 @@ import {
 dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
 dotenv.config();
 
-// Create Nodemailer transporter
-const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST || "smtp.gmail.com",
-  port: parseInt(process.env.SMTP_PORT || "587"),
-  secure: process.env.SMTP_SECURE === "true",
-  auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
-  },
-});
+// Create Nodemailer transporter safely
+let transporter: any;
+try {
+  const smtpPortRaw = process.env.SMTP_PORT;
+  const smtpPort = (smtpPortRaw && !isNaN(parseInt(smtpPortRaw))) ? parseInt(smtpPortRaw) : 587;
+  transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST || "smtp.gmail.com",
+    port: smtpPort,
+    secure: process.env.SMTP_SECURE === "true",
+    auth: {
+      user: process.env.SMTP_USER || undefined,
+      pass: process.env.SMTP_PASS || undefined,
+    },
+  });
+} catch (transporterErr) {
+  console.error("Failed to initialize SMTP transporter:", transporterErr);
+}
 
 if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
   console.warn("SMTP credentials (SMTP_USER/SMTP_PASS) are not defined. Lead notification emails will be skipped.");

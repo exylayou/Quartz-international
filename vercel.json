@@ -125,5 +125,10 @@
       "source": "/quartz-countertop-cost/:city",
       "destination": "/index.html"
     }
-  ]
+  ],
+  "functions": {
+    "api/**/*.ts": {
+      "includeFiles": "data/*"
+    }
+  }
 }
