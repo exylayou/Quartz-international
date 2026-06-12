@@ -140,6 +140,151 @@ export default function Admin() {
   const [wizardQuoteTaxRate, setWizardQuoteTaxRate] = React.useState(0.13);
   const [creatingQuote, setCreatingQuote] = React.useState(false);
 
+  // Stats calculations
+  const totalLeads = leads.length;
+  const avgProjectSize = Math.round(leads.reduce((acc, l) => acc + (l.countertopSqFt || 0), 0) / (leads.length || 1));
+  const newLeads24h = leads.filter(l => new Date(l.createdAt) > new Date(Date.now() - 86400000)).length;
+
+  const quotesList = leads.filter(l => l.quoteNumber);
+  const activeQuotesValue = Math.round(quotesList.filter(q => ['draft', 'sent', 'approved'].includes(q.quoteStatus || '')).reduce((acc, q) => acc + (q.quoteTotal || 0), 0));
+  const closedInvoicesValue = Math.round(quotesList.filter(q => ['invoiced', 'paid'].includes(q.quoteStatus || '')).reduce((acc, q) => acc + (q.quoteTotal || 0), 0));
+  const quotesConversion = totalLeads ? Math.round((quotesList.length / totalLeads) * 100) : 0;
+
+  const totalCustomers = customers.length;
+  const newCustomersMonth = customers.filter(c => new Date(c.createdAt) > new Date(Date.now() - 30 * 86400000)).length;
+  const customersWithLeadsCount = customers.filter(c => leads.some(l => l.customerId === c.id || (l.email && c.email && l.email.toLowerCase() === c.email.toLowerCase()))).length;
+  const customerApprovedConversion = customers.length ? Math.round((leads.filter(l => l.quoteNumber && l.quoteStatus === 'approved').length / customers.length) * 100) : 0;
+
+  // Google Ads UTM & User Behavior Analytics Calculations
+  const analyticsData = React.useMemo(() => {
+    // 1. Google Ads UTM & attribution counts
+    const adAttributedLeads = leads.filter(l => {
+      const src = (l.utmSource || '').toLowerCase();
+      const med = (l.utmMedium || '').toLowerCase();
+      return src.includes('google') || src.includes('ad') || med === 'cpc' || l.gclid;
+    });
+    const adAttributedLeadsCount = adAttributedLeads.length;
+    const attributionRate = totalLeads ? Math.round((adAttributedLeadsCount / totalLeads) * 100) : 0;
+    
+    // 2. Paid Pipeline Opportunity (using average project value or estimate totals)
+    const paidPipelineValue = adAttributedLeads.reduce((acc, l) => acc + (l.totalCostHigh || 0), 0);
+    const avgAdLeadValue = adAttributedLeadsCount ? Math.round(paidPipelineValue / adAttributedLeadsCount) : 0;
+    
+    // 3. Channels split
+    const channelsMap: Record<string, { count: number; pipeline: number }> = {};
+    leads.forEach(l => {
+      const source = l.utmSource || 'organic / direct';
+      const medium = l.utmMedium || '';
+      const key = `${source}${medium ? ' (' + medium + ')' : ''}`;
+      if (!channelsMap[key]) {
+        channelsMap[key] = { count: 0, pipeline: 0 };
+      }
+      channelsMap[key].count += 1;
+      channelsMap[key].pipeline += (l.totalCostHigh || 0);
+    });
+    
+    const channels = Object.entries(channelsMap).map(([name, data]) => ({
+      name,
+      count: data.count,
+      pipeline: data.pipeline,
+      percentage: totalLeads ? Math.round((data.count / totalLeads) * 100) : 0
+    })).sort((a, b) => b.count - a.count);
+
+    // 4. Campaigns split
+    const campaignsMap: Record<string, { count: number; pipeline: number }> = {};
+    leads.forEach(l => {
+      if (l.utmCampaign) {
+        if (!campaignsMap[l.utmCampaign]) {
+          campaignsMap[l.utmCampaign] = { count: 0, pipeline: 0 };
+        }
+        campaignsMap[l.utmCampaign].count += 1;
+        campaignsMap[l.utmCampaign].pipeline += (l.totalCostHigh || 0);
+      }
+    });
+    
+    const campaigns = Object.entries(campaignsMap).map(([name, data]) => ({
+      name,
+      count: data.count,
+      pipeline: data.pipeline
+    })).sort((a, b) => b.count - a.count);
+
+    // 5. Keywords split
+    const keywordsMap: Record<string, { count: number; pipeline: number }> = {};
+    leads.forEach(l => {
+      if (l.utmTerm) {
+        if (!keywordsMap[l.utmTerm]) {
+          keywordsMap[l.utmTerm] = { count: 0, pipeline: 0 };
+        }
+        keywordsMap[l.utmTerm].count += 1;
+        keywordsMap[l.utmTerm].pipeline += (l.totalCostHigh || 0);
+      }
+    });
+    
+    const keywords = Object.entries(keywordsMap).map(([name, data]) => ({
+      name,
+      count: data.count,
+      pipeline: data.pipeline
+    })).sort((a, b) => b.count - a.count);
+
+    // 6. User page behavior analytics
+    let totalPageViews = 0;
+    let totalSessionDuration = 0;
+    let totalInteractions = 0;
+    let leadsWithBehavior = 0;
+    const landingPagesMap: Record<string, number> = {};
+
+    leads.forEach(l => {
+      if (l.behavior) {
+        leadsWithBehavior += 1;
+        totalPageViews += l.behavior.pageViews?.length || 0;
+        totalSessionDuration += l.behavior.timeSpentMs || 0;
+        totalInteractions += l.behavior.totalInteractions || 0;
+        
+        if (l.behavior.pageViews && l.behavior.pageViews.length > 0) {
+          const landing = l.behavior.pageViews[0].path?.split('?')[0] || '/';
+          landingPagesMap[landing] = (landingPagesMap[landing] || 0) + 1;
+        }
+      }
+    });
+
+    const avgPageViews = leadsWithBehavior ? (totalPageViews / leadsWithBehavior).toFixed(1) : '0';
+    const avgSessionDurationSeconds = leadsWithBehavior ? Math.round((totalSessionDuration / leadsWithBehavior) / 1000) : 0;
+    const avgInteractions = leadsWithBehavior ? (totalInteractions / leadsWithBehavior).toFixed(1) : '0';
+
+    const landingPages = Object.entries(landingPagesMap).map(([path, count]) => ({
+      path,
+      count,
+      percentage: totalLeads ? Math.round((count / totalLeads) * 100) : 0
+    })).sort((a, b) => b.count - a.count);
+
+    return {
+      adAttributedLeadsCount,
+      attributionRate,
+      paidPipelineValue,
+      avgAdLeadValue,
+      channels,
+      campaigns,
+      keywords,
+      avgPageViews,
+      avgSessionDurationSeconds,
+      avgInteractions,
+      landingPages,
+      leadsWithBehavior
+    };
+  }, [leads, totalLeads]);
+
+  // Simulator computations
+  const activeAdLeads = analyticsData.adAttributedLeadsCount;
+  const baselineCpl = activeAdLeads > 0 ? Math.round(1500 / activeAdLeads) : 85;
+  const projectedLeadsCount = Math.max(1, Math.round(adSpend / baselineCpl));
+  const cpl = Math.round(adSpend / projectedLeadsCount);
+  const closingRateDecimal = closeRate / 100;
+  const projectedCustomersCount = Math.round(projectedLeadsCount * closingRateDecimal);
+  const avgRevenueValue = analyticsData.avgAdLeadValue > 0 ? analyticsData.avgAdLeadValue : 4500;
+  const projectedRevenue = projectedCustomersCount * avgRevenueValue;
+  const roas = adSpend > 0 ? (projectedRevenue / adSpend).toFixed(1) : '0.0';
+  const cac = projectedCustomersCount > 0 ? Math.round(adSpend / projectedCustomersCount) : adSpend;
+
   const unreadMessagesCount = React.useMemo(() => {
     const unreadCustomerIds = new Set(
       messages.filter(m => m.isRead === false && m.direction === 'inbound').map(m => m.customerId)
@@ -1035,151 +1180,6 @@ export default function Admin() {
       </div>
     );
   }
-
-  // Stats calculations
-  const totalLeads = leads.length;
-  const avgProjectSize = Math.round(leads.reduce((acc, l) => acc + (l.countertopSqFt || 0), 0) / (leads.length || 1));
-  const newLeads24h = leads.filter(l => new Date(l.createdAt) > new Date(Date.now() - 86400000)).length;
-
-  const quotesList = leads.filter(l => l.quoteNumber);
-  const activeQuotesValue = Math.round(quotesList.filter(q => ['draft', 'sent', 'approved'].includes(q.quoteStatus || '')).reduce((acc, q) => acc + (q.quoteTotal || 0), 0));
-  const closedInvoicesValue = Math.round(quotesList.filter(q => ['invoiced', 'paid'].includes(q.quoteStatus || '')).reduce((acc, q) => acc + (q.quoteTotal || 0), 0));
-  const quotesConversion = totalLeads ? Math.round((quotesList.length / totalLeads) * 100) : 0;
-
-  const totalCustomers = customers.length;
-  const newCustomersMonth = customers.filter(c => new Date(c.createdAt) > new Date(Date.now() - 30 * 86400000)).length;
-  const customersWithLeadsCount = customers.filter(c => leads.some(l => l.customerId === c.id || (l.email && c.email && l.email.toLowerCase() === c.email.toLowerCase()))).length;
-  const customerApprovedConversion = customers.length ? Math.round((leads.filter(l => l.quoteNumber && l.quoteStatus === 'approved').length / customers.length) * 100) : 0;
-
-  // Google Ads UTM & User Behavior Analytics Calculations
-  const analyticsData = React.useMemo(() => {
-    // 1. Google Ads UTM & attribution counts
-    const adAttributedLeads = leads.filter(l => {
-      const src = (l.utmSource || '').toLowerCase();
-      const med = (l.utmMedium || '').toLowerCase();
-      return src.includes('google') || src.includes('ad') || med === 'cpc' || l.gclid;
-    });
-    const adAttributedLeadsCount = adAttributedLeads.length;
-    const attributionRate = totalLeads ? Math.round((adAttributedLeadsCount / totalLeads) * 100) : 0;
-    
-    // 2. Paid Pipeline Opportunity (using average project value or estimate totals)
-    const paidPipelineValue = adAttributedLeads.reduce((acc, l) => acc + (l.totalCostHigh || 0), 0);
-    const avgAdLeadValue = adAttributedLeadsCount ? Math.round(paidPipelineValue / adAttributedLeadsCount) : 0;
-    
-    // 3. Channels split
-    const channelsMap: Record<string, { count: number; pipeline: number }> = {};
-    leads.forEach(l => {
-      const source = l.utmSource || 'organic / direct';
-      const medium = l.utmMedium || '';
-      const key = `${source}${medium ? ' (' + medium + ')' : ''}`;
-      if (!channelsMap[key]) {
-        channelsMap[key] = { count: 0, pipeline: 0 };
-      }
-      channelsMap[key].count += 1;
-      channelsMap[key].pipeline += (l.totalCostHigh || 0);
-    });
-    
-    const channels = Object.entries(channelsMap).map(([name, data]) => ({
-      name,
-      count: data.count,
-      pipeline: data.pipeline,
-      percentage: totalLeads ? Math.round((data.count / totalLeads) * 100) : 0
-    })).sort((a, b) => b.count - a.count);
-
-    // 4. Campaigns split
-    const campaignsMap: Record<string, { count: number; pipeline: number }> = {};
-    leads.forEach(l => {
-      if (l.utmCampaign) {
-        if (!campaignsMap[l.utmCampaign]) {
-          campaignsMap[l.utmCampaign] = { count: 0, pipeline: 0 };
-        }
-        campaignsMap[l.utmCampaign].count += 1;
-        campaignsMap[l.utmCampaign].pipeline += (l.totalCostHigh || 0);
-      }
-    });
-    
-    const campaigns = Object.entries(campaignsMap).map(([name, data]) => ({
-      name,
-      count: data.count,
-      pipeline: data.pipeline
-    })).sort((a, b) => b.count - a.count);
-
-    // 5. Keywords split
-    const keywordsMap: Record<string, { count: number; pipeline: number }> = {};
-    leads.forEach(l => {
-      if (l.utmTerm) {
-        if (!keywordsMap[l.utmTerm]) {
-          keywordsMap[l.utmTerm] = { count: 0, pipeline: 0 };
-        }
-        keywordsMap[l.utmTerm].count += 1;
-        keywordsMap[l.utmTerm].pipeline += (l.totalCostHigh || 0);
-      }
-    });
-    
-    const keywords = Object.entries(keywordsMap).map(([name, data]) => ({
-      name,
-      count: data.count,
-      pipeline: data.pipeline
-    })).sort((a, b) => b.count - a.count);
-
-    // 6. User page behavior analytics
-    let totalPageViews = 0;
-    let totalSessionDuration = 0;
-    let totalInteractions = 0;
-    let leadsWithBehavior = 0;
-    const landingPagesMap: Record<string, number> = {};
-
-    leads.forEach(l => {
-      if (l.behavior) {
-        leadsWithBehavior += 1;
-        totalPageViews += l.behavior.pageViews?.length || 0;
-        totalSessionDuration += l.behavior.timeSpentMs || 0;
-        totalInteractions += l.behavior.totalInteractions || 0;
-        
-        if (l.behavior.pageViews && l.behavior.pageViews.length > 0) {
-          const landing = l.behavior.pageViews[0].path?.split('?')[0] || '/';
-          landingPagesMap[landing] = (landingPagesMap[landing] || 0) + 1;
-        }
-      }
-    });
-
-    const avgPageViews = leadsWithBehavior ? (totalPageViews / leadsWithBehavior).toFixed(1) : '0';
-    const avgSessionDurationSeconds = leadsWithBehavior ? Math.round((totalSessionDuration / leadsWithBehavior) / 1000) : 0;
-    const avgInteractions = leadsWithBehavior ? (totalInteractions / leadsWithBehavior).toFixed(1) : '0';
-
-    const landingPages = Object.entries(landingPagesMap).map(([path, count]) => ({
-      path,
-      count,
-      percentage: totalLeads ? Math.round((count / totalLeads) * 100) : 0
-    })).sort((a, b) => b.count - a.count);
-
-    return {
-      adAttributedLeadsCount,
-      attributionRate,
-      paidPipelineValue,
-      avgAdLeadValue,
-      channels,
-      campaigns,
-      keywords,
-      avgPageViews,
-      avgSessionDurationSeconds,
-      avgInteractions,
-      landingPages,
-      leadsWithBehavior
-    };
-  }, [leads, totalLeads]);
-
-  // Simulator computations
-  const activeAdLeads = analyticsData.adAttributedLeadsCount;
-  const baselineCpl = activeAdLeads > 0 ? Math.round(1500 / activeAdLeads) : 85;
-  const projectedLeadsCount = Math.max(1, Math.round(adSpend / baselineCpl));
-  const cpl = Math.round(adSpend / projectedLeadsCount);
-  const closingRateDecimal = closeRate / 100;
-  const projectedCustomersCount = Math.round(projectedLeadsCount * closingRateDecimal);
-  const avgRevenueValue = analyticsData.avgAdLeadValue > 0 ? analyticsData.avgAdLeadValue : 4500;
-  const projectedRevenue = projectedCustomersCount * avgRevenueValue;
-  const roas = adSpend > 0 ? (projectedRevenue / adSpend).toFixed(1) : '0.0';
-  const cac = projectedCustomersCount > 0 ? Math.round(adSpend / projectedCustomersCount) : adSpend;
 
   return (
     <div className="min-h-screen bg-gray-50">
