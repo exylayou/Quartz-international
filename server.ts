@@ -743,6 +743,9 @@ app.post("/api/leads", async (req, res) => {
     if (adminSecret !== 'qi-admin-2026') {
       return res.status(401).json({ error: "Unauthorized" });
     }
+
+    // Trigger db initialization
+    await getLeads();
     
     const diagnostics: any = {
       isVercel: !!process.env.VERCEL,
