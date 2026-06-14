@@ -36,6 +36,7 @@ export default function Admin() {
   const [isAuthenticated, setIsAuthenticated] = React.useState(false);
   const [secret, setSecret] = React.useState('');
   const [leads, setLeads] = React.useState<any[]>([]);
+  const [analyticsEvents, setAnalyticsEvents] = React.useState<any[]>([]);
   const [loading, setLoading] = React.useState(false);
   const [error, setError] = React.useState('');
   const [searchQuery, setSearchQuery] = React.useState('');
@@ -273,6 +274,106 @@ export default function Admin() {
     };
   }, [leads, totalLeads]);
 
+  // Analytics filtering and calculations
+  const [analyticsTimeframe, setAnalyticsTimeframe] = React.useState<'today' | '7days' | '30days' | 'all'>('7days');
+
+  const filteredEvents = React.useMemo(() => {
+    const now = new Date();
+    return analyticsEvents.filter(event => {
+      const eventDate = new Date(event.timestamp);
+      const diffMs = now.getTime() - eventDate.getTime();
+      const diffDays = diffMs / (1000 * 60 * 60 * 24);
+      
+      if (analyticsTimeframe === 'today') {
+        const todayStart = new Date();
+        todayStart.setHours(0, 0, 0, 0);
+        return eventDate >= todayStart;
+      }
+      if (analyticsTimeframe === '7days') {
+        return diffDays <= 7;
+      }
+      if (analyticsTimeframe === '30days') {
+        return diffDays <= 30;
+      }
+      return true;
+    });
+  }, [analyticsEvents, analyticsTimeframe]);
+
+  const trafficMetrics = React.useMemo(() => {
+    const sessions = filteredEvents.filter(e => e.type === 'session_start');
+    const pageViews = filteredEvents.filter(e => e.type === 'page_view');
+    const sessionIds = new Set(filteredEvents.map(e => e.sessionId));
+    
+    // Group page views by page path
+    const pageViewCounts: Record<string, number> = {};
+    pageViews.forEach(e => {
+      if (e.path) {
+        pageViewCounts[e.path] = (pageViewCounts[e.path] || 0) + 1;
+      }
+    });
+    
+    const topPages = Object.entries(pageViewCounts)
+      .map(([path, count]) => ({ path, count }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 5);
+
+    // Group sessions by source
+    const sourceCounts: Record<string, number> = {};
+    sessions.forEach(e => {
+      const source = e.utmSource || 'direct';
+      sourceCounts[source] = (sourceCounts[source] || 0) + 1;
+    });
+    
+    const topSources = Object.entries(sourceCounts)
+      .map(([source, count]) => ({ source, count }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 5);
+
+    // Group by Date for Timeline
+    const dateGroups: Record<string, { sessions: Set<string>; pageViews: number }> = {};
+    
+    filteredEvents.forEach(e => {
+      const dateStr = new Date(e.timestamp).toLocaleDateString(undefined, {
+        month: 'short',
+        day: 'numeric',
+        year: 'numeric'
+      });
+      
+      if (!dateGroups[dateStr]) {
+        dateGroups[dateStr] = { sessions: new Set(), pageViews: 0 };
+      }
+      
+      dateGroups[dateStr].sessions.add(e.sessionId);
+      if (e.type === 'page_view') {
+        dateGroups[dateStr].pageViews++;
+      }
+    });
+
+    // Convert to sorted array
+    const timeline = Object.entries(dateGroups)
+      .map(([date, data]) => ({
+        date,
+        sessionsCount: data.sessions.size,
+        pageViewsCount: data.pageViews,
+        avgPagesPerSession: data.sessions.size > 0 
+          ? Math.round((data.pageViews / data.sessions.size) * 10) / 10 
+          : 0,
+        sortKey: new Date(date).getTime()
+      }))
+      .sort((a, b) => b.sortKey - a.sortKey);
+
+    return {
+      totalSessions: sessionIds.size,
+      totalPageViews: pageViews.length,
+      avgPagesPerSession: sessionIds.size > 0 
+        ? Math.round((pageViews.length / sessionIds.size) * 10) / 10 
+        : 0,
+      topPages,
+      topSources,
+      timeline
+    };
+  }, [filteredEvents]);
+
   // Simulator computations
   const activeAdLeads = analyticsData.adAttributedLeadsCount;
   const baselineCpl = activeAdLeads > 0 ? Math.round(1500 / activeAdLeads) : 85;
@@ -444,8 +545,26 @@ export default function Admin() {
     }
   };
 
+  const fetchAnalytics = async (secretKey: string) => {
+    try {
+      const response = await fetch('/api/analytics', {
+        headers: {
+          'x-admin-secret': secretKey
+        }
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setAnalyticsEvents(data);
+      }
+    } catch (err) {
+      console.error('Failed to fetch analytics', err);
+    }
+  };
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!secret) return;
+    
     setLoading(true);
     setError('');
     
@@ -463,6 +582,7 @@ export default function Admin() {
         localStorage.setItem('admin_secret', secret);
         await fetchCustomers(secret);
         await fetchMessages(secret);
+        await fetchAnalytics(secret);
       } else {
         setError('Invalid secret key');
       }
@@ -489,6 +609,7 @@ export default function Admin() {
           setIsAuthenticated(true);
           await fetchCustomers(savedSecret);
           await fetchMessages(savedSecret);
+          await fetchAnalytics(savedSecret);
         } else {
           localStorage.removeItem('admin_secret');
         }
@@ -2788,6 +2909,172 @@ export default function Admin() {
                       )}
                     </tbody>
                   </table>
+                </div>
+              </div>
+            </div>
+
+            {/* Real-time Traffic and Page Visits Analytics */}
+            <div className="bg-white p-6 rounded-3xl border border-border-custom shadow-sm text-left">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                <div>
+                  <h3 className="font-bold text-base text-gray-850 flex items-center gap-2">
+                    <span>📈 Site Traffic & Page Visits</span>
+                  </h3>
+                  <p className="text-xs text-gray-500 mt-0.5">Real-time visitor sessions and page interaction tracking</p>
+                </div>
+                
+                {/* Timeframe selector */}
+                <div className="flex bg-gray-100/80 p-1 rounded-xl border border-border-custom self-start sm:self-center">
+                  {[
+                    { id: 'today', label: 'Today' },
+                    { id: '7days', label: '7 Days' },
+                    { id: '30days', label: '30 Days' },
+                    { id: 'all', label: 'All Time' }
+                  ].map(tf => (
+                    <button
+                      key={tf.id}
+                      type="button"
+                      onClick={() => setAnalyticsTimeframe(tf.id as any)}
+                      className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                        analyticsTimeframe === tf.id
+                          ? 'bg-white text-accent shadow-sm border border-border-custom/50'
+                          : 'text-gray-500 hover:text-gray-800'
+                      }`}
+                    >
+                      {tf.label}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Stats Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-8">
+                <div className="bg-gray-50/50 p-5 rounded-2xl border border-border-custom/60 flex flex-col justify-between">
+                  <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Unique Sessions</span>
+                  <div>
+                    <h5 className="text-3xl font-black text-gray-850 font-mono mb-1">{trafficMetrics.totalSessions}</h5>
+                    <p className="text-xs text-gray-500">Unique visits to your site</p>
+                  </div>
+                </div>
+                
+                <div className="bg-gray-50/50 p-5 rounded-2xl border border-border-custom/60 flex flex-col justify-between">
+                  <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Total Page Views</span>
+                  <div>
+                    <h5 className="text-3xl font-black text-gray-850 font-mono mb-1">{trafficMetrics.totalPageViews}</h5>
+                    <p className="text-xs text-gray-500">Total pages viewed by visitors</p>
+                  </div>
+                </div>
+
+                <div className="bg-gray-50/50 p-5 rounded-2xl border border-border-custom/60 flex flex-col justify-between">
+                  <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Avg. Pages / Session</span>
+                  <div>
+                    <h5 className="text-3xl font-black text-gray-850 font-mono mb-1">{trafficMetrics.avgPagesPerSession}</h5>
+                    <p className="text-xs text-gray-500">Pages browsed per visitor</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                {/* Daily Timeline (Left - 60%) */}
+                <div className="lg:col-span-7 flex flex-col">
+                  <h4 className="font-bold text-sm text-gray-800 mb-4">Daily Traffic Breakdown</h4>
+                  <div className="overflow-x-auto border border-border-custom rounded-2xl flex-1 max-h-[350px] overflow-y-auto">
+                    <table className="w-full text-left text-xs">
+                      <thead>
+                        <tr className="border-b border-border-custom bg-gray-50 font-bold text-gray-400 uppercase tracking-widest text-[9px]">
+                          <th className="px-5 py-3">Date</th>
+                          <th className="px-5 py-3 text-center">Sessions</th>
+                          <th className="px-5 py-3 text-center">Page Views</th>
+                          <th className="px-5 py-3 text-right">Pages/Session</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-border-custom">
+                        {trafficMetrics.timeline.length === 0 ? (
+                          <tr>
+                            <td colSpan={4} className="px-5 py-12 text-center text-gray-400 font-medium">
+                              No traffic logs found in this timeframe.
+                            </td>
+                          </tr>
+                        ) : (
+                          trafficMetrics.timeline.map((day, idx) => (
+                            <tr key={idx} className="hover:bg-gray-50/50">
+                              <td className="px-5 py-3.5 font-bold text-gray-800">{day.date}</td>
+                              <td className="px-5 py-3.5 text-center font-bold text-gray-750">{day.sessionsCount}</td>
+                              <td className="px-5 py-3.5 text-center font-bold text-gray-750">{day.pageViewsCount}</td>
+                              <td className="px-5 py-3.5 text-right font-mono font-bold text-accent">{day.avgPagesPerSession}</td>
+                            </tr>
+                          ))
+                        )}
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+
+                {/* Popular Pages & Channels (Right - 40%) */}
+                <div className="lg:col-span-5 space-y-6">
+                  {/* Top Pages */}
+                  <div>
+                    <h4 className="font-bold text-sm text-gray-800 mb-4">Top Visited Pages</h4>
+                    <div className="space-y-3.5 bg-gray-50/50 p-5 rounded-2xl border border-border-custom">
+                      {trafficMetrics.topPages.length === 0 ? (
+                        <p className="text-xs text-gray-450 text-center py-4">No page views recorded yet.</p>
+                      ) : (
+                        trafficMetrics.topPages.map((page, idx) => {
+                          const percent = trafficMetrics.totalPageViews > 0 
+                            ? Math.round((page.count / trafficMetrics.totalPageViews) * 100) 
+                            : 0;
+                          return (
+                            <div key={idx} className="space-y-1">
+                              <div className="flex justify-between text-xs font-semibold">
+                                <span className="font-mono text-gray-700 truncate max-w-[200px]" title={page.path}>
+                                  {page.path}
+                                </span>
+                                <span className="text-gray-500">{page.count} views ({percent}%)</span>
+                              </div>
+                              <div className="w-full bg-gray-200/70 h-2 rounded-full overflow-hidden">
+                                <div 
+                                  className="bg-accent h-full rounded-full transition-all duration-500" 
+                                  style={{ width: `${percent}%` }}
+                                ></div>
+                              </div>
+                            </div>
+                          );
+                        })
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Top Sources */}
+                  <div>
+                    <h4 className="font-bold text-sm text-gray-800 mb-4">Traffic Acquisition Sources</h4>
+                    <div className="space-y-3.5 bg-gray-50/50 p-5 rounded-2xl border border-border-custom">
+                      {trafficMetrics.topSources.length === 0 ? (
+                        <p className="text-xs text-gray-450 text-center py-4">No sources recorded yet.</p>
+                      ) : (
+                        trafficMetrics.topSources.map((src, idx) => {
+                          const percent = trafficMetrics.totalSessions > 0 
+                            ? Math.round((src.count / trafficMetrics.totalSessions) * 100) 
+                            : 0;
+                          return (
+                            <div key={idx} className="space-y-1">
+                              <div className="flex justify-between text-xs font-semibold">
+                                <span className="font-bold text-gray-700 uppercase tracking-wide text-[10px]">
+                                  {src.source}
+                                </span>
+                                <span className="text-gray-500">{src.count} sessions ({percent}%)</span>
+                              </div>
+                              <div className="w-full bg-gray-200/70 h-2 rounded-full overflow-hidden">
+                                <div 
+                                  className="bg-accent h-full rounded-full transition-all duration-500" 
+                                  style={{ width: `${percent}%` }}
+                                ></div>
+                              </div>
+                            </div>
+                          );
+                        })
+                      )}
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

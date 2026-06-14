@@ -185,13 +185,10 @@ export default function Cost() {
           <div className="lg:flex-grow">
             <div className="overflow-hidden rounded-3xl border border-border-custom bg-white shadow-sm">
               <div className="overflow-x-auto">
-                <table className="w-full min-w-[600px] text-left">
+                <table className="w-full text-left">
                   <thead>
                     <tr className="bg-gray-50/80 border-b border-border-custom">
-                      <th className="px-6 py-6 text-[10px] font-bold text-gray-400 uppercase tracking-widest text-center">Quartz Level</th>
-                      <th className="px-6 py-6 text-[10px] font-bold text-gray-400 uppercase tracking-widest text-center">Material <br /><span className="text-[8px]">per sq ft</span></th>
-                      <th className="px-6 py-6 text-[10px] font-bold text-gray-400 uppercase tracking-widest text-center">Fabrication <br /><span className="text-[8px]">per sq ft</span></th>
-                      <th className="px-6 py-6 text-[10px] font-bold text-gray-400 uppercase tracking-widest text-center">Installation <br /><span className="text-[8px]">per sq ft</span></th>
+                      <th className="px-6 py-6 text-[10px] font-bold text-gray-400 uppercase tracking-widest text-left">Quartz Level</th>
                       <th className="px-6 py-6 text-[10px] font-bold text-white uppercase tracking-widest text-center bg-accent">Total Installed <br /><span className="text-[8px]">per sq ft</span></th>
                     </tr>
                   </thead>
@@ -202,9 +199,6 @@ export default function Cost() {
                           <p className="font-bold text-sm text-text-primary">{row.level}</p>
                           <p className="text-[10px] text-gray-400">{row.desc}</p>
                         </td>
-                        <td className="px-6 py-8 text-center font-bold text-sm text-text-primary">{row.material}</td>
-                        <td className="px-6 py-8 text-center font-bold text-sm text-text-primary">{row.fab}</td>
-                        <td className="px-6 py-8 text-center font-bold text-sm text-text-primary">{row.install}</td>
                         <td className="px-6 py-8 text-center font-bold text-lg text-text-primary bg-accent/5">{row.total}</td>
                       </tr>
                     ))}

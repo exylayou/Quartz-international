@@ -14,7 +14,10 @@ import {
   markMessagesAsRead,
   Lead,
   Customer,
-  Message
+  Message,
+  saveAnalyticsEvent,
+  getAnalyticsEvents,
+  AnalyticEvent
 } from "./src/services/dbService.js";
 
 // Load environment variables
@@ -41,6 +44,30 @@ try {
 
 if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
   console.warn("SMTP credentials (SMTP_USER/SMTP_PASS) are not defined. Lead notification emails will be skipped.");
+}
+
+// Helper to get SMTP 'from' header dynamically based on admin secret
+function getFromEmail(adminSecret?: any, defaultPrefix: string = "Quartz International") {
+  let senderName = defaultPrefix;
+  if (adminSecret === 'aura-admin-2026') {
+    senderName = "Ken";
+  } else if (adminSecret === 'qi-admin-2026') {
+    senderName = "Jay";
+  }
+
+  let fromEmail = "info@quartzinternational.ca";
+  if (process.env.SMTP_FROM) {
+    const match = process.env.SMTP_FROM.match(/<([^>]+)>/);
+    if (match && match[1]) {
+      fromEmail = match[1];
+    } else if (process.env.SMTP_FROM.includes('@')) {
+      fromEmail = process.env.SMTP_FROM.trim();
+    }
+  } else if (process.env.SMTP_USER) {
+    fromEmail = process.env.SMTP_USER;
+  }
+
+  return `"${senderName}" <${fromEmail}>`;
 }
 
 const app = express();
@@ -152,9 +179,12 @@ app.post("/api/leads", async (req, res) => {
             </table>
           `
         };
-        transporter.sendMail(adminMailOptions)
-          .then(() => console.log("Admin email notification sent successfully."))
-          .catch(err => console.error("Failed to send admin email notification:", err));
+        try {
+          await transporter.sendMail(adminMailOptions);
+          console.log("Admin email notification sent successfully.");
+        } catch (err) {
+          console.error("Failed to send admin email notification:", err);
+        }
 
         // Send email to customer (non-blocking)
         if (leadData.email) {
@@ -241,9 +271,12 @@ app.post("/api/leads", async (req, res) => {
               </div>
             `
           };
-          transporter.sendMail(clientMailOptions)
-            .then(() => console.log("Client estimate email sent successfully."))
-            .catch(err => console.error("Failed to send client estimate email:", err));
+          try {
+            await transporter.sendMail(clientMailOptions);
+            console.log("Client estimate email sent successfully.");
+          } catch (err) {
+            console.error("Failed to send client estimate email:", err);
+          }
         }
       }
 
@@ -278,12 +311,13 @@ app.post("/api/leads", async (req, res) => {
     const updated = await updateLead(id, updates);
     if (updated) {
       if (updates.quoteStatus === 'sent' && process.env.SMTP_USER && process.env.SMTP_PASS) {
-        getLeads().then(leads => {
+        try {
+          const leads = await getLeads();
           const lead = leads.find(l => l.id === id);
           if (lead && lead.email) {
             const signUrl = `${process.env.APP_URL || 'http://localhost:3000'}/quote/${id}`;
             const mailOptions = {
-              from: process.env.SMTP_FROM || `"Quartz International Quotes" <no-reply@quartzinternational.ca>`,
+              from: getFromEmail(adminSecret, "Quartz International Quotes"),
               to: lead.email,
               subject: `Your Project Proposal & Quote: ${updates.quoteNumber || lead.quoteNumber || 'Quote'} - Quartz International`,
               html: `
@@ -368,11 +402,16 @@ app.post("/api/leads", async (req, res) => {
                 </div>
               `
             };
-            transporter.sendMail(mailOptions)
-              .then(() => console.log(`Quote proposal email sent to customer successfully (Lead: ${id}).`))
-              .catch(err => console.error("Error sending quote email to customer:", err));
+            try {
+              await transporter.sendMail(mailOptions);
+              console.log(`Quote proposal email sent to customer successfully (Lead: ${id}).`);
+            } catch (err) {
+              console.error("Error sending quote email to customer:", err);
+            }
           }
-        }).catch(err => console.error("Error fetching leads for quote email:", err));
+        } catch (err) {
+          console.error("Error fetching leads for quote email:", err);
+        }
       }
       res.json({ status: "success", message: "Quote saved successfully" });
     } else {
@@ -459,9 +498,12 @@ app.post("/api/leads", async (req, res) => {
             </table>
           `
         };
-        transporter.sendMail(adminMailOptions)
-          .then(() => console.log("Approval notification email sent successfully."))
-          .catch(err => console.error("Error sending approval email to admin:", err));
+        try {
+          await transporter.sendMail(adminMailOptions);
+          console.log("Approval notification email sent successfully.");
+        } catch (err) {
+          console.error("Error sending approval email to admin:", err);
+        }
 
         // Send confirmation email to customer (non-blocking)
         if (lead.email) {
@@ -523,9 +565,12 @@ app.post("/api/leads", async (req, res) => {
               </div>
             `
           };
-          transporter.sendMail(clientMailOptions)
-            .then(() => console.log(`Quote approval confirmation email sent to customer (Lead: ${id})`))
-            .catch(err => console.error("Error sending quote approval confirmation email to customer:", err));
+          try {
+            await transporter.sendMail(clientMailOptions);
+            console.log(`Quote approval confirmation email sent to customer (Lead: ${id})`);
+          } catch (err) {
+            console.error("Error sending quote approval confirmation email to customer:", err);
+          }
         }
       }
       res.json({ status: "success", message: "Quote approved and signed successfully" });
@@ -661,11 +706,12 @@ app.post("/api/leads", async (req, res) => {
     const saved = await saveMessage(message);
     if (saved) {
       if (channel === 'email' && process.env.SMTP_USER && process.env.SMTP_PASS) {
-        getCustomers().then(customers => {
+        try {
+          const customers = await getCustomers();
           const cust = customers.find(c => c.id === customerId);
           if (cust && cust.email) {
             const mailOptions = {
-              from: process.env.SMTP_FROM || `"Quartz International Support" <no-reply@quartzinternational.ca>`,
+              from: getFromEmail(adminSecret, "Quartz International Support"),
               to: cust.email,
               subject: `Message from Quartz International`,
               html: `
@@ -689,11 +735,16 @@ app.post("/api/leads", async (req, res) => {
                 </div>
               `
             };
-            transporter.sendMail(mailOptions)
-              .then(() => console.log(`Outbound message email successfully sent to customer ${customerId}`))
-              .catch(err => console.error("Error sending outbound message email to customer:", err));
+            try {
+              await transporter.sendMail(mailOptions);
+              console.log(`Outbound message email successfully sent to customer ${customerId}`);
+            } catch (err) {
+              console.error("Error sending outbound message email to customer:", err);
+            }
           }
-        }).catch(err => console.error("Error fetching customers for outbound message email:", err));
+        } catch (err) {
+          console.error("Error fetching customers for outbound message email:", err);
+        }
       }
 
       // Simulate client inbound response after 5 seconds
@@ -738,6 +789,42 @@ app.post("/api/leads", async (req, res) => {
       res.status(500).json({ error: "Failed to mark messages as read" });
     }
   });
+
+  // Save an analytics event (public)
+  app.post("/api/analytics/track", async (req, res) => {
+    const { sessionId, type, path, utmSource, utmMedium, utmCampaign, referrer } = req.body;
+    if (!sessionId || !type) {
+      return res.status(400).json({ error: "Missing sessionId or type" });
+    }
+    const event: AnalyticEvent = {
+      id: Math.random().toString(36).substr(2, 9),
+      sessionId,
+      type,
+      path,
+      utmSource,
+      utmMedium,
+      utmCampaign,
+      referrer,
+      timestamp: new Date().toISOString()
+    };
+    const saved = await saveAnalyticsEvent(event);
+    if (saved) {
+      res.status(201).json({ status: "success" });
+    } else {
+      res.status(500).json({ error: "Failed to save analytics event" });
+    }
+  });
+
+  // Get all analytics events (Admin Protected)
+  app.get("/api/analytics", async (req, res) => {
+    const adminSecret = req.headers['x-admin-secret'];
+    if (adminSecret !== 'aura-admin-2026' && adminSecret !== 'qi-admin-2026') {
+      return res.status(401).json({ error: "Unauthorized" });
+    }
+    const events = await getAnalyticsEvents();
+    res.json(events);
+  });
+
   app.get("/api/health", (req, res) => {
     res.json({ status: "ok" });
   });

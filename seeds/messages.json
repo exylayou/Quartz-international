@@ -1,0 +1,227 @@
+[
+  {
+    "id": "u3m7b4zfn",
+    "customerId": "u9vaqq2kq",
+    "channel": "email",
+    "direction": "inbound",
+    "sender": "Olton.exeter@yahoo.com",
+    "text": "Hi, I submitted an estimate request for my kitchen countertop. Can you tell me if the price includes removal of my old countertops? Thank you. - Olton exeter",
+    "timestamp": "2026-06-03T17:32:02.030Z"
+  },
+  {
+    "id": "rf30ylp88",
+    "customerId": "u9vaqq2kq",
+    "channel": "email",
+    "direction": "outbound",
+    "sender": "info@quartzinternational.ca",
+    "text": "Hello! Our base estimator provides options to add demolition and disposal. Standard removal is generally $400. Let me know if you would like me to add this to your proposal details.",
+    "timestamp": "2026-06-03T18:32:02.031Z"
+  },
+  {
+    "id": "xecnpfi0l",
+    "customerId": "u9vaqq2kq",
+    "channel": "whatsapp",
+    "direction": "inbound",
+    "sender": "6479178192",
+    "text": "Yes please, let's include removal. Also interested in looking at TCE 4052 Pure White slabs in your showroom.",
+    "timestamp": "2026-06-03T22:12:02.031Z",
+    "isRead": true
+  },
+  {
+    "id": "9bauszh1w",
+    "customerId": "hwhgob95d",
+    "channel": "email",
+    "direction": "inbound",
+    "sender": "Kenny.maingot@gmail.com",
+    "text": "Hi Quartz International, I am planning a kitchen renovation in Markham. Do you have a rough timeline for measurements? I'm looking at standard or premium quartz.",
+    "timestamp": "2026-06-03T19:32:02.031Z"
+  },
+  {
+    "id": "tvoquxw3l",
+    "customerId": "hwhgob95d",
+    "channel": "email",
+    "direction": "outbound",
+    "sender": "info@quartzinternational.ca",
+    "text": "Hi Ken, thanks for reaching out! We can schedule a technician for a precision site scan within 5-7 days. Are you looking to bundle countertops with custom cabinetry?",
+    "timestamp": "2026-06-03T20:02:02.031Z"
+  },
+  {
+    "id": "tajlb8b15",
+    "customerId": "hwhgob95d",
+    "channel": "whatsapp",
+    "direction": "inbound",
+    "sender": "6479178192",
+    "text": "Hey! Ken here, following up from my email. Can we do WhatsApp instead? It's easier to send photos here. I'm thinking of standard layout with a mitered waterfall edge.",
+    "timestamp": "2026-06-03T20:32:02.031Z"
+  },
+  {
+    "id": "6zoapzzo0",
+    "customerId": "hwhgob95d",
+    "channel": "whatsapp",
+    "direction": "outbound",
+    "sender": "info@quartzinternational.ca",
+    "text": "Absolutely, Ken! WhatsApp works great. We've received your dimensions. A waterfall edge looks stunning in modern layouts. I've drafted an initial proposal for you.",
+    "timestamp": "2026-06-03T20:44:02.032Z"
+  },
+  {
+    "id": "1ngwpm6fw",
+    "customerId": "hwhgob95d",
+    "channel": "sms",
+    "direction": "inbound",
+    "sender": "6479178192",
+    "text": "Thanks, just saw the quote link. Monday at 10 AM works for the site measure. Let me know if that's confirmed.",
+    "timestamp": "2026-06-03T21:32:02.032Z",
+    "isRead": true
+  },
+  {
+    "id": "pp3vysnr3",
+    "customerId": "2shv8to6c",
+    "channel": "email",
+    "direction": "inbound",
+    "sender": "jane@test.com",
+    "text": "Hi, I submitted an estimate request for my kitchen countertop. Can you tell me if the price includes removal of my old countertops? Thank you. - Jane Smith",
+    "timestamp": "2026-06-03T17:32:02.032Z"
+  },
+  {
+    "id": "uj5cqgp3a",
+    "customerId": "2shv8to6c",
+    "channel": "email",
+    "direction": "outbound",
+    "sender": "info@quartzinternational.ca",
+    "text": "Hello! Our base estimator provides options to add demolition and disposal. Standard removal is generally $400. Let me know if you would like me to add this to your proposal details.",
+    "timestamp": "2026-06-03T18:32:02.032Z"
+  },
+  {
+    "id": "ak337lbss",
+    "customerId": "2shv8to6c",
+    "channel": "whatsapp",
+    "direction": "inbound",
+    "sender": "416-555-0811",
+    "text": "Yes please, let's include removal. Also interested in looking at TCE 4052 Pure White slabs in your showroom.",
+    "timestamp": "2026-06-03T22:12:02.032Z",
+    "isRead": false
+  },
+  {
+    "id": "lfwyc736u",
+    "customerId": "rxxnc3pki",
+    "channel": "email",
+    "direction": "inbound",
+    "sender": "john@test.com",
+    "text": "Hi, I submitted an estimate request for my kitchen countertop. Can you tell me if the price includes removal of my old countertops? Thank you. - John Doe",
+    "timestamp": "2026-06-03T17:32:02.032Z"
+  },
+  {
+    "id": "490ftm8lc",
+    "customerId": "rxxnc3pki",
+    "channel": "email",
+    "direction": "outbound",
+    "sender": "info@quartzinternational.ca",
+    "text": "Hello! Our base estimator provides options to add demolition and disposal. Standard removal is generally $400. Let me know if you would like me to add this to your proposal details.",
+    "timestamp": "2026-06-03T18:32:02.032Z"
+  },
+  {
+    "id": "5kg4brd19",
+    "customerId": "rxxnc3pki",
+    "channel": "whatsapp",
+    "direction": "inbound",
+    "sender": "905-555-0192",
+    "text": "Yes please, let's include removal. Also interested in looking at TCE 4052 Pure White slabs in your showroom.",
+    "timestamp": "2026-06-03T22:12:02.032Z",
+    "isRead": false
+  },
+  {
+    "id": "560hppxa3",
+    "customerId": "5pwo2ib6j",
+    "channel": "email",
+    "direction": "outbound",
+    "sender": "info@quartzinternational.ca",
+    "text": "Hi Verify Tester, this is a custom outbound CRM message sent to verify email notifications are functioning beautifully! Enjoy your new countertops.",
+    "timestamp": "2026-06-11T20:32:29.008Z"
+  },
+  {
+    "id": "dk6qd2df2",
+    "customerId": "5pwo2ib6j",
+    "channel": "email",
+    "direction": "inbound",
+    "sender": "info@quartzinternational.ca",
+    "text": "Thanks for the updates! We will review the proposal details.",
+    "timestamp": "2026-06-11T20:32:34.018Z",
+    "isRead": true
+  },
+  {
+    "id": "6ljbv4plf",
+    "customerId": "5pwo2ib6j",
+    "channel": "email",
+    "direction": "outbound",
+    "sender": "info@quartzinternational.ca",
+    "text": "Hi Verify Tester, this is a custom outbound CRM message sent to verify email notifications are functioning beautifully! Enjoy your new countertops.",
+    "timestamp": "2026-06-11T20:32:44.845Z"
+  },
+  {
+    "id": "7e3iqfae3",
+    "customerId": "5pwo2ib6j",
+    "channel": "email",
+    "direction": "inbound",
+    "sender": "info@quartzinternational.ca",
+    "text": "Thanks for the updates! We will review the proposal details.",
+    "timestamp": "2026-06-11T20:32:49.851Z",
+    "isRead": true
+  },
+  {
+    "id": "0hhtrrqg4",
+    "customerId": "5pwo2ib6j",
+    "channel": "email",
+    "direction": "outbound",
+    "sender": "info@quartzinternational.ca",
+    "text": "Hi Verify Tester, this is a custom outbound CRM message sent to verify email notifications are functioning beautifully! Enjoy your new countertops.",
+    "timestamp": "2026-06-11T20:35:52.905Z"
+  },
+  {
+    "id": "qulfegs9y",
+    "customerId": "5pwo2ib6j",
+    "channel": "email",
+    "direction": "inbound",
+    "sender": "info@quartzinternational.ca",
+    "text": "Thanks for the updates! We will review the proposal details.",
+    "timestamp": "2026-06-11T20:35:57.911Z",
+    "isRead": true
+  },
+  {
+    "id": "tz4lchlu6",
+    "customerId": "hwhgob95d",
+    "channel": "email",
+    "direction": "outbound",
+    "sender": "info@quartzinternational.ca",
+    "text": "test 2",
+    "timestamp": "2026-06-12T09:05:13.417Z"
+  },
+  {
+    "id": "561lccl1d",
+    "customerId": "hwhgob95d",
+    "channel": "email",
+    "direction": "inbound",
+    "sender": "Kenny.maingot@gmail.com",
+    "text": "Thanks for the updates! We will review the proposal details.",
+    "timestamp": "2026-06-12T09:05:18.425Z",
+    "isRead": true
+  },
+  {
+    "id": "had1zntf1",
+    "customerId": "hwhgob95d",
+    "channel": "email",
+    "direction": "outbound",
+    "sender": "info@quartzinternational.ca",
+    "text": "testing 2",
+    "timestamp": "2026-06-12T12:30:57.806Z"
+  },
+  {
+    "id": "ktz80towf",
+    "customerId": "hwhgob95d",
+    "channel": "email",
+    "direction": "inbound",
+    "sender": "Kenny.maingot@gmail.com",
+    "text": "Thanks for the updates! We will review the proposal details.",
+    "timestamp": "2026-06-12T12:31:02.817Z",
+    "isRead": false
+  }
+]

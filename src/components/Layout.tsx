@@ -8,6 +8,11 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const location = useLocation();
   const isAdmin = location.pathname.startsWith('/admin');
+  const isEstimatorPage = [
+    '/quartz-countertop-estimator',
+    '/kitchen-cabinet-estimator',
+    '/kitchen-renovation-estimator'
+  ].includes(location.pathname);
   const isCabinetPage = [
     '/cabinets', 
     '/kitchen-cabinets', 
@@ -25,7 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {!isAdmin && (
+      {!isAdmin && !isEstimatorPage && (
         <header className="bg-white border-b border-border-custom sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-20">
@@ -70,7 +75,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   (647) 370-6938
                 </a>
                 {!isCabinetPage && (
-                  <Link to="/estimate" className="btn-primary py-2.5 px-6 text-xs uppercase tracking-widest flex items-center gap-2">
+                  <Link 
+                    to="/quartz-countertop-estimator" 
+                    className="btn-primary py-2.5 px-6 text-xs uppercase tracking-widest flex items-center gap-2 cursor-pointer"
+                  >
                     Get Instant Estimate
                   </Link>
                 )}
@@ -106,9 +114,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                 </a>
                 {!isCabinetPage && (
                   <Link 
-                    to="/estimate" 
-                    className="btn-primary w-full text-center mt-4"
+                    to="/quartz-countertop-estimator"
                     onClick={() => setIsMenuOpen(false)}
+                    className="btn-primary w-full text-center mt-4 cursor-pointer flex items-center justify-center"
                   >
                     Get Instant Estimate
                   </Link>
@@ -123,10 +131,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         {children}
       </main>
 
-      {!isAdmin && (
+      {!isAdmin && !isEstimatorPage && (
         <footer className="bg-dark text-white pt-24 pb-12">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-24">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-16 mb-24">
               <div className="col-span-1">
                 <Link to="/" className="inline-flex items-center gap-3 w-[160px] min-w-[160px] max-w-[170px] select-none group mb-8">
                   {/* geometric quartz icon */}
@@ -174,6 +182,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               </div>
 
               <div>
+                <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-8">Resources</h4>
+                <ul className="space-y-4 text-gray-400 font-medium text-sm">
+                  <li><Link to="/cost" className="hover:text-white transition-colors">Quartz Countertop Cost Guide</Link></li>
+                  <li><Link to="/quartz-countertop-estimator" className="hover:text-white transition-colors">Quartz Countertop Estimator</Link></li>
+                  <li><Link to="/kitchen-cabinet-cost" className="hover:text-white transition-colors">Kitchen Cabinet Cost Guide</Link></li>
+                  <li><Link to="/kitchen-cabinet-estimator" className="hover:text-white transition-colors">Kitchen Cabinet Estimator</Link></li>
+                  <li><Link to="/kitchen-renovation-estimator" className="hover:text-white transition-colors">Kitchen Renovation Estimator</Link></li>
+                </ul>
+              </div>
+
+              <div>
                 <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-8">Contact</h4>
                 <ul className="space-y-4 text-gray-400 font-medium text-sm">
                   <li>
@@ -187,7 +206,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   </li>
                   <li>
                     <a 
-                      href="https://wa.me/16473706938" 
+                      href="https://wa.me/16473706684" 
                       target="_blank" 
                       rel="noopener noreferrer"
                       className="flex items-center gap-3 hover:text-white transition-colors"
@@ -215,33 +234,19 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                     </a>
                   </li>
                   <li>
-                    <button 
-                      onClick={() => openCalculator()}
+                    <Link 
+                      to="/quartz-countertop-estimator"
                       className="flex items-center gap-3 hover:text-white transition-colors text-left font-medium"
                     >
                       <Calculator size={16} className="text-accent shrink-0" />
                       <span>Get Instant Estimate</span>
-                    </button>
+                    </Link>
                   </li>
                 </ul>
               </div>
             </div>
 
-            {/* Horizontal City Links */}
-            <div className="border-t border-white/5 pt-12 pb-8">
-              <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 text-[10px] font-bold uppercase tracking-[0.2em] text-gray-500">
-                {['Markham', 'Vaughan', 'Mississauga', 'Richmond Hill', 'Oakville', 'Ajax', 'Pickering'].map((city) => (
-                  <Link 
-                    key={city} 
-                    to={`/quartz-countertop-cost/${city.toLowerCase().replace(' ', '-')}`} 
-                    className="hover:text-accent transition-colors"
-                  >
-                    {city}
-                  </Link>
-                ))}
-              </div>
-            </div>
-            
+
             <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.3em] font-bold text-gray-600">
               <p>© 2026 QUARTZ INTERNATIONAL. ALL RIGHTS RESERVED.</p>
               <div className="flex gap-10">

@@ -95,10 +95,10 @@ export const AIChat: React.FC = () => {
       id: 'whatsapp',
       icon: <MessageCircle size={18} />,
       label: 'WhatsApp Us',
-      subtext: 'Direct text: (647) 370-6938',
+      subtext: 'Direct text: (647) 370-6684',
       onClick: () => {
         setIsMenuOpen(false);
-        window.open('https://wa.me/16473706938', '_blank');
+        window.open('https://wa.me/16473706684', '_blank');
       }
     },
     {

@@ -109,6 +109,7 @@ const DB_DIR = isVercel ? '/tmp/data' : path.resolve(process.cwd(), 'data');
 const DB_FILE = path.resolve(DB_DIR, 'leads.json');
 const CUSTOMERS_FILE = path.resolve(DB_DIR, 'customers.json');
 const MESSAGES_FILE = path.resolve(DB_DIR, 'messages.json');
+const ANALYTICS_FILE = path.resolve(DB_DIR, 'analytics.json');
 
 // Promise chain to serialise database writes and prevent race conditions/corruption
 let writeQueue = Promise.resolve();
@@ -119,7 +120,7 @@ async function ensureDbInitialized() {
     
     // Copy seed files on Vercel if not already present in /tmp/data
     if (isVercel) {
-      const srcDir = path.resolve(process.cwd(), 'data');
+      const srcDir = path.resolve(process.cwd(), 'seeds');
       const filesToCopy = ['leads.json', 'customers.json', 'messages.json'];
       for (const file of filesToCopy) {
         const destPath = path.resolve(DB_DIR, file);
@@ -318,6 +319,65 @@ async function ensureDbInitialized() {
       console.log(`Initialized messages database with ${mockMessages.length} mock communications.`);
     }
 
+    // Initialize analytics database
+    try {
+      await fs.access(ANALYTICS_FILE);
+      const data = await fs.readFile(ANALYTICS_FILE, 'utf-8');
+      if (JSON.parse(data).length === 0) {
+        throw new Error('seed');
+      }
+    } catch {
+      // Seed analytics data for the last 30 days
+      const seededEvents: AnalyticEvent[] = [];
+      const paths = ['/', '/quartz-countertops-toronto', '/caesarstone', '/estimate', '/results'];
+      const sources = ['google', 'facebook', 'direct', 'instagram'];
+      const mediums = ['cpc', 'social', 'organic', 'referral'];
+      
+      const now = Date.now();
+      // Generate events for 30 days
+      for (let day = 30; day >= 0; day--) {
+        const dayMs = now - day * 24 * 3600000;
+        const numSessions = Math.floor(Math.random() * 8) + 4; // 4 to 11 sessions per day
+        
+        for (let s = 0; s < numSessions; s++) {
+          const sessionId = 'session-' + Math.random().toString(36).substr(2, 9);
+          // Random offset within the day
+          const sessionTime = new Date(dayMs + Math.floor(Math.random() * 24 * 3600000)).toISOString();
+          
+          const isPaid = Math.random() > 0.5;
+          const utmSource = isPaid ? sources[Math.floor(Math.random() * sources.length)] : undefined;
+          const utmMedium = isPaid ? (utmSource === 'direct' ? 'direct' : mediums[Math.floor(Math.random() * mediums.length)]) : undefined;
+          
+          seededEvents.push({
+            id: Math.random().toString(36).substr(2, 9),
+            sessionId,
+            type: 'session_start',
+            timestamp: sessionTime,
+            utmSource,
+            utmMedium,
+            utmCampaign: utmSource ? 'quartz-promo' : undefined
+          });
+          
+          // Generate 1-5 page views for this session
+          const numPages = Math.floor(Math.random() * 4) + 1;
+          let pageTime = new Date(sessionTime).getTime();
+          for (let p = 0; p < numPages; p++) {
+            pageTime += Math.floor(Math.random() * 120000) + 30000; // 30s to 2.5m later
+            seededEvents.push({
+              id: Math.random().toString(36).substr(2, 9),
+              sessionId,
+              type: 'page_view',
+              path: paths[Math.floor(Math.random() * paths.length)],
+              timestamp: new Date(pageTime).toISOString()
+            });
+          }
+        }
+      }
+      
+      await fs.writeFile(ANALYTICS_FILE, JSON.stringify(seededEvents, null, 2), 'utf-8');
+      console.log(`Seeded ${seededEvents.length} analytics events for the last 30 days.`);
+    }
+
   } catch (error) {
     console.error('Failed to initialize database directories:', error);
   }
@@ -486,6 +546,46 @@ export async function markMessagesAsRead(customerId: string): Promise<boolean> {
           resolve(false);
         }
       });
+  });
+}
+
+export interface AnalyticEvent {
+  id: string;
+  sessionId: string;
+  type: 'session_start' | 'page_view';
+  path?: string;
+  timestamp: string;
+  utmSource?: string;
+  utmMedium?: string;
+  utmCampaign?: string;
+  referrer?: string;
+}
+
+export async function getAnalyticsEvents(): Promise<AnalyticEvent[]> {
+  await ensureDbInitialized();
+  try {
+    const data = await fs.readFile(ANALYTICS_FILE, 'utf-8');
+    return JSON.parse(data) as AnalyticEvent[];
+  } catch (error) {
+    console.error('Failed to read analytics from database:', error);
+    return [];
+  }
+}
+
+export async function saveAnalyticsEvent(event: AnalyticEvent): Promise<boolean> {
+  await ensureDbInitialized();
+  return new Promise((resolve) => {
+    writeQueue = writeQueue.then(async () => {
+      try {
+        const events = await getAnalyticsEvents();
+        events.push(event);
+        await fs.writeFile(ANALYTICS_FILE, JSON.stringify(events, null, 2), 'utf-8');
+        resolve(true);
+      } catch (error) {
+        console.error('Failed to save analytics event:', error);
+        resolve(false);
+      }
+    });
   });
 }
 

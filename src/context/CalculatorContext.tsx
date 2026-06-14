@@ -229,6 +229,44 @@ export const CalculatorProvider: React.FC<{ children: React.ReactNode }> = ({ ch
         sessionStorage.setItem('qi_utm_data', JSON.stringify(newUtm));
       }
 
+      // 1.5 Real-time Analytics Logging
+      let sessionId = sessionStorage.getItem('qi_session_id');
+      let isNewSession = false;
+      if (!sessionId) {
+        sessionId = 'session-' + Math.random().toString(36).substr(2, 9);
+        sessionStorage.setItem('qi_session_id', sessionId);
+        isNewSession = true;
+      }
+
+      if (isNewSession) {
+        fetch('/api/analytics/track', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            sessionId,
+            type: 'session_start',
+            utmSource: utmSource || undefined,
+            utmMedium: utmMedium || undefined,
+            utmCampaign: utmCampaign || undefined,
+            referrer: document.referrer || undefined
+          })
+        }).catch(err => console.error('Failed to track session start:', err));
+      }
+
+      const lastSessionPage = sessionStorage.getItem('qi_last_tracked_path');
+      if (lastSessionPage !== location.pathname) {
+        sessionStorage.setItem('qi_last_tracked_path', location.pathname);
+        fetch('/api/analytics/track', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            sessionId,
+            type: 'page_view',
+            path: location.pathname
+          })
+        }).catch(err => console.error('Failed to track page view:', err));
+      }
+
       // 2. Page Behavior & Engagement Tracking
       const path = location.pathname + location.search;
       const now = Date.now();

@@ -128,10 +128,7 @@ const examples = [
   { title: 'Luxury Kitchen', price: '$5,000–$11,000', img: luxuryKitchen, level: 'luxury' as const, sqFt: 55, step: 2 },
 ];
 
-import { useCalculator } from '../context/CalculatorContext';
-
 export default function QuartzBrowse() {
-  const { openCalculator } = useCalculator();
   const [searchParams, setSearchParams] = useSearchParams();
   const [activeLook, setActiveLook] = useState<string | null>(null);
   const [activePrice, setActivePrice] = useState<string | null>(null);
@@ -223,9 +220,9 @@ export default function QuartzBrowse() {
                   Explore popular quartz designs and get instant pricing for your kitchen. No hidden fees, just premium surfaces.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
-                  <button onClick={() => openCalculator()} className="btn-primary px-10 py-5 h-auto text-base font-bold shadow-xl shadow-accent/20 group text-center">
+                  <Link to="/quartz-countertop-estimator" className="btn-primary px-10 py-5 h-auto text-base font-bold shadow-xl shadow-accent/20 group text-center flex items-center justify-center">
                     Get My Countertop Price <ArrowRight size={18} className="inline-block ml-2 group-hover:translate-x-1 transition-transform" />
-                  </button>
+                  </Link>
                   <Link to="/cost" className="flex items-center justify-center bg-white border border-border-custom px-10 py-5 rounded-full text-base font-bold text-text-primary hover:border-accent transition-all shadow-sm text-center">
                     View Cost Guide
                   </Link>
@@ -384,12 +381,12 @@ export default function QuartzBrowse() {
                       <p className="text-[9px] font-bold text-gray-400 uppercase tracking-widest mb-1 leading-none">Installed Price</p>
                       <p className="text-lg font-bold text-text-primary">{slab.price} <span className="text-[10px] text-gray-400 font-medium">/ sq ft</span></p>
                     </div>
-                    <button 
-                      onClick={() => openCalculator({ style: slab.category, slab: slab.name, brand: slab.brand })}
+                    <Link 
+                      to="/quartz-countertop-estimator"
                       className="mt-auto flex items-center justify-center w-full bg-background border border-border-custom py-4 rounded-full text-xs font-bold text-text-primary hover:border-accent hover:bg-accent/5 transition-all gap-2 group text-center"
                     >
                       Get This Countertop Price <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                    </button>
+                    </Link>
                   </div>
                 </motion.div>
               )})}
@@ -458,9 +455,9 @@ export default function QuartzBrowse() {
                 ))}
               </div>
 
-              <button onClick={() => openCalculator()} className="btn-primary w-fit px-10 text-center">
+              <Link to="/quartz-countertop-estimator" className="btn-primary w-fit px-10 text-center flex items-center justify-center">
                 Calculate My Cost
-              </button>
+              </Link>
             </div>
              <div className="lg:w-1/2 grid grid-cols-2 gap-4">
                 <div className="space-y-4">
@@ -506,9 +503,9 @@ export default function QuartzBrowse() {
                       <Star size={16} fill="currentColor" />
                       <span>{ex.price} est.</span>
                    </div>
-                   <button onClick={() => openCalculator({ level: ex.level, sqFt: ex.sqFt, step: ex.step })} className="bg-white text-text-primary px-8 py-4 rounded-full font-bold text-sm w-fit hover:bg-accent hover:text-white transition-all transform group-hover:translate-y-0 translate-y-4 opacity-0 group-hover:opacity-100 duration-500">
+                   <Link to="/quartz-countertop-estimator" className="bg-white text-text-primary px-8 py-4 rounded-full font-bold text-sm w-fit hover:bg-accent hover:text-white transition-all transform group-hover:translate-y-0 translate-y-4 opacity-0 group-hover:opacity-100 duration-500 flex items-center justify-center">
                       Get This Kitchen Price
-                   </button>
+                   </Link>
                 </div>
               </motion.div>
             ))}
@@ -529,9 +526,9 @@ export default function QuartzBrowse() {
             Get your kitchen price in 30 seconds — we'll guide you through slabs, levels, and materials from there.
           </p>
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
-            <button onClick={() => openCalculator()} className="bg-white text-accent px-12 py-6 rounded-full font-bold text-lg hover:bg-text-primary hover:text-white transition-all shadow-2xl text-center">
+             <Link to="/quartz-countertop-estimator" className="bg-white text-accent px-12 py-6 rounded-full font-bold text-lg hover:bg-text-primary hover:text-white transition-all shadow-2xl text-center flex items-center justify-center">
               Start Estimate
-            </button>
+            </Link>
             <Link to="/cost" className="bg-text-primary/20 backdrop-blur-sm border border-white/20 text-white px-12 py-6 rounded-full font-bold text-lg hover:bg-text-primary transition-all text-center">
               View Full Cost Guide
             </Link>

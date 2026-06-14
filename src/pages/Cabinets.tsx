@@ -69,7 +69,7 @@ const staggerContainer = {
 };
 
 export default function Cabinets() {
-  const { state, updateState, openCalculator } = useCalculator();
+  const { state, updateState } = useCalculator();
   const navigate = useNavigate();
   const [activeGuideTab, setActiveGuideTab] = useState<'standard' | 'small' | 'large'>('standard');
 
@@ -116,15 +116,6 @@ export default function Cabinets() {
     setTimeout(() => scrollToSection('collections'), 300);
   };
 
-  const handleEstimateCollection = (collection: 'essential' | 'premium' | 'elite') => {
-    openCalculator({
-      type: 'full-kitchen',
-      deliveryMethod: state.deliveryMethod || 'installed',
-      cabinetStyle: collection,
-      step: 5
-    });
-  };
-
   return (
     <div className="bg-white min-h-screen font-sans selection:bg-accent/30 selection:text-text-primary text-[#1A1A1A]">
       
@@ -162,16 +153,12 @@ export default function Cabinets() {
 
                 {/* Main CTA Block (Removed generic Estimate CTAs) */}
                 <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 w-full sm:w-auto">
-                  <button 
-                    onClick={() => openCalculator({ 
-                      type: 'full-kitchen', 
-                      deliveryMethod: state.deliveryMethod || 'installed',
-                      step: 5
-                    })}
-                    className="btn-primary px-10 py-5 text-xs font-bold uppercase tracking-widest shadow-xl shadow-[#C6A87D]/20 hover:scale-102 transition-transform cursor-pointer"
+                  <Link 
+                    to="/kitchen-cabinet-estimator"
+                    className="btn-primary px-10 py-5 text-xs font-bold uppercase tracking-widest shadow-xl shadow-[#C6A87D]/20 hover:scale-102 transition-transform cursor-pointer flex items-center justify-center text-center"
                   >
                     Get My Cabinets Price
-                  </button>
+                  </Link>
                 </div>
 
                 {/* Trust Points */}
@@ -558,12 +545,12 @@ export default function Cabinets() {
                   >
                     View Collection
                   </Link>
-                  <button
-                    onClick={() => handleEstimateCollection('essential')}
-                    className="bg-[#C6A87D] hover:bg-[#b09164] text-white font-extrabold py-3 rounded-full text-[10px] uppercase tracking-wider transition-all cursor-pointer text-center"
+                  <Link
+                    to="/kitchen-cabinet-estimator"
+                    className="bg-[#C6A87D] hover:bg-[#b09164] text-white font-extrabold py-3 rounded-full text-[10px] uppercase tracking-wider transition-all cursor-pointer text-center flex items-center justify-center"
                   >
                     Estimate This Collection
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -610,12 +597,12 @@ export default function Cabinets() {
                   >
                     View Collection
                   </Link>
-                  <button
-                    onClick={() => handleEstimateCollection('premium')}
-                    className="bg-[#C6A87D] hover:bg-[#b09164] text-white font-extrabold py-3 rounded-full text-[10px] uppercase tracking-wider transition-all cursor-pointer text-center"
+                  <Link
+                    to="/kitchen-cabinet-estimator"
+                    className="bg-[#C6A87D] hover:bg-[#b09164] text-white font-extrabold py-3 rounded-full text-[10px] uppercase tracking-wider transition-all cursor-pointer text-center flex items-center justify-center"
                   >
                     Estimate This Collection
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -657,12 +644,12 @@ export default function Cabinets() {
                   >
                     View Collection
                   </Link>
-                  <button
-                    onClick={() => handleEstimateCollection('elite')}
-                    className="bg-[#C6A87D] hover:bg-[#b09164] text-white font-extrabold py-3 rounded-full text-[10px] uppercase tracking-wider transition-all cursor-pointer text-center"
+                  <Link
+                    to="/kitchen-cabinet-estimator"
+                    className="bg-[#C6A87D] hover:bg-[#b09164] text-white font-extrabold py-3 rounded-full text-[10px] uppercase tracking-wider transition-all cursor-pointer text-center flex items-center justify-center"
                   >
                     Estimate This Collection
-                  </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -859,18 +846,12 @@ export default function Cabinets() {
                   </div>
                 </div>
 
-                <button
-                  onClick={() => openCalculator({ 
-                    type: 'full-kitchen', 
-                    deliveryMethod: state.deliveryMethod || 'installed',
-                    cabinetStyle: p.collection.toLowerCase().includes('essential') ? 'essential' : p.collection.toLowerCase().includes('premium') ? 'premium' : 'elite',
-                    cabinetDoorStyle: p.style,
-                    step: 5
-                  })}
+                <Link
+                  to="/kitchen-cabinet-estimator"
                   className="w-full bg-white hover:bg-gray-100 text-[#1A1A1A] font-bold py-3.5 px-4 rounded-full text-xs uppercase tracking-widest border border-[#E5E2DC] transition-all cursor-pointer flex items-center justify-center gap-2"
                 >
                   View Project / Estimate
-                </button>
+                </Link>
               </div>
             ))}
 
@@ -952,16 +933,12 @@ export default function Cabinets() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 max-w-xl mx-auto">
-            <button 
-              onClick={() => openCalculator({ 
-                type: 'full-kitchen', 
-                deliveryMethod: state.deliveryMethod || 'installed',
-                step: 5
-              })}
+            <Link 
+              to="/kitchen-cabinet-estimator"
               className="w-full sm:w-auto bg-[#C6A87D] hover:bg-[#b09164] text-white font-bold py-5 px-10 rounded-full text-xs uppercase tracking-widest transition-all cursor-pointer flex items-center justify-center gap-2 shadow-lg shadow-[#C6A87D]/10"
             >
               Get My Cabinets Price
-            </button>
+            </Link>
           </div>
 
           <div className="pt-6 text-[10px] text-gray-500 font-bold uppercase tracking-widest">
