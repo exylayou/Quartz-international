@@ -131,36 +131,48 @@ if (useRedis) {
   }
 }
 
-// Unified Get helper
+// Unified Get helper — treats KV/Redis as authoritative when available.
+// Does NOT fall through to ephemeral file if a persistent store is configured.
 async function getDbKey<T>(key: string, fileFallbackPath: string): Promise<T | null> {
   if (useKV) {
     try {
-      return await kv.get<T>(key);
+      const result = await kv.get<T>(key);
+      return result; // null means "key doesn't exist in KV" — that's valid, don't fall through
     } catch (err) {
       console.error(`KV Get failed for ${key}:`, err);
+      // KV connection error — fall through to Redis or file
     }
   }
   if (useRedis && redisClient) {
     try {
       const val = await redisClient.get(key);
-      return val ? JSON.parse(val) as T : null;
+      return val ? JSON.parse(val) as T : null; // null means "key doesn't exist in Redis" — that's valid
     } catch (err) {
       console.error(`Redis Get failed for ${key}:`, err);
+      // Redis connection error — fall through to file
     }
   }
-  try {
-    const data = await fs.readFile(fileFallbackPath, 'utf-8');
-    return JSON.parse(data) as T;
-  } catch (err) {
-    return null;
+  // Only use file system if NO persistent store (KV/Redis) is configured,
+  // or if all configured stores had connection errors
+  if (!useKV && !(useRedis && redisClient)) {
+    try {
+      const data = await fs.readFile(fileFallbackPath, 'utf-8');
+      return JSON.parse(data) as T;
+    } catch (err) {
+      return null;
+    }
   }
+  return null;
 }
 
-// Unified Set helper
+// Unified Set helper — writes to all configured stores.
+// File is always written as a local cache but is not authoritative when KV/Redis is active.
 async function setDbKey<T>(key: string, value: T, fileFallbackPath: string): Promise<boolean> {
+  let persisted = false;
   if (useKV) {
     try {
       await kv.set(key, value);
+      persisted = true;
     } catch (err) {
       console.error(`KV Set failed for ${key}:`, err);
     }
@@ -168,25 +180,32 @@ async function setDbKey<T>(key: string, value: T, fileFallbackPath: string): Pro
   if (useRedis && redisClient) {
     try {
       await redisClient.set(key, JSON.stringify(value));
+      persisted = true;
     } catch (err) {
       console.error(`Redis Set failed for ${key}:`, err);
     }
   }
+  // Always write file as local cache / fallback for local dev
   return new Promise((resolve) => {
     writeQueue = writeQueue.then(async () => {
       try {
         await fs.writeFile(fileFallbackPath, JSON.stringify(value, null, 2), 'utf-8');
-        resolve(true);
+        resolve(persisted || true);
       } catch (err) {
         console.error(`File write failed for ${fileFallbackPath}:`, err);
-        resolve(false);
+        resolve(persisted);
       }
     });
   });
 }
 
+let dbInitialized = false;
+
 async function ensureDbInitialized() {
-  // 1. Seed KV if needed
+  if (dbInitialized) return;
+  dbInitialized = true;
+
+  // 1. Seed KV if needed (only if key doesn't exist yet)
   if (useKV) {
     try {
       const leads = await kv.get('leads');
@@ -223,7 +242,7 @@ async function ensureDbInitialized() {
     }
   }
   
-  // 2. Seed Redis if needed
+  // 2. Seed Redis if needed (only if key doesn't exist yet)
   if (useRedis && redisClient) {
     try {
       const leads = await redisClient.get('leads');
@@ -260,30 +279,11 @@ async function ensureDbInitialized() {
     }
   }
 
-  // 3. Fallback/Local File Initialization
-  try {
-    await fs.mkdir(DB_DIR, { recursive: true });
-    
-    // Copy seed files on Vercel if not already present in /tmp/data
-    if (isVercel) {
-      const srcDir = path.resolve(process.cwd(), 'seeds');
-      const filesToCopy = ['leads.json', 'customers.json', 'messages.json'];
-      for (const file of filesToCopy) {
-        const destPath = path.resolve(DB_DIR, file);
-        try {
-          await fs.access(destPath);
-        } catch {
-          try {
-            const srcPath = path.resolve(srcDir, file);
-            const content = await fs.readFile(srcPath, 'utf-8');
-            await fs.writeFile(destPath, content, 'utf-8');
-            console.log(`Copied seed ${file} to /tmp/data on Vercel successfully.`);
-          } catch (copyErr) {
-            console.error(`Failed to copy seed ${file} to /tmp/data:`, copyErr);
-          }
-        }
-      }
-    }
+  // 3. Fallback/Local File Initialization — only when NO persistent store is active.
+  // On Vercel with Redis, /tmp files are ephemeral and NOT authoritative.
+  if (!useKV && !(useRedis && redisClient)) {
+    try {
+      await fs.mkdir(DB_DIR, { recursive: true });
     
     // Initialize leads database
     try {
@@ -524,8 +524,9 @@ async function ensureDbInitialized() {
       console.log(`Seeded ${seededEvents.length} analytics events for the last 30 days.`);
     }
 
-  } catch (error) {
-    console.error('Failed to initialize database directories:', error);
+    } catch (error) {
+      console.error('Failed to initialize local database:', error);
+    }
   }
 }
 

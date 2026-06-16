@@ -709,6 +709,21 @@ export default function Admin() {
     }
   };
 
+  // Opens the Inbox tab and selects the matching customer thread by email
+  const openMessengerForCustomer = (email: string) => {
+    if (!email) return;
+    const match = customers.find((c: any) => c.email?.toLowerCase() === email.toLowerCase());
+    if (match) {
+      setSelectedLead(null);
+      setActiveTab('inbox');
+      handleSelectCustomerThread(match.id);
+    } else {
+      // No customer profile yet — just open inbox
+      setSelectedLead(null);
+      setActiveTab('inbox');
+    }
+  };
+
   const handleSendOutboundMessage = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!selectedCustomerId || !messageInput.trim()) return;
@@ -2198,9 +2213,9 @@ export default function Admin() {
                               </div>
                               <div>
                                 <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Email Address</p>
-                                <a href={`mailto:${activeCustomer.email}`} className="font-bold text-accent hover:underline block mt-0.5">
+                                <button onClick={() => openMessengerForCustomer(activeCustomer.email)} className="font-bold text-accent hover:underline block mt-0.5 text-left">
                                   {activeCustomer.email || 'N/A'}
-                                </a>
+                                </button>
                               </div>
                               <div>
                                 <p className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">Phone Number</p>
@@ -2301,9 +2316,9 @@ export default function Admin() {
                         <td className="px-6 py-4">
                           <p className="font-bold text-sm mb-1 text-gray-800">{lead.name}</p>
                           <div className="flex flex-col gap-1">
-                            <a href={`mailto:${lead.email}`} className="text-xs text-accent flex items-center gap-1 hover:underline">
+                            <button onClick={() => openMessengerForCustomer(lead.email)} className="text-xs text-accent flex items-center gap-1 hover:underline text-left">
                               <Mail size={10} /> {lead.email}
-                            </a>
+                            </button>
                             <a href={`tel:${lead.phone}`} className="text-xs text-gray-500 flex items-center gap-1 hover:underline">
                               <Phone size={10} /> {lead.phone}
                             </a>
@@ -3800,9 +3815,9 @@ export default function Admin() {
                     {selectedLead.email && (
                       <div className="flex items-center gap-2 text-sm">
                         <Mail size={14} className="text-gray-400" />
-                        <a href={`mailto:${selectedLead.email}`} className="text-accent hover:underline break-all font-semibold">
+                        <button onClick={() => openMessengerForCustomer(selectedLead.email)} className="text-accent hover:underline break-all font-semibold text-left">
                           {selectedLead.email}
-                        </a>
+                        </button>
                       </div>
                     )}
                     {selectedLead.phone && (
@@ -4312,12 +4327,12 @@ export default function Admin() {
                 Close Details
               </button>
               {selectedLead.email && (
-                <a 
-                  href={`mailto:${selectedLead.email}?subject=Quartz%20International%2520Kitchen%2525Estimate`}
+                <button
+                  onClick={() => openMessengerForCustomer(selectedLead.email)}
                   className="btn-primary px-5 py-2 text-sm font-bold flex items-center justify-center animate-pulse"
                 >
                   Email Customer
-                </a>
+                </button>
               )}
             </div>
           </motion.div>

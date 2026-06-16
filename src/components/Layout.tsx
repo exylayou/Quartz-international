@@ -177,7 +177,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <li><Link to="/quartz-kitchen-countertops" className="hover:text-white transition-colors">Countertops</Link></li>
                   <li><Link to="/cabinets" className="hover:text-white transition-colors">Cabinets</Link></li>
                   <li><Link to="/cost" className="hover:text-white transition-colors">Pricing Guide</Link></li>
-                  <li><Link to="/quartz-countertop-estimator" className="hover:text-white transition-colors">Instant Estimate</Link></li>
                 </ul>
               </div>
 
