@@ -571,7 +571,7 @@ export default function Blog() {
               <h3 className="text-2xl font-bold mb-3">Planning a GTA Kitchen Renovation?</h3>
               <p className="text-text-muted text-sm mb-6">Use our instant countertop price estimator to get an accurate budget estimate in 30 seconds.</p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Link to="/estimate" className="btn-primary py-4 px-8 text-xs font-bold uppercase tracking-widest text-center">
+                <Link to="/quartz-countertop-estimator" className="btn-primary py-4 px-8 text-xs font-bold uppercase tracking-widest text-center">
                   Get Instant Estimate
                 </Link>
                 <Link to="/cost" className="bg-background border border-border-custom py-4 px-8 rounded-[var(--radius-button)] text-xs font-bold text-text-primary hover:border-accent transition-all text-center flex items-center justify-center">
@@ -1078,7 +1078,7 @@ export default function Blog() {
               <h3 className="text-2xl font-bold mb-3">Planning a GTA Kitchen Renovation?</h3>
               <p className="text-text-muted text-sm mb-6">Use our instant countertop price estimator to get an accurate budget estimate in 30 seconds.</p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Link to="/estimate" className="btn-primary py-4 px-8 text-xs font-bold uppercase tracking-widest text-center">
+                <Link to="/quartz-countertop-estimator" className="btn-primary py-4 px-8 text-xs font-bold uppercase tracking-widest text-center">
                   Get Instant Estimate
                 </Link>
                 <Link to="/cost" className="bg-background border border-border-custom py-4 px-8 rounded-[var(--radius-button)] text-xs font-bold text-text-primary hover:border-accent transition-all text-center flex items-center justify-center">
@@ -1436,7 +1436,7 @@ export default function Blog() {
               <h3 className="text-2xl font-bold mb-3">Planning a GTA Kitchen Renovation?</h3>
               <p className="text-text-muted text-sm mb-6">Use our instant countertop price estimator to get an accurate budget estimate in 30 seconds.</p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Link to="/estimate" className="btn-primary py-4 px-8 text-xs font-bold uppercase tracking-widest text-center">
+                <Link to="/quartz-countertop-estimator" className="btn-primary py-4 px-8 text-xs font-bold uppercase tracking-widest text-center">
                   Get Instant Estimate
                 </Link>
                 <Link to="/cost" className="bg-background border border-border-custom py-4 px-8 rounded-[var(--radius-button)] text-xs font-bold text-text-primary hover:border-accent transition-all text-center flex items-center justify-center">

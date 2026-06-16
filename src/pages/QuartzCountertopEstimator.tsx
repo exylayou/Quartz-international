@@ -77,6 +77,28 @@ export default function QuartzCountertopEstimator() {
   const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
   const pdfTemplateRef = useRef<HTMLDivElement>(null);
 
+  React.useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const slab = params.get('slab');
+    const level = params.get('level');
+    
+    if (level === 'premium' || level === 'luxury' || level === 'standard') {
+      setQuartzLevel(level);
+    } else if (slab) {
+      const slabName = decodeURIComponent(slab).toLowerCase();
+      const premiumKeywords = ['gold', 'taj', 'calacatta', 'caesarstone', 'silestone', 'lucent', 'kstone', 'kasa'];
+      const luxuryKeywords = ['luxury', 'custom', 'exotic', 'quartzite'];
+      
+      if (luxuryKeywords.some(kw => slabName.includes(kw))) {
+        setQuartzLevel('luxury');
+      } else if (premiumKeywords.some(kw => slabName.includes(kw))) {
+        setQuartzLevel('premium');
+      } else {
+        setQuartzLevel('standard');
+      }
+    }
+  }, []);
+
   // Compute countertop linear feet and square footage
   const linearFt = feet + (inches / 12);
   const wallSF = Math.max(0, (linearFt * 2) - 5);

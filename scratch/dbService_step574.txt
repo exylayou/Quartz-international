@@ -1,0 +1,138 @@
+Created At: 2026-06-14T17:27:57Z
+Completed At: 2026-06-14T17:27:57Z
+File Path: `file:///home/oltonexeter/Antigravity-x64/quartz-international/src/services/dbService.ts`
+Total Lines: 598
+Total Bytes: 20728
+Showing lines 1 to 598
+The following code has been modified to include a line number before every line, in the format: <line_number>: <original_line>. Please note that any changes targeting the original code should remove the line number, colon, and leading space.
+1: import fs from 'fs/promises';
+2: import path from 'path';
+3: import { kv } from '@vercel/kv';
+4: import Redis from 'ioredis';
+5: 
+6: export interface QuoteItem {
+7:   description: string;
+8:   quantity: number;
+9:   unitPrice: number;
+10:   total: number;
+11: }
+12: 
+13: export interface CustomerFile {
+14:   id: string;
+15:   name: string;
+16:   size: string;
+17:   uploadedAt: string;
+18:   url: string;
+19: }
+20: 
+21: export interface Customer {
+22:   id: string;
+23:   createdAt: string;
+24:   name: string;
+25:   email: string;
+26:   phone: string;
+27:   notes?: string;
+28:   files?: CustomerFile[];
+29: }
+30: 
+31: export interface Message {
+32:   id: string;
+33:   customerId: string;
+34:   channel: 'email' | 'sms' | 'whatsapp';
+35:   direction: 'inbound' | 'outbound';
+36:   sender: string;
+37:   text: string;
+38:   timestamp: string;
+39:   isRead?: boolean;
+40: }
+41: 
+42: export interface UserPageView {
+43:   path: string;
+44:   enteredAt: number;
+45:   durationMs?: number;
+46: }
+47: 
+48: export interface UserBehavior {
+49:   sessionStart: string;
+50:   pageViews: UserPageView[];
+51:   calculatorOpenedCount: number;
+52:   totalInteractions: number;
+53:   timeSpentMs: number;
+54: }
+55: 
+56: export interface Lead {
+57:   id: string;
+58:   createdAt: string;
+59:   name: string;
+60:   email: string;
+61:   phone: string;
+62:   notes?: string;
+63:   layout?: string;
+64:   quartzLevel?: string;
+65:   selectedSlab?: string;
+66:   countertopSqFt?: number;
+67:   countertopLinearFt?: number;
+68:   hasIsland?: boolean;
+69:   islandType?: string;
+70:   includeCab
+<truncated 20067 bytes>
+  }
+541:   customers[index] = { ...customers[index], ...updates };
+542:   return await setDbKey('customers', customers, CUSTOMERS_FILE);
+543: }
+544: 
+545: export async function getMessages(): Promise<Message[]> {
+546:   await ensureDbInitialized();
+547:   const messages = await getDbKey<Message[]>('messages', MESSAGES_FILE);
+548:   return messages || [];
+549: }
+550: 
+551: export async function saveMessage(message: Message): Promise<boolean> {
+552:   await ensureDbInitialized();
+553:   const messages = await getMessages();
+554:   messages.push(message);
+555:   return await setDbKey('messages', messages, MESSAGES_FILE);
+556: }
+557: 
+558: export async function markMessagesAsRead(customerId: string): Promise<boolean> {
+559:   await ensureDbInitialized();
+560:   const messages = await getMessages();
+561:   let changed = false;
+562:   for (const msg of messages) {
+563:     if (msg.customerId === customerId && msg.isRead === false) {
+564:       msg.isRead = true;
+565:       changed = true;
+566:     }
+567:   }
+568:   if (changed) {
+569:     return await setDbKey('messages', messages, MESSAGES_FILE);
+570:   }
+571:   return true;
+572: }
+573: 
+574: export interface AnalyticEvent {
+575:   id: string;
+576:   sessionId: string;
+577:   type: 'session_start' | 'page_view';
+578:   path?: string;
+579:   timestamp: string;
+580:   utmSource?: string;
+581:   utmMedium?: string;
+582:   utmCampaign?: string;
+583:   referrer?: string;
+584: }
+585: 
+586: export async function getAnalyticsEvents(): Promise<AnalyticEvent[]> {
+587:   await ensureDbInitialized();
+588:   const events = await getDbKey<AnalyticEvent[]>('analytics', ANALYTICS_FILE);
+589:   return events || [];
+590: }
+591: 
+592: export async function saveAnalyticsEvent(event: AnalyticEvent): Promise<boolean> {
+593:   await ensureDbInitialized();
+594:   const events = await getAnalyticsEvents();
+595:   events.push(event);
+596:   return await setDbKey('analytics', events, ANALYTICS_FILE);
+597: }
+598: 
+The above content shows the entire, complete file contents of the requested file.

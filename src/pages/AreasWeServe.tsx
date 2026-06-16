@@ -4,14 +4,14 @@ import { MapPin, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const AREAS = [
-  { name: 'Toronto', path: '/toronto' },
+  { name: 'Toronto', path: '/quartz-countertops-toronto' },
   { name: 'Scarborough', path: '/quartz-countertops-scarborough' },
   { name: 'Pickering', path: '/quartz-countertops-pickering' },
   { name: 'Markham', path: '/quartz-countertops-markham' },
-  { name: 'Mississauga', path: '/mississauga' },
-  { name: 'Vaughan', path: '/vaughan' },
-  { name: 'Richmond Hill', path: '/richmond-hill' },
-  { name: 'Oakville', path: '/oakville' },
+  { name: 'Mississauga', path: '/quartz-countertop-cost/mississauga' },
+  { name: 'Vaughan', path: '/quartz-countertop-cost/vaughan' },
+  { name: 'Richmond Hill', path: '/quartz-countertop-cost/richmond-hill' },
+  { name: 'Oakville', path: '/quartz-countertop-cost/oakville' },
 ];
 
 export default function AreasWeServe() {

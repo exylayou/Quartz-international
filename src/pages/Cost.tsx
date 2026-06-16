@@ -123,7 +123,7 @@ export default function Cost() {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/estimate" className="btn-primary px-8 py-4 h-auto text-sm font-bold">
+                <Link to="/quartz-countertop-estimator" className="btn-primary px-8 py-4 h-auto text-sm font-bold">
                   Calculate My Cost
                 </Link>
                 <Link to="/quartz-kitchen-countertops" className="flex items-center gap-2 text-sm font-bold text-gray-400 hover:text-accent transition-colors px-6">
@@ -217,7 +217,7 @@ export default function Cost() {
                 <h3 className="text-xl font-bold mb-4 leading-tight">Get Your Instant Kitchen Estimate</h3>
                 <p className="text-gray-400 text-xs mb-8">Use our calculator to get a custom price for your kitchen in 30 seconds.</p>
                 
-                <Link to="/estimate" className="btn-primary w-full h-12 flex items-center justify-center mb-10 text-xs gap-2">
+                <Link to="/quartz-countertop-estimator" className="btn-primary w-full h-12 flex items-center justify-center mb-10 text-xs gap-2">
                   Start Calculator <ArrowRight size={14} />
                 </Link>
 
@@ -310,7 +310,7 @@ export default function Cost() {
                   <p className="text-gray-500 text-sm mb-8 leading-relaxed">
                     Answer a few simple questions and get your custom price range instantly.
                   </p>
-                  <Link to="/estimate" className="btn-primary px-8 h-12 flex items-center justify-center text-sm font-bold">
+                  <Link to="/quartz-countertop-estimator" className="btn-primary px-8 h-12 flex items-center justify-center text-sm font-bold">
                     Calculate My Cost →
                   </Link>
                </div>
@@ -397,7 +397,7 @@ export default function Cost() {
                ))}
             </div>
             <div className="flex flex-col sm:flex-row gap-6 items-center">
-               <Link to="/estimate?type=full-kitchen" className="btn-primary px-10 h-14 w-full sm:w-auto h-auto text-sm font-bold flex items-center justify-center">
+               <Link to="/quartz-countertop-estimator" className="btn-primary px-10 h-14 w-full sm:w-auto h-auto text-sm font-bold flex items-center justify-center">
                   Get Full Kitchen Estimate →
                </Link>
                <Link to="/cabinets" className="text-xs font-bold text-gray-400 hover:text-accent">
@@ -441,7 +441,7 @@ export default function Cost() {
               <p className="text-gray-400 text-sm">Calculate your quartz countertop cost in 30 seconds or book a free consultation with our experts.</p>
            </div>
            <div className="flex flex-col sm:flex-row gap-4 w-full md:w-auto">
-              <Link to="/estimate" className="btn-primary px-10 h-14 flex items-center justify-center font-bold text-sm">
+              <Link to="/quartz-countertop-estimator" className="btn-primary px-10 h-14 flex items-center justify-center font-bold text-sm">
                 Calculate My Cost →
               </Link>
               <Link to="/contact" className="border border-white/20 text-white px-10 h-14 flex items-center justify-center font-bold text-sm hover:bg-white/5 transition-colors rounded-xl">

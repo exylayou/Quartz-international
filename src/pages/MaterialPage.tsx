@@ -27,7 +27,7 @@ export default function MaterialPage() {
             <p className="text-xl text-gray-300 max-w-2xl mb-10 leading-relaxed">
               {material.description} Discover why {material.name} is one of the most requested materials for modern kitchen renovations in 2026.
             </p>
-            <Link to={`/estimate?open-calculator=true&slab=${encodeURIComponent(material.name)}`} className="btn-primary flex items-center justify-center w-fit gap-2">
+            <Link to={`/quartz-countertop-estimator?slab=${encodeURIComponent(material.name)}`} className="btn-primary flex items-center justify-center w-fit gap-2">
               Estimate Your {material.name} Project
               <Calculator size={20} />
             </Link>
@@ -82,7 +82,7 @@ export default function MaterialPage() {
         <div className="max-w-4xl mx-auto px-4">
           <h2 className="text-4xl font-bold mb-8">Ready for a {material.name} Kitchen?</h2>
           <p className="text-xl text-gray-400 mb-12">Get an instant estimate and see how {material.name} fits your budget.</p>
-          <Link to={`/estimate?open-calculator=true&slab=${encodeURIComponent(material.name)}`} className="btn-primary">Get My Smart Estimate</Link>
+          <Link to={`/quartz-countertop-estimator?slab=${encodeURIComponent(material.name)}`} className="btn-primary">Get My Smart Estimate</Link>
         </div>
       </section>
     </div>

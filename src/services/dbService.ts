@@ -1,5 +1,7 @@
 import fs from 'fs/promises';
 import path from 'path';
+import { kv } from '@vercel/kv';
+import Redis from 'ioredis';
 
 export interface QuoteItem {
   description: string;
@@ -105,6 +107,9 @@ export interface Lead {
 }
 
 const isVercel = !!process.env.VERCEL;
+const useKV = !!(process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN);
+const useRedis = !!process.env.REDIS_URL;
+
 const DB_DIR = isVercel ? '/tmp/data' : path.resolve(process.cwd(), 'data');
 const DB_FILE = path.resolve(DB_DIR, 'leads.json');
 const CUSTOMERS_FILE = path.resolve(DB_DIR, 'customers.json');
@@ -114,7 +119,148 @@ const ANALYTICS_FILE = path.resolve(DB_DIR, 'analytics.json');
 // Promise chain to serialise database writes and prevent race conditions/corruption
 let writeQueue = Promise.resolve();
 
+let redisClient: Redis | null = null;
+if (useRedis) {
+  try {
+    redisClient = new Redis(process.env.REDIS_URL!);
+    redisClient.on('error', (err: any) => {
+      console.error('Redis connection error:', err);
+    });
+  } catch (err) {
+    console.error('Failed to create Redis client:', err);
+  }
+}
+
+// Unified Get helper
+async function getDbKey<T>(key: string, fileFallbackPath: string): Promise<T | null> {
+  if (useKV) {
+    try {
+      return await kv.get<T>(key);
+    } catch (err) {
+      console.error(`KV Get failed for ${key}:`, err);
+    }
+  }
+  if (useRedis && redisClient) {
+    try {
+      const val = await redisClient.get(key);
+      return val ? JSON.parse(val) as T : null;
+    } catch (err) {
+      console.error(`Redis Get failed for ${key}:`, err);
+    }
+  }
+  try {
+    const data = await fs.readFile(fileFallbackPath, 'utf-8');
+    return JSON.parse(data) as T;
+  } catch (err) {
+    return null;
+  }
+}
+
+// Unified Set helper
+async function setDbKey<T>(key: string, value: T, fileFallbackPath: string): Promise<boolean> {
+  if (useKV) {
+    try {
+      await kv.set(key, value);
+    } catch (err) {
+      console.error(`KV Set failed for ${key}:`, err);
+    }
+  }
+  if (useRedis && redisClient) {
+    try {
+      await redisClient.set(key, JSON.stringify(value));
+    } catch (err) {
+      console.error(`Redis Set failed for ${key}:`, err);
+    }
+  }
+  return new Promise((resolve) => {
+    writeQueue = writeQueue.then(async () => {
+      try {
+        await fs.writeFile(fileFallbackPath, JSON.stringify(value, null, 2), 'utf-8');
+        resolve(true);
+      } catch (err) {
+        console.error(`File write failed for ${fileFallbackPath}:`, err);
+        resolve(false);
+      }
+    });
+  });
+}
+
 async function ensureDbInitialized() {
+  // 1. Seed KV if needed
+  if (useKV) {
+    try {
+      const leads = await kv.get('leads');
+      if (leads === null) {
+        console.log('Initializing Vercel KV with seed database...');
+        const srcDir = path.resolve(process.cwd(), 'seeds');
+        
+        let leadsSeed: Lead[] = [];
+        try {
+          const content = await fs.readFile(path.resolve(srcDir, 'leads.json'), 'utf-8');
+          leadsSeed = JSON.parse(content);
+        } catch {}
+        await kv.set('leads', leadsSeed);
+
+        let customersSeed: Customer[] = [];
+        try {
+          const content = await fs.readFile(path.resolve(srcDir, 'customers.json'), 'utf-8');
+          customersSeed = JSON.parse(content);
+        } catch {}
+        await kv.set('customers', customersSeed);
+
+        let messagesSeed: Message[] = [];
+        try {
+          const content = await fs.readFile(path.resolve(srcDir, 'messages.json'), 'utf-8');
+          messagesSeed = JSON.parse(content);
+        } catch {}
+        await kv.set('messages', messagesSeed);
+        
+        await kv.set('analytics', []);
+        console.log('Seeded Vercel KV successfully');
+      }
+    } catch (err) {
+      console.error('Failed to initialize Vercel KV seeds:', err);
+    }
+  }
+  
+  // 2. Seed Redis if needed
+  if (useRedis && redisClient) {
+    try {
+      const leads = await redisClient.get('leads');
+      if (leads === null) {
+        console.log('Initializing Redis with seed database...');
+        const srcDir = path.resolve(process.cwd(), 'seeds');
+        
+        let leadsSeed: Lead[] = [];
+        try {
+          const content = await fs.readFile(path.resolve(srcDir, 'leads.json'), 'utf-8');
+          leadsSeed = JSON.parse(content);
+        } catch {}
+        await redisClient.set('leads', JSON.stringify(leadsSeed));
+
+        let customersSeed: Customer[] = [];
+        try {
+          const content = await fs.readFile(path.resolve(srcDir, 'customers.json'), 'utf-8');
+          customersSeed = JSON.parse(content);
+        } catch {}
+        await redisClient.set('customers', JSON.stringify(customersSeed));
+
+        let messagesSeed: Message[] = [];
+        try {
+          const content = await fs.readFile(path.resolve(srcDir, 'messages.json'), 'utf-8');
+          messagesSeed = JSON.parse(content);
+        } catch {}
+        await redisClient.set('messages', JSON.stringify(messagesSeed));
+        
+        await redisClient.set('analytics', JSON.stringify([]));
+        console.log('Seeded Redis successfully');
+      }
+    } catch (err) {
+      console.error('Failed to initialize Redis seeds:', err);
+    }
+  }
+
+  // 3. Fallback/Local File Initialization
   try {
     await fs.mkdir(DB_DIR, { recursive: true });
     
@@ -385,168 +531,77 @@ async function ensureDbInitialized() {
 
 export async function getLeads(): Promise<Lead[]> {
   await ensureDbInitialized();
-  try {
-    const data = await fs.readFile(DB_FILE, 'utf-8');
-    return JSON.parse(data) as Lead[];
-  } catch (error) {
-    console.error('Failed to read leads from database:', error);
-    return [];
-  }
+  const leads = await getDbKey<Lead[]>('leads', DB_FILE);
+  return leads || [];
 }
 
 export async function saveLead(lead: Lead): Promise<boolean> {
   await ensureDbInitialized();
-  return new Promise((resolve) => {
-    // Append the write operation to the queue
-    writeQueue = writeQueue
-      .then(async () => {
-        try {
-          const leads = await getLeads();
-          leads.unshift(lead); // Prepend new lead so the newest leads are first
-          await fs.writeFile(DB_FILE, JSON.stringify(leads, null, 2), 'utf-8');
-          resolve(true);
-        } catch (error) {
-          console.error('Failed to save lead to database:', error);
-          resolve(false);
-        }
-      });
-  });
+  const leads = await getLeads();
+  leads.unshift(lead);
+  return await setDbKey('leads', leads, DB_FILE);
 }
 
 export async function updateLead(id: string, updates: Partial<Lead>): Promise<boolean> {
   await ensureDbInitialized();
-  return new Promise((resolve) => {
-    writeQueue = writeQueue
-      .then(async () => {
-        try {
-          const leads = await getLeads();
-          const index = leads.findIndex(l => l.id === id);
-          if (index === -1) {
-            resolve(false);
-            return;
-          }
-          leads[index] = { ...leads[index], ...updates };
-          await fs.writeFile(DB_FILE, JSON.stringify(leads, null, 2), 'utf-8');
-          resolve(true);
-        } catch (error) {
-          console.error(`Failed to update lead ${id} in database:`, error);
-          resolve(false);
-        }
-      });
-  });
+  const leads = await getLeads();
+  const index = leads.findIndex(l => l.id === id);
+  if (index === -1) return false;
+  leads[index] = { ...leads[index], ...updates };
+  return await setDbKey('leads', leads, DB_FILE);
 }
 
 export async function getCustomers(): Promise<Customer[]> {
   await ensureDbInitialized();
-  try {
-    const data = await fs.readFile(CUSTOMERS_FILE, 'utf-8');
-    return JSON.parse(data) as Customer[];
-  } catch (error) {
-    console.error('Failed to read customers from database:', error);
-    return [];
-  }
+  const customers = await getDbKey<Customer[]>('customers', CUSTOMERS_FILE);
+  return customers || [];
 }
 
 export async function saveCustomer(customer: Customer): Promise<boolean> {
   await ensureDbInitialized();
-  return new Promise((resolve) => {
-    writeQueue = writeQueue
-      .then(async () => {
-        try {
-          const customers = await getCustomers();
-          // Check if customer already exists (by id or email)
-          const exists = customers.some(c => c.id === customer.id || (c.email.toLowerCase() === customer.email.toLowerCase() && c.email !== ''));
-          if (exists) {
-            resolve(false);
-            return;
-          }
-          customers.unshift(customer); // Prepend new customer
-          await fs.writeFile(CUSTOMERS_FILE, JSON.stringify(customers, null, 2), 'utf-8');
-          resolve(true);
-        } catch (error) {
-          console.error('Failed to save customer to database:', error);
-          resolve(false);
-        }
-      });
-  });
+  const customers = await getCustomers();
+  const exists = customers.some(c => c.id === customer.id || (c.email.toLowerCase() === customer.email.toLowerCase() && c.email !== ''));
+  if (exists) return false;
+  customers.unshift(customer);
+  return await setDbKey('customers', customers, CUSTOMERS_FILE);
 }
 
 export async function updateCustomer(id: string, updates: Partial<Customer>): Promise<boolean> {
   await ensureDbInitialized();
-  return new Promise((resolve) => {
-    writeQueue = writeQueue
-      .then(async () => {
-        try {
-          const customers = await getCustomers();
-          const index = customers.findIndex(c => c.id === id);
-          if (index === -1) {
-            resolve(false);
-            return;
-          }
-          customers[index] = { ...customers[index], ...updates };
-          await fs.writeFile(CUSTOMERS_FILE, JSON.stringify(customers, null, 2), 'utf-8');
-          resolve(true);
-        } catch (error) {
-          console.error(`Failed to update customer ${id} in database:`, error);
-          resolve(false);
-        }
-      });
-  });
+  const customers = await getCustomers();
+  const index = customers.findIndex(c => c.id === id);
+  if (index === -1) return false;
+  customers[index] = { ...customers[index], ...updates };
+  return await setDbKey('customers', customers, CUSTOMERS_FILE);
 }
 
 export async function getMessages(): Promise<Message[]> {
   await ensureDbInitialized();
-  try {
-    const data = await fs.readFile(MESSAGES_FILE, 'utf-8');
-    return JSON.parse(data) as Message[];
-  } catch (error) {
-    console.error('Failed to read messages from database:', error);
-    return [];
-  }
+  const messages = await getDbKey<Message[]>('messages', MESSAGES_FILE);
+  return messages || [];
 }
 
 export async function saveMessage(message: Message): Promise<boolean> {
   await ensureDbInitialized();
-  return new Promise((resolve) => {
-    writeQueue = writeQueue
-      .then(async () => {
-        try {
-          const messages = await getMessages();
-          messages.push(message); // Chronological order (append)
-          await fs.writeFile(MESSAGES_FILE, JSON.stringify(messages, null, 2), 'utf-8');
-          resolve(true);
-        } catch (error) {
-          console.error('Failed to save message to database:', error);
-          resolve(false);
-        }
-      });
-  });
+  const messages = await getMessages();
+  messages.push(message);
+  return await setDbKey('messages', messages, MESSAGES_FILE);
 }
 
 export async function markMessagesAsRead(customerId: string): Promise<boolean> {
   await ensureDbInitialized();
-  return new Promise((resolve) => {
-    writeQueue = writeQueue
-      .then(async () => {
-        try {
-          const messages = await getMessages();
-          let changed = false;
-          for (const msg of messages) {
-            if (msg.customerId === customerId && msg.isRead === false) {
-              msg.isRead = true;
-              changed = true;
-            }
-          }
-          if (changed) {
-            await fs.writeFile(MESSAGES_FILE, JSON.stringify(messages, null, 2), 'utf-8');
-          }
-          resolve(true);
-        } catch (error) {
-          console.error(`Failed to mark messages as read for customer ${customerId}:`, error);
-          resolve(false);
-        }
-      });
-  });
+  const messages = await getMessages();
+  let changed = false;
+  for (const msg of messages) {
+    if (msg.customerId === customerId && msg.isRead === false) {
+      msg.isRead = true;
+      changed = true;
+    }
+  }
+  if (changed) {
+    return await setDbKey('messages', messages, MESSAGES_FILE);
+  }
+  return true;
 }
 
 export interface AnalyticEvent {
@@ -563,29 +618,13 @@ export interface AnalyticEvent {
 
 export async function getAnalyticsEvents(): Promise<AnalyticEvent[]> {
   await ensureDbInitialized();
-  try {
-    const data = await fs.readFile(ANALYTICS_FILE, 'utf-8');
-    return JSON.parse(data) as AnalyticEvent[];
-  } catch (error) {
-    console.error('Failed to read analytics from database:', error);
-    return [];
-  }
+  const events = await getDbKey<AnalyticEvent[]>('analytics', ANALYTICS_FILE);
+  return events || [];
 }
 
 export async function saveAnalyticsEvent(event: AnalyticEvent): Promise<boolean> {
   await ensureDbInitialized();
-  return new Promise((resolve) => {
-    writeQueue = writeQueue.then(async () => {
-      try {
-        const events = await getAnalyticsEvents();
-        events.push(event);
-        await fs.writeFile(ANALYTICS_FILE, JSON.stringify(events, null, 2), 'utf-8');
-        resolve(true);
-      } catch (error) {
-        console.error('Failed to save analytics event:', error);
-        resolve(false);
-      }
-    });
-  });
+  const events = await getAnalyticsEvents();
+  events.push(event);
+  return await setDbKey('analytics', events, ANALYTICS_FILE);
 }
-

@@ -78,7 +78,7 @@ export default function Markham() {
               >
                 <div className="relative group">
                   <Link 
-                    to="/estimate" 
+                    to="/quartz-countertop-estimator" 
                     className="btn-primary h-16 sm:h-20 px-12 text-xl flex items-center justify-center gap-3 shadow-2xl shadow-accent/20 hover:shadow-accent/40 transition-all duration-500"
                   >
                     Get My Instant Estimate
@@ -241,7 +241,7 @@ export default function Markham() {
             </div>
 
             <div className="text-center">
-              <Link to="/estimate" className="btn-primary inline-flex items-center gap-2">
+              <Link to="/quartz-countertop-estimator" className="btn-primary inline-flex items-center gap-2">
                 Get My Instant Estimate
                 <ArrowRight size={18} />
               </Link>
@@ -337,8 +337,8 @@ export default function Markham() {
                     <p className="text-lg font-bold text-text-primary">{project.price}</p>
                   </div>
                   <Link 
-                    to="/estimate" 
-                    className="btn-primary w-full h-14 flex items-center justify-center gap-2 text-sm font-bold shadow-lg shadow-accent/10 group-hover:shadow-accent/30 transition-all duration-500"
+                    to="/quartz-countertop-estimator" 
+                    className="btn-primary w-full h-14 flex items-center justify-center gap-2 text-sm font-bold shadow-lg shadow-accent/10 group-hover:shadow-accent/30 transition-all duration-500 group"
                   >
                     Get This Exact Kitchen Price
                     <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -457,7 +457,7 @@ export default function Markham() {
 
           <div className="mt-20 text-center">
             <Link 
-              to="/estimate" 
+              to="/quartz-countertop-estimator" 
               className="btn-primary inline-flex items-center justify-center gap-4 h-20 px-16 text-xl shadow-2xl shadow-accent/20 hover:shadow-accent/40 transition-all duration-500 group"
             >
               Get My Instant Estimate
@@ -514,7 +514,7 @@ export default function Markham() {
 
           <div className="text-center">
             <Link 
-              to="/estimate" 
+              to="/quartz-countertop-estimator" 
               className="btn-primary inline-flex items-center justify-center gap-4 h-16 px-12 text-lg shadow-xl shadow-accent/20 group"
             >
               Get My Instant Estimate
@@ -559,7 +559,7 @@ export default function Markham() {
 
             <div className="flex flex-col items-center gap-6">
               <Link 
-                to="/estimate" 
+                to="/quartz-countertop-estimator" 
                 className="btn-primary inline-flex items-center justify-center gap-4 h-20 px-16 text-xl shadow-2xl shadow-accent/20 hover:shadow-accent/40 transition-all duration-500 group w-full sm:w-auto"
               >
                 Get My Instant Estimate

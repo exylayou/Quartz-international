@@ -78,7 +78,7 @@ export default function Guide2026() {
           <Award className="text-accent mx-auto mb-8" size={48} />
           <h2 className="text-4xl font-bold mb-8">Ready to start your project?</h2>
           <p className="text-xl text-gray-600 mb-12">Use our interactive tool to see how these trends fit into your budget.</p>
-          <Link to="/estimate" className="btn-primary text-lg px-12">Get Instant Estimate</Link>
+          <Link to="/quartz-countertop-estimator" className="btn-primary text-lg px-12">Get Instant Estimate</Link>
         </div>
       </section>
     </div>

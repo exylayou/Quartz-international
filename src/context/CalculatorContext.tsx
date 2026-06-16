@@ -110,66 +110,38 @@ export const CalculatorProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     cabinetStyle?: CabinetStyle;
     cabinetDoorStyle?: string;
   }) => {
-    const newState = { ...INITIAL_STATE, isOpen: true };
+    let url = '/quartz-countertop-estimator';
+    const queryParts: string[] = [];
     
     if (params) {
-      if (params.type === 'full-kitchen') newState.includeCabinets = true;
-      if (params.brand) newState.selectedBrand = params.brand;
-      if (params.style) {
-        if (['marble', 'luxury', 'dark'].includes(params.style)) newState.quartzLevel = 'premium';
-        else if (params.style === 'white') newState.quartzLevel = 'standard';
-      }
-      if (params.slab) {
-        newState.selectedSlab = params.slab;
-        // Dynamically determine quartz level based on materials database
+      if (params.slab) queryParts.push(`slab=${encodeURIComponent(params.slab)}`);
+      if (params.brand) queryParts.push(`brand=${encodeURIComponent(params.brand)}`);
+      if (params.level) queryParts.push(`level=${encodeURIComponent(params.level)}`);
+      if (params.type === 'full-kitchen') queryParts.push('includeCabinets=true');
+      
+      if (params.slab && !params.level) {
         const foundSlab = materials.find(m => m.name === params.slab || m.id === params.slab);
         if (foundSlab) {
           const firstNumMatch = foundSlab.priceRange.match(/\d+/);
           if (firstNumMatch) {
             const price = parseInt(firstNumMatch[0]);
             if (price <= 68) {
-              newState.quartzLevel = 'standard';
+              queryParts.push('level=standard');
             } else if (price <= 95) {
-              newState.quartzLevel = 'premium';
+              queryParts.push('level=premium');
             } else {
-              newState.quartzLevel = 'luxury';
+              queryParts.push('level=luxury');
             }
           }
         }
       }
-      if (params.level) newState.quartzLevel = params.level;
-      if (params.step) {
-        newState.step = params.step;
-        if (params.step === 4 || params.step === 5) {
-          newState.startedFromCabinets = true;
-          newState.includeCabinets = true;
-        }
-      }
-      if (params.sqFt) {
-        newState.countertopSqFt = params.sqFt;
-        newState.countertopLinearFt = Math.max(0, Math.round((params.sqFt + 5) / 2));
-      }
-      if (params.deliveryMethod) newState.deliveryMethod = params.deliveryMethod;
-      if (params.cabinetStyle) newState.cabinetStyle = params.cabinetStyle;
-      if (params.cabinetDoorStyle) newState.selectedCabinetStyle = params.cabinetDoorStyle;
     }
-
-    setState(newState);
     
-    // Track modal_open in behavior stats
-    try {
-      const behaviorRaw = sessionStorage.getItem('qi_user_behavior');
-      if (behaviorRaw) {
-        const behavior = JSON.parse(behaviorRaw);
-        behavior.calculatorOpenedCount = (behavior.calculatorOpenedCount || 0) + 1;
-        behavior.totalInteractions = (behavior.totalInteractions || 0) + 1;
-        sessionStorage.setItem('qi_user_behavior', JSON.stringify(behavior));
-      }
-    } catch (e) {
-      console.error('Failed to update modal open behavior stats:', e);
+    if (queryParts.length > 0) {
+      url += '?' + queryParts.join('&');
     }
-
-    console.log('Event: modal_open', newState);
+    
+    navigate(url);
   };
 
   const closeCalculator = () => {

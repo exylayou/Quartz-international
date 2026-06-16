@@ -66,7 +66,7 @@ export default function App() {
             <Route path="/cost" element={<Cost />} />
             <Route path="/estimate" element={<Estimate />} />
             <Route path="/results" element={<Results />} />
-            <Route path="/quote" element={<QuoteView />} />
+            <Route path="/quote/:id" element={<QuoteView />} />
             <Route path="/admin" element={<Admin />} />
 
             {/* Countertops */}
@@ -98,9 +98,13 @@ export default function App() {
             <Route path="/areas-we-serve" element={<AreasWeServe />} />
             <Route path="/quartz-countertop-cost/:city" element={<CityCostPage />} />
             <Route path="/quartz-countertops-toronto" element={<Toronto />} />
+            <Route path="/toronto" element={<Toronto />} />
             <Route path="/quartz-countertops-markham" element={<Markham />} />
+            <Route path="/markham" element={<Markham />} />
             <Route path="/quartz-countertops-pickering" element={<Pickering />} />
+            <Route path="/pickering" element={<Pickering />} />
             <Route path="/quartz-countertops-scarborough" element={<Scarborough />} />
+            <Route path="/scarborough" element={<Scarborough />} />
           </Routes>
         </Layout>
         <CalculatorModal />

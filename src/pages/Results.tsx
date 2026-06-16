@@ -37,7 +37,7 @@ export default function Results() {
 
   React.useEffect(() => {
     if (!state || !state.finalPrice) {
-      navigate('/estimate');
+      navigate('/quartz-countertop-estimator');
     }
   }, [state, navigate]);
 

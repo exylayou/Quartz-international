@@ -405,7 +405,7 @@ export default function CityCostPage() {
                  </div>
 
                  <div className="flex flex-col sm:flex-row gap-6">
-                    <Link to="/estimate?type=full-kitchen" className="btn-primary px-10 py-5 text-lg font-bold">
+                    <Link to="/quartz-countertop-estimator" className="btn-primary px-10 py-5 text-lg font-bold">
                        Get Full Kitchen Estimate &rarr;
                     </Link>
                     <Link to="/cabinets" className="flex items-center gap-2 text-accent font-bold uppercase text-xs tracking-widest hover:underline underline-offset-8">
