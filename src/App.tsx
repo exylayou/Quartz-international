@@ -74,12 +74,17 @@ export default function App() {
             <Route path="/slab/:id" element={<SlabDetail />} />
             <Route path="/material/:materialId" element={<MaterialPage />} />
             <Route path="/caesarstone" element={<Caesarstone />} />
+            <Route path="/quartz-countertops-caesarstone" element={<Caesarstone />} />
             <Route path="/silestone" element={<Silestone />} />
             <Route path="/calacatta-gold" element={<CalacattaGold />} />
             <Route path="/kasa-quartz" element={<KasaQuartz />} />
+            <Route path="/quartz-countertops-kasa" element={<KasaQuartz />} />
             <Route path="/kstone" element={<Kstone />} />
+            <Route path="/quartz-countertops-kstone" element={<Kstone />} />
             <Route path="/lucent-quartz" element={<LucentQuartz />} />
+            <Route path="/quartz-countertops-lucent" element={<LucentQuartz />} />
             <Route path="/tce-stone" element={<TCEStone />} />
+            <Route path="/quartz-countertops-tce" element={<TCEStone />} />
             <Route path="/quartz-countertop-guide-2026" element={<Guide2026 />} />
 
             {/* Cabinets */}
