@@ -25,12 +25,12 @@ const fadeIn = {
 };
 
 const slabs = [
-  { id: 'ciq2003-sleek-cement', name: 'CIQ2003 – Sleek Cement', price: '$85–$105', img: '/images/slabs/ciq2003-sleek-cement.jpg', desc: 'A contemporary grey concrete look featuring a polished matte finish.' },
+  { id: 'ciq2003-sleek-cement', name: 'CIQ2003 – Sleek Cement', price: '$53–$61', img: '/images/slabs/ciq2003-sleek-cement.jpg', desc: 'A contemporary grey concrete look featuring a polished matte finish.' },
   { id: 'ciq4211-bianco-carrara', name: 'CIQ4211 – Bianco Carrara', price: '$51–$59', img: '/images/slabs/ciq4211-bianco-carrara.jpg', desc: 'Premium white marble look featuring classic Carrara grey veining.' },
   { id: 'lq6754-serenity-gold', name: 'LQ6754 – Serenity Gold', price: '$78–$102', img: '/images/slabs/lq6754-serenity-gold.jpg', desc: 'White marble quartz accented with subtle golden and grey veins.' },
   { id: 'ciq4111-bianco-oro', name: 'CIQ4111 – Bianco Oro', price: '$51–$59', img: '/images/slabs/ciq4111-bianco-oro.jpg', desc: 'Crisp white base highlighted by warm golden tones.' },
   { id: 'lq4600-arctic-white', name: 'LQ4600 – Arctic White', price: '$63–$78', img: '/images/slabs/lq4600-arctic-white.jpg', desc: 'Solid, brilliant white quartz surface for clean and modern kitchen designs.' },
-  { id: 'lq5131-calacatta', name: 'LQ5131 – Calacatta', price: '$56–$67', img: '/images/slabs/lq5131-calacatta.jpg', desc: 'Italian Calacatta style marble look with bold and striking grey veins.' },
+  { id: 'lq5131-calacatta', name: 'LQ5131 – Calacatta', price: '$56–$65', img: '/images/slabs/lq5131-calacatta.jpg', desc: 'Italian Calacatta style marble look with bold and striking grey veins.' },
 ];
 
 const kitchens = [
