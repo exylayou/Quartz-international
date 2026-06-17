@@ -48,6 +48,7 @@ export default function Admin() {
   const [quoteDiscount, setQuoteDiscount] = React.useState(0);
   const [quoteTaxRate, setQuoteTaxRate] = React.useState(0.13);
   const [savingQuote, setSavingQuote] = React.useState(false);
+  const [emailingQuote, setEmailingQuote] = React.useState(false);
   const [copied, setCopied] = React.useState(false);
 
   // Multi-tab workspace state
@@ -987,6 +988,74 @@ export default function Admin() {
         alert('Error connecting to server');
       } finally {
         setSavingQuote(false);
+      }
+    };
+
+    const emailQuote = async () => {
+      if (!selectedLead || !quoteNumber) return;
+      setEmailingQuote(true);
+
+      const subtotal = quoteItems.reduce((acc, item) => acc + (item.total || 0), 0);
+      const tax = Math.round((subtotal - quoteDiscount) * quoteTaxRate);
+      const total = subtotal - quoteDiscount + tax;
+
+      try {
+        const response = await fetch(`/api/leads/${selectedLead.id}/quote`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-admin-secret': secret
+          },
+          body: JSON.stringify({
+            quoteStatus: 'sent',
+            quoteNumber,
+            quoteItems,
+            quoteTaxRate,
+            quoteDiscount,
+            quoteSubtotal: subtotal,
+            quoteTax: tax,
+            quoteTotal: total
+          })
+        });
+
+        if (response.ok) {
+          setQuoteStatus('sent');
+          const updatedLeads = leads.map(l => {
+            if (l.id === selectedLead.id) {
+              return {
+                ...l,
+                quoteStatus: 'sent',
+                quoteNumber,
+                quoteItems,
+                quoteTaxRate,
+                quoteDiscount,
+                quoteSubtotal: subtotal,
+                quoteTax: tax,
+                quoteTotal: total
+              };
+            }
+            return l;
+          });
+          setLeads(updatedLeads);
+          setSelectedLead({
+            ...selectedLead,
+            quoteStatus: 'sent',
+            quoteNumber,
+            quoteItems,
+            quoteTaxRate,
+            quoteDiscount,
+            quoteSubtotal: subtotal,
+            quoteTax: tax,
+            quoteTotal: total
+          });
+          alert(`✅ Quote emailed to ${selectedLead.email} and status set to Sent.`);
+        } else {
+          alert('Failed to send quote email. Check SMTP settings.');
+        }
+      } catch (err) {
+        alert('Error connecting to server');
+      } finally {
+        setEmailingQuote(false);
       }
     };
 
@@ -4288,10 +4357,20 @@ export default function Admin() {
                         <div className="flex flex-wrap gap-3 pt-2">
                           <button 
                             onClick={saveQuote}
-                            disabled={savingQuote}
+                            disabled={savingQuote || emailingQuote}
                             className="bg-accent hover:bg-accent-hover text-white px-5 py-2.5 rounded-lg text-xs font-bold transition-all shadow-md"
                           >
                             {savingQuote ? 'Saving...' : 'Save Quote Details'}
+                          </button>
+
+                          <button
+                            onClick={emailQuote}
+                            disabled={emailingQuote || savingQuote || !selectedLead?.email}
+                            className="bg-blue-600 hover:bg-blue-700 disabled:opacity-50 disabled:cursor-not-allowed text-white px-5 py-2.5 rounded-lg text-xs font-bold transition-all shadow-md flex items-center gap-2"
+                            title={!selectedLead?.email ? 'No email address on file for this lead' : `Email quote to ${selectedLead?.email}`}
+                          >
+                            <Mail size={13} />
+                            {emailingQuote ? 'Sending...' : '✉ Email Quote to Client'}
                           </button>
                           
                           <button 
