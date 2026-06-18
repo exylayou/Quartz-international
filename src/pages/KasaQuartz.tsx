@@ -16,6 +16,9 @@ import {
 } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { useCalculator } from '../context/CalculatorContext';
+import clientTownhomeKitchen from '../assets/images/client_townhome_kitchen.jpg';
+import clientChefKitchen from '../assets/images/client_chef_kitchen.jpg';
+import clientLuxuryCondo from '../assets/images/client_luxury_condo.jpg';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -34,9 +37,9 @@ const slabs = [
 ];
 
 const kitchens = [
-  { title: 'Luxury Condo', price: '$5,200 – $7,500', img: 'https://images.unsplash.com/photo-1556186675-9005bc18b10f?auto=format&fit=crop&q=80&w=600' },
-  { title: 'Chef\'s Kitchen', price: '$7,800 – $11,000', img: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=600' },
-  { title: 'Modern Townhome', price: '$4,200 – $6,000', img: 'https://images.unsplash.com/photo-1556912167-75b84294edf3?auto=format&fit=crop&q=80&w=600' },
+  { title: 'Luxury Condo', price: '$5,200 – $7,500', img: clientLuxuryCondo },
+  { title: 'Chef\'s Kitchen', price: '$4,000 – $6,000', img: clientChefKitchen },
+  { title: 'Modern Townhome', price: '$2,500 – $3,500', img: clientTownhomeKitchen },
 ];
 
 const faqs = [
