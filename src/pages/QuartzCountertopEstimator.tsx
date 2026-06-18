@@ -48,6 +48,7 @@ import installedDelivery from '../assets/images/installed_delivery.png';
 import essentialKitchenBanner from '../assets/images/essential_kitchen_banner.jpg';
 import premiumKitchenBanner from '../assets/images/premium_kitchen_banner.png';
 import eliteKitchenBanner from '../assets/images/elite_kitchen_banner.jpg';
+import howToMeasure from '../assets/images/how-to-measure.jpg';
 
 export default function QuartzCountertopEstimator() {
   const navigate = useNavigate();
@@ -364,6 +365,23 @@ export default function QuartzCountertopEstimator() {
                                 <ChevronDown size={20} />
                               </div>
                             </div>
+                          </div>
+                        </div>
+
+                        {/* How to Measure Visual Guide */}
+                        <div className="border border-border-custom rounded-3xl overflow-hidden bg-white max-w-2xl my-6">
+                          <div className="bg-[#FAF9F6] border-b border-border-custom p-4 flex items-center gap-2">
+                            <Info className="text-accent w-5 h-5 shrink-0" />
+                            <h3 className="font-bold text-[#1A1A1A] text-sm uppercase tracking-wider">
+                              Visual Guide: How to Measure
+                            </h3>
+                          </div>
+                          <div className="p-4 sm:p-6 bg-white flex justify-center">
+                            <img 
+                              src={howToMeasure} 
+                              alt="How to Measure countertops guide" 
+                              className="w-full max-w-xl h-auto object-contain rounded-2xl"
+                            />
                           </div>
                         </div>
 
@@ -925,16 +943,25 @@ export default function QuartzCountertopEstimator() {
                       </div>
 
                       <div className="border-t border-dashed border-border-custom pt-6 text-center space-y-3">
-                        <p className="text-xs text-gray-500 font-semibold">Prefer to send photos from your phone?</p>
-                        <a 
-                          href="https://wa.me/16473706684" 
-                          target="_blank" 
-                          rel="noopener noreferrer" 
-                          className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white px-6 py-3 rounded-2xl font-bold text-sm tracking-wider uppercase transition-colors"
-                        >
-                          <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.5-5.734-1.453L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97C16.59 1.967 14.11 1.94 11.5 1.94c-5.436 0-9.86 4.37-9.864 9.8.001 1.838.503 3.626 1.457 5.187l-1.02 3.733 3.825-.99c1.554.849 3.09 1.284 4.149 1.284z"/></svg>
-                          WhatsApp Us.
-                        </a>
+                        <p className="text-xs text-gray-500 font-semibold">Prefer to send photos or files directly?</p>
+                        <div className="flex flex-wrap items-center justify-center gap-3">
+                          <a 
+                            href="https://wa.me/16473706684" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white px-5 py-2.5 rounded-xl font-bold text-xs tracking-wider uppercase transition-colors"
+                          >
+                            <svg viewBox="0 0 24 24" className="w-4 h-4 fill-current"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.5-5.734-1.453L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97C16.59 1.967 14.11 1.94 11.5 1.94c-5.436 0-9.86 4.37-9.864 9.8.001 1.838.503 3.626 1.457 5.187l-1.02 3.733 3.825-.99c1.554.849 3.09 1.284 4.149 1.284z"/></svg>
+                            WhatsApp Us
+                          </a>
+                          <a 
+                            href="mailto:info@quartzinternational.ca?subject=Kitchen Estimate Documents" 
+                            className="inline-flex items-center justify-center gap-2 bg-[#1A1A1A] hover:bg-black text-white px-5 py-2.5 rounded-xl font-bold text-xs tracking-wider uppercase transition-colors"
+                          >
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                            Email Us
+                          </a>
+                        </div>
                       </div>
 
                       <p className="text-xs text-gray-500 text-center leading-relaxed italic border-t border-gray-100 pt-4">
