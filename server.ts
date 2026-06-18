@@ -254,10 +254,51 @@ app.post("/api/leads", async (req, res) => {
                     ` : ''}
                   </table>
 
-                  <div style="background-color: #FAF8F5; padding: 20px; border-radius: 12px; border: 1px solid #E5E2DC; text-align: center; margin-bottom: 25px;">
-                    <h4 style="margin: 0 0 8px 0; font-size: 14px; color: #1A1A1A; font-weight: bold;">Ready to Lock In Your Price?</h4>
-                    <p style="font-size: 12px; color: #666666; margin: 0 0 15px 0; line-height: 1.5;">Book a free 15-minute consultation to review your project specifications and lock in current material rates for 30 days.</p>
-                    <a href="https://quartzinternational.ca/contact" style="display: inline-block; background-color: #C6A87D; color: #FFFFFF; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Book Free Consultation</a>
+                  <div style="background-color: #FAF8F5; padding: 25px 20px; border-radius: 12px; border: 1px solid #E5E2DC; margin-bottom: 25px; font-family: sans-serif;">
+                    <h4 style="margin: 0 0 15px 0; font-size: 15px; color: #1A1A1A; font-weight: bold; text-align: left; font-family: sans-serif;">To receive a more accurate estimate, send us:</h4>
+                    
+                    <table cellpadding="0" cellspacing="0" border="0" style="width: 100%; margin-bottom: 20px; font-family: sans-serif; font-size: 13px; color: #444444;">
+                      <tr>
+                        <td style="width: 24px; vertical-align: top; color: #C6A87D; font-weight: bold; font-size: 14px; line-height: 1.6;">✓</td>
+                        <td style="padding-bottom: 8px; vertical-align: top; line-height: 1.6;">Kitchen measurements</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 24px; vertical-align: top; color: #C6A87D; font-weight: bold; font-size: 14px; line-height: 1.6;">✓</td>
+                        <td style="padding-bottom: 8px; vertical-align: top; line-height: 1.6;">Sketches</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 24px; vertical-align: top; color: #C6A87D; font-weight: bold; font-size: 14px; line-height: 1.6;">✓</td>
+                        <td style="padding-bottom: 8px; vertical-align: top; line-height: 1.6;">Inspiration photos</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 24px; vertical-align: top; color: #C6A87D; font-weight: bold; font-size: 14px; line-height: 1.6;">✓</td>
+                        <td style="padding-bottom: 8px; vertical-align: top; line-height: 1.6;">Existing kitchen photos</td>
+                      </tr>
+                      <tr>
+                        <td style="width: 24px; vertical-align: top; color: #C6A87D; font-weight: bold; font-size: 14px; line-height: 1.6;">✓</td>
+                        <td style="padding-bottom: 8px; vertical-align: top; line-height: 1.6;">Architectural drawings <span style="color: #888888; font-size: 11px;">(if available)</span></td>
+                      </tr>
+                    </table>
+
+                    <div style="margin-bottom: 20px; font-family: sans-serif;">
+                      <p style="font-size: 12px; color: #1A1A1A; font-weight: bold; margin: 0 0 8px 0; text-transform: uppercase; letter-spacing: 0.5px; text-align: center;">Upload Documents</p>
+                      <a href="https://quartzinternational.ca/contact" style="display: block; text-decoration: none; border: 2px dashed #C6A87D; background-color: #FFFFFF; border-radius: 8px; padding: 20px; text-align: center;">
+                        <span style="font-size: 14px; color: #1A1A1A; font-weight: bold; display: block; margin-bottom: 4px;">Drag & Drop</span>
+                        <span style="font-size: 11px; color: #888888; display: block; margin-bottom: 6px;">or</span>
+                        <span style="display: inline-block; background-color: #C6A87D; color: #FFFFFF; padding: 8px 18px; border-radius: 4px; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 0.5px;">Browse Files</span>
+                      </a>
+                    </div>
+
+                    <div style="border-top: 1px dashed #E5E2DC; padding-top: 20px; margin-bottom: 20px; text-align: center; font-family: sans-serif;">
+                      <p style="font-size: 12px; color: #666666; margin: 0 0 10px 0;">Prefer to send photos from your phone?</p>
+                      <a href="https://wa.me/16473706684" target="_blank" style="display: inline-block; background-color: #25D366; color: #FFFFFF; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">
+                        WhatsApp Us.
+                      </a>
+                    </div>
+
+                    <p style="font-size: 11px; color: #888888; text-align: center; margin: 0; line-height: 1.4; font-family: sans-serif; font-style: italic;">
+                      Need help with measurements? Let us know and we will guide you through it!
+                    </p>
                   </div>
 
                   <p style="font-size: 11px; color: #999999; line-height: 1.5; margin: 0;">
