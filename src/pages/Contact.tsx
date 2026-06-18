@@ -1,13 +1,51 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Phone, Mail, Send, CheckCircle } from 'lucide-react';
+import { Phone, Mail, Send, CheckCircle, UploadCloud, File, X } from 'lucide-react';
 
 export default function Contact() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
   const [notes, setNotes] = useState('');
+  const [uploadedFiles, setUploadedFiles] = useState<{ name: string; size: string; progress: number; status: 'uploading' | 'done' }[]>([]);
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (e.target.files) {
+      const filesArray = Array.from(e.target.files);
+      const newFiles = filesArray.map(file => {
+        const sizeInMb = (file.size / (1024 * 1024)).toFixed(1);
+        const formattedSize = parseFloat(sizeInMb) > 0.1 ? `${sizeInMb} MB` : `${(file.size / 1024).toFixed(0)} KB`;
+        
+        return {
+          name: file.name,
+          size: formattedSize,
+          progress: 0,
+          status: 'uploading' as const
+        };
+      });
+
+      setUploadedFiles(prev => [...prev, ...newFiles]);
+
+      newFiles.forEach((file) => {
+        let currentProgress = 0;
+        const interval = setInterval(() => {
+          currentProgress += Math.floor(Math.random() * 20) + 15;
+          if (currentProgress >= 100) {
+            currentProgress = 100;
+            clearInterval(interval);
+            setUploadedFiles(prev => prev.map(f => f.name === file.name ? { ...f, progress: 100, status: 'done' } : f));
+          } else {
+            setUploadedFiles(prev => prev.map(f => f.name === file.name ? { ...f, progress: currentProgress } : f));
+          }
+        }, 80);
+      });
+    }
+  };
+
+  const removeFile = (fileName: string) => {
+    setUploadedFiles(prev => prev.filter(f => f.name !== fileName));
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -24,6 +62,7 @@ export default function Contact() {
           email,
           notes,
           layout: 'Contact Form',
+          files: uploadedFiles.map(f => ({ name: f.name, size: f.size }))
         }),
       });
 
@@ -33,6 +72,7 @@ export default function Contact() {
         setPhone('');
         setEmail('');
         setNotes('');
+        setUploadedFiles([]);
       } else {
         setStatus('error');
       }
@@ -56,7 +96,7 @@ export default function Contact() {
             </motion.div>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8 text-text-primary uppercase">Contact Our Team</h1>
             <p className="text-xl text-text-muted leading-relaxed mb-12">
-              Ready to start your kitchen transformation? Whether you have a question about pricing or want to schedule a visit, we are here to help.
+              Ready to start your kitchen transformation? Whether you have a question about pricing, want to schedule a visit, or need to upload your project files, we are here to help.
             </p>
 
             <div className="space-y-10">
@@ -122,7 +162,7 @@ export default function Contact() {
                     <input 
                       type="tel" 
                       className="input-field" 
-                      placeholder="(555) 000-0000" 
+                      placeholder="(647) 555-0000" 
                       value={phone}
                       onChange={(e) => setPhone(e.target.value)}
                       required
@@ -140,6 +180,66 @@ export default function Contact() {
                     required
                   />
                 </div>
+                
+                <div className="space-y-3">
+                  <label className="text-xs font-bold uppercase tracking-widest text-text-muted block">Upload Documents / Images</label>
+                  
+                  <input 
+                    type="file" 
+                    multiple 
+                    id="contact-file-upload" 
+                    className="hidden" 
+                    onChange={handleFileChange}
+                  />
+
+                  <label 
+                    htmlFor="contact-file-upload" 
+                    className="block border-2 border-dashed border-[#C6A87D]/50 hover:border-[#C6A87D] bg-[#FAF8F5] rounded-2xl p-8 text-center cursor-pointer transition-colors"
+                  >
+                    <div className="flex flex-col items-center justify-center space-y-2">
+                      <div className="w-12 h-12 rounded-xl bg-accent/5 flex items-center justify-center text-accent">
+                        <UploadCloud size={24} />
+                      </div>
+                      <p className="text-sm font-bold text-text-primary">Drag & Drop files here</p>
+                      <p className="text-xs text-text-muted">or <span className="text-accent underline font-semibold">browse files</span> from your device</p>
+                      <p className="text-[10px] text-gray-400 font-medium italic">Supports sketches, measurements, photos, drawings</p>
+                    </div>
+                  </label>
+
+                  {uploadedFiles.length > 0 && (
+                    <div className="space-y-2 mt-4">
+                      {uploadedFiles.map((file) => (
+                        <div key={file.name} className="flex items-center justify-between p-3.5 bg-white border border-border-custom rounded-xl shadow-sm animate-in fade-in duration-300">
+                          <div className="flex items-center gap-3 flex-grow max-w-[80%]">
+                            <div className="w-8 h-8 rounded-lg bg-accent/10 text-accent flex items-center justify-center shrink-0">
+                              <File size={16} />
+                            </div>
+                            <div className="space-y-1 w-full">
+                              <p className="text-xs font-bold text-text-primary truncate">{file.name}</p>
+                              <div className="flex items-center gap-2">
+                                <span className="text-[10px] text-text-muted font-bold">{file.size}</span>
+                                {file.status === 'uploading' && (
+                                  <div className="w-24 bg-gray-200 h-1.5 rounded-full overflow-hidden">
+                                    <div className="bg-accent h-full transition-all duration-300" style={{ width: `${file.progress}%` }}></div>
+                                  </div>
+                                )}
+                              </div>
+                            </div>
+                          </div>
+                          
+                          <button 
+                            type="button" 
+                            onClick={() => removeFile(file.name)} 
+                            className="p-1 hover:bg-red-50 hover:text-red-500 text-gray-400 rounded-full transition-colors"
+                          >
+                            <X size={16} />
+                          </button>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
                 <div className="space-y-3">
                   <label className="text-xs font-bold uppercase tracking-widest text-text-muted">How can we help?</label>
                   <textarea 

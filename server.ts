@@ -127,13 +127,34 @@ app.post("/api/leads", async (req, res) => {
     };
 
     // Auto link to customer profile
+    // Auto link to customer profile
     if (!leadData.customerId && leadData.email) {
       const customers = await getCustomers();
       const existingCust = customers.find(c => c.email.toLowerCase() === leadData.email.toLowerCase());
       if (existingCust) {
         leadData.customerId = existingCust.id;
+        if (req.body.files && Array.isArray(req.body.files)) {
+          const files = existingCust.files || [];
+          req.body.files.forEach((file: any) => {
+            files.unshift({
+              id: Math.random().toString(36).substr(2, 9),
+              name: file.name,
+              size: file.size || "1.2 MB",
+              uploadedAt: new Date().toISOString(),
+              url: "#"
+            });
+          });
+          await updateCustomer(existingCust.id, { files });
+        }
       } else {
         const customerId = Math.random().toString(36).substr(2, 9);
+        const files = (req.body.files && Array.isArray(req.body.files)) ? req.body.files.map((file: any) => ({
+          id: Math.random().toString(36).substr(2, 9),
+          name: file.name,
+          size: file.size || "1.2 MB",
+          uploadedAt: new Date().toISOString(),
+          url: "#"
+        })) : [];
         const newCustomer: Customer = {
           id: customerId,
           createdAt: new Date().toISOString(),
@@ -141,10 +162,28 @@ app.post("/api/leads", async (req, res) => {
           email: leadData.email,
           phone: leadData.phone,
           notes: "Auto-created from estimator lead inquiry.",
-          files: []
+          files
         };
         await saveCustomer(newCustomer);
         leadData.customerId = customerId;
+      }
+    } else if (leadData.customerId) {
+      if (req.body.files && Array.isArray(req.body.files)) {
+        const customers = await getCustomers();
+        const existingCust = customers.find(c => c.id === leadData.customerId);
+        if (existingCust) {
+          const files = existingCust.files || [];
+          req.body.files.forEach((file: any) => {
+            files.unshift({
+              id: Math.random().toString(36).substr(2, 9),
+              name: file.name,
+              size: file.size || "1.2 MB",
+              uploadedAt: new Date().toISOString(),
+              url: "#"
+            });
+          });
+          await updateCustomer(existingCust.id, { files });
+        }
       }
     }
 
@@ -153,6 +192,21 @@ app.post("/api/leads", async (req, res) => {
       console.log("Lead saved successfully:", leadData.id);
       
       if (process.env.SMTP_USER && process.env.SMTP_PASS) {
+        // Build list of uploaded files for admin email
+        let filesListHtml = "";
+        if (req.body.files && Array.isArray(req.body.files) && req.body.files.length > 0) {
+          filesListHtml = `
+            <tr style="background-color: #FAF8F5;"><td colspan="2"><strong>Uploaded Files:</strong></td></tr>
+            <tr>
+              <td colspan="2">
+                <ul style="margin: 0; padding-left: 20px;">
+                  ${req.body.files.map((f: any) => `<li>${f.name} (${f.size || 'Unknown Size'})</li>`).join('')}
+                </ul>
+              </td>
+            </tr>
+          `;
+        }
+
         // Send email to admin (non-blocking)
         const adminMailOptions = {
           from: process.env.SMTP_FROM || `"Quartz International Estimator" <no-reply@quartzinternational.ca>`,
@@ -172,6 +226,7 @@ app.post("/api/leads", async (req, res) => {
               <tr><td><strong>Quartz Level</strong></td><td>${leadData.quartzLevel}</td></tr>
               <tr><td><strong>Island Type</strong></td><td>${leadData.islandType}</td></tr>
               <tr><td><strong>Cabinets</strong></td><td>${leadData.includeCabinets ? `${leadData.cabinetLinearFt} ft (${leadData.cabinetStyle})` : 'No'}</td></tr>
+              ${filesListHtml}
               <tr style="font-weight: bold; background-color: #f9f9f9;">
                 <td><strong>Total Estimated Range</strong></td>
                 <td>$${leadData.totalCostLow?.toLocaleString()} - $${leadData.totalCostHigh?.toLocaleString()}</td>
