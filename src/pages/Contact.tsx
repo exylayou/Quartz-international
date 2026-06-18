@@ -180,7 +180,17 @@ export default function Contact() {
                     required
                   />
                 </div>
-                
+                <div className="space-y-3">
+                  <label className="text-xs font-bold uppercase tracking-widest text-text-muted">How can we help?</label>
+                  <textarea 
+                    className="input-field min-h-[150px] pt-4" 
+                    placeholder="Briefly describe your project..."
+                    value={notes}
+                    onChange={(e) => setNotes(e.target.value)}
+                    required
+                  ></textarea>
+                </div>
+
                 <div className="space-y-3">
                   <label className="text-xs font-bold uppercase tracking-widest text-text-muted block">Upload Documents / Images</label>
                   
@@ -209,7 +219,7 @@ export default function Contact() {
                   {uploadedFiles.length > 0 && (
                     <div className="space-y-2 mt-4">
                       {uploadedFiles.map((file) => (
-                        <div key={file.name} className="flex items-center justify-between p-3.5 bg-white border border-border-custom rounded-xl shadow-sm animate-in fade-in duration-300">
+                        <div key={file.name} className="flex items-center justify-between p-3.5 bg-[#FAF8F5] border border-border-custom rounded-xl shadow-sm animate-in fade-in duration-300">
                           <div className="flex items-center gap-3 flex-grow max-w-[80%]">
                             <div className="w-8 h-8 rounded-lg bg-accent/10 text-accent flex items-center justify-center shrink-0">
                               <File size={16} />
@@ -238,17 +248,6 @@ export default function Contact() {
                       ))}
                     </div>
                   )}
-                </div>
-
-                <div className="space-y-3">
-                  <label className="text-xs font-bold uppercase tracking-widest text-text-muted">How can we help?</label>
-                  <textarea 
-                    className="input-field min-h-[150px] pt-4" 
-                    placeholder="Briefly describe your project..."
-                    value={notes}
-                    onChange={(e) => setNotes(e.target.value)}
-                    required
-                  ></textarea>
                 </div>
                 {status === 'error' && (
                   <p className="text-red-500 text-xs font-bold text-center">

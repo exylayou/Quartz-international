@@ -345,9 +345,12 @@ app.post("/api/leads", async (req, res) => {
                     </div>
 
                     <div style="border-top: 1px dashed #E5E2DC; padding-top: 20px; margin-bottom: 20px; text-align: center; font-family: sans-serif;">
-                      <p style="font-size: 12px; color: #666666; margin: 0 0 10px 0;">Prefer to send photos from your phone?</p>
-                      <a href="https://wa.me/16473706684" target="_blank" style="display: inline-block; background-color: #25D366; color: #FFFFFF; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px;">
-                        WhatsApp Us.
+                      <p style="font-size: 12px; color: #666666; margin: 0 0 10px 0;">Prefer to send photos or files directly?</p>
+                      <a href="https://wa.me/16473706684" target="_blank" style="display: inline-block; background-color: #25D366; color: #FFFFFF; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; margin: 5px;">
+                        WhatsApp Us
+                      </a>
+                      <a href="mailto:info@quartzinternational.ca?subject=Kitchen Estimate Documents" style="display: inline-block; background-color: #1A1A1A; color: #FFFFFF; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 13px; text-transform: uppercase; letter-spacing: 0.5px; margin: 5px;">
+                        Email Us
                       </a>
                     </div>
 
