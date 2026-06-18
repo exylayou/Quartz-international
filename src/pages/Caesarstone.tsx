@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { cn } from '../lib/utils';
 import calacattaNuvo from '../assets/images/regenerated_image_1778024505255.jpg';
+import customKitchenCaesarstone from '../assets/images/custom_kitchen_caesarstone.jpg';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -38,7 +39,7 @@ const slabs = [
 const kitchens = [
   { title: 'Modern Condo', price: '$3,400 – $4,800', img: 'https://images.unsplash.com/photo-1556186675-9005bc18b10f?auto=format&fit=crop&q=80&w=600' },
   { title: 'Family Kitchen', price: '$4,800 – $6,800', img: 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&q=80&w=600' },
-  { title: 'Custom Kitchen', price: '$6,800 – $10,200', img: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=600' },
+  { title: 'Custom Kitchen', price: '$6,800 – $10,200', img: customKitchenCaesarstone },
 ];
 
 const faqs = [
