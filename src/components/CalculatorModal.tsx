@@ -1231,25 +1231,74 @@ export default function CalculatorModal() {
                       </div>
                     )}
 
-                    <div className="bg-white p-10 rounded-[3rem] border-4 border-dashed border-[#E5E2DC] max-w-sm mx-auto space-y-6">
-                       <div className="w-16 h-16 rounded-2xl bg-[#C6A87D]/10 flex items-center justify-center text-[#C6A87D] mx-auto">
-                          <FileText size={32} />
-                       </div>
-                       <button 
-                         onClick={generatePdf}
-                         disabled={isGeneratingPdf}
-                         className="btn-primary w-full h-16 flex items-center justify-center gap-3 text-lg italic"
-                       >
-                         {isGeneratingPdf ? (
-                           <>
-                              <Loader2 size={20} className="animate-spin" /> Generating...
-                           </>
-                         ) : (
-                           <>
-                              Download PDF Again <Download size={20} />
-                           </>
-                         )}
-                       </button>
+                    <div className="max-w-md mx-auto bg-white p-6 sm:p-8 rounded-3xl border border-border-custom shadow-sm space-y-6 text-left">
+                      <div>
+                        <h4 className="text-base font-bold text-text-primary mb-3">To receive a more accurate estimate, send us:</h4>
+                        <ul className="space-y-2.5 text-sm text-text-muted">
+                          <li className="flex items-start gap-2.5">
+                            <span className="text-accent font-bold">✓</span>
+                            <span>Kitchen measurements</span>
+                          </li>
+                          <li className="flex items-start gap-2.5">
+                            <span className="text-accent font-bold">✓</span>
+                            <span>Sketches</span>
+                          </li>
+                          <li className="flex items-start gap-2.5">
+                            <span className="text-accent font-bold">✓</span>
+                            <span>Inspiration photos</span>
+                          </li>
+                          <li className="flex items-start gap-2.5">
+                            <span className="text-accent font-bold">✓</span>
+                            <span>Existing kitchen photos</span>
+                          </li>
+                          <li className="flex items-start gap-2.5">
+                            <span className="text-accent font-bold">✓</span>
+                            <span>Architectural drawings <span className="text-xs text-gray-400 font-medium">(if available)</span></span>
+                          </li>
+                        </ul>
+                      </div>
+
+                      <div className="space-y-2">
+                        <span className="block text-[10px] font-black uppercase tracking-widest text-gray-400 text-center">Upload Documents</span>
+                        <a 
+                          href="https://quartzinternational.ca/contact" 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="block bg-white hover:bg-gray-50 border-2 border-dashed border-[#C6A87D] hover:border-[#B5966A] rounded-2xl p-6 text-center cursor-pointer transition-colors"
+                        >
+                          <span className="block text-lg font-black text-text-primary uppercase tracking-tight">Drag & Drop</span>
+                          <span className="block text-xs text-gray-400 font-semibold my-1">or</span>
+                          <span className="inline-block btn-primary py-2 px-5 text-xs font-bold uppercase tracking-wider">Browse Files</span>
+                        </a>
+                      </div>
+
+                      <div className="border-t border-dashed border-border-custom pt-6 text-center space-y-3">
+                        <p className="text-xs text-gray-500 font-semibold">Prefer to send photos from your phone?</p>
+                        <a 
+                          href="https://wa.me/16473706684" 
+                          target="_blank" 
+                          rel="noopener noreferrer" 
+                          className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white px-6 py-3 rounded-2xl font-bold text-sm tracking-wider uppercase transition-colors"
+                        >
+                          <svg viewBox="0 0 24 24" className="w-5 h-5 fill-current"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.5-5.734-1.453L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.97C16.59 1.967 14.11 1.94 11.5 1.94c-5.436 0-9.86 4.37-9.864 9.8.001 1.838.503 3.626 1.457 5.187l-1.02 3.733 3.825-.99c1.554.849 3.09 1.284 4.149 1.284z"/></svg>
+                          WhatsApp Us.
+                        </a>
+                      </div>
+
+                      <p className="text-xs text-gray-500 text-center leading-relaxed italic border-t border-gray-100 pt-4">
+                        Need help with measurements? Let us know and we will guide you through it!
+                      </p>
+
+                      <div className="text-center pt-2 border-t border-gray-100">
+                        <button 
+                          type="button"
+                          onClick={generatePdf} 
+                          disabled={isGeneratingPdf} 
+                          className="text-[10px] font-bold text-gray-400 uppercase tracking-widest hover:text-text-primary transition-colors flex items-center gap-1.5 justify-center mx-auto"
+                        >
+                          {isGeneratingPdf ? 'Generating PDF...' : 'Download PDF Copy'}
+                        </button>
+                      </div>
                     </div>
 
                     <div className="bg-[#1A1A1A] p-10 rounded-[3rem] text-white max-w-lg mx-auto">
