@@ -79,6 +79,11 @@ export const cities: Record<string, CityData> = {
       quote: "Clean install and great attention to detail.",
       author: "Anita",
       neighborhood: "Unionville"
+    },
+    images: {
+      hero: "/images/markham-hero.jpg",
+      testimonial1: "/images/typical-kitchen.jpg",
+      testimonial2: "/images/modern-island-dark.jpg"
     }
   },
   pickering: {

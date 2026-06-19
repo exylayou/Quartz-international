@@ -17,7 +17,7 @@ export default defineConfig(({mode}) => {
     },
     server: {
       watch: {
-        ignored: ['**/data/**', '**/leads.json', '**/customers.json', '**/messages.json'],
+        ignored: ['**/leads.json', '**/customers.json', '**/messages.json'],
       },
       // HMR is disabled in AI Studio via DISABLE_HMR env var.
       // Do not modify—file watching is disabled to prevent flickering during agent edits.

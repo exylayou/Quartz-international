@@ -486,6 +486,13 @@ app.post("/api/leads", async (req, res) => {
                       </table>
                     </div>
 
+                    ${(updates.quoteNotes || lead.quoteNotes) ? `
+                    <div style="background-color: #FFFFFF; border-radius: 12px; padding: 20px; margin-bottom: 25px; border: 1px solid #E5E2DC;">
+                      <h4 style="margin: 0 0 10px 0; font-size: 13px; color: #888888; font-weight: bold; text-transform: uppercase; letter-spacing: 1px;">Additional Information / Notes</h4>
+                      <p style="font-size: 14px; color: #555555; line-height: 1.6; margin: 0; white-space: pre-wrap;">${(updates.quoteNotes || lead.quoteNotes)}</p>
+                    </div>
+                    ` : ''}
+
                     <div style="text-align: center; margin: 30px 0;">
                       <p style="font-size: 13px; color: #666666; margin-bottom: 15px; line-height: 1.5;">To lock in this proposal, schedule your project, and initiate production, please review and electronically sign the quote here:</p>
                       <a href="${signUrl}" style="display: inline-block; background-color: #C6A87D; color: #FFFFFF; padding: 15px 35px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 14px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 10px rgba(198, 168, 125, 0.3);">Review & Sign Proposal</a>
@@ -547,6 +554,7 @@ app.post("/api/leads", async (req, res) => {
       quoteItems: lead.quoteItems,
       quoteTaxRate: lead.quoteTaxRate,
       quoteDiscount: lead.quoteDiscount,
+      quoteNotes: lead.quoteNotes,
       quoteSubtotal: lead.quoteSubtotal,
       quoteTax: lead.quoteTax,
       quoteTotal: lead.quoteTotal,

@@ -35,6 +35,7 @@ interface QuoteData {
   quoteSubtotal: number;
   quoteTax: number;
   quoteTotal: number;
+  quoteNotes?: string;
   clientSignedAt?: string;
   clientSignatureName?: string;
 }
@@ -253,9 +254,22 @@ export default function QuoteView() {
               </div>
             </div>
 
-            {/* Financial Summary */}
-            <div className="flex flex-col items-end pt-4">
-              <div className="w-full sm:w-80 space-y-2 text-xs sm:text-sm border-t border-border-custom pt-6">
+            {/* Financial Summary & Notes */}
+            <div className="flex flex-col md:flex-row justify-between items-start pt-4 gap-8">
+              {/* Additional Notes */}
+              <div className="w-full md:w-1/2">
+                {quote.quoteNotes && (
+                  <div className="bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                    <h3 className="text-[10px] font-black uppercase tracking-widest text-gray-400 mb-3">Additional Information / Notes</h3>
+                    <p className="text-sm text-gray-600 whitespace-pre-wrap leading-relaxed">
+                      {quote.quoteNotes}
+                    </p>
+                  </div>
+                )}
+              </div>
+
+              {/* Financial Summary */}
+              <div className="w-full md:w-80 space-y-2 text-xs sm:text-sm border-t md:border-t-0 border-border-custom pt-6 md:pt-0">
                 <div className="flex justify-between text-gray-500">
                   <span>Subtotal:</span>
                   <span className="font-bold text-gray-800">${quote.quoteSubtotal.toLocaleString()}</span>

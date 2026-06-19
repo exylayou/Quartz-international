@@ -7,6 +7,8 @@ import { SEO } from '../components/SEO';
 import { useCalculator } from '../context/CalculatorContext';
 import { cities } from '../data/cities';
 
+// cache bust 3
+
 export default function CityServicePage() {
   const { city } = useParams<{ city: string }>();
   const { openCalculator } = useCalculator();
@@ -300,7 +302,7 @@ export default function CityServicePage() {
                 <div className="space-y-4">
                   <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-white bg-gray-100">
                     <img 
-                      src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=800" 
+                      src="/images/measurement.jpg" 
                       alt="Professional kitchen measurement and planning" 
                       className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"
@@ -311,7 +313,7 @@ export default function CityServicePage() {
                 <div className="space-y-4">
                   <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-white bg-gray-100">
                     <img 
-                      src="https://images.unsplash.com/photo-1628592102751-ba83b0314276?auto=format&fit=crop&q=80&w=800" 
+                      src="/images/thickness-options.jpg" 
                       alt="Quartz slab thickness and stone detail" 
                       className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"

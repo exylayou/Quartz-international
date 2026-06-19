@@ -1100,6 +1100,7 @@ export default function Admin() {
             quoteItems,
             quoteTaxRate,
             quoteDiscount,
+            quoteNotes,
             quoteSubtotal: subtotal,
             quoteTax: tax,
             quoteTotal: total
@@ -1117,6 +1118,7 @@ export default function Admin() {
                 quoteItems,
                 quoteTaxRate,
                 quoteDiscount,
+                quoteNotes,
                 quoteSubtotal: subtotal,
                 quoteTax: tax,
                 quoteTotal: total
