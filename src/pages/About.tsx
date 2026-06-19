@@ -2,9 +2,12 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { User, ShieldCheck, Clock, Star } from 'lucide-react';
 
+import { SEO } from '../components/SEO';
 export default function About() {
   return (
     <div className="bg-background pt-20 pb-32">
+      <SEO title="About Us | Quartz International" description="Learn about Quartz International, the leading provider of premium quartz countertops and kitchen cabinetry in Toronto and the GTA since 2006." />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <motion.div

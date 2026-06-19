@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
+import { SEO } from '../components/SEO';
+import {
   ArrowRight, 
   ArrowLeft, 
   Check, 
@@ -229,6 +230,8 @@ export default function KitchenRenovationEstimator() {
 
   return (
     <div className="bg-[#FAF9F5] min-h-screen pt-6 pb-32">
+      <SEO title="Kitchen Renovation Estimator | Quartz International" description="Learn more about Kitchen Renovation Estimator at Quartz International. We provide premium countertops and cabinetry in Toronto and the GTA." />
+
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         
         {/* SMALL HEADER */}

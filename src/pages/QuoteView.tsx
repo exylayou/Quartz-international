@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { CheckCircle2, AlertCircle, FileText, Calendar, User, Mail, Phone, ArrowRight, ShieldCheck, Download } from 'lucide-react';
 
+import { SEO } from '../components/SEO';
 interface QuoteItem {
   description: string;
   quantity: number;
@@ -101,6 +102,8 @@ export default function QuoteView() {
   if (loading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center p-4 pt-32">
+      <SEO title="Quote View | Quartz International" description="Learn more about Quote View at Quartz International. We provide premium countertops and cabinetry in Toronto and the GTA." />
+
         <div className="flex flex-col items-center gap-4 text-center">
           <div className="w-12 h-12 border-4 border-accent border-t-transparent rounded-full animate-spin" />
           <p className="text-sm font-bold text-gray-500 uppercase tracking-widest">Loading Proposal Details...</p>

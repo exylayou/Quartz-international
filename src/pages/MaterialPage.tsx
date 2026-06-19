@@ -3,12 +3,15 @@ import { motion } from 'motion/react';
 import { MATERIALS } from '../constants';
 import { CheckCircle2, ArrowRight, Calculator, ShieldCheck, Award } from 'lucide-react';
 
+import { SEO } from '../components/SEO';
 export default function MaterialPage() {
   const { materialId } = useParams();
   const material = MATERIALS.find(m => m.id === (materialId?.replace('-countertops', '') || 'quartz')) || MATERIALS[0];
 
   return (
     <div className="bg-background">
+      <SEO title="Material Page | Quartz International" description="Learn more about Material Page at Quartz International. We provide premium countertops and cabinetry in Toronto and the GTA." />
+
       {/* Hero */}
       <section className="relative h-[60vh] flex items-center overflow-hidden">
         <img 

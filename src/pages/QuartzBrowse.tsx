@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Link, useSearchParams } from 'react-router-dom';
-import { 
+import { SEO } from '../components/SEO';
+import {
   ArrowRight, 
   ChevronRight, 
   Check, 
@@ -198,6 +199,8 @@ export default function QuartzBrowse() {
 
   return (
     <div className="bg-background">
+      <SEO title="Quartz Browse | Quartz International" description="Learn more about Quartz Browse at Quartz International. We provide premium countertops and cabinetry in Toronto and the GTA." />
+
       {/* 1. QuartzBrowseHero */}
       <section className="relative pt-32 pb-20 overflow-hidden bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

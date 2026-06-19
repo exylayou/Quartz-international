@@ -1,7 +1,8 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { 
+import { SEO } from '../components/SEO';
+import {
   CheckCircle2, 
   ArrowRight, 
   Calculator, 
@@ -60,6 +61,8 @@ export default function CityCostPage() {
 
   return (
     <div className="bg-white">
+      <SEO title="City Cost Page | Quartz International" description="Learn more about City Cost Page at Quartz International. We provide premium countertops and cabinetry in Toronto and the GTA." />
+
       {/* HERO SECTION */}
       <section className="relative pt-12 pb-24 overflow-hidden border-b border-border-custom">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

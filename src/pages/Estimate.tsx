@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
+import { SEO } from '../components/SEO';
+import {
   ArrowRight, 
   ArrowLeft, 
   Check, 
@@ -173,6 +174,8 @@ export default function Estimate() {
 
   return (
     <div className="bg-background min-h-screen py-12 md:py-20 pb-32 lg:pb-20">
+      <SEO title="Estimate | Quartz International" description="Learn more about Estimate at Quartz International. We provide premium countertops and cabinetry in Toronto and the GTA." />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
           

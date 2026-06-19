@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { 
+import { SEO } from '../components/SEO';
+import {
   ArrowRight, 
   Check, 
   HelpCircle, 
@@ -24,6 +25,8 @@ import eliteKitchenBanner from '../assets/images/elite_kitchen_banner.jpg';
 export default function KitchenCabinetCost() {
   return (
     <div className="bg-[#FAF9F5] min-h-screen font-sans selection:bg-accent/30 selection:text-text-primary">
+      <SEO title="Kitchen Cabinet Cost Guide | Quartz International" description="Comprehensive guide to kitchen cabinet cost guide in Toronto and the GTA. Explore our cost calculator and get an instant estimate." />
+
       
       {/* HERO SECTION */}
       <section className="relative pt-12 md:pt-20 pb-20 overflow-hidden bg-white border-b border-border-custom">

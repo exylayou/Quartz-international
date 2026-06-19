@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { 
+import { SEO } from '../components/SEO';
+import {
   ArrowRight, 
   Check, 
   Star, 
@@ -111,6 +112,8 @@ export default function CabinetCostGuide() {
 
   return (
     <div className="bg-white min-h-screen font-sans selection:bg-accent/30 selection:text-text-primary">
+      <SEO title="Cabinet Cost Guide | Quartz International" description="Learn more about Cabinet Cost Guide at Quartz International. We provide premium countertops and cabinetry in Toronto and the GTA." />
+
       
       {/* --------------------------------------------------
          SECTION 1 — HERO

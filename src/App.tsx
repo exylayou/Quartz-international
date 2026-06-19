@@ -42,13 +42,10 @@ import KitchenCabinetEstimator from './pages/KitchenCabinetEstimator';
 import KitchenRenovationEstimator from './pages/KitchenRenovationEstimator';
 import KitchenCabinetCost from './pages/KitchenCabinetCost';
 
-// City / local pages
+// Local / City
 import AreasWeServe from './pages/AreasWeServe';
 import CityCostPage from './pages/CityCostPage';
-import Toronto from './pages/Toronto';
-import Markham from './pages/Markham';
-import Pickering from './pages/Pickering';
-import Scarborough from './pages/Scarborough';
+import CityServicePage from './pages/CityServicePage';
 
 export default function App() {
   return (
@@ -102,14 +99,7 @@ export default function App() {
             {/* Local / City */}
             <Route path="/areas-we-serve" element={<AreasWeServe />} />
             <Route path="/quartz-countertop-cost/:city" element={<CityCostPage />} />
-            <Route path="/quartz-countertops-toronto" element={<Toronto />} />
-            <Route path="/toronto" element={<Toronto />} />
-            <Route path="/quartz-countertops-markham" element={<Markham />} />
-            <Route path="/markham" element={<Markham />} />
-            <Route path="/quartz-countertops-pickering" element={<Pickering />} />
-            <Route path="/pickering" element={<Pickering />} />
-            <Route path="/quartz-countertops-scarborough" element={<Scarborough />} />
-            <Route path="/scarborough" element={<Scarborough />} />
+            <Route path="/:city" element={<CityServicePage />} />
           </Routes>
         </Layout>
         <CalculatorModal />

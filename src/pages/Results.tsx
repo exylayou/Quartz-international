@@ -1,7 +1,8 @@
 import React, { useState, useRef } from 'react';
 import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { 
+import { SEO } from '../components/SEO';
+import {
   CheckCircle2, 
   Download, 
   ArrowRight, 
@@ -154,6 +155,8 @@ export default function Results() {
 
   return (
     <div className="bg-background min-h-screen py-12 md:py-20">
+      <SEO title="Results | Quartz International" description="Learn more about Results at Quartz International. We provide premium countertops and cabinetry in Toronto and the GTA." />
+
       {/* Multi-Page Hidden PDF Template */}
       <div 
         ref={pdfTemplateRef}

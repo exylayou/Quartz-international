@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { ArrowRight, Camera } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+import { SEO } from '../components/SEO';
 const GALLERY_ITEMS = [
   { id: 1, title: 'Modern Calacatta Masterpiece', location: 'Toronto', image: 'https://images.unsplash.com/photo-1600607687920-4e2a09cf159d' },
   { id: 2, title: 'Industrial Loft Transformation', location: 'Scarborough', image: 'https://images.unsplash.com/photo-1600585154542-636a0ed7ec2d' },
@@ -21,6 +22,8 @@ export default function Gallery() {
   const { openCalculator } = useCalculator();
   return (
     <div className="bg-background pt-20 pb-32">
+      <SEO title="Gallery | Quartz International" description="Learn more about Gallery at Quartz International. We provide premium countertops and cabinetry in Toronto and the GTA." />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <motion.div

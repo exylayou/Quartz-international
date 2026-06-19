@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useLocation, useSearchParams } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { 
+import { SEO } from '../components/SEO';
+import {
   Search, 
   SlidersHorizontal, 
   X, 
@@ -286,6 +287,8 @@ export default function CabinetFinishes() {
 
   return (
     <div className="bg-white min-h-screen font-sans text-[#1A1A1A]">
+      <SEO title="Cabinet Finishes | Quartz International" description="Learn more about Cabinet Finishes at Quartz International. We provide premium countertops and cabinetry in Toronto and the GTA." />
+
       
       {/* SECTION 1 — HERO */}
       <section className="relative pt-20 pb-24 bg-gradient-to-b from-[#FAF8F5] to-white border-b border-[#E5E2DC]">

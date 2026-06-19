@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { TrendingUp, Award, Clock, ArrowRight, CheckCircle2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+import { SEO } from '../components/SEO';
 export default function Guide2026() {
   const trends = [
     { title: 'Warm Neutrals', desc: 'Moving away from cold greys toward creamy whites and warm beiges.' },
@@ -12,6 +13,8 @@ export default function Guide2026() {
 
   return (
     <div className="bg-background">
+      <SEO title="Guide2026 | Quartz International" description="Learn more about Guide2026 at Quartz International. We provide premium countertops and cabinetry in Toronto and the GTA." />
+
       <section className="py-24 bg-text-primary text-white text-center">
         <div className="max-w-4xl mx-auto px-4">
           <span className="text-accent font-bold uppercase tracking-[0.3em] text-sm mb-6 block">Industry Report</span>

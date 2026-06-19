@@ -1,7 +1,8 @@
 
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
-import { 
+import { SEO } from '../components/SEO';
+import {
   ArrowRight, 
   Check, 
   ChevronRight, 
@@ -57,6 +58,8 @@ export default function Caesarstone() {
   const { openCalculator } = useCalculator();
   return (
     <div className="bg-background transition-colors duration-500">
+      <SEO title="Caesarstone | Quartz International" description="Learn more about Caesarstone at Quartz International. We provide premium countertops and cabinetry in Toronto and the GTA." />
+
       {/* 1. HERO */}
       <section className="relative pt-32 pb-24 overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">

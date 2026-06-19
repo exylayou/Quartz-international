@@ -9,6 +9,7 @@ import gallery3 from '../assets/images/regenerated_image_1777930248325.jpg';
 import inspired4 from '../assets/images/regenerated_image_1777760428513.png';
 import suburbanRemodel from '../assets/images/suburban_remodel.png';
 import modernKitchenQuartz from '../assets/images/modern_kitchen_quartz.png';
+import { SEO } from '../components/SEO';
 // Re-aliasing for clarity in the inspired section
 const inspired1 = gallery1;
 const inspired2 = gallery2;
@@ -30,6 +31,7 @@ export default function Home() {
 
   return (
     <div className="bg-background relative">
+      <SEO title="Quartz Kitchen Countertops Toronto & GTA | Quartz International" description="Quartz International offers premium quartz countertops and custom kitchen cabinetry in Toronto and the GTA. Get an instant estimate today." />
       {/* Sticky Header CTA */}
       <div className={cn(
         "fixed top-0 inset-x-0 z-[100] transition-all duration-300 transform",

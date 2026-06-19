@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { 
+import { SEO } from '../components/SEO';
+import {
   Shield, 
   Eye, 
   Download, 
@@ -61,6 +62,7 @@ export default function Admin() {
   const [quoteStatus, setQuoteStatus] = React.useState<'draft' | 'sent' | 'approved' | 'invoiced' | 'paid'>('draft');
   const [quoteDiscount, setQuoteDiscount] = React.useState(0);
   const [quoteTaxRate, setQuoteTaxRate] = React.useState(0.13);
+  const [quoteNotes, setQuoteNotes] = React.useState('');
   const [savingQuote, setSavingQuote] = React.useState(false);
   const [emailingQuote, setEmailingQuote] = React.useState(false);
   const [copied, setCopied] = React.useState(false);
@@ -157,6 +159,7 @@ export default function Admin() {
   const [wizardQuoteStatus, setWizardQuoteStatus] = React.useState<'draft' | 'sent' | 'approved' | 'invoiced' | 'paid'>('draft');
   const [wizardQuoteDiscount, setWizardQuoteDiscount] = React.useState(0);
   const [wizardQuoteTaxRate, setWizardQuoteTaxRate] = React.useState(0.13);
+  const [wizardQuoteNotes, setWizardQuoteNotes] = React.useState('');
   const [creatingQuote, setCreatingQuote] = React.useState(false);
 
   // Stats calculations
@@ -856,6 +859,7 @@ export default function Admin() {
         setQuoteStatus(selectedLead.quoteStatus || 'draft');
         setQuoteDiscount(selectedLead.quoteDiscount || 0);
         setQuoteTaxRate(selectedLead.quoteTaxRate ?? 0.13);
+        setQuoteNotes(selectedLead.quoteNotes || '');
         setLeadStatus(selectedLead.leadStatus || 'New Estimate Lead');
       } else {
         setQuoteNumber('');
@@ -863,6 +867,7 @@ export default function Admin() {
         setQuoteStatus('draft');
         setQuoteDiscount(0);
         setQuoteTaxRate(0.13);
+        setQuoteNotes('');
         setLeadStatus('New Estimate Lead');
       }
       setCopied(false);
@@ -1025,6 +1030,7 @@ export default function Admin() {
             quoteItems,
             quoteTaxRate,
             quoteDiscount,
+            quoteNotes,
             quoteSubtotal: subtotal,
             quoteTax: tax,
             quoteTotal: total
@@ -1041,6 +1047,7 @@ export default function Admin() {
                 quoteItems,
                 quoteTaxRate,
                 quoteDiscount,
+                quoteNotes,
                 quoteSubtotal: subtotal,
                 quoteTax: tax,
                 quoteTotal: total
@@ -1056,6 +1063,7 @@ export default function Admin() {
             quoteItems,
             quoteTaxRate,
             quoteDiscount,
+            quoteNotes,
             quoteSubtotal: subtotal,
             quoteTax: tax,
             quoteTotal: total
@@ -1348,6 +1356,7 @@ export default function Admin() {
       setWizardQuoteStatus('draft');
       setWizardQuoteDiscount(0);
       setWizardQuoteTaxRate(0.13);
+      setWizardQuoteNotes('');
       setQuoteWizardStep(3); // Advance to editor
     };
 
@@ -1396,6 +1405,7 @@ export default function Admin() {
             quoteItems: wizardQuoteItems,
             quoteTaxRate: wizardQuoteTaxRate,
             quoteDiscount: wizardQuoteDiscount,
+            quoteNotes: wizardQuoteNotes,
             quoteSubtotal: subtotal,
             quoteTax: tax,
             quoteTotal: total
@@ -1416,6 +1426,7 @@ export default function Admin() {
           setQuoteWizardStep(1);
           setWizardQuoteItems([]);
           setWizardQuoteNumber('');
+          setWizardQuoteNotes('');
           alert('Quote created successfully!');
         } else {
           alert('Failed to create quote');
@@ -1511,6 +1522,7 @@ export default function Admin() {
                     setQuoteWizardStep(1);
                     setWizardQuoteItems([]);
                     setWizardQuoteNumber('');
+                    setWizardQuoteNotes('');
                     setIsCreateQuoteOpen(true);
                   }}
                   className="btn-primary px-4 py-1.5 sm:px-6 sm:py-2 h-auto text-xs sm:text-sm flex items-center gap-2"
@@ -3924,6 +3936,17 @@ export default function Admin() {
                     </div>
                   </div>
 
+                  <div className="space-y-1">
+                    <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Additional Information / Notes</label>
+                    <textarea 
+                      className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-sm focus:outline-none focus:border-accent"
+                      rows={3}
+                      placeholder="Add any extra notes or special instructions for this quote..."
+                      value={wizardQuoteNotes}
+                      onChange={(e) => setWizardQuoteNotes(e.target.value)}
+                    ></textarea>
+                  </div>
+
                   <div className="border-t border-border-custom pt-4 flex flex-col items-end text-xs space-y-1">
                     <div className="flex justify-between w-64 text-gray-500 font-medium">
                       <span>Subtotal:</span>
@@ -4487,6 +4510,17 @@ export default function Admin() {
                               <option value="0">0% Exempt</option>
                             </select>
                           </div>
+                        </div>
+
+                        <div className="space-y-1">
+                          <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Additional Information / Notes</label>
+                          <textarea 
+                            className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-sm focus:outline-none focus:border-accent"
+                            rows={3}
+                            placeholder="Add any extra notes or special instructions for this quote..."
+                            value={quoteNotes}
+                            onChange={(e) => setQuoteNotes(e.target.value)}
+                          ></textarea>
                         </div>
 
                         {/* Calculated Summary Table */}

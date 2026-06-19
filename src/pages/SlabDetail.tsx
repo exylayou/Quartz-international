@@ -1,7 +1,8 @@
 
 import { motion } from 'motion/react';
 import { useParams, Navigate } from 'react-router-dom';
-import { 
+import { SEO } from '../components/SEO';
+import {
   ArrowRight, 
   Check, 
   CheckCircle2,
@@ -42,6 +43,8 @@ export default function SlabDetail() {
 
   return (
     <div className="bg-background">
+      <SEO title="Slab Detail | Quartz International" description="Learn more about Slab Detail at Quartz International. We provide premium countertops and cabinetry in Toronto and the GTA." />
+
       {/* 1. HERO */}
       <section className="relative pt-32 pb-24 overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

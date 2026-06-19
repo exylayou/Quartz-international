@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { MapPin, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
+import { SEO } from '../components/SEO';
 const AREAS = [
   { name: 'Toronto', path: '/quartz-countertops-toronto' },
   { name: 'Scarborough', path: '/quartz-countertops-scarborough' },
@@ -17,6 +18,8 @@ const AREAS = [
 export default function AreasWeServe() {
   return (
     <div className="bg-background pt-20 pb-32">
+      <SEO title="Areas We Serve | Quartz International" description="Learn more about Areas We Serve at Quartz International. We provide premium countertops and cabinetry in Toronto and the GTA." />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <motion.div

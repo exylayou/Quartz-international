@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { 
+import { SEO } from '../components/SEO';
+import {
   ArrowRight, 
   Check, 
   Star, 
@@ -118,6 +119,8 @@ export default function Cabinets() {
 
   return (
     <div className="bg-white min-h-screen font-sans selection:bg-accent/30 selection:text-text-primary text-[#1A1A1A]">
+      <SEO title="Cabinets | Quartz International" description="Learn more about Cabinets at Quartz International. We provide premium countertops and cabinetry in Toronto and the GTA." />
+
       
       {/* SECTION 1 — HERO */}
       <section className="relative pt-10 md:pt-16 pb-20 overflow-hidden bg-gradient-to-b from-[#FAF8F5] to-white border-b border-[#E5E2DC]">

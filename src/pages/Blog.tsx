@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { Newspaper, ArrowRight, ArrowLeft, Calendar, User, Clock, Check, Star, X, Download } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 
 import blogHero from '../assets/images/blog_hero.png';
 import blogWarmWhite from '../assets/images/blog_warm_white.png';
@@ -42,6 +43,8 @@ export default function Blog() {
   if (activePostId === 1) {
     return (
       <div className="bg-background pt-24 pb-32">
+      <SEO title="Blog | Quartz International" description="Learn more about Blog at Quartz International. We provide premium countertops and cabinetry in Toronto and the GTA." />
+
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <button 
             onClick={() => setActivePostId(null)}

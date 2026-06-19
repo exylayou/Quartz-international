@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { 
+import { SEO } from '../components/SEO';
+import {
   Calculator, 
   ArrowRight, 
   CheckCircle2, 
@@ -78,6 +79,8 @@ export default function Cost() {
 
   return (
     <div className="bg-white min-h-screen font-sans">
+      <SEO title="Cost Guide | Quartz International" description="Comprehensive guide to cost guide in Toronto and the GTA. Explore our cost calculator and get an instant estimate." />
+
       
       {/* Hero Section */}
       <section className="relative pt-12 md:pt-20 pb-20 overflow-hidden">

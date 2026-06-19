@@ -1,26 +1,41 @@
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowRight, Star, CheckCircle2, MapPin, Maximize, Check, Layers, ShieldCheck, Clock, Award, Gem, ChevronDown } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { ArrowRight, Star, CheckCircle2, MapPin, Maximize, Check, Layers, ShieldCheck, Clock, Award, Gem, Quote, ChevronDown } from 'lucide-react';
+import { Link, useParams, Navigate } from 'react-router-dom';
+import { SEO } from '../components/SEO';
 
 import { useCalculator } from '../context/CalculatorContext';
+import { cities } from '../data/cities';
 
-export default function Pickering() {
+export default function CityServicePage() {
+  const { city } = useParams<{ city: string }>();
   const { openCalculator } = useCalculator();
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
+  // Normalize slug to match dictionary keys and strip common prefixes
+  let citySlug = city?.toLowerCase().replace(/[^a-z0-9-]/g, '') || '';
+  if (citySlug.startsWith('quartz-countertops-')) {
+    citySlug = citySlug.replace('quartz-countertops-', '');
+  }
+  
+  const cityData = cities[citySlug];
+
+  if (!cityData) {
+    return <Navigate to="/" replace />;
+  }
+
   const faqs = [
     {
-      q: "How much do quartz countertops cost in Pickering?",
-      a: "Quartz countertops in Pickering typically range from $48 to $170 per square foot installed, with most kitchens falling between $3,000 and $6,000 depending on size and design."
+      q: `How much do quartz countertops cost in ${cityData.name}?`,
+      a: `Quartz countertops in ${cityData.name} typically range from $48 to $170 per square foot installed, with most kitchens falling between $3,000 and $6,000 depending on size and design.`
     },
     {
       q: "How long does installation take?",
       a: "Most quartz countertop projects are completed within 5-7 days, including templating, fabrication, and installation."
     },
     {
-      q: "What affects the cost?",
-      a: "Pricing depends on: Kitchen size and layout, number of cutouts (sink, cooktop), edge profile, thickness, and material selection."
+      q: "What affects the cost of quartz countertops?",
+      a: "Pricing depends on: Kitchen size and layout, number of cutouts (sink, cooktop), edge profile, thickness (2cm vs 3cm), and material selection."
     },
     {
       q: "Are quartz countertops durable?",
@@ -31,13 +46,22 @@ export default function Pickering() {
       a: "No. Unlike natural stone, quartz does not require sealing, making it easy to maintain."
     },
     {
-      q: "Do you serve areas outside Pickering?",
-      a: "Yes. We serve Ajax, Whitby, and the entire GTA with professional quartz installation."
+      q: "Can I get an exact quote online?",
+      a: "Yes. Use our instant pricing tool to get a real, accurate estimate in under 30 seconds based on your kitchen layout."
+    },
+    {
+      q: `Do you install across ${cityData.name} and surrounding areas?`,
+      a: `Yes. We install quartz countertops across ${cityData.areasServed}.`
     }
   ];
 
   return (
     <div className="bg-white min-h-screen font-sans selection:bg-accent/30">
+      <SEO 
+        title={`Quartz Countertops ${cityData.name} | Quartz International`} 
+        description={`Premium quartz countertops and kitchen cabinetry installed in ${cityData.name}. Get an instant, accurate online estimate for your new kitchen today.`} 
+      />
+
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 w-full py-24">
@@ -51,7 +75,7 @@ export default function Pickering() {
                 className="flex items-center justify-center lg:justify-start gap-2 mb-8"
               >
                 <span className="text-gray-500 font-bold uppercase tracking-[0.4em] text-[10px] sm:text-xs">
-                  Pickering & Durham Region Quartz Specialists
+                  {cityData.name} & {cityData.region} Quartz Countertop Specialists
                 </span>
               </motion.div>
               
@@ -61,7 +85,7 @@ export default function Pickering() {
                 transition={{ duration: 0.6, delay: 0.1 }}
                 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-text-primary leading-[1.05] tracking-tight mb-10"
               >
-                Quartz Countertops in Pickering — <span className="text-accent">Get Your Exact Price in 30 Seconds</span>
+                Quartz Countertops in {cityData.name} — <span className="text-accent">Get Your Exact Price in 30 Seconds</span>
               </motion.h1>
               
               <motion.p 
@@ -70,7 +94,7 @@ export default function Pickering() {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-lg sm:text-xl text-gray-600 mb-12 leading-relaxed max-w-2xl mx-auto lg:mx-0"
               >
-                Instant, accurate pricing for quartz countertops in Pickering and the GTA. No obligation. No hidden costs.
+                Instant, accurate pricing for quartz countertops across {cityData.name} and the {cityData.region}. No obligation. No hidden costs.
               </motion.p>
 
               <motion.div 
@@ -80,14 +104,26 @@ export default function Pickering() {
                 className="flex flex-col items-center lg:items-start gap-8"
               >
                 <div className="relative group">
-                  <button 
+                   <button 
                     onClick={() => openCalculator()}
                     className="btn-primary h-16 sm:h-20 px-12 text-xl flex items-center justify-center gap-3 shadow-2xl shadow-accent/20 hover:shadow-accent/40 transition-all duration-500"
                   >
                     Get My Instant Estimate
                     <ArrowRight size={24} />
                   </button>
+                  
+                  <div className="absolute -top-5 -right-5 sm:-right-8 bg-text-primary text-white text-[11px] font-bold px-4 py-1.5 rounded-full shadow-xl transform rotate-3 border border-accent/30">
+                    Most kitchens: $3,000 – $6,000
+                  </div>
                 </div>
+                
+                <Link 
+                  to="/cost" 
+                  className="text-gray-400 text-sm font-medium hover:text-accent transition-colors flex items-center gap-2 group"
+                >
+                  View Pricing Guide
+                  <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                </Link>
               </motion.div>
               
               <motion.div 
@@ -106,7 +142,7 @@ export default function Pickering() {
                 </div>
                 <div className="flex items-center gap-2.5">
                   <MapPin size={18} className="text-accent" />
-                  <span className="font-semibold text-text-primary">Serving Pickering, Ajax & Whitby</span>
+                  <span className="font-semibold text-text-primary">Serving {cityData.name} & Surrounding Areas</span>
                 </div>
               </motion.div>
             </div>
@@ -120,18 +156,22 @@ export default function Pickering() {
             >
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-[0_32px_64px_-12px_rgba(0,0,0,0.15)] group">
                 <img 
-                  src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&q=80&w=1200" 
-                  alt="Quartz countertops Pickering installation" 
+                  src={cityData.images?.hero || "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&q=80&w=1200"} 
+                  alt={`Quartz countertops ${cityData.name} installation`} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute bottom-6 right-6 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg border border-gray-100">
                   <span className="text-[10px] font-bold uppercase tracking-widest text-text-primary flex items-center gap-2">
                     <CheckCircle2 size={12} className="text-accent" />
-                    Installed in Pickering
+                    Installed in {cityData.name}
                   </span>
                 </div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-black/5 to-transparent pointer-events-none" />
               </div>
+              
+              <div className="absolute -top-6 -right-6 w-32 h-32 bg-accent/5 rounded-full blur-3xl -z-10" />
+              <div className="absolute -bottom-6 -left-6 w-48 h-48 bg-accent/10 rounded-full blur-3xl -z-10" />
             </motion.div>
           </div>
         </div>
@@ -147,7 +187,7 @@ export default function Pickering() {
               viewport={{ once: true }}
               className="text-4xl md:text-5xl font-bold mb-6"
             >
-              Quartz Countertop Cost in Pickering <br className="hidden md:block" />
+              Quartz Countertop Cost in {cityData.name} <br className="hidden md:block" />
               <span className="text-accent">(2026 Pricing Guide)</span>
             </motion.h2>
             <motion.p 
@@ -157,10 +197,11 @@ export default function Pickering() {
               transition={{ delay: 0.1 }}
               className="text-lg text-gray-600"
             >
-              Quartz countertops in Pickering typically range from $48 to $170 per square foot installed, depending on material, layout, and design.
+              Quartz countertop prices in {cityData.name} typically range from $48 to $170 per square foot installed, depending on material, edge profile, and kitchen layout.
             </motion.p>
           </div>
 
+          {/* Pricing Table */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
             {[
               {
@@ -179,7 +220,7 @@ export default function Pickering() {
               {
                 title: "Luxury Quartz",
                 price: "$100 – $170",
-                features: ["High-end brands", "Luxury finishes and statement looks"],
+                features: ["High-end brands (Kasa Quartz, Caesarstone)", "Luxury finishes and statement looks"],
                 color: "bg-gray-50 border-gray-100"
               }
             ].map((tier, i) => (
@@ -215,91 +256,147 @@ export default function Pickering() {
 
           <div className="text-center mb-20">
             <p className="inline-block bg-text-primary text-white px-6 py-2 rounded-full text-sm font-bold">
-              Most kitchens in Pickering range from $3,000 – $6,000 installed.
+              Most {cityData.name} kitchens fall between $3,000 – $6,000 installed.
             </p>
           </div>
 
+          {/* Factors & Visuals */}
           <div className="border-t border-gray-200 pt-20">
-            <h3 className="text-3xl font-bold mb-12 text-center">What Impacts Cost?</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-              {[
-                { title: "Kitchen Size & Layout", icon: <Maximize size={20} /> },
-                { title: "Cutouts (Sink, Cooktop)", icon: <Check size={20} /> },
-                { title: "Edge Profile & Thickness", icon: <Layers size={20} /> },
-                { title: "Installation Complexity", icon: <ShieldCheck size={20} /> },
-              ].map((item, i) => (
-                <motion.div 
-                  key={item.title}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.1 }}
-                  className="p-6 bg-white border border-gray-100 rounded-xl text-center"
-                >
-                  <div className="text-accent mb-4 flex justify-center">{item.icon}</div>
-                  <h4 className="font-bold text-sm">{item.title}</h4>
-                </motion.div>
-              ))}
+            <h3 className="text-3xl font-bold mb-12 text-center">What Impacts Quartz Countertop Cost?</h3>
+            
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start mb-16">
+              <div className="space-y-8">
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                  {[
+                    { title: "Kitchen Size & Layout", desc: "Total square footage and complexity of the shape.", icon: <Maximize size={20} /> },
+                    { title: "Cutouts & Sinks", desc: "Number of holes for sinks, faucets, and cooktops.", icon: <Check size={20} /> },
+                    { title: "Edge Profiles", desc: "Simple eased edges vs. complex decorative profiles.", icon: <Layers size={20} /> },
+                    { title: "Slab Thickness", desc: "Standard 3cm vs. thinner 2cm options.", icon: <Maximize size={20} /> },
+                  ].map((item, i) => (
+                    <motion.li 
+                      key={item.title}
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ delay: i * 0.1 }}
+                      className="p-6 bg-white border border-gray-100 rounded-xl shadow-sm"
+                    >
+                      <div className="text-accent mb-3">{item.icon}</div>
+                      <h4 className="font-bold mb-2">{item.title}</h4>
+                      <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
+                    </motion.li>
+                  ))}
+                </ul>
+                
+                <div className="p-6 bg-gray-50 rounded-xl border border-gray-100">
+                  <p className="text-sm text-gray-500 flex items-center gap-2">
+                    <MapPin size={16} className="text-accent" />
+                    We install quartz countertops across {cityData.areasServed}.
+                  </p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div className="space-y-4">
+                  <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-white bg-gray-100">
+                    <img 
+                      src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?auto=format&fit=crop&q=80&w=800" 
+                      alt="Professional kitchen measurement and planning" 
+                      className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 text-center">Precise Measurement</p>
+                </div>
+                <div className="space-y-4">
+                  <div className="aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-white bg-gray-100">
+                    <img 
+                      src="https://images.unsplash.com/photo-1628592102751-ba83b0314276?auto=format&fit=crop&q=80&w=800" 
+                      alt="Quartz slab thickness and stone detail" 
+                      className="w-full h-full object-cover"
+                      referrerPolicy="no-referrer"
+                    />
+                  </div>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 text-center">Thickness Options</p>
+                </div>
+              </div>
             </div>
 
-            <div className="text-center">
-              <button onClick={() => openCalculator()} className="btn-primary inline-flex items-center gap-2">
-                Get My Instant Estimate
-                <ArrowRight size={18} />
-              </button>
+            <div className="bg-text-primary text-white p-10 md:p-16 rounded-[2rem] text-center relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl -mr-32 -mt-32" />
+              <div className="relative z-10 max-w-2xl mx-auto">
+                <h4 className="text-3xl font-bold mb-6">Ready for an exact quote?</h4>
+                <p className="text-gray-400 mb-10 text-lg">Skip the guesswork. Use our 30-second calculator to get a precise estimate for your specific kitchen.</p>
+                <button 
+                  onClick={() => openCalculator()}
+                  className="btn-primary inline-flex items-center justify-center gap-3 text-lg px-12"
+                >
+                  Get My Instant Estimate
+                  <ArrowRight size={20} />
+                </button>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Section 3: Transformations */}
+      {/* Section 3: Transformations / Social Proof */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="text-center max-w-3xl mx-auto mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 text-accent text-[10px] font-bold uppercase tracking-widest mb-6"
+            >
+              <Star size={12} className="fill-accent" />
+              5,000+ kitchens installed across the GTA
+            </motion.div>
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               className="text-4xl md:text-5xl font-bold mb-6"
             >
-              Recent Quartz Installations in Pickering
+              Real Quartz Kitchen Transformations in {cityData.name}
             </motion.h2>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-lg text-gray-600"
+              className="text-lg text-gray-600 mb-4"
             >
-              See how homeowners in Pickering are upgrading their kitchens with modern quartz countertops.
+              See how {cityData.name} homeowners upgraded their kitchens with modern quartz countertops.
+            </motion.p>
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="text-sm font-bold text-text-primary bg-gray-50 inline-block px-4 py-2 rounded-lg border border-gray-100"
+            >
+              Most projects range from $3,000 – $6,000 depending on layout.
             </motion.p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               {
-                location: "Pickering",
-                title: "Typical Kitchen Upgrade",
-                testimonial: "Installed in 3 days. The finish is flawless.",
-                author: "Sarah",
+                ...cityData.testimonial1,
+                price: "$3,200 – $4,500",
+                image: cityData.images?.testimonial1 || "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&q=80&w=800"
+              },
+              {
+                ...cityData.testimonial2,
+                price: "$5,500 – $7,800",
+                image: cityData.images?.testimonial2 || "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=800"
+              },
+              {
+                ...cityData.testimonial3,
                 price: "$3,800 – $5,200",
-                image: "https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&q=80&w=800"
-              },
-              {
-                location: "Ajax",
-                title: "Quartz Island Upgrade",
-                testimonial: "Looks like a completely new kitchen.",
-                author: "David",
-                price: "$4,200 – $6,100",
-                image: "https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&q=80&w=800"
-              },
-              {
-                location: "Whitby",
-                title: "Standard Kitchen Remodel",
-                testimonial: "Fast, clean install. Worth every dollar.",
-                author: "Mark",
-                price: "$3,200 – $4,800",
-                image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=800"
+                image: cityData.images?.testimonial3 || "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?auto=format&fit=crop&q=80&w=800"
               }
             ].map((project, i) => (
               <motion.div
@@ -311,11 +408,11 @@ export default function Pickering() {
                 className="group bg-white rounded-[2rem] overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col h-full"
               >
                 <div className="px-8 pt-6 pb-4">
-                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400 flex items-center gap-2">
-                    <MapPin size={12} className="text-accent" />
-                    Installed in {project.location}
+                  <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-gray-400">
+                    Installed in {project.neighborhood}
                   </span>
                 </div>
+
                 <div className="aspect-[4/3] overflow-hidden relative bg-gray-50">
                   <img 
                     src={project.image} 
@@ -323,26 +420,31 @@ export default function Pickering() {
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     referrerPolicy="no-referrer"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
+
                 <div className="p-8 flex flex-col flex-grow">
                   <h3 className="text-xl font-bold mb-4 text-text-primary">{project.title}</h3>
+                  
                   <div className="mb-6 flex-grow">
                     <p className="text-gray-600 italic text-sm leading-relaxed mb-2">
-                      "{project.testimonial}"
+                      "{project.quote}"
                     </p>
                     <p className="text-[11px] font-bold text-accent uppercase tracking-wider">
-                      — {project.author}, {project.location}
+                      — {project.author}, {project.neighborhood}
                     </p>
                   </div>
+
                   <div className="mb-8 pt-6 border-t border-gray-100">
                     <p className="text-[10px] font-bold uppercase tracking-widest text-gray-400 mb-1">Project Range</p>
                     <p className="text-lg font-bold text-text-primary">{project.price}</p>
                   </div>
+
                   <button 
                     onClick={() => openCalculator()}
                     className="btn-primary w-full h-14 flex items-center justify-center gap-2 text-sm font-bold shadow-lg shadow-accent/10 group-hover:shadow-accent/30 transition-all duration-500"
                   >
-                    Get This Exact Kitchen Price
+                    Get This Kitchen Price
                     <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
                   </button>
                 </div>
@@ -352,7 +454,7 @@ export default function Pickering() {
         </div>
       </section>
 
-      {/* Section 4: Trust */}
+      {/* Section 4: Trust & Authority */}
       <section className="py-24 bg-white border-t border-gray-100">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-20">
@@ -363,7 +465,7 @@ export default function Pickering() {
                 viewport={{ once: true }}
                 className="text-4xl md:text-5xl font-bold mb-6 text-text-primary"
               >
-                Why Pickering Homeowners Choose Quartz International for Their Countertops
+                Why {cityData.name} Homeowners Choose Quartz International
               </motion.h2>
               <motion.p 
                 initial={{ opacity: 0, y: 20 }}
@@ -372,7 +474,7 @@ export default function Pickering() {
                 transition={{ delay: 0.1 }}
                 className="text-lg text-gray-600 mb-4"
               >
-                Precision fabrication, transparent pricing, and fast installation — trusted across Pickering and the GTA.
+                Precision fabrication, transparent pricing, and fast installation — trusted by thousands of homeowners across the {cityData.region}.
               </motion.p>
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -388,7 +490,7 @@ export default function Pickering() {
                 {[
                   {
                     title: "Transparent Pricing",
-                    desc: "Real quotes based on actual installations — no surprises.",
+                    desc: `Real quotes based on actual ${cityData.name} installations — no surprises.`,
                     icon: <ShieldCheck size={24} />
                   },
                   {
@@ -407,7 +509,14 @@ export default function Pickering() {
                     icon: <Award size={24} />
                   }
                 ].map((pillar, i) => (
-                  <div key={pillar.title} className="flex flex-col gap-4">
+                  <motion.div
+                    key={pillar.title}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.1 }}
+                    className="flex flex-col gap-4"
+                  >
                     <div className="w-12 h-12 rounded-xl bg-accent/10 text-accent flex items-center justify-center">
                       {pillar.icon}
                     </div>
@@ -415,22 +524,49 @@ export default function Pickering() {
                       <h4 className="font-bold text-text-primary mb-2">{pillar.title}</h4>
                       <p className="text-sm text-gray-500 leading-relaxed">{pillar.desc}</p>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
 
-            <div className="relative">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              className="relative"
+            >
               <div className="aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-2xl group bg-gray-50">
                 <img 
                   src="/images/fabrication.jpeg" 
-                  alt="Quartz fabrication process" 
-                  className="w-full h-full object-cover"
+                  alt="Quartz fabrication and installation process" 
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                
+                <div className="absolute bottom-8 left-8 right-8">
+                  <div className="bg-white/90 backdrop-blur-md p-6 rounded-2xl border border-white/20 shadow-xl">
+                    <div className="flex items-center gap-3 mb-3">
+                      <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white">
+                        <CheckCircle2 size={16} />
+                      </div>
+                      <span className="text-xs font-bold uppercase tracking-widest text-text-primary">Installed in {cityData.name}</span>
+                    </div>
+                    <div className="flex gap-1 mb-2">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={14} className="fill-accent text-accent" />
+                      ))}
+                    </div>
+                    <p className="text-sm text-gray-600 italic">
+                      "Fast, clean install. Exactly what we were quoted."
+                    </p>
+                    <p className="text-[10px] font-bold text-text-primary mt-2 uppercase tracking-wider">— Review from {cityData.name}</p>
+                  </div>
+                </div>
               </div>
+
               <div className="absolute -bottom-10 -right-10 w-64 h-64 bg-accent/10 rounded-full blur-3xl -z-10" />
-            </div>
+            </motion.div>
           </div>
 
           <motion.div 
@@ -453,11 +589,16 @@ export default function Pickering() {
             </div>
             <div className="flex flex-col items-center gap-1">
               <span className="text-2xl font-bold text-text-primary">Serving</span>
-              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">Pickering & GTA</span>
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em]">{cityData.region}</span>
             </div>
           </motion.div>
 
-          <div className="mt-20 text-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="mt-20 text-center"
+          >
             <button 
               onClick={() => openCalculator()}
               className="btn-primary inline-flex items-center justify-center gap-4 h-20 px-16 text-xl shadow-2xl shadow-accent/20 hover:shadow-accent/40 transition-all duration-500 group"
@@ -465,7 +606,7 @@ export default function Pickering() {
               Get My Instant Estimate
               <ArrowRight size={24} className="group-hover:translate-x-2 transition-transform" />
             </button>
-          </div>
+          </motion.div>
         </div>
       </section>
 
@@ -479,13 +620,29 @@ export default function Pickering() {
               viewport={{ once: true }}
               className="text-4xl md:text-5xl font-bold mb-6 text-text-primary"
             >
-              Quartz Countertops Pickering — Frequently Asked Questions
+              Quartz Countertops {cityData.name} — Frequently Asked Questions
             </motion.h2>
+            <motion.p 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="text-lg text-gray-600"
+            >
+              Get clear answers about pricing, installation, and choosing the right quartz countertops for your {cityData.name} home.
+            </motion.p>
           </div>
 
           <div className="space-y-4 mb-16">
             {faqs.map((faq, i) => (
-              <div key={i} className="border border-gray-100 rounded-2xl bg-white overflow-hidden shadow-sm">
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.05 }}
+                className="border border-gray-100 rounded-2xl bg-white overflow-hidden shadow-sm"
+              >
                 <button
                   onClick={() => setOpenFaqIndex(openFaqIndex === i ? null : i)}
                   className="w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors"
@@ -502,7 +659,7 @@ export default function Pickering() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: 'auto', opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
                     >
                       <div className="px-6 pb-6 text-gray-600 text-sm leading-relaxed border-t border-gray-50 pt-4">
                         {faq.a}
@@ -510,28 +667,33 @@ export default function Pickering() {
                     </motion.div>
                   )}
                 </AnimatePresence>
-              </div>
+              </motion.div>
             ))}
           </div>
 
-          <div className="text-center">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center"
+          >
             <button 
               onClick={() => openCalculator()}
-              className="btn-primary inline-flex items-center justify-center gap-4 h-16 px-12 text-lg shadow-xl shadow-accent/20 group"
+              className="btn-primary inline-flex items-center justify-center gap-4 h-16 px-12 text-lg shadow-xl shadow-accent/20 hover:shadow-accent/40 transition-all duration-500 group"
             >
               Get My Instant Estimate
               <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
             </button>
-          </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* Section 6: FINAL CTA */}
+      {/* Section 6: THE CLOSE */}
       <section className="py-32 bg-text-primary relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <img 
             src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=2000" 
-            alt="Luxury quartz countertop" 
+            alt="Luxury quartz countertop detail" 
             className="w-full h-full object-cover"
             referrerPolicy="no-referrer"
           />
@@ -540,26 +702,43 @@ export default function Pickering() {
 
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 relative z-10">
           <div className="max-w-3xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/20 text-accent text-[10px] font-bold uppercase tracking-widest mb-8 border border-accent/30"
+            >
+              <Star size={12} className="fill-accent" />
+              Join 2,000+ homeowners who used our tool this month
+            </motion.div>
+
             <motion.h2 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-8 leading-[1.1]"
             >
-              Get Your Quartz Countertop Price in 30 Seconds
+              Get Your Exact Quartz Countertop Price in 30 Seconds
             </motion.h2>
 
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
+              transition={{ delay: 0.2 }}
               className="text-xl text-gray-300 mb-12 leading-relaxed"
             >
               No guesswork. No hidden fees. Just real pricing based on your kitchen.
             </motion.p>
 
-            <div className="flex flex-col items-center gap-6">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="flex flex-col items-center gap-6"
+            >
               <button 
                 onClick={() => openCalculator()}
                 className="btn-primary inline-flex items-center justify-center gap-4 h-20 px-16 text-xl shadow-2xl shadow-accent/20 hover:shadow-accent/40 transition-all duration-500 group w-full sm:w-auto"
@@ -570,11 +749,14 @@ export default function Pickering() {
 
               <p className="text-gray-400 text-sm font-medium flex items-center gap-2">
                 <CheckCircle2 size={16} className="text-accent" />
-                No obligation • No spam • Takes less than 30 seconds
+                No obligation. No spam. Takes less than 30 seconds.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
+
+        <div className="absolute top-0 left-0 w-64 h-64 bg-accent/10 rounded-full blur-3xl -ml-32 -mt-32" />
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -mr-48 -mb-48" />
       </section>
     </div>
   );

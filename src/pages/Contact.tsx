@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { Phone, Mail, Send, CheckCircle, UploadCloud, File, X } from 'lucide-react';
 
+import { SEO } from '../components/SEO';
 export default function Contact() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -83,6 +84,8 @@ export default function Contact() {
 
   return (
     <div className="bg-background pt-20 pb-32">
+      <SEO title="Contact Us | Quartz International" description="Contact Quartz International for inquiries about quartz countertops, custom cabinetry, and kitchen renovations in the GTA." />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
           <div>
