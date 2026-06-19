@@ -16,6 +16,7 @@ import {
 } from 'lucide-react';
 import { cn } from '../lib/utils';
 import { useCalculator } from '../context/CalculatorContext';
+import clientKstoneLuxuryGta from '../assets/images/client_kstone_luxury_gta.jpg';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -36,7 +37,7 @@ const slabs = [
 const kitchens = [
   { title: 'Toronto Condo', price: '$4,000 – $5,800', img: 'https://images.unsplash.com/photo-1556186675-9005bc18b10f?auto=format&fit=crop&q=80&w=600' },
   { title: 'Suburban Kitchen', price: '$5,500 – $8,000', img: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=600' },
-  { title: 'Luxury GTA Residence', price: '$7,800 – $11,000', img: 'https://images.unsplash.com/photo-1556912167-75b84294edf3?auto=format&fit=crop&q=80&w=600' },
+  { title: 'Luxury GTA Residence', price: '$5,500 – $7,500', img: clientKstoneLuxuryGta },
 ];
 
 const faqs = [
