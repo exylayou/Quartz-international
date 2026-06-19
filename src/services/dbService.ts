@@ -53,9 +53,22 @@ export interface UserBehavior {
   timeSpentMs: number;
 }
 
+export type LeadStatus =
+  | 'New Estimate Lead'
+  | 'Estimate Sent'
+  | 'Awaiting Drawings'
+  | 'Drawings Received'
+  | 'Design & Pricing'
+  | 'Quote Sent'
+  | 'Site Measure'
+  | 'Deposit Received'
+  | 'Installation Scheduled'
+  | 'Completed';
+
 export interface Lead {
   id: string;
   createdAt: string;
+  leadStatus?: LeadStatus;
   name: string;
   email: string;
   phone: string;

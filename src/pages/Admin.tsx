@@ -30,7 +30,21 @@ import {
   Clock,
   Paperclip
 } from 'lucide-react';
+import { cn } from '../lib/utils';
 import { PRICING_CONSTANTS } from '../constants';
+
+export const CRM_STAGES = [
+  'New Estimate Lead',
+  'Estimate Sent',
+  'Awaiting Drawings',
+  'Drawings Received',
+  'Design & Pricing',
+  'Quote Sent',
+  'Site Measure',
+  'Deposit Received',
+  'Installation Scheduled',
+  'Completed'
+];
 
 export default function Admin() {
   const [isAuthenticated, setIsAuthenticated] = React.useState(false);
@@ -50,6 +64,9 @@ export default function Admin() {
   const [savingQuote, setSavingQuote] = React.useState(false);
   const [emailingQuote, setEmailingQuote] = React.useState(false);
   const [copied, setCopied] = React.useState(false);
+  const [leadSortField, setLeadSortField] = React.useState<'date' | 'status' | 'name'>('date');
+  const [leadSortOrder, setLeadSortOrder] = React.useState<'asc' | 'desc'>('desc');
+  const [leadStatus, setLeadStatus] = React.useState<string>('New Estimate Lead');
 
   // Multi-tab workspace state
   const [activeTab, setActiveTab] = React.useState<'inbox' | 'leads' | 'quotes' | 'customers' | 'analytics'>('inbox');
@@ -485,6 +502,26 @@ export default function Admin() {
     );
   });
 
+  const sortedFilteredLeads = [...filteredLeads].sort((a, b) => {
+    let comparison = 0;
+    if (leadSortField === 'date') {
+      const dateA = new Date(a.createdAt).getTime();
+      const dateB = new Date(b.createdAt).getTime();
+      comparison = dateA - dateB;
+    } else if (leadSortField === 'name') {
+      const nameA = (a.name || '').toLowerCase();
+      const nameB = (b.name || '').toLowerCase();
+      comparison = nameA.localeCompare(nameB);
+    } else if (leadSortField === 'status') {
+      const statusA = a.leadStatus || 'New Estimate Lead';
+      const statusB = b.leadStatus || 'New Estimate Lead';
+      const indexA = CRM_STAGES.indexOf(statusA);
+      const indexB = CRM_STAGES.indexOf(statusB);
+      comparison = indexA - indexB;
+    }
+    return leadSortOrder === 'asc' ? comparison : -comparison;
+  });
+
   const filteredQuotes = leads.filter(lead => {
     if (!lead.quoteNumber) return false;
     const q = searchQuery.toLowerCase();
@@ -819,12 +856,14 @@ export default function Admin() {
         setQuoteStatus(selectedLead.quoteStatus || 'draft');
         setQuoteDiscount(selectedLead.quoteDiscount || 0);
         setQuoteTaxRate(selectedLead.quoteTaxRate ?? 0.13);
+        setLeadStatus(selectedLead.leadStatus || 'New Estimate Lead');
       } else {
         setQuoteNumber('');
         setQuoteItems([]);
         setQuoteStatus('draft');
         setQuoteDiscount(0);
         setQuoteTaxRate(0.13);
+        setLeadStatus('New Estimate Lead');
       }
       setCopied(false);
     }, [selectedLead]);
@@ -922,6 +961,47 @@ export default function Admin() {
       setQuoteNumber(`QI-2026-${randNum}`);
       setQuoteItems(items);
       setQuoteStatus('draft');
+    };
+
+    const handleLeadSort = (field: 'date' | 'name' | 'status') => {
+      if (leadSortField === field) {
+        setLeadSortOrder(leadSortOrder === 'asc' ? 'desc' : 'asc');
+      } else {
+        setLeadSortField(field);
+        setLeadSortOrder('desc');
+      }
+    };
+
+    const handleLeadStatusChange = async (newStatus: string) => {
+      if (!selectedLead) return;
+      try {
+        const response = await fetch(`/api/leads/${selectedLead.id}/quote`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'x-admin-secret': secret
+          },
+          body: JSON.stringify({
+            leadStatus: newStatus
+          })
+        });
+
+        if (response.ok) {
+          const updatedLeads = leads.map(l => {
+            if (l.id === selectedLead.id) {
+              return { ...l, leadStatus: newStatus };
+            }
+            return l;
+          });
+          setLeads(updatedLeads);
+          setSelectedLead({ ...selectedLead, leadStatus: newStatus });
+          setLeadStatus(newStatus);
+        } else {
+          alert('Failed to update lead status');
+        }
+      } catch (err) {
+        alert('Error connecting to server');
+      }
     };
 
     const saveQuote = async () => {
@@ -2353,8 +2433,45 @@ export default function Admin() {
               <table className="w-full text-left">
                 <thead>
                   <tr className="border-b border-border-custom bg-gray-50/50">
-                    <th className="px-6 py-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Date</th>
-                    <th className="px-6 py-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Customer</th>
+                    <th 
+                      onClick={() => handleLeadSort('date')}
+                      className="px-6 py-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest cursor-pointer select-none hover:text-accent transition-colors group"
+                    >
+                      <div className="flex items-center gap-1.5">
+                        Date
+                        {leadSortField === 'date' ? (
+                          <span className="text-accent">{leadSortOrder === 'asc' ? '▲' : '▼'}</span>
+                        ) : (
+                          <span className="opacity-0 group-hover:opacity-100 transition-opacity text-gray-300">↕</span>
+                        )}
+                      </div>
+                    </th>
+                    <th 
+                      onClick={() => handleLeadSort('name')}
+                      className="px-6 py-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest cursor-pointer select-none hover:text-accent transition-colors group"
+                    >
+                      <div className="flex items-center gap-1.5">
+                        Customer
+                        {leadSortField === 'name' ? (
+                          <span className="text-accent">{leadSortOrder === 'asc' ? '▲' : '▼'}</span>
+                        ) : (
+                          <span className="opacity-0 group-hover:opacity-100 transition-opacity text-gray-300">↕</span>
+                        )}
+                      </div>
+                    </th>
+                    <th 
+                      onClick={() => handleLeadSort('status')}
+                      className="px-6 py-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest cursor-pointer select-none hover:text-accent transition-colors group"
+                    >
+                      <div className="flex items-center gap-1.5">
+                        Lead Status
+                        {leadSortField === 'status' ? (
+                          <span className="text-accent">{leadSortOrder === 'asc' ? '▲' : '▼'}</span>
+                        ) : (
+                          <span className="opacity-0 group-hover:opacity-100 transition-opacity text-gray-300">↕</span>
+                        )}
+                      </div>
+                    </th>
                     <th className="px-6 py-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Specifications</th>
                     <th className="px-6 py-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Estimate</th>
                     <th className="px-6 py-4 text-[10px] font-bold text-gray-400 uppercase tracking-widest">Timeline</th>
@@ -2362,9 +2479,9 @@ export default function Admin() {
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-border-custom">
-                  {filteredLeads.length === 0 ? (
+                  {sortedFilteredLeads.length === 0 ? (
                     <tr>
-                      <td colSpan={6} className="px-6 py-20 text-center text-gray-500">
+                      <td colSpan={7} className="px-6 py-20 text-center text-gray-500">
                         <div className="flex flex-col items-center gap-4">
                           <Eye size={48} className="text-gray-200" />
                           <p className="font-medium">No matching leads found.</p>
@@ -2372,7 +2489,7 @@ export default function Admin() {
                       </td>
                     </tr>
                   ) : (
-                    filteredLeads.map((lead) => (
+                    sortedFilteredLeads.map((lead) => (
                       <tr key={lead.id} className="hover:bg-gray-50 transition-colors">
                         <td className="px-6 py-4">
                           <p className="text-xs font-bold text-gray-800">
@@ -2392,6 +2509,23 @@ export default function Admin() {
                               <Phone size={10} /> {lead.phone}
                             </a>
                           </div>
+                        </td>
+                        <td className="px-6 py-4">
+                          <span className={cn(
+                            "inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold border",
+                            lead.leadStatus === 'Completed' ? 'bg-green-50 text-green-700 border-green-200' :
+                            lead.leadStatus === 'Installation Scheduled' ? 'bg-emerald-50 text-emerald-700 border-emerald-200' :
+                            lead.leadStatus === 'Deposit Received' ? 'bg-teal-50 text-teal-700 border-teal-200' :
+                            lead.leadStatus === 'Site Measure' ? 'bg-cyan-50 text-cyan-700 border-cyan-200' :
+                            lead.leadStatus === 'Quote Sent' ? 'bg-blue-50 text-blue-700 border-blue-200' :
+                            lead.leadStatus === 'Design & Pricing' ? 'bg-indigo-50 text-indigo-700 border-indigo-200' :
+                            lead.leadStatus === 'Drawings Received' ? 'bg-purple-50 text-purple-700 border-purple-200' :
+                            lead.leadStatus === 'Awaiting Drawings' ? 'bg-amber-50 text-amber-700 border-amber-200' :
+                            lead.leadStatus === 'Estimate Sent' ? 'bg-orange-50 text-orange-700 border-orange-200' :
+                            'bg-gray-50 text-gray-600 border-gray-200'
+                          )}>
+                            {lead.leadStatus || 'New Estimate Lead'}
+                          </span>
                         </td>
                         <td className="px-6 py-4">
                           {lead.layout === 'Contact Form' ? (
@@ -3871,6 +4005,55 @@ export default function Admin() {
 
             {/* Modal Content */}
             <div className="p-6 overflow-y-auto space-y-6">
+
+              {/* CRM Pipeline Status */}
+              <div className="bg-gray-50 p-5 rounded-2xl border border-border-custom space-y-4">
+                <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-3">
+                  <div>
+                    <span className="text-[9px] font-bold text-gray-405 uppercase tracking-widest block mb-0.5">CRM Pipeline Stage</span>
+                    <h4 className="text-sm font-bold text-gray-800">Current Status: <span className="text-accent">{selectedLead.leadStatus || 'New Estimate Lead'}</span></h4>
+                  </div>
+                  
+                  <select
+                    className="px-3 py-1.5 border border-border-custom rounded-lg text-xs bg-white focus:outline-none focus:ring-2 focus:ring-accent/20 focus:border-accent font-semibold text-gray-700 w-full sm:w-auto"
+                    value={leadStatus}
+                    onChange={(e) => handleLeadStatusChange(e.target.value)}
+                  >
+                    {CRM_STAGES.map(stage => (
+                      <option key={stage} value={stage}>{stage}</option>
+                    ))}
+                  </select>
+                </div>
+
+                {/* Visual Pipeline Steps */}
+                <div className="flex items-center gap-1 overflow-x-auto py-2 no-scrollbar border-t border-border-custom/50 pt-4">
+                  {CRM_STAGES.map((stage, idx) => {
+                    const currentIdx = CRM_STAGES.indexOf(selectedLead.leadStatus || 'New Estimate Lead');
+                    const isCompleted = idx < currentIdx;
+                    const isActive = idx === currentIdx;
+                    return (
+                      <React.Fragment key={stage}>
+                        <div 
+                          className={cn(
+                            "text-center p-1.5 rounded-lg text-[8px] font-bold transition-all border shrink-0 leading-tight min-w-[80px]",
+                            isActive 
+                              ? "bg-accent/15 border-accent text-accent shadow-sm" 
+                              : isCompleted 
+                              ? "bg-green-50 border-green-200 text-green-700"
+                              : "bg-gray-150 border-gray-200 text-gray-400"
+                          )}
+                          title={stage}
+                        >
+                          {stage}
+                        </div>
+                        {idx < CRM_STAGES.length - 1 && (
+                          <ChevronRight size={10} className="text-gray-300 shrink-0" />
+                        )}
+                      </React.Fragment>
+                    );
+                  })}
+                </div>
+              </div>
               
               {/* Contact Info Grid */}
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">

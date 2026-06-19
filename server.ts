@@ -80,6 +80,7 @@ app.post("/api/leads", async (req, res) => {
     const leadData: Lead = {
       id: raw.id || Math.random().toString(36).substr(2, 9),
       createdAt: raw.createdAt || new Date().toISOString(),
+      leadStatus: raw.leadStatus || 'New Estimate Lead',
       name: raw.name,
       email: raw.email,
       phone: raw.phone,
