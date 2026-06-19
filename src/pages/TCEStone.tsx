@@ -18,6 +18,7 @@ import { cn } from '../lib/utils';
 import { useCalculator } from '../context/CalculatorContext';
 import clientTceChefKitchen from '../assets/images/client_tce_chef_kitchen.jpg';
 import clientTceCondo from '../assets/images/client_tce_condo_kitchen.jpg';
+import clientTceSuburban from '../assets/images/client_tce_suburban_kitchen.jpg';
 
 const fadeIn = {
   initial: { opacity: 0, y: 20 },
@@ -38,7 +39,7 @@ const slabs = [
 const kitchens = [
   { title: 'Toronto Condo', price: '$3,500 – $4,500', img: clientTceCondo },
   { title: 'GTA Chef\'s Space', price: '$4,000 – $5,500', img: clientTceChefKitchen },
-  { title: 'Suburban Home', price: '$5,000 – $7,200', img: 'https://images.unsplash.com/photo-1556912167-75b84294edf3?auto=format&fit=crop&q=80&w=600' },
+  { title: 'Suburban Home', price: '$3,500 – $4,500', img: clientTceSuburban },
 ];
 
 const faqs = [
