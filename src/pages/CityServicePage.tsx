@@ -213,6 +213,22 @@ export default function CityServicePage() {
           <p className="text-xl text-gray-700 leading-relaxed mb-8 max-w-3xl mx-auto">
             {cityData.showroomGuidance}
           </p>
+          {cityData.showrooms && cityData.showrooms.length > 0 && (
+            <div className="max-w-2xl mx-auto bg-white rounded-2xl shadow-sm border border-gray-100 p-8 mb-8 text-left">
+              <h3 className="text-2xl font-bold mb-6 text-center text-text-primary">Partner Showrooms</h3>
+              <ul className="space-y-4">
+                {cityData.showrooms.map((showroom, i) => (
+                  <li key={i} className="flex items-start gap-4">
+                    <MapPin className="text-accent shrink-0 mt-1" size={20} />
+                    <div>
+                      <strong className="block text-lg text-text-primary">{showroom.brand}</strong>
+                      <span className="text-gray-600">{showroom.address}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
           <p className="text-sm text-gray-500 italic">
             Note: We always recommend viewing full slabs in person because small samples do not fully capture large-scale veining patterns.
           </p>

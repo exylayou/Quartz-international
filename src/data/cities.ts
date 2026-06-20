@@ -35,6 +35,7 @@ export interface CityData {
   localProjectNotes: string;
   popularOptions: { name: string; desc: string }[];
   customFaqs: { q: string; a: string }[];
+  showrooms?: { brand: string; address: string }[];
 }
 
 export const cities: Record<string, CityData> = {
@@ -54,6 +55,10 @@ export const cities: Record<string, CityData> = {
     ],
     customFaqs: [
       { q: 'Do you handle condo elevator bookings for Toronto installs?', a: 'Yes. Let us know your condo management rules and elevator booking windows, and we will schedule our installation team accordingly.' }
+    ],
+    showrooms: [
+      { brand: 'The Stone Depot', address: '25 commander Blvd, Scarborough' },
+      { brand: 'Silestone Toronto', address: '143 Frederick st, Toronto' }
     ],
     testimonial1: {
       title: "Typical Toronto Condo Upgrade",
@@ -97,6 +102,11 @@ export const cities: Record<string, CityData> = {
     customFaqs: [
       { q: 'Do you serve all of Markham and Unionville?', a: 'Yes, we provide full template, fabrication, and installation services across Markham, Unionville, and surrounding York Region areas.' }
     ],
+    showrooms: [
+      { brand: 'Kasa Quartz', address: 'Unit#5-7310 Woodbine Ave Markham ON L3R 1A4' },
+      { brand: 'Lucent Quartz', address: '40 West Beaver Creek Rd, Richmond Hill, ON L4B 3K1' },
+      { brand: 'Caesarstone', address: '350 Caldari Rd, Concord, ON L4K 4J4' }
+    ],
     testimonial1: {
       title: "Unionville Heritage Home",
       quote: "They respected our older home and delivered a beautiful modern quartz top.",
@@ -138,6 +148,9 @@ export const cities: Record<string, CityData> = {
     ],
     customFaqs: [
       { q: 'Where is the nearest showroom to Mississauga?', a: 'Mississauga clients can easily visit the Kasa Quartz showroom to view full slabs in person before placing their order.' }
+    ],
+    showrooms: [
+      { brand: 'Kasa Mississauga', address: '5622 McAdam rd, Mississauga' }
     ],
     testimonial1: {
       title: "Condo Kitchen Upgrade",
@@ -181,6 +194,11 @@ export const cities: Record<string, CityData> = {
     customFaqs: [
       { q: 'Can I view the slabs in Vaughan?', a: 'Yes! Vaughan is home to major showrooms like TCE Stone, Sio4, and Lucent, allowing you to easily view and tag your exact slab locally.' }
     ],
+    showrooms: [
+      { brand: 'TCE', address: '200 Romina Dr, Vaughan' },
+      { brand: 'Kstone', address: '150 Caldari Rd, Concord' },
+      { brand: 'Caesarstone', address: '350 Caldari Rd, concord' }
+    ],
     testimonial1: {
       title: "Custom Build Kitchen",
       quote: "The waterfall edge detail is absolute perfection.",
@@ -222,6 +240,10 @@ export const cities: Record<string, CityData> = {
     ],
     customFaqs: [
       { q: 'Do you offer cabinet and quartz packages in Etobicoke?', a: 'Yes! We coordinate directly with local cabinet partners to provide seamless cabinet and countertop bundle packages.' }
+    ],
+    showrooms: [
+      { brand: 'Kstone', address: '150 Caldari Rd, Concord' },
+      { brand: 'Caesarstone', address: '350 Caldari Rd, concord' }
     ],
     testimonial1: {
       title: "Waterfront Condo",
@@ -265,6 +287,10 @@ export const cities: Record<string, CityData> = {
     customFaqs: [
       { q: 'Where can I view slabs in Scarborough?', a: 'We work with local east-end suppliers like TD Stone, allowing you to view and select your exact slab close to home.' }
     ],
+    showrooms: [
+      { brand: 'Kasa Markham', address: '7310 Woodbine Ave, Markham' },
+      { brand: 'The stone depot', address: '25 commander Blvd, Scarborough' }
+    ],
     testimonial1: {
       title: "Basement Apartment",
       quote: "Perfect durable quartz for my rental unit.",
@@ -306,6 +332,9 @@ export const cities: Record<string, CityData> = {
     ],
     customFaqs: [
       { q: 'Do you install oversized kitchen islands in Brampton?', a: 'Yes! Brampton homes often have large kitchens. We supply jumbo-sized slabs to ensure your massive kitchen island has no visible seams.' }
+    ],
+    showrooms: [
+      { brand: 'Kasa Mississauga', address: '5622 McAdam rd, Mississauga' }
     ],
     testimonial1: {
       title: "Massive Kitchen Island",
@@ -349,6 +378,9 @@ export const cities: Record<string, CityData> = {
     customFaqs: [
       { q: 'Can I get a matching full-height quartz backsplash?', a: 'Absolutely. This is a very popular premium feature in Richmond Hill homes. We carefully bookmatch the veining from the counter up the wall for a stunning effect.' }
     ],
+    showrooms: [
+      { brand: 'Lucent Quartz', address: '40 west beaver creek, Richmond hill' }
+    ],
     testimonial1: {
       title: "Luxury Custom Home",
       quote: "The mitered waterfall edge is the highlight of our new home.",
@@ -390,6 +422,10 @@ export const cities: Record<string, CityData> = {
     ],
     customFaqs: [
       { q: 'Do you charge extra for travel to Pickering?', a: 'No. We have dedicated service routes for the Durham Region, so your templating and installation are included in your standard quote.' }
+    ],
+    showrooms: [
+      { brand: 'Kasa Markham', address: '7310 Woodbine Ave, Markham' },
+      { brand: 'The stone depot', address: '25 commander Blvd, Scarborough' }
     ],
     testimonial1: {
       title: "Townhouse Upgrade",
@@ -433,6 +469,10 @@ export const cities: Record<string, CityData> = {
     customFaqs: [
       { q: 'Do you charge extra for travel to Ajax or Oshawa?', a: 'No. We have dedicated service routes for the Durham Region, so your templating and installation are included in your standard quote.' }
     ],
+    showrooms: [
+      { brand: 'Kasa Markham', address: '7310 Woodbine Ave, Markham' },
+      { brand: 'The Stone Depot', address: '25 commander Blvd, Scarborough' }
+    ],
     testimonial1: {
       title: "New Build Kitchen",
       quote: "They arrived exactly on time and the install took just a few hours.",
@@ -474,6 +514,10 @@ export const cities: Record<string, CityData> = {
     ],
     customFaqs: [
       { q: 'Do you service Hamilton as well as Burlington?', a: 'Yes! Our west service area includes Burlington, Oakville, Milton, and Hamilton.' }
+    ],
+    showrooms: [
+      { brand: 'Kasa Mississauga', address: '5622 McAdam rd, Mississauga' },
+      { brand: 'Silestone burlington', address: '3485 N service Rd, Burlington' }
     ],
     testimonial1: {
       title: "Oakville Custom Home",
