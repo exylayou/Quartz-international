@@ -1,4 +1,6 @@
-import { useState } from 'react';
+const fs = require('fs');
+
+const data = `import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Star, CheckCircle2, MapPin, Check, ChevronDown, Building, PenTool, LayoutTemplate, Zap, Map } from 'lucide-react';
 import { Link, useParams, Navigate, useNavigate } from 'react-router-dom';
@@ -27,8 +29,8 @@ export default function CityServicePage() {
 
   const standardFaqs = [
     {
-      q: `How much do quartz countertops cost in ${cityData.name}?`,
-      a: `Quartz countertops in ${cityData.name} typically range from $48 to $170 per square foot installed, with most kitchens falling between $3,000 and $6,000 depending on size and design.`
+      q: \`How much do quartz countertops cost in \${cityData.name}?\`,
+      a: \`Quartz countertops in \${cityData.name} typically range from $48 to $170 per square foot installed, with most kitchens falling between $3,000 and $6,000 depending on size and design.\`
     },
     {
       q: "How long does installation take?",
@@ -49,8 +51,8 @@ export default function CityServicePage() {
   return (
     <div className="bg-white min-h-screen font-sans selection:bg-accent/30">
       <SEO 
-        title={`Quartz Countertops ${cityData.name} | Supply & Install`} 
-        description={`Premium quartz countertops installed in ${cityData.name}. Local showrooms available. Get an instant, accurate online estimate today.`} 
+        title={\`Quartz Countertops \${cityData.name} | Supply & Install\`} 
+        description={\`Premium quartz countertops installed in \${cityData.name}. Local showrooms available. Get an instant, accurate online estimate today.\`} 
       />
 
       {/* 1. Hero Section */}
@@ -114,7 +116,7 @@ export default function CityServicePage() {
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl group bg-gray-50">
                 <img 
                   src={cityData.images?.hero || "/images/markham-hero.jpg"} 
-                  alt={`Quartz countertops ${cityData.name} installation`} 
+                  alt={\`Quartz countertops \${cityData.name} installation\`} 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
@@ -177,7 +179,7 @@ export default function CityServicePage() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <button onClick={() => openCalculator()} className="btn-primary px-8 h-14">Get an Instant Quote</button>
-            <Link to={`/quartz-countertop-cost/${cityData.slug}`} className="font-bold text-gray-500 hover:text-accent underline underline-offset-4">
+            <Link to={\`/quartz-countertop-cost/\${cityData.slug}\`} className="font-bold text-gray-500 hover:text-accent underline underline-offset-4">
               View Detailed {cityData.name} Pricing Guide
             </Link>
           </div>
@@ -255,7 +257,7 @@ export default function CityServicePage() {
                   className="w-full p-6 text-left flex items-center justify-between gap-4 hover:bg-gray-50 transition-colors"
                 >
                   <span className="font-bold text-text-primary">{faq.q}</span>
-                  <ChevronDown size={20} className={`text-accent transition-transform duration-300 ${openFaqIndex === i ? 'rotate-180' : ''}`} />
+                  <ChevronDown size={20} className={\`text-accent transition-transform duration-300 \${openFaqIndex === i ? 'rotate-180' : ''}\`} />
                 </button>
                 <AnimatePresence>
                   {openFaqIndex === i && (
@@ -284,3 +286,7 @@ export default function CityServicePage() {
     </div>
   );
 }
+`;
+
+fs.writeFileSync('src/pages/CityServicePage.tsx', data);
+console.log('CityServicePage.tsx replaced successfully');

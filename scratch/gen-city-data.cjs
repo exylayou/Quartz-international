@@ -1,4 +1,6 @@
-export interface CityData {
+const fs = require('fs');
+
+const data = `export interface CityData {
   slug: string;
   name: string;
   region: string;
@@ -459,3 +461,7 @@ export const cities: Record<string, CityData> = {
     }
   }
 };
+`;
+
+fs.writeFileSync('src/data/cities.ts', data);
+console.log('cities.ts updated successfully with local SEO data');

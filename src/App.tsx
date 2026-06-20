@@ -46,6 +46,9 @@ import KitchenCabinetCost from './pages/KitchenCabinetCost';
 import AreasWeServe from './pages/AreasWeServe';
 import CityCostPage from './pages/CityCostPage';
 import CityServicePage from './pages/CityServicePage';
+import CabinetCityPage from './pages/CabinetCityPage';
+import CabinetPseoPage from './pages/CabinetPseoPage';
+import { cabinetPseoPages } from './data/cabinetPseoData';
 
 export default function App() {
   return (
@@ -99,6 +102,10 @@ export default function App() {
             {/* Local / City */}
             <Route path="/areas-we-serve" element={<AreasWeServe />} />
             <Route path="/quartz-countertop-cost/:city" element={<CityCostPage />} />
+            {cabinetPseoPages.map(page => (
+              <Route key={page.slug} path={`/${page.slug}`} element={<CabinetPseoPage />} />
+            ))}
+            <Route path="/kitchen-cabinets/:city" element={<CabinetCityPage />} />
             <Route path="/:city" element={<CityServicePage />} />
           </Routes>
         </Layout>
