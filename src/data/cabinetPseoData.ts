@@ -61,7 +61,7 @@ export const cabinetPseoPages: CabinetPseoData[] = [
         a: 'The biggest cost factors are kitchen size, cabinet material, number of drawers, pantry cabinets, finished panels, crown moulding, accessories, installation, and countertop selection.'
       }
     ],
-    image: '/assets/white_shaker_new.jpg'
+    image: '/images/white_shaker_kitchen_hero.png'
   },
   {
     slug: 'slim-shaker-kitchen-cabinets-toronto',
@@ -94,7 +94,7 @@ export const cabinetPseoPages: CabinetPseoData[] = [
         a: 'They can be slightly more expensive than standard shaker styles depending on the manufacturer and the finish quality, as the narrow frame requires precise manufacturing.'
       }
     ],
-    image: '/assets/slim_shaker_white_new.jpg'
+    image: '/images/slim_shaker_kitchen_hero.jpg'
   },
   {
     slug: 'modern-kitchen-cabinets-toronto',
@@ -127,7 +127,7 @@ export const cabinetPseoPages: CabinetPseoData[] = [
         a: 'Absolutely. A very popular modern look in Toronto is pairing textured wood-grain base cabinets with solid white or matte black upper cabinets.'
       }
     ],
-    image: '/assets/pure_white_style.png'
+    image: '/images/modern_kitchen_hero.jpg'
   },
   {
     slug: 'plywood-kitchen-cabinets-toronto',
@@ -159,7 +159,7 @@ export const cabinetPseoPages: CabinetPseoData[] = [
         a: 'Not necessarily. High-quality furniture-grade particle board is engineered to easily support the weight of quartz countertops. Plywood is an optional upgrade for added peace of mind.'
       }
     ],
-    image: '/assets/natural_wood_slab.png'
+    image: '/images/plywood_kitchen_hero.png'
   },
   {
     slug: 'rta-kitchen-cabinets-toronto',
@@ -191,7 +191,7 @@ export const cabinetPseoPages: CabinetPseoData[] = [
         a: 'Most standard RTA cabinets take 10-20 minutes to assemble once you get the hang of it, using simple tools like a screwdriver and wood glue.'
       }
     ],
-    image: '/assets/rta_delivery.png'
+    image: '/images/rta_kitchen_hero.jpg'
   },
   {
     slug: '10x10-kitchen-cabinets-toronto',
@@ -255,7 +255,7 @@ export const cabinetPseoPages: CabinetPseoData[] = [
         a: 'Once cabinets are installed, we template the quartz. Fabrication takes about 5-7 days, meaning your fully functional kitchen is ready much faster than coordinating separate contractors.'
       }
     ],
-    image: '/assets/custom_kitchen_caesarstone.jpg'
+    image: '/images/kitchen_and_quartz_hero.jpg'
   },
   {
     slug: 'affordable-kitchen-cabinets-toronto',
@@ -287,6 +287,6 @@ export const cabinetPseoPages: CabinetPseoData[] = [
         a: 'We specialize in full cabinet box replacement, which is often more cost-effective and structurally sound than attempting to reface or replace doors on old, worn-out frames.'
       }
     ],
-    image: '/assets/suburban_remodel.png'
+    image: '/images/affordable_kitchen_hero.jpg'
   }
 ];

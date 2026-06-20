@@ -129,7 +129,7 @@ export default function CityCostPage() {
                 className="aspect-[4/3] rounded-[3rem] overflow-hidden shadow-2xl relative group"
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1628594716762-59552eeef921?auto=format&fit=crop&q=80&w=1200" 
+                  src="/images/quartz_cost_hero.jpg" 
                   alt={`Modern quartz countertops in ${city}`}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -287,9 +287,9 @@ export default function CityCostPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
-              { type: 'Townhome Kitchen', size: '32 sq ft', price: '$1,500 – $3,500', img: 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&q=80&w=600' },
-              { type: 'Family Kitchen', size: '48 sq ft', price: '$2,500 – $5,500', img: 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&q=80&w=600' },
-              { type: 'Custom Luxury Kitchen', size: '65 sq ft', price: '$5,000 – $9,000+', img: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?auto=format&fit=crop&q=80&w=600' },
+              { type: 'Townhome Kitchen', size: '32 sq ft', price: '$1,500 – $3,500', img: '/images/townhome_kitchen_project.jpg' },
+              { type: 'Family Kitchen', size: '48 sq ft', price: '$2,500 – $5,500', img: '/images/family_kitchen_project.png' },
+              { type: 'Custom Luxury Kitchen', size: '65 sq ft', price: '$5,000 – $9,000+', img: '/images/custom_luxury_kitchen_project.jpg' },
             ].map((p, i) => (
               <motion.div 
                 key={i}
@@ -360,10 +360,10 @@ export default function CityCostPage() {
            
            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {[
-                { name: 'Quartz', img: 'https://images.unsplash.com/photo-1628594716762-59552eeef921?auto=format&fit=crop&q=80&w=400', desc: 'Low maintenance, stain resistant, and very durable.' },
-                { name: 'Granite', img: 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&q=80&w=400', desc: 'Natural stone with unique patterns. Requires sealing.' },
-                { name: 'Marble', img: 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&q=80&w=400', desc: 'Elegant look but more maintenance and prone to stains.' },
-                { name: 'Laminate', img: 'https://images.unsplash.com/photo-1556186675-9005bc18b10f?auto=format&fit=crop&q=80&w=400', desc: 'Budget-friendly but less durable and heat resistant.' },
+                { name: 'Quartz', img: '/images/quartz_slab.png', desc: 'Low maintenance, stain resistant, and very durable.' },
+                { name: 'Granite', img: '/images/granite_slab.png', desc: 'Natural stone with unique patterns. Requires sealing.' },
+                { name: 'Marble', img: '/images/marble_slab.png', desc: 'Elegant look but more maintenance and prone to stains.' },
+                { name: 'Laminate', img: '/images/laminate_slab.png', desc: 'Budget-friendly but less durable and heat resistant.' },
               ].map((m, i) => (
                 <div key={i} className="bg-white rounded-[2.5rem] overflow-hidden border border-border-custom shadow-sm flex flex-col h-full">
                   <div className="aspect-[3/2] overflow-hidden">

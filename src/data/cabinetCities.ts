@@ -23,7 +23,7 @@ export interface CabinetCityData {
     title: string;
   },
     images: {
-      hero: "/assets/essential_two_tone_kitchen.png",
+      hero: "/images/cabinet_cities_hero_common.jpg",
       testimonial1: "/images/typical-kitchen.jpg",
       testimonial2: "/images/modern-island-dark.jpg"
     };
@@ -61,7 +61,7 @@ export const cabinetCities: Record<string, CabinetCityData> = {
       neighborhood: "Etobicoke"
     },
     images: {
-      hero: "/assets/essential_two_tone_kitchen.png",
+      hero: "/images/kitchen_cabinets_toronto_hero.jpg",
       testimonial1: "/images/typical-kitchen.jpg",
       testimonial2: "/images/modern-island-dark.jpg"
     }
@@ -91,7 +91,7 @@ export const cabinetCities: Record<string, CabinetCityData> = {
       neighborhood: "Unionville"
     },
     images: {
-      hero: "/assets/essential_two_tone_kitchen.png",
+      hero: "/images/cabinet_cities_hero_common.jpg",
       testimonial1: "/images/typical-kitchen.jpg",
       testimonial2: "/images/modern-island-dark.jpg"
     }
@@ -121,7 +121,7 @@ export const cabinetCities: Record<string, CabinetCityData> = {
       neighborhood: "Whitby"
     },
     images: {
-      hero: "/assets/essential_two_tone_kitchen.png",
+      hero: "/images/cabinet_cities_hero_common.jpg",
       testimonial1: "/images/typical-kitchen.jpg",
       testimonial2: "/images/modern-island-dark.jpg"
     }
@@ -151,7 +151,7 @@ export const cabinetCities: Record<string, CabinetCityData> = {
       neighborhood: "Scarborough"
     },
     images: {
-      hero: "/assets/essential_two_tone_kitchen.png",
+      hero: "/images/cabinet_cities_hero_common.jpg",
       testimonial1: "/images/typical-kitchen.jpg",
       testimonial2: "/images/modern-island-dark.jpg"
     }
@@ -181,7 +181,7 @@ export const cabinetCities: Record<string, CabinetCityData> = {
       neighborhood: "Maple"
     },
     images: {
-      hero: "/assets/essential_two_tone_kitchen.png",
+      hero: "/images/cabinet_cities_hero_common.jpg",
       testimonial1: "/images/typical-kitchen.jpg",
       testimonial2: "/images/modern-island-dark.jpg"
     }
@@ -211,7 +211,7 @@ export const cabinetCities: Record<string, CabinetCityData> = {
       neighborhood: "Port Credit"
     },
     images: {
-      hero: "/assets/essential_two_tone_kitchen.png",
+      hero: "/images/cabinet_cities_hero_common.jpg",
       testimonial1: "/images/typical-kitchen.jpg",
       testimonial2: "/images/modern-island-dark.jpg"
     }
@@ -241,7 +241,7 @@ export const cabinetCities: Record<string, CabinetCityData> = {
       neighborhood: "Richmond Hill"
     },
     images: {
-      hero: "/assets/essential_two_tone_kitchen.png",
+      hero: "/images/cabinet_cities_hero_common.jpg",
       testimonial1: "/images/typical-kitchen.jpg",
       testimonial2: "/images/modern-island-dark.jpg"
     }
@@ -271,7 +271,7 @@ export const cabinetCities: Record<string, CabinetCityData> = {
       neighborhood: "Brampton"
     },
     images: {
-      hero: "/assets/essential_two_tone_kitchen.png",
+      hero: "/images/cabinet_cities_hero_common.jpg",
       testimonial1: "/images/typical-kitchen.jpg",
       testimonial2: "/images/modern-island-dark.jpg"
     }
@@ -301,7 +301,7 @@ export const cabinetCities: Record<string, CabinetCityData> = {
       neighborhood: "Burlington"
     },
     images: {
-      hero: "/assets/essential_two_tone_kitchen.png",
+      hero: "/images/cabinet_cities_hero_common.jpg",
       testimonial1: "/images/typical-kitchen.jpg",
       testimonial2: "/images/modern-island-dark.jpg"
     }
@@ -331,7 +331,7 @@ export const cabinetCities: Record<string, CabinetCityData> = {
       neighborhood: "Burlington"
     },
     images: {
-      hero: "/assets/essential_two_tone_kitchen.png",
+      hero: "/images/cabinet_cities_hero_common.jpg",
       testimonial1: "/images/typical-kitchen.jpg",
       testimonial2: "/images/modern-island-dark.jpg"
     }

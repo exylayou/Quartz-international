@@ -374,6 +374,48 @@ export const cities: Record<string, CityData> = {
       testimonial3: "/images/modern-island-dark.jpg"
     }
   },
+  pickering: {
+    slug: 'pickering',
+    name: 'Pickering',
+    region: 'Durham Region',
+    areasServed: 'Pickering, Ajax, and Scarborough',
+    popularMaterial: 'Classic Quartz',
+    localIntro: 'Quartz International proudly serves Pickering, supplying and installing premium quartz countertops for homeowners and contractors. Enjoy precise fabrication with reliable local scheduling.',
+    showroomGuidance: 'We make the process easy for Pickering residents by bringing large samples directly to your home or directing you to our closest east-end partner showrooms.',
+    localProjectNotes: 'We maintain a dedicated schedule for Durham Region installations. Pickering projects often feature full kitchen upgrades, basement apartment renovations, and bathroom vanity additions.',
+    popularOptions: [
+      { name: 'Durable Family-Friendly Quartz', desc: 'Stain-resistant options perfect for busy Pickering households.' },
+      { name: 'Kitchen & Vanity Bundles', desc: 'Using offcuts to upgrade bathroom vanities cost-effectively.' },
+      { name: 'Classic White Shaker Pairings', desc: 'Timeless designs that increase home value.' }
+    ],
+    customFaqs: [
+      { q: 'Do you charge extra for travel to Pickering?', a: 'No. We have dedicated service routes for the Durham Region, so your templating and installation are included in your standard quote.' }
+    ],
+    testimonial1: {
+      title: "Townhouse Upgrade",
+      quote: "Beautiful quartz, installed perfectly and on time.",
+      author: "David",
+      neighborhood: "Pickering"
+    },
+    testimonial2: {
+      title: "Kitchen and Bath Bundle",
+      quote: "We used the leftover slab for our master bath. Great value.",
+      author: "Michelle",
+      neighborhood: "Pickering Village"
+    },
+    testimonial3: {
+      title: "Family Home Upgrade",
+      quote: "Stunning quartz that handles our busy family life perfectly.",
+      author: "Ryan",
+      neighborhood: "Amberlea"
+    },
+    images: {
+      hero: "/images/markham-hero.jpg",
+      testimonial1: "/images/typical-kitchen.jpg",
+      testimonial2: "/images/modern-island-dark.jpg",
+      testimonial3: "/images/modern-island-dark.jpg"
+    }
+  },
   ajax: {
     slug: 'ajax',
     name: 'Ajax',

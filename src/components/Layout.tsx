@@ -13,12 +13,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
     '/kitchen-cabinet-estimator',
     '/kitchen-renovation-estimator'
   ].includes(location.pathname);
-  const isCabinetPage = [
-    '/cabinets', 
-    '/kitchen-cabinets', 
-    '/cabinet-finishes', 
-    '/kitchen-cabinet-cost-guide'
-  ].some(path => location.pathname === path || location.pathname.startsWith(path + '/'));
+  const isCabinetPage = location.pathname.toLowerCase().includes('cabinet');
   const { openCalculator } = useCalculator();
 
   const navLinks = [
@@ -232,15 +227,17 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                       <span className="break-all">info@quartzinternational.ca</span>
                     </a>
                   </li>
-                  <li>
-                    <Link 
-                      to="/quartz-countertop-estimator"
-                      className="flex items-center gap-3 hover:text-white transition-colors text-left font-medium"
-                    >
-                      <Calculator size={16} className="text-accent shrink-0" />
-                      <span>Get Instant Estimate</span>
-                    </Link>
-                  </li>
+                  {!isCabinetPage && (
+                    <li>
+                      <Link 
+                        to="/quartz-countertop-estimator"
+                        className="flex items-center gap-3 hover:text-white transition-colors text-left font-medium"
+                      >
+                        <Calculator size={16} className="text-accent shrink-0" />
+                        <span>Get Instant Estimate</span>
+                      </Link>
+                    </li>
+                  )}
                 </ul>
               </div>
             </div>
