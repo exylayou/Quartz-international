@@ -26,13 +26,16 @@ const fadeIn = {
   transition: { duration: 0.8 }
 };
 
-const slabs = [
-  { name: 'Miami Vena', price: '$85–$105', img: 'https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&q=80&w=600', desc: 'Elegant white surface with subtle grey veining.' },
-  { name: 'Silestone Pietra', price: '$90–$115', img: 'https://images.unsplash.com/photo-1527352723440-27ef86909772?auto=format&fit=crop&q=80&w=600', desc: 'Sophisticated dark grey with natural stone textures.' },
-  { name: 'Silestone Yukon', price: '$80–$100', img: 'https://images.unsplash.com/photo-1556909172-fd60538a7956?auto=format&fit=crop&q=80&w=600', desc: 'A timeless creamy off-white with delicate graining.' },
-  { name: 'Miami White', price: '$75–$95', img: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&q=80&w=600', desc: 'A clean, pure white for a bright and modern aesthetic.' },
-  { name: 'Halcyon', price: '$95–$120', img: 'https://images.unsplash.com/photo-1565183928294-7065123ee2e4?auto=format&fit=crop&q=80&w=600', desc: 'Soft grey tones with elegant marble-like patterns.' },
-];
+import { materials } from '../data/materials';
+
+const slabs = materials
+  .filter(m => m.brand === 'Silestone')
+  .map(m => ({
+    name: m.name,
+    price: m.priceRange,
+    img: m.img,
+    desc: m.description,
+  }));
 
 const kitchens = [
   { title: 'Luxury Condo', price: '$5,200 – $7,500', img: 'https://images.unsplash.com/photo-1556186675-9005bc18b10f?auto=format&fit=crop&q=80&w=600' },

@@ -28,16 +28,17 @@ const fadeIn = {
   transition: { duration: 0.8 }
 };
 
-const slabs = [
-  { id: 'caesarstone-5112', name: '5112 Aterra Blanca', price: '$90–$115', img: '/images/slabs/aterra-blanca.jpg', desc: 'Misty white base detailed with delicate, translucent warm-grey veining.' },
-  { id: 'caesarstone-4044', name: '4044 Airy Concrete', price: '$85–$105', img: '/images/slabs/airy-concrete.jpg', desc: 'A soft grey base textured with dark and white spots.' },
-  { id: 'caesarstone-5810', name: '5810 Black Tempal', price: '$95–$115', img: '/images/slabs/black-tempal.jpg', desc: 'A dramatic charcoal black base with soft clouds.' },
-  { id: 'caesarstone-5131', name: '5131 Calacatta Nuvo', price: '$124–$170', img: calacattaNuvo, desc: 'Cascading thick grey veins flowing across a warm white base.' },
-  { id: 'caesarstone-5111', name: '5111 Statuario Nuvo', price: '$96–$125', img: '/images/slabs/statuario-nuvo.jpg', desc: 'Delicate, soft grey veining flowing on a pristine white base.' },
-  { id: 'caesarstone-5141', name: '5141 Frosty Carrina', price: '$96–$125', img: '/images/slabs/frosty-carrina.jpg', desc: 'Ivory white base with powdery soft grey veining.' },
-  { id: 'caesarstone-5031', name: '5031 Statuario Maximus', price: '$124–$170', img: '/images/slabs/statuario-maximus.jpg', desc: 'A grand-scale marble design with prominent broad warm grey veins sweeping across a soft white background.' },
-  { id: 'caesarstone-5152', name: '5152 Empira White', price: '$124–$170', img: '/images/slabs/empira-white.jpg', desc: 'A classical white base quartz highlighted by thin, delicate dark grey veins that web across the slab.' },
-];
+import { materials } from '../data/materials';
+
+const slabs = materials
+  .filter(m => m.brand === 'Caesarstone')
+  .map(m => ({
+    id: m.id,
+    name: m.name,
+    price: m.priceRange,
+    img: m.name.includes('5131') ? calacattaNuvo : m.img,
+    desc: m.description,
+  }));
 
 const kitchens = [
   { title: 'Modern Condo', price: '$3,400 – $4,800', img: clientCondoKitchen },

@@ -28,14 +28,16 @@ const fadeIn = {
   transition: { duration: 0.8 }
 };
 
-const slabs = [
-  { name: 'K8802', price: '$49–$56', img: '/images/slabs/k8802.jpg', desc: 'Beautiful white-based quartz with refined grey veining.' },
-  { name: 'K8803', price: '$48–$55', img: '/images/slabs/k8803.jpg', desc: 'Graceful grey veining on a timeless, clean white background.' },
-  { name: 'K8813', price: '$49–$56', img: '/images/slabs/k8813.jpg', desc: 'Bright, crisp Calacatta White for a clean modern aesthetic.' },
-  { name: 'K8825', price: '$50–$58', img: '/images/slabs/k8825.jpg', desc: 'Polished quartz showing bold architectural grey pattern movement.' },
-  { name: 'K8837', price: '$50–$59', img: '/images/slabs/k8837.jpg', desc: 'Delicate off-white quartz displaying soft, subtle veining.' },
-  { name: 'K9916', price: '$50–$58', img: '/images/slabs/k9916.jpg', desc: 'Intricate and dramatic Calacatta polished slab centerpiece.' },
-];
+import { materials } from '../data/materials';
+
+const slabs = materials
+  .filter(m => m.brand === 'Kasa Quartz')
+  .map(m => ({
+    name: m.name,
+    price: m.priceRange,
+    img: m.img,
+    desc: m.description,
+  }));
 
 const kitchens = [
   { title: 'Luxury Condo', price: '$5,200 – $7,500', img: clientLuxuryCondo },

@@ -28,14 +28,17 @@ const fadeIn = {
   transition: { duration: 0.8 }
 };
 
-const slabs = [
-  { id: 'tce-9001', name: 'TCE 9001 – Pure White', price: '$48–$54', img: '/images/slabs/tce-9001.webp', desc: 'Solid, minimalist pure white quartz for modern design.' },
-  { id: 'tce-4052', name: 'TCE 4052 – Natural Cream', price: '$55–$64', img: '/images/slabs/tce-4052.webp', desc: 'Warm cream background with subtle natural textures.' },
-  { id: 'tce-4040', name: 'TCE 4040 – Arctic Flow', price: '$55–$66', img: '/images/slabs/tce-4040.webp', desc: 'Delicate arctic grey flowing veins on a pristine white canvas.' },
-  { id: 'tce-4039', name: 'TCE 4039 – Golden Flow', price: '$55–$66', img: '/images/slabs/tce-4039.webp', desc: 'Bold, luxurious golden veining Calacatta look centerpiece.' },
-  { id: 'tce-4032', name: 'TCE 4032 – Calacatta Flow', price: '$52–$62', img: '/images/slabs/tce-4032.webp', desc: 'Striking Calacatta-style quartz with graceful grey veining.' },
-  { id: 'tce-2012', name: 'TCE 2012 – Speckled Cream', price: '$47–$53', img: '/images/slabs/tce-2012.webp', desc: 'Warm creamy pebble-like speckled pattern.' },
-];
+import { materials } from '../data/materials';
+
+const slabs = materials
+  .filter(m => m.brand === 'TCE Stone')
+  .map(m => ({
+    id: m.id,
+    name: m.name,
+    price: m.priceRange,
+    img: m.img,
+    desc: m.description,
+  }));
 
 const kitchens = [
   { title: 'Toronto Condo', price: '$3,500 – $4,500', img: clientTceCondo },
