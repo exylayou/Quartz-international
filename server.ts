@@ -19,10 +19,21 @@ import {
   getAnalyticsEvents,
   AnalyticEvent
 } from "./src/services/dbService.js";
+import { runAutomations } from "./src/services/automationService.js";
 
 // Load environment variables
 dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
 dotenv.config();
+
+// Start Automation Service
+setInterval(() => {
+  runAutomations();
+}, 60 * 60 * 1000); // Run every hour
+
+// Run once on startup (with slight delay to let db init)
+setTimeout(() => {
+  runAutomations();
+}, 5000);
 
 // Create Nodemailer transporter safely
 let transporter: any;
@@ -407,7 +418,10 @@ app.post("/api/leads", async (req, res) => {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const { id } = req.params;
-    const updates = req.body;
+    const updates = { ...req.body };
+    if (updates.quoteStatus === 'sent') {
+      updates.quoteSentAt = new Date().toISOString();
+    }
     const updated = await updateLead(id, updates);
     if (updated) {
       if (updates.quoteStatus === 'sent' && process.env.SMTP_USER && process.env.SMTP_PASS) {

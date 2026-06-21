@@ -114,9 +114,11 @@ export interface Lead {
   quoteSubtotal?: number;
   quoteTax?: number;
   quoteTotal?: number;
+  quoteSentAt?: string;
   clientSignedAt?: string;
   clientSignatureName?: string;
   customerId?: string; // Links lead/quote to a specific customer profile
+  followupsLog?: string[]; // Array to track sent automations: e.g. ['estimate_day3', 'quote_day6']
 }
 
 const isVercel = !!process.env.VERCEL;

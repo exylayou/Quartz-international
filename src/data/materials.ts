@@ -738,30 +738,10 @@ export const materials: SlabMaterial[] = [
     features: ['Sophisticated grey', 'Robust texture', 'Contemporary design', 'Enduring quality']
   },
   {
-    id: 'lucent-calacatta-gold', name: 'Calacatta Gold', brand: 'Lucent Quartz',
-    priceRange: '$80 – $105', typicalCost: '$3,800 – $5,800', category: 'marble',
-    img: '/images/slabs/lucent-calacatta-gold.jpg', description: 'A vivid Calacatta design with rich gold and grey veins.',
-    features: ['Rich gold accents', 'Vivid Calacatta design', 'Stunning clarity', 'Premium Lucent']
-  }, {
-    id: 'lucent-calacatta-laza', name: 'Calacatta Laza', brand: 'Lucent Quartz',
-    priceRange: '$80 – $105', typicalCost: '$3,800 – $5,800', category: 'marble',
-    img: '/images/slabs/lucent-calacatta-laza.jpg', description: 'Dramatic, sweeping brown and grey veins across a soft white background.',
-    features: ['Sweeping veins', 'Dramatic motion', 'Soft white background', 'Highly popular']
-  }, {
-    id: 'lucent-statuario-white', name: 'Statuario White', brand: 'Lucent Quartz',
-    priceRange: '$75 – $95', typicalCost: '$3,500 – $5,500', category: 'marble',
-    img: '/images/slabs/lucent-statuario-white.jpg', description: 'A bright, crisp white quartz defined by fine, elegant grey veining.',
-    features: ['Crisp bright white', 'Fine elegant veining', 'Clean look', 'Stain resistant']
-  }, {
     id: 'lucent-carrara-grigio', name: 'Carrara Grigio', brand: 'Lucent Quartz',
     priceRange: '$70 – $90', typicalCost: '$3,200 – $5,200', category: 'grey',
     img: '/images/slabs/lucent-carrara-grigio.jpg', description: 'A classic Carrara blend with predominantly grey, cloudy patterns.',
     features: ['Classic cloudy Carrara', 'Grey dominant', 'Soft texture', 'Versatile design']
-  }, {
-    id: 'lucent-pure-white', name: 'Pure White', brand: 'Lucent Quartz',
-    priceRange: '$65 – $85', typicalCost: '$3,000 – $5,000', category: 'white',
-    img: '/images/slabs/lucent-pure-white.jpg', description: 'A flawless, solid white surface for ultra-modern kitchens.',
-    features: ['Flawless solid white', 'Ultra-modern', 'High consistency', 'Sleek finish']
   }, {
     id: 'lucent-noir-striato', name: 'Noir Striato', brand: 'Lucent Quartz',
     priceRange: '$85 – $110', typicalCost: '$4,000 – $6,000', category: 'dark',
@@ -773,73 +753,6 @@ export const materials: SlabMaterial[] = [
     img: '/images/slabs/lucent-sparkle-white.jpg', description: 'A lively white quartz embedded with tiny, reflective mirrored flecks.',
     features: ['Reflective flecks', 'Lively texture', 'Brightens space', 'Fun and modern']
   }, {
-    id: 'lucent-concrete-grey', name: 'Concrete Grey', brand: 'Lucent Quartz',
-    priceRange: '$75 – $95', typicalCost: '$3,500 – $5,500', category: 'grey',
-    img: '/images/slabs/lucent-concrete-grey.jpg', description: 'A solid mid-grey inspired by architectural concrete.',
-    features: ['Architectural concrete look', 'Solid mid-grey', 'Industrial neutral', 'Low maintenance']
-  }, {
-    id: 'lucent-pietra-grey', name: 'Pietra Grey', brand: 'Lucent Quartz',
-    priceRange: '$80 – $100', typicalCost: '$3,800 – $5,800', category: 'dark',
-    img: '/images/slabs/lucent-pietra-grey.jpg', description: 'A warm dark grey laced with striking white marble veins.',
-    features: ['Warm dark grey', 'Striking white veins', 'Sophisticated elegance', 'Stain resistant']
-  }, {
-    id: 'lucent-bianco-venatino', name: 'Bianco Venatino', brand: 'Lucent Quartz',
-    priceRange: '$80 – $100', typicalCost: '$3,800 – $5,800', category: 'marble',
-    img: '/images/slabs/lucent-bianco-venatino.jpg', description: 'A beautiful white quartz featuring a fine web of grey veining.',
-    features: ['Fine web veining', 'Beautiful white base', 'Classic appeal', 'Hygienic surface']
-  },
-  {
-    id: 'kasa-calacatta', name: 'Kasa Calacatta', brand: 'Kasa Quartz',
-    priceRange: '$75 – $95', typicalCost: '$3,500 – $5,500', category: 'marble',
-    img: '/images/slabs/kasa-calacatta.jpg', description: "Kasa's signature Calacatta featuring bold grey veins on a luminous white.",
-    features: ['Signature Kasa Calacatta', 'Bold grey veins', 'Luminous white', 'Great value']
-  }, {
-    id: 'kasa-statuario', name: 'Kasa Statuario', brand: 'Kasa Quartz',
-    priceRange: '$75 – $95', typicalCost: '$3,500 – $5,500', category: 'marble',
-    img: '/images/slabs/kasa-statuario.jpg', description: 'A delicate Statuario design with flowing, subtle grey patterns.',
-    features: ['Delicate flowing patterns', 'Subtle grey', 'Elegant base', 'Durable quality']
-  }, {
-    id: 'kasa-pure-white', name: 'Kasa Pure White', brand: 'Kasa Quartz',
-    priceRange: '$60 – $80', typicalCost: '$2,800 – $4,800', category: 'white',
-    img: '/images/slabs/kasa-pure-white.jpg', description: 'A budget-conscious pure white quartz for clean, minimalist spaces.',
-    features: ['Budget-conscious', 'Pure white', 'Minimalist spaces', 'Easy to clean']
-  }, {
-    id: 'kasa-carrara', name: 'Kasa Carrara', brand: 'Kasa Quartz',
-    priceRange: '$65 – $85', typicalCost: '$3,000 – $5,000', category: 'marble',
-    img: '/images/slabs/kasa-carrara.jpg', description: 'A classic Carrara marble look with soft, feathery grey veining.',
-    features: ['Feathery grey veining', 'Classic Carrara look', 'Soft aesthetic', 'High durability']
-  }, {
-    id: 'kasa-concrete', name: 'Kasa Concrete', brand: 'Kasa Quartz',
-    priceRange: '$70 – $90', typicalCost: '$3,200 – $5,200', category: 'grey',
-    img: '/images/slabs/kasa-concrete.jpg', description: 'A sleek grey quartz mimicking the urban look of poured concrete.',
-    features: ['Urban poured concrete', 'Sleek grey', 'Modern vibe', 'Non-porous']
-  }, {
-    id: 'kasa-nero', name: 'Kasa Nero', brand: 'Kasa Quartz',
-    priceRange: '$75 – $95', typicalCost: '$3,500 – $5,500', category: 'dark',
-    img: '/images/slabs/kasa-nero.jpg', description: 'A deep, dramatic black quartz for high-contrast kitchen designs.',
-    features: ['Deep dramatic black', 'High contrast', 'Bold design', 'Stain resistant']
-  }, {
-    id: 'kasa-blanco', name: 'Kasa Blanco', brand: 'Kasa Quartz',
-    priceRange: '$65 – $85', typicalCost: '$3,000 – $5,000', category: 'white',
-    img: '/images/slabs/kasa-blanco.jpg', description: 'A textured white quartz offering depth and subtle variations.',
-    features: ['Textured white', 'Subtle depth', 'Versatile tone', 'Excellent value']
-  }, {
-    id: 'kasa-gris', name: 'Kasa Gris', brand: 'Kasa Quartz',
-    priceRange: '$70 – $90', typicalCost: '$3,200 – $5,200', category: 'grey',
-    img: '/images/slabs/kasa-gris.jpg', description: 'A warm, mid-tone grey quartz that complements wood cabinetry.',
-    features: ['Warm mid-tone grey', 'Complements wood', 'Inviting neutral', 'Engineered strength']
-  }, {
-    id: 'kasa-marquina', name: 'Kasa Marquina', brand: 'Kasa Quartz',
-    priceRange: '$80 – $100', typicalCost: '$3,800 – $5,800', category: 'dark',
-    img: '/images/slabs/kasa-marquina.jpg', description: 'Inspired by Nero Marquina marble, featuring striking white veins on black.',
-    features: ['Nero Marquina inspired', 'Striking white veins', 'Black base', 'Luxury statement']
-  }, {
-    id: 'kasa-venatino', name: 'Kasa Venatino', brand: 'Kasa Quartz',
-    priceRange: '$75 – $95', typicalCost: '$3,500 – $5,500', category: 'marble',
-    img: '/images/slabs/kasa-venatino.jpg', description: 'A refined white quartz with an elegant, sprawling grey network.',
-    features: ['Sprawling grey network', 'Refined white base', 'Elegant look', 'Hygienic']
-  },
-  {
     id: 'sio4-calacatta', name: 'Sio4 Calacatta', brand: 'Sio4',
     priceRange: '$75 – $100', typicalCost: '$3,500 – $6,000', category: 'marble',
     img: '/images/slabs/sio4-calacatta.jpg', description: 'A striking Sio4 Calacatta with bold, sweeping grey veins.',
@@ -917,5 +830,106 @@ export const materials: SlabMaterial[] = [
     img: '/images/slabs/lusso.jpg', description: 'A warm, creamy background intertwined with golden and pale grey veins.',
     features: ['Creamy warm base', 'Golden and grey veins', 'HybriQ+ Technology', 'Inviting luxury']
   }
-
+  , {
+    id: 'kasa-ksl8602', name: 'KSL8602 - Silver Mist', brand: 'Kasa Quartz',
+    priceRange: '$75 – $95', typicalCost: '$3,500 – $5,500', category: 'grey',
+    img: '/images/slabs/kasa-ksl8602.jpg', description: 'A delicate silver and grey mist pattern over a clean white background.',
+    features: ['Silver Mist', 'Delicate pattern', 'Clean white', 'Great value']
+  }, {
+    id: 'kasa-ksl8601', name: 'KSL8601 - Obsidian Wave', brand: 'Kasa Quartz',
+    priceRange: '$75 – $95', typicalCost: '$3,500 – $5,500', category: 'dark',
+    img: '/images/slabs/kasa-ksl8601.jpg', description: 'A dramatic dark slab featuring flowing waves of black and obsidian.',
+    features: ['Obsidian Wave', 'Dramatic dark', 'Flowing pattern', 'Striking']
+  }, {
+    id: 'kasa-ksl6011', name: 'KSL6011 - Alabaster Vein', brand: 'Kasa Quartz',
+    priceRange: '$75 – $95', typicalCost: '$3,500 – $5,500', category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg', description: 'Soft alabaster background with delicate veining for a timeless look.',
+    features: ['Alabaster Vein', 'Soft background', 'Timeless', 'Elegant']
+  }, {
+    id: 'kasa-ksl6010', name: 'KSL6010 - Glacier Gold', brand: 'Kasa Quartz',
+    priceRange: '$75 – $95', typicalCost: '$3,500 – $5,500', category: 'marble',
+    img: '/images/slabs/kasa-ksl6010.jpg', description: 'A pristine glacier white infused with sweeping gold veins.',
+    features: ['Glacier Gold', 'Sweeping veins', 'Premium look', 'Warm accents']
+  }, {
+    id: 'kasa-ksv5101', name: 'KSV5101 - Lightning Gold', brand: 'Kasa Quartz',
+    priceRange: '$75 – $95', typicalCost: '$3,500 – $5,500', category: 'marble',
+    img: '/images/slabs/kasa-ksv5101.jpg', description: 'Striking lightning-like gold veins over a bright white base.',
+    features: ['Lightning Gold', 'Striking veins', 'Bright white base', 'Luxury statement']
+  }, {
+    id: 'kasa-ksv1105', name: 'KSV1105 - Calacatta Silk', brand: 'Kasa Quartz',
+    priceRange: '$75 – $95', typicalCost: '$3,500 – $5,500', category: 'marble',
+    img: '/images/slabs/kasa-ksv1105.jpg', description: 'A silky smooth Calacatta style featuring soft grey veining.',
+    features: ['Calacatta Silk', 'Smooth look', 'Soft grey veins', 'Italian style']
+  }, {
+    id: 'kasa-ksv1102', name: 'KSV1102 - Calacatta Misty Gold', brand: 'Kasa Quartz',
+    priceRange: '$75 – $95', typicalCost: '$3,500 – $5,500', category: 'marble',
+    img: '/images/slabs/kasa-ksv1102.jpg', description: 'Calacatta marble look with misty grey and subtle gold highlights.',
+    features: ['Calacatta Misty Gold', 'Misty grey', 'Gold highlights', 'Elegant detail']
+  }, {
+    id: 'kasa-ksv1101', name: 'KSV1101 - Calacatta Misty Grey', brand: 'Kasa Quartz',
+    priceRange: '$75 – $95', typicalCost: '$3,500 – $5,500', category: 'marble',
+    img: '/images/slabs/kasa-ksv1101.jpg', description: 'A cooler-toned Calacatta featuring misty grey veins and shading.',
+    features: ['Calacatta Misty Grey', 'Cooler tones', 'Grey veins', 'Modern classic']
+  }, {
+    id: 'kasa-ky066', name: 'KY066 - Taj Mahal Pre', brand: 'Kasa Quartz',
+    priceRange: '$60 – $80', typicalCost: '$2,800 – $4,800', category: 'warm',
+    img: '/images/slabs/kasa-ky066.jpg', description: 'Inspired by the famous Taj Mahal quartzite, featuring warm creamy beige tones.',
+    features: ['Taj Mahal Pre', 'Heat transfer tech', 'Creamy beige tones', 'Warm luxury']
+  }, {
+    id: 'kasa-ky063', name: 'KY063 - Bernini Oro', brand: 'Kasa Quartz',
+    priceRange: '$60 – $80', typicalCost: '$2,800 – $4,800', category: 'marble',
+    img: '/images/slabs/kasa-ky063.jpg', description: 'Heat transfer printed quartz capturing the rich gold of classic Bernini marble.',
+    features: ['Bernini Oro', 'Rich gold', 'Classic marble look', 'Durable']
+  }
+  , {
+    id: 'lucent-lq7701', name: 'LQ7701 Black Belvedere', brand: 'Lucent Quartz',
+    priceRange: '$80 – $105', typicalCost: '$4,000 – $6,000', category: 'dark',
+    img: '/images/slabs/lucent-lq7701.jpg', description: 'Deep dramatic black featuring pronounced striking white veins reminiscent of natural belvedere.',
+    features: ['Black Belvedere', 'Striking veins', 'Premium dark', 'Luxury finish']
+  }, {
+    id: 'lucent-lq7306', name: 'LQ7306 Precious Crystals', brand: 'Lucent Quartz',
+    priceRange: '$80 – $105', typicalCost: '$4,000 – $6,000', category: 'white',
+    img: '/images/slabs/lucent-lq7306.jpg', description: 'Lustrous crystalline white scattered with fine detailing for an elegant sparkle.',
+    features: ['Precious Crystals', 'Lustrous white', 'Fine detailing', 'Elegant finish']
+  }, {
+    id: 'lucent-lq6838', name: 'LQ6838 Black Canyon', brand: 'Lucent Quartz',
+    priceRange: '$80 – $105', typicalCost: '$4,000 – $6,000', category: 'dark',
+    img: '/images/slabs/lucent-lq6838.jpg', description: 'A bold canyon-inspired dark slab with intense contrasting textures.',
+    features: ['Black Canyon', 'Bold texture', 'Contrasting design', 'Statement piece']
+  }, {
+    id: 'lucent-lq4000', name: 'LQ4000 Pure Black', brand: 'Lucent Quartz',
+    priceRange: '$75 – $95', typicalCost: '$3,800 – $5,500', category: 'dark',
+    img: '/images/slabs/lucent-lq4000.jpg', description: 'An absolute, unblemished pure black quartz perfect for modern contrast.',
+    features: ['Pure Black', 'Solid color', 'Modern style', 'High contrast']
+  }, {
+    id: 'lucent-lq4007', name: 'LQ4007 Infinity White', brand: 'Lucent Quartz',
+    priceRange: '$75 – $95', typicalCost: '$3,800 – $5,500', category: 'white',
+    img: '/images/slabs/lucent-lq4007.jpg', description: 'Endless pure white base with striking, sweeping black infinity lines.',
+    features: ['Infinity White', 'Striking black veins', 'Endless pure white base']
+  }, {
+    id: 'lucent-lq4004', name: 'LQ4004 Obsidian Gold', brand: 'Lucent Quartz',
+    priceRange: '$80 – $105', typicalCost: '$4,000 – $6,000', category: 'dark',
+    img: '/images/slabs/lucent-lq4004.jpg', description: 'Rich obsidian base highlighted by spectacular threads of gold.',
+    features: ['Obsidian Gold', 'Rich base', 'Gold threads', 'Spectacular design']
+  }, {
+    id: 'lucent-jade-onyx', name: 'Jade Onyx', brand: 'Lucent Quartz',
+    priceRange: '$90 – $120', typicalCost: '$4,500 – $7,000', category: 'exotic',
+    img: '/images/slabs/lucent-jade-onyx.jpg', description: 'Stunning exotic quartz mimicking natural jade onyx with green and earth tones.',
+    features: ['Jade Onyx', 'Exotic look', 'Green tones', 'Natural aesthetic']
+  }, {
+    id: 'lucent-infinity-blue', name: 'Infinity Blue', brand: 'Lucent Quartz',
+    priceRange: '$85 – $110', typicalCost: '$4,200 – $6,500', category: 'exotic',
+    img: '/images/slabs/lucent-infinity-blue.jpg', description: 'Beautifully sweeping blue and grey patterns evoking infinite oceanic movement.',
+    features: ['Infinity Blue', 'Oceanic movement', 'Sweeping patterns', 'Unique style']
+  }, {
+    id: 'lucent-crystal-noir', name: 'Crystal Noir', brand: 'Lucent Quartz',
+    priceRange: '$80 – $105', typicalCost: '$4,000 – $6,000', category: 'dark',
+    img: '/images/slabs/lucent-crystal-noir.jpg', description: 'A dramatic dark canvas illuminated by crystalline white fragments.',
+    features: ['Crystal Noir', 'Dramatic dark', 'Crystalline fragments', 'Bold visual']
+  }, {
+    id: 'lucent-calacatta-vaticano-viola', name: 'Calacatta Vaticano Viola', brand: 'Lucent Quartz',
+    priceRange: '$90 – $120', typicalCost: '$4,500 – $7,000', category: 'marble',
+    img: '/images/slabs/lucent-calacatta-vaticano-viola.jpg', description: 'A luxurious Calacatta featuring stunning violet and burgundy veining.',
+    features: ['Calacatta Vaticano Viola', 'Violet veining', 'Luxurious marble look', 'Burgundy accents']
+  }
 ];
