@@ -772,6 +772,19 @@ export default function Admin() {
     const textToSend = messageInput.trim();
     setMessageInput('');
 
+    if (messageChannel === 'whatsapp') {
+      const activeCustomer = customers.find(c => c.id === selectedCustomerId);
+      if (activeCustomer && activeCustomer.phone) {
+        let cleanPhone = activeCustomer.phone.replace(/\D/g, '');
+        if (cleanPhone.length === 10) cleanPhone = '1' + cleanPhone;
+        const encodedText = encodeURIComponent(textToSend);
+        window.open(`https://wa.me/${cleanPhone}?text=${encodedText}`, '_blank');
+      } else {
+        alert("This customer doesn't have a phone number on file for WhatsApp.");
+        return; // Don't proceed if there's no phone number
+      }
+    }
+
     // Optimistic outbound UI push
     const tempMsgId = 'temp-' + Math.random().toString(36).substr(2, 9);
     const newMsgObj = {
