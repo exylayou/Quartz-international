@@ -592,39 +592,6 @@ export const materials: SlabMaterial[] = [
     features: ['Limestone texture look', 'Subtle grey veining', 'HybriQ+ Technology', 'Warm and inviting']
   },
   {
-    id: 'silestone-ariel',
-    name: 'Ariel',
-    brand: 'Silestone',
-    priceRange: '$85 – $105',
-    typicalCost: '$3,500 – $5,500',
-    category: 'warm',
-    img: '/images/slabs/ariel.jpg',
-    description: 'A calm off-white base with gentle, diffused warm veins running through.',
-    features: ['Calm off-white base', 'Diffused warm veins', 'HybriQ+ Technology', 'Versatile design']
-  },
-  {
-    id: 'silestone-blanco-zeus',
-    name: 'Blanco Zeus',
-    brand: 'Silestone',
-    priceRange: '$85 – $110',
-    typicalCost: '$3,500 – $5,500',
-    category: 'white',
-    img: '/images/slabs/blanco-zeus.jpg',
-    description: 'The ultimate hero white. A consistent, solid, and bright white surface.',
-    features: ['Hero solid white', 'Ultra-clean look', 'HybriQ+ Technology', 'Highly requested classic']
-  },
-  {
-    id: 'silestone-serena',
-    name: 'Serena',
-    brand: 'Silestone',
-    priceRange: '$95 – $120',
-    typicalCost: '$4,000 – $6,000',
-    category: 'grey',
-    img: '/images/slabs/serena.jpg',
-    description: 'A greenish-grey background with subtle white lines, earthy and sophisticated.',
-    features: ['Greenish-grey earth tone', 'Subtle white lines', 'HybriQ+ Technology', 'Matte suede finish option']
-  },
-  {
     id: 'silestone-ethereal-glow',
     name: 'Ethereal Glow',
     brand: 'Silestone',
@@ -685,12 +652,6 @@ export const materials: SlabMaterial[] = [
     priceRange: '$92 – $126', typicalCost: '$4,500 – $7,200', category: 'grey',
     img: '/images/slabs/georgian-bluffs.jpg', description: 'A light grey base with subtle veining and industrial textures.',
     features: ['Light grey base', 'Industrial nuance', 'Versatile neutral', 'Engineered strength']
-  }, 
-  {
-    id: 'tce-2001', name: 'TCE 2001 Pure White', brand: 'TCE Stone',
-    priceRange: '$55 – $75', typicalCost: '$2,500 – $4,500', category: 'white',
-    img: '/images/slabs/tce-2001.jpg', description: 'A crisp, budget-friendly pure white quartz for modern designs.',
-    features: ['Budget-friendly pure white', 'Clean aesthetic', 'Durable', 'Consistent finish']
   }, {
     id: 'tce-4005', name: 'TCE 4005 Calacatta', brand: 'TCE Stone',
     priceRange: '$65 – $85', typicalCost: '$3,000 – $5,000', category: 'marble',
@@ -722,20 +683,10 @@ export const materials: SlabMaterial[] = [
     img: '/images/slabs/tce-5011.jpg', description: 'A striking dark quartz with intricate veining details.',
     features: ['Striking dark tone', 'Intricate details', 'Bold statement', 'Durable surface']
   }, {
-    id: 'tce-4019', name: 'TCE 4019', brand: 'TCE Stone',
-    priceRange: '$65 – $85', typicalCost: '$3,000 – $5,000', category: 'warm',
-    img: '/images/slabs/tce-4019.jpg', description: 'A warm beige base with delicate texture, ideal for inviting spaces.',
-    features: ['Warm beige base', 'Delicate texture', 'Inviting feel', 'Cost-effective']
-  }, {
     id: 'tce-5022', name: 'TCE 5022', brand: 'TCE Stone',
     priceRange: '$75 – $95', typicalCost: '$3,500 – $5,500', category: 'marble',
     img: '/images/slabs/tce-5022.jpg', description: 'A premium TCE option featuring grand marble-like veining.',
     features: ['Grand veining', 'Premium TCE tier', 'Luxurious look', 'Great alternative']
-  }, {
-    id: 'tce-5018', name: 'TCE 5018', brand: 'TCE Stone',
-    priceRange: '$75 – $95', typicalCost: '$3,500 – $5,500', category: 'grey',
-    img: '/images/slabs/tce-5018.jpg', description: 'A sophisticated grey quartz with a robust, textured appearance.',
-    features: ['Sophisticated grey', 'Robust texture', 'Contemporary design', 'Enduring quality']
   },
   {
     id: 'lucent-carrara-grigio', name: 'Carrara Grigio', brand: 'Lucent Quartz',
@@ -753,11 +704,6 @@ export const materials: SlabMaterial[] = [
     img: '/images/slabs/lucent-sparkle-white.jpg', description: 'A lively white quartz embedded with tiny, reflective mirrored flecks.',
     features: ['Reflective flecks', 'Lively texture', 'Brightens space', 'Fun and modern']
   }, {
-    id: 'sio4-calacatta', name: 'Sio4 Calacatta', brand: 'Sio4',
-    priceRange: '$139 – $201', typicalCost: '$3,500 – $6,000', category: 'marble',
-    img: '/images/slabs/sio4-calacatta.jpg', description: 'A striking Sio4 Calacatta with bold, sweeping grey veins.',
-    features: ['Bold sweeping veins', 'Striking Calacatta', 'Premium Sio4', 'Stain resistant']
-  }, {
     id: 'sio4-statuario', name: 'Sio4 Statuario', brand: 'Sio4',
     priceRange: '$139 – $201', typicalCost: '$3,500 – $6,000', category: 'marble',
     img: '/images/slabs/sio4-statuario.jpg', description: 'A clean, bright white base featuring subtle, elegant Statuario veins.',
@@ -767,11 +713,6 @@ export const materials: SlabMaterial[] = [
     priceRange: '$51 – $59', typicalCost: '$3,200 – $5,200', category: 'marble',
     img: '/images/slabs/sio4-carrara.jpg', description: 'A classic Sio4 Carrara design with soft, feathered grey patterns.',
     features: ['Classic Carrara design', 'Soft feathered patterns', 'Versatile appeal', 'Excellent value']
-  }, {
-    id: 'sio4-pure-white', name: 'Sio4 Pure White', brand: 'Sio4',
-    priceRange: '$92 – $126', typicalCost: '$3,000 – $5,000', category: 'white',
-    img: '/images/slabs/sio4-pure-white.jpg', description: 'A flawless, solid white quartz perfect for modern and minimalist spaces.',
-    features: ['Flawless solid white', 'Minimalist spaces', 'Clean look', 'Hygienic']
   }, {
     id: 'sio4-concrete', name: 'Sio4 Concrete', brand: 'Sio4',
     priceRange: '$92 – $126', typicalCost: '$3,500 – $5,500', category: 'grey',
@@ -804,21 +745,11 @@ export const materials: SlabMaterial[] = [
     features: ['Intricate sprawling veins', 'Stunning white base', 'Premium Sio4 tier', 'Highly durable']
   }
 
-  ,{
-    id: 'silestone-camden', name: 'Camden', brand: 'Silestone',
-    priceRange: '$85 – $110', typicalCost: '$3,500 – $5,500', category: 'grey',
-    img: '/images/slabs/camden.jpg', description: 'A soft, delicate cement grey inspired by the lofts of London, featuring a subtle white vein.',
-    features: ['Loft series cement look', 'Soft delicate grey', 'HybriQ+ Technology', 'Urban industrial']
-  }, {
+  , {
     id: 'silestone-white-arabesque', name: 'White Arabesque', brand: 'Silestone',
     priceRange: '$85 – $114', typicalCost: '$4,500 – $7,000', category: 'marble',
     img: '/images/slabs/white-arabesque.jpg', description: 'A bright white background heavily threaded with contrasting dark grey veins.',
     features: ['Heavy grey threading', 'Bright white background', 'HybriQ+ Technology', 'Striking contrast']
-  }, {
-    id: 'silestone-kensho', name: 'Kensho', brand: 'Silestone',
-    priceRange: '$90 – $115', typicalCost: '$4,000 – $6,000', category: 'grey',
-    img: '/images/slabs/kensho.jpg', description: 'A serene mid-grey with subtle texture and soft white details.',
-    features: ['Serene mid-grey', 'Subtle texture', 'HybriQ+ Technology', 'Timeless neutral']
   }, {
     id: 'silestone-lagoon', name: 'Lagoon', brand: 'Silestone',
     priceRange: '$73 – $96', typicalCost: '$4,000 – $6,500', category: 'marble',
@@ -831,35 +762,15 @@ export const materials: SlabMaterial[] = [
     features: ['Creamy warm base', 'Golden and grey veins', 'HybriQ+ Technology', 'Inviting luxury']
   }
   , {
-    id: 'kasa-ksl8602', name: 'KSL8602 - Silver Mist', brand: 'Kasa Quartz',
-    priceRange: '$75 – $95', typicalCost: '$3,500 – $5,500', category: 'grey',
-    img: '/images/slabs/kasa-ksl8602.jpg', description: 'A delicate silver and grey mist pattern over a clean white background.',
-    features: ['Silver Mist', 'Delicate pattern', 'Clean white', 'Great value']
-  }, {
-    id: 'kasa-ksl8601', name: 'KSL8601 - Obsidian Wave', brand: 'Kasa Quartz',
-    priceRange: '$75 – $95', typicalCost: '$3,500 – $5,500', category: 'dark',
-    img: '/images/slabs/kasa-ksl8601.jpg', description: 'A dramatic dark slab featuring flowing waves of black and obsidian.',
-    features: ['Obsidian Wave', 'Dramatic dark', 'Flowing pattern', 'Striking']
-  }, {
     id: 'kasa-ksl6011', name: 'KSL6011 - Alabaster Vein', brand: 'Kasa Quartz',
     priceRange: '$57 – $70', typicalCost: '$3,500 – $5,500', category: 'white',
     img: '/images/slabs/kasa-ksl6011.jpg', description: 'Soft alabaster background with delicate veining for a timeless look.',
     features: ['Alabaster Vein', 'Soft background', 'Timeless', 'Elegant']
   }, {
-    id: 'kasa-ksl6010', name: 'KSL6010 - Glacier Gold', brand: 'Kasa Quartz',
-    priceRange: '$36 – $36', typicalCost: '$3,500 – $5,500', category: 'marble',
-    img: '/images/slabs/kasa-ksl6010.jpg', description: 'A pristine glacier white infused with sweeping gold veins.',
-    features: ['Glacier Gold', 'Sweeping veins', 'Premium look', 'Warm accents']
-  }, {
     id: 'kasa-ksv5101', name: 'KSV5101 - Lightning Gold', brand: 'Kasa Quartz',
     priceRange: '$52 – $62', typicalCost: '$3,500 – $5,500', category: 'marble',
     img: '/images/slabs/kasa-ksv5101.jpg', description: 'Striking lightning-like gold veins over a bright white base.',
     features: ['Lightning Gold', 'Striking veins', 'Bright white base', 'Luxury statement']
-  }, {
-    id: 'kasa-ksv1105', name: 'KSV1105 - Calacatta Silk', brand: 'Kasa Quartz',
-    priceRange: '$75 – $95', typicalCost: '$3,500 – $5,500', category: 'marble',
-    img: '/images/slabs/kasa-ksv1105.jpg', description: 'A silky smooth Calacatta style featuring soft grey veining.',
-    features: ['Calacatta Silk', 'Smooth look', 'Soft grey veins', 'Italian style']
   }, {
     id: 'kasa-ksv1102', name: 'KSV1102 - Calacatta Misty Gold', brand: 'Kasa Quartz',
     priceRange: '$53 – $63', typicalCost: '$3,500 – $5,500', category: 'marble',
@@ -875,61 +786,5 @@ export const materials: SlabMaterial[] = [
     priceRange: '$52 – $62', typicalCost: '$2,800 – $4,800', category: 'warm',
     img: '/images/slabs/kasa-ky066.jpg', description: 'Inspired by the famous Taj Mahal quartzite, featuring warm creamy beige tones.',
     features: ['Taj Mahal Pre', 'Heat transfer tech', 'Creamy beige tones', 'Warm luxury']
-  }, {
-    id: 'kasa-ky063', name: 'KY063 - Bernini Oro', brand: 'Kasa Quartz',
-    priceRange: '$60 – $80', typicalCost: '$2,800 – $4,800', category: 'marble',
-    img: '/images/slabs/kasa-ky063.jpg', description: 'Heat transfer printed quartz capturing the rich gold of classic Bernini marble.',
-    features: ['Bernini Oro', 'Rich gold', 'Classic marble look', 'Durable']
-  }
-  , {
-    id: 'lucent-lq7701', name: 'LQ7701 Black Belvedere', brand: 'Lucent Quartz',
-    priceRange: '$80 – $105', typicalCost: '$4,000 – $6,000', category: 'dark',
-    img: '/images/slabs/lucent-lq7701.jpg', description: 'Deep dramatic black featuring pronounced striking white veins reminiscent of natural belvedere.',
-    features: ['Black Belvedere', 'Striking veins', 'Premium dark', 'Luxury finish']
-  }, {
-    id: 'lucent-lq7306', name: 'LQ7306 Precious Crystals', brand: 'Lucent Quartz',
-    priceRange: '$80 – $105', typicalCost: '$4,000 – $6,000', category: 'white',
-    img: '/images/slabs/lucent-lq7306.jpg', description: 'Lustrous crystalline white scattered with fine detailing for an elegant sparkle.',
-    features: ['Precious Crystals', 'Lustrous white', 'Fine detailing', 'Elegant finish']
-  }, {
-    id: 'lucent-lq6838', name: 'LQ6838 Black Canyon', brand: 'Lucent Quartz',
-    priceRange: '$80 – $105', typicalCost: '$4,000 – $6,000', category: 'dark',
-    img: '/images/slabs/lucent-lq6838.jpg', description: 'A bold canyon-inspired dark slab with intense contrasting textures.',
-    features: ['Black Canyon', 'Bold texture', 'Contrasting design', 'Statement piece']
-  }, {
-    id: 'lucent-lq4000', name: 'LQ4000 Pure Black', brand: 'Lucent Quartz',
-    priceRange: '$75 – $95', typicalCost: '$3,800 – $5,500', category: 'dark',
-    img: '/images/slabs/lucent-lq4000.jpg', description: 'An absolute, unblemished pure black quartz perfect for modern contrast.',
-    features: ['Pure Black', 'Solid color', 'Modern style', 'High contrast']
-  }, {
-    id: 'lucent-lq4007', name: 'LQ4007 Infinity White', brand: 'Lucent Quartz',
-    priceRange: '$75 – $95', typicalCost: '$3,800 – $5,500', category: 'white',
-    img: '/images/slabs/lucent-lq4007.jpg', description: 'Endless pure white base with striking, sweeping black infinity lines.',
-    features: ['Infinity White', 'Striking black veins', 'Endless pure white base']
-  }, {
-    id: 'lucent-lq4004', name: 'LQ4004 Obsidian Gold', brand: 'Lucent Quartz',
-    priceRange: '$80 – $105', typicalCost: '$4,000 – $6,000', category: 'dark',
-    img: '/images/slabs/lucent-lq4004.jpg', description: 'Rich obsidian base highlighted by spectacular threads of gold.',
-    features: ['Obsidian Gold', 'Rich base', 'Gold threads', 'Spectacular design']
-  }, {
-    id: 'lucent-jade-onyx', name: 'Jade Onyx', brand: 'Lucent Quartz',
-    priceRange: '$90 – $120', typicalCost: '$4,500 – $7,000', category: 'exotic',
-    img: '/images/slabs/lucent-jade-onyx.jpg', description: 'Stunning exotic quartz mimicking natural jade onyx with green and earth tones.',
-    features: ['Jade Onyx', 'Exotic look', 'Green tones', 'Natural aesthetic']
-  }, {
-    id: 'lucent-infinity-blue', name: 'Infinity Blue', brand: 'Lucent Quartz',
-    priceRange: '$85 – $110', typicalCost: '$4,200 – $6,500', category: 'exotic',
-    img: '/images/slabs/lucent-infinity-blue.jpg', description: 'Beautifully sweeping blue and grey patterns evoking infinite oceanic movement.',
-    features: ['Infinity Blue', 'Oceanic movement', 'Sweeping patterns', 'Unique style']
-  }, {
-    id: 'lucent-crystal-noir', name: 'Crystal Noir', brand: 'Lucent Quartz',
-    priceRange: '$80 – $105', typicalCost: '$4,000 – $6,000', category: 'dark',
-    img: '/images/slabs/lucent-crystal-noir.jpg', description: 'A dramatic dark canvas illuminated by crystalline white fragments.',
-    features: ['Crystal Noir', 'Dramatic dark', 'Crystalline fragments', 'Bold visual']
-  }, {
-    id: 'lucent-calacatta-vaticano-viola', name: 'Calacatta Vaticano Viola', brand: 'Lucent Quartz',
-    priceRange: '$90 – $120', typicalCost: '$4,500 – $7,000', category: 'marble',
-    img: '/images/slabs/lucent-calacatta-vaticano-viola.jpg', description: 'A luxurious Calacatta featuring stunning violet and burgundy veining.',
-    features: ['Calacatta Vaticano Viola', 'Violet veining', 'Luxurious marble look', 'Burgundy accents']
   }
 ];
