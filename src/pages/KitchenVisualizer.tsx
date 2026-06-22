@@ -1,6 +1,6 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { Check, Info, ArrowRight, Paintbrush, Upload, ScanLine, Wand2, Image as ImageIcon } from 'lucide-react';
+import { Check, Info, ArrowRight, Paintbrush, Upload, ScanLine, Wand2, Image as ImageIcon, Calculator } from 'lucide-react';
 import { SEO } from '../components/SEO';
 import { QuickEstimatorModal } from '../components/QuickEstimatorModal';
 
