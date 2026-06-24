@@ -47,6 +47,14 @@ export const CRM_STAGES = [
   'Completed'
 ];
 
+export const QUOTE_STAGES = [
+  { value: 'draft', label: 'Draft', activeClass: 'bg-amber-500 text-white border-amber-500' },
+  { value: 'sent', label: 'Sent', activeClass: 'bg-blue-600 text-white border-blue-600' },
+  { value: 'approved', label: 'Approved', activeClass: 'bg-green-600 text-white border-green-600' },
+  { value: 'invoiced', label: 'Invoiced', activeClass: 'bg-purple-600 text-white border-purple-600' },
+  { value: 'paid', label: 'Paid', activeClass: 'bg-emerald-800 text-white border-emerald-800' }
+] as const;
+
 export default function Admin() {
   const [isAuthenticated, setIsAuthenticated] = React.useState(false);
   const [secret, setSecret] = React.useState('');
@@ -63,6 +71,7 @@ export default function Admin() {
   const [quoteDiscount, setQuoteDiscount] = React.useState(0);
   const [quoteTaxRate, setQuoteTaxRate] = React.useState(0.13);
   const [quoteNotes, setQuoteNotes] = React.useState('');
+  const [quoteDepositPercent, setQuoteDepositPercent] = React.useState(50);
   const [savingQuote, setSavingQuote] = React.useState(false);
   const [emailingQuote, setEmailingQuote] = React.useState(false);
   const [copied, setCopied] = React.useState(false);
@@ -82,7 +91,7 @@ export default function Admin() {
   const [messages, setMessages] = React.useState<any[]>([]);
   const [selectedCustomerId, setSelectedCustomerId] = React.useState<string | null>(null);
   const [messageInput, setMessageInput] = React.useState('');
-  const [messageChannel, setMessageChannel] = React.useState<'email' | 'sms' | 'whatsapp'>('whatsapp');
+  const [messageChannel, setMessageChannel] = React.useState<'email' | 'sms' | 'whatsapp'>('email');
   const [inboxChannelFilter, setInboxChannelFilter] = React.useState<'all' | 'email' | 'sms' | 'whatsapp'>('all');
   
   // Sidebar Detail Page tab state
@@ -873,6 +882,7 @@ export default function Admin() {
         setQuoteDiscount(selectedLead.quoteDiscount || 0);
         setQuoteTaxRate(selectedLead.quoteTaxRate ?? 0.13);
         setQuoteNotes(selectedLead.quoteNotes || '');
+        setQuoteDepositPercent(selectedLead.quoteDepositPercent !== undefined ? selectedLead.quoteDepositPercent : 50);
         setLeadStatus(selectedLead.leadStatus || 'New Estimate Lead');
       } else {
         setQuoteNumber('');
@@ -881,6 +891,7 @@ export default function Admin() {
         setQuoteDiscount(0);
         setQuoteTaxRate(0.13);
         setQuoteNotes('');
+        setQuoteDepositPercent(50);
         setLeadStatus('New Estimate Lead');
       }
       setCopied(false);
@@ -1046,7 +1057,8 @@ export default function Admin() {
             quoteNotes,
             quoteSubtotal: subtotal,
             quoteTax: tax,
-            quoteTotal: total
+            quoteTotal: total,
+            quoteDepositPercent
           })
         });
 
@@ -1063,7 +1075,8 @@ export default function Admin() {
                 quoteNotes,
                 quoteSubtotal: subtotal,
                 quoteTax: tax,
-                quoteTotal: total
+                quoteTotal: total,
+                quoteDepositPercent
               };
             }
             return l;
@@ -1079,7 +1092,8 @@ export default function Admin() {
             quoteNotes,
             quoteSubtotal: subtotal,
             quoteTax: tax,
-            quoteTotal: total
+            quoteTotal: total,
+            quoteDepositPercent
           });
           alert('Quote saved successfully!');
         } else {
@@ -1168,6 +1182,15 @@ export default function Admin() {
       navigator.clipboard.writeText(link);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
+    };
+
+    const getAdminWhatsAppLink = () => {
+      if (!selectedLead) return '#';
+      const cleanPhone = (selectedLead.phone || '').replace(/\D/g, '');
+      const phoneVal = cleanPhone.length === 10 ? `1${cleanPhone}` : cleanPhone;
+      const quoteLink = `${window.location.origin}/quote/${selectedLead.id}`;
+      const text = encodeURIComponent(`Hi ${selectedLead.name || 'Client'}, your project proposal from Quartz International is ready for review: ${quoteLink}`);
+      return `https://api.whatsapp.com/send/?phone=${phoneVal}&text=${text}`;
     };
 
     // Customer Add/Edit Submit handlers
@@ -1710,9 +1733,9 @@ export default function Admin() {
                 <div className="flex gap-1 bg-gray-200/50 p-1 rounded-xl">
                   {[
                     { id: 'all', label: 'All' },
+                    { id: 'email', label: 'Email' },
                     { id: 'whatsapp', label: 'WhatsApp' },
-                    { id: 'sms', label: 'SMS' },
-                    { id: 'email', label: 'Email' }
+                    { id: 'sms', label: 'SMS' }
                   ].map(opt => (
                     <button
                       key={opt.id}
@@ -1970,9 +1993,9 @@ export default function Admin() {
                       {/* Channel Switcher */}
                       <div className="flex gap-2 mb-3">
                         {[
+                          { id: 'email', name: 'Email', icon: <Mail size={14} /> },
                           { id: 'whatsapp', name: 'WhatsApp', icon: <MessageCircle size={14} /> },
-                          { id: 'sms', name: 'SMS', icon: <MessageSquare size={14} /> },
-                          { id: 'email', name: 'Email', icon: <Mail size={14} /> }
+                          { id: 'sms', name: 'SMS', icon: <MessageSquare size={14} /> }
                         ].map(ch => (
                           <button
                             key={ch.id}
@@ -4394,7 +4417,7 @@ export default function Admin() {
                       </div>
                     ) : (
                       <div className="space-y-6">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-end">
                           <div className="space-y-1">
                             <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Quote Reference #</label>
                             <input 
@@ -4404,19 +4427,29 @@ export default function Admin() {
                               onChange={(e) => setQuoteNumber(e.target.value)}
                             />
                           </div>
-                          <div className="space-y-1">
-                            <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Quote Status</label>
-                            <select 
-                              className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-sm focus:outline-none focus:border-accent"
-                              value={quoteStatus}
-                              onChange={(e) => setQuoteStatus(e.target.value as any)}
-                            >
-                              <option value="draft">Draft</option>
-                              <option value="sent">Sent to Client</option>
-                              <option value="approved">Approved / Signed</option>
-                              <option value="invoiced">Invoiced</option>
-                              <option value="paid">Paid</option>
-                            </select>
+                          
+                          <div className="space-y-1 md:col-span-2">
+                            <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Quote Status Pipeline</label>
+                            <div className="grid grid-cols-5 gap-1 bg-gray-100 p-1 rounded-xl border border-gray-200 animate-fade-in">
+                              {QUOTE_STAGES.map((stage) => {
+                                const isActive = quoteStatus === stage.value;
+                                return (
+                                  <button
+                                    key={stage.value}
+                                    type="button"
+                                    onClick={() => setQuoteStatus(stage.value)}
+                                    className={cn(
+                                      "text-center py-1.5 px-1 rounded-lg text-[10px] font-bold transition-all border shrink-0 leading-tight",
+                                      isActive 
+                                        ? `${stage.activeClass} shadow-sm scale-[1.02]`
+                                        : "bg-white hover:bg-gray-50 border-gray-200 text-gray-500 hover:text-gray-700"
+                                    )}
+                                  >
+                                    {stage.label}
+                                  </button>
+                                );
+                              })}
+                            </div>
                           </div>
                         </div>
 
@@ -4433,77 +4466,119 @@ export default function Admin() {
                           </div>
                           
                           <div className="border border-border-custom rounded-xl overflow-hidden bg-white">
-                            <table className="w-full text-left text-xs">
-                              <thead>
-                                <tr className="bg-gray-50 border-b border-border-custom text-gray-400 font-bold uppercase tracking-wider text-[9px]">
-                                  <th className="px-3 py-2 w-1/2">Description</th>
-                                  <th className="px-3 py-2 text-center w-12">Qty</th>
-                                  <th className="px-3 py-2 text-right w-24">Unit Price</th>
-                                  <th className="px-3 py-2 text-right w-24">Total</th>
-                                  <th className="px-3 py-2 text-center w-10"></th>
-                                </tr>
-                              </thead>
-                              <tbody className="divide-y divide-border-custom">
-                                {quoteItems.map((item, idx) => (
-                                  <tr key={idx} className="hover:bg-gray-50/50">
-                                    <td className="px-3 py-2">
-                                      <input 
-                                        type="text" 
-                                        className="w-full bg-transparent focus:bg-gray-50 px-1 py-0.5 rounded border border-transparent focus:border-gray-200 text-xs text-gray-800 font-semibold"
-                                        value={item.description}
-                                        onChange={(e) => {
-                                          const items = [...quoteItems];
-                                          items[idx].description = e.target.value;
-                                          setQuoteItems(items);
-                                        }}
-                                      />
-                                    </td>
-                                    <td className="px-3 py-2">
-                                      <input 
-                                        type="number" 
-                                        className="w-full text-center bg-transparent focus:bg-gray-50 px-1 py-0.5 rounded border border-transparent focus:border-gray-200 text-xs text-gray-800 font-mono"
-                                        value={item.quantity}
-                                        onChange={(e) => {
-                                          const items = [...quoteItems];
-                                          items[idx].quantity = Number(e.target.value);
-                                          items[idx].total = items[idx].quantity * items[idx].unitPrice;
-                                          setQuoteItems(items);
-                                        }}
-                                      />
-                                    </td>
-                                    <td className="px-3 py-2 text-right font-mono">
-                                      <input 
-                                        type="number" 
-                                        className="w-full text-right bg-transparent focus:bg-gray-50 px-1 py-0.5 rounded border border-transparent focus:border-gray-200 text-xs text-gray-800"
-                                        value={item.unitPrice}
-                                        onChange={(e) => {
-                                          const items = [...quoteItems];
-                                          items[idx].unitPrice = Number(e.target.value);
-                                          items[idx].total = items[idx].quantity * items[idx].unitPrice;
-                                          setQuoteItems(items);
-                                        }}
-                                      />
-                                    </td>
-                                    <td className="px-3 py-2 text-right font-bold text-gray-700 font-mono">
-                                      ${(item.total || 0).toLocaleString()}
-                                    </td>
-                                    <td className="px-3 py-2 text-center">
-                                      <button 
-                                        onClick={() => setQuoteItems(quoteItems.filter((_, i) => i !== idx))}
-                                        className="text-red-500 hover:text-red-700 font-bold"
-                                      >
-                                        &times;
-                                      </button>
-                                    </td>
+                            <div className="max-h-[300px] overflow-y-auto">
+                              <table className="w-full text-left text-xs">
+                                <thead className="sticky top-0 bg-gray-50 z-10 border-b border-border-custom">
+                                  <tr className="text-gray-400 font-bold uppercase tracking-wider text-[9px]">
+                                    <th className="px-3 py-2.5 w-1/2">Description</th>
+                                    <th className="px-3 py-2.5 text-center w-16">Qty</th>
+                                    <th className="px-3 py-2.5 text-right w-28">Unit Price</th>
+                                    <th className="px-3 py-2.5 text-right w-24">Total</th>
+                                    <th className="px-3 py-2.5 text-center w-10"></th>
                                   </tr>
-                                ))}
-                              </tbody>
-                            </table>
+                                </thead>
+                                <tbody className="divide-y divide-border-custom">
+                                  {quoteItems.map((item, idx) => (
+                                    <tr key={idx} className="hover:bg-gray-50/50">
+                                      <td className="px-3 py-2">
+                                        <input 
+                                          type="text" 
+                                          className="w-full bg-white px-2 py-1 rounded-md border border-gray-200 text-xs text-gray-800 font-semibold focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent"
+                                          value={item.description}
+                                          onChange={(e) => {
+                                            const items = [...quoteItems];
+                                            items[idx].description = e.target.value;
+                                            setQuoteItems(items);
+                                          }}
+                                        />
+                                      </td>
+                                      <td className="px-3 py-2">
+                                        <input 
+                                          type="number" 
+                                          className="w-full text-center bg-white px-2 py-1 rounded-md border border-gray-200 text-xs text-gray-800 font-mono focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent"
+                                          value={item.quantity}
+                                          onChange={(e) => {
+                                            const items = [...quoteItems];
+                                            items[idx].quantity = Number(e.target.value);
+                                            items[idx].total = items[idx].quantity * items[idx].unitPrice;
+                                            setQuoteItems(items);
+                                          }}
+                                        />
+                                      </td>
+                                      <td className="px-3 py-2 text-right font-mono">
+                                        <div className="relative">
+                                          <span className="absolute left-1.5 top-1/2 -translate-y-1/2 text-gray-400 font-medium">$</span>
+                                          <input 
+                                            type="number" 
+                                            className="w-full text-right bg-white pl-4 pr-2 py-1 rounded-md border border-gray-200 text-xs text-gray-800 focus:outline-none focus:ring-1 focus:ring-accent focus:border-accent"
+                                            value={item.unitPrice}
+                                            onChange={(e) => {
+                                              const items = [...quoteItems];
+                                              items[idx].unitPrice = Number(e.target.value);
+                                              items[idx].total = items[idx].quantity * items[idx].unitPrice;
+                                              setQuoteItems(items);
+                                            }}
+                                          />
+                                        </div>
+                                      </td>
+                                      <td className="px-3 py-2 text-right font-bold text-gray-700 font-mono">
+                                        ${(item.total || 0).toLocaleString()}
+                                      </td>
+                                      <td className="px-3 py-2 text-center">
+                                        <button 
+                                          onClick={() => setQuoteItems(quoteItems.filter((_, i) => i !== idx))}
+                                          className="text-red-500 hover:text-red-700 p-1 hover:bg-red-50 rounded transition-colors"
+                                          title="Delete line item"
+                                        >
+                                          <Trash2 size={13} />
+                                        </button>
+                                      </td>
+                                    </tr>
+                                  ))}
+                                </tbody>
+                              </table>
+                            </div>
+                            
+                            {/* Sticky running live totals bar */}
+                            <div className="sticky bottom-0 bg-[#0E1116] text-white border-t border-border-custom px-4 py-3 flex flex-wrap justify-between items-center z-10 shadow-md">
+                              <div className="flex gap-4 text-[9px] uppercase font-bold tracking-wider text-gray-400">
+                                <div>
+                                  Subtotal:{' '}
+                                  <span className="font-mono text-white text-xs">
+                                    ${quoteItems.reduce((acc, item) => acc + (item.total || 0), 0).toLocaleString()}
+                                  </span>
+                                </div>
+                                {quoteDiscount > 0 && (
+                                  <div className="text-red-400">
+                                    Discount:{' '}
+                                    <span className="font-mono text-xs">
+                                      -${quoteDiscount.toLocaleString()}
+                                    </span>
+                                  </div>
+                                )}
+                                <div>
+                                  HST ({Math.round(quoteTaxRate * 100)}%):{' '}
+                                  <span className="font-mono text-white text-xs">
+                                    ${Math.round((quoteItems.reduce((acc, item) => acc + (item.total || 0), 0) - quoteDiscount) * quoteTaxRate).toLocaleString()}
+                                  </span>
+                                </div>
+                              </div>
+                              <div className="text-right">
+                                <span className="text-[8px] font-bold text-accent uppercase tracking-widest block mb-0.5">Live Total</span>
+                                <span className="text-lg font-black text-accent font-mono">
+                                  ${(
+                                    quoteItems.reduce((acc, item) => acc + (item.total || 0), 0) - 
+                                    quoteDiscount + 
+                                    Math.round((quoteItems.reduce((acc, item) => acc + (item.total || 0), 0) - quoteDiscount) * quoteTaxRate)
+                                  ).toLocaleString()}
+                                </span>
+                              </div>
+                            </div>
                           </div>
                         </div>
 
-                        {/* Discount & Tax Options */}
-                        <div className="grid grid-cols-2 gap-4">
+                        {/* Discount, Tax & Deposit Options */}
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                           <div className="space-y-1">
                             <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Discount Amount ($)</label>
                             <input 
@@ -4516,13 +4591,26 @@ export default function Admin() {
                           <div className="space-y-1">
                             <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">HST Tax Rate (%)</label>
                             <select 
-                              className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-sm focus:outline-none focus:border-accent"
+                              className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-sm focus:outline-none focus:border-accent font-semibold text-gray-700"
                               value={quoteTaxRate}
                               onChange={(e) => setQuoteTaxRate(Number(e.target.value))}
                             >
                               <option value="0.13">13% HST (Ontario)</option>
                               <option value="0.05">5% GST (Federal Only)</option>
                               <option value="0">0% Exempt</option>
+                            </select>
+                          </div>
+                          <div className="space-y-1">
+                            <label className="text-[10px] font-bold uppercase tracking-widest text-gray-400">Required Deposit (%)</label>
+                            <select 
+                              className="w-full px-3 py-2 border border-gray-300 rounded-lg bg-white text-sm focus:outline-none focus:border-accent font-semibold text-gray-700"
+                              value={quoteDepositPercent}
+                              onChange={(e) => setQuoteDepositPercent(Number(e.target.value))}
+                            >
+                              <option value="50">50% Deposit (Default)</option>
+                              <option value="30">30% Deposit</option>
+                              <option value="100">100% Full Payment</option>
+                              <option value="0">0% No Deposit</option>
                             </select>
                           </div>
                         </div>
@@ -4604,6 +4692,19 @@ export default function Admin() {
                             <Mail size={13} />
                             {emailingQuote ? 'Sending...' : '✉ Email Quote to Client'}
                           </button>
+
+                          {selectedLead.phone && (
+                            <a 
+                              href={getAdminWhatsAppLink()}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="bg-green-600 hover:bg-green-700 text-white px-5 py-2.5 rounded-lg text-xs font-bold transition-all shadow-md flex items-center gap-2"
+                              title={`Send quote via WhatsApp to ${selectedLead.phone}`}
+                            >
+                              <MessageCircle size={13} />
+                              Send via WhatsApp
+                            </a>
+                          )}
                           
                           <button 
                             onClick={copyLink}

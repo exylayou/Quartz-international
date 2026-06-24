@@ -23,7 +23,7 @@ import {
   Sparkles
 } from 'lucide-react';
 
-import { useCalculator, QuartzLevel, CabinetStyle } from '../context/CalculatorContext';
+import { useCalculator, QuartzLevel, CabinetStyle, IslandType } from '../context/CalculatorContext';
 import { cn } from '../lib/utils';
 import { PRICING_CONSTANTS } from '../constants';
 import { jsPDF } from 'jspdf';
@@ -107,6 +107,36 @@ export default function CalculatorModal() {
 
   const results = useMemo(calculateResults, [state]);
   const [showForm, setShowForm] = useState(false);
+
+  const getWhatsAppUrl = () => {
+    const base = 'https://api.whatsapp.com/send/?phone=16473706684';
+    if (localStorage.getItem('qi_has_contacted')) return base;
+    const { countertopSqFt, quartzLevel, includeCabinets, cabinetLinearFt, cabinetStyle, includeCountertops, islandType, deliveryMethod, extras } = state;
+    let msg = `Hi Quartz International, I just completed your online estimator. Here are my project details:\n\n`;
+    if (includeCountertops) {
+      msg += `\u2022 Countertops: ${countertopSqFt} SQ FT (${quartzLevel.toUpperCase()} Tier)\n`;
+      if (extras?.backsplash) msg += `\u2022 Add-on: Backsplash\n`;
+      if (extras?.sink) msg += `\u2022 Add-on: Sink Cutout\n`;
+      if (extras?.cooktop) msg += `\u2022 Add-on: Cooktop Cutout\n`;
+      if (extras?.waterfall) msg += `\u2022 Add-on: Waterfall Edge\n`;
+      if (extras?.removal) msg += `\u2022 Add-on: Old Countertop Removal\n`;
+      msg += `\u2022 Countertops Est.: $${results.countertop.low.toLocaleString()} - $${results.countertop.high.toLocaleString()}\n`;
+    }
+    if (includeCabinets) {
+      const method = deliveryMethod || 'installed';
+      msg += `\u2022 Cabinets: ${cabinetStyle.toUpperCase()} Collection (${method.toUpperCase()})\n`;
+      msg += `\u2022 Cabinet Layout: ${cabinetLinearFt} Linear FT\n`;
+      if (islandType && islandType !== 'none') {
+        const islandLabel = islandType === 'small' ? 'Small Island' : islandType === 'large' ? 'Large Island' : 'Waterfall Island';
+        msg += `\u2022 Island: ${islandLabel}\n`;
+      }
+      msg += `\u2022 Cabinets Est.: $${results.cabinets.low.toLocaleString()} - $${results.cabinets.high.toLocaleString()}\n`;
+    }
+    msg += `\u2022 Total Project Range: $${results.total.low.toLocaleString()} - $${results.total.high.toLocaleString()}\n\n`;
+    if (formData.name) msg += `My name is ${formData.name}. `;
+    msg += `Can we discuss next steps?`;
+    return `${base}&text=${encodeURIComponent(msg)}`;
+  };
 
   const handleNext = () => {
     if (state.step === 4 && !state.includeCabinets) {
@@ -217,15 +247,18 @@ export default function CalculatorModal() {
       });
 
       if (response.ok) {
+        localStorage.setItem('qi_has_contacted', '1');
         setIsSubmitted(true);
       } else {
         console.error('Failed to submit lead');
         setEmailError(true);
+        localStorage.setItem('qi_has_contacted', '1');
         setIsSubmitted(true); // Fallback so they can download PDF
       }
     } catch (error) {
       console.error('Error submitting lead:', error);
       setEmailError(true);
+      localStorage.setItem('qi_has_contacted', '1');
       setIsSubmitted(true); // Fallback so they can download PDF
     } finally {
       setIsSubmitting(false);
@@ -789,10 +822,11 @@ export default function CalculatorModal() {
                       key={option.id}
                       onClick={() => {
                         const hasIsland = option.id !== 'none';
-                        const addOnSF = { none: 0, small: 12, large: 20, waterfall: 35 }[option.id];
+                        const islandType = option.id as IslandType;
+                        const addOnSF = { none: 0, small: 12, large: 20, waterfall: 35 }[islandType];
                         const wallSF = Math.max(0, Math.round((state.countertopLinearFt * 2) - 5));
                         updateState({ 
-                          islandType: option.id as IslandType, 
+                          islandType, 
                           hasIsland,
                           countertopSqFt: Math.max(0, Math.round(wallSF + addOnSF))
                         });
@@ -1276,7 +1310,7 @@ export default function CalculatorModal() {
                         <p className="text-xs text-gray-500 font-semibold">Prefer to send photos or files directly?</p>
                         <div className="flex flex-wrap items-center justify-center gap-3">
                           <a 
-                            href="https://wa.me/16473706684" 
+                            href={getWhatsAppUrl()}
                             target="_blank" 
                             rel="noopener noreferrer" 
                             className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white px-6 py-3 rounded-2xl font-bold text-sm tracking-wider uppercase transition-colors"

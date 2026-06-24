@@ -2,6 +2,7 @@ import express from "express";
 import path from "path";
 import dotenv from "dotenv";
 import nodemailer from "nodemailer";
+import Stripe from "stripe";
 import { 
   getLeads, 
   saveLead, 
@@ -24,6 +25,11 @@ import { runAutomations } from "./src/services/automationService.js";
 // Load environment variables
 dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
 dotenv.config();
+
+const stripeSecretKey = process.env.STRIPE_SECRET_KEY || 'sk_test_mock_secret_key_needs_to_be_configured_in_env_local';
+const stripe = new Stripe(stripeSecretKey, {
+  apiVersion: "2025-02-02" as any
+});
 
 // Start Automation Service
 setInterval(() => {
@@ -573,7 +579,8 @@ app.post("/api/leads", async (req, res) => {
       quoteTax: lead.quoteTax,
       quoteTotal: lead.quoteTotal,
       clientSignedAt: lead.clientSignedAt,
-      clientSignatureName: lead.clientSignatureName
+      clientSignatureName: lead.clientSignatureName,
+      quoteDepositPercent: lead.quoteDepositPercent
     });
   });
 
@@ -945,6 +952,127 @@ app.post("/api/leads", async (req, res) => {
     }
     const events = await getAnalyticsEvents();
     res.json(events);
+  });
+
+  // Create Stripe Checkout Session for Quote Deposit / Invoice Payment
+  app.post("/api/quotes/:id/create-checkout-session", async (req, res) => {
+    const { id } = req.params;
+    const leads = await getLeads();
+    const lead = leads.find(l => l.id === id);
+    if (!lead) {
+      return res.status(404).json({ error: "Quote not found" });
+    }
+
+    // Determine amount to charge
+    let amount = lead.quoteTotal;
+    let description = `Full invoice payment for proposal ${lead.quoteNumber}`;
+
+    if (lead.quoteStatus === 'approved') {
+      const depositPercent = lead.quoteDepositPercent !== undefined ? lead.quoteDepositPercent : 50;
+      amount = Math.round(lead.quoteTotal * (depositPercent / 100));
+      description = `${depositPercent}% Project Deposit for proposal ${lead.quoteNumber}`;
+    }
+
+    if (amount <= 0) {
+      return res.status(400).json({ error: "Invoice total must be greater than zero." });
+    }
+
+    try {
+      const origin = process.env.NODE_ENV === "production" 
+        ? (process.env.APP_URL || "https://www.quartzinternational.ca") 
+        : `http://localhost:${process.env.PORT || 3000}`;
+
+      // In mock mode (if secret key is default mock), simulate a Stripe redirect link
+      if (stripeSecretKey.startsWith('sk_test_mock_secret_key')) {
+        const mockSessionId = 'mock_session_' + Math.random().toString(36).substr(2, 9);
+        const mockUrl = `${origin}/quote/${id}?success=true&session_id=${mockSessionId}`;
+        console.log("Mock Stripe mode enabled, redirecting to:", mockUrl);
+        return res.json({ url: mockUrl });
+      }
+
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ['card'],
+        line_items: [
+          {
+            price_data: {
+              currency: 'cad',
+              product_data: {
+                name: `Quartz International ${lead.quoteStatus === 'approved' ? 'Deposit' : 'Invoice'}`,
+                description: description,
+              },
+              unit_amount: Math.round(amount * 100), // in cents
+            },
+            quantity: 1,
+          },
+        ],
+        mode: 'payment',
+        success_url: `${origin}/quote/${id}?success=true&session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${origin}/quote/${id}?canceled=true`,
+        metadata: {
+          leadId: id,
+          quoteNumber: lead.quoteNumber,
+          paymentType: lead.quoteStatus === 'approved' ? 'deposit' : 'full'
+        }
+      });
+
+      res.json({ url: session.url });
+    } catch (err: any) {
+      console.error("Stripe session creation failed:", err);
+      res.status(500).json({ error: err.message || "Failed to initiate payment processor." });
+    }
+  });
+
+  // Verify Stripe Payment
+  app.post("/api/quotes/:id/verify-payment", async (req, res) => {
+    const { id } = req.params;
+    const { sessionId } = req.body;
+
+    if (!sessionId) {
+      return res.status(400).json({ error: "Missing session ID" });
+    }
+
+    try {
+      const leads = await getLeads();
+      const lead = leads.find(l => l.id === id);
+      if (!lead) {
+        return res.status(404).json({ error: "Quote not found" });
+      }
+
+      // If it's a mock session, bypass Stripe validation
+      let isVerified = false;
+      let paymentType = 'deposit';
+
+      if (sessionId.startsWith('mock_session_')) {
+        isVerified = true;
+        paymentType = lead.quoteStatus === 'approved' ? 'deposit' : 'full';
+      } else {
+        const session = await stripe.checkout.sessions.retrieve(sessionId);
+        if (session.payment_status === 'paid') {
+          isVerified = true;
+          paymentType = session.metadata?.paymentType || 'deposit';
+        }
+      }
+
+      if (isVerified) {
+        // Advance lead to 'paid' status and CRM stage to 'Deposit Received' if not already done
+        const updates: any = {
+          quoteStatus: 'paid'
+        };
+        
+        if (lead.leadStatus === 'New Estimate Lead' || lead.leadStatus === 'Quote Sent' || lead.leadStatus === 'Site Measure') {
+          updates.leadStatus = 'Deposit Received';
+        }
+
+        await updateLead(id, updates);
+        console.log(`Payment verified for lead ${id}. quoteStatus updated to paid. leadStatus updated to Deposit Received.`);
+        return res.json({ status: "success" });
+      } else {
+        return res.status(400).json({ error: "Payment verification failed" });
+      }
+    } catch (err: any) {
+      console.error("Payment verification failed:", err);
+      res.status(500).json({ error: err.message || "Failed to verify payment." });
+    }
   });
 
   app.get("/api/health", (req, res) => {

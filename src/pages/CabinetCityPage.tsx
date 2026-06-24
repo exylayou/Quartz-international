@@ -15,9 +15,9 @@ export default function CabinetCityPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
 
   // Normalize slug to match dictionary keys and strip common prefixes
-  let citySlug = city?.toLowerCase().replace(/[^a-z0-9-]/g, '') || '';
-  if (citySlug.startsWith('kitchen-cabinets-')) {
-    citySlug = citySlug.replace('kitchen-cabinets-', '');
+  let citySlug = city?.toLowerCase().replace(/[^a-z0-9]/g, '') || '';
+  if (citySlug.startsWith('kitchencabinets')) {
+    citySlug = citySlug.replace('kitchencabinets', '');
   }
   
   const cityData = cities[citySlug];

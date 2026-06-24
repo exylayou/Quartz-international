@@ -14,9 +14,9 @@ export default function CityServicePage() {
   const navigate = useNavigate();
 
   // Normalize slug to match dictionary keys
-  let citySlug = city?.toLowerCase().replace(/[^a-z0-9-]/g, '') || '';
-  if (citySlug.startsWith('quartz-countertops-')) {
-    citySlug = citySlug.replace('quartz-countertops-', '');
+  let citySlug = city?.toLowerCase().replace(/[^a-z0-9]/g, '') || '';
+  if (citySlug.startsWith('quartzcountertops')) {
+    citySlug = citySlug.replace('quartzcountertops', '');
   }
   
   const cityData = cities[citySlug];

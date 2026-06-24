@@ -10,8 +10,21 @@ const __dirname = path.dirname(__filename);
 const DIST_DIR = path.resolve(__dirname, '../dist');
 const PORT = 3001;
 
+// Dynamic routes from data files
+const pseoFile = fs.readFileSync(path.resolve(__dirname, '../src/data/cabinetPseoData.ts'), 'utf8');
+const pseoSlugs = [...pseoFile.matchAll(/slug:\s*['"]([^'"]+)['"]/g)].map(m => m[1]);
+
+const materialsFile = fs.readFileSync(path.resolve(__dirname, '../src/data/materials.ts'), 'utf8');
+const slabIds = [...materialsFile.matchAll(/id:\s*['"]([^'"]+)['"]/g)].map(m => m[1]);
+
+const citiesFile = fs.readFileSync(path.resolve(__dirname, '../src/data/cities.ts'), 'utf8');
+const citySlugs = [...citiesFile.matchAll(/slug:\s*['"]([^'"]+)['"]/g)].map(m => m[1]);
+
+const cabinetCitiesFile = fs.readFileSync(path.resolve(__dirname, '../src/data/cabinetCities.ts'), 'utf8');
+const cabinetCitySlugs = [...cabinetCitiesFile.matchAll(/slug:\s*['"]([^'"]+)['"]/g)].map(m => m[1]);
+
 // Core top-level routes to prerender
-const ROUTES = [
+const CORE_ROUTES = [
   '/',
   '/about',
   '/contact',
@@ -21,8 +34,36 @@ const ROUTES = [
   '/cabinets',
   '/estimate',
   '/quartz-countertop-estimator',
-  '/kitchen-cabinet-cost-guide'
+  '/kitchen-cabinet-cost-guide',
+  '/blog',
+  '/visualizer',
+  '/cabinet-finishes',
+  '/kitchen-cabinet-estimator',
+  '/kitchen-renovation-estimator',
+  '/kitchen-cabinet-cost',
+  '/areas-we-serve',
+  '/caesarstone',
+  '/quartz-countertops-caesarstone',
+  '/silestone',
+  '/kasa-quartz',
+  '/quartz-countertops-kasa',
+  '/kstone',
+  '/quartz-countertops-kstone',
+  '/lucent-quartz',
+  '/quartz-countertops-lucent',
+  '/tce-stone',
+  '/quartz-countertops-tce',
+  '/quartz-countertop-guide-2026'
 ];
+
+const ROUTES = Array.from(new Set([
+  ...CORE_ROUTES,
+  ...pseoSlugs.map(slug => `/${slug}`),
+  ...slabIds.map(id => `/slab/${id}`),
+  ...citySlugs.map(slug => `/${slug}`),
+  ...citySlugs.map(slug => `/quartz-countertop-cost/${slug}`),
+  ...cabinetCitySlugs.map(slug => `/kitchen-cabinets/${slug}`)
+]));
 
 async function prerender() {
   if (!fs.existsSync(DIST_DIR) || !fs.existsSync(path.join(DIST_DIR, 'index.html'))) {
