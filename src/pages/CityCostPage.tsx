@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { SEO } from '../components/SEO';
+import { Helmet } from 'react-helmet-async';
 import {
   CheckCircle2, 
   ArrowRight, 
@@ -59,9 +60,31 @@ export default function CityCostPage() {
     { q: "Do you provide cabinets and countertops?", a: "Yes, we offer complete kitchen solutions. Bundling cabinets and countertops often provides better value and ensures a more seamless installation process." },
   ];
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  };
+
   return (
     <div className="bg-white">
-      <SEO title="City Cost Page | Quartz International" description="Learn more about City Cost Page at Quartz International. We provide premium countertops and cabinetry in Toronto and the GTA." />
+      <SEO 
+        title={`Quartz Countertop Cost in ${city} | Price Guide 2026`} 
+        description={`Find local quartz countertop installation costs in ${city}. Explore standard, premium, and luxury pricing options and get an instant custom quote.`}
+        canonical={`/quartz-countertop-cost/${cityParam}`}
+      />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(schema)}
+        </script>
+      </Helmet>
 
       {/* HERO SECTION */}
       <section className="relative pt-12 pb-24 overflow-hidden border-b border-border-custom">
