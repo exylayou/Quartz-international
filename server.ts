@@ -1,5 +1,6 @@
 import express from "express";
 import path from "path";
+import fs from "fs/promises";
 import dotenv from "dotenv";
 import nodemailer from "nodemailer";
 import Stripe from "stripe";
@@ -88,7 +89,31 @@ function getFromEmail(adminSecret?: any, defaultPrefix: string = "Quartz Interna
 }
 
 const app = express();
-app.use(express.json());
+app.use(express.json({ limit: '10mb' }));
+
+// Serve uploaded visualizer files
+const UPLOADS_DIR = path.join(process.cwd(), 'data', 'uploads');
+app.use('/uploads', express.static(UPLOADS_DIR));
+
+// Visualizer file upload endpoint
+app.post("/api/visualizer/upload", async (req, res) => {
+  try {
+    const { fileBase64, fileName } = req.body;
+    if (!fileBase64 || !fileName) {
+      return res.status(400).json({ error: "Missing fileBase64 or fileName" });
+    }
+    await fs.mkdir(UPLOADS_DIR, { recursive: true });
+    const ext = path.extname(fileName) || '.png';
+    const uniqueName = `viz_${Date.now()}_${Math.random().toString(36).substr(2, 6)}${ext}`;
+    const filePath = path.join(UPLOADS_DIR, uniqueName);
+    const base64Data = fileBase64.replace(/^data:image\/\w+;base64,/, '');
+    await fs.writeFile(filePath, Buffer.from(base64Data, 'base64'));
+    res.json({ url: `/uploads/${uniqueName}`, name: fileName });
+  } catch (err: any) {
+    console.error("Visualizer upload failed:", err);
+    res.status(500).json({ error: err.message || "Upload failed" });
+  }
+});
 
 // API routes
 app.post("/api/leads", async (req, res) => {
@@ -156,10 +181,10 @@ app.post("/api/leads", async (req, res) => {
           req.body.files.forEach((file: any) => {
             files.unshift({
               id: Math.random().toString(36).substr(2, 9),
-              name: file.name,
-              size: file.size || "1.2 MB",
+              name: file.name || file.fileName,
+              size: file.size || file.fileSize || "1.2 MB",
               uploadedAt: new Date().toISOString(),
-              url: "#"
+              url: file.url || "#"
             });
           });
           await updateCustomer(existingCust.id, { files });
@@ -168,10 +193,10 @@ app.post("/api/leads", async (req, res) => {
         const customerId = Math.random().toString(36).substr(2, 9);
         const files = (req.body.files && Array.isArray(req.body.files)) ? req.body.files.map((file: any) => ({
           id: Math.random().toString(36).substr(2, 9),
-          name: file.name,
-          size: file.size || "1.2 MB",
+          name: file.name || file.fileName,
+          size: file.size || file.fileSize || "1.2 MB",
           uploadedAt: new Date().toISOString(),
-          url: "#"
+          url: file.url || "#"
         })) : [];
         const newCustomer: Customer = {
           id: customerId,
@@ -194,10 +219,10 @@ app.post("/api/leads", async (req, res) => {
           req.body.files.forEach((file: any) => {
             files.unshift({
               id: Math.random().toString(36).substr(2, 9),
-              name: file.name,
-              size: file.size || "1.2 MB",
+              name: file.name || file.fileName,
+              size: file.size || file.fileSize || "1.2 MB",
               uploadedAt: new Date().toISOString(),
-              url: "#"
+              url: file.url || "#"
             });
           });
           await updateCustomer(existingCust.id, { files });

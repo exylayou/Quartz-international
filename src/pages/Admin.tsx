@@ -43,6 +43,7 @@ export const CRM_STAGES = [
   'Quote Sent',
   'Site Measure',
   'Deposit Received',
+  'Invoice Sent',
   'Installation Scheduled',
   'Completed'
 ];
@@ -2337,11 +2338,13 @@ export default function Admin() {
                                       </div>
                                     </div>
                                     <a
-                                      href="#"
-                                      onClick={(e) => { e.preventDefault(); alert(`Downloading: ${file.fileName} (Simulation)`); }}
+                                      href={file.url && file.url !== '#' ? file.url : '#'}
+                                      target={file.url && file.url !== '#' ? '_blank' : undefined}
+                                      rel={file.url && file.url !== '#' ? 'noopener noreferrer' : undefined}
+                                      onClick={(e) => { if (!file.url || file.url === '#') { e.preventDefault(); alert(`Downloading: ${file.fileName} (Simulation)`); } }}
                                       className="text-xs text-accent font-bold hover:underline shrink-0 px-2"
                                     >
-                                      Download
+                                      {file.url && file.url !== '#' ? 'View' : 'Download'}
                                     </a>
                                   </div>
                                 ))}
@@ -2565,6 +2568,7 @@ export default function Admin() {
                             "inline-flex items-center px-2.5 py-0.5 rounded-full text-[10px] font-bold border",
                             lead.leadStatus === 'Completed' ? 'bg-green-50 text-green-700 border-green-200' :
                             lead.leadStatus === 'Installation Scheduled' ? 'bg-emerald-50 text-emerald-700 border-emerald-200' :
+                            lead.leadStatus === 'Invoice Sent' ? 'bg-fuchsia-50 text-fuchsia-700 border-fuchsia-200' :
                             lead.leadStatus === 'Deposit Received' ? 'bg-teal-50 text-teal-700 border-teal-200' :
                             lead.leadStatus === 'Site Measure' ? 'bg-cyan-50 text-cyan-700 border-cyan-200' :
                             lead.leadStatus === 'Quote Sent' ? 'bg-blue-50 text-blue-700 border-blue-200' :
