@@ -21,12 +21,7 @@ export interface CabinetCityData {
     neighborhood: string;
     quote: string;
     title: string;
-  },
-    images: {
-      hero: "/images/cabinet_cities_hero_common.jpg",
-      testimonial1: "/images/typical-kitchen.jpg",
-      testimonial2: "/images/modern-island-dark.jpg"
-    };
+  };
   images?: {
     hero?: string;
     testimonial1?: string;

@@ -309,7 +309,7 @@ export default function Estimate() {
                           key={option.id}
                           onClick={() => {
                             const hasIsland = option.id !== 'none';
-                            const addOnSF = { none: 0, small: 12, large: 20, waterfall: 35 }[option.id];
+                            const addOnSF = { none: 0, small: 12, large: 20, waterfall: 35 }[option.id as 'none' | 'small' | 'large' | 'waterfall'];
                             const wallSF = Math.max(0, Math.round((state.kitchenLinearFt * 2) - 5));
                             setState(prev => ({ 
                               ...prev,

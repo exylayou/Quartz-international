@@ -59,6 +59,9 @@ export default function KitchenCabinetEstimator() {
   const [deliveryMethod, setDeliveryMethod] = useState<'rta' | 'rti' | 'installed'>('installed');
   const [cabinetStyle, setCabinetStyle] = useState<'essential' | 'premium' | 'elite'>('essential');
   const [islandType, setIslandType] = useState<'none' | 'small' | 'large' | 'waterfall'>('none');
+  const [measureMode, setMeasureMode] = useState<'precise' | 'simple'>('precise');
+  const [simpleShape, setSimpleShape] = useState('');
+  const [simpleSize, setSimpleSize] = useState<'small'|'medium'|'large'|''>('');
   
   // Countertop Bundle Upsell state
   const [includeCountertops, setIncludeCountertops] = useState<boolean | null>(null);
@@ -120,6 +123,22 @@ export default function KitchenCabinetEstimator() {
   };
 
   const cost = calculateEstimate();
+
+  const getWhatsAppUrl = () => {
+    const base = 'https://api.whatsapp.com/send/?phone=16473706684';
+    if (localStorage.getItem('qi_has_contacted')) return base;
+    let msg = `Hi Quartz International, I just completed the online estimator on your website. Here are my project details:\n\n`;
+    msg += `\u2022 Cabinets: ${cabinetStyle.toUpperCase()} Collection (${deliveryMethod.toUpperCase()})\n`;
+    msg += `\u2022 Layout: ${measureMode === 'precise' ? 'Precise Dimensions' : 'Simple Preset'} (${Math.round(totalCabinetLF)} Linear FT)\n`;
+    msg += `\u2022 Island: ${islandType === 'none' ? 'No Island' : islandType === 'small' ? 'Small Island' : islandType === 'large' ? 'Large Island' : 'Waterfall Island'}\n`;
+    if (includeCountertops) {
+      msg += `\u2022 Countertops: ${countertopSqFt} SQ FT (${quartzLevel.toUpperCase()} Tier)\n`;
+    }
+    msg += `\u2022 Estimated Range: $${cost.totalLow.toLocaleString()} - $${cost.totalHigh.toLocaleString()}\n\n`;
+    if (formData.name) msg += `My name is ${formData.name}. `;
+    msg += `Can we discuss next steps?`;
+    return `${base}&text=${encodeURIComponent(msg)}`;
+  };
 
   const handleNext = () => {
     if (step === 4 && includeCountertops === null) {
@@ -204,9 +223,11 @@ export default function KitchenCabinetEstimator() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(postBody)
       });
+      localStorage.setItem('qi_has_contacted', '1');
       setIsSubmitted(true);
     } catch (err) {
       console.error('Lead capture submission error:', err);
+      localStorage.setItem('qi_has_contacted', '1');
       setIsSubmitted(true);
     } finally {
       setIsLoading(false);
@@ -253,7 +274,7 @@ export default function KitchenCabinetEstimator() {
     <div className="bg-[#FAF9F5] min-h-screen pt-6 pb-32">
       <SEO title="Kitchen Cabinet Estimator | Quartz International" description="Learn more about Kitchen Cabinet Estimator at Quartz International. We provide premium countertops and cabinetry in Toronto and the GTA." />
 
-      <div className="max-w-3xl mx-auto px-4 sm:px-6">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* SMALL HEADER */}
         <div className="flex justify-between items-start mb-4">
@@ -288,8 +309,10 @@ export default function KitchenCabinetEstimator() {
           </div>
         )}
 
-        <div className="w-full">
-          <div className="bg-white rounded-3xl border border-border-custom p-5 sm:p-8 md:p-12 shadow-sm relative overflow-hidden">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-start mt-8">
+          {/* Left Form Column */}
+          <div className={cn(step < 7 ? "lg:col-span-8" : "lg:col-span-12", "w-full")}>
+            <div className="bg-white rounded-3xl border border-border-custom p-5 sm:p-8 md:p-12 shadow-sm relative overflow-hidden">
               
               <AnimatePresence mode="wait">
                 {!isSubmitted ? (
@@ -403,73 +426,178 @@ export default function KitchenCabinetEstimator() {
                           <Maximize className="text-accent" />
                           What is the total length of your cabinet walls?
                         </h2>
-                        <p className="text-gray-500 text-sm">Measure only the walls that will have cabinets.</p>
                         
-                        <div className="grid grid-cols-2 gap-4 max-w-md py-6">
-                          <div>
-                            <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Feet</label>
-                            <div className="relative">
-                              <select 
-                                value={feet}
-                                onChange={(e) => setFeet(parseInt(e.target.value))}
-                                className="w-full h-16 bg-[#FAF9F6] border border-[#E5E2DC] rounded-2xl pl-4 pr-10 text-lg font-bold text-[#1A1A1A] appearance-none cursor-pointer focus:outline-none focus:border-accent"
+                        {measureMode === 'precise' ? (
+                          <>
+                            <div className="flex justify-between items-center">
+                              <p className="text-gray-500 text-sm">Measure only the walls that will have cabinets.</p>
+                              <button 
+                                onClick={() => setMeasureMode('simple')}
+                                className="text-xs font-bold text-accent hover:text-accent/80 transition-colors"
                               >
-                                {Array.from({ length: 101 }, (_, i) => (
-                                  <option key={i} value={i}>{i} ft</option>
-                                ))}
-                              </select>
-                              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                                <ChevronDown size={20} />
+                                I don't know my measurements
+                              </button>
+                            </div>
+                            
+                            <div className="grid grid-cols-2 gap-4 max-w-md py-6">
+                              <div>
+                                <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Feet</label>
+                                <div className="relative">
+                                  <select 
+                                    value={feet}
+                                    onChange={(e) => setFeet(parseInt(e.target.value))}
+                                    className="w-full h-16 bg-[#FAF9F6] border border-[#E5E2DC] rounded-2xl pl-4 pr-10 text-lg font-bold text-[#1A1A1A] appearance-none cursor-pointer focus:outline-none focus:border-accent"
+                                  >
+                                    {Array.from({ length: 101 }, (_, i) => (
+                                      <option key={i} value={i}>{i} ft</option>
+                                    ))}
+                                  </select>
+                                  <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                                    <ChevronDown size={20} />
+                                  </div>
+                                </div>
+                              </div>
+                              <div>
+                                <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Inches</label>
+                                <div className="relative">
+                                  <select 
+                                    value={inches}
+                                    onChange={(e) => setInches(parseInt(e.target.value))}
+                                    className="w-full h-16 bg-[#FAF9F6] border border-[#E5E2DC] rounded-2xl pl-4 pr-10 text-lg font-bold text-[#1A1A1A] appearance-none cursor-pointer focus:outline-none focus:border-accent"
+                                  >
+                                    {Array.from({ length: 12 }, (_, i) => (
+                                      <option key={i} value={i}>{i} in</option>
+                                    ))}
+                                  </select>
+                                  <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
+                                    <ChevronDown size={20} />
+                                  </div>
+                                </div>
                               </div>
                             </div>
-                          </div>
-                          <div>
-                            <label className="block text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">Inches</label>
-                            <div className="relative">
-                              <select 
-                                value={inches}
-                                onChange={(e) => setInches(parseInt(e.target.value))}
-                                className="w-full h-16 bg-[#FAF9F6] border border-[#E5E2DC] rounded-2xl pl-4 pr-10 text-lg font-bold text-[#1A1A1A] appearance-none cursor-pointer focus:outline-none focus:border-accent"
-                              >
-                                {Array.from({ length: 12 }, (_, i) => (
-                                  <option key={i} value={i}>{i} in</option>
-                                ))}
-                              </select>
-                              <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-gray-400">
-                                <ChevronDown size={20} />
-                              </div>
-                            </div>
-                          </div>
-                        </div>
 
-                        {/* How to Measure Visual Guide */}
-                        <div className="border border-border-custom rounded-3xl overflow-hidden bg-white max-w-2xl my-6">
-                          <div className="bg-[#FAF9F6] border-b border-border-custom p-4 flex items-center gap-2">
-                            <Info className="text-accent w-5 h-5 shrink-0" />
-                            <h3 className="font-bold text-[#1A1A1A] text-sm uppercase tracking-wider">
-                              Visual Guide: How to Measure
-                            </h3>
+                            {/* How to Measure Visual Guide */}
+                            <div className="border border-border-custom rounded-3xl overflow-hidden bg-white max-w-2xl my-6">
+                              <div className="bg-[#FAF9F6] border-b border-border-custom p-4 flex items-center gap-2">
+                                <Info className="text-accent w-5 h-5 shrink-0" />
+                                <h3 className="font-bold text-[#1A1A1A] text-sm uppercase tracking-wider">
+                                  Visual Guide: How to Measure
+                                </h3>
+                              </div>
+                              <div className="p-4 sm:p-6 bg-white flex justify-center">
+                                <img 
+                                  src={howToMeasure} 
+                                  alt="How to Measure countertops guide" 
+                                  className="w-full max-w-xl h-auto object-contain rounded-2xl"
+                                />
+                              </div>
+                            </div>
+                          </>
+                        ) : (
+                          <div className="py-2 animate-fadeIn">
+                            <div className="flex justify-between items-center mb-6">
+                              <p className="text-gray-500 text-sm">Select your rough shape and size, and we'll estimate the length for you.</p>
+                              <button 
+                                onClick={() => setMeasureMode('precise')}
+                                className="text-xs font-bold text-gray-400 hover:text-gray-600 transition-colors"
+                              >
+                                Actually, I have measurements
+                              </button>
+                            </div>
+
+                            <h3 className="text-sm font-bold text-gray-800 mb-4">1. Kitchen Shape</h3>
+                            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
+                              {[
+                                { 
+                                  id: 'l-shape', 
+                                  label: 'L-Shape',
+                                  svg: (
+                                    <svg viewBox="0 0 100 100" className="w-12 h-12 mx-auto mb-2 text-current" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                      <path d="M 25 25 L 25 75 L 75 75" />
+                                    </svg>
+                                  )
+                                },
+                                { 
+                                  id: 'u-shape', 
+                                  label: 'U-Shape',
+                                  svg: (
+                                    <svg viewBox="0 0 100 100" className="w-12 h-12 mx-auto mb-2 text-current" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                      <path d="M 25 25 L 25 75 L 75 75 L 75 25" />
+                                    </svg>
+                                  )
+                                },
+                                { 
+                                  id: 'galley', 
+                                  label: 'Galley',
+                                  svg: (
+                                    <svg viewBox="0 0 100 100" className="w-12 h-12 mx-auto mb-2 text-current" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                      <path d="M 25 20 L 25 80 M 75 20 L 75 80" />
+                                    </svg>
+                                  )
+                                },
+                                { 
+                                  id: 'island-only', 
+                                  label: 'Island Only',
+                                  svg: (
+                                    <svg viewBox="0 0 100 100" className="w-12 h-12 mx-auto mb-2 text-current" stroke="currentColor" strokeWidth="6" fill="none" strokeLinecap="round" strokeLinejoin="round">
+                                      <rect x="25" y="35" width="50" height="30" rx="4" />
+                                    </svg>
+                                  )
+                                }
+                              ].map(s => (
+                                <button
+                                  key={s.id}
+                                  type="button"
+                                  onClick={() => setSimpleShape(s.id)}
+                                  className={`p-5 rounded-2xl border-2 text-sm font-bold flex flex-col items-center justify-center transition-all ${
+                                    simpleShape === s.id 
+                                      ? 'border-accent bg-accent/5 text-accent ring-2 ring-accent/30' 
+                                      : 'border-gray-200 text-gray-400 hover:border-gray-300 hover:text-gray-600 bg-white'
+                                  }`}
+                                >
+                                  {s.svg}
+                                  <span className={simpleShape === s.id ? "text-accent" : "text-gray-700"}>{s.label}</span>
+                                </button>
+                              ))}
+                            </div>
+
+                            <h3 className="text-sm font-bold text-gray-800 mb-4">2. Rough Size</h3>
+                            <div className="grid grid-cols-3 gap-3 mb-6">
+                              {[
+                                { id: 'small', label: 'Small', desc: 'Under 50 sqft / 15 LF', feet: 15 },
+                                { id: 'medium', label: 'Medium', desc: '50-100 sqft / 25 LF', feet: 25 },
+                                { id: 'large', label: 'Large', desc: '100+ sqft / 40 LF', feet: 40 }
+                              ].map(s => (
+                                <button
+                                  key={s.id}
+                                  onClick={() => {
+                                    setSimpleSize(s.id as any);
+                                    setFeet(s.feet);
+                                    setInches(0);
+                                  }}
+                                  className={`p-3 rounded-xl border-2 text-center transition-all ${
+                                    simpleSize === s.id ? 'border-accent bg-accent/5' : 'border-gray-200 hover:border-gray-300 bg-white'
+                                  }`}
+                                >
+                                  <div className={`text-sm font-bold mb-1 ${simpleSize === s.id ? 'text-accent' : 'text-gray-800'}`}>{s.label}</div>
+                                  <div className="text-[10px] text-gray-500">{s.desc}</div>
+                                </button>
+                              ))}
+                            </div>
                           </div>
-                          <div className="p-4 sm:p-6 bg-white flex justify-center">
-                            <img 
-                              src={howToMeasure} 
-                              alt="How to Measure countertops guide" 
-                              className="w-full max-w-xl h-auto object-contain rounded-2xl"
-                            />
-                          </div>
-                        </div>
+                        )}
 
                         {/* Calculated Cabinet Length Display Box */}
-                        <div className="bg-[#FAF9F6] border border-[#E5E2DC] rounded-3xl p-4 sm:p-6 flex items-center gap-4 sm:gap-6">
+                        <div className="bg-[#FAF9F6] border border-[#E5E2DC] rounded-3xl p-4 sm:p-6 flex items-center gap-4 sm:gap-6 mt-6">
                           <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white rounded-full flex items-center justify-center shadow-sm border border-gray-100 shrink-0">
                             <span className="text-[#C6A87D] font-bold text-base sm:text-lg">{Math.round(totalCabinetLF)}</span>
                           </div>
                           <div>
                             <h4 className="font-bold text-[#1A1A1A] text-xs sm:text-base">
-                              Calculated Cabinet Length: {Math.round(totalCabinetLF)} Linear FT
+                              {measureMode === 'precise' ? 'Calculated' : 'Estimated'} Cabinet Length: {Math.round(totalCabinetLF)} Linear FT
                             </h4>
                             <p className="text-gray-400 font-semibold text-[10px] sm:text-xs italic mt-1 leading-relaxed">
-                              Formula: Wall length + island/peninsula cabinet add-on
+                              {measureMode === 'precise' ? 'Formula: Wall length + island/peninsula cabinet add-on' : `Based on a ${simpleSize || 'typical'} ${simpleShape || 'kitchen'} layout.`}
                             </p>
                           </div>
                         </div>
@@ -898,7 +1026,7 @@ export default function KitchenCabinetEstimator() {
                         <p className="text-xs text-gray-500 font-semibold">Prefer to send photos or files directly?</p>
                         <div className="flex flex-wrap items-center justify-center gap-3">
                           <a 
-                            href="https://wa.me/16473706684" 
+                            href={getWhatsAppUrl()}
                             target="_blank" 
                             rel="noopener noreferrer" 
                             className="inline-flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#20ba59] text-white px-5 py-2.5 rounded-xl font-bold text-xs tracking-wider uppercase transition-colors"
@@ -1316,5 +1444,6 @@ export default function KitchenCabinetEstimator() {
         </div>
 
       </div>
+    </div>
   );
 }

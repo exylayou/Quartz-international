@@ -2,6 +2,7 @@
 import { motion } from 'motion/react';
 import { useParams, Navigate } from 'react-router-dom';
 import { SEO } from '../components/SEO';
+import { Helmet } from 'react-helmet-async';
 import {
   ArrowRight, 
   Check, 
@@ -41,9 +42,44 @@ export default function SlabDetail() {
     .filter(m => m.category === material.category && m.id !== material.id)
     .slice(0, 3);
 
+  // Extract prices for structured data schema
+  const prices = material.priceRange.match(/\d+/g);
+  const lowPrice = prices ? parseInt(prices[0]) : null;
+  const highPrice = prices && prices.length > 1 ? parseInt(prices[1]) : null;
+
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": `${material.name} by ${material.brand} Quartz Countertop`,
+    "image": `https://quartzinternational.ca${material.img}`,
+    "description": material.description,
+    "brand": {
+      "@type": "Brand",
+      "name": material.brand
+    },
+    "offers": {
+      "@type": "AggregateOffer",
+      "priceCurrency": "CAD",
+      "lowPrice": lowPrice || undefined,
+      "highPrice": highPrice || undefined,
+      "priceUnit": "sq ft",
+      "description": "Installed countertop cost per square foot in Toronto & GTA"
+    }
+  };
+
   return (
     <div className="bg-background">
-      <SEO title="Slab Detail | Quartz International" description="Learn more about Slab Detail at Quartz International. We provide premium countertops and cabinetry in Toronto and the GTA." />
+      <SEO 
+        title={`${material.name} by ${material.brand} Quartz Toronto | 2026 Price`} 
+        description={`Get typical cost, price per square foot installed, and design specifications for ${material.name} by ${material.brand} quartz countertops in Toronto & the GTA.`}
+        canonical={`/slab/${material.id}`}
+        image={material.img}
+      />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(productSchema)}
+        </script>
+      </Helmet>
 
       {/* 1. HERO */}
       <section className="relative pt-32 pb-24 overflow-hidden bg-white">

@@ -125,11 +125,11 @@ export const materials: SlabMaterial[] = [
     ]
   },
   {
-    id: 'caesarstone-5152',
-    name: '5152 Empira White',
+    id: 'caesarstone-5151',
+    name: '5151 Empira White',
     brand: 'Caesarstone',
-    priceRange: '$124 – $170',
-    typicalCost: '$4,950 – $8,500',
+    priceRange: '$139 – $201',
+    typicalCost: '$5,500 – $9,000',
     category: 'marble',
     img: '/images/slabs/empira-white.jpg',
     description: 'A classical white base quartz highlighted by thin, delicate dark grey veins that web across the slab.',

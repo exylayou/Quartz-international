@@ -223,7 +223,7 @@ export default function CalacattaGold() {
               </div>
               <div className="relative z-10 md:w-2/5 flex justify-center md:justify-end">
                  <button 
-                   onClick={() => openCalculator({ slab: 'Calacatta Gold', tier: 'premium' })}
+                   onClick={() => openCalculator({ slab: 'Calacatta Gold', level: 'premium' })}
                    className="btn-primary h-auto px-16 py-8 text-2xl font-black group shadow-3xl shadow-accent/20"
                  >
                    Start Estimate

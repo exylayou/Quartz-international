@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { CheckCircle2, AlertCircle, FileText, Calendar, User, Mail, Phone, ArrowRight, ShieldCheck, Download } from 'lucide-react';
+import { CheckCircle2, AlertCircle, FileText, Calendar, User, Mail, Phone, ArrowRight, ShieldCheck, Download, MessageCircle, CreditCard, Loader2 } from 'lucide-react';
 
 import { SEO } from '../components/SEO';
 interface QuoteItem {
@@ -38,6 +38,7 @@ interface QuoteData {
   quoteNotes?: string;
   clientSignedAt?: string;
   clientSignatureName?: string;
+  quoteDepositPercent?: number;
 }
 
 export default function QuoteView() {
@@ -48,6 +49,78 @@ export default function QuoteView() {
   const [signatureName, setSignatureName] = React.useState('');
   const [signing, setSigning] = React.useState(false);
   const [successMessage, setSuccessMessage] = React.useState('');
+  const [verifyingPayment, setVerifyingPayment] = React.useState(false);
+  const [paymentVerificationSuccess, setPaymentVerificationSuccess] = React.useState(false);
+  const [paymentVerificationError, setPaymentVerificationError] = React.useState('');
+  const [redirectingToStripe, setRedirectingToStripe] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!id) return;
+    const query = new URLSearchParams(window.location.search);
+    const success = query.get('success');
+    const sessionId = query.get('session_id');
+
+    if (success === 'true' && sessionId) {
+      const verifyPayment = async () => {
+        setVerifyingPayment(true);
+        try {
+          const response = await fetch(`/api/quotes/${id}/verify-payment`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ sessionId })
+          });
+
+          if (response.ok) {
+            setPaymentVerificationSuccess(true);
+            setSuccessMessage('Payment completed and verified successfully!');
+            // Clean up the URL query parameters
+            window.history.replaceState({}, document.title, `/quote/${id}`);
+            // Refetch quote to display updated paid state
+            await fetchQuote();
+          } else {
+            const data = await response.json();
+            setPaymentVerificationError(data.error || 'Payment verification failed. Please contact support.');
+          }
+        } catch (err) {
+          setPaymentVerificationError('Connection failure. Failed to verify payment.');
+        } finally {
+          setVerifyingPayment(false);
+        }
+      };
+
+      verifyPayment();
+    }
+  }, [id]);
+
+  const handlePayWithStripe = async () => {
+    setRedirectingToStripe(true);
+    try {
+      const response = await fetch(`/api/quotes/${id}/create-checkout-session`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        if (data.url) {
+          window.location.href = data.url;
+        } else {
+          alert('Failed to get payment checkout session.');
+        }
+      } else {
+        const data = await response.json();
+        alert(data.error || 'Failed to initiate checkout session.');
+      }
+    } catch (err) {
+      alert('Error connecting to server. Please try again.');
+    } finally {
+      setRedirectingToStripe(false);
+    }
+  };
 
   const fetchQuote = async () => {
     setLoading(true);
@@ -99,6 +172,36 @@ export default function QuoteView() {
       setSigning(false);
     }
   };
+
+  if (verifyingPayment) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center p-4 pt-32">
+        <SEO title="Verifying Payment | Quartz International" description="Verifying your transaction with Stripe. Please wait." />
+        <div className="flex flex-col items-center gap-4 text-center">
+          <Loader2 className="w-12 h-12 text-accent animate-spin" />
+          <p className="text-sm font-bold text-gray-500 uppercase tracking-widest animate-pulse">Verifying Transaction with Stripe...</p>
+          <p className="text-xs text-gray-400">Do not refresh or close this window.</p>
+        </div>
+      </div>
+    );
+  }
+
+  if (paymentVerificationError) {
+    return (
+      <div className="min-h-screen bg-background flex items-center justify-center p-4 pt-32">
+        <div className="glass-panel p-8 max-w-md w-full rounded-3xl shadow-xl border border-red-200 text-center space-y-6 bg-white">
+          <div className="w-16 h-16 bg-red-50 text-red-500 rounded-2xl flex items-center justify-center mx-auto">
+            <AlertCircle size={32} />
+          </div>
+          <h1 className="text-2xl font-bold text-text-primary">Payment Verification Failed</h1>
+          <p className="text-gray-500 text-sm leading-relaxed">{paymentVerificationError}</p>
+          <button onClick={() => setPaymentVerificationError('')} className="btn-primary inline-flex h-12 px-8 items-center rounded-xl text-sm justify-center w-full">
+            Back to Proposal
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   if (loading) {
     return (
@@ -293,19 +396,184 @@ export default function QuoteView() {
 
             {/* Signature & Sign-off Area */}
             <div className="border-t border-border-custom pt-10">
-              {isApproved ? (
-                <div className="bg-green-50 border border-green-200 rounded-[2rem] p-8 text-center space-y-4">
-                  <div className="w-12 h-12 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center mx-auto shadow-inner">
-                    <CheckCircle2 size={24} />
+              {quote.quoteStatus === 'paid' ? (
+                <div className="bg-emerald-50 border border-emerald-200 rounded-[2rem] p-8 text-center space-y-4">
+                  <div className="w-12 h-12 bg-emerald-500/10 text-emerald-500 rounded-full flex items-center justify-center mx-auto shadow-inner">
+                    <CheckCircle2 size={24} className="text-emerald-500" />
                   </div>
                   <div>
-                    <h3 className="font-black text-green-900 text-lg uppercase tracking-wider">Proposal Electronically Signed & Approved</h3>
-                    <p className="text-green-700 text-sm mt-1 leading-relaxed">
-                      This quote has been approved by <strong>{quote.clientSignatureName}</strong> on {new Date(quote.clientSignedAt || '').toLocaleDateString()}.
+                    <h3 className="font-black text-emerald-900 text-lg uppercase tracking-wider">Invoice Paid & Confirmed</h3>
+                    <p className="text-emerald-700 text-sm mt-1 leading-relaxed">
+                      Thank you! We have successfully received and processed your payment for proposal <strong>{quote.quoteNumber}</strong>.
                     </p>
-                    <p className="text-[10px] text-green-600 mt-2 font-medium tracking-wide">
-                      A copy of this proposal has been locked for fabrication and template scheduling.
+                    <p className="text-[10px] text-emerald-600 mt-2 font-medium tracking-wide">
+                      Our project coordinator has locked your slot and will confirm site laser templating times shortly.
                     </p>
+                  </div>
+                </div>
+              ) : isApproved ? (
+                <div className="space-y-6">
+                  {/* Approval Banner */}
+                  <div className="bg-green-50 border border-green-200 rounded-[2rem] p-8 text-center space-y-4">
+                    <div className="w-12 h-12 bg-green-500/10 text-green-500 rounded-full flex items-center justify-center mx-auto shadow-inner">
+                      <CheckCircle2 size={24} />
+                    </div>
+                    <div>
+                      <h3 className="font-black text-green-900 text-lg uppercase tracking-wider">Proposal Electronically Signed & Approved</h3>
+                      <p className="text-green-700 text-sm mt-1 leading-relaxed">
+                        This quote has been approved by <strong>{quote.clientSignatureName || 'Client'}</strong> on {quote.clientSignedAt ? new Date(quote.clientSignedAt).toLocaleDateString() : new Date().toLocaleDateString()}.
+                      </p>
+                      <p className="text-[10px] text-green-600 mt-2 font-medium tracking-wide">
+                        A copy of this proposal has been locked for fabrication and template scheduling.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Payment Deposit CTA Section */}
+                  <div className="bg-white border border-border-custom rounded-[2rem] p-8 md:p-10 space-y-8 shadow-sm relative overflow-hidden text-left">
+                    {/* Background accent glow */}
+                    <div className="absolute -top-12 -right-12 w-40 h-40 bg-accent/5 rounded-full blur-2xl pointer-events-none" />
+                    
+                    {(() => {
+                      const depositPercent = quote.quoteDepositPercent !== undefined ? quote.quoteDepositPercent : 50;
+                      const isDeposit = quote.quoteStatus === 'approved';
+                      const paymentAmount = isDeposit 
+                        ? Math.round(quote.quoteTotal * (depositPercent / 100))
+                        : quote.quoteTotal;
+                      
+                      return (
+                        <>
+                          <div className="border-b border-border-custom pb-6">
+                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-accent block mb-2">
+                              {isDeposit ? "Next Step: Confirm Installation Slot" : "Outstanding Invoice Payment"}
+                            </span>
+                            <h3 className="text-2xl font-black text-text-primary">
+                              {isDeposit ? "Securing Your Installation Slot" : "Invoice Payment Due"}
+                            </h3>
+                            <p className="text-gray-500 text-sm mt-2 leading-relaxed">
+                              {isDeposit 
+                                ? `To lock in your materials, schedule site measurements (laser templates), and reserve your production date, a ${depositPercent}% deposit is required.`
+                                : `Please complete payment for the remaining balance of your project.`
+                              }
+                            </p>
+                          </div>
+
+                          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+                            
+                            {/* Interac e-Transfer panel */}
+                            <div className="bg-[#F8F9FA] border border-border-custom rounded-2xl p-6 space-y-5">
+                              <div className="flex justify-between items-center">
+                                <span className="text-[10px] font-bold uppercase tracking-wider text-gray-400">Interac e-Transfer Instructions</span>
+                                <span className="bg-accent/10 text-accent font-semibold text-[9px] uppercase tracking-wider px-2 py-0.5 rounded">Auto-Deposit</span>
+                              </div>
+                              
+                              <div className="space-y-4">
+                                <div className="bg-white p-4 rounded-xl border border-border-custom/50 flex justify-between items-center">
+                                  <div>
+                                    <span className="text-[10px] text-gray-400 font-bold block uppercase">
+                                      {isDeposit ? `Deposit Amount (${depositPercent}%)` : "Full Invoice Amount"}
+                                    </span>
+                                    <span className="text-2xl font-black text-accent">${paymentAmount.toLocaleString()}</span>
+                                  </div>
+                                  <span className="text-[10px] text-gray-400 font-medium">of total ${quote.quoteTotal.toLocaleString()}</span>
+                                </div>
+
+                                <div className="space-y-2 text-xs">
+                                  <div className="flex justify-between py-1.5 border-b border-gray-200/50">
+                                    <span className="text-gray-400">Recipient:</span>
+                                    <span className="font-bold text-gray-800">Quartz International</span>
+                                  </div>
+                                  <div className="flex justify-between py-1.5 border-b border-gray-200/50">
+                                    <span className="text-gray-400">Send To Email:</span>
+                                    <span className="font-bold text-accent font-mono">info@quartzinternational.ca</span>
+                                  </div>
+                                  <div className="flex justify-between py-1.5 border-b border-gray-200/50">
+                                    <span className="text-gray-400">Memo Reference:</span>
+                                    <span className="font-bold text-gray-800 font-mono">{quote.quoteNumber}</span>
+                                  </div>
+                                </div>
+                              </div>
+
+                              <div className="text-[10px] text-gray-400 leading-relaxed bg-white/50 p-3 rounded-lg border border-border-custom/30">
+                                Please include the quote number <strong className="font-mono">{quote.quoteNumber}</strong> in the e-Transfer message field so our finance team can instantly credit your account.
+                              </div>
+                            </div>
+
+                            {/* Secure Credit Card Payment (Stripe) & Contact Options */}
+                            <div className="space-y-6">
+                              <div className="space-y-2">
+                                <h4 className="text-sm font-bold text-text-primary">Option A: Pay securely via Credit/Debit Card</h4>
+                                <p className="text-xs text-gray-500 leading-relaxed">
+                                  Pay your {isDeposit ? `${depositPercent}% deposit` : 'invoice balance'} instantly using any major credit card, Visa Debit, or Mastercard via secure Stripe checkout.
+                                </p>
+                              </div>
+
+                              <button
+                                onClick={handlePayWithStripe}
+                                disabled={redirectingToStripe}
+                                className="bg-accent hover:bg-accent-hover text-white h-12 rounded-xl text-sm font-bold flex items-center justify-center gap-2 shadow-lg shadow-accent/15 transition-all w-full disabled:opacity-50"
+                              >
+                                <CreditCard size={18} />
+                                {redirectingToStripe ? 'Redirecting to Stripe...' : `Pay $${paymentAmount.toLocaleString()} via Credit Card`}
+                              </button>
+
+                              <div className="relative flex py-2 items-center">
+                                <div className="flex-grow border-t border-gray-200"></div>
+                                <span className="flex-shrink mx-4 text-gray-400 text-[10px] font-bold uppercase tracking-wider">OR</span>
+                                <div className="flex-grow border-t border-gray-200"></div>
+                              </div>
+
+                              <div className="space-y-2">
+                                <h4 className="text-sm font-bold text-text-primary">Option B: Confirm Booking & Scheduling</h4>
+                                <p className="text-xs text-gray-500 leading-relaxed">
+                                  If sending e-Transfer, notify our team via WhatsApp to instantly book your laser template measurement appointment.
+                                </p>
+                              </div>
+
+                              <div className="space-y-3">
+                                <a 
+                                  href={localStorage.getItem('qi_has_contacted') === 'true' 
+                                    ? 'https://api.whatsapp.com/send/?phone=16473706684'
+                                    : `https://api.whatsapp.com/send/?phone=16473706684&text=${encodeURIComponent(`Hi, I've just approved proposal ${quote.quoteNumber} and sent the deposit. I'd like to confirm the next steps and template timing.`)}`
+                                  }
+                                  target="_blank"
+                                  rel="noreferrer"
+                                  onClick={() => {
+                                    localStorage.setItem('qi_has_contacted', 'true');
+                                  }}
+                                  className="bg-[#25D366] hover:bg-[#20BA5A] text-white h-12 rounded-xl text-sm font-bold flex items-center justify-center gap-2 shadow-lg shadow-green-500/20 transition-colors w-full"
+                                >
+                                  <MessageCircle size={18} />
+                                  Confirm via WhatsApp
+                                </a>
+                                
+                                <div className="text-center">
+                                  <a
+                                    href="https://api.whatsapp.com/send/?phone=16473706684"
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="text-[10px] text-gray-400 underline hover:text-accent font-semibold"
+                                  >
+                                    Already chatting with us? Open chat without pre-filled text
+                                  </a>
+                                </div>
+                              </div>
+
+                              <div className="bg-amber-50 border border-amber-200 rounded-xl p-4 text-xs text-amber-850">
+                                <p className="font-bold flex items-center gap-1.5">
+                                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500 shrink-0" />
+                                  Prefer to pay another way?
+                                </p>
+                                <p className="text-amber-700 mt-1 leading-relaxed">
+                                  We also accept bank drafts, EFT, and major credit cards (subject to processing fees). Call us at <strong>(647) 370-6938</strong> to complete payment.
+                                </p>
+                              </div>
+                            </div>
+
+                          </div>
+                        </>
+                      );
+                    })()}
                   </div>
                 </div>
               ) : (

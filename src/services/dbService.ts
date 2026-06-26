@@ -62,6 +62,7 @@ export type LeadStatus =
   | 'Quote Sent'
   | 'Site Measure'
   | 'Deposit Received'
+  | 'Invoice Sent'
   | 'Installation Scheduled'
   | 'Completed';
 

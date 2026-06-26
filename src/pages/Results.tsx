@@ -330,7 +330,7 @@ export default function Results() {
                         <div className="flex justify-between text-xs font-bold uppercase tracking-widest text-gray-400">
                            <span>Total Linear Footage:</span>
                            <span className="text-[#1A1A1A]">
-                             {cabinetSize + ({ none: 0, small: 4, large: 8, waterfall: 8 }[islandType || 'none'])} LIN FT
+                             {cabinetSize + ({ none: 0, small: 4, large: 8, waterfall: 8 }[(islandType || 'none') as 'none' | 'small' | 'large' | 'waterfall'])} LIN FT
                            </span>
                         </div>
                      </div>
@@ -569,7 +569,7 @@ export default function Results() {
                 <p className="text-xl font-bold">
                   {includeCountertops 
                     ? (state.kitchenLinearFt ? `${state.kitchenLinearFt} ft` : `${kitchenSize} sq ft`) 
-                    : `${cabinetSize + ({ none: 0, small: 4, large: 8, waterfall: 8 }[islandType || 'none'])} ft`}
+                    : `${cabinetSize + ({ none: 0, small: 4, large: 8, waterfall: 8 }[(islandType || 'none') as 'none' | 'small' | 'large' | 'waterfall'])} ft`}
                 </p>
               </div>
               {islandType && islandType !== 'none' && (
