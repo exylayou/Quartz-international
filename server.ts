@@ -624,12 +624,22 @@ app.post("/api/leads", async (req, res) => {
       return res.status(404).json({ error: "Quote not found" });
     }
 
+    const depositPercent = lead.quoteDepositPercent !== undefined ? lead.quoteDepositPercent : 50;
+    const isNoDeposit = depositPercent === 0;
+    const nextQuoteStatus = isNoDeposit ? 'invoiced' : 'approved';
+
     const clientSignedAt = new Date().toISOString();
-    const updated = await updateLead(id, {
-      quoteStatus: 'approved',
+    const updates: Partial<Lead> = {
+      quoteStatus: nextQuoteStatus,
       clientSignedAt,
       clientSignatureName: signatureName
-    });
+    };
+
+    if (isNoDeposit) {
+      updates.leadStatus = 'Invoice Sent';
+    }
+
+    const updated = await updateLead(id, updates);
 
     if (updated) {
       if (process.env.SMTP_USER && process.env.SMTP_PASS) {
@@ -652,12 +662,11 @@ app.post("/api/leads", async (req, res) => {
             </table>
           `
         };
-        try {
-          await transporter.sendMail(adminMailOptions);
-          console.log("Approval notification email sent successfully.");
-        } catch (err) {
-          console.error("Error sending approval email to admin:", err);
-        }
+        
+        // Asynchronous, non-blocking send
+        transporter.sendMail(adminMailOptions)
+          .then(() => console.log("Approval notification email sent successfully to admin."))
+          .catch((err: any) => console.error("Error sending approval email to admin:", err));
 
         // Send confirmation email to customer (non-blocking)
         if (lead.email) {
@@ -719,12 +728,11 @@ app.post("/api/leads", async (req, res) => {
               </div>
             `
           };
-          try {
-            await transporter.sendMail(clientMailOptions);
-            console.log(`Quote approval confirmation email sent to customer (Lead: ${id})`);
-          } catch (err) {
-            console.error("Error sending quote approval confirmation email to customer:", err);
-          }
+          
+          // Asynchronous, non-blocking send
+          transporter.sendMail(clientMailOptions)
+            .then(() => console.log(`Quote approval confirmation email sent to customer (Lead: ${id})`))
+            .catch((err: any) => console.error("Error sending quote approval confirmation email to customer:", err));
         }
       }
       res.json({ status: "success", message: "Quote approved and signed successfully" });
@@ -1017,6 +1025,7 @@ app.post("/api/leads", async (req, res) => {
 
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
+        invoice_creation: { enabled: true },
         line_items: [
           {
             price_data: {
