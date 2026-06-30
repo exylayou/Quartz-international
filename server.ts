@@ -91,30 +91,6 @@ function getFromEmail(adminSecret?: any, defaultPrefix: string = "Quartz Interna
 const app = express();
 app.use(express.json({ limit: '10mb' }));
 
-// Serve uploaded visualizer files
-const UPLOADS_DIR = path.join(process.cwd(), 'data', 'uploads');
-app.use('/uploads', express.static(UPLOADS_DIR));
-
-// Visualizer file upload endpoint
-app.post("/api/visualizer/upload", async (req, res) => {
-  try {
-    const { fileBase64, fileName } = req.body;
-    if (!fileBase64 || !fileName) {
-      return res.status(400).json({ error: "Missing fileBase64 or fileName" });
-    }
-    await fs.mkdir(UPLOADS_DIR, { recursive: true });
-    const ext = path.extname(fileName) || '.png';
-    const uniqueName = `viz_${Date.now()}_${Math.random().toString(36).substr(2, 6)}${ext}`;
-    const filePath = path.join(UPLOADS_DIR, uniqueName);
-    const base64Data = fileBase64.replace(/^data:image\/\w+;base64,/, '');
-    await fs.writeFile(filePath, Buffer.from(base64Data, 'base64'));
-    res.json({ url: `/uploads/${uniqueName}`, name: fileName });
-  } catch (err: any) {
-    console.error("Visualizer upload failed:", err);
-    res.status(500).json({ error: err.message || "Upload failed" });
-  }
-});
-
 // API routes
 app.post("/api/leads", async (req, res) => {
     const raw = req.body;

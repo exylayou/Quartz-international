@@ -17,7 +17,6 @@ import Estimate from './pages/Estimate';
 import Results from './pages/Results';
 import QuoteView from './pages/QuoteView';
 import Admin from './pages/Admin';
-import KitchenVisualizer from './pages/KitchenVisualizer';
 import WhiteQuartzPage from './pages/WhiteQuartzPage';
 
 // Countertop pages
@@ -70,7 +69,6 @@ export default function App() {
             <Route path="/results" element={<Results />} />
             <Route path="/quote/:id" element={<QuoteView />} />
             <Route path="/admin" element={<Admin />} />
-            <Route path="/visualizer" element={<KitchenVisualizer />} />
 
             {/* Countertops */}
             <Route path="/quartz-kitchen-countertops" element={<QuartzBrowse />} />

@@ -19,7 +19,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const navLinks = [
     { name: 'Countertops', path: '/quartz-kitchen-countertops' },
     { name: 'Cabinets', path: '/cabinets' },
-    { name: 'Visualizer', path: '/visualizer' },
   ];
 
   const isLandingPage = false; // Always show header navigation as requested

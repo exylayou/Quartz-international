@@ -36,7 +36,6 @@ const CORE_ROUTES = [
   '/quartz-countertop-estimator',
   '/kitchen-cabinet-cost-guide',
   '/blog',
-  '/visualizer',
   '/cabinet-finishes',
   '/kitchen-cabinet-estimator',
   '/kitchen-renovation-estimator',

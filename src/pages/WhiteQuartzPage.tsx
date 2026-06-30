@@ -104,7 +104,7 @@ export default function WhiteQuartzPage() {
               Explore the GTA's most popular white quartz countertop slabs. From brilliant pure white to gold-veined Calacatta marble designs, find your style and get an instant online price.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center">
+            <div className="flex justify-center">
               <button 
                 onClick={() => openCalculator()} 
                 className="btn-primary px-12 py-6 h-auto text-lg font-bold shadow-2xl shadow-accent/20 group cursor-pointer"
@@ -112,12 +112,6 @@ export default function WhiteQuartzPage() {
                 Estimate My Countertop Price 
                 <ArrowRight size={20} className="inline-block ml-2 group-hover:translate-x-1 transition-transform" />
               </button>
-              <Link 
-                to="/visualizer" 
-                className="inline-flex items-center justify-center border-2 border-border-custom hover:border-text-primary hover:bg-background px-10 py-5 rounded-full font-bold text-text-primary text-sm transition-all"
-              >
-                Try in Kitchen Visualizer
-              </Link>
             </div>
           </motion.div>
         </div>
