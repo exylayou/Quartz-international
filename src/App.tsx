@@ -18,6 +18,7 @@ import Results from './pages/Results';
 import QuoteView from './pages/QuoteView';
 import Admin from './pages/Admin';
 import KitchenVisualizer from './pages/KitchenVisualizer';
+import WhiteQuartzPage from './pages/WhiteQuartzPage';
 
 // Countertop pages
 import QuartzBrowse from './pages/QuartzBrowse';
@@ -73,6 +74,7 @@ export default function App() {
 
             {/* Countertops */}
             <Route path="/quartz-kitchen-countertops" element={<QuartzBrowse />} />
+            <Route path="/white-quartz-kitchen-countertops" element={<WhiteQuartzPage />} />
             <Route path="/slab/:id" element={<SlabDetail />} />
             <Route path="/material/:materialId" element={<MaterialPage />} />
             <Route path="/caesarstone" element={<Caesarstone />} />

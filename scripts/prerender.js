@@ -53,7 +53,8 @@ const CORE_ROUTES = [
   '/quartz-countertops-lucent',
   '/tce-stone',
   '/quartz-countertops-tce',
-  '/quartz-countertop-guide-2026'
+  '/quartz-countertop-guide-2026',
+  '/white-quartz-kitchen-countertops'
 ];
 
 const ROUTES = Array.from(new Set([
@@ -82,6 +83,25 @@ async function prerender() {
     const browser = await chromium.launch({ headless: true });
     const context = await browser.newContext();
     const page = await context.newPage();
+
+    // Listen to console and page errors to debug timeouts
+    page.on('console', msg => {
+      const text = msg.text();
+      if (msg.type() === 'error' || text.includes('Error') || text.includes('Failed')) {
+        console.log(`PAGE LOG [${msg.type()}]:`, text);
+      }
+    });
+    page.on('pageerror', err => {
+      console.log('PAGE EXCEPTION:', err.stack || err.message);
+    });
+    page.on('response', response => {
+      if (response.status() >= 400) {
+        console.log('HTTP ERROR:', response.status(), response.url());
+      }
+    });
+    page.on('requestfailed', request => {
+      console.log('REQUEST FAILED:', request.url(), request.failure()?.errorText || '');
+    });
 
     for (const route of ROUTES) {
       console.log(`\n⏳ Prerendering ${route}...`);
