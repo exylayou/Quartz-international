@@ -91,30 +91,6 @@ function getFromEmail(adminSecret?: any, defaultPrefix: string = "Quartz Interna
 const app = express();
 app.use(express.json({ limit: '10mb' }));
 
-// Serve uploaded visualizer files
-const UPLOADS_DIR = path.join(process.cwd(), 'data', 'uploads');
-app.use('/uploads', express.static(UPLOADS_DIR));
-
-// Visualizer file upload endpoint
-app.post("/api/visualizer/upload", async (req, res) => {
-  try {
-    const { fileBase64, fileName } = req.body;
-    if (!fileBase64 || !fileName) {
-      return res.status(400).json({ error: "Missing fileBase64 or fileName" });
-    }
-    await fs.mkdir(UPLOADS_DIR, { recursive: true });
-    const ext = path.extname(fileName) || '.png';
-    const uniqueName = `viz_${Date.now()}_${Math.random().toString(36).substr(2, 6)}${ext}`;
-    const filePath = path.join(UPLOADS_DIR, uniqueName);
-    const base64Data = fileBase64.replace(/^data:image\/\w+;base64,/, '');
-    await fs.writeFile(filePath, Buffer.from(base64Data, 'base64'));
-    res.json({ url: `/uploads/${uniqueName}`, name: fileName });
-  } catch (err: any) {
-    console.error("Visualizer upload failed:", err);
-    res.status(500).json({ error: err.message || "Upload failed" });
-  }
-});
-
 // API routes
 app.post("/api/leads", async (req, res) => {
     const raw = req.body;
@@ -624,12 +600,22 @@ app.post("/api/leads", async (req, res) => {
       return res.status(404).json({ error: "Quote not found" });
     }
 
+    const depositPercent = lead.quoteDepositPercent !== undefined ? lead.quoteDepositPercent : 50;
+    const isNoDeposit = depositPercent === 0;
+    const nextQuoteStatus = isNoDeposit ? 'invoiced' : 'approved';
+
     const clientSignedAt = new Date().toISOString();
-    const updated = await updateLead(id, {
-      quoteStatus: 'approved',
+    const updates: Partial<Lead> = {
+      quoteStatus: nextQuoteStatus,
       clientSignedAt,
       clientSignatureName: signatureName
-    });
+    };
+
+    if (isNoDeposit) {
+      updates.leadStatus = 'Invoice Sent';
+    }
+
+    const updated = await updateLead(id, updates);
 
     if (updated) {
       if (process.env.SMTP_USER && process.env.SMTP_PASS) {
@@ -652,12 +638,11 @@ app.post("/api/leads", async (req, res) => {
             </table>
           `
         };
-        try {
-          await transporter.sendMail(adminMailOptions);
-          console.log("Approval notification email sent successfully.");
-        } catch (err) {
-          console.error("Error sending approval email to admin:", err);
-        }
+        
+        // Asynchronous, non-blocking send
+        transporter.sendMail(adminMailOptions)
+          .then(() => console.log("Approval notification email sent successfully to admin."))
+          .catch((err: any) => console.error("Error sending approval email to admin:", err));
 
         // Send confirmation email to customer (non-blocking)
         if (lead.email) {
@@ -719,12 +704,11 @@ app.post("/api/leads", async (req, res) => {
               </div>
             `
           };
-          try {
-            await transporter.sendMail(clientMailOptions);
-            console.log(`Quote approval confirmation email sent to customer (Lead: ${id})`);
-          } catch (err) {
-            console.error("Error sending quote approval confirmation email to customer:", err);
-          }
+          
+          // Asynchronous, non-blocking send
+          transporter.sendMail(clientMailOptions)
+            .then(() => console.log(`Quote approval confirmation email sent to customer (Lead: ${id})`))
+            .catch((err: any) => console.error("Error sending quote approval confirmation email to customer:", err));
         }
       }
       res.json({ status: "success", message: "Quote approved and signed successfully" });
@@ -1017,6 +1001,7 @@ app.post("/api/leads", async (req, res) => {
 
       const session = await stripe.checkout.sessions.create({
         payment_method_types: ['card'],
+        invoice_creation: { enabled: true },
         line_items: [
           {
             price_data: {
