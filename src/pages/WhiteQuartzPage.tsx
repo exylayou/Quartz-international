@@ -25,8 +25,7 @@ const fadeIn = {
 
 // Filter materials for white quartz slabs
 const whiteSlabs = materials
-  .filter(m => m.category === 'white' || m.category === 'marble' || m.name.toLowerCase().includes('white') || m.description.toLowerCase().includes('white'))
-  .slice(0, 6) // Top 6 most popular white slabs
+  .filter(m => m.category === 'white')
   .map(m => ({
     id: m.id,
     name: m.name,
