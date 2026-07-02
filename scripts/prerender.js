@@ -4,6 +4,11 @@ import { fileURLToPath } from 'url';
 import { chromium } from '@playwright/test';
 import express from 'express';
 
+if (process.env.VERCEL) {
+  console.log("Running on Vercel: skipping Playwright prerendering (client-side SPA fallback will be used).");
+  process.exit(0);
+}
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
