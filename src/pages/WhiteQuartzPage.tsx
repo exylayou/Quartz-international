@@ -221,8 +221,8 @@ export default function WhiteQuartzPage() {
             
             <div className="rounded-[3rem] overflow-hidden shadow-2xl relative h-[450px]">
               <img 
-                src="https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&q=80&w=1200" 
-                alt="Modern kitchen with white quartz countertops and brass hardware"
+                src="/images/white_quartz_pairing.png" 
+                alt="Modern kitchen with calacatta gold white quartz countertops, full height backsplash, warm white cabinets and gold hardware"
                 className="w-full h-full object-cover" 
               />
             </div>
