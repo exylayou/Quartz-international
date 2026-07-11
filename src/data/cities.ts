@@ -543,5 +543,235 @@ export const cities: Record<string, CityData> = {
       testimonial2: "/images/modern-island-dark.jpg",
       testimonial3: "/images/modern-island-dark.jpg"
     }
+  },
+  aurora: {
+    slug: 'aurora',
+    name: 'Aurora',
+    region: 'York Region',
+    areasServed: 'Aurora, Newmarket, King, Oak Ridges, and Whitchurch-Stouffville',
+    popularMaterial: 'Luxury Gold-Veined Quartz',
+    localIntro: 'Quartz International supplies, fabricates, and installs premium quartz countertops for Aurora family homes, heritage estates, and upscale kitchen renovations. From newer builds in Bayview Southeast to classic property upgrades near Yonge St, we deliver expert countertop craftsmanship.',
+    showroomGuidance: 'Aurora homeowners can easily view full slabs at our partner warehouses in Concord and Vaughan, just a short drive south down Highway 400 or Highway 404.',
+    localProjectNotes: 'Aurora projects frequently feature large kitchen islands with waterfall gables, matching full-height quartz backsplashes, and elegant double-mitered edge details. We specialize in coordinating with local builders and design firms in the area.',
+    popularOptions: [
+      { name: 'Calacatta Gold Quartz', desc: 'Stunning white quartz with sweeping gold and grey veins, perfect for large islands.' },
+      { name: 'Pure White Matte', desc: 'A clean, contemporary surface popular in modern Aurora builds.' },
+      { name: 'Soapstone Look Quartz', desc: 'Dark grey or black quartz with delicate white veining for high-contrast designs.' }
+    ],
+    customFaqs: [
+      { q: 'Where can I view full-size slabs near Aurora?', a: 'You can view full slabs at our partner showrooms in Concord and Woodbridge. We will coordinate your visit so you can inspect and tag your specific slab before fabrication.' }
+    ],
+    showrooms: [
+      { brand: 'Lucent Quartz', address: '40 West Beaver Creek Rd, Richmond Hill, ON L4B 3K1' },
+      { brand: 'Caesarstone Concord', address: '350 Caldari Rd, Concord, ON L4K 4J4' }
+    ],
+    testimonial1: {
+      title: "Bayview Southeast Kitchen Remodel",
+      quote: "The Calacatta Gold waterfall island is the centerpiece of our home. Absolutely stunning work.",
+      author: "Robert",
+      neighborhood: "Bayview Southeast"
+    },
+    testimonial2: {
+      title: "Heritage Home Upgrade",
+      quote: "They respected our older home's unique layout and installed the countertops flawlessly. Quick turn-around too.",
+      author: "Clara",
+      neighborhood: "Yonge & Wellington"
+    },
+    testimonial3: {
+      title: "Modern Townhome Refurbishment",
+      quote: "Excellent pricing and professional installation. The matte white finish looks spectacular.",
+      author: "Aidan",
+      neighborhood: "Aurora Highlands"
+    },
+    images: {
+      hero: "/images/cabinet_cities_hero_common.jpg",
+      testimonial1: "/images/typical-kitchen.jpg",
+      testimonial2: "/images/modern-island-dark.jpg",
+      testimonial3: "/images/modern-island-dark.jpg"
+    }
+  },
+  king: {
+    slug: 'king',
+    name: 'King',
+    region: 'York Region',
+    areasServed: 'King City, Nobleton, Schomberg, Pottageville, and Aurora',
+    popularMaterial: 'Premium Calacatta Quartz',
+    localIntro: 'We supply, fabricate, and install premium quartz countertops for King\'s custom country estates, luxury home builds, and high-end equestrian property renovations. We provide a seamless, white-glove stonework service.',
+    showroomGuidance: 'Slab selection can be coordinated at our premium partner showrooms in Concord and Woodbridge, where you can inspect and tag your exact slab before any cutting begins.',
+    localProjectNotes: 'King projects are characterized by grand, oversized kitchens with multi-slab layouts requiring bookmatched veining and custom mitered drop edges. We ensure seamless installation for large islands and custom details.',
+    popularOptions: [
+      { name: 'Bookmatched Calacatta', desc: 'Mirror-image veining for high-end luxury kitchen backsplashes and islands.' },
+      { name: 'Classic Statuario Quartz', desc: 'Bright white background with thick, dramatic grey veins.' },
+      { name: 'Concrete Look Matte', desc: 'Sophisticated industrial finish for modern estate additions.' }
+    ],
+    customFaqs: [
+      { q: 'Do you handle large, multi-slab estate projects in King?', a: 'Yes. Our fabrication facility is equipped with precision machinery to handle complex layouts, bookmatched backsplashes, and large waterfall islands.' }
+    ],
+    showrooms: [
+      { brand: 'Caesarstone Concord', address: '350 Caldari Rd, Concord, ON L4K 4J4' },
+      { brand: 'TCE Stone Vaughan', address: '200 Romina Dr, Vaughan, ON L4K 4Z7' }
+    ],
+    testimonial1: {
+      title: "Luxury Country Estate",
+      quote: "Bookmatched backsplash and countertops look like a work of art. The precision is unmatched.",
+      author: "Charles",
+      neighborhood: "King City"
+    },
+    testimonial2: {
+      title: "Custom Equestrian Property",
+      quote: "Beautiful, durable quartz countertops that handle our busy estate kitchen. Flawless execution.",
+      author: "Katherine",
+      neighborhood: "Schomberg"
+    },
+    testimonial3: {
+      title: "Modern Ranch House Remodel",
+      quote: "Prompt service, expert templating, and beautiful stone. Very professional team.",
+      author: "Julian",
+      neighborhood: "Pottageville"
+    },
+    images: {
+      hero: "/images/cabinet_cities_hero_common.jpg",
+      testimonial1: "/images/typical-kitchen.jpg",
+      testimonial2: "/images/modern-island-dark.jpg",
+      testimonial3: "/images/modern-island-dark.jpg"
+    }
+  },
+  nobleton: {
+    slug: 'nobleton',
+    name: 'Nobleton',
+    region: 'York Region',
+    areasServed: 'Nobleton, King City, Kleinburg, and Bolton',
+    popularMaterial: 'Luxury Marble-Look Quartz',
+    localIntro: 'Quartz International provides elite quartz fabrication and installation for custom home builds, luxury renovations, and kitchen remodels in Nobleton. We specialize in premium edge profiles and custom stone solutions.',
+    showroomGuidance: 'Nobleton clients have convenient access to premium stone showrooms in Vaughan and Concord. We arrange direct viewings so you can select and approve full slabs.',
+    localProjectNotes: 'Nobleton projects commonly involve massive open-concept kitchens, matching outdoor kitchen stone surfaces, custom wet bars, and full-height slab backsplashes.',
+    popularOptions: [
+      { name: 'Luxury Marble-Look Quartz', desc: 'Timeless designs matching the beauty of natural white marble with zero maintenance.' },
+      { name: 'Waterfall Gable Ends', desc: 'Mitred side gables for a continuous stone look from the floor to the island top.' },
+      { name: 'Dark Slate Quartz', desc: 'Elegant charcoal grey tones popular for custom home basement wet bars.' }
+    ],
+    customFaqs: [
+      { q: 'Can you match the veining of my countertops with a full-height backsplash?', a: 'Yes! We use advanced software to layout and align the vein flows from the horizontal countertop up the vertical backsplash.' }
+    ],
+    showrooms: [
+      { brand: 'TCE Stone Vaughan', address: '200 Romina Dr, Vaughan, ON L4K 4Z7' },
+      { brand: 'Kstone Concord', address: '150 Caldari Rd, Concord, ON L4K 4J4' }
+    ],
+    testimonial1: {
+      title: "Custom Mansion Build",
+      quote: "The waterfall island and wet bar countertops are spectacular. Excellent fabrication quality.",
+      author: "Adriano",
+      neighborhood: "Nobleton Ridge"
+    },
+    testimonial2: {
+      title: "Kitchen & Pantry Remodel",
+      quote: "Wonderful experience. They supplied custom cabinets and quartz countertops together, saving us time.",
+      author: "Laura",
+      neighborhood: "Nobleton East"
+    },
+    testimonial3: {
+      title: "Executive Townhome Upgrade",
+      quote: "Professional, clean, and fast. The marble-look quartz looks incredibly upscale.",
+      author: "Marcus",
+      neighborhood: "Nobleton Lakes"
+    },
+    images: {
+      hero: "/images/cabinet_cities_hero_common.jpg",
+      testimonial1: "/images/typical-kitchen.jpg",
+      testimonial2: "/images/modern-island-dark.jpg",
+      testimonial3: "/images/modern-island-dark.jpg"
+    }
+  },
+  stouffville: {
+    slug: 'stouffville',
+    name: 'stouffville',
+    region: 'York Region',
+    areasServed: 'Whitchurch-Stouffville, Markham, Uxbridge, and Richmond Hill',
+    popularMaterial: 'Classic White Quartz',
+    localIntro: 'We offer premium quartz countertops for Stouffville\'s fast-growing residential subdivisions, custom country properties, and family kitchen renovations. Get a precise template-to-install service.',
+    showroomGuidance: 'View slabs at our partner warehouses in Markham, Richmond Hill, or Scarborough for convenient east-GTA access.',
+    localProjectNotes: 'Stouffville projects are split between modern new-subdivision kitchen upgrades and custom farmhouse renovations in the surrounding rural areas. We tailor our layouts to fit each aesthetic.',
+    popularOptions: [
+      { name: 'Carrara White Quartz', desc: 'Soft grey veining on a warm white background, a versatile designer choice.' },
+      { name: 'Stark Pure White', desc: 'Ultra-clean, crisp white quartz that brightens up any kitchen space.' },
+      { name: 'Sparkling Mirror Quartz', desc: 'White quartz with embedded reflective flecks that catch light beautifully.' }
+    ],
+    customFaqs: [
+      { q: 'Do you install in rural Whitchurch-Stouffville?', a: 'Yes. We serve the entire Whitchurch-Stouffville municipality, including the town center and surrounding rural properties.' }
+    ],
+    showrooms: [
+      { brand: 'Kasa Markham', address: '7310 Woodbine Ave, Markham, ON L3R 1A4' },
+      { brand: 'The Stone Depot', address: '25 Commander Blvd, Scarborough, ON M1S 3F7' }
+    ],
+    testimonial1: {
+      title: "Subdivision Kitchen Upgrade",
+      quote: "Replaced our basic builder laminate counters with gorgeous Carrara quartz. It looks ten times better.",
+      author: "Daniele",
+      neighborhood: "Wheler\'s Mill"
+    },
+    testimonial2: {
+      title: "Country Farmhouse Remodel",
+      quote: "The custom counters fit our rustic kitchen design perfectly. Very clean and precise installation.",
+      author: "Greg",
+      neighborhood: "Ballantrae"
+    },
+    testimonial3: {
+      title: "New Townhome Countertop",
+      quote: "Fast turnaround and great price. The installer team was professional and kept our place spotless.",
+      author: "Vanessa",
+      neighborhood: "Stouffville Main"
+    },
+    images: {
+      hero: "/images/cabinet_cities_hero_common.jpg",
+      testimonial1: "/images/typical-kitchen.jpg",
+      testimonial2: "/images/modern-island-dark.jpg",
+      testimonial3: "/images/modern-island-dark.jpg"
+    }
+  },
+  uxbridge: {
+    slug: 'uxbridge',
+    name: 'Uxbridge',
+    region: 'Durham Region',
+    areasServed: 'Uxbridge, Port Perry, Stouffville, and Whitby',
+    popularMaterial: 'Durable Family-Friendly Quartz',
+    localIntro: 'Quartz International delivers durable, beautiful quartz countertops for Uxbridge homeowners. We cover the local community with reliable templating, professional fabrication, and clean installations.',
+    showroomGuidance: 'Uxbridge clients can view full-size slabs at our partner showrooms in Pickering and Markham, ensuring convenient East-end access.',
+    localProjectNotes: 'Uxbridge projects frequently focus on durable, stain-resistant materials for active family households, farmhouses, and custom woodland retreats.',
+    popularOptions: [
+      { name: 'Warm White Veined', desc: 'Creamy white background with soft brown and grey veining for a cozy farmhouse look.' },
+      { name: 'Stain-Resistant Shimmer', desc: 'Excellent stain-resistant quartz with subtle light-reflecting particles.' },
+      { name: 'Charcoal Matte Quartz', desc: 'Rich dark grey finish with a smooth matte texture, popular in modern additions.' }
+    ],
+    customFaqs: [
+      { q: 'Is templating and installation included in your Uxbridge quotes?', a: 'Yes. Our full service template, fabrication, delivery, and professional installation are included in our initial quote price.' }
+    ],
+    showrooms: [
+      { brand: 'Kasa Markham', address: '7310 Woodbine Ave, Markham, ON L3R 1A4' },
+      { brand: 'Silestone Burlington', address: '3485 N Service Rd, Burlington, ON L7N 3G2' }
+    ],
+    testimonial1: {
+      title: "Woodland Home Remodel",
+      quote: "The warm veined quartz blends beautifully with our wooden cabinets. Excellent installation work.",
+      author: "Peter",
+      neighborhood: "Uxbridge Wood"
+    },
+    testimonial2: {
+      title: "Family Kitchen Renovation",
+      quote: "Stain-resistant and tough. It holds up perfectly to our kids' spills and still looks brand new.",
+      author: "Fiona",
+      neighborhood: "Uxbridge Town"
+    },
+    testimonial3: {
+      title: "Port Perry Lake Cottage",
+      quote: "Prompt and professional. Our cottage kitchen looks stunning with the charcoal matte countertops.",
+      author: "Harlan",
+      neighborhood: "Port Perry"
+    },
+    images: {
+      hero: "/images/cabinet_cities_hero_common.jpg",
+      testimonial1: "/images/typical-kitchen.jpg",
+      testimonial2: "/images/modern-island-dark.jpg",
+      testimonial3: "/images/modern-island-dark.jpg"
+    }
   }
 };

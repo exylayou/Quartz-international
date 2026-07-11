@@ -330,5 +330,155 @@ export const cabinetCities: Record<string, CabinetCityData> = {
       testimonial1: "/images/typical-kitchen.jpg",
       testimonial2: "/images/modern-island-dark.jpg"
     }
+  },
+  aurora: {
+    slug: 'aurora',
+    name: 'Aurora',
+    region: 'York Region',
+    areasServed: 'Aurora, Newmarket, King, and Whitchurch-Stouffville',
+    popularMaterial: 'Premium Cabinetry',
+    testimonial1: {
+      title: "Aurora Custom Shaker Cabinets",
+      quote: "Beautiful, solid cabinets built to last. The soft-close hinges feel incredibly premium.",
+      author: "David",
+      neighborhood: "Aurora Highlands"
+    },
+    testimonial2: {
+      title: "Modern Two-Tone Layout",
+      quote: "The contrast between the white upper cabinets and oak base island is exactly what we wanted.",
+      author: "Rachel",
+      neighborhood: "Bayview Southeast"
+    },
+    testimonial3: {
+      title: "Complete Kitchen Overhaul",
+      quote: "Turnkey service from measurement to installation. We saved both time and money.",
+      author: "Simon",
+      neighborhood: "Aurora Heights"
+    },
+    images: {
+      hero: "/images/cabinet_cities_hero_common.jpg",
+      testimonial1: "/images/typical-kitchen.jpg",
+      testimonial2: "/images/modern-island-dark.jpg"
+    }
+  },
+  king: {
+    slug: 'king',
+    name: 'King',
+    region: 'York Region',
+    areasServed: 'King City, Nobleton, Schomberg, and surrounding estates',
+    popularMaterial: 'Luxury Custom Cabinetry',
+    testimonial1: {
+      title: "King Estate Custom Kitchen",
+      quote: "Grand, high-ceiling custom cabinets designed and installed with absolute precision.",
+      author: "Charles",
+      neighborhood: "King City"
+    },
+    testimonial2: {
+      title: "Equestrian Property Upgrade",
+      quote: "High-end cabinetry with custom organizers and deep drawers. Outstanding quality.",
+      author: "Victoria",
+      neighborhood: "Schomberg"
+    },
+    testimonial3: {
+      title: "Farmhouse Style Cabinets",
+      quote: "Stunning craftsmanship. The wood finish matches our country home's rustic style beautifully.",
+      author: "Julian",
+      neighborhood: "Pottageville"
+    },
+    images: {
+      hero: "/images/cabinet_cities_hero_common.jpg",
+      testimonial1: "/images/typical-kitchen.jpg",
+      testimonial2: "/images/modern-island-dark.jpg"
+    }
+  },
+  nobleton: {
+    slug: 'nobleton',
+    name: 'Nobleton',
+    region: 'York Region',
+    areasServed: 'Nobleton, King City, and Kleinburg',
+    popularMaterial: 'High-End Modern Cabinets',
+    testimonial1: {
+      title: "Nobleton Ridge Executive Kitchen",
+      quote: "Sleek, modern flat-panel cabinets. The matte finish is gorgeous and resists fingerprints.",
+      author: "Adriano",
+      neighborhood: "Nobleton Ridge"
+    },
+    testimonial2: {
+      title: "Open-Concept Layout Upgrade",
+      quote: "The seamless integration of the pantry cabinets and the giant island is flawless.",
+      author: "Laura",
+      neighborhood: "Nobleton East"
+    },
+    testimonial3: {
+      title: "Wet Bar & Kitchenette Cabinets",
+      quote: "Perfect cabinets for our basement walk-out bar. Very highly recommended.",
+      author: "Marcus",
+      neighborhood: "Nobleton Lakes"
+    },
+    images: {
+      hero: "/images/cabinet_cities_hero_common.jpg",
+      testimonial1: "/images/typical-kitchen.jpg",
+      testimonial2: "/images/modern-island-dark.jpg"
+    }
+  },
+  stouffville: {
+    slug: 'stouffville',
+    name: 'stouffville',
+    region: 'York Region',
+    areasServed: 'Whitchurch-Stouffville, Markham, and Uxbridge',
+    popularMaterial: 'Classic Shaker Cabinetry',
+    testimonial1: {
+      title: "Stouffville New Build Kitchen",
+      quote: "Replaced our basic builder cabinets with custom white shaker cabinets. It completely transformed the room.",
+      author: "Daniele",
+      neighborhood: "Wheler\'s Mill"
+    },
+    testimonial2: {
+      title: "Farmhouse Kitchen Refresh",
+      quote: "Stunning natural wood shaker cabinets. The installation team was extremely precise.",
+      author: "Greg",
+      neighborhood: "Ballantrae"
+    },
+    testimonial3: {
+      title: "Turnkey Cabinets & Quartz Bundle",
+      quote: "Getting the cabinets and quartz countertops together made the installation incredibly smooth.",
+      author: "Vanessa",
+      neighborhood: "Stouffville Main"
+    },
+    images: {
+      hero: "/images/cabinet_cities_hero_common.jpg",
+      testimonial1: "/images/typical-kitchen.jpg",
+      testimonial2: "/images/modern-island-dark.jpg"
+    }
+  },
+  uxbridge: {
+    slug: 'uxbridge',
+    name: 'Uxbridge',
+    region: 'Durham Region',
+    areasServed: 'Uxbridge, Port Perry, and Stouffville',
+    popularMaterial: 'Durable Family Cabinetry',
+    testimonial1: {
+      title: "Uxbridge Family Home Remodel",
+      quote: "Sturdy cabinets with plenty of drawer space. Great for holding heavy pots and pans.",
+      author: "Fiona",
+      neighborhood: "Uxbridge Town"
+    },
+    testimonial2: {
+      title: "Rustic Farmhouse Cabinets",
+      quote: "Warm shaker cabinets that feel inviting. The design assistance we received was top-notch.",
+      author: "Peter",
+      neighborhood: "Uxbridge Wood"
+    },
+    testimonial3: {
+      title: "Cottage Kitchenette Cabinets",
+      quote: "Clean, simple RTA cabinets for our lakeside property. Very easy to assemble and install.",
+      author: "Harlan",
+      neighborhood: "Port Perry"
+    },
+    images: {
+      hero: "/images/cabinet_cities_hero_common.jpg",
+      testimonial1: "/images/typical-kitchen.jpg",
+      testimonial2: "/images/modern-island-dark.jpg"
+    }
   }
 };

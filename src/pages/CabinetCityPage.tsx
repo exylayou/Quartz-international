@@ -179,7 +179,15 @@ export default function CabinetCityPage() {
         </div>
       </section>
 
-      
+      {/* Subtle trust statement banner */}
+      <div className="bg-accent/5 border-b border-gray-100 py-6 text-center">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <p className="text-sm sm:text-base font-semibold text-text-primary">
+            🛡️ Serving homeowners in Aurora, King, Nobleton, Stouffville, Uxbridge, and communities across the Greater Toronto Area with custom cabinetry and premium quartz countertop installation.
+          </p>
+        </div>
+      </div>
+
       {/* Section 2: Pricing Guide */}
       <section className="py-24 bg-background/50">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">

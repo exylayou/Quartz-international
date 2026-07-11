@@ -130,6 +130,15 @@ export default function CityServicePage() {
         </div>
       </section>
 
+      {/* Subtle trust statement banner */}
+      <div className="bg-accent/5 border-b border-gray-100 py-6 text-center">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
+          <p className="text-sm sm:text-base font-semibold text-text-primary">
+            🛡️ Serving homeowners in Aurora, King, Nobleton, Stouffville, Uxbridge, and communities across the Greater Toronto Area with custom cabinetry and premium quartz countertop installation.
+          </p>
+        </div>
+      </div>
+
       {/* 2. Countertop Services & 7. Local Project Notes */}
       <section className="py-24 bg-background/50 border-y border-gray-100">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
