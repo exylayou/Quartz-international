@@ -223,7 +223,7 @@ export const cabinetPseoPages: CabinetPseoData[] = [
         a: 'It rarely includes installation, appliances, sinks, hardware (knobs/pulls), crown moulding, light valances, finished end panels, or countertops unless explicitly stated as a bundle package.'
       }
     ],
-    image: '/assets/essential_two_tone_kitchen.png'
+    image: '/images/essential_two_tone_kitchen.png'
   },
   {
     slug: 'kitchen-cabinets-and-quartz-countertops-toronto',

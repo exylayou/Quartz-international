@@ -43,6 +43,10 @@ import KitchenCabinetEstimator from './pages/KitchenCabinetEstimator';
 import KitchenRenovationEstimator from './pages/KitchenRenovationEstimator';
 import KitchenCabinetCost from './pages/KitchenCabinetCost';
 
+// New standalone landing pages
+import QuartzVsQuartzite from './pages/QuartzVsQuartzite';
+import RentalPropertyCountertops from './pages/RentalPropertyCountertops';
+
 // Local / City
 import AreasWeServe from './pages/AreasWeServe';
 import CityCostPage from './pages/CityCostPage';
@@ -100,6 +104,8 @@ export default function App() {
             <Route path="/kitchen-cabinet-estimator" element={<KitchenCabinetEstimator />} />
             <Route path="/kitchen-renovation-estimator" element={<KitchenRenovationEstimator />} />
             <Route path="/kitchen-cabinet-cost" element={<KitchenCabinetCost />} />
+            <Route path="/quartz-vs-quartzite" element={<QuartzVsQuartzite />} />
+            <Route path="/best-countertop-for-rental-properties" element={<RentalPropertyCountertops />} />
 
             {/* Local / City */}
             <Route path="/areas-we-serve" element={<AreasWeServe />} />

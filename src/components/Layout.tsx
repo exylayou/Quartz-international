@@ -163,6 +163,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <li><Link to="/about" className="hover:text-white transition-colors">About</Link></li>
                   <li><Link to="/blog" className="hover:text-white transition-colors">Blog</Link></li>
                   <li><Link to="/gallery" className="hover:text-white transition-colors">Our Gallery</Link></li>
+                  <li><Link to="/areas-we-serve" className="hover:text-white transition-colors">Areas We Serve</Link></li>
                 </ul>
               </div>
 

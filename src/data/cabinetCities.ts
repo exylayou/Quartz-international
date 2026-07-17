@@ -480,5 +480,125 @@ export const cabinetCities: Record<string, CabinetCityData> = {
       testimonial1: "/images/typical-kitchen.jpg",
       testimonial2: "/images/modern-island-dark.jpg"
     }
+  },
+  eastgwillimbury: {
+    slug: 'east-gwillimbury',
+    name: 'East Gwillimbury',
+    region: 'York Region',
+    areasServed: 'East Gwillimbury, Sharon, and Mount Albert',
+    popularMaterial: 'Transitional Style Cabinets',
+    testimonial1: {
+      title: "Estate Kitchen Cabinet Installation",
+      quote: "Beautiful, solid wood cabinetry that transforms our open layout. The fit and finish are exceptional.",
+      author: "Robert",
+      neighborhood: "Sharon Hills"
+    },
+    testimonial2: {
+      title: "Custom Paint Finished Cabinets",
+      quote: "Transitional soft-grey cabinets that look custom-made. The soft-close hinges feel incredibly premium.",
+      author: "Elena",
+      neighborhood: "Holland Landing"
+    },
+    testimonial3: {
+      title: "Farmhouse Kitchen Refresh",
+      quote: "The cabinetry team provided detailed layouts and guidance. The result exceeded our expectations.",
+      author: "Marcus",
+      neighborhood: "Mount Albert"
+    },
+    images: {
+      hero: "/images/cabinet_cities_hero_common.jpg",
+      testimonial1: "/images/typical-kitchen.jpg",
+      testimonial2: "/images/modern-island-dark.jpg"
+    }
+  },
+  newmarket: {
+    slug: 'newmarket',
+    name: 'Newmarket',
+    region: 'York Region',
+    areasServed: 'Newmarket, Aurora, and Bradford',
+    popularMaterial: 'Classic White Shaker Cabinets',
+    testimonial1: {
+      title: "Suburban Kitchen Cabinet Upgrade",
+      quote: "Replaced our dark oak cabinets with bright white shaker cabinets. Our kitchen feels double the size now.",
+      author: "Sarah",
+      neighborhood: "College Manor"
+    },
+    testimonial2: {
+      title: "Townhome Ready-to-Install Cabinets",
+      quote: "Very straightforward assembly. The pre-assembled boxes saved our contractor so much on-site installation time.",
+      author: "David",
+      neighborhood: "Stonehaven"
+    },
+    testimonial3: {
+      title: "Custom Painted Island Cabinets",
+      quote: "Stunning contrast island painted in a beautiful navy blue. The hardware alignment is absolutely perfect.",
+      author: "Christine",
+      neighborhood: "Newmarket Heights"
+    },
+    images: {
+      hero: "/images/cabinet_cities_hero_common.jpg",
+      testimonial1: "/images/typical-kitchen.jpg",
+      testimonial2: "/images/modern-island-dark.jpg"
+    }
+  },
+  kleinburg: {
+    slug: 'kleinburg',
+    name: 'Kleinburg',
+    region: 'York Region',
+    areasServed: 'Kleinburg, Woodbridge, and Maple',
+    popularMaterial: 'Bespoke Custom Hardwood Cabinetry',
+    testimonial1: {
+      title: "Luxury Custom Manor Kitchen",
+      quote: "Elite custom cabinetry that fits the grand architecture of our home. Truly masterpiece-level joinery.",
+      author: "Gianni",
+      neighborhood: "Kleinburg Village"
+    },
+    testimonial2: {
+      title: "Full-Height Custom Pantries",
+      quote: "Sleek, floor-to-ceiling cabinets with integrated lighting. The detailing on the crown molding is perfect.",
+      author: "Sophia",
+      neighborhood: "Humber Valley Estates"
+    },
+    testimonial3: {
+      title: "Modern European Slab Cabinets",
+      quote: "Sophisticated frameless cabinet profile with high-end matching panels. The storage capacity is incredible.",
+      author: "Alberto",
+      neighborhood: "Kleinburg Hills"
+    },
+    images: {
+      hero: "/images/cabinet_cities_hero_common.jpg",
+      testimonial1: "/images/typical-kitchen.jpg",
+      testimonial2: "/images/modern-island-dark.jpg"
+    }
+  },
+  milton: {
+    slug: 'milton',
+    name: 'Milton',
+    region: 'Halton Region',
+    areasServed: 'Milton, Campbellville, and Halton Hills',
+    popularMaterial: 'Family-Friendly Shaker Cabinets',
+    testimonial1: {
+      title: "New Subdivision Cabinet Upgrade",
+      quote: "Clean, durable cabinets that stand up to our busy family schedule. Highly scratch-resistant and beautiful.",
+      author: "Jason",
+      neighborhood: "Harrison"
+    },
+    testimonial2: {
+      title: "Suburban Family Kitchen Remodel",
+      quote: "Perfect balance of value and quality. The delivery was right on time and alignment is pristine.",
+      author: "Melissa",
+      neighborhood: "Beaty"
+    },
+    testimonial3: {
+      title: "Campbellville Custom Country Kitchen",
+      quote: "Warm wood-grain shaker cabinets that feel rustic yet modern. Highly recommend their design process.",
+      author: "Douglas",
+      neighborhood: "Campbellville"
+    },
+    images: {
+      hero: "/images/cabinet_cities_hero_common.jpg",
+      testimonial1: "/images/typical-kitchen.jpg",
+      testimonial2: "/images/modern-island-dark.jpg"
+    }
   }
 };

@@ -773,5 +773,235 @@ export const cities: Record<string, CityData> = {
       testimonial2: "/images/modern-island-dark.jpg",
       testimonial3: "/images/modern-island-dark.jpg"
     }
+  },
+  eastgwillimbury: {
+    slug: 'east-gwillimbury',
+    name: 'East Gwillimbury',
+    region: 'York Region',
+    areasServed: 'East Gwillimbury, Sharon, Holland Landing, and Mount Albert',
+    popularMaterial: 'Calacatta Gold Quartz',
+    localIntro: 'Quartz International designs and installs stunning custom countertops in East Gwillimbury. We serve the fast-growing Sharon, Holland Landing, and Mount Albert communities with premium quartz templating and precision fabrication.',
+    showroomGuidance: 'East Gwillimbury clients are invited to explore our premium partner showrooms in Markham and Vaughan, where full-sized luxury slabs are on display.',
+    localProjectNotes: 'East Gwillimbury projects frequently feature sprawling custom kitchen islands, double-islands, and high-end transitional countertop designs in newly built custom estates.',
+    popularOptions: [
+      { name: 'Calacatta Gold Premium', desc: 'Warm gold and grey veining cascading over a pure white slab, a favorite for large Sharon estate kitchens.' },
+      { name: 'Polished Statuario Quartz', desc: 'Bright white stone with distinct, flowing grey veins for a classic, timeless aesthetic.' },
+      { name: 'Pure White Minimalist', desc: 'Ultra-clean solid white quartz that complements modern European cabinetry.' }
+    ],
+    customFaqs: [
+      { q: 'Do you offer site measurement and template scans in Sharon and Mount Albert?', a: 'Yes. We provide complete physical site measurements and 3D digital template scans across Sharon, Holland Landing, Mount Albert, and surrounding rural properties.' }
+    ],
+    showrooms: [
+      { brand: 'Kasa Markham', address: '7310 Woodbine Ave, Markham, ON L3R 1A4' },
+      { brand: 'The Stone Depot', address: '25 Commander Blvd, Scarborough, ON M1S 3F7' }
+    ],
+    testimonial1: {
+      title: "Luxury Estate Kitchen",
+      quote: "The Calacatta Gold countertop is the absolute highlight of our new build. The pattern matching at the seams is flawless.",
+      author: "Robert",
+      neighborhood: "Sharon Hills"
+    },
+    testimonial2: {
+      title: "Transitional Kitchen Countertops",
+      quote: "Beautiful craftsmanship and clean installation. They coordinated perfectly with our cabinet delivery schedule.",
+      author: "Elena",
+      neighborhood: "Holland Landing"
+    },
+    testimonial3: {
+      title: "Mount Albert Renovation",
+      quote: "Professional, detailed, and responsive. The digital templating process ensured a perfect fit around our custom layout.",
+      author: "Marcus",
+      neighborhood: "Mount Albert"
+    },
+    images: {
+      hero: "/images/cabinet_cities_hero_common.jpg",
+      testimonial1: "/images/typical-kitchen.jpg",
+      testimonial2: "/images/modern-island-dark.jpg",
+      testimonial3: "/images/modern-island-dark.jpg"
+    }
+  },
+  newmarket: {
+    slug: 'newmarket',
+    name: 'Newmarket',
+    region: 'York Region',
+    areasServed: 'Newmarket, Aurora, East Gwillimbury, and Bradford',
+    popularMaterial: 'Classic Marble-Look Quartz',
+    localIntro: 'Quartz International provides premium quartz countertop sales, fabrication, and installation in Newmarket. We cater to both modern kitchen upgrades and complete home renovations with high-durability engineered stone.',
+    showroomGuidance: 'Newmarket clients can browse our full range of slabs and edge profiles at our nearby Markham showroom, located just a short drive down Highway 404.',
+    localProjectNotes: 'Newmarket projects often consist of updating mature detached home kitchens, replacing older laminate or granite with modern veined quartz surfaces.',
+    popularOptions: [
+      { name: 'Carrara Mist Quartz', desc: 'Soft, delicate grey veining on a warm white background, replicating natural Italian marble.' },
+      { name: 'Shadow Grey Quartz', desc: 'Deep charcoal grey with tiny reflective flecks, highly resistant to kitchen stains and scratches.' },
+      { name: 'Calacatta Classic', desc: 'Broad, bold grey veins on a stark white base for an eye-catching focal point.' }
+    ],
+    customFaqs: [
+      { q: 'How long does a countertop replacement take in Newmarket?', a: 'A standard replacement takes 5 to 7 business days from the physical site measurement and template scan to the final on-site installation.' }
+    ],
+    showrooms: [
+      { brand: 'Kasa Markham', address: '7310 Woodbine Ave, Markham, ON L3R 1A4' },
+      { brand: 'The Stone Depot', address: '25 Commander Blvd, Scarborough, ON M1S 3F7' }
+    ],
+    testimonial1: {
+      title: "Older Suburb Renovation",
+      quote: "Upgraded our 20-year-old kitchen with Carrara Mist countertops. The space looks brand new and twice as bright.",
+      author: "Sarah",
+      neighborhood: "College Manor"
+    },
+    testimonial2: {
+      title: "Modern Townhouse Kitchen",
+      quote: "The installer team was polite, neat, and completed the job in under four hours. Extremely satisfied.",
+      author: "David",
+      neighborhood: "Stonehaven"
+    },
+    testimonial3: {
+      title: "Custom Island Countertop",
+      quote: "Outstanding pattern layout on our large island. The seams are invisible and the stone is exceptionally durable.",
+      author: "Christine",
+      neighborhood: "Newmarket Heights"
+    },
+    images: {
+      hero: "/images/cabinet_cities_hero_common.jpg",
+      testimonial1: "/images/typical-kitchen.jpg",
+      testimonial2: "/images/modern-island-dark.jpg",
+      testimonial3: "/images/modern-island-dark.jpg"
+    }
+  },
+  kleinburg: {
+    slug: 'kleinburg',
+    name: 'Kleinburg',
+    region: 'York Region',
+    areasServed: 'Kleinburg, Woodbridge, Maple, and King City',
+    popularMaterial: 'Luxury Statuario Quartz',
+    localIntro: 'Quartz International delivers world-class, bespoke quartz countertop fabrication for Kleinburg homeowners. We focus on ultra-premium materials and elite finishing techniques for custom mansion renovations and high-end residential designs.',
+    showroomGuidance: 'Kleinburg clients are invited to schedule private slab viewing appointments at our Vaughan partner showrooms for an exclusive selection experience.',
+    localProjectNotes: 'Kleinburg projects usually feature thick mitered edges, full-height bookmatched backsplashes, and custom waterfall island profiles.',
+    popularOptions: [
+      { name: 'Statuario Ultra Mitered', desc: 'Elite Italian-inspired veining with a mitered edge profile to create an imposing, luxurious look.' },
+      { name: 'Calacatta Gold Gold-Vein', desc: 'Warm gold accents integrated into deep grey veins, popular in grand open-concept kitchens.' },
+      { name: 'Matte Concrete Grey Quartz', desc: 'Sophisticated industrial look with a soft, non-reflective suede finish.' }
+    ],
+    customFaqs: [
+      { q: 'Do you offer bookmatched backsplashes in Kleinburg?', a: 'Yes. For high-end designs, we specialize in bookmatching slabs to ensure veining flows seamlessly from the countertop up the wall.' }
+    ],
+    showrooms: [
+      { brand: 'Silestone Burlington', address: '3485 N Service Rd, Burlington, ON L7N 3G2' },
+      { brand: 'Kasa Markham', address: '7310 Woodbine Ave, Markham, ON L3R 1A4' }
+    ],
+    testimonial1: {
+      title: "Bespoke Mansion Kitchen",
+      quote: "The mitered edge on our double islands looks like a single massive block of stone. A masterpiece of design and installation.",
+      author: "Gianni",
+      neighborhood: "Kleinburg Village"
+    },
+    testimonial2: {
+      title: "Full Slab Backsplash",
+      quote: "Stunning craftsmanship. They bookmatched the veins of the countertop and backsplash beautifully. Unmatched detail.",
+      author: "Sophia",
+      neighborhood: "Humber Valley Estates"
+    },
+    testimonial3: {
+      title: "Modern Architectural Addition",
+      quote: "The matte concrete quartz countertop fits our minimalist aesthetic perfectly. Very clean lines and flawless finish.",
+      author: "Alberto",
+      neighborhood: "Kleinburg Hills"
+    },
+    images: {
+      hero: "/images/cabinet_cities_hero_common.jpg",
+      testimonial1: "/images/typical-kitchen.jpg",
+      testimonial2: "/images/modern-island-dark.jpg",
+      testimonial3: "/images/modern-island-dark.jpg"
+    }
+  },
+  oakville: {
+    slug: 'oakville',
+    name: 'Oakville',
+    region: 'Halton Region',
+    areasServed: 'Oakville, Burlington, and Milton',
+    popularMaterial: 'Premium Calacatta Quartz',
+    localIntro: 'Quartz International offers premium engineered quartz countertop solutions in Oakville. We specialize in luxury kitchen countertop replacements, custom fireplace surrounds, and bathroom vanities for lakeside custom homes.',
+    showroomGuidance: 'Oakville clients can visit our west-end partner showrooms in Burlington and Mississauga to view full-size slabs and select edge profiles.',
+    localProjectNotes: 'Oakville projects frequently involve luxury home renovations, large custom kitchen peninsulas, and mitered waterfall island countertops.',
+    popularOptions: [
+      { name: 'Calacatta Gold Premium', desc: 'Stunning white quartz with gold and grey veins, highly popular in Oakville custom kitchens.' },
+      { name: 'Carrara Classic', desc: 'Soft grey veins on a warm white background for a elegant, traditional aesthetic.' },
+      { name: 'Pure White Polished', desc: 'Ultra-clean, solid white quartz that complements modern transitional designs.' }
+    ],
+    customFaqs: [
+      { q: 'Do you provide professional site measurements in Oakville?', a: 'Yes. We utilize advanced digital templating tools to capture precise measurements of your cabinetry layout on-site in Oakville before fabrication.' }
+    ],
+    showrooms: [
+      { brand: 'Silestone Burlington', address: '3485 N Service Rd, Burlington, ON L7N 3G2' },
+      { brand: 'Kasa Markham', address: '7310 Woodbine Ave, Markham, ON L3R 1A4' }
+    ],
+    testimonial1: {
+      title: "Waterfront Kitchen Remodel",
+      quote: "The Calacatta Gold countertop is stunning and holds up perfectly to daily use. Flawless installation.",
+      author: "Patricia",
+      neighborhood: "Bronte Harbor"
+    },
+    testimonial2: {
+      title: "Custom Double Island",
+      quote: "Outstanding pattern layout and craftsmanship. The mitered waterfall edges look incredibly premium.",
+      author: "Richard",
+      neighborhood: "Eastlake"
+    },
+    testimonial3: {
+      title: "Modern Condo Countertop",
+      quote: "Clean lines, quick turnaround, and excellent customer service. Highly recommend the team.",
+      author: "Lori",
+      neighborhood: "Oakville Uptown"
+    },
+    images: {
+      hero: "/images/cabinet_cities_hero_common.jpg",
+      testimonial1: "/images/typical-kitchen.jpg",
+      testimonial2: "/images/modern-island-dark.jpg",
+      testimonial3: "/images/modern-island-dark.jpg"
+    }
+  },
+  milton: {
+    slug: 'milton',
+    name: 'Milton',
+    region: 'Halton Region',
+    areasServed: 'Milton, Campbellville, Oakville, and Halton Hills',
+    popularMaterial: 'Durable Family-Friendly Quartz',
+    localIntro: 'Quartz International installs beautiful, durable quartz countertops in Milton. We serve the local community with reliable templating, quick turnaround times, and professional on-site installations for growing families.',
+    showroomGuidance: 'Milton clients can easily view luxury slabs at our nearby partner showrooms in Burlington and Mississauga, providing convenient west-end access.',
+    localProjectNotes: 'Milton projects frequently focus on highly stain-resistant and durable materials for active family households, new suburban builds, and townhomes.',
+    popularOptions: [
+      { name: 'Warm White Veined', desc: 'Soft white background with subtle grey veining, perfect for modern family kitchens.' },
+      { name: 'Stain-Resistant Shimmer', desc: 'Engineered quartz with light-reflecting particles for extra brightness and durability.' },
+      { name: 'Concrete Grey Matte', desc: 'Rich grey finish with a smooth matte texture, popular in modern suburban basements.' }
+    ],
+    customFaqs: [
+      { q: 'Is templating and installation included in your Milton quotes?', a: 'Yes. Our quotes include the entire process: digital templating, fabrication, delivery, and professional installation.' }
+    ],
+    showrooms: [
+      { brand: 'Silestone Burlington', address: '3485 N Service Rd, Burlington, ON L7N 3G2' },
+      { brand: 'Kasa Markham', address: '7310 Woodbine Ave, Markham, ON L3R 1A4' }
+    ],
+    testimonial1: {
+      title: "Subdivision Kitchen Upgrade",
+      quote: "Replaced our basic builder laminate counters with gorgeous veined quartz. The kitchen looks twice as big now.",
+      author: "Jason",
+      neighborhood: "Harrison"
+    },
+    testimonial2: {
+      title: "Family Kitchen Renovation",
+      quote: "Super stain-resistant and easy to clean. It withstands everything our kids throw at it and still looks new.",
+      author: "Melissa",
+      neighborhood: "Beaty"
+    },
+    testimonial3: {
+      title: "Campbellville Country Home",
+      quote: "Very professional team. They helped us choose the perfect stone to match our custom wood cabinetry.",
+      author: "Douglas",
+      neighborhood: "Campbellville"
+    },
+    images: {
+      hero: "/images/cabinet_cities_hero_common.jpg",
+      testimonial1: "/images/typical-kitchen.jpg",
+      testimonial2: "/images/modern-island-dark.jpg",
+      testimonial3: "/images/modern-island-dark.jpg"
+    }
   }
 };

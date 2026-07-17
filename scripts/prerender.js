@@ -58,7 +58,9 @@ const CORE_ROUTES = [
   '/tce-stone',
   '/quartz-countertops-tce',
   '/quartz-countertop-guide-2026',
-  '/white-quartz-kitchen-countertops'
+  '/white-quartz-kitchen-countertops',
+  '/quartz-vs-quartzite',
+  '/best-countertop-for-rental-properties'
 ];
 
 const ROUTES = Array.from(new Set([
@@ -66,6 +68,7 @@ const ROUTES = Array.from(new Set([
   ...pseoSlugs.map(slug => `/${slug}`),
   ...slabIds.map(id => `/slab/${id}`),
   ...citySlugs.map(slug => `/${slug}`),
+  ...citySlugs.map(slug => `/quartz-countertops-${slug}`),
   ...citySlugs.map(slug => `/quartz-countertop-cost/${slug}`),
   ...cabinetCitySlugs.map(slug => `/kitchen-cabinets/${slug}`)
 ]));
