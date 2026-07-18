@@ -22,6 +22,9 @@ import {
   AnalyticEvent
 } from "./src/services/dbService.js";
 import { runAutomations } from "./src/services/automationService.js";
+import { GoogleGenAI } from "@google/genai";
+import { getMatchedConcepts, calculatePackageRange } from "./src/data/designCatalog.js";
+import { kv } from "@vercel/kv";
 
 // Load environment variables
 dotenv.config({ path: path.resolve(process.cwd(), ".env.local") });
@@ -406,6 +409,429 @@ app.post("/api/leads", async (req, res) => {
     } else {
       res.status(500).json({ error: "Failed to save lead" });
     }
+  });
+
+  // Rate limiting map
+  const ipLimits = new Map<string, { count: number, resetAt: number }>();
+  async function checkRateLimit(ip: string): Promise<boolean> {
+    const useKV = !!(process.env.KV_REST_API_URL && process.env.KV_REST_API_TOKEN);
+    if (useKV) {
+      try {
+        const limitKey = `rate_limit_design:${ip}`;
+        const countRaw = await kv.get<number>(limitKey);
+        const count = countRaw ? Number(countRaw) : 0;
+        if (count >= 3) {
+          return false;
+        }
+        await kv.set(limitKey, count + 1, { ex: 24 * 60 * 60 });
+        return true;
+      } catch (err) {
+        console.error("KV rate limit error:", err);
+      }
+    }
+    
+    // In-memory fallback
+    const limit = ipLimits.get(ip);
+    const now = Date.now();
+    if (!limit) {
+      ipLimits.set(ip, { count: 1, resetAt: now + 24 * 60 * 60 * 1000 });
+      return true;
+    }
+    if (now > limit.resetAt) {
+      ipLimits.set(ip, { count: 1, resetAt: now + 24 * 60 * 60 * 1000 });
+      return true;
+    }
+    if (limit.count >= 3) {
+      return false;
+    }
+    limit.count += 1;
+    return true;
+  }
+
+  // Helper function to dynamically generate a concept image based on the uploaded kitchen layout
+  async function generateConceptImage(aiClient: any, base64Input: string, conceptName: string, cabinetFinish: string, quartzStyle: string, backsplash: string, hasIsland: boolean = true): Promise<string | null> {
+    try {
+      const base64Data = base64Input.includes(",") ? base64Input.split(",")[1] : base64Input;
+      const islandInstruction = hasIsland
+        ? "Include a kitchen island in the design."
+        : "Do NOT include a kitchen island. The kitchen should have NO island at all — only perimeter cabinetry and countertops.";
+      const promptText = `Re-render this kitchen photo. Keep the exact layout, window placement, walls, and structural elements of the kitchen identical (the layout footprint must remain exactly the same).
+      Change the cabinetry styling to match: ${cabinetFinish}
+      Change the countertops to: ${quartzStyle}
+      Change the backsplash to: ${backsplash}
+      ${islandInstruction}
+      Generate a highly realistic, professional architectural render showing this transformation of the space.`;
+
+      const response = await aiClient.models.generateContent({
+        model: "gemini-3-flash-preview",
+        contents: [
+          {
+            inlineData: {
+              data: base64Data,
+              mimeType: "image/jpeg"
+            }
+          },
+          promptText
+        ],
+        config: {
+          responseModalities: ["IMAGE"]
+        }
+      });
+
+      const part = response.candidates?.[0]?.content?.parts?.find((p: any) => p.inlineData);
+      if (part && part.inlineData && part.inlineData.data) {
+        return `data:image/png;base64,${part.inlineData.data}`;
+      }
+      return null;
+    } catch (err) {
+      console.error(`Failed to generate concept image for ${conceptName}:`, err);
+      return null;
+    }
+  }
+
+
+  // AI design visualizer endpoint
+  app.post("/api/design-recommendations", async (req, res) => {
+    const { 
+      name, 
+      email, 
+      phone, 
+      scope, 
+      preferredStyle, 
+      cabinetColor, 
+      budgetTier, 
+      hasIsland, 
+      isCondo, 
+      postalCode, 
+      timeline, 
+      images 
+    } = req.body;
+
+    const clientIp = req.ip || req.headers['x-forwarded-for'] || "127.0.0.1";
+    const allowed = await checkRateLimit(String(clientIp));
+    if (!allowed) {
+      return res.status(429).json({ error: "Rate limit exceeded. Maximum 3 submissions per day." });
+    }
+
+    if (!name || !email || !phone || !images || !Array.isArray(images) || images.length === 0) {
+      return res.status(400).json({ error: "Missing required contact details or kitchen photos." });
+    }
+
+    let analysis: any;
+    const apiKey = process.env.GEMINI_API_KEY;
+
+    if (!apiKey) {
+      console.warn("GEMINI_API_KEY is not defined. Falling back to mock kitchen analysis.");
+      analysis = {
+        layout: "L-shaped",
+        estimated_kitchen_size: "medium",
+        existing_cabinet_style: "flat-panel",
+        existing_cabinet_tone: "light wood",
+        countertop_tone: "white",
+        backsplash: "tile",
+        flooring: "wood",
+        natural_light: "moderate"
+      };
+    } else {
+      try {
+        const googleAI = new GoogleGenAI({ apiKey });
+        const imageParts = images.map((img: any) => {
+          const base64Data = img.base64.split(",")[1];
+          return {
+            inlineData: {
+              data: base64Data,
+              mimeType: "image/jpeg"
+            }
+          };
+        });
+
+        const promptText = `
+        Analyze the uploaded kitchen photos and provide a structured JSON classification of the existing space.
+        Return EXACTLY the following JSON format:
+        {
+          "layout": "L-shaped" | "U-shaped" | "Galley" | "One-wall" | "Island",
+          "estimated_kitchen_size": "small" | "medium" | "large",
+          "existing_cabinet_style": "raised-panel" | "shaker" | "flat-panel" | "other",
+          "existing_cabinet_tone": "dark brown" | "light wood" | "white" | "grey" | "other",
+          "countertop_tone": "dark neutral" | "light neutral" | "white" | "veined" | "other",
+          "backsplash": "tile" | "slab" | "paint" | "none",
+          "flooring": "wood" | "tile" | "laminate" | "other",
+          "natural_light": "low" | "moderate" | "bright"
+        }
+        Do not return markdown wrappers, backticks, or any other text around the JSON object.
+        `;
+
+        const aiResponse = await googleAI.models.generateContent({
+          model: "gemini-3-flash-preview",
+          contents: [...imageParts, promptText],
+          config: {
+            responseMimeType: "application/json"
+          }
+        });
+
+        const responseText = aiResponse.text?.trim() || "";
+        analysis = JSON.parse(responseText);
+      } catch (err) {
+        console.error("Gemini Vision API Error:", err);
+        // Fallback on error to ensure we don't break the user experience
+        analysis = {
+          layout: "L-shaped",
+          estimated_kitchen_size: "medium",
+          existing_cabinet_style: "shaker",
+          existing_cabinet_tone: "white",
+          countertop_tone: "light neutral",
+          backsplash: "tile",
+          flooring: "wood",
+          natural_light: "moderate"
+        };
+      }
+    }
+
+    // Match real catalog & rules-based pricing
+    const rawConcepts = getMatchedConcepts(preferredStyle, cabinetColor);
+    // Deep clone to avoid mutating the global template cache
+    const matchedConcepts = JSON.parse(JSON.stringify(rawConcepts));
+
+    // If the user selected no island, swap in the non-island image fallback
+    if (!hasIsland) {
+      matchedConcepts.forEach((concept: any) => {
+        if (concept.imageNoIsland) {
+          concept.image = concept.imageNoIsland;
+        }
+      });
+    }
+
+    // Generate styled concept images dynamically if API key is present
+    if (apiKey) {
+      try {
+        const googleAI = new GoogleGenAI({ apiKey });
+        const primaryImageBase64 = images[0].base64;
+
+        console.log(`Generating dynamic concept images for lead...`);
+        const imgA = await generateConceptImage(
+          googleAI,
+          primaryImageBase64,
+          matchedConcepts[0].name,
+          matchedConcepts[0].cabinetFinish,
+          matchedConcepts[0].quartzStyle,
+          matchedConcepts[0].backsplash,
+          hasIsland
+        );
+        if (imgA) {
+          matchedConcepts[0].image = imgA;
+          console.log(`Concept A image generated successfully`);
+        }
+
+        const imgB = await generateConceptImage(
+          googleAI,
+          primaryImageBase64,
+          matchedConcepts[1].name,
+          matchedConcepts[1].cabinetFinish,
+          matchedConcepts[1].quartzStyle,
+          matchedConcepts[1].backsplash,
+          hasIsland
+        );
+        if (imgB) {
+          matchedConcepts[1].image = imgB;
+          console.log(`Concept B image generated successfully`);
+        }
+      } catch (genErr) {
+        console.error("Failed during AI concept image generation, using static templates:", genErr);
+      }
+    }
+
+    const priceRange = calculatePackageRange(
+      scope,
+      analysis.estimated_kitchen_size,
+      budgetTier,
+      budgetTier === 'elite' ? 'luxury' : budgetTier === 'premium' ? 'premium' : 'standard',
+      hasIsland,
+      isCondo
+    );
+
+    const leadId = Math.random().toString(36).substr(2, 9);
+    
+    // Save to leads database
+    const notesText = `AI Concept Package Lead.
+[Spatial Analysis]
+- Layout: ${analysis.layout}
+- Size: ${analysis.estimated_kitchen_size}
+- Current Cabinets: ${analysis.existing_cabinet_style} (${analysis.existing_cabinet_tone})
+- Current Countertops: ${analysis.countertop_tone}
+- Lighting: ${analysis.natural_light}
+
+[Selected Preferences]
+- Scope: ${scope}
+- Style: ${preferredStyle}
+- Cabinet color: ${cabinetColor}
+- Budget: ${budgetTier}
+- Timeline: ${timeline}
+- Postal Code: ${postalCode}
+
+[Matched Concepts]
+- Concept A: ${matchedConcepts[0].name} (${matchedConcepts[0].matchedCabinets})
+- Concept B: ${matchedConcepts[1].name} (${matchedConcepts[1].matchedCabinets})
+- Cost Range: $${priceRange.low.toLocaleString()} - $${priceRange.high.toLocaleString()}`;
+
+    const leadData: Lead = {
+      id: leadId,
+      createdAt: new Date().toISOString(),
+      leadStatus: 'New Estimate Lead',
+      name,
+      email,
+      phone,
+      notes: notesText,
+      layout: analysis.layout,
+      quartzLevel: budgetTier === 'elite' ? 'Luxury' : budgetTier === 'premium' ? 'Premium' : 'Standard',
+      hasIsland,
+      includeCabinets: scope !== 'countertops',
+      cabinetStyle: preferredStyle,
+      timeline,
+      totalCostLow: priceRange.low,
+      totalCostHigh: priceRange.high
+    };
+
+    // Auto link to customer profile & save base64 photo references
+    let customerId = "";
+    const customers = await getCustomers();
+    const existingCust = customers.find(c => c.email.toLowerCase() === email.toLowerCase());
+
+    const customerFiles = images.map((img: any, idx: number) => ({
+      id: Math.random().toString(36).substr(2, 9),
+      name: img.name || `kitchen_photo_${idx + 1}.jpg`,
+      size: "82 KB",
+      uploadedAt: new Date().toISOString(),
+      url: img.base64
+    }));
+
+    if (existingCust) {
+      customerId = existingCust.id;
+      leadData.customerId = customerId;
+      const files = existingCust.files || [];
+      customerFiles.forEach((file: any) => {
+        files.unshift(file);
+      });
+      await updateCustomer(existingCust.id, { files });
+    } else {
+      customerId = Math.random().toString(36).substr(2, 9);
+      leadData.customerId = customerId;
+      const newCustomer: Customer = {
+        id: customerId,
+        createdAt: new Date().toISOString(),
+        name,
+        email,
+        phone,
+        notes: "Auto-created from AI Concept Package lead.",
+        files: customerFiles
+      };
+      await saveCustomer(newCustomer);
+    }
+
+    const saved = await saveLead(leadData);
+
+    if (saved && process.env.SMTP_USER && process.env.SMTP_PASS) {
+      // Send alert emails (admin & client)
+      // 1. Admin Email
+      const adminMailOptions = {
+        from: process.env.SMTP_FROM || `"Quartz International AI Visualizer" <no-reply@quartzinternational.ca>`,
+        to: process.env.NOTIFICATION_EMAIL || process.env.SMTP_USER,
+        subject: `New AI Visualizer Lead: ${name}`,
+        html: `
+          <h2>New AI Visualizer Concept Lead</h2>
+          <table border="1" cellpadding="8" style="border-collapse: collapse; width: 100%; max-width: 600px; font-family: sans-serif; border-color: #E5E2DC;">
+            <tr style="background-color: #C6A87D; color: white;">
+              <th colspan="2" style="text-align: left; padding: 10px;">Contact Details</th>
+            </tr>
+            <tr><td><strong>Name</strong></td><td>${name}</td></tr>
+            <tr><td><strong>Email</strong></td><td>${email}</td></tr>
+            <tr><td><strong>Phone</strong></td><td>${phone}</td></tr>
+            <tr><td><strong>Postal Code</strong></td><td>${postalCode}</td></tr>
+            <tr style="background-color: #FAF8F5;"><td colspan="2"><strong>AI Spatial analysis:</strong></td></tr>
+            <tr><td><strong>Layout</strong></td><td>${analysis.layout}</td></tr>
+            <tr><td><strong>Estimated Size</strong></td><td>${analysis.estimated_kitchen_size}</td></tr>
+            <tr><td><strong>Lighting</strong></td><td>${analysis.natural_light}</td></tr>
+            <tr style="background-color: #FAF8F5;"><td colspan="2"><strong>Selected Concepts:</strong></td></tr>
+            <tr><td><strong>Concept A</strong></td><td>${matchedConcepts[0].name} (${matchedConcepts[0].matchedCabinets})</td></tr>
+            <tr><td><strong>Concept B</strong></td><td>${matchedConcepts[1].name} (${matchedConcepts[1].matchedCabinets})</td></tr>
+            <tr style="font-weight: bold; background-color: #f9f9f9;">
+              <td><strong>Calculated Pricing</strong></td>
+              <td>$${priceRange.low.toLocaleString()} - $${priceRange.high.toLocaleString()}</td>
+            </tr>
+          </table>
+        `
+      };
+
+      // 2. Client Email
+      const clientMailOptions = {
+        from: process.env.SMTP_FROM || `"Quartz International" <no-reply@quartzinternational.ca>`,
+        to: email,
+        subject: `Your Free Kitchen Concept Package - Quartz International`,
+        html: `
+          <div style="font-family: sans-serif; color: #1A1A1A; max-width: 600px; margin: 0 auto; border: 1px solid #E5E2DC; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+            <div style="background-color: #1A1A1A; padding: 30px; text-align: center;">
+              <h1 style="color: #FFFFFF; font-size: 24px; margin: 0; font-weight: 900; letter-spacing: 2px;">QUARTZ INTERNATIONAL</h1>
+              <p style="color: #C6A87D; font-size: 10px; margin: 5px 0 0 0; font-weight: bold; letter-spacing: 3px;">KITCHEN CONCEPT PACKAGE</p>
+            </div>
+            <div style="padding: 30px; background-color: #FFFFFF;">
+              <h2>Hello ${name},</h2>
+              <p style="font-size: 14px; color: #555555; line-height: 1.6;">Thank you for requesting your kitchen concept package. Based on the photos and layout of your existing kitchen, our design system has generated two styling directions:</p>
+              
+              <div style="background-color: #FAF8F5; border: 1px solid #E5E2DC; padding: 20px; border-radius: 12px; margin: 20px 0;">
+                <h3 style="margin: 0 0 10px 0; color: #C6A87D;">Concept A: ${matchedConcepts[0].name}</h3>
+                <p style="font-size: 13px; color: #555555; margin: 0 0 10px 0;">${matchedConcepts[0].explanation}</p>
+                <ul style="font-size: 12px; color: #666666; margin: 0; padding-left: 20px;">
+                  <li><strong>Cabinets:</strong> ${matchedConcepts[0].cabinetFinish}</li>
+                  <li><strong>Quartz:</strong> ${matchedConcepts[0].quartzStyle}</li>
+                  <li><strong>Backsplash:</strong> ${matchedConcepts[0].backsplash}</li>
+                </ul>
+              </div>
+
+              <div style="background-color: #FAF8F5; border: 1px solid #E5E2DC; padding: 20px; border-radius: 12px; margin: 20px 0;">
+                <h3 style="margin: 0 0 10px 0; color: #C6A87D;">Concept B: ${matchedConcepts[1].name}</h3>
+                <p style="font-size: 13px; color: #555555; margin: 0 0 10px 0;">${matchedConcepts[1].explanation}</p>
+                <ul style="font-size: 12px; color: #666666; margin: 0; padding-left: 20px;">
+                  <li><strong>Cabinets:</strong> ${matchedConcepts[1].cabinetFinish}</li>
+                  <li><strong>Quartz:</strong> ${matchedConcepts[1].quartzStyle}</li>
+                  <li><strong>Backsplash:</strong> ${matchedConcepts[1].backsplash}</li>
+                </ul>
+              </div>
+
+              <div style="background-color: #1A1A1A; color: #FFFFFF; padding: 25px; border-radius: 12px; text-align: center; margin: 25px 0;">
+                <p style="font-size: 10px; color: #C6A87D; font-weight: bold; margin: 0 0 5px 0; letter-spacing: 2px;">Preliminary Package Range</p>
+                <h3 style="font-size: 32px; font-weight: 900; margin: 0; color: #FFFFFF; font-style: italic;">
+                  $${priceRange.low.toLocaleString()} - $${priceRange.high.toLocaleString()}
+                </h3>
+                <p style="font-size: 10px; color: #888888; margin: 5px 0 0 0;">Includes Materials & Professional Installation</p>
+              </div>
+
+              <p style="font-size: 11px; color: #999999; line-height: 1.5; margin-bottom: 25px;">
+                * This is a preliminary planning package range. Final styling selections, material matching, and pricing will be locked in after our professional on-site laser measure and layout verification.
+              </p>
+
+              <div style="text-align: center;">
+                <a href="https://quartzinternational.ca/contact" style="display: inline-block; background-color: #C6A87D; color: #FFFFFF; padding: 12px 30px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 13px; text-transform: uppercase; letter-spacing: 1px;">Book Free Precision Measure</a>
+              </div>
+            </div>
+            <div style="background-color: #F8F9FA; border-top: 1px solid #E5E2DC; padding: 20px; text-align: center; font-size: 11px; color: #888888;">
+              <p style="margin: 0 0 5px 0; font-weight: bold;">Quartz International</p>
+              <p style="margin: 0;">(647) 370-6938 • info@quartzinternational.ca • Vaughan showroom</p>
+            </div>
+          </div>
+        `
+      };
+
+      transporter.sendMail(adminMailOptions).catch((err: any) => console.error("Admin visualizer mail err:", err));
+      transporter.sendMail(clientMailOptions).catch((err: any) => console.error("Client visualizer mail err:", err));
+    }
+
+
+
+    res.status(201).json({
+      status: "success",
+      analysis,
+      matchedConcepts,
+      priceRange
+    });
   });
 
   // Get all leads (Admin Protected)

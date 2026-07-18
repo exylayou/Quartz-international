@@ -46,6 +46,7 @@ import KitchenCabinetCost from './pages/KitchenCabinetCost';
 // New standalone landing pages
 import QuartzVsQuartzite from './pages/QuartzVsQuartzite';
 import RentalPropertyCountertops from './pages/RentalPropertyCountertops';
+import DesignInspiration from './pages/DesignInspiration';
 
 // Local / City
 import AreasWeServe from './pages/AreasWeServe';
@@ -106,6 +107,7 @@ export default function App() {
             <Route path="/kitchen-cabinet-cost" element={<KitchenCabinetCost />} />
             <Route path="/quartz-vs-quartzite" element={<QuartzVsQuartzite />} />
             <Route path="/best-countertop-for-rental-properties" element={<RentalPropertyCountertops />} />
+            <Route path="/design-inspiration" element={<DesignInspiration />} />
 
             {/* Local / City */}
             <Route path="/areas-we-serve" element={<AreasWeServe />} />

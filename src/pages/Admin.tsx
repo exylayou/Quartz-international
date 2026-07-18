@@ -2327,13 +2327,17 @@ export default function Admin() {
                                 {(activeCustomer.files || []).map((file: any, index: number) => (
                                   <div key={index} className="bg-gray-50 border border-border-custom rounded-xl p-3 flex justify-between items-center gap-3">
                                     <div className="flex items-center gap-2.5 min-w-0">
-                                      <div className="w-8 h-8 bg-accent/10 text-accent rounded-lg flex items-center justify-center shrink-0">
-                                        <Paperclip size={14} />
+                                      <div className="w-8 h-8 bg-accent/10 text-accent rounded-lg flex items-center justify-center shrink-0 overflow-hidden">
+                                        {file.url && file.url.startsWith('data:image/') ? (
+                                          <img src={file.url} alt={file.fileName || file.name} className="w-full h-full object-cover" />
+                                        ) : (
+                                          <Paperclip size={14} />
+                                        )}
                                       </div>
                                       <div className="min-w-0">
-                                        <p className="text-xs font-bold text-gray-800 truncate" title={file.fileName}>{file.fileName}</p>
+                                        <p className="text-xs font-bold text-gray-800 truncate" title={file.fileName || file.name}>{file.fileName || file.name}</p>
                                         <p className="text-[10px] text-gray-400 font-mono mt-0.5">
-                                          {file.fileSize || 'Unknown Size'} • {formatDate(file.uploadedAt || file.createdAt)}
+                                          {file.fileSize || file.size || 'Unknown Size'} • {formatDate(file.uploadedAt || file.createdAt)}
                                         </p>
                                       </div>
                                     </div>

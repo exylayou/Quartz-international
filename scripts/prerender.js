@@ -60,7 +60,8 @@ const CORE_ROUTES = [
   '/quartz-countertop-guide-2026',
   '/white-quartz-kitchen-countertops',
   '/quartz-vs-quartzite',
-  '/best-countertop-for-rental-properties'
+  '/best-countertop-for-rental-properties',
+  '/design-inspiration'
 ];
 
 const ROUTES = Array.from(new Set([
