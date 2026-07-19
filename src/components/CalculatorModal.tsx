@@ -24,7 +24,7 @@ import {
 } from 'lucide-react';
 
 import { useCalculator, QuartzLevel, CabinetStyle, IslandType } from '../context/CalculatorContext';
-import { cn } from '../lib/utils';
+import { cn, trackLeadConversion } from '../lib/utils';
 import { PRICING_CONSTANTS } from '../constants';
 import { jsPDF } from 'jspdf';
 import { toPng } from 'html-to-image';
@@ -249,17 +249,20 @@ export default function CalculatorModal() {
       if (response.ok) {
         localStorage.setItem('qi_has_contacted', '1');
         setIsSubmitted(true);
+        trackLeadConversion();
       } else {
         console.error('Failed to submit lead');
         setEmailError(true);
         localStorage.setItem('qi_has_contacted', '1');
         setIsSubmitted(true); // Fallback so they can download PDF
+        trackLeadConversion();
       }
     } catch (error) {
       console.error('Error submitting lead:', error);
       setEmailError(true);
       localStorage.setItem('qi_has_contacted', '1');
       setIsSubmitted(true); // Fallback so they can download PDF
+      trackLeadConversion();
     } finally {
       setIsSubmitting(false);
     }

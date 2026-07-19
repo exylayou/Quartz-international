@@ -16,7 +16,7 @@ import {
   MapPin,
   Loader2
 } from 'lucide-react';
-import { cn } from '../lib/utils';
+import { cn, trackLeadConversion } from '../lib/utils';
 import { jsPDF } from 'jspdf';
 import { toPng } from 'html-to-image';
 
@@ -141,9 +141,11 @@ export default function Results() {
       
       if (response.ok) {
         setIsSubmitted(true);
+        trackLeadConversion();
       } else {
         // Fallback for demo
         setIsSubmitted(true);
+        trackLeadConversion();
       }
     } catch (error) {
       console.error('Error submitting lead:', error);

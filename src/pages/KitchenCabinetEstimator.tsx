@@ -30,7 +30,7 @@ import {
   ChevronDown
 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
-import { cn } from '../lib/utils';
+import { cn, trackLeadConversion } from '../lib/utils';
 import { PRICING_CONSTANTS } from '../constants';
 import { jsPDF } from 'jspdf';
 import { toPng } from 'html-to-image';
@@ -225,6 +225,7 @@ export default function KitchenCabinetEstimator() {
       });
       localStorage.setItem('qi_has_contacted', '1');
       setIsSubmitted(true);
+      trackLeadConversion();
     } catch (err) {
       console.error('Lead capture submission error:', err);
       localStorage.setItem('qi_has_contacted', '1');

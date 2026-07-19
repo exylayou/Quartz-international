@@ -21,7 +21,7 @@ import {
 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import { useCalculator } from '../context/CalculatorContext';
-import { cn } from '../lib/utils';
+import { cn, trackLeadConversion } from '../lib/utils';
 import { ConceptTemplate } from '../data/designCatalog';
 
 interface UploadedImage {
@@ -223,6 +223,7 @@ export default function DesignInspiration() {
       setMatchedConcepts(data.matchedConcepts);
       setPriceRange(data.priceRange);
       setStep(6);
+      trackLeadConversion();
     } catch (err: any) {
       clearInterval(interval);
       console.error(err);

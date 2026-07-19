@@ -3,6 +3,7 @@ import { motion } from 'motion/react';
 import { Phone, Mail, Send, CheckCircle, UploadCloud, File, X } from 'lucide-react';
 
 import { SEO } from '../components/SEO';
+import { trackLeadConversion } from '../lib/utils';
 export default function Contact() {
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
@@ -74,6 +75,7 @@ export default function Contact() {
         setEmail('');
         setNotes('');
         setUploadedFiles([]);
+        trackLeadConversion();
       } else {
         setStatus('error');
       }

@@ -92,6 +92,24 @@ async function prerender() {
     const context = await browser.newContext();
     const page = await context.newPage();
 
+    // Intercept and abort third-party analytics/trackers to prevent networkidle timeouts
+    await page.route('**/*', r => {
+      const url = r.request().url();
+      if (
+        url.includes('google-analytics') ||
+        url.includes('googletagmanager') ||
+        url.includes('googleadservices') ||
+        url.includes('google.com/rmkt') ||
+        url.includes('google.com/ccm') ||
+        url.includes('doubleclick') ||
+        url.includes('api/analytics')
+      ) {
+        r.abort();
+      } else {
+        r.continue();
+      }
+    });
+
     // Listen to console and page errors to debug timeouts
     page.on('console', msg => {
       const text = msg.text();
