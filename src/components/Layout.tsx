@@ -185,6 +185,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <li><Link to="/kitchen-cabinet-cost" className="hover:text-white transition-colors">Kitchen Cabinet Cost Guide</Link></li>
                   <li><Link to="/kitchen-cabinet-estimator" className="hover:text-white transition-colors">Kitchen Cabinet Estimator</Link></li>
                   <li><Link to="/kitchen-renovation-estimator" className="hover:text-white transition-colors">Kitchen Renovation Estimator</Link></li>
+                  <li><Link to="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
                 </ul>
               </div>
 

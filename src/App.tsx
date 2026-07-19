@@ -47,6 +47,7 @@ import KitchenCabinetCost from './pages/KitchenCabinetCost';
 import QuartzVsQuartzite from './pages/QuartzVsQuartzite';
 import RentalPropertyCountertops from './pages/RentalPropertyCountertops';
 import DesignInspiration from './pages/DesignInspiration';
+import Faq from './pages/Faq';
 
 // Local / City
 import AreasWeServe from './pages/AreasWeServe';
@@ -74,6 +75,7 @@ export default function App() {
             <Route path="/results" element={<Results />} />
             <Route path="/quote/:id" element={<QuoteView />} />
             <Route path="/admin" element={<Admin />} />
+            <Route path="/faq" element={<Faq />} />
 
             {/* Countertops */}
             <Route path="/quartz-kitchen-countertops" element={<QuartzBrowse />} />
