@@ -141,11 +141,11 @@ export default function Results() {
       
       if (response.ok) {
         setIsSubmitted(true);
-        trackLeadConversion();
+        trackLeadConversion(results?.total?.high);
       } else {
         // Fallback for demo
         setIsSubmitted(true);
-        trackLeadConversion();
+        trackLeadConversion(results?.total?.high);
       }
     } catch (error) {
       console.error('Error submitting lead:', error);

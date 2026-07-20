@@ -252,7 +252,7 @@ export default function QuartzCountertopEstimator() {
       });
       localStorage.setItem('qi_has_contacted', '1');
       setIsSubmitted(true);
-      trackLeadConversion();
+      trackLeadConversion(cost.totalHigh);
     } catch (err) {
       console.error(err);
     } finally {

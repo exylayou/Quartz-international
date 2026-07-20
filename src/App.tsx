@@ -49,6 +49,11 @@ import RentalPropertyCountertops from './pages/RentalPropertyCountertops';
 import DesignInspiration from './pages/DesignInspiration';
 import Faq from './pages/Faq';
 
+// Dedicated PPC Landing Pages
+import PpcCountertops from './pages/lp/PpcCountertops';
+import PpcCabinets from './pages/lp/PpcCabinets';
+import PpcRenovation from './pages/lp/PpcRenovation';
+
 // Local / City
 import AreasWeServe from './pages/AreasWeServe';
 import CityCostPage from './pages/CityCostPage';
@@ -110,6 +115,11 @@ export default function App() {
             <Route path="/quartz-vs-quartzite" element={<QuartzVsQuartzite />} />
             <Route path="/best-countertop-for-rental-properties" element={<RentalPropertyCountertops />} />
             <Route path="/design-inspiration" element={<DesignInspiration />} />
+
+            {/* Dedicated PPC Landing Pages */}
+            <Route path="/lp/quartz-countertops" element={<PpcCountertops />} />
+            <Route path="/lp/kitchen-cabinets" element={<PpcCabinets />} />
+            <Route path="/lp/kitchen-renovation" element={<PpcRenovation />} />
 
             {/* Local / City */}
             <Route path="/areas-we-serve" element={<AreasWeServe />} />

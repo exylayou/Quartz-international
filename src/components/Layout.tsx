@@ -8,11 +8,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
   const location = useLocation();
   const isAdmin = location.pathname.startsWith('/admin');
+  const isPpcLandingPage = location.pathname.startsWith('/lp');
   const isEstimatorPage = [
     '/quartz-countertop-estimator',
     '/kitchen-cabinet-estimator',
     '/kitchen-renovation-estimator'
-  ].includes(location.pathname);
+  ].includes(location.pathname) || isPpcLandingPage;
   const isCabinetPage = location.pathname.toLowerCase().includes('cabinet');
   const { openCalculator } = useCalculator();
 

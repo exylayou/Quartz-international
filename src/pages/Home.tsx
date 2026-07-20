@@ -10,6 +10,7 @@ import inspired4 from '../assets/images/regenerated_image_1777760428513.png';
 import suburbanRemodel from '../assets/images/suburban_remodel.png';
 import modernKitchenQuartz from '../assets/images/modern_kitchen_quartz.png';
 import { SEO } from '../components/SEO';
+import { Helmet } from 'react-helmet-async';
 // Re-aliasing for clarity in the inspired section
 const inspired1 = gallery1;
 const inspired2 = gallery2;
@@ -29,9 +30,59 @@ export default function Home() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const homeSchema = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+        "@id": "https://quartzinternational.ca/#organization",
+        "name": "Quartz International",
+        "url": "https://quartzinternational.ca/",
+        "logo": "https://quartzinternational.ca/images/hero8.jpeg",
+        "image": "https://quartzinternational.ca/images/hero8.jpeg",
+        "telephone": "+16473706938",
+        "email": "info@quartzinternational.ca",
+        "priceRange": "$$",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Toronto",
+          "addressRegion": "ON",
+          "addressCountry": "CA"
+        },
+        "areaServed": [
+          "Toronto", "Markham", "Vaughan", "Mississauga", "Richmond Hill", 
+          "Brampton", "Oakville", "Burlington", "Pickering", "Scarborough", "Etobicoke"
+        ].map(city => ({ "@type": "City", "name": city })),
+        "openingHoursSpecification": {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+          "opens": "08:00",
+          "closes": "18:00"
+        },
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "4.9",
+          "reviewCount": "128"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://quartzinternational.ca/#website",
+        "url": "https://quartzinternational.ca/",
+        "name": "Quartz International",
+        "publisher": { "@id": "https://quartzinternational.ca/#organization" }
+      }
+    ]
+  };
+
   return (
     <div className="bg-background relative">
       <SEO title="Quartz Kitchen Countertops Toronto & GTA | Quartz International" description="Quartz International offers premium quartz countertops and custom kitchen cabinetry in Toronto and the GTA. Get an instant estimate today." />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(homeSchema)}
+        </script>
+      </Helmet>
       {/* Sticky Header CTA */}
       <div className={cn(
         "fixed top-0 inset-x-0 z-[100] transition-all duration-300 transform",

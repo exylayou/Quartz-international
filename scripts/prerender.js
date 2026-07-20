@@ -62,7 +62,10 @@ const CORE_ROUTES = [
   '/quartz-vs-quartzite',
   '/best-countertop-for-rental-properties',
   '/design-inspiration',
-  '/faq'
+  '/faq',
+  '/lp/quartz-countertops',
+  '/lp/kitchen-cabinets',
+  '/lp/kitchen-renovation'
 ];
 
 const ROUTES = Array.from(new Set([

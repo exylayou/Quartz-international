@@ -249,20 +249,20 @@ export default function CalculatorModal() {
       if (response.ok) {
         localStorage.setItem('qi_has_contacted', '1');
         setIsSubmitted(true);
-        trackLeadConversion();
+        trackLeadConversion(results?.total?.high);
       } else {
         console.error('Failed to submit lead');
         setEmailError(true);
         localStorage.setItem('qi_has_contacted', '1');
         setIsSubmitted(true); // Fallback so they can download PDF
-        trackLeadConversion();
+        trackLeadConversion(results?.total?.high);
       }
     } catch (error) {
       console.error('Error submitting lead:', error);
       setEmailError(true);
       localStorage.setItem('qi_has_contacted', '1');
       setIsSubmitted(true); // Fallback so they can download PDF
-      trackLeadConversion();
+      trackLeadConversion(results?.total?.high);
     } finally {
       setIsSubmitting(false);
     }

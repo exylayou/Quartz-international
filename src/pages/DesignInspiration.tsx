@@ -223,7 +223,7 @@ export default function DesignInspiration() {
       setMatchedConcepts(data.matchedConcepts);
       setPriceRange(data.priceRange);
       setStep(6);
-      trackLeadConversion();
+      trackLeadConversion(data.priceRange?.high);
     } catch (err: any) {
       clearInterval(interval);
       console.error(err);

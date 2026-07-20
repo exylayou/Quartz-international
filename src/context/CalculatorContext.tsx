@@ -84,6 +84,7 @@ interface CalculatorContextType {
     deliveryMethod?: 'rta' | 'rti' | 'installed';
     cabinetStyle?: CabinetStyle;
     cabinetDoorStyle?: string;
+    startedFromCabinets?: boolean;
   }) => void;
   closeCalculator: () => void;
   setStep: (step: number) => void;
@@ -109,8 +110,12 @@ export const CalculatorProvider: React.FC<{ children: React.ReactNode }> = ({ ch
     deliveryMethod?: 'rta' | 'rti' | 'installed';
     cabinetStyle?: CabinetStyle;
     cabinetDoorStyle?: string;
+    startedFromCabinets?: boolean;
   }) => {
     let url = '/quartz-countertop-estimator';
+    if (params?.startedFromCabinets || params?.type === 'cabinet') {
+      url = '/kitchen-cabinet-estimator';
+    }
     const queryParts: string[] = [];
     
     if (params) {

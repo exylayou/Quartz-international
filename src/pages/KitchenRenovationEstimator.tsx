@@ -205,11 +205,12 @@ export default function KitchenRenovationEstimator() {
       });
       localStorage.setItem('qi_has_contacted', '1');
       setIsSubmitted(true);
-      trackLeadConversion();
+      trackLeadConversion(cost.totalHigh);
     } catch (err) {
       console.error('Lead capture submission error:', err);
       localStorage.setItem('qi_has_contacted', '1');
       setIsSubmitted(true);
+      trackLeadConversion(cost.totalHigh);
     } finally {
       setIsLoading(false);
     }
