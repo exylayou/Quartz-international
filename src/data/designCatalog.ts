@@ -162,31 +162,31 @@ export const CONCEPT_TEMPLATES: ConceptTemplate[] = [
  * Matches a user's style and cabinet color preferences to the best 2 design templates.
  */
 export function getMatchedConcepts(
-  preferredStyle: string, 
-  preferredColor: string
+  preferredStyle: string = 'Modern', 
+  preferredColor: string = 'white'
 ): ConceptTemplate[] {
   const matches: ConceptTemplate[] = [];
+  const safeColor = (preferredColor || 'white').toLowerCase();
+  const safeStyle = (preferredStyle || 'Modern').toLowerCase();
 
   // 1. Direct color matches
   const colorMatches = CONCEPT_TEMPLATES.filter(
-    t => t.cabinetColorGroup === preferredColor.toLowerCase()
+    t => t.cabinetColorGroup === safeColor
   );
 
   // 2. Direct style matches
   const styleMatches = CONCEPT_TEMPLATES.filter(t => {
     const styleLower = t.cabinetStyle.toLowerCase();
-    const prefStyleLower = preferredStyle.toLowerCase();
-    return styleLower.includes(prefStyleLower) || prefStyleLower.includes(styleLower);
+    return styleLower.includes(safeStyle) || safeStyle.includes(styleLower);
   });
 
   // Combine and sort by score
   const scored = CONCEPT_TEMPLATES.map(t => {
     let score = 0;
-    if (t.cabinetColorGroup === preferredColor.toLowerCase()) score += 3;
+    if (t.cabinetColorGroup === safeColor) score += 3;
     
     const styleLower = t.cabinetStyle.toLowerCase();
-    const prefStyleLower = preferredStyle.toLowerCase();
-    if (styleLower.includes(prefStyleLower) || prefStyleLower.includes(styleLower)) score += 2;
+    if (styleLower.includes(safeStyle) || safeStyle.includes(styleLower)) score += 2;
     
     return { template: t, score };
   });
