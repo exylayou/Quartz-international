@@ -82,11 +82,10 @@ export default function CabinetPseoPage() {
                 className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2"
               >
                 <button 
-                  onClick={() => navigate('/design-inspiration')}
+                  onClick={() => navigate('/kitchen-cabinet-estimator')}
                   className="btn-primary h-14 sm:h-16 px-8 text-base font-bold flex items-center justify-center gap-3 shadow-xl shadow-accent/20 hover:shadow-accent/40 transition-all duration-300 w-full sm:w-auto"
                 >
-                  <Camera size={20} />
-                  Send Photos for 10×10 Estimate
+                  Get 10×10 Package Estimate
                   <ArrowRight size={18} />
                 </button>
                 
@@ -427,17 +426,10 @@ export default function CabinetPseoPage() {
             </p>
             <div className="flex flex-col sm:flex-row justify-center items-center gap-4 pt-4">
               <button 
-                onClick={() => navigate('/design-inspiration')}
-                className="btn-primary h-14 px-8 text-sm font-bold flex items-center gap-2 w-full sm:w-auto"
-              >
-                <Camera size={18} />
-                Send Photos for 10×10 Quote
-              </button>
-              <button 
                 onClick={() => navigate('/kitchen-cabinet-estimator')}
-                className="bg-white/10 hover:bg-white/20 text-white font-bold border border-white/20 h-14 px-8 rounded-full text-sm flex items-center gap-2 w-full sm:w-auto justify-center transition-colors"
+                className="btn-primary h-14 px-8 text-sm font-bold flex items-center justify-center gap-2 w-full sm:w-auto"
               >
-                Calculate Dimensions Online &rarr;
+                <span>Calculate 10×10 Package Estimate &rarr;</span>
               </button>
             </div>
           </div>

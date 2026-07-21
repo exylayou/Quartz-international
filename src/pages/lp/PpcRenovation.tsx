@@ -166,13 +166,13 @@ export default function PpcRenovation() {
             Upload 3 photos of your existing kitchen to get 2 instant AI-generated concept directions and a custom GTA price breakdown.
           </p>
           <div className="pt-4">
-            <Link 
-              to="/design-inspiration" 
+            <button 
+              onClick={() => openCalculator()} 
               className="btn-primary inline-flex items-center gap-3 px-10 py-5 text-sm font-bold uppercase tracking-wider cursor-pointer shadow-xl shadow-accent/20"
             >
-              <span>Try Free AI Kitchen Visualizer</span>
+              <span>Get Free Kitchen Estimate</span>
               <ArrowRight size={18} />
-            </Link>
+            </button>
           </div>
         </div>
       </section>
