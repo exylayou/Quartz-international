@@ -463,7 +463,7 @@ app.post("/api/leads", async (req, res) => {
       Generate a highly realistic, professional architectural render showing this transformation of the space.`;
 
       const response = await aiClient.models.generateContent({
-        model: "gemini-1.5-flash",
+        model: "gemini-2.0-flash",
         contents: [
           {
             inlineData: {
@@ -575,7 +575,7 @@ app.post("/api/leads", async (req, res) => {
         `;
 
         const aiResponse = await googleAI.models.generateContent({
-          model: "gemini-1.5-flash",
+          model: "gemini-2.0-flash",
           contents: [...imageParts, promptText],
           config: {
             responseMimeType: "application/json"
