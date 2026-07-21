@@ -234,6 +234,11 @@ export default function DesignInspiration() {
     }
   };
 
+  const handleLayoutChange = (newLayout: string) => {
+    if (!analysisResults) return;
+    setAnalysisResults((prev: any) => prev ? { ...prev, layout: newLayout } : null);
+  };
+
   const resetWizard = () => {
     setUploadedImages([]);
     setContactName('');
@@ -689,7 +694,7 @@ export default function DesignInspiration() {
                     <div className="bg-[#F0EBE1] border border-border-custom/55 px-4 py-3 rounded-xl text-[10px] text-gray-500 font-bold leading-normal flex items-start gap-2">
                       <CheckCircle2 size={14} className="text-accent shrink-0 mt-0.5" />
                       <span>
-                        AI detected your <strong>{analysisResults.layout || 'L-Shaped'}</strong> footprint. Your project range will preserve this layout footprint to avoid structural plumbing charges.
+                        AI analyzed your <strong>{analysisResults.layout || 'L-Shaped'}</strong> footprint. Your project range will preserve this layout footprint to avoid structural plumbing charges.
                       </span>
                     </div>
                   </div>
@@ -701,20 +706,33 @@ export default function DesignInspiration() {
                     </h3>
                     <div className="grid grid-cols-2 gap-6 text-xs font-bold text-gray-600">
                       <div>
-                        <span className="block text-[9px] text-gray-400 uppercase tracking-widest mb-1">Layout Classification</span>
-                        <span className="text-sm text-text-primary capitalize">{analysisResults.layout || 'L-Shaped'} Footprint</span>
+                        <div className="flex justify-between items-center mb-1">
+                          <span className="block text-[9px] text-gray-400 uppercase tracking-widest">Layout Classification</span>
+                          <span className="text-[8px] font-bold text-accent uppercase tracking-wider">Correct Layout</span>
+                        </div>
+                        <select
+                          value={analysisResults.layout || 'L-Shaped'}
+                          onChange={(e) => handleLayoutChange(e.target.value)}
+                          className="bg-white border border-border-custom rounded-xl px-3 py-2 text-xs font-bold text-text-primary focus:outline-none focus:border-accent cursor-pointer w-full shadow-sm hover:border-accent/50 transition-colors"
+                        >
+                          <option value="L-Shaped">L-Shaped Footprint</option>
+                          <option value="U-Shaped">U-Shaped Footprint</option>
+                          <option value="Galley">Galley / Parallel Footprint</option>
+                          <option value="Island">Island with Perimeter</option>
+                          <option value="One-wall">One-Wall / Straight Footprint</option>
+                        </select>
                       </div>
                       <div>
                         <span className="block text-[9px] text-gray-400 uppercase tracking-widest mb-1">Estimated Size Class</span>
-                        <span className="text-sm text-text-primary capitalize">{analysisResults.estimated_kitchen_size || 'Medium'} Kitchen</span>
+                        <span className="text-sm text-text-primary capitalize block pt-1.5">{analysisResults.estimated_kitchen_size || 'Medium'} Kitchen</span>
                       </div>
                       <div>
                         <span className="block text-[9px] text-gray-400 uppercase tracking-widest mb-1">Current Cabinet Style</span>
-                        <span className="text-sm text-text-primary capitalize">{analysisResults.existing_cabinet_style || 'Standard'} Doors</span>
+                        <span className="text-sm text-text-primary capitalize block pt-1.5">{analysisResults.existing_cabinet_style || 'Standard'} Doors</span>
                       </div>
                       <div>
                         <span className="block text-[9px] text-gray-400 uppercase tracking-widest mb-1">Detected Lighting</span>
-                        <span className="text-sm text-text-primary capitalize">{analysisResults.natural_light || 'Moderate'} Ambient Light</span>
+                        <span className="text-sm text-text-primary capitalize block pt-1.5">{analysisResults.natural_light || 'Moderate'} Ambient Light</span>
                       </div>
                     </div>
                   </div>

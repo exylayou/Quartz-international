@@ -559,7 +559,14 @@ app.post("/api/leads", async (req, res) => {
         });
 
         const promptText = `
-        Analyze the uploaded kitchen photos and provide a structured JSON classification of the existing space.
+        Carefully analyze the uploaded kitchen photos and determine the architectural layout, size, and styling of the existing space.
+        Visual Guidelines for Layout:
+        - "L-shaped": Countertops/cabinets run along two meeting walls forming an L shape.
+        - "U-shaped": Countertops/cabinets run along three connected walls forming a U shape.
+        - "Galley": Countertops/cabinets run along two parallel opposing walls with a walkway down the middle.
+        - "Island": A prominent central freestanding island counter is in the middle of the kitchen.
+        - "One-wall": Countertops/cabinets line a single flat wall.
+
         Return EXACTLY the following JSON format:
         {
           "layout": "L-shaped" | "U-shaped" | "Galley" | "One-wall" | "Island",
