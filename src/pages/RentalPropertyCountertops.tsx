@@ -281,61 +281,90 @@ export default function RentalPropertyCountertops() {
         </div>
       </section>
 
-      {/* Landlord Recommended Slabs */}
+      {/* Landlord Recommended Slabs & Color Selection */}
       <section className="py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             
-            <div className="lg:w-1/2">
-              <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Recommended Quartz Brands for Landlords</h2>
-              <p className="text-gray-500 leading-relaxed mb-8">
-                As a landlord, you do not need to spend top dollar on exotic, sweeping marble veining. Clean, solid-colour or lightly speckled quartz options give the kitchen an expensive, updated look while keeping materials in the most affordable price tiers.
+            <div className="lg:w-1/2 space-y-6">
+              <span className="text-xs font-bold text-accent uppercase tracking-widest">Color & Maintenance Selection</span>
+              <h2 className="text-3xl md:text-5xl font-black tracking-tight">Best Colors & Styles for Rental Units</h2>
+              <p className="text-gray-500 font-medium leading-relaxed">
+                Super stark white or ultra-dramatic high-contrast marble patterns can sometimes show water spots or hard-water rings in rentals. Solid whites, soft off-whites, and fine grey flecks hide daily wear best while looking clean for every new tenant turnover.
               </p>
               
-              <div className="space-y-6 mb-10">
+              <div className="space-y-4">
                 {[
-                  { name: "TCE Stone — Group 1", desc: "Superb budget Speckled White, Speckled Cream, and Grey. Extremely durable and locally stocked." },
-                  { name: "Kstone — Standard Tier", desc: "Affordable Solid White and neutral grey tones that pair beautifully with basic shaker cabinets." },
-                  { name: "Kasa Quartz — Entry Tier", desc: "Excellent price-to-durability ratio for rental condos, providing a clean high-end finish." }
+                  { title: "Speckled & Fine Fleck Quartz", desc: "TCE 2012 / Micro-fleck Grey — Hides coffee drips, crumbs, and daily wear better than any other surface." },
+                  { title: "Standard Solid White", desc: "TCE 4001 / Kstone Pure White — Clean, high-end condo look that brightens basement units and small kitchens." },
+                  { title: "Standardized Multi-Unit Inventory", desc: "We maintain ongoing GTA warehouse stock of the exact same slab lines so you can replace single damaged units years later without matching issues." }
                 ].map((item, idx) => (
-                  <div key={idx} className="flex gap-4 items-start">
-                    <div className="w-6 h-6 rounded-full bg-green-500/10 flex items-center justify-center text-green-600 shrink-0 mt-1">
+                  <div key={idx} className="flex gap-4 items-start p-4 bg-background rounded-2xl border border-border-custom">
+                    <div className="w-6 h-6 rounded-full bg-accent/10 flex items-center justify-center text-accent shrink-0 mt-0.5">
                       <Check size={14} />
                     </div>
                     <div>
-                      <h4 className="font-bold text-lg text-text-primary">{item.name}</h4>
-                      <p className="text-sm text-gray-500">{item.desc}</p>
+                      <h4 className="font-bold text-base text-text-primary">{item.title}</h4>
+                      <p className="text-xs text-gray-500 font-medium">{item.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
 
-              <div className="flex gap-4">
+              <div className="pt-2">
                 <button 
                   onClick={() => openCalculator()}
-                  className="btn-primary h-14 px-8 text-sm"
+                  className="btn-primary h-14 px-8 text-sm font-bold"
                 >
-                  Estimate Budget Quartz
+                  Estimate Budget Quartz Packages &rarr;
                 </button>
               </div>
             </div>
 
             <div className="lg:w-1/2 w-full">
-              <div className="bg-[#1A1A1A] p-10 rounded-[3rem] text-white shadow-2xl relative overflow-hidden">
-                <div className="aspect-[4/3] rounded-[2rem] overflow-hidden mb-8 border border-white/5">
+              <div className="bg-[#1A1A1A] p-8 md:p-10 rounded-[3rem] text-white shadow-2xl relative overflow-hidden space-y-6">
+                <div className="aspect-[4/3] rounded-[2rem] overflow-hidden border border-white/10">
                   <img src={quartzSlabImg} alt="Solid white quartz slab" className="w-full h-full object-cover" />
                 </div>
-                <h4 className="text-xl font-bold mb-2">Popular Rental Slabs</h4>
-                <p className="text-gray-400 text-sm leading-relaxed mb-6">
-                  We maintain bulk stocks of solid white and light grey slabs, allowing us to offer discounted bundle deals for GTA rental property owners.
-                </p>
-                <div className="flex justify-between items-center text-xs font-bold text-accent uppercase tracking-wider">
+                <div>
+                  <span className="text-[10px] font-black text-accent uppercase tracking-widest block mb-1">Landlord Package Add-Ons</span>
+                  <h4 className="text-2xl font-bold text-white mb-2">Sink, Faucet & Bathroom Vanity Bundles</h4>
+                  <p className="text-gray-400 text-xs leading-relaxed font-medium">
+                    Combine your kitchen quartz with matching 18-gauge undermount stainless steel sinks and pre-cut 25", 31", 37", or 49" quartz vanity tops for rental bathrooms to maximize bulk savings across units.
+                  </p>
+                </div>
+                <div className="flex justify-between items-center text-xs font-bold text-accent uppercase tracking-wider pt-2 border-t border-white/10">
                   <span>Fast GTA Delivery</span>
-                  <span>Professional Install Included</span>
+                  <span>Multi-Unit Discounts Available</span>
                 </div>
               </div>
             </div>
 
+          </div>
+        </div>
+      </section>
+
+      {/* B2B Multi-Unit Landlord Banner */}
+      <section className="py-16 bg-[#F0EBE1] border-y border-border-custom">
+        <div className="max-w-6xl mx-auto px-6 sm:px-8 text-center space-y-6">
+          <div className="inline-flex items-center gap-2 bg-white px-4 py-1.5 rounded-full border border-border-custom text-xs font-bold text-accent uppercase tracking-widest">
+            <Building size={14} />
+            B2B Property Manager & Investor Program
+          </div>
+          <h3 className="text-3xl md:text-4xl font-black tracking-tight text-text-primary">
+            Managing Multiple Units or BRRRR Rental Flips?
+          </h3>
+          <p className="text-gray-600 max-w-2xl mx-auto text-sm font-semibold leading-relaxed">
+            Standardize your kitchen cabinets and quartz countertop supply across your portfolio. Get predictable pricing, reserved inventory, and fast-track installation for Toronto property managers and real estate investors.
+          </p>
+          <div className="pt-2">
+            <Link 
+              to="/contact" 
+              className="btn-primary inline-flex items-center gap-3 px-10 py-4 text-xs font-bold uppercase tracking-widest shadow-lg shadow-accent/20"
+            >
+              <span>Request Multi-Unit Investor Pricing</span>
+              <ArrowRight size={16} />
+            </Link>
           </div>
         </div>
       </section>
