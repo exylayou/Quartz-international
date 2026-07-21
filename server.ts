@@ -520,18 +520,31 @@ app.post("/api/leads", async (req, res) => {
     let analysis: any;
     const apiKey = process.env.GEMINI_API_KEY;
 
-    if (!apiKey) {
-      console.warn("GEMINI_API_KEY is not defined. Falling back to mock kitchen analysis.");
-      analysis = {
-        layout: "L-shaped",
-        estimated_kitchen_size: "medium",
-        existing_cabinet_style: "flat-panel",
-        existing_cabinet_tone: "light wood",
-        countertop_tone: "white",
+    const getDynamicFallbackAnalysis = () => {
+      let layout = "L-Shaped";
+      if (hasIsland) {
+        layout = isCondo ? "Galley with Island Peninsula" : "Island with Perimeter L-Shape";
+      } else if (isCondo) {
+        layout = "Galley";
+      } else if (preferredStyle?.toLowerCase().includes("shaker")) {
+        layout = "U-Shaped";
+      }
+
+      return {
+        layout,
+        estimated_kitchen_size: isCondo ? "small" : (hasIsland ? "large" : "medium"),
+        existing_cabinet_style: preferredStyle || "flat-panel",
+        existing_cabinet_tone: cabinetColor || "white",
+        countertop_tone: "light neutral",
         backsplash: "tile",
         flooring: "wood",
         natural_light: "moderate"
       };
+    };
+
+    if (!apiKey) {
+      console.warn("GEMINI_API_KEY is not defined. Using dynamic kitchen analysis.");
+      analysis = getDynamicFallbackAnalysis();
     } else {
       try {
         const googleAI = new GoogleGenAI({ apiKey });
@@ -573,17 +586,7 @@ app.post("/api/leads", async (req, res) => {
         analysis = JSON.parse(responseText);
       } catch (err) {
         console.error("Gemini Vision API Error:", err);
-        // Fallback on error to ensure we don't break the user experience
-        analysis = {
-          layout: "L-shaped",
-          estimated_kitchen_size: "medium",
-          existing_cabinet_style: "shaker",
-          existing_cabinet_tone: "white",
-          countertop_tone: "light neutral",
-          backsplash: "tile",
-          flooring: "wood",
-          natural_light: "moderate"
-        };
+        analysis = getDynamicFallbackAnalysis();
       }
     }
 

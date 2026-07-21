@@ -149,7 +149,7 @@ export const CONCEPT_TEMPLATES: ConceptTemplate[] = [
     hardware: 'Slim matte black pull handles',
     explanation: 'Provides a modern take on the traditional shaker. The delicate, narrow border frames on the doors are paired with slim black hardware and clean veined quartz for a contemporary, transitional aesthetic.',
     image: '/images/slim_shaker_kitchen_hero.jpg',
-    imageNoIsland: '/images/white_shaker_no_island.png',
+    imageNoIsland: '/images/gloss_white_no_island.png',
     matchedCabinets: 'Elite Slim Shaker (Slim Shaker White)',
     matchedQuartz: [
       { brand: 'Kstone', productName: 'K1056 Arabescato White', tier: 'premium', costRange: '$69–$95 / sq ft' },
@@ -159,28 +159,15 @@ export const CONCEPT_TEMPLATES: ConceptTemplate[] = [
 ];
 
 /**
- * Matches a user's style and cabinet color preferences to the best 2 design templates.
+ * Matches a user's style and cabinet color preferences to 2 distinct design templates.
  */
 export function getMatchedConcepts(
   preferredStyle: string = 'Modern', 
   preferredColor: string = 'white'
 ): ConceptTemplate[] {
-  const matches: ConceptTemplate[] = [];
   const safeColor = (preferredColor || 'white').toLowerCase();
   const safeStyle = (preferredStyle || 'Modern').toLowerCase();
 
-  // 1. Direct color matches
-  const colorMatches = CONCEPT_TEMPLATES.filter(
-    t => t.cabinetColorGroup === safeColor
-  );
-
-  // 2. Direct style matches
-  const styleMatches = CONCEPT_TEMPLATES.filter(t => {
-    const styleLower = t.cabinetStyle.toLowerCase();
-    return styleLower.includes(safeStyle) || safeStyle.includes(styleLower);
-  });
-
-  // Combine and sort by score
   const scored = CONCEPT_TEMPLATES.map(t => {
     let score = 0;
     if (t.cabinetColorGroup === safeColor) score += 3;
@@ -193,11 +180,15 @@ export function getMatchedConcepts(
 
   scored.sort((a, b) => b.score - a.score);
 
-  // Take top 2 unique templates
-  matches.push(scored[0].template);
-  matches.push(scored[1].template);
+  const conceptA = scored[0].template;
+  // Select a distinct second concept with a different ID and non-identical style
+  let conceptB = scored.find(item => item.template.id !== conceptA.id && item.template.cabinetStyle !== conceptA.cabinetStyle)?.template;
+  
+  if (!conceptB) {
+    conceptB = scored.find(item => item.template.id !== conceptA.id)?.template || CONCEPT_TEMPLATES[1];
+  }
 
-  return matches;
+  return [conceptA, conceptB];
 }
 
 /**
