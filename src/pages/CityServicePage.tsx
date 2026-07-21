@@ -28,7 +28,7 @@ export default function CityServicePage() {
   const standardFaqs = [
     {
       q: `How much do quartz countertops cost in ${cityData.name}?`,
-      a: `Quartz countertops in ${cityData.name} typically range from $48 to $170 per square foot installed, with most kitchens falling between $3,000 and $6,000 depending on size and design.`
+      a: `Quartz countertops in ${cityData.name} typically range from $48 to $170 per square foot installed, with most kitchens falling between $2,000 and $5,000 depending on size and design.`
     },
     {
       q: "How long does installation take?",
@@ -182,7 +182,7 @@ export default function CityServicePage() {
         <div className="max-w-4xl mx-auto px-6 sm:px-8 lg:px-12">
           <h2 className="text-4xl font-bold mb-6">Pricing Guidance for {cityData.name}</h2>
           <p className="text-lg text-gray-600 mb-10">
-            Quartz countertop pricing is highly variable based on square footage, edge profiles (like mitered edges), number of cutouts, and the exact material you select. On average, standard installations start around $3,000 - $6,000 for a typical kitchen.
+            Quartz countertop pricing is highly variable based on square footage, edge profiles (like mitered edges), number of cutouts, and the exact material you select. On average, standard installations start around $2,000 - $5,000 for a typical kitchen.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <button onClick={() => openCalculator()} className="btn-primary px-8 h-14">Get an Instant Quote</button>

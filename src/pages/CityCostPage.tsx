@@ -54,7 +54,7 @@ export default function CityCostPage() {
   ];
 
   const faqs = [
-    { q: `How much do quartz countertops cost in ${city}?`, a: `On average, quartz countertops in ${city} range from $48 to $170 per square foot installed. A typical kitchen project usually totals between $2,000 and $5,500 depending on the material tier and layout complexity.` },
+    { q: `How much do quartz countertops cost in ${city}?`, a: `On average, quartz countertops in ${city} range from $48 to $170 per square foot installed. A typical kitchen project usually totals between $2,000 and $5,000 depending on the material tier and layout complexity.` },
     { q: "How long does installation take?", a: "Most installations are completed within 3–5 business days from the time of final templating. The physical install typically takes only one day." },
     { q: `Is quartz worth it for ${city} homes?`, a: "Absolutely. Quartz offers one of the best returns on investment for home renovations due to its durability, low maintenance, and high appeal to future buyers." },
     { q: "Do you provide cabinets and countertops?", a: "Yes, we offer complete kitchen solutions. Bundling cabinets and countertops often provides better value and ensures a more seamless installation process." },
@@ -187,7 +187,7 @@ export default function CityCostPage() {
             <div>
               <h3 className="text-lg font-bold text-text-primary mb-2 uppercase tracking-wide">Quick Answer</h3>
               <p className="text-xl md:text-2xl text-gray-600 leading-relaxed tracking-tight">
-                Quartz countertop cost in <span className="text-text-primary font-bold">{city}</span> is <span className="text-text-primary font-bold underline decoration-accent/30 underline-offset-4 decoration-4">$48–$170 per square foot</span> installed, with most kitchens costing between <span className="text-text-primary font-bold">$2,000</span> and <span className="text-text-primary font-bold">$5,500</span> depending on size, material, and design.
+                Quartz countertop cost in <span className="text-text-primary font-bold">{city}</span> is <span className="text-text-primary font-bold underline decoration-accent/30 underline-offset-4 decoration-4">$48–$170 per square foot</span> installed, with most kitchens costing between <span className="text-text-primary font-bold">$2,000</span> and <span className="text-text-primary font-bold">$5,000</span> depending on size, material, and design.
               </p>
             </div>
           </motion.div>

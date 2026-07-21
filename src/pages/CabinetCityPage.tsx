@@ -115,7 +115,7 @@ export default function CabinetCityPage() {
                   </button>
                   
                   <div className="absolute -top-5 -right-5 sm:-right-8 bg-text-primary text-white text-[11px] font-bold px-4 py-1.5 rounded-full shadow-xl transform rotate-3 border border-accent/30">
-                    Most kitchens: $3,000 – $6,000
+                    Most kitchens: $2,000 – $5,000
                   </div>
                 </div>
                 
@@ -388,7 +388,7 @@ export default function CabinetCityPage() {
               transition={{ delay: 0.2 }}
               className="text-sm font-bold text-text-primary bg-gray-50 inline-block px-4 py-2 rounded-lg border border-gray-100"
             >
-              Most projects range from $3,000 – $6,000 depending on layout.
+              Most projects range from $2,000 – $5,000 depending on layout.
             </motion.p>
           </div>
 
