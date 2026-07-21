@@ -196,34 +196,43 @@ export const cabinetPseoPages: CabinetPseoData[] = [
   {
     slug: '10x10-kitchen-cabinets-toronto',
     pageType: 'package',
-    seoTitle: '10x10 Kitchen Cabinets Toronto | Cabinet + Quartz Package Pricing',
-    metaDescription: 'Get 10x10 kitchen cabinet pricing in Toronto, including cabinet supply, quartz countertop package options, installation factors, and quote guidance.',
-    h1: '10x10 Kitchen Cabinets in Toronto',
-    heroCopy: 'A 10x10 kitchen is the industry standard layout used to compare cabinet packages, but your final cost depends on your actual layout, number of drawers, cabinet height, accessories, and countertop selection. Quartz International offers transparent cabinet and quartz package pricing for Toronto-area kitchens.',
+    seoTitle: '10x10 Kitchen Cabinets Toronto: Starting from $5,999 | Quartz Package',
+    metaDescription: '10x10 kitchen cabinets in Toronto starting from $5,999 for complete cabinet + quartz packages. Includes layout guide, inclusions, style options, and quick estimates.',
+    h1: '10×10 Kitchen Cabinets in Toronto: Simple Package Pricing for a Practical Kitchen Upgrade',
+    heroCopy: 'A 10×10 kitchen is the industry-standard benchmark (approx. 20 linear feet) used to calculate baseline cabinet and countertop costs. At Quartz International, our turnkey 10×10 cabinet and quartz packages start from $5,999, giving Toronto homeowners, landlords, and flippers an affordable, transparent baseline before customizing layout, door styles, and drawer upgrades.',
     pricingTable: [
-      { title: '10x10 RTA Supply', range: 'From $3,200+', notes: 'Basic L-shape configuration, assembly required' },
-      { title: '10x10 Fully Installed', range: 'From $4,800+', notes: 'Professional assembly and installation included' },
-      { title: '10x10 Cabinets + Quartz', range: 'From $5,999+', notes: 'Full turnkey package: Cabinets and standard quartz' }
+      { title: '10×10 RTA Cabinet Supply Only', range: 'Starting from $3,200', notes: 'Flat-packed 10-cabinet supply, DIY assembly required' },
+      { title: '10×10 Fully Installed Cabinets', range: 'Starting from $4,800', notes: 'Factory pre-assembled cabinets + professional Toronto installation' },
+      { title: '10×10 Cabinets + Quartz Countertop Package', range: 'Starting from $5,999', notes: 'Turnkey bundle: Plywood/MDF cabinets + Group 1 quartz countertops installed' }
     ],
-    pricingNote: 'A true 10x10 layout usually includes 11-12 cabinets total. Upgrading to larger drawer bases, pantry towers, or adding a kitchen island will increase this baseline price.',
-    bestForTitle: 'What Is a 10x10 Kitchen Layout?',
-    bestForCopy: 'A 10x10 kitchen is an L-shaped kitchen layout measuring 10 feet by 10 feet. It is used universally by cabinet suppliers as a benchmark so customers can easily compare the base cost of different door styles and finishes.',
+    pricingNote: 'Prices are based on standard 10×10 L-shaped layouts (approx. 20 linear feet) with standard door base cabinets and Group 1 quartz. Final cost depends on your exact dimensions, door finish, number of drawer banks, pantry towers, and countertop color selection.',
+    bestForTitle: 'What a 10×10 Kitchen Benchmark Includes',
+    bestForCopy: 'A 10×10 kitchen layout represents an L-shaped kitchen measuring 10 feet by 10 feet (roughly 20 linear feet of cabinetry). Cabinet suppliers use this standard 10-to-12 cabinet footprint as a benchmark so you can easily compare door styles, material grades, and package inclusions across different lines.',
     quartzPairings: [
-      { look: 'Standard Group 1 Quartz', bestFor: 'Keeping the 10x10 package as affordable as possible' },
-      { look: 'Premium Veined Quartz', bestFor: 'Upgrading the look of a standard layout' }
+      { look: 'Standard Group 1 Bright White Quartz', bestFor: 'Keeping your 10×10 turnkey package at the $5,999 starting price point' },
+      { look: 'Calacatta Veined Quartz', bestFor: 'Upgrading your 10×10 layout with dramatic marble veining' },
+      { look: 'Sleek Concrete Grey Quartz', bestFor: 'Creating a modern industrial contrast with white or light wood cabinets' }
     ],
-    localServiceNote: 'We provide free quotes based on your specific Toronto kitchen dimensions—you do not actually need to have a 10x10 kitchen to get a great package deal.',
+    localServiceNote: 'We provide free quotes based on your exact Toronto kitchen measurements—you do not actually need to have a 10×10 space to get our package pricing discounts!',
     faqs: [
       {
-        q: 'What is usually included in a 10x10 price?',
-        a: 'Typically, it includes basic base cabinets, wall cabinets, a sink base, and basic toe kicks. It assumes a simple L-shape without an island, tall pantries, or complex drawer banks.'
+        q: 'How much does a 10×10 kitchen cabinet package cost in Toronto?',
+        a: 'Our complete turnkey 10×10 cabinet and quartz countertop packages start from $5,999. Supply-only RTA cabinet packages start from $3,200, while fully installed cabinet-only packages start from $4,800. Final pricing depends on your door style, drawer options, and countertop selection.'
       },
       {
-        q: 'What is NOT included in the 10x10 benchmark?',
-        a: 'It rarely includes installation, appliances, sinks, hardware (knobs/pulls), crown moulding, light valances, finished end panels, or countertops unless explicitly stated as a bundle package.'
+        q: 'What is included in the $5,999 10×10 package?',
+        a: 'The $5,999 baseline package includes solid plywood or high-density MDF cabinet boxes, full-overlay door and drawer fronts, heavy-duty soft-close hinges, standard base and wall cabinets (approx. 20 LF), basic hardware pulls, and Group 1 quartz countertops with professional measurement and installation.'
+      },
+      {
+        q: 'What is NOT included in the baseline 10×10 package?',
+        a: 'The starting price excludes appliance removal, plumbing hookups, electrical work, tile backsplashes, sink fixtures, and structural wall removals. These services can be added upon request.'
+      },
+      {
+        q: 'Can I customize the layout if my kitchen is not exactly 10×10?',
+        a: 'Yes! Almost no kitchen is an exact 10×10. We use the 10×10 price as a baseline reference per linear foot ($295–$345/LF) to build custom quotes for L-shape, U-shape, Galley, and Island layouts.'
       }
     ],
-    image: '/images/essential_two_tone_kitchen.png'
+    image: '/images/white_shaker_kitchen_hero.png'
   },
   {
     slug: 'kitchen-cabinets-and-quartz-countertops-toronto',
