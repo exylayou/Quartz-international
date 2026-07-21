@@ -237,31 +237,40 @@ export const cabinetPseoPages: CabinetPseoData[] = [
   {
     slug: 'kitchen-cabinets-and-quartz-countertops-toronto',
     pageType: 'package',
-    seoTitle: 'Kitchen Cabinets and Quartz Countertops Toronto | Turnkey Packages',
-    metaDescription: 'Bundle kitchen cabinets and quartz countertops in Toronto. Save time and coordinate your renovation with our supply and installation packages.',
-    h1: 'Kitchen Cabinets and Quartz Countertops in Toronto',
-    heroCopy: 'Simplify your renovation by bundling your kitchen cabinets and quartz countertops. Coordinating both through Quartz International ensures perfect color matching, streamlined measurement scheduling, and a faster overall installation process for your Toronto home.',
+    seoTitle: 'Kitchen Cabinet + Quartz Packages Toronto | Turnkey Renovation Bundles',
+    metaDescription: 'Complete kitchen cabinet and quartz countertop packages in Toronto & GTA. Explore Good/Better/Best turnkey tiers from $4,500 to $10,500+ with 7-day single-team installation.',
+    h1: 'Kitchen Cabinet & Quartz Countertop Packages in Toronto',
+    heroCopy: 'Simplify your kitchen renovation by bundling custom cabinets and quartz countertops under a single contract. By combining manufacturing, fabrication, laser templating, and installation with Quartz International, you eliminate contractor scheduling delays, ensure perfect material color harmony, and save up to 15% on total project management.',
     pricingTable: [
-      { title: 'Small Condo Bundle', range: 'From $4,500+', notes: 'Compact cabinet layout + standard quartz' },
-      { title: 'Standard Kitchen Bundle', range: 'From $6,500+', notes: 'Average layout, installed cabinets + premium quartz' },
-      { title: 'Luxury Island Bundle', range: '$10,000+', notes: 'Large layout, pantries, waterfall island quartz' }
+      { title: 'Tier 1: Essential Condo Package', range: 'Starting from $4,500', notes: 'Compact layout (12–14 LF), Flat-panel cabinets + Group 1 quartz tops' },
+      { title: 'Tier 2: Signature 10×10 Turnkey Package', range: 'Starting from $5,999', notes: 'Standard 20 LF layout, White Shaker cabinets + veined quartz countertops' },
+      { title: 'Tier 3: Luxury Waterfall Island Package', range: 'Starting from $10,500+', notes: 'Large layout, plywood boxes, mitered waterfall island + full-height quartz backsplash' }
     ],
-    pricingNote: 'Bundling cabinets and quartz often saves homeowners 10-15% on overall project management and reduces downtime between cabinet installation and countertop templating.',
-    bestForTitle: 'Why Bundle Cabinets and Countertops?',
-    bestForCopy: 'Bundling is best for homeowners and contractors who want a seamless, stress-free renovation. Instead of managing multiple suppliers and risking schedule delays, bundling ensures the countertop templating happens the exact moment your base cabinets are securely installed.',
+    pricingNote: 'All turnkey packages include cabinet boxes, doors, soft-close hardware, quartz supply, undermount sink cutout, laser templating, and professional Toronto installation.',
+    bestForTitle: 'Why Homeowners Choose Turnkey Cabinet + Quartz Packages',
+    bestForCopy: 'Managing separate cabinet installers and stone fabricators is the #1 cause of kitchen renovation delays in Toronto. When you bundle both through Quartz International, our templater measures for your quartz the exact day base cabinets are anchored, reducing downtime from weeks to just 5–7 days.',
     quartzPairings: [
-      { look: 'Coordinated matching', bestFor: 'Ensuring your white cabinets and white quartz do not clash' },
-      { look: 'Contrast pairing', bestFor: 'Selecting the perfect dark island countertop to match light perimeter cabinets' }
+      { look: 'Pure White Shaker + Calacatta Gold Quartz', bestFor: 'Classic warm transitional look with subtle gold & grey veining' },
+      { look: 'Smoked Oak Bases + Pure White Quartz', bestFor: 'Modern organic contrast pairing light countertops with rich wood grain' },
+      { look: 'Bold Navy Accent + Statuario Veined Quartz', bestFor: 'High-end luxury statement kitchen with dramatic marble aesthetics' }
     ],
-    localServiceNote: 'Our Toronto fabrication and installation teams work in tandem. Once your cabinets are set, our templater is immediately dispatched to measure for your quartz.',
+    localServiceNote: 'Our Toronto showroom and local fabrication facility allow you to inspect full cabinet door samples side-by-side with full-size quartz slabs before making your deposit.',
     faqs: [
       {
-        q: 'Do I get a discount for bundling?',
-        a: 'While pricing depends on the specific materials chosen, bundling often results in better overall package pricing and significantly reduces delivery and coordination fees.'
+        q: 'How much do turnkey kitchen cabinet and quartz packages cost in Toronto?',
+        a: 'Our turnkey packages range from $4,500 for compact condo layouts to $5,999 for standard 10×10 single-family kitchens, and $10,500+ for custom luxury layouts with waterfall island edges and full-height slab backsplashes.'
       },
       {
-        q: 'How long does the whole process take?',
-        a: 'Once cabinets are installed, we template the quartz. Fabrication takes about 5-7 days, meaning your fully functional kitchen is ready much faster than coordinating separate contractors.'
+        q: 'What is the deposit and showroom order process?',
+        a: 'We start with a free online estimate or photo review. Next, visit our local showroom to choose cabinet door profiles and quartz slab samples. A $500 initial deposit secures your project schedule and dispatches our 3D laser technician for site measurement.'
+      },
+      {
+        q: 'Can I add a full-height quartz backsplash to my package?',
+        a: 'Yes! Full-height quartz slab backsplashes are one of our most popular upgrades. Extending the countertop quartz continuously up to your upper cabinets eliminates tile grout lines and creates a seamless, low-maintenance luxury finish.'
+      },
+      {
+        q: 'How long does the installation take from start to finish?',
+        a: 'Cabinet installation typically takes 1 to 2 days. Quartz laser templating occurs immediately after cabinets are set, with final quartz installation completed 5 to 7 business days later.'
       }
     ],
     image: '/images/kitchen_and_quartz_hero.jpg'

@@ -17,7 +17,7 @@ export default function CabinetPseoPage() {
     return <Navigate to="/" replace />;
   }
 
-  const is10x10Page = pageData.slug === '10x10-kitchen-cabinets-toronto';
+  const isPackagePage = pageData.pageType === 'package';
 
   return (
     <div className="bg-white min-h-screen font-sans selection:bg-accent/30 text-text-primary">
@@ -54,15 +54,15 @@ export default function CabinetPseoPage() {
                 {pageData.h1}
               </motion.h1>
 
-              {/* $5,999 Headline Price Callout for 10x10 Page */}
-              {is10x10Page && (
+              {/* Turnkey Headline Price Callout */}
+              {isPackagePage && (
                 <motion.div
                   initial={{ opacity: 0, scale: 0.95 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ duration: 0.5, delay: 0.15 }}
                   className="inline-flex items-center gap-3 bg-accent/10 border border-accent/20 px-6 py-3 rounded-2xl text-accent font-black text-xl sm:text-2xl shadow-sm"
                 >
-                  <span>Turnkey Packages Starting from $5,999 CAD</span>
+                  <span>Turnkey Packages Starting from $4,500 – $5,999 CAD</span>
                 </motion.div>
               )}
               
@@ -437,6 +437,29 @@ export default function CabinetPseoPage() {
                 </AnimatePresence>
               </div>
             ))}
+          </div>
+
+          {/* Related Toronto Renovation Guides Internal Links */}
+          <div className="my-12 p-6 bg-white border border-border-custom rounded-3xl space-y-4 shadow-sm">
+            <h4 className="text-xs font-black uppercase tracking-widest text-accent">Related Toronto Renovation Guides</h4>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-xs font-bold text-text-primary">
+              <a href="/10x10-kitchen-cabinets-toronto" className="p-3 bg-background rounded-xl border border-border-custom/60 hover:border-accent hover:text-accent transition-colors flex items-center justify-between">
+                <span>10×10 Cabinet Benchmark</span>
+                <ArrowRight size={14} />
+              </a>
+              <a href="/kitchen-cabinets-and-quartz-countertops-toronto" className="p-3 bg-background rounded-xl border border-border-custom/60 hover:border-accent hover:text-accent transition-colors flex items-center justify-between">
+                <span>Turnkey Package Bundles</span>
+                <ArrowRight size={14} />
+              </a>
+              <a href="/quartz-countertop-cost-toronto" className="p-3 bg-background rounded-xl border border-border-custom/60 hover:border-accent hover:text-accent transition-colors flex items-center justify-between">
+                <span>Quartz Countertop Cost</span>
+                <ArrowRight size={14} />
+              </a>
+              <a href="/white-quartz-kitchen-countertops" className="p-3 bg-background rounded-xl border border-border-custom/60 hover:border-accent hover:text-accent transition-colors flex items-center justify-between">
+                <span>White Quartz Pairings</span>
+                <ArrowRight size={14} />
+              </a>
+            </div>
           </div>
 
           {/* Bottom CTA Card */}
