@@ -239,26 +239,37 @@ export default function CabinetPseoPage() {
                 title: "L-Shape Layout (Baseline)",
                 desc: "10ft × 10ft corner configuration (20 LF total). Ideal for open-concept homes.",
                 cabinets: "10–11 Cabinets (Base + Wall)",
-                fit: "Standard Toronto single-family homes & townhouses"
+                fit: "Standard Toronto single-family homes & townhouses",
+                image: "/images/white_shaker_no_island.png"
               },
               {
                 title: "Galley / Parallel Layout",
                 desc: "Two parallel 10ft wall runs facing each other (20 LF total). Maximizes workspace efficiency.",
                 cabinets: "10–12 Cabinets (Includes sink run)",
-                fit: "Downtown Toronto condos & narrow urban kitchens"
+                fit: "Downtown Toronto condos & narrow urban kitchens",
+                image: "/images/kitchen_and_quartz_hero.jpg"
               },
               {
                 title: "U-Shape Layout",
                 desc: "Three connected walls forming a U (requires +1 corner base unit).",
                 cabinets: "11–13 Cabinets (+Corner Lazy Susan option)",
-                fit: "Enclosed suburban kitchens requiring maximum counter space"
+                fit: "Enclosed suburban kitchens requiring maximum counter space",
+                image: "/images/dark_wood_no_island.png"
               }
             ].map((layout, idx) => (
-              <div key={idx} className="bg-white border border-border-custom p-8 rounded-3xl space-y-4 shadow-sm flex flex-col justify-between">
-                <div>
-                  <span className="text-[10px] font-black text-accent uppercase tracking-widest">Layout Type {idx + 1}</span>
-                  <h3 className="text-xl font-bold mt-1 mb-2">{layout.title}</h3>
-                  <p className="text-xs text-gray-500 leading-relaxed mb-6 font-medium">{layout.desc}</p>
+              <div key={idx} className="bg-white border border-border-custom rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
+                <div className="aspect-[16/10] bg-gray-100 overflow-hidden relative border-b border-border-custom">
+                  <img src={layout.image} alt={layout.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <div className="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white text-[9px] font-black uppercase tracking-widest px-3 py-1 rounded-full border border-white/10">
+                    20 Linear Feet
+                  </div>
+                </div>
+                <div className="p-6 space-y-4">
+                  <div>
+                    <span className="text-[10px] font-black text-accent uppercase tracking-widest">Layout Type {idx + 1}</span>
+                    <h3 className="text-xl font-bold mt-1 mb-2">{layout.title}</h3>
+                    <p className="text-xs text-gray-500 leading-relaxed mb-4 font-medium">{layout.desc}</p>
+                  </div>
                   
                   <div className="space-y-2 border-t border-gray-100 pt-4 text-xs font-semibold text-gray-700">
                     <div className="flex justify-between">
@@ -280,50 +291,62 @@ export default function CabinetPseoPage() {
       {/* 5. Door Styles & Colour Options */}
       <section className="py-20 bg-white border-t border-border-custom">
         <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-12">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="space-y-16">
             
-            {/* Left: Door Styles */}
-            <div className="space-y-6">
-              <span className="text-xs font-bold text-accent uppercase tracking-widest">Design Selections</span>
-              <h2 className="text-3xl font-black tracking-tight">Cabinet Door Styles</h2>
-              <p className="text-gray-500 font-medium leading-relaxed">
-                Choose from four distinct cabinet door profiles to match your architectural vision:
-              </p>
+            {/* Door Styles Section */}
+            <div className="space-y-8">
+              <div className="text-center max-w-3xl mx-auto space-y-3">
+                <span className="text-xs font-bold text-accent uppercase tracking-widest">Door Profile Options</span>
+                <h2 className="text-3xl md:text-4xl font-black tracking-tight">Actual Cabinet Door Styles</h2>
+                <p className="text-gray-500 font-medium">Visual close-ups of our four primary cabinet door profiles.</p>
+              </div>
               
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {[
-                  { name: "Classic Shaker", desc: "Timeless recessed panel", tier: "Popular Standard" },
-                  { name: "Slim Shaker", desc: "Refined thin frame border", tier: "Modern Transitional" },
-                  { name: "Flat Panel (Slab)", desc: "Sleek minimalist finish", tier: "Contemporary" },
-                  { name: "High Gloss", desc: "Ultra-reflective condo style", tier: "Condo Minimalist" }
+                  { name: "Classic Shaker", desc: "Timeless recessed panel profile", tier: "Popular Standard", image: "/images/white_shaker_kitchen_hero.png" },
+                  { name: "Slim Shaker", desc: "Refined 3/4\" thin frame border", tier: "Modern Transitional", image: "/images/slim_shaker_kitchen_hero.jpg" },
+                  { name: "Flat Panel (Slab)", desc: "Sleek minimalist flat surface", tier: "Contemporary", image: "/images/modern_kitchen_hero.jpg" },
+                  { name: "High Gloss", desc: "Ultra-reflective acrylic mirror finish", tier: "Condo Minimalist", image: "/images/gloss_white_no_island.png" }
                 ].map((style, idx) => (
-                  <div key={idx} className="bg-background border border-border-custom p-4 rounded-2xl space-y-1">
-                    <span className="text-[9px] font-bold text-accent uppercase tracking-wider">{style.tier}</span>
-                    <h4 className="font-bold text-sm">{style.name}</h4>
-                    <p className="text-[10px] text-gray-400 font-semibold">{style.desc}</p>
+                  <div key={idx} className="bg-background border border-border-custom rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all space-y-3 p-3">
+                    <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-gray-100 border border-border-custom/50">
+                      <img src={style.image} alt={style.name} className="w-full h-full object-cover" />
+                    </div>
+                    <div className="px-2 pb-2 space-y-1">
+                      <span className="text-[9px] font-bold text-accent uppercase tracking-wider block">{style.tier}</span>
+                      <h4 className="font-bold text-base">{style.name}</h4>
+                      <p className="text-xs text-gray-500 font-medium">{style.desc}</p>
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Right: Colour Palette */}
-            <div className="space-y-6">
-              <h2 className="text-3xl font-black tracking-tight">Popular Colour Finishes</h2>
-              <p className="text-gray-500 font-medium leading-relaxed">
-                Available in painted, thermofoil, and textured wood-grain options:
-              </p>
+            {/* Colour Palette Section */}
+            <div className="space-y-8 border-t border-gray-100 pt-16">
+              <div className="text-center max-w-3xl mx-auto space-y-3">
+                <span className="text-xs font-bold text-accent uppercase tracking-widest">Finish Palette</span>
+                <h2 className="text-3xl md:text-4xl font-black tracking-tight">Popular Colour & Material Finishes</h2>
+                <p className="text-gray-500 font-medium">Textured wood grains, painted finishes, and high-gloss options.</p>
+              </div>
 
-              <div className="grid grid-cols-3 gap-3">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
                 {[
-                  { color: "Pure White", bg: "bg-gray-100 border-gray-300", text: "text-gray-800" },
-                  { color: "Smoked Oak", bg: "bg-[#5C4033]", text: "text-white" },
-                  { color: "Matt Grey", bg: "bg-gray-500", text: "text-white" },
-                  { color: "Gloss White", bg: "bg-white border-2 border-accent/40", text: "text-gray-800" },
-                  { color: "Whitish Maple", bg: "bg-[#E8DCC4]", text: "text-gray-800" },
-                  { color: "Bold Navy", bg: "bg-[#1B2A4A]", text: "text-white" }
+                  { color: "Pure White", desc: "Clean, crisp classic white", image: "/images/white_shaker_no_island.png" },
+                  { color: "Smoked Oak", desc: "Rich organic wood grain", image: "/images/dark_wood_no_island.png" },
+                  { color: "Matt Grey", desc: "Modern anti-fingerprint matte", image: "/images/modern_kitchen_hero.jpg" },
+                  { color: "Gloss White", desc: "Light-reflecting gloss", image: "/images/gloss_white_no_island.png" },
+                  { color: "Whitish Maple", desc: "Scandi light maple grain", image: "/images/affordable_kitchen_hero.jpg" },
+                  { color: "Bold Navy", desc: "Deep blue accent tone", image: "/images/cabinet_cities_hero_common.jpg" }
                 ].map((c, idx) => (
-                  <div key={idx} className={`p-4 rounded-2xl text-center space-y-1 ${c.bg} ${c.text} shadow-sm border`}>
-                    <span className="text-xs font-bold block">{c.color}</span>
+                  <div key={idx} className="bg-white border border-border-custom rounded-2xl p-2 shadow-sm space-y-2 group hover:border-accent transition-colors">
+                    <div className="aspect-square rounded-xl overflow-hidden border border-border-custom/50 bg-gray-50">
+                      <img src={c.image} alt={c.color} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" />
+                    </div>
+                    <div className="text-center px-1 pb-1">
+                      <span className="text-xs font-bold text-text-primary block">{c.color}</span>
+                      <span className="text-[10px] text-gray-400 font-semibold block">{c.desc}</span>
+                    </div>
                   </div>
                 ))}
               </div>
