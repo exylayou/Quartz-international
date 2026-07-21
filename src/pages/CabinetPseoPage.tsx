@@ -247,14 +247,14 @@ export default function CabinetPseoPage() {
                 desc: "Two parallel 10ft wall runs facing each other (20 LF total). Maximizes workspace efficiency.",
                 cabinets: "10–12 Cabinets (Includes sink run)",
                 fit: "Downtown Toronto condos & narrow urban kitchens",
-                image: "/images/kitchen_and_quartz_hero.jpg"
+                image: "/images/galley_kitchen_layout.png"
               },
               {
                 title: "U-Shape Layout",
                 desc: "Three connected walls forming a U (requires +1 corner base unit).",
                 cabinets: "11–13 Cabinets (+Corner Lazy Susan option)",
                 fit: "Enclosed suburban kitchens requiring maximum counter space",
-                image: "/images/dark_wood_no_island.png"
+                image: "/images/u_shape_kitchen_layout.png"
               }
             ].map((layout, idx) => (
               <div key={idx} className="bg-white border border-border-custom rounded-3xl overflow-hidden shadow-sm flex flex-col justify-between group hover:shadow-xl transition-all duration-300">
