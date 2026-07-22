@@ -1,7 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { chromium } from '@playwright/test';
 import express from 'express';
 
 if (process.env.VERCEL) {
@@ -94,6 +93,7 @@ async function prerender() {
   const server = app.listen(PORT, async () => {
     console.log(`\n🚀 Started local server on port ${PORT} for SSG Prerendering...`);
 
+    const { chromium } = await import('@playwright/test');
     const browser = await chromium.launch({ headless: true });
     const context = await browser.newContext();
     const page = await context.newPage();
