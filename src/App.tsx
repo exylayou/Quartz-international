@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
 import { CalculatorProvider } from './context/CalculatorContext';
@@ -137,6 +137,11 @@ export default function App() {
             ))}
             <Route path="/kitchen-cabinets/:city" element={<CabinetCityPage />} />
             <Route path="/:city" element={<CityServicePage />} />
+
+            {/* Catch-all Fallbacks */}
+            <Route path="/quartz-kitchen-countertops/*" element={<Navigate to="/quartz-kitchen-countertops" replace />} />
+            <Route path="/kitchen-cabinets/*" element={<Navigate to="/cabinets" replace />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </Layout>
         <CalculatorModal />
