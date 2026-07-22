@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { ArrowRight, CheckCircle2, Calculator, ShieldCheck, Star, Clock, MapPin, Check, Quote } from 'lucide-react';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { cn } from '../lib/utils';
 import gallery1 from '../assets/images/regenerated_image_1777699853679.jpg';
 import gallery2 from '../assets/images/regenerated_image_1777699854133.jpg';
@@ -19,6 +19,7 @@ const inspired3 = gallery3;
 import { useCalculator } from '../context/CalculatorContext';
 
 export default function Home() {
+  const navigate = useNavigate();
   const { openCalculator } = useCalculator();
   const [isScrolled, setIsScrolled] = React.useState(false);
 
@@ -644,6 +645,68 @@ export default function Home() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Turnkey 10x10 Cabinet + Quartz Package Promo Section */}
+      <section className="py-24 bg-white border-t border-border-custom px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center bg-[#FAF9F6] border border-border-custom rounded-[3rem] p-8 md:p-16 relative overflow-hidden shadow-sm">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-accent/5 rounded-full blur-3xl -mr-20 -mt-20 pointer-events-none" />
+            
+            <div className="lg:col-span-7 space-y-6">
+              <span className="inline-flex items-center gap-2 bg-[#F0EBE1] border border-border-custom px-4 py-1.5 rounded-full text-[10px] font-bold text-gray-600 uppercase tracking-widest leading-none">
+                Best-Selling Package
+              </span>
+              <h2 className="text-4xl md:text-5xl font-black text-text-primary leading-tight tracking-tight">
+                Turnkey 10×10 Cabinet & Quartz Package
+              </h2>
+              <p className="text-gray-500 font-medium text-sm sm:text-base leading-relaxed max-w-xl">
+                Get everything you need for a complete kitchen facelift. Includes solid plywood cabinet boxes, soft-close hardware, custom quartz countertops, laser measurement, and professional Toronto installation.
+              </p>
+              <div className="grid grid-cols-2 gap-4 text-xs font-semibold text-text-primary">
+                <div className="flex items-center gap-2">
+                  <Check size={16} className="text-accent" />
+                  <span>Cabinets + Countertops</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Check size={16} className="text-accent" />
+                  <span>3D Laser Templating</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Check size={16} className="text-accent" />
+                  <span>Installed in 7-10 Days</span>
+                </div>
+                <div className="flex items-center gap-2">
+                  <Check size={16} className="text-accent" />
+                  <span>Toronto & GTA Service</span>
+                </div>
+              </div>
+            </div>
+            
+            <div className="lg:col-span-5 flex flex-col justify-center items-center lg:items-end text-center lg:text-right space-y-6">
+              <div className="space-y-1">
+                <span className="text-xs font-bold text-gray-400 uppercase tracking-widest block">Complete Turnkey Package</span>
+                <span className="text-3xl md:text-4xl font-black text-accent block">Starting from $5,999 CAD</span>
+                <span className="text-[10px] text-gray-400 font-bold uppercase tracking-widest block">Cabinet pre-assembly & quartz installation included</span>
+              </div>
+              
+              <div className="flex flex-col sm:flex-row gap-4 w-full justify-end">
+                <Link 
+                  to="/10x10-kitchen-cabinets-toronto" 
+                  className="btn-primary py-4 px-8 text-sm font-bold uppercase tracking-wider text-center cursor-pointer shadow-lg shadow-accent/20"
+                >
+                  View Package Details
+                </Link>
+                <button 
+                  onClick={() => navigate('/kitchen-cabinet-estimator')}
+                  className="btn-outline py-4 px-8 text-sm font-bold uppercase tracking-wider text-center"
+                >
+                  Estimate Layout Online
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>

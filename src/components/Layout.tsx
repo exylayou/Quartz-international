@@ -187,6 +187,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <li><Link to="/kitchen-cabinet-cost" className="hover:text-white transition-colors">Kitchen Cabinet Cost Guide</Link></li>
                   <li><Link to="/kitchen-cabinet-estimator" className="hover:text-white transition-colors">Kitchen Cabinet Estimator</Link></li>
                   <li><Link to="/kitchen-renovation-estimator" className="hover:text-white transition-colors">Kitchen Renovation Estimator</Link></li>
+                  <li><Link to="/quartz-vs-granite-vs-marble-toronto" className="hover:text-white transition-colors">Quartz vs. Granite vs. Marble</Link></li>
+                  <li><Link to="/flat-panel-vs-shaker-cabinets" className="hover:text-white transition-colors">Slab vs. Shaker Cabinets</Link></li>
+                  <li><Link to="/modernize-kitchen-without-moving-plumbing" className="hover:text-white transition-colors">Layout-Free Modernization</Link></li>
                   <li><Link to="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
                 </ul>
               </div>
