@@ -230,6 +230,14 @@ export const cabinetPseoPages: CabinetPseoData[] = [
       {
         q: 'Can I customize the layout if my kitchen is not exactly 10×10?',
         a: 'Yes! Almost no kitchen is an exact 10×10. We use the 10×10 price as a baseline reference per linear foot ($295–$345/LF) to build custom quotes for L-shape, U-shape, Galley, and Island layouts.'
+      },
+      {
+        q: 'What quartz countertop colours cost more in a 10×10 package?',
+        a: 'Our $5,999 baseline package includes Group 1 quartz countertops (solid white, cream, or light grey fleck). Upgrading to Group 2 or Group 3 quartz—which feature premium marble veining, Calacatta patterns, or concrete finishes—typically adds $800 to $2,200 to the total package price depending on the slab selected.'
+      },
+      {
+        q: 'How long does a 10×10 cabinet and quartz installation take?',
+        a: 'Cabinet assembly and installation typically take 1 to 2 days. As soon as the base cabinets are anchored, our technician templates the quartz using a 3D laser scanner. Quartz fabrication takes 5 to 7 days, and final countertop installation is completed in about 3 to 4 hours. Your kitchen is fully functional in 7 to 10 days from start to finish.'
       }
     ],
     image: '/images/white_shaker_kitchen_hero.png'

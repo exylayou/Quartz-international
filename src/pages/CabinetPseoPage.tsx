@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Star, CheckCircle2, MapPin, Maximize, Check, Layers, ChevronDown, Camera, XCircle, Clock, Sparkles, Sliders, Palette, ShieldCheck } from 'lucide-react';
 import { useLocation, Navigate, useNavigate } from 'react-router-dom';
 import { SEO } from '../components/SEO';
+import { Helmet } from 'react-helmet-async';
 import { cabinetPseoPages } from '../data/cabinetPseoData';
 
 export default function CabinetPseoPage() {
@@ -19,12 +20,30 @@ export default function CabinetPseoPage() {
 
   const isPackagePage = pageData.pageType === 'package';
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": pageData.faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.q,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.a
+      }
+    }))
+  };
+
   return (
     <div className="bg-white min-h-screen font-sans selection:bg-accent/30 text-text-primary">
       <SEO 
         title={pageData.seoTitle} 
         description={pageData.metaDescription} 
       />
+      <Helmet>
+        <script type="application/ld+json">
+          {JSON.stringify(faqSchema)}
+        </script>
+      </Helmet>
 
       {/* 1. Hero Section */}
       <section className="relative min-h-[85vh] flex items-center overflow-hidden bg-white">
