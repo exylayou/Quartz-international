@@ -49,6 +49,11 @@ import RentalPropertyCountertops from './pages/RentalPropertyCountertops';
 import DesignInspiration from './pages/DesignInspiration';
 import Faq from './pages/Faq';
 
+// New SEO Guides
+import QuartzVsGraniteVsMarble from './pages/QuartzVsGraniteVsMarble';
+import FlatPanelVsShakerCabinets from './pages/FlatPanelVsShakerCabinets';
+import ModernizeKitchenNoLayoutChange from './pages/ModernizeKitchenNoLayoutChange';
+
 // Dedicated PPC Landing Pages
 import PpcCountertops from './pages/lp/PpcCountertops';
 import PpcCabinets from './pages/lp/PpcCabinets';
@@ -115,6 +120,9 @@ export default function App() {
             <Route path="/quartz-vs-quartzite" element={<QuartzVsQuartzite />} />
             <Route path="/best-countertop-for-rental-properties" element={<RentalPropertyCountertops />} />
             <Route path="/design-inspiration" element={<DesignInspiration />} />
+            <Route path="/quartz-vs-granite-vs-marble-toronto" element={<QuartzVsGraniteVsMarble />} />
+            <Route path="/flat-panel-vs-shaker-cabinets" element={<FlatPanelVsShakerCabinets />} />
+            <Route path="/modernize-kitchen-without-moving-plumbing" element={<ModernizeKitchenNoLayoutChange />} />
 
             {/* Dedicated PPC Landing Pages */}
             <Route path="/lp/quartz-countertops" element={<PpcCountertops />} />

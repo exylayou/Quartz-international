@@ -63,6 +63,9 @@ const CORE_ROUTES = [
   '/best-countertop-for-rental-properties',
   '/design-inspiration',
   '/faq',
+  '/quartz-vs-granite-vs-marble-toronto',
+  '/flat-panel-vs-shaker-cabinets',
+  '/modernize-kitchen-without-moving-plumbing',
   '/lp/quartz-countertops',
   '/lp/kitchen-cabinets',
   '/lp/kitchen-renovation'
