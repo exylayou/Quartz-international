@@ -9,6 +9,7 @@
   --radius-button: 1rem;
   --color-text-primary: #1A1A1A;
   --color-text-muted: #71717A;
+  --color-dark: #111111;
 }
 
 @utility glass-panel {
