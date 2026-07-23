@@ -463,7 +463,7 @@ app.post("/api/leads", async (req, res) => {
       Generate a highly realistic, professional architectural render showing this transformation of the space.`;
 
       const response = await aiClient.models.generateContent({
-        model: "gemini-2.0-flash",
+        model: "gemini-2.0-flash-exp",
         contents: [
           {
             inlineData: {
@@ -474,7 +474,7 @@ app.post("/api/leads", async (req, res) => {
           promptText
         ],
         config: {
-          responseModalities: ["IMAGE"]
+          responseModalities: ["IMAGE", "TEXT"]
         }
       });
 
@@ -483,8 +483,8 @@ app.post("/api/leads", async (req, res) => {
         return `data:image/png;base64,${part.inlineData.data}`;
       }
       return null;
-    } catch (err) {
-      console.error(`Failed to generate concept image for ${conceptName}:`, err);
+    } catch (err: any) {
+      console.warn(`AI live render skipped for ${conceptName}: ${err.message || 'Model fallback'}. Serving curated catalog concept.`);
       return null;
     }
   }

@@ -110,8 +110,8 @@ export const CONCEPT_TEMPLATES: ConceptTemplate[] = [
     backsplash: 'Vertical stack neutral Zellige tile',
     hardware: 'Minimalist brushed steel slim edge-pulls',
     explanation: 'Inspired by Scandinavian warmth and organic textures. Whitish Maple flat panels bring light and grain detail, matching warm beige speckled quartz and vertical tile for a soothing, textured organic atmosphere.',
-    image: '/images/affordable_kitchen_hero.jpg',
-    imageNoIsland: '/images/dark_wood_no_island.png',
+    image: '/images/natural_wood_flat_panel.png',
+    imageNoIsland: '/images/smoked_oak_flat_panel.jpg',
     matchedCabinets: 'Essential Flat Panel (Whitish Maple)',
     matchedQuartz: [
       { brand: 'TCE Stone', productName: 'Speckled Cream', tier: 'standard', costRange: '$48–$68 / sq ft' },
@@ -170,7 +170,7 @@ export function getMatchedConcepts(
 
   const scored = CONCEPT_TEMPLATES.map(t => {
     let score = 0;
-    if (t.cabinetColorGroup === safeColor) score += 3;
+    if (t.cabinetColorGroup === safeColor) score += 4;
     
     const styleLower = t.cabinetStyle.toLowerCase();
     if (styleLower.includes(safeStyle) || safeStyle.includes(styleLower)) score += 2;
@@ -181,8 +181,8 @@ export function getMatchedConcepts(
   scored.sort((a, b) => b.score - a.score);
 
   const conceptA = scored[0].template;
-  // Select a distinct second concept with a different ID and non-identical style
-  let conceptB = scored.find(item => item.template.id !== conceptA.id && item.template.cabinetStyle !== conceptA.cabinetStyle)?.template;
+  // Select a distinct second concept with highest score that is not conceptA
+  let conceptB = scored.find(item => item.template.id !== conceptA.id && item.template.name !== conceptA.name)?.template;
   
   if (!conceptB) {
     conceptB = scored.find(item => item.template.id !== conceptA.id)?.template || CONCEPT_TEMPLATES[1];
