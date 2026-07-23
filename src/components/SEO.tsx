@@ -22,6 +22,53 @@ export function SEO({
   const canonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
   const imageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
 
+  const localBusinessSchema = {
+    "@context": "https://schema.org",
+    "@type": ["LocalBusiness", "HomeGoodsStore", "ProfessionalService"],
+    "name": "Quartz International",
+    "image": imageUrl,
+    "@id": siteUrl,
+    "url": siteUrl,
+    "telephone": "(647) 370-6938",
+    "priceRange": "$$",
+    "email": "info@quartzinternational.ca",
+    "description": description || "Leading supplier and installer of turnkey kitchen cabinet packages and quartz countertops across Toronto and the Greater Toronto Area.",
+    "sameAs": [
+      "https://share.google/kkKyItFobaGVXcr12"
+    ],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Toronto",
+      "addressRegion": "ON",
+      "addressCountry": "CA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 43.6532,
+      "longitude": -79.3832
+    },
+    "areaServed": [
+      { "@type": "City", "name": "Toronto" },
+      { "@type": "City", "name": "Vaughan" },
+      { "@type": "City", "name": "Markham" },
+      { "@type": "City", "name": "Richmond Hill" },
+      { "@type": "City", "name": "Mississauga" },
+      { "@type": "City", "name": "Brampton" },
+      { "@type": "City", "name": "Oakville" },
+      { "@type": "City", "name": "Milton" },
+      { "@type": "City", "name": "Aurora" },
+      { "@type": "City", "name": "Newmarket" }
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    ]
+  };
+
   return (
     <Helmet>
       {/* Standard Meta Tags */}
@@ -45,6 +92,11 @@ export function SEO({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
+
+      {/* LocalBusiness JSON-LD Schema */}
+      <script type="application/ld+json">
+        {JSON.stringify(localBusinessSchema)}
+      </script>
     </Helmet>
   );
 }
