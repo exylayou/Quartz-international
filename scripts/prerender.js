@@ -65,6 +65,7 @@ const CORE_ROUTES = [
   '/quartz-vs-granite-vs-marble-toronto',
   '/flat-panel-vs-shaker-cabinets',
   '/modernize-kitchen-without-moving-plumbing',
+  '/full-height-quartz-backsplash-toronto',
   '/lp/quartz-countertops',
   '/lp/kitchen-cabinets',
   '/lp/kitchen-renovation'

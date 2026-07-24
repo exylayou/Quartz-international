@@ -190,6 +190,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <li><Link to="/quartz-vs-granite-vs-marble-toronto" className="hover:text-white transition-colors">Quartz vs. Granite vs. Marble</Link></li>
                   <li><Link to="/flat-panel-vs-shaker-cabinets" className="hover:text-white transition-colors">Slab vs. Shaker Cabinets</Link></li>
                   <li><Link to="/modernize-kitchen-without-moving-plumbing" className="hover:text-white transition-colors">Layout-Free Modernization</Link></li>
+                  <li><Link to="/full-height-quartz-backsplash-toronto" className="hover:text-white transition-colors">Full-Height Quartz Backsplash</Link></li>
                   <li><Link to="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
                 </ul>
               </div>

@@ -53,6 +53,7 @@ import Faq from './pages/Faq';
 import QuartzVsGraniteVsMarble from './pages/QuartzVsGraniteVsMarble';
 import FlatPanelVsShakerCabinets from './pages/FlatPanelVsShakerCabinets';
 import ModernizeKitchenNoLayoutChange from './pages/ModernizeKitchenNoLayoutChange';
+import FullHeightQuartzBacksplash from './pages/FullHeightQuartzBacksplash';
 
 // Dedicated PPC Landing Pages
 import PpcCountertops from './pages/lp/PpcCountertops';
@@ -123,6 +124,7 @@ export default function App() {
             <Route path="/quartz-vs-granite-vs-marble-toronto" element={<QuartzVsGraniteVsMarble />} />
             <Route path="/flat-panel-vs-shaker-cabinets" element={<FlatPanelVsShakerCabinets />} />
             <Route path="/modernize-kitchen-without-moving-plumbing" element={<ModernizeKitchenNoLayoutChange />} />
+            <Route path="/full-height-quartz-backsplash-toronto" element={<FullHeightQuartzBacksplash />} />
 
             {/* Dedicated PPC Landing Pages */}
             <Route path="/lp/quartz-countertops" element={<PpcCountertops />} />
