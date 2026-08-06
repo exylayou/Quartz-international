@@ -405,8 +405,8 @@ export default function KitchenRefreshNoRenovation() {
             <button onClick={() => openCalculator()} className="btn-primary px-12 py-5 text-base font-bold shadow-xl shadow-accent/20">
               Calculate Package Cost &rarr;
             </button>
-            <Link to="/design-inspiration" className="btn-outline px-12 py-5 text-base font-bold text-white border-white hover:bg-white hover:text-text-primary">
-              <Camera size={18} className="inline mr-2" /> Upload Kitchen Photos
+            <Link to="/10x10-kitchen-cabinets-toronto" className="btn-outline px-12 py-5 text-base font-bold text-white border-white hover:bg-white hover:text-text-primary">
+              View 10×10 Package ($5,999) &rarr;
             </Link>
           </div>
         </div>

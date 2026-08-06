@@ -306,14 +306,14 @@ export default function DesignInspiration() {
                   Could <span className="text-accent underline decoration-8 underline-offset-8 decoration-accent/20">Become</span>
                 </h1>
                 <p className="text-lg text-gray-500 max-w-xl mx-auto leading-relaxed font-medium">
-                  Upload three photos of your existing kitchen to receive two personalized design concept directions, actual catalog matches, and a preliminary project range.
+                  Select your kitchen style and preferences to receive two personalized design concept directions, actual catalog matches, and a preliminary project range.
                 </p>
               </div>
 
               <div className="bg-background/80 border border-border-custom rounded-3xl p-8 max-w-lg mx-auto grid grid-cols-3 gap-6 text-left">
                 {[
-                  { num: "01", title: "Upload Photos", desc: "No measurements needed." },
-                  { num: "02", title: "Select Style", desc: "Set style & budget preferences." },
+                  { num: "01", title: "Select Style", desc: "Door style & color family." },
+                  { num: "02", title: "Set Budget", desc: "Scope & postal code." },
                   { num: "03", title: "Get Package", desc: "Two concepts & local pricing." },
                 ].map((item, i) => (
                   <div key={i} className="space-y-2">
@@ -326,7 +326,7 @@ export default function DesignInspiration() {
 
               <div className="pt-4">
                 <button
-                  onClick={() => setStep(2)}
+                  onClick={() => setStep(3)}
                   className="btn-primary px-12 py-5 text-lg font-bold shadow-xl shadow-accent/20 cursor-pointer"
                 >
                   Start My Kitchen Concept &rarr;
@@ -557,7 +557,7 @@ export default function DesignInspiration() {
 
               {/* Navigation */}
               <div className="flex justify-between items-center pt-6">
-                <button onClick={() => setStep(2)} className="btn-outline px-6 py-3 text-xs uppercase tracking-widest font-bold">
+                <button onClick={() => setStep(1)} className="btn-outline px-6 py-3 text-xs uppercase tracking-widest font-bold">
                   Back
                 </button>
                 <button 
