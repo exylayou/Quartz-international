@@ -56,6 +56,7 @@ import ModernizeKitchenNoLayoutChange from './pages/ModernizeKitchenNoLayoutChan
 import FullHeightQuartzBacksplash from './pages/FullHeightQuartzBacksplash';
 import KitchenRefreshNoRenovation from './pages/KitchenRefreshNoRenovation';
 import MostDurableCountertops from './pages/MostDurableCountertops';
+import QuartzVsQuartziteDetailed from './pages/QuartzVsQuartziteDetailed';
 
 // Dedicated PPC Landing Pages
 import PpcCountertops from './pages/lp/PpcCountertops';
@@ -120,7 +121,8 @@ export default function App() {
             <Route path="/kitchen-cabinet-estimator" element={<KitchenCabinetEstimator />} />
             <Route path="/kitchen-renovation-estimator" element={<KitchenRenovationEstimator />} />
             <Route path="/kitchen-cabinet-cost" element={<KitchenCabinetCost />} />
-            <Route path="/quartz-vs-quartzite" element={<QuartzVsQuartzite />} />
+            <Route path="/quartz-vs-quartzite" element={<QuartzVsQuartziteDetailed />} />
+            <Route path="/quartz-vs-quartzite-countertops-toronto" element={<QuartzVsQuartziteDetailed />} />
             <Route path="/best-countertop-for-rental-properties" element={<RentalPropertyCountertops />} />
             <Route path="/design-inspiration" element={<DesignInspiration />} />
             <Route path="/quartz-vs-granite-vs-marble-toronto" element={<QuartzVsGraniteVsMarble />} />
