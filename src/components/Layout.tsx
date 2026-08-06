@@ -6,6 +6,7 @@ import { useCalculator } from '../context/CalculatorContext';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isStickyVisible, setIsStickyVisible] = React.useState(true);
   const location = useLocation();
   const isAdmin = location.pathname.startsWith('/admin');
   const isPpcLandingPage = location.pathname.startsWith('/lp');
@@ -255,6 +256,44 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
 
 
+            {/* Google Rating & Trust Verification Bar */}
+            <div className="my-12 p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
+              <a 
+                href="https://share.google/kkKyItFobaGVXcr12" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 group"
+              >
+                <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center font-black text-xl text-gray-900 shadow-md shrink-0">
+                  G
+                </div>
+                <div>
+                  <div className="flex items-center gap-1.5 text-amber-400">
+                    <span className="font-extrabold text-sm text-white mr-1">4.9 / 5.0 Rating</span>
+                    {"★".repeat(5)}
+                  </div>
+                  <p className="text-xs text-gray-400 font-semibold group-hover:text-white transition-colors">
+                    Verified Google Business Profile • Toronto & GTA Service Area
+                  </p>
+                </div>
+              </a>
+
+              <div className="flex flex-wrap items-center gap-6 text-xs text-gray-400 font-medium">
+                <span className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                  100% Solid Plywood Cabinets
+                </span>
+                <span className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-accent"></span>
+                  3D Laser Precision Measurement
+                </span>
+                <span className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full bg-accent"></span>
+                  10-Year Quartz Warranty
+                </span>
+              </div>
+            </div>
+
             <div className="border-t border-white/5 pt-12 flex flex-col md:flex-row justify-between items-center gap-6 text-[10px] uppercase tracking-[0.3em] font-bold text-gray-600">
               <p>© 2026 QUARTZ INTERNATIONAL. ALL RIGHTS RESERVED.</p>
               <div className="flex gap-10">
@@ -264,6 +303,31 @@ export default function Layout({ children }: { children: React.ReactNode }) {
             </div>
           </div>
         </footer>
+      )}
+
+      {/* Mobile Sticky 10x10 Package Bar */}
+      {!isAdmin && !isEstimatorPage && isStickyVisible && (
+        <div className="md:hidden fixed bottom-0 left-0 right-0 z-40 bg-[#1A1A1A]/95 backdrop-blur-md text-white border-t border-accent/30 px-4 py-3 shadow-2xl flex items-center justify-between">
+          <div className="flex flex-col">
+            <span className="text-[10px] font-black uppercase tracking-widest text-accent">10×10 Turnkey Package</span>
+            <span className="text-sm font-bold text-white">$5,999 Installed</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <Link 
+              to="/10x10-kitchen-cabinets-toronto"
+              className="bg-accent text-white px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider shadow-lg shadow-accent/20"
+            >
+              View Package
+            </Link>
+            <button 
+              onClick={() => setIsStickyVisible(false)}
+              className="text-gray-400 hover:text-white p-1"
+              aria-label="Close promotion bar"
+            >
+              <X size={16} />
+            </button>
+          </div>
+        </div>
       )}
     </div>
   );

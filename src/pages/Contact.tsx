@@ -123,6 +123,27 @@ export default function Contact() {
                   <p className="text-xl font-bold text-text-primary">info@quartzinternational.ca</p>
                 </div>
               </div>
+
+              {/* Google Business Profile Verified Badge */}
+              <a 
+                href="https://share.google/kkKyItFobaGVXcr12" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 bg-white p-5 rounded-2xl border border-border-custom shadow-sm hover:border-accent transition-all group mt-6"
+              >
+                <div className="w-12 h-12 rounded-xl bg-[#1A1A1A] flex items-center justify-center font-black text-xl text-white shadow-md shrink-0">
+                  G
+                </div>
+                <div>
+                  <div className="flex items-center gap-1.5 text-amber-500">
+                    <span className="font-extrabold text-sm text-text-primary mr-1">4.9 / 5.0 Rating</span>
+                    {"★".repeat(5)}
+                  </div>
+                  <p className="text-xs text-text-muted font-medium group-hover:text-accent transition-colors">
+                    Verified Google Business Profile • Toronto & GTA Service Area
+                  </p>
+                </div>
+              </a>
             </div>
           </div>
 
