@@ -192,6 +192,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
                   <li><Link to="/modernize-kitchen-without-moving-plumbing" className="hover:text-white transition-colors">Layout-Free Modernization</Link></li>
                   <li><Link to="/full-height-quartz-backsplash-toronto" className="hover:text-white transition-colors">Full-Height Quartz Backsplash</Link></li>
                   <li><Link to="/kitchen-refresh-without-full-renovation-toronto" className="hover:text-white transition-colors">Controlled Kitchen Refresh</Link></li>
+                  <li><Link to="/most-durable-countertops-busy-toronto-kitchens" className="hover:text-white transition-colors">Most Durable Countertops</Link></li>
                   <li><Link to="/faq" className="hover:text-white transition-colors">FAQ</Link></li>
                 </ul>
               </div>

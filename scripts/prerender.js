@@ -67,6 +67,7 @@ const CORE_ROUTES = [
   '/modernize-kitchen-without-moving-plumbing',
   '/full-height-quartz-backsplash-toronto',
   '/kitchen-refresh-without-full-renovation-toronto',
+  '/most-durable-countertops-busy-toronto-kitchens',
   '/lp/quartz-countertops',
   '/lp/kitchen-cabinets',
   '/lp/kitchen-renovation'

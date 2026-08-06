@@ -55,6 +55,7 @@ import FlatPanelVsShakerCabinets from './pages/FlatPanelVsShakerCabinets';
 import ModernizeKitchenNoLayoutChange from './pages/ModernizeKitchenNoLayoutChange';
 import FullHeightQuartzBacksplash from './pages/FullHeightQuartzBacksplash';
 import KitchenRefreshNoRenovation from './pages/KitchenRefreshNoRenovation';
+import MostDurableCountertops from './pages/MostDurableCountertops';
 
 // Dedicated PPC Landing Pages
 import PpcCountertops from './pages/lp/PpcCountertops';
@@ -127,6 +128,7 @@ export default function App() {
             <Route path="/modernize-kitchen-without-moving-plumbing" element={<ModernizeKitchenNoLayoutChange />} />
             <Route path="/full-height-quartz-backsplash-toronto" element={<FullHeightQuartzBacksplash />} />
             <Route path="/kitchen-refresh-without-full-renovation-toronto" element={<KitchenRefreshNoRenovation />} />
+            <Route path="/most-durable-countertops-busy-toronto-kitchens" element={<MostDurableCountertops />} />
 
             {/* Dedicated PPC Landing Pages */}
             <Route path="/lp/quartz-countertops" element={<PpcCountertops />} />
