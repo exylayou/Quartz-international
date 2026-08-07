@@ -57,6 +57,7 @@ import FullHeightQuartzBacksplash from './pages/FullHeightQuartzBacksplash';
 import KitchenRefreshNoRenovation from './pages/KitchenRefreshNoRenovation';
 import MostDurableCountertops from './pages/MostDurableCountertops';
 import QuartzVsQuartziteDetailed from './pages/QuartzVsQuartziteDetailed';
+import PreListKitchenRefresh from './pages/PreListKitchenRefresh';
 
 // Dedicated PPC Landing Pages
 import PpcCountertops from './pages/lp/PpcCountertops';
@@ -131,6 +132,7 @@ export default function App() {
             <Route path="/full-height-quartz-backsplash-toronto" element={<FullHeightQuartzBacksplash />} />
             <Route path="/kitchen-refresh-without-full-renovation-toronto" element={<KitchenRefreshNoRenovation />} />
             <Route path="/most-durable-countertops-busy-toronto-kitchens" element={<MostDurableCountertops />} />
+            <Route path="/pre-list-kitchen-refresh-toronto" element={<PreListKitchenRefresh />} />
 
             {/* Dedicated PPC Landing Pages */}
             <Route path="/lp/quartz-countertops" element={<PpcCountertops />} />
