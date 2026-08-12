@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGradFav" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#D4B68D" />
+      <stop offset="50%" stop-color="#B89355" />
+      <stop offset="100%" stop-color="#9A7539" />
+    </linearGradient>
+  </defs>
+  <!-- Background Container for High Visibility Favicon -->
+  <rect width="100" height="100" rx="22" fill="#1A1A1A" />
+
+  <!-- Book-Matched Quartz Diamond Icon Mark (Thick 4px strokes) -->
+  <g transform="translate(5, 5)">
+    <!-- Outer Diamond Frame -->
+    <polygon points="45,8 82,40 45,82 8,40" fill="none" stroke="url(#goldGradFav)" stroke-width="5" stroke-linejoin="round" stroke-linecap="round" />
+    
+    <!-- Horizontal Girdle Line -->
+    <line x1="8" y1="40" x2="82" y2="40" stroke="url(#goldGradFav)" stroke-width="4.5" stroke-linecap="round" />
+    
+    <!-- Center Book-Match Vertical Seam -->
+    <line x1="45" y1="8" x2="45" y2="82" stroke="url(#goldGradFav)" stroke-width="4.5" stroke-linecap="round" />
+    
+    <!-- Inner Book-Matched Slab Veins (Left & Right Mirrored) -->
+    <path d="M 45,22 L 25,40 M 45,58 L 20,40" fill="none" stroke="url(#goldGradFav)" stroke-width="3.5" stroke-linecap="round" />
+    <path d="M 45,22 L 65,40 M 45,58 L 70,40" fill="none" stroke="url(#goldGradFav)" stroke-width="3.5" stroke-linecap="round" />
+  </g>
+</svg>

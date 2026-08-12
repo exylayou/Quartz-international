@@ -32,23 +32,28 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         <header className="bg-white border-b border-border-custom sticky top-0 z-50">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="flex justify-between items-center h-20">
-              <Link to="/" className="flex items-center gap-3 w-[160px] min-w-[160px] max-w-[170px] select-none group">
-                {/* geometric quartz icon */}
-                <div className="shrink-0 text-accent transition-transform duration-500 group-hover:rotate-12">
-                  <svg viewBox="0 0 100 100" className="w-8 h-8 md:w-9 md:h-9" fill="none" stroke="currentColor" strokeWidth="2.5">
-                    <polygon points="50,5 90,40 50,95 10,40" strokeLinejoin="round" />
-                    <line x1="10" y1="40" x2="90" y2="40" />
-                    <line x1="50" y1="5" x2="50" y2="95" />
-                    <polygon points="50,5 72,40 50,95 28,40" strokeLinejoin="round" strokeWidth="1.5" opacity="0.75" />
+              <Link to="/" className="flex items-center gap-3 w-[175px] min-w-[175px] max-w-[185px] select-none group">
+                {/* Book-Matched Quartz Diamond Icon Mark (Thickened 3.5px strokes) */}
+                <div className="shrink-0 text-accent transition-transform duration-500 group-hover:scale-105">
+                  <svg viewBox="0 0 100 100" className="w-8 h-8 md:w-9 md:h-9" fill="none" stroke="currentColor" strokeWidth="3.6" strokeLinecap="round" strokeLinejoin="round">
+                    {/* Outer Diamond Frame */}
+                    <polygon points="50,6 90,38 50,92 10,38" />
+                    {/* Horizontal Girdle Line */}
+                    <line x1="10" y1="38" x2="90" y2="38" strokeWidth="3.5" />
+                    {/* Center Book-Match Vertical Seam */}
+                    <line x1="50" y1="6" x2="50" y2="92" strokeWidth="3.5" />
+                    {/* Mirrored Book-Matched Slab Veins */}
+                    <path d="M 50,20 L 28,38 M 50,56 L 22,38" strokeWidth="2.8" />
+                    <path d="M 50,20 L 72,38 M 50,56 L 78,38" strokeWidth="2.8" />
                   </svg>
                 </div>
                 
-                {/* Text Lockup */}
+                {/* Text Lockup with Enhanced Contrast & Tracking */}
                 <div className="flex flex-col">
-                  <span className="text-base md:text-lg font-bold tracking-[0.25em] text-[#1A1A1A] uppercase leading-none font-sans">
+                  <span className="text-base md:text-lg font-extrabold tracking-[0.24em] text-[#1A1A1A] uppercase leading-none font-sans">
                     Quartz
                   </span>
-                  <span className="text-[8px] md:text-[9px] font-bold tracking-[0.38em] text-accent uppercase mt-1 leading-none font-sans">
+                  <span className="text-[9.5px] md:text-[10.5px] font-extrabold tracking-[0.38em] text-[#B89355] uppercase mt-1 leading-none font-sans">
                     International
                   </span>
                 </div>

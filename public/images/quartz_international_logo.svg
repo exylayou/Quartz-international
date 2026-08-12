@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100" width="100%" height="100%">
+  <defs>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C5A880" />
+      <stop offset="50%" stop-color="#B89355" />
+      <stop offset="100%" stop-color="#9A7539" />
+    </linearGradient>
+  </defs>
+
+  <!-- Book-Matched Quartz Diamond Icon Mark (Thick 3.5px strokes) -->
+  <g transform="translate(10, 5)">
+    <!-- Outer Diamond Frame -->
+    <polygon points="45,5 85,38 45,85 5,38" fill="none" stroke="url(#goldGrad)" stroke-width="3.8" stroke-linejoin="round" stroke-linecap="round" />
+    
+    <!-- Horizontal Girdle Line -->
+    <line x1="5" y1="38" x2="85" y2="38" stroke="url(#goldGrad)" stroke-width="3.5" stroke-linecap="round" />
+    
+    <!-- Center Book-Match Vertical Seam -->
+    <line x1="45" y1="5" x2="45" y2="85" stroke="url(#goldGrad)" stroke-width="3.5" stroke-linecap="round" />
+    
+    <!-- Inner Book-Matched Slab Veins (Left & Right Mirrored Facets) -->
+    <path d="M 45,20 L 25,38 M 45,55 L 20,38" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round" opacity="0.9" />
+    <path d="M 45,20 L 65,38 M 45,55 L 70,38" fill="none" stroke="url(#goldGrad)" stroke-width="2.5" stroke-linecap="round" opacity="0.9" />
+    <polygon points="45,5 65,38 45,85 25,38" fill="none" stroke="url(#goldGrad)" stroke-width="1.8" opacity="0.4" />
+  </g>
+
+  <!-- Typography Lockup -->
+  <text x="112" y="44" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="800" letter-spacing="7" fill="#1A1A1A">QUARTZ</text>
+  <text x="114" y="66" font-family="system-ui, -apple-system, sans-serif" font-size="12" font-weight="700" letter-spacing="9" fill="#B89355">INTERNATIONAL</text>
+</svg>
