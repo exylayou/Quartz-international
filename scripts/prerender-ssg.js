@@ -15,233 +15,81 @@ if (!fs.existsSync(INDEX_HTML_PATH)) {
 
 const templateHtml = fs.readFileSync(INDEX_HTML_PATH, 'utf8');
 
-// Comprehensive route configurations with custom SEO metadata, JSON-LD schema, and static body HTML for AI crawlers
+const GTA_CITIES = [
+  { slug: 'toronto', name: 'Toronto' },
+  { slug: 'mississauga', name: 'Mississauga' },
+  { slug: 'vaughan', name: 'Vaughan' },
+  { slug: 'markham', name: 'Markham' },
+  { slug: 'brampton', name: 'Brampton' },
+  { slug: 'oakville', name: 'Oakville' },
+  { slug: 'richmond-hill', name: 'Richmond Hill' },
+  { slug: 'burlington', name: 'Burlington' },
+  { slug: 'pickering', name: 'Pickering' },
+  { slug: 'ajax', name: 'Ajax' },
+  { slug: 'whitby', name: 'Whitby' },
+  { slug: 'oshawa', name: 'Oshawa' },
+  { slug: 'milton', name: 'Milton' },
+  { slug: 'newmarket', name: 'Newmarket' },
+  { slug: 'aurora', name: 'Aurora' },
+  { slug: 'etobicoke', name: 'Etobicoke' },
+  { slug: 'scarborough', name: 'Scarborough' },
+  { slug: 'north-york', name: 'North York' }
+];
+
+const CABINET_PSEO_SLUGS = [
+  'white-shaker-kitchen-cabinets-toronto',
+  'slim-shaker-kitchen-cabinets-toronto',
+  'modern-kitchen-cabinets-toronto',
+  'plywood-kitchen-cabinets-toronto',
+  'rta-kitchen-cabinets-toronto',
+  '10x10-kitchen-cabinets-toronto',
+  'kitchen-cabinets-and-quartz-countertops-toronto',
+  'affordable-kitchen-cabinets-toronto'
+];
+
+// Core static routes definition
 const routes = [
   {
     path: '/cost',
     title: 'Quartz Countertop Cost in Ontario (2026): Toronto & GTA Installed Prices',
     description: 'Real 2026 quartz countertop cost ranges in Toronto & GTA. Installed prices per sq ft ($48–$170), tiered pricing, sink cutouts, waterfall edges, and hidden fee breakdown.',
-    canonical: 'https://quartzinternational.ca/cost',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Quartz Countertop Cost in Ontario (2026): Toronto & GTA Installed Prices",
-      "description": "Comprehensive 2026 guide to quartz countertop cost per square foot, fabrication, cutouts, waterfall edges, and full-height backsplashes in Toronto.",
-      "author": {
-        "@type": "Person",
-        "name": "Olton Exeter",
-        "jobTitle": "Kitchen & Countertop Specialist",
-        "worksFor": {
-          "@type": "Organization",
-          "name": "Quartz International"
-        }
-      },
-      "publisher": {
-        "@type": "Organization",
-        "name": "Quartz International",
-        "url": "https://quartzinternational.ca"
-      },
-      "datePublished": "2025-10-15",
-      "dateModified": "2026-08-11"
-    },
-    bodyHtml: `
-      <main class="static-ssg-content max-w-4xl mx-auto px-4 py-12">
-        <header class="mb-8">
-          <p class="text-sm font-bold text-amber-600 uppercase tracking-widest">2026 ONTARIO & GTA PRICING GUIDE</p>
-          <h1 class="text-4xl font-bold text-gray-900 mt-2">Quartz Countertop Cost in Ontario (2026): Toronto & GTA Installed Prices</h1>
-          <p class="text-xs text-gray-500 mt-2 font-semibold">Reviewed by <strong>Olton Exeter</strong>, Quartz International • Last Updated: August 11, 2026</p>
-        </header>
-
-        <section class="bg-amber-50 border border-amber-200 p-6 rounded-2xl mb-8">
-          <h2 class="text-lg font-bold text-gray-900 mb-2">Instant AI Summary: Installed Quartz Cost Range</h2>
-          <p class="text-base text-gray-700 leading-relaxed">
-            In 2026, professionally installed quartz countertops in Toronto and the Greater Toronto Area (GTA) typically cost <strong>$48 to $170 per square foot</strong>. A standard 35 to 45 sq. ft. kitchen usually costs <strong>$2,200 to $5,500 total</strong>, including digital 3D laser measurement, slab material, sink cutouts, delivery, and installation.
-          </p>
-        </section>
-
-        <section class="mb-10">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">2026 Quartz Countertop Pricing Tiers in Toronto</h2>
-          <table class="w-full text-left border-collapse border border-gray-200 mb-6">
-            <thead>
-              <tr class="bg-gray-100">
-                <th class="p-3 border border-gray-200 text-sm font-bold">Quartz Tier / Grade</th>
-                <th class="p-3 border border-gray-200 text-sm font-bold">Installed Cost / Sq Ft</th>
-                <th class="p-3 border border-gray-200 text-sm font-bold">Typical 40 Sq Ft Kitchen Total</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="p-3 border border-gray-200 text-sm"><strong>Group 1: Solid & Speckled White/Grey</strong></td>
-                <td class="p-3 border border-gray-200 text-sm">$48 – $68 / sq ft</td>
-                <td class="p-3 border border-gray-200 text-sm">$1,920 – $2,720</td>
-              </tr>
-              <tr>
-                <td class="p-3 border border-gray-200 text-sm"><strong>Group 2: Mid-Range Concrete & Soft Veined</strong></td>
-                <td class="p-3 border border-gray-200 text-sm">$69 – $95 / sq ft</td>
-                <td class="p-3 border border-gray-200 text-sm">$2,760 – $3,800</td>
-              </tr>
-              <tr>
-                <td class="p-3 border border-gray-200 text-sm"><strong>Group 3: Luxury Calacatta & Statuario Veined</strong></td>
-                <td class="p-3 border border-gray-200 text-sm">$100 – $170 / sq ft</td>
-                <td class="p-3 border border-gray-200 text-sm">$4,000 – $6,800</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-
-        <section class="mb-10">
-          <h2 class="text-2xl font-bold text-gray-900 mb-4">Itemized Trade Add-On Fee Breakdown</h2>
-          <ul class="list-disc pl-6 space-y-2 text-gray-700">
-            <li><strong>Undermount Sink Cutout & Edge Polishing:</strong> $150 – $250 per sink</li>
-            <li><strong>Cooktop / Faucet Cutouts:</strong> $50 per hole</li>
-            <li><strong>Mitered Waterfall Edge Panels:</strong> +$35 – $65 per linear foot</li>
-            <li><strong>Existing Countertop Removal & Disposal:</strong> $250 – $450</li>
-            <li><strong>Full-Height Quartz Backsplash:</strong> $45 – $95 per sq ft installed</li>
-          </ul>
-        </section>
-      </main>
-    `
+    canonical: 'https://quartzinternational.ca/cost'
   },
   {
-    path: '/10x10-kitchen-cabinets-toronto',
-    title: '10x10 Kitchen Package Toronto ($5,999 Installed) | Quartz International',
-    description: 'Turnkey $5,999 10x10 kitchen package in Toronto & GTA. Includes solid plywood shaker cabinets, quartz countertops, undermount sink, and installation.',
-    canonical: 'https://quartzinternational.ca/10x10-kitchen-cabinets-toronto',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "Product",
-      "name": "10x10 Turnkey Kitchen Cabinet & Quartz Countertop Package",
-      "description": "Complete 10x10 kitchen renovation package including 100% solid plywood cabinets, quartz countertops, undermount sink, and professional installation in Toronto.",
-      "brand": { "@type": "Brand", "name": "Quartz International" },
-      "offers": {
-        "@type": "Offer",
-        "price": "5999.00",
-        "priceCurrency": "CAD",
-        "availability": "https://schema.org/InStock",
-        "url": "https://quartzinternational.ca/10x10-kitchen-cabinets-toronto"
-      }
-    },
-    bodyHtml: `
-      <main class="static-ssg-content max-w-4xl mx-auto px-4 py-12">
-        <header class="mb-8">
-          <p class="text-sm font-bold text-amber-600 uppercase tracking-widest">TURNKEY KITCHEN PACKAGE</p>
-          <h1 class="text-4xl font-bold text-gray-900 mt-2">10×10 Kitchen Package Toronto ($5,999 Installed)</h1>
-          <p class="text-xs text-gray-500 mt-2 font-semibold">Solid Plywood Cabinets + Solid Quartz Countertops + Professional GTA Installation</p>
-        </header>
-
-        <section class="bg-amber-50 border border-amber-200 p-6 rounded-2xl mb-8">
-          <h2 class="text-lg font-bold text-gray-900 mb-2">What is Included in the $5,999 Package:</h2>
-          <ul class="list-disc pl-6 space-y-2 text-gray-700">
-            <li><strong>100% Solid Plywood Cabinets:</strong> Soft-close hinges, full-extension dovetail drawers, solid white/grey shaker doors.</li>
-            <li><strong>Solid Quartz Countertops:</strong> 3D laser measured, fabricated, and installed with standard eased edge.</li>
-            <li><strong>Undermount Stainless Sink Cutout & Polish:</strong> Included in turnkey price.</li>
-            <li><strong>7-Day Fast Installation:</strong> Measure to completion in 1 week across Toronto & GTA.</li>
-          </ul>
-        </section>
-      </main>
-    `
+    path: '/about',
+    title: 'About Quartz International | Premier Toronto Countertop & Cabinet Fabricator',
+    description: 'Learn about Quartz International. Over 15 years providing factory-direct quartz countertops and solid plywood kitchen cabinets across Toronto & the GTA.',
+    canonical: 'https://quartzinternational.ca/about'
   },
   {
-    path: '/quartz-vs-quartzite-countertops-toronto',
-    title: 'Quartz vs. Quartzite Countertops Toronto | Cost & Maintenance Guide',
-    description: 'Unbiased comparison of Quartz vs Quartzite for Toronto kitchens: Cost per sq ft, zero sealing vs natural variation, heat tolerance, and family durability.',
-    canonical: 'https://quartzinternational.ca/quartz-vs-quartzite-countertops-toronto',
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      "headline": "Quartz vs. Quartzite Countertops: Cost, Maintenance & Best Use for Toronto Kitchens",
-      "author": { "@type": "Organization", "name": "Quartz International" }
-    },
-    bodyHtml: `
-      <main class="static-ssg-content max-w-4xl mx-auto px-4 py-12">
-        <header class="mb-8">
-          <p class="text-sm font-bold text-amber-600 uppercase tracking-widest">MATERIAL COMPARISON GUIDE</p>
-          <h1 class="text-4xl font-bold text-gray-900 mt-2">Quartz vs. Quartzite Countertops in Toronto</h1>
-        </header>
-
-        <section class="bg-amber-50 border border-amber-200 p-6 rounded-2xl mb-8">
-          <h2 class="text-lg font-bold text-gray-900 mb-2">Instant Key Differences Summary:</h2>
-          <table class="w-full text-left border-collapse border border-gray-200 mb-4">
-            <thead>
-              <tr class="bg-gray-100">
-                <th class="p-3 border text-sm font-bold">Feature</th>
-                <th class="p-3 border text-sm font-bold">Engineered Quartz</th>
-                <th class="p-3 border text-sm font-bold">Natural Quartzite</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="p-3 border text-sm"><strong>Composition</strong></td>
-                <td class="p-3 border text-sm">93% natural quartz crystal + 7% resin</td>
-                <td class="p-3 border text-sm">100% natural metamorphic rock</td>
-              </tr>
-              <tr>
-                <td class="p-3 border text-sm"><strong>Installed Cost</strong></td>
-                <td class="p-3 border text-sm">$48 – $170 / sq ft</td>
-                <td class="p-3 border text-sm">$90 – $220 / sq ft</td>
-              </tr>
-              <tr>
-                <td class="p-3 border text-sm"><strong>Maintenance</strong></td>
-                <td class="p-3 border text-sm">Zero sealing required (Non-porous)</td>
-                <td class="p-3 border text-sm">Requires annual sealing (Porous)</td>
-              </tr>
-            </tbody>
-          </table>
-        </section>
-      </main>
-    `
+    path: '/contact',
+    title: 'Contact Quartz International | Toronto Showroom & Quote Desk',
+    description: 'Get in touch with Quartz International for showroom appointments, laser measurement scheduling, or custom kitchen package estimates in Toronto & GTA.',
+    canonical: 'https://quartzinternational.ca/contact'
   },
   {
-    path: '/full-height-quartz-backsplash-toronto',
-    title: 'Full-Height Quartz Backsplash Toronto | Seamless Slab Upgrade',
-    description: 'Replace dated 4-inch splashes and dirty tile grout with a full-height quartz backsplash in Toronto. Seamless, non-porous quartz wall cladding.',
-    canonical: 'https://quartzinternational.ca/full-height-quartz-backsplash-toronto',
-    bodyHtml: `
-      <main class="static-ssg-content max-w-4xl mx-auto px-4 py-12">
-        <header class="mb-8">
-          <p class="text-sm font-bold text-amber-600 uppercase tracking-widest">KITCHEN DESIGN UPGRADE</p>
-          <h1 class="text-4xl font-bold text-gray-900 mt-2">Full-Height Quartz Backsplash Toronto</h1>
-        </header>
-
-        <section class="bg-amber-50 border border-amber-200 p-6 rounded-2xl mb-8">
-          <p class="text-base text-gray-700 leading-relaxed">
-            Eliminate dirty tile grout lines and dated 4-inch backsplashes. A full-height quartz backsplash runs seamlessly from countertop to upper cabinets, providing 100% non-porous wall protection behind cooking ranges. Installed costs range from <strong>$45 to $95 per square foot</strong>.
-          </p>
-        </section>
-      </main>
-    `
+    path: '/gallery',
+    title: 'Kitchen Project Gallery | Quartz International Toronto',
+    description: 'Browse photos of completed quartz countertops, full-height backsplashes, and solid plywood shaker cabinet installations across Toronto and the GTA.',
+    canonical: 'https://quartzinternational.ca/gallery'
   },
   {
-    path: '/pre-list-kitchen-refresh-toronto',
-    title: 'Pre-List Kitchen Refresh Toronto | Add $30K+ to Home Resale Price',
-    description: 'Pre-list kitchen upgrades for Toronto home sellers & Realtors. Spend $6K-$9K to add $30K+ to your MLS listing price in 7 days without demolition delays.',
-    canonical: 'https://quartzinternational.ca/pre-list-kitchen-refresh-toronto',
-    bodyHtml: `
-      <main class="static-ssg-content max-w-4xl mx-auto px-4 py-12">
-        <header class="mb-8">
-          <p class="text-sm font-bold text-amber-600 uppercase tracking-widest">PRE-LIST RESALE ROI STRATEGY</p>
-          <h1 class="text-4xl font-bold text-gray-900 mt-2">Pre-List Kitchen Refresh Toronto</h1>
-        </header>
-
-        <section class="bg-amber-50 border border-amber-200 p-6 rounded-2xl mb-8">
-          <p class="text-base text-gray-700 leading-relaxed">
-            Spend $6,000 to $9,000 on a 7-day cabinet and quartz refresh to add <strong>$25,000 to $40,000+</strong> to your home's MLS sale price in Toronto. Prevent buyer price chops and eliminate structural renovation delays.
-          </p>
-        </section>
-      </main>
-    `
+    path: '/blog',
+    title: 'Kitchen Renovation & Countertop Blog | Quartz International',
+    description: 'Expert guides on quartz care, countertop costs, cabinet styles, material comparisons, and kitchen design trends in Toronto.',
+    canonical: 'https://quartzinternational.ca/blog'
   },
   {
-    path: '/most-durable-countertops-busy-toronto-kitchens',
-    title: 'Most Durable Countertops for Busy Toronto Kitchens | Quartz Guide',
-    description: 'Ranked durability guide for Toronto kitchens: Why non-porous quartz beats marble, granite, and laminate for stain resistance, zero sealing, and family life.',
-    canonical: 'https://quartzinternational.ca/most-durable-countertops-busy-toronto-kitchens'
+    path: '/areas-we-serve',
+    title: 'Areas We Serve | Quartz Countertops & Cabinets Toronto & GTA',
+    description: 'Quartz International serves Toronto, Mississauga, Vaughan, Markham, Brampton, Oakville, Richmond Hill, Burlington, and surrounding GTA municipalities.',
+    canonical: 'https://quartzinternational.ca/areas-we-serve'
   },
   {
-    path: '/kitchen-refresh-without-full-renovation-toronto',
-    title: 'Kitchen Refresh Without a Full Renovation Toronto | Controlled & Fast',
-    description: 'Upgrade your kitchen cabinets and quartz countertops in 7–10 days without structural demolition, cost overruns, or contractor headaches.',
-    canonical: 'https://quartzinternational.ca/kitchen-refresh-without-full-renovation-toronto'
+    path: '/faq',
+    title: 'Frequently Asked Questions | Quartz International',
+    description: 'Answers to common questions about quartz countertop installation, cabinet lead times, condo rules, 3D laser measurement, and warranties.',
+    canonical: 'https://quartzinternational.ca/faq'
   },
   {
     path: '/quartz-kitchen-countertops',
@@ -250,17 +98,214 @@ const routes = [
     canonical: 'https://quartzinternational.ca/quartz-kitchen-countertops'
   },
   {
+    path: '/white-quartz-kitchen-countertops',
+    title: 'White Quartz Countertops Toronto | Pure, Calacatta & Veined Slabs',
+    description: 'Browse top-rated white quartz countertops in Toronto & GTA. Pure white, Calacatta Gold, Statuario, and subtle grey veined slabs.',
+    canonical: 'https://quartzinternational.ca/white-quartz-kitchen-countertops'
+  },
+  {
     path: '/cabinets',
     title: 'Custom Kitchen Cabinets Toronto | Solid Plywood Construction',
     description: 'Factory-direct solid plywood kitchen cabinets in Toronto & GTA. Shaker & Flat Panel door styles with 7-day fast installation.',
     canonical: 'https://quartzinternational.ca/cabinets'
+  },
+  {
+    path: '/cabinet-finishes',
+    title: 'Kitchen Cabinet Door Styles & Finishes | Quartz International',
+    description: 'Explore solid wood shaker, slim shaker, high-gloss, and flat-panel cabinet door finishes available for Toronto kitchen renovations.',
+    canonical: 'https://quartzinternational.ca/cabinet-finishes'
+  },
+  {
+    path: '/kitchen-cabinet-cost-guide',
+    title: 'Kitchen Cabinet Cost Guide Toronto (2026) | Quartz International',
+    description: 'Detailed 2026 pricing guide for kitchen cabinets in Toronto & GTA. RTA vs assembled plywood vs custom cabinet package pricing.',
+    canonical: 'https://quartzinternational.ca/kitchen-cabinet-cost-guide'
+  },
+  {
+    path: '/caesarstone',
+    title: 'Caesarstone Countertops Toronto | Authorized Dealer & Installer',
+    description: 'Authorized Caesarstone quartz countertop dealer in Toronto & GTA. Shop Empira White, Montblanc, Statuario Maximus, and Airy Concrete slabs.',
+    canonical: 'https://quartzinternational.ca/caesarstone'
+  },
+  {
+    path: '/silestone',
+    title: 'Silestone Quartz Countertops Toronto | Authorized Installer',
+    description: 'Shop Silestone quartz countertops in Toronto. Sunlit Days, Ethereal Nocturne, and HybriQ+ eco-friendly quartz collections with 25-year warranty.',
+    canonical: 'https://quartzinternational.ca/silestone'
+  },
+  {
+    path: '/kasa-quartz',
+    title: 'Kasa Quartz Countertops Toronto | Factory Direct Pricing',
+    description: 'Direct Kasa Quartz supplier in Toronto & GTA. Affordable premium quartz slabs with K8803 Pure White and Calacatta veined collections.',
+    canonical: 'https://quartzinternational.ca/kasa-quartz'
+  },
+  {
+    path: '/kstone',
+    title: 'KStone Quartz Countertops Toronto | Premium Slabs',
+    description: 'KStone quartz countertop supplier in Toronto. Durable, non-porous quartz surfaces engineered for family kitchens and condo rentals.',
+    canonical: 'https://quartzinternational.ca/kstone'
+  },
+  {
+    path: '/lucent-quartz',
+    title: 'Lucent Quartz Countertops Toronto | Modern Veined Slabs',
+    description: 'Lucent Quartz countertops in Toronto & GTA. High-definition Calacatta veining, honed textures, and scratch-resistant surfaces.',
+    canonical: 'https://quartzinternational.ca/lucent-quartz'
+  },
+  {
+    path: '/tce-stone',
+    title: 'TCE Stone Quartz Countertops Toronto | Factory Wholesale',
+    description: 'TCE Stone quartz dealer in Toronto. Quality quartz slabs for builders, contractors, homeowners, and commercial kitchen projects.',
+    canonical: 'https://quartzinternational.ca/tce-stone'
+  },
+  {
+    path: '/calacatta-gold',
+    title: 'Calacatta Gold Quartz Countertops Toronto | Warm Gold Veining',
+    description: 'Calacatta Gold quartz countertops in Toronto & GTA. Luxurious white marble-look quartz with bold gold and grey veining.',
+    canonical: 'https://quartzinternational.ca/calacatta-gold'
+  },
+  {
+    path: '/quartz-countertop-guide-2026',
+    title: 'Ultimate Quartz Countertop Guide 2026 | Toronto & GTA',
+    description: 'Complete 2026 buyer guide to quartz countertops in Toronto. Selection, thickness, maintenance, brand comparison, and pricing.',
+    canonical: 'https://quartzinternational.ca/quartz-countertop-guide-2026'
+  },
+  {
+    path: '/quartz-countertop-estimator',
+    title: 'Quartz Countertop Cost Estimator | Instant Toronto Price Calculator',
+    description: 'Calculate instant quartz countertop estimates for your Toronto or GTA kitchen in 60 seconds. Material, fabrication, and install included.',
+    canonical: 'https://quartzinternational.ca/quartz-countertop-estimator'
+  },
+  {
+    path: '/kitchen-cabinet-estimator',
+    title: 'Kitchen Cabinet Cost Estimator | Instant Package Calculator',
+    description: 'Estimate solid plywood kitchen cabinet package costs for Toronto homes and condos. RTA, assembled, and installed options.',
+    canonical: 'https://quartzinternational.ca/kitchen-cabinet-estimator'
+  },
+  {
+    path: '/kitchen-renovation-estimator',
+    title: 'Kitchen Renovation Estimator Toronto | Cabinets + Quartz Calculator',
+    description: 'Get an instant all-in estimate for your Toronto kitchen refresh (cabinets + quartz countertops) with zero structural demolition.',
+    canonical: 'https://quartzinternational.ca/kitchen-renovation-estimator'
+  },
+  {
+    path: '/kitchen-cabinet-cost',
+    title: 'Kitchen Cabinet Cost in Toronto & GTA | 2026 Package Pricing',
+    description: 'How much do kitchen cabinets cost in Toronto? Transparent price breakdowns for 10x10 packages, plywood boxes, and door styles.',
+    canonical: 'https://quartzinternational.ca/kitchen-cabinet-cost'
+  },
+  {
+    path: '/quartz-vs-granite-vs-marble-toronto',
+    title: 'Quartz vs. Granite vs. Marble Countertops Toronto | 2026 Comparison',
+    description: 'Compare Quartz, Granite, and Marble for Toronto kitchens. Stain resistance, sealing, heat tolerance, maintenance, and installed cost.',
+    canonical: 'https://quartzinternational.ca/quartz-vs-granite-vs-marble-toronto'
+  },
+  {
+    path: '/flat-panel-vs-shaker-cabinets',
+    title: 'Flat Panel vs. Shaker Kitchen Cabinets | Style & Cost Guide',
+    description: 'Compare Slab Flat Panel vs. Classic Shaker kitchen cabinets for Toronto homes. Design trends, cleaning, costs, and quartz pairings.',
+    canonical: 'https://quartzinternational.ca/flat-panel-vs-shaker-cabinets'
+  },
+  {
+    path: '/modernize-kitchen-without-moving-plumbing',
+    title: 'Modernize Kitchen Without Moving Plumbing | Fast GTA Refresh',
+    description: 'How to modernize your Toronto kitchen without moving gas or plumbing lines. Save $20,000+ and complete in 7 days.',
+    canonical: 'https://quartzinternational.ca/modernize-kitchen-without-moving-plumbing'
+  },
+  {
+    path: '/full-height-quartz-backsplash-toronto',
+    title: 'Full-Height Quartz Backsplash Toronto | Seamless Slab Upgrade',
+    description: 'Replace dated 4-inch splashes and dirty tile grout with a full-height quartz backsplash in Toronto. Seamless, non-porous quartz wall cladding.',
+    canonical: 'https://quartzinternational.ca/full-height-quartz-backsplash-toronto'
+  },
+  {
+    path: '/kitchen-refresh-without-full-renovation-toronto',
+    title: 'Kitchen Refresh Without a Full Renovation Toronto | Controlled & Fast',
+    description: 'Upgrade your kitchen cabinets and quartz countertops in 7–10 days without structural demolition, cost overruns, or contractor headaches.',
+    canonical: 'https://quartzinternational.ca/kitchen-refresh-without-full-renovation-toronto'
+  },
+  {
+    path: '/most-durable-countertops-busy-toronto-kitchens',
+    title: 'Most Durable Countertops for Busy Toronto Kitchens | Quartz Guide',
+    description: 'Ranked durability guide for Toronto kitchens: Why non-porous quartz beats marble, granite, and laminate for stain resistance, zero sealing, and family life.',
+    canonical: 'https://quartzinternational.ca/most-durable-countertops-busy-toronto-kitchens'
+  },
+  {
+    path: '/quartz-vs-quartzite-countertops-toronto',
+    title: 'Quartz vs. Quartzite Countertops Toronto | Cost & Maintenance Guide',
+    description: 'Unbiased comparison of Quartz vs Quartzite for Toronto kitchens: Cost per sq ft, zero sealing vs natural variation, heat tolerance, and family durability.',
+    canonical: 'https://quartzinternational.ca/quartz-vs-quartzite-countertops-toronto'
+  },
+  {
+    path: '/pre-list-kitchen-refresh-toronto',
+    title: 'Pre-List Kitchen Refresh Toronto | Add $30K+ to Home Resale Price',
+    description: 'Pre-list kitchen upgrades for Toronto home sellers & Realtors. Spend $6K-$9K to add $30K+ to your MLS listing price in 7 days without demolition delays.',
+    canonical: 'https://quartzinternational.ca/pre-list-kitchen-refresh-toronto'
+  },
+  {
+    path: '/best-countertop-for-rental-properties',
+    title: 'Best Countertop for Rental Properties & Condos Toronto | Landlord Guide',
+    description: 'Why quartz is the #1 countertop investment for Toronto landlords and rental condos. Low vacancy loss, stain resistance, and zero maintenance.',
+    canonical: 'https://quartzinternational.ca/best-countertop-for-rental-properties'
+  },
+  {
+    path: '/design-inspiration',
+    title: 'Kitchen Design Inspiration & Trends | Quartz International',
+    description: 'Explore modern kitchen design inspiration, two-tone cabinet pairings, waterfall quartz islands, and backsplash trends in Toronto.',
+    canonical: 'https://quartzinternational.ca/design-inspiration'
+  },
+  {
+    path: '/lp/quartz-countertops',
+    title: 'Quartz Countertops Toronto | Direct Supplier & Fast Installation',
+    description: 'Factory-direct quartz countertops in Toronto & GTA. 3D laser measurement, 500+ slab options, and 7-day turnaround.',
+    canonical: 'https://quartzinternational.ca/lp/quartz-countertops'
+  },
+  {
+    path: '/lp/kitchen-cabinets',
+    title: 'Kitchen Cabinets Toronto | Factory Direct Solid Plywood',
+    description: 'Quality solid plywood kitchen cabinets in Toronto. Fast delivery, 3D design service, and turnkey installation options.',
+    canonical: 'https://quartzinternational.ca/lp/kitchen-cabinets'
+  },
+  {
+    path: '/lp/kitchen-renovation',
+    title: 'Kitchen Renovation Packages Toronto | Turnkey Cabinets + Quartz',
+    description: 'Turnkey kitchen renovation packages in Toronto. Retain your layout, upgrade cabinets and quartz tops in 7 days.',
+    canonical: 'https://quartzinternational.ca/lp/kitchen-renovation'
   }
 ];
 
-console.log('🚀 Running SSG Pre-Rendering Generator...');
+// Automatically generate city-specific routes for all GTA cities
+GTA_CITIES.forEach(city => {
+  routes.push({
+    path: `/quartz-countertops-${city.slug}`,
+    title: `Quartz Countertops ${city.name} | Direct Supplier & Installation`,
+    description: `Factory-direct quartz countertops in ${city.name}, ON. Custom fabrication, 3D laser measurement, and 7-day fast installation.`,
+    canonical: `https://quartzinternational.ca/quartz-countertops-${city.slug}`
+  });
+
+  routes.push({
+    path: `/kitchen-cabinets-${city.slug}`,
+    title: `Kitchen Cabinets ${city.name} | Solid Plywood Construction`,
+    description: `Solid plywood kitchen cabinets in ${city.name}, ON. Shaker and modern flat-panel cabinet packages with quartz countertop bundles.`,
+    canonical: `https://quartzinternational.ca/kitchen-cabinets-${city.slug}`
+  });
+});
+
+// Automatically generate cabinet pSEO routes
+CABINET_PSEO_SLUGS.forEach(slug => {
+  routes.push({
+    path: `/${slug}`,
+    title: `${slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')} | Quartz International`,
+    description: `Shop ${slug.replace(/-/g, ' ')} with solid plywood construction and quartz countertop bundle packages in Toronto & GTA.`,
+    canonical: `https://quartzinternational.ca/${slug}`
+  });
+});
+
+console.log(`🚀 Running SSG Pre-Rendering Generator for ${routes.length} total routes...`);
 
 routes.forEach(route => {
-  const routeDir = path.join(DIST_DIR, route.path.substring(1));
+  const routePathClean = route.path.startsWith('/') ? route.path.substring(1) : route.path;
+  const routeDir = path.join(DIST_DIR, routePathClean);
+  
   if (!fs.existsSync(routeDir)) {
     fs.mkdirSync(routeDir, { recursive: true });
   }
@@ -295,14 +340,28 @@ routes.forEach(route => {
     html = html.replace('</head>', `${schemaTag}</head>`);
   }
 
-  // Inject pre-rendered static body content for lightweight AI HTTP fetchers inside <div id="root"></div>
-  if (route.bodyHtml) {
-    html = html.replace('<div id="root"></div>', `<div id="root">${route.bodyHtml}</div>`);
-  }
+  // Default pre-rendered static body content for lightweight AI HTTP fetchers inside <div id="root"></div>
+  const staticBodyContent = route.bodyHtml || `
+    <main class="static-ssg-content max-w-4xl mx-auto px-4 py-12">
+      <header class="mb-6">
+        <p class="text-xs font-bold text-amber-600 uppercase tracking-widest">QUARTZ INTERNATIONAL TORONTO</p>
+        <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 mt-2">${route.title}</h1>
+        <p class="text-sm text-gray-600 mt-3 leading-relaxed">${route.description}</p>
+      </header>
+      <section class="bg-amber-50 border border-amber-200 p-6 rounded-2xl mb-6">
+        <h2 class="text-base font-bold text-gray-900 mb-2">Factory Direct Countertop & Cabinet Service:</h2>
+        <p class="text-sm text-gray-700 leading-relaxed">
+          Quartz International provides 100% solid plywood kitchen cabinets and premium engineered quartz countertops across Toronto and the Greater Toronto Area. All projects include 3D laser precision measurement, custom fabrication, undermount sink cutouts, delivery, and professional 1-day installation.
+        </p>
+      </section>
+    </main>
+  `;
+
+  html = html.replace('<div id="root"></div>', `<div id="root">${staticBodyContent}</div>`);
 
   const outputPath = path.join(routeDir, 'index.html');
   fs.writeFileSync(outputPath, html, 'utf8');
-  console.log(`  ✅ Pre-rendered SSG route: ${route.path} -> ${outputPath}`);
+  console.log(`  ✅ Pre-rendered SSG route: ${route.path}`);
 });
 
-console.log('✨ SSG Pre-rendering Complete!');
+console.log(`✨ SSG Pre-rendering Complete! Successfully pre-rendered ${routes.length} static HTML files.`);
