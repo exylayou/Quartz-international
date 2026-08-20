@@ -1,4 +1,26 @@
 {
+  "redirects": [
+    {
+      "source": "/quartz-countertop-cost/:path*",
+      "destination": "/cost",
+      "permanent": true
+    },
+    {
+      "source": "/kitchen-cabinets/:path*",
+      "destination": "/cabinets",
+      "permanent": true
+    },
+    {
+      "source": "/quartz-countertops-:city",
+      "destination": "/:city",
+      "permanent": true
+    },
+    {
+      "source": "/kitchen-cabinets-:city",
+      "destination": "/:city",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/:path*",
