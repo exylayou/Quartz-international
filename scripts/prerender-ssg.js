@@ -273,20 +273,13 @@ const routes = [
   }
 ];
 
-// Automatically generate city-specific routes for all GTA cities
+// Automatically generate city-specific routes for top GTA cities
 GTA_CITIES.forEach(city => {
   routes.push({
-    path: `/quartz-countertops-${city.slug}`,
-    title: `Quartz Countertops ${city.name} | Direct Supplier & Installation`,
-    description: `Factory-direct quartz countertops in ${city.name}, ON. Custom fabrication, 3D laser measurement, and 7-day fast installation.`,
-    canonical: `https://quartzinternational.ca/quartz-countertops-${city.slug}`
-  });
-
-  routes.push({
-    path: `/kitchen-cabinets-${city.slug}`,
-    title: `Kitchen Cabinets ${city.name} | Solid Plywood Construction`,
-    description: `Solid plywood kitchen cabinets in ${city.name}, ON. Shaker and modern flat-panel cabinet packages with quartz countertop bundles.`,
-    canonical: `https://quartzinternational.ca/kitchen-cabinets-${city.slug}`
+    path: `/${city.slug}`,
+    title: `Quartz Countertops & Kitchen Cabinets ${city.name} | Quartz International`,
+    description: `Factory-direct quartz countertops and solid plywood kitchen cabinets in ${city.name}, ON. 3D laser measurement, 7-day fast installation, and turnkey packages.`,
+    canonical: `https://quartzinternational.ca/${city.slug}`
   });
 });
 
