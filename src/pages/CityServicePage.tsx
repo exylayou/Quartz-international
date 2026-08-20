@@ -49,8 +49,9 @@ export default function CityServicePage() {
   return (
     <div className="bg-white min-h-screen font-sans selection:bg-accent/30">
       <SEO 
-        title={`Quartz Countertops ${cityData.name} | Supply & Install`} 
-        description={`Premium quartz countertops installed in ${cityData.name}. Local showrooms available. Get an instant, accurate online estimate today.`} 
+        title={`Quartz Countertops & Kitchen Cabinets ${cityData.name} | Quartz International`} 
+        description={`Premium quartz countertops and solid plywood kitchen cabinets installed in ${cityData.name}, ON. Get an instant, accurate online estimate today.`} 
+        canonical={`/${cityData.slug}`}
       />
 
       {/* 1. Hero Section */}

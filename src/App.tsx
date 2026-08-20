@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, useParams } from 'react-router-dom';
 import Layout from './components/Layout';
 import ScrollToTop from './components/ScrollToTop';
 import { CalculatorProvider } from './context/CalculatorContext';
@@ -69,6 +69,15 @@ import AreasWeServe from './pages/AreasWeServe';
 import CityServicePage from './pages/CityServicePage';
 import CabinetPseoPage from './pages/CabinetPseoPage';
 import { cabinetPseoPages } from './data/cabinetPseoData';
+
+function CityRedirect() {
+  const { city } = useParams<{ city: string }>();
+  let citySlug = city?.toLowerCase().replace(/[^a-z0-9]/g, '') || '';
+  if (citySlug.startsWith('quartzcountertops')) {
+    citySlug = citySlug.replace('quartzcountertops', '');
+  }
+  return <Navigate to={`/${citySlug}`} replace />;
+}
 
 export default function App() {
   return (
@@ -142,6 +151,7 @@ export default function App() {
             {cabinetPseoPages.map(page => (
               <Route key={page.slug} path={`/${page.slug}`} element={<CabinetPseoPage />} />
             ))}
+            <Route path="/quartz-countertops-:city" element={<CityRedirect />} />
             <Route path="/:city" element={<CityServicePage />} />
 
             {/* Catch-all Fallbacks & Authority Consolidating Redirects */}
