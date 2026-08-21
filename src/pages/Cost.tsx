@@ -23,6 +23,7 @@ import {
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCalculator } from '../context/CalculatorContext';
+import { CostQuoterFunnel } from '../components/CostQuoterFunnel';
 import { cn } from '../lib/utils';
 
 // Import images
@@ -269,6 +270,8 @@ export default function Cost() {
                 <li><a href="#kitchen-size-examples" className="hover:text-accent transition-colors">5. Typical GTA Kitchen Size Project Cost Examples</a></li>
                 <li><a href="#material-comparison" className="hover:text-accent transition-colors">6. Quartz vs. Granite, Marble & Laminate Costs</a></li>
                 <li><a href="#completed-case-studies" className="hover:text-accent transition-colors">7. Real Completed 2026 GTA Project Pricing Examples</a></li>
+                <li><a href="#buying-factors" className="hover:text-accent transition-colors">8. 10 Key Factors That Change Your Quartz Price</a></li>
+                <li><a href="#quoter-funnel" className="hover:text-accent transition-colors">9. Instant Measurement & Photo Upload Quoter Funnel</a></li>
               </ul>
             </div>
             <div className="bg-white p-6 rounded-2xl border border-border-custom shadow-sm">
@@ -499,6 +502,90 @@ export default function Cost() {
           <div className="mt-12 p-6 bg-background rounded-2xl border border-border-custom text-xs text-gray-500 font-medium text-center">
             <strong>2026 Pricing Methodology:</strong> Price ranges listed above are compiled from 85+ completed residential quartz countertop estimates and installations performed by Quartz International across Toronto, Mississauga, Vaughan, Markham, and Oakville between January 1 and August 11, 2026. HST (13%) is excluded unless noted otherwise.
           </div>
+        </div>
+      </section>
+
+      {/* 8. 10 Key Factors That Change Your Quartz Price */}
+      <section id="buying-factors" className="py-16 bg-[#FAF9F6] border-t border-border-custom scroll-mt-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-10 text-center max-w-3xl mx-auto">
+            <span className="text-xs font-bold uppercase tracking-widest text-accent mb-2 block">Buying Checklist</span>
+            <h2 className="text-3xl font-bold tracking-tight mb-3">8. 10 Key Buying Factors That Determine Your Price</h2>
+            <p className="text-gray-500 font-medium text-sm">Every quartz estimate is built from these 10 core variables. Here is how each item impacts your final installed total.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {[
+              {
+                title: "1. Square Footage & Yield",
+                desc: "Countertop area determines slab yield. A standard 35–45 sq ft kitchen uses 1 full slab (55 sq ft). Larger kitchens require 2 slabs.",
+                impact: "$48 – $170 / sq ft"
+              },
+              {
+                title: "2. Countertop Only vs Backsplash",
+                desc: "Choosing countertop only requires a simple silicone joint. Adding a 4-inch upstand adds $200–$300 total.",
+                impact: "+ $200 – $300"
+              },
+              {
+                title: "3. Full-Height Quartz Backsplash",
+                desc: "Replacing tile grout with a full-height quartz slab wall cladding behind your stove and upper cabinets runs $45–$75/sq ft.",
+                impact: "+ $1,350 – $3,500"
+              },
+              {
+                title: "4. 2 cm vs. 3 cm Thickness",
+                desc: "2 cm (3/4\") is lighter and requires plywood sub-tops ($48–$85/sq ft). 3 cm (1-1/4\") installs directly on cabinet frames ($65–$140/sq ft).",
+                impact: "+ $10 – $20 / sq ft"
+              },
+              {
+                title: "5. Standard / Premium / Luxury Tiers",
+                desc: "Group 1 solid white slabs ($48/sq ft) vs Group 2 mid-range veined ($65/sq ft) vs Group 3 imported Calacatta Gold ($95–$170/sq ft).",
+                impact: "Tier Dependent"
+              },
+              {
+                title: "6. Condo Access & Elevator Rules",
+                desc: "Toronto high-rises require parking reservation, elevator padding, and maximum slab size limits for elevator transport.",
+                impact: "+ $150 – $250"
+              },
+              {
+                title: "7. Demolition & Disposal",
+                desc: "Tearing out existing granite, tile, or laminate countertops and disposing of heavy debris safely before installation.",
+                impact: "+ $250 – $450"
+              },
+              {
+                title: "8. Undermount Sink Cutouts",
+                desc: "Precision CNC cutout, polished inner rim, and faucet hole drilling for single or double undermount stainless/composite sinks.",
+                impact: "+ $150 – $250"
+              },
+              {
+                title: "9. Mitered Waterfall Edge Drops",
+                desc: "Vertical slab side drops extending to the floor with 45-degree mitered veining alignment for island ends.",
+                impact: "+ $35 – $65 / lin ft"
+              },
+              {
+                title: "10. Delivery & Site Templating",
+                desc: "Digital 3D laser templating and insured A-frame truck transport across Toronto and the Greater Toronto Area.",
+                impact: "Included"
+              }
+            ].map((factor, idx) => (
+              <div key={idx} className="bg-white p-6 rounded-2xl border border-border-custom shadow-sm flex flex-col justify-between">
+                <div>
+                  <h3 className="text-base font-bold text-text-primary mb-2">{factor.title}</h3>
+                  <p className="text-xs text-gray-500 leading-relaxed mb-4">{factor.desc}</p>
+                </div>
+                <div className="pt-3 border-t border-border-custom flex justify-between items-center">
+                  <span className="text-[10px] font-bold text-gray-400 uppercase">Cost Impact</span>
+                  <span className="text-xs font-bold text-accent">{factor.impact}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 9. Instant Measurement & Photo Upload Quoter Funnel Widget */}
+      <section id="quoter-funnel" className="py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          <CostQuoterFunnel />
         </div>
       </section>
 
