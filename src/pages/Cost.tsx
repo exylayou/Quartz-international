@@ -234,8 +234,19 @@ export default function Cost() {
       <section className="py-8 bg-white border-b border-border-custom">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="bg-[#FAF9F6] p-6 md:p-8 rounded-[2rem] border border-amber-200 shadow-sm relative">
-            <div className="flex items-center gap-2 text-amber-700 text-xs font-bold uppercase tracking-widest mb-3">
-              <Sparkles size={16} /> Instant 2026 Pricing Summary
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-3">
+              <div className="flex items-center gap-2 text-amber-700 text-xs font-bold uppercase tracking-widest">
+                <Sparkles size={16} /> Instant 2026 Pricing Summary
+              </div>
+              <a 
+                href="https://www.google.com/preferences/source?q=quartzinternational.ca"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-amber-500/10 hover:bg-amber-500 text-amber-800 hover:text-gray-900 border border-amber-300 font-bold text-xs transition-all duration-300 self-start sm:self-auto"
+              >
+                <span>⭐</span>
+                <span>Add as Preferred Google Source</span>
+              </a>
             </div>
             <p className="text-base md:text-lg font-medium text-text-primary leading-relaxed">
               In 2026, professionally installed quartz countertops in Toronto and the GTA typically cost <strong>$48 to $170 per square foot</strong>. A standard 35 to 45 sq. ft. kitchen usually costs <strong>$2,200 to $5,500 total</strong>, including digital 3D laser measurement, slab material, sink cutout, fabrication, delivery, and installation. Premium Calacatta slabs, full-height backsplashes, mitered waterfall drops, and condo access fees increase the final price.

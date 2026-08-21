@@ -263,26 +263,39 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
 
             {/* Google Rating & Trust Verification Bar */}
-            <div className="my-12 p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6">
-              <a 
-                href="https://share.google/kkKyItFobaGVXcr12" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="flex items-center gap-4 group"
-              >
-                <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center font-black text-xl text-gray-900 shadow-md shrink-0">
-                  G
-                </div>
-                <div>
-                  <div className="flex items-center gap-1.5 text-amber-400">
-                    <span className="font-extrabold text-sm text-white mr-1">4.9 / 5.0 Rating</span>
-                    {"★".repeat(5)}
+            <div className="my-12 p-6 rounded-2xl bg-white/5 border border-white/10 flex flex-col lg:flex-row items-center justify-between gap-6">
+              <div className="flex flex-col sm:flex-row items-center gap-6">
+                <a 
+                  href="https://share.google/kkKyItFobaGVXcr12" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 group"
+                >
+                  <div className="w-12 h-12 rounded-xl bg-white flex items-center justify-center font-black text-xl text-gray-900 shadow-md shrink-0">
+                    G
                   </div>
-                  <p className="text-xs text-gray-400 font-semibold group-hover:text-white transition-colors">
-                    Verified Google Business Profile • Toronto & GTA Service Area
-                  </p>
-                </div>
-              </a>
+                  <div>
+                    <div className="flex items-center gap-1.5 text-amber-400">
+                      <span className="font-extrabold text-sm text-white mr-1">4.9 / 5.0 Rating</span>
+                      {"★".repeat(5)}
+                    </div>
+                    <p className="text-xs text-gray-400 font-semibold group-hover:text-white transition-colors">
+                      Verified Google Business Profile • Toronto & GTA
+                    </p>
+                  </div>
+                </a>
+
+                {/* Google Preferred Source Button */}
+                <a 
+                  href="https://www.google.com/preferences/source?q=quartzinternational.ca"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-4 py-2.5 rounded-xl bg-amber-500/10 hover:bg-amber-500 text-amber-400 hover:text-gray-900 border border-amber-500/30 font-bold text-xs flex items-center gap-2 transition-all duration-300 shadow-md group shrink-0"
+                >
+                  <span className="text-sm">⭐</span>
+                  <span>Add as Preferred Google Source</span>
+                </a>
+              </div>
 
               <div className="flex flex-wrap items-center gap-6 text-xs text-gray-400 font-medium">
                 <span className="flex items-center gap-2">
