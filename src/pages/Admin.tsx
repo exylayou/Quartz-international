@@ -405,6 +405,34 @@ export default function Admin() {
     };
   }, [filteredEvents]);
 
+  const estimatorFunnelMetrics = React.useMemo(() => {
+    const started = filteredEvents.filter(e => e.type === 'estimator_started').length;
+    const completedEvents = filteredEvents.filter(e => e.type === 'estimator_completed');
+    const abandonedEvents = filteredEvents.filter(e => e.type === 'estimator_abandoned_no_email');
+    const submittedEvents = filteredEvents.filter(e => e.type === 'lead_submitted_with_email');
+    const downloadedEvents = filteredEvents.filter(e => e.type === 'estimate_pdf_downloaded');
+
+    const completedCount = completedEvents.length || (abandonedEvents.length + submittedEvents.length);
+    const abandonedNoEmailCount = abandonedEvents.length;
+    const submittedWithEmailCount = submittedEvents.length;
+    const downloadedCount = downloadedEvents.length;
+
+    const abandonRate = completedCount > 0 ? Math.round((abandonedNoEmailCount / completedCount) * 100) : 0;
+    const emailRate = completedCount > 0 ? Math.round((submittedWithEmailCount / completedCount) * 100) : 0;
+    const downloadRate = completedCount > 0 ? Math.round((downloadedCount / completedCount) * 100) : 0;
+
+    return {
+      started,
+      completed: completedCount,
+      abandonedNoEmail: abandonedNoEmailCount,
+      submittedWithEmail: submittedWithEmailCount,
+      downloadedPdf: downloadedCount,
+      abandonRate,
+      emailRate,
+      downloadRate
+    };
+  }, [filteredEvents]);
+
   // Simulator computations
   const activeAdLeads = analyticsData.adAttributedLeadsCount;
   const baselineCpl = activeAdLeads > 0 ? Math.round(1500 / activeAdLeads) : 85;
@@ -2916,6 +2944,94 @@ export default function Admin() {
                   <p className="text-xs text-gray-500 font-semibold">{kpi.desc}</p>
                 </div>
               ))}
+            </div>
+
+            {/* ESTIMATOR COMPLETION & DOWNLOADED ESTIMATE STATISTICS CARD */}
+            <div className="bg-white p-6 rounded-3xl border border-accent/40 shadow-md">
+              <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                <div>
+                  <h3 className="font-bold text-lg text-gray-850 flex items-center gap-2">
+                    <span>🧮 Estimator Completion & Downloaded Estimate Statistics</span>
+                    <span className="text-[10px] bg-accent/20 text-accent font-extrabold px-3 py-1 rounded-full font-mono uppercase tracking-wider">
+                      Live Funnel Metrics
+                    </span>
+                  </h3>
+                  <p className="text-xs text-gray-500 mt-1">
+                    Tracks visitors who completed calculations, dropped off without entering email, or downloaded PDF estimates.
+                  </p>
+                </div>
+              </div>
+
+              {/* 4 Primary Metric Cards */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div className="bg-blue-50/60 p-5 rounded-2xl border border-blue-200 flex flex-col justify-between">
+                  <span className="text-[10px] font-extrabold text-blue-700 uppercase tracking-widest mb-1">Total Estimations Completed</span>
+                  <div>
+                    <h5 className="text-3xl font-black text-blue-950 font-mono mb-1">{estimatorFunnelMetrics.completed}</h5>
+                    <p className="text-xs text-blue-700 font-medium">Finished calculation steps</p>
+                  </div>
+                </div>
+
+                <div className="bg-amber-50/70 p-5 rounded-2xl border border-amber-200 flex flex-col justify-between">
+                  <span className="text-[10px] font-extrabold text-amber-800 uppercase tracking-widest mb-1">Completed WITHOUT Email</span>
+                  <div>
+                    <h5 className="text-3xl font-black text-amber-950 font-mono mb-1">{estimatorFunnelMetrics.abandonedNoEmail}</h5>
+                    <p className="text-xs text-amber-800 font-bold">{estimatorFunnelMetrics.abandonRate}% drop-off rate (no email)</p>
+                  </div>
+                </div>
+
+                <div className="bg-emerald-50/60 p-5 rounded-2xl border border-emerald-200 flex flex-col justify-between">
+                  <span className="text-[10px] font-extrabold text-emerald-800 uppercase tracking-widest mb-1">Submitted WITH Email</span>
+                  <div>
+                    <h5 className="text-3xl font-black text-emerald-950 font-mono mb-1">{estimatorFunnelMetrics.submittedWithEmail}</h5>
+                    <p className="text-xs text-emerald-800 font-bold">{estimatorFunnelMetrics.emailRate}% lead contact conversion</p>
+                  </div>
+                </div>
+
+                <div className="bg-purple-50/60 p-5 rounded-2xl border border-purple-200 flex flex-col justify-between">
+                  <span className="text-[10px] font-extrabold text-purple-800 uppercase tracking-widest mb-1">Downloaded Estimate PDF</span>
+                  <div>
+                    <h5 className="text-3xl font-black text-purple-950 font-mono mb-1">{estimatorFunnelMetrics.downloadedPdf}</h5>
+                    <p className="text-xs text-purple-800 font-bold">{estimatorFunnelMetrics.downloadRate}% estimate download rate</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Visual Funnel Bar */}
+              <div className="bg-gray-50 p-4 rounded-2xl border border-border-custom space-y-3">
+                <div className="flex justify-between items-center text-xs font-bold">
+                  <span className="text-gray-800">Estimator Outcome Distribution ({estimatorFunnelMetrics.completed} Total Completed)</span>
+                  <span className="text-gray-500 font-mono">
+                    {estimatorFunnelMetrics.submittedWithEmail} Email Leads • {estimatorFunnelMetrics.abandonedNoEmail} Anonymous Drops • {estimatorFunnelMetrics.downloadedPdf} PDF Downloads
+                  </span>
+                </div>
+                <div className="w-full bg-gray-200 h-4 rounded-full overflow-hidden flex">
+                  <div 
+                    className="bg-emerald-500 h-full transition-all duration-500" 
+                    style={{ width: `${estimatorFunnelMetrics.emailRate}%` }}
+                    title={`Submitted with Email: ${estimatorFunnelMetrics.emailRate}%`}
+                  />
+                  <div 
+                    className="bg-amber-400 h-full transition-all duration-500" 
+                    style={{ width: `${estimatorFunnelMetrics.abandonRate}%` }}
+                    title={`Completed without Email: ${estimatorFunnelMetrics.abandonRate}%`}
+                  />
+                </div>
+                <div className="flex flex-wrap items-center gap-6 text-[11px] font-semibold text-gray-600 pt-1">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-emerald-500" />
+                    <span>Submitted Email Lead ({estimatorFunnelMetrics.emailRate}%)</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-amber-400" />
+                    <span>Completed without Email ({estimatorFunnelMetrics.abandonRate}%)</span>
+                  </div>
+                  <div className="flex items-center gap-2 ml-auto text-purple-800 font-bold">
+                    <Download size={14} />
+                    <span>PDF Estimate Downloads ({estimatorFunnelMetrics.downloadedPdf})</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             {/* User Page Behavior Summary Cards */}

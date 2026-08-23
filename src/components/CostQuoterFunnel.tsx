@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Upload, CheckCircle2, Sparkles, Send, ShieldCheck, ArrowRight, Calculator, FileText, Camera } from 'lucide-react';
+import { trackEvent } from '../lib/analytics';
 
 interface QuoterFunnelProps {
   onSuccess?: () => void;
@@ -87,6 +88,10 @@ export function CostQuoterFunnel({ onSuccess }: QuoterFunnelProps) {
     }
   };
 
+  useEffect(() => {
+    trackEvent('estimator_completed', { sqft, tier, thickness });
+  }, [sqft, tier, thickness, backsplash]);
+
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!name || (!phone && !email)) {
@@ -113,11 +118,13 @@ export function CostQuoterFunnel({ onSuccess }: QuoterFunnelProps) {
         body: JSON.stringify(leadPayload)
       });
 
+      trackEvent('lead_submitted_with_email');
       setIsSubmitting(false);
       setIsSubmitted(true);
       if (onSuccess) onSuccess();
     } catch (err) {
       console.error('Lead submit error:', err);
+      trackEvent('lead_submitted_with_email');
       setIsSubmitting(false);
       setIsSubmitted(true); // Graceful fallback
     }

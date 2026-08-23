@@ -25,6 +25,7 @@ import {
 
 import { useCalculator, QuartzLevel, CabinetStyle, IslandType } from '../context/CalculatorContext';
 import { cn, trackLeadConversion } from '../lib/utils';
+import { trackEvent } from '../lib/analytics';
 import { PRICING_CONSTANTS } from '../constants';
 import { jsPDF } from 'jspdf';
 import { toPng } from 'html-to-image';
@@ -37,6 +38,22 @@ export default function CalculatorModal() {
   const [emailError, setEmailError] = useState(false);
   const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
   const pdfTemplateRef = useRef<HTMLDivElement>(null);
+
+  const handleCloseModal = () => {
+    if (state.step === 7 && !isSubmitted) {
+      trackEvent('estimator_abandoned_no_email');
+    }
+    closeCalculator();
+  };
+
+  React.useEffect(() => {
+    if (state.isOpen && state.step === 1) {
+      trackEvent('estimator_started');
+    }
+    if (state.isOpen && state.step === 7) {
+      trackEvent('estimator_completed');
+    }
+  }, [state.isOpen, state.step]);
 
   const calculateResults = () => {
     const { countertopSqFt, quartzLevel, includeCabinets, cabinetLinearFt, cabinetStyle, extras, includeCountertops, islandType } = state;
@@ -250,12 +267,14 @@ export default function CalculatorModal() {
         localStorage.setItem('qi_has_contacted', '1');
         setIsSubmitted(true);
         trackLeadConversion(results?.total?.high);
+        trackEvent('lead_submitted_with_email');
       } else {
         console.error('Failed to submit lead');
         setEmailError(true);
         localStorage.setItem('qi_has_contacted', '1');
         setIsSubmitted(true); // Fallback so they can download PDF
         trackLeadConversion(results?.total?.high);
+        trackEvent('lead_submitted_with_email');
       }
     } catch (error) {
       console.error('Error submitting lead:', error);
@@ -263,6 +282,7 @@ export default function CalculatorModal() {
       localStorage.setItem('qi_has_contacted', '1');
       setIsSubmitted(true); // Fallback so they can download PDF
       trackLeadConversion(results?.total?.high);
+      trackEvent('lead_submitted_with_email');
     } finally {
       setIsSubmitting(false);
     }
@@ -271,6 +291,7 @@ export default function CalculatorModal() {
   const generatePdf = async () => {
     if (!pdfTemplateRef.current) return;
     setIsGeneratingPdf(true);
+    trackEvent('estimate_pdf_downloaded');
 
     try {
       const pdf = new jsPDF('p', 'mm', 'a4');
@@ -293,7 +314,7 @@ export default function CalculatorModal() {
         pdf.addImage(dataUrl, 'PNG', 0, 0, pdfWidth, pdfHeight);
       }
       
-      pdf.save(`Quartz_International_Budgetary_Estimate_${formData.name.replace(/\s+/g, '_')}.pdf`);
+      pdf.save(`Quartz_International_Budgetary_Estimate_${(formData.name || 'Valued_Client').replace(/\s+/g, '_')}.pdf`);
     } catch (err) {
       console.error('PDF Generation failed:', err);
     } finally {
@@ -339,7 +360,7 @@ export default function CalculatorModal() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={closeCalculator}
+            onClick={handleCloseModal}
             className="absolute inset-0 bg-[#F7F5F2]/90 backdrop-blur-sm cursor-pointer"
           />
 
@@ -685,7 +706,7 @@ export default function CalculatorModal() {
                 <p className="text-[10px] md:text-xs text-gray-400 font-medium tracking-wide">Takes 30 seconds • No obligation</p>
               )}
             </div>
-            <button onClick={closeCalculator} className="p-2 hover:bg-gray-100 rounded-full transition-colors">
+            <button onClick={handleCloseModal} className="p-2 hover:bg-gray-100 rounded-full transition-colors">
               <X size={20} className="text-[#1A1A1A] md:w-6 md:h-6" />
             </button>
           </div>

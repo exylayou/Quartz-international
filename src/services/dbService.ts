@@ -523,15 +523,89 @@ async function ensureDbInitialized() {
           // Generate 1-5 page views for this session
           const numPages = Math.floor(Math.random() * 4) + 1;
           let pageTime = new Date(sessionTime).getTime();
+          let launchedEstimator = false;
+
           for (let p = 0; p < numPages; p++) {
             pageTime += Math.floor(Math.random() * 120000) + 30000; // 30s to 2.5m later
+            const selectedPath = paths[Math.floor(Math.random() * paths.length)];
+            
             seededEvents.push({
               id: Math.random().toString(36).substr(2, 9),
               sessionId,
               type: 'page_view',
-              path: paths[Math.floor(Math.random() * paths.length)],
+              path: selectedPath,
               timestamp: new Date(pageTime).toISOString()
             });
+
+            if (selectedPath === '/estimate' || selectedPath === '/results' || Math.random() > 0.5) {
+              launchedEstimator = true;
+            }
+          }
+
+          // Simulate Estimator Tool Funnel & Download Events
+          if (launchedEstimator) {
+            pageTime += 15000;
+            seededEvents.push({
+              id: Math.random().toString(36).substr(2, 9),
+              sessionId,
+              type: 'estimator_started',
+              path: '/estimate',
+              timestamp: new Date(pageTime).toISOString(),
+              utmSource,
+              utmMedium
+            });
+
+            // 75% finish calculation steps
+            if (Math.random() < 0.75) {
+              pageTime += 45000;
+              seededEvents.push({
+                id: Math.random().toString(36).substr(2, 9),
+                sessionId,
+                type: 'estimator_completed',
+                path: '/results',
+                timestamp: new Date(pageTime).toISOString(),
+                utmSource,
+                utmMedium
+              });
+
+              // Of completed: 45% submit email vs 55% abandon without email
+              const submittedEmail = Math.random() < 0.45;
+              if (submittedEmail) {
+                seededEvents.push({
+                  id: Math.random().toString(36).substr(2, 9),
+                  sessionId,
+                  type: 'lead_submitted_with_email',
+                  path: '/results',
+                  timestamp: new Date(pageTime + 20000).toISOString(),
+                  utmSource,
+                  utmMedium
+                });
+              } else {
+                seededEvents.push({
+                  id: Math.random().toString(36).substr(2, 9),
+                  sessionId,
+                  type: 'estimator_abandoned_no_email',
+                  path: '/results',
+                  timestamp: new Date(pageTime + 20000).toISOString(),
+                  utmSource,
+                  utmMedium
+                });
+              }
+
+              // 40% download PDF or estimate summary
+              if (Math.random() < 0.40) {
+                seededEvents.push({
+                  id: Math.random().toString(36).substr(2, 9),
+                  sessionId,
+                  type: 'estimate_pdf_downloaded',
+                  path: '/results',
+                  timestamp: new Date(pageTime + 35000).toISOString(),
+                  utmSource,
+                  utmMedium,
+                  meta: { withEmail: submittedEmail }
+                });
+              }
+            }
           }
         }
       }
@@ -624,13 +698,21 @@ export async function markMessagesAsRead(customerId: string): Promise<boolean> {
 export interface AnalyticEvent {
   id: string;
   sessionId: string;
-  type: 'session_start' | 'page_view';
+  type:
+    | 'session_start'
+    | 'page_view'
+    | 'estimator_started'
+    | 'estimator_completed'
+    | 'estimator_abandoned_no_email'
+    | 'estimate_pdf_downloaded'
+    | 'lead_submitted_with_email';
   path?: string;
   timestamp: string;
   utmSource?: string;
   utmMedium?: string;
   utmCampaign?: string;
   referrer?: string;
+  meta?: any;
 }
 
 export async function getAnalyticsEvents(): Promise<AnalyticEvent[]> {
