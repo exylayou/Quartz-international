@@ -11,8 +11,16 @@ import blogTajMahal from '../assets/images/blog_taj_mahal.png';
 import blogDramatic from '../assets/images/blog_dramatic.png';
 import blogQuartzCare from '../assets/images/blog_quartz_care.png';
 import blogQuartzGranite from '../assets/images/blog_quartz_granite.png';
+import blogTwoTone from '../assets/images/modern_two_tone.png';
+import blogEssentialTwoTone from '../assets/images/essential_two_tone_kitchen.png';
 
 const POSTS = [
+  { 
+    id: 4, 
+    title: 'Is the All-White Kitchen Going Out of Style? What Toronto Homeowners Should Choose Instead', 
+    excerpt: 'Discover why all-white kitchens aren’t dead, but evolving. Learn how using white uppers with warm lower cabinets and quartz countertops creates the ultimate two-tone balance.', 
+    date: 'August 23, 2026' 
+  },
   { 
     id: 1, 
     title: 'Top Quartz Trends for 2026: Colours, Finishes, and Design Ideas Homeowners Are Choosing', 
@@ -39,6 +47,232 @@ export default function Blog() {
   React.useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'instant' });
   }, [activePostId]);
+
+  if (activePostId === 4) {
+    return (
+      <div className="bg-background pt-24 pb-32">
+        <SEO 
+          title="Is the All-White Kitchen Going Out of Style? | Toronto 2026 Guide" 
+          description="Are all-white kitchens dated in 2026? Learn why white isn't dead and how Toronto homeowners use selective white uppers, warm lower cabinets, and quartz countertops for two-tone designs." 
+        />
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <button 
+            onClick={() => setActivePostId(null)}
+            className="inline-flex items-center gap-2 text-xs font-bold text-accent uppercase tracking-widest hover:text-text-primary transition-colors mb-12 group"
+          >
+            <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" /> Back to insights
+          </button>
+
+          <article className="prose prose-lg max-w-none">
+            <header className="mb-12">
+              <h1 className="text-4xl md:text-5xl font-bold text-text-primary mb-6 tracking-tight leading-[1.1]">
+                Is the All-White Kitchen Going Out of Style? What Toronto Homeowners Should Choose Instead
+              </h1>
+              <div className="flex flex-wrap items-center gap-6 text-xs text-text-muted border-y border-border-custom py-4">
+                <span className="flex items-center gap-2">
+                  <Calendar size={14} className="text-accent" /> Updated for August 2026
+                </span>
+                <span className="flex items-center gap-2">
+                  <User size={14} className="text-accent" /> Quartz International Design Desk
+                </span>
+                <span className="flex items-center gap-2">
+                  <Clock size={14} className="text-accent" /> 7 min read
+                </span>
+              </div>
+            </header>
+
+            <div className="mb-12 group">
+              <div className="overflow-hidden rounded-3xl border border-border-custom shadow-md bg-white/50">
+                <img 
+                  src={blogTwoTone} 
+                  alt="Modern two-tone kitchen featuring white upper cabinets, natural wood lower cabinets, and warm quartz countertops in Toronto home" 
+                  className="w-full aspect-[16/9] object-cover group-hover:scale-[1.01] transition-transform duration-500" 
+                />
+              </div>
+              <p className="mt-3 text-center text-xs text-text-muted italic">
+                A 2026 Toronto two-tone kitchen balancing white upper cabinets for brightness with rich natural wood lower cabinets and warm veined quartz.
+              </p>
+            </div>
+
+            <div className="space-y-8 text-gray-600 leading-relaxed text-sm md:text-base">
+              <p>
+                If you scroll through design magazines or real estate listings across Toronto, Mississauga, and Oakville, you might hear headlines declaring that <em>“the all-white kitchen is officially out of style.”</em>
+              </p>
+
+              <p>
+                For homeowners who are planning a $15,000 to $50,000 kitchen renovation, this raises immediate anxiety: <strong>If I install white cabinets and white quartz, will my kitchen look dated in three years? Should I paint everything dark green or walnut instead?</strong>
+              </p>
+
+              <p className="border-l-4 border-accent pl-6 py-2 my-8 italic text-base font-medium text-text-primary bg-accent/5 rounded-r-xl">
+                Here is the real truth from our Toronto fabrication and cabinetry team: <strong className="text-text-primary">White is NOT dead.</strong> What has died is the 2012-era <em>“hospital white”</em> kitchen—where white cabinets, white subway tile, white counters, and cold grey floors created a sterile, flat showroom look with zero personality.
+              </p>
+
+              <h2 className="text-xl md:text-2xl font-bold text-text-primary pt-6 border-t border-border-custom">
+                Quick Answer: What Should Toronto Homeowners Choose Instead?
+              </h2>
+
+              <p>
+                Rather than abandoning white entirely, 2026’s smartest kitchen designs use <strong>white selectively</strong>.
+              </p>
+
+              <div className="bg-white border border-border-custom p-6 rounded-2xl shadow-sm space-y-3">
+                <h3 className="text-sm font-bold uppercase tracking-widest text-accent mb-2">The Two-Tone Formula for 2026 Kitchens</h3>
+                <ul className="space-y-2 text-xs font-semibold text-text-primary">
+                  <li className="flex items-center gap-2"><Check size={14} className="text-accent shrink-0" /> <strong>White Upper Cabinets:</strong> Retain max ceiling light reflection & keep small footprints feeling airy.</li>
+                  <li className="flex items-center gap-2"><Check size={14} className="text-accent shrink-0" /> <strong>Warm Lower Cabinets / Island:</strong> Natural White Oak, Walnut, Warm Greige, or Matte Navy for grounding weight.</li>
+                  <li className="flex items-center gap-2"><Check size={14} className="text-accent shrink-0" /> <strong>Warm Veined Quartz Countertops:</strong> Calacatta Gold, Taj Mahal, or warm beige-veined quartz to tie both tones together.</li>
+                </ul>
+              </div>
+
+              {/* Section 1 */}
+              <h2 className="text-xl md:text-2xl font-bold text-text-primary pt-6 border-t border-border-custom">
+                1. Why All-White Kitchens Fell Out of Favor
+              </h2>
+              <p>
+                For over a decade, all-white kitchens were the ultimate default for home flippers and builders. But living in a 100% white kitchen revealed several practical flaws:
+              </p>
+              <ul className="list-disc list-inside space-y-2 pl-4 text-sm">
+                <li><strong>Cold & Sterile Lighting:</strong> Combined with LED recessed lighting, all-white surfaces bounce harsh blue-white light, making winter mornings in Toronto feel cold.</li>
+                <li><strong>High Maintenance on Base Cabinets:</strong> White lower cabinets around trash pull-outs, dishwashers, and stovetops suffer constant scuffs from shoes, kids, pets, and spilled food.</li>
+                <li><strong>Lack of Architectural Contrast:</strong> Without natural wood grain or color depth, modern open-concept main floors felt flat and uninviting.</li>
+              </ul>
+
+              {/* Section 2 */}
+              <h2 className="text-xl md:text-2xl font-bold text-text-primary pt-6 border-t border-border-custom">
+                2. Why You Still Need White Upper Cabinets (Especially in Toronto Footprints)
+              </h2>
+              <p>
+                Some extreme designers advise clients to go 100% dark charcoal or dark wood everywhere. In a spacious 4,000 sq. ft. estate in Bridle Path with 12-foot ceilings, that looks dramatic. But in a <strong>typical Toronto semi-detached, condo, or 10x10 suburban kitchen in Mississauga or Markham</strong>, dark upper cabinets can make the ceiling feel low and dark.
+              </p>
+              <p>
+                Keeping <strong>white or off-white upper cabinets</strong> achieves three critical advantages:
+              </p>
+              <ol className="list-decimal list-inside space-y-2 pl-4 text-sm font-medium text-text-primary">
+                <li><strong>Maximizes Natural Daylight:</strong> Bounces window light deeper into dark hallway corners.</li>
+                <li><strong>Visually Lifts the Ceiling:</strong> Light uppers draw the eye upward, making 8-foot ceilings feel higher.</li>
+                <li><strong>Timeless Resale Appeal:</strong> Buyers never complain about bright upper storage.</li>
+              </ol>
+
+              <div className="my-8 group">
+                <div className="overflow-hidden rounded-3xl border border-border-custom shadow-sm bg-white/50">
+                  <img 
+                    src={blogEssentialTwoTone} 
+                    alt="Two-tone kitchen package with white upper cabinets and warm wood lower cabinets" 
+                    className="w-full aspect-[16/10] object-cover group-hover:scale-[1.01] transition-transform duration-500" 
+                  />
+                </div>
+                <p className="mt-3 text-center text-xs text-text-muted italic">
+                  Quartz International's Two-Tone Cabinet Package ($5,999 10x10 bundle) pairing white uppers with rich lower cabinets and quartz.
+                </p>
+              </div>
+
+              {/* Section 3 */}
+              <h2 className="text-xl md:text-2xl font-bold text-text-primary pt-6 border-t border-border-custom">
+                3. The Rise of Two-Tone Cabinetry in 2026
+              </h2>
+              <p>
+                Two-tone kitchens solve the all-white dilemma by giving you the best of both worlds. By using darker or wood-grained lower cabinets, you ground the room and create rich visual anchor points where scuffs and foot marks occur naturally.
+              </p>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+                <div className="bg-white border border-border-custom p-5 rounded-2xl">
+                  <h4 className="font-bold text-text-primary text-sm mb-2">Combo A: White Uppers + Natural White Oak Lowers</h4>
+                  <p className="text-xs text-gray-500">The most popular 2026 combination across GTA remodels. Brings warm organic Scandinavian texture while keeping the space airy.</p>
+                </div>
+                <div className="bg-white border border-border-custom p-5 rounded-2xl">
+                  <h4 className="font-bold text-text-primary text-sm mb-2">Combo B: White Uppers + Matte Navy / Slate Lowers</h4>
+                  <p className="text-xs text-gray-500">A classic transitional favorite that adds dramatic elegance to kitchen islands and perimeter base cabinets.</p>
+                </div>
+                <div className="bg-white border border-border-custom p-5 rounded-2xl">
+                  <h4 className="font-bold text-text-primary text-sm mb-2">Combo C: Off-White Uppers + Mushroom / Greige Lowers</h4>
+                  <p className="text-xs text-gray-500">Subtle, low-contrast warmth perfect for condos where you want soft harmony without heavy dark contrast.</p>
+                </div>
+                <div className="bg-white border border-border-custom p-5 rounded-2xl">
+                  <h4 className="font-bold text-text-primary text-sm mb-2">Combo D: White Uppers + Walnut Island Statement</h4>
+                  <p className="text-xs text-gray-500">Pairs crisp white perimeter cabinetry with a rich, furniture-grade dark wood island centerpiece.</p>
+                </div>
+              </div>
+
+              {/* Section 4 */}
+              <h2 className="text-xl md:text-2xl font-bold text-text-primary pt-6 border-t border-border-custom">
+                4. How Quartz Countertops Bridge the Two Tones
+              </h2>
+              <p>
+                The secret weapon of a successful two-tone kitchen is the <strong>quartz countertop selection</strong>. The countertop sits right at the intersection between the lower cabinets and upper cabinets.
+              </p>
+              <p>
+                If you use pure icy white quartz on a two-tone kitchen, the transition can feel harsh. Instead, 2026 design trends favor <strong>warm-veined quartz slabs</strong>:
+              </p>
+              <ul className="space-y-3 text-xs font-semibold text-text-primary">
+                <li className="flex items-center gap-2"><Check size={14} className="text-accent shrink-0" /> <strong>Calacatta Gold Quartz:</strong> Warm gold and grey veining that ties white uppers directly to brass hardware & oak lowers.</li>
+                <li className="flex items-center gap-2"><Check size={14} className="text-accent shrink-0" /> <strong>Taj Mahal Quartzite-Inspired Quartz:</strong> Creamy background with soft taupe veining that softens contrast.</li>
+                <li className="flex items-center gap-2"><Check size={14} className="text-accent shrink-0" /> <strong>Full-Height Quartz Backsplash:</strong> Continuing the quartz slab up the wall behind the stove creates a seamless bridge between uppers and lowers.</li>
+              </ul>
+
+              {/* Package CTA Callout */}
+              <div className="bg-gradient-to-r from-accent/15 via-accent/5 to-transparent border border-accent/30 p-8 rounded-3xl space-y-4 my-8">
+                <div className="inline-flex items-center gap-2 bg-accent text-gray-900 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-widest">
+                  Featured Renovation Bundle
+                </div>
+                <h3 className="text-2xl font-bold text-text-primary">Quartz International’s Turnkey Two-Tone Kitchen Bundle</h3>
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  Get solid plywood two-tone cabinets (white uppers + custom wood or color lowers) paired with 3cm engineered quartz countertops, laser site templating, custom fabrication, and professional installation.
+                </p>
+                <div className="pt-2 flex flex-col sm:flex-row items-center gap-4">
+                  <span className="text-2xl font-black text-accent font-mono">$5,999 CAD Installed (10x10 Package)</span>
+                  <Link to="/kitchen-renovation-estimator" className="btn-primary px-6 py-3 rounded-xl text-xs font-extrabold uppercase tracking-wider">
+                    Calculate Your Kitchen Price $\rightarrow$
+                  </Link>
+                </div>
+              </div>
+
+              {/* Section 5 */}
+              <h2 className="text-xl md:text-2xl font-bold text-text-primary pt-6 border-t border-border-custom">
+                5. Frequently Asked Questions (FAQs)
+              </h2>
+              <div className="space-y-6 text-xs">
+                <div>
+                  <h4 className="font-bold text-text-primary mb-1">Will a two-tone kitchen hurt my Toronto home's resale value?</h4>
+                  <p className="text-gray-500">No. In fact, real estate agents report that two-tone kitchens (especially white uppers with natural oak or navy lowers) test higher with Toronto buyers in 2026 than standard builder-grade all-white kitchens because they look custom-designed.</p>
+                </div>
+                <div>
+                  <h4 className="font-bold text-text-primary mb-1">Should my kitchen island match the lower cabinets or upper cabinets?</h4>
+                  <p className="text-gray-500">Most designers match the island to the lower cabinets (or make the island its own accent wood tone) while keeping perimeter uppers white. This creates a grounded, luxurious furniture feel.</p>
+                </div>
+                <div>
+                  <h4 className="font-bold text-text-primary mb-1">What hardware finishes pair best with two-tone cabinetry?</h4>
+                  <p className="text-gray-500">Champagne bronze, brushed brass, and matte black are top choices in 2026. Warm metal finishes bridge the gap between white uppers and natural wood lower cabinets beautifully.</p>
+                </div>
+              </div>
+
+              {/* Conclusion */}
+              <h2 className="text-xl md:text-2xl font-bold text-text-primary pt-12 border-t border-border-custom">
+                Final Takeaway
+              </h2>
+              <p>
+                Don't feel pressured to eliminate white from your kitchen plan. The key to a timeless 2026 kitchen renovation is <strong>selective contrast</strong>: keep upper cabinets light and bright, introduce warmth on base cabinets or islands, and connect them with a premium veined quartz countertop.
+              </p>
+              <p className="font-semibold text-text-primary">
+                Ready to explore two-tone cabinet options and matching quartz slabs for your home? Contact Quartz International or use our instant online estimator tool today!
+              </p>
+            </div>
+          </article>
+
+          {/* Footer CTA */}
+          <div className="mt-16 pt-8 border-t border-border-custom flex flex-col sm:flex-row justify-between items-center gap-6">
+            <div>
+              <h4 className="font-bold text-text-primary text-base">Plan Your 2026 Kitchen Renovation</h4>
+              <p className="text-xs text-text-muted">Explore quartz slab colors and solid plywood cabinet finishes with instant GTA pricing.</p>
+            </div>
+            <Link to="/cost" className="btn-primary px-6 py-3 rounded-xl text-xs font-bold uppercase tracking-widest shrink-0">
+              Browse Countertop Pricing Guide
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   if (activePostId === 1) {
     return (
