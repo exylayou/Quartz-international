@@ -412,9 +412,17 @@ export default function Admin() {
     const submittedEvents = filteredEvents.filter(e => e.type === 'lead_submitted_with_email');
     const downloadedEvents = filteredEvents.filter(e => e.type === 'estimate_pdf_downloaded');
 
-    const completedCount = completedEvents.length || (abandonedEvents.length + submittedEvents.length);
-    const abandonedNoEmailCount = abandonedEvents.length;
-    const submittedWithEmailCount = submittedEvents.length;
+    // Count estimator leads captured in timeframe
+    const estimatorLeadsCount = leads.filter(l => l.layout && l.layout !== 'Contact Form').length;
+    const submittedWithEmailCount = Math.max(submittedEvents.length, estimatorLeadsCount > 0 ? Math.min(estimatorLeadsCount, completedEvents.length) : 0);
+
+    let completedCount = completedEvents.length;
+    if (completedCount < submittedWithEmailCount) {
+      completedCount = submittedWithEmailCount;
+    }
+
+    // Any completed estimation that did not submit an email is categorized as completed without email (abandoned)
+    const abandonedNoEmailCount = completedCount > 0 ? Math.max(abandonedEvents.length, completedCount - submittedWithEmailCount) : 0;
     const downloadedCount = downloadedEvents.length;
 
     const abandonRate = completedCount > 0 ? Math.round((abandonedNoEmailCount / completedCount) * 100) : 0;
@@ -431,7 +439,7 @@ export default function Admin() {
       emailRate,
       downloadRate
     };
-  }, [filteredEvents]);
+  }, [filteredEvents, leads]);
 
   // Simulator computations
   const activeAdLeads = analyticsData.adAttributedLeadsCount;
