@@ -452,6 +452,9 @@ app.post("/api/leads", async (req, res) => {
   async function generateConceptImage(aiClient: any, base64Input: string, conceptName: string, cabinetFinish: string, quartzStyle: string, backsplash: string, hasIsland: boolean = true): Promise<string | null> {
     try {
       const base64Data = base64Input.includes(",") ? base64Input.split(",")[1] : base64Input;
+      const mimeMatch = base64Input.match(/^data:(image\/[a-zA-Z+]+);base64,/);
+      const mimeType = mimeMatch ? mimeMatch[1] : "image/jpeg";
+
       const islandInstruction = hasIsland
         ? "Include a kitchen island in the design."
         : "Do NOT include a kitchen island. The kitchen should have NO island at all — only perimeter cabinetry and countertops.";
@@ -462,25 +465,33 @@ app.post("/api/leads", async (req, res) => {
       ${islandInstruction}
       Generate a highly realistic, professional architectural render showing this transformation of the space.`;
 
-      const response = await aiClient.models.generateContent({
-        model: "gemini-2.0-flash-exp",
-        contents: [
-          {
-            inlineData: {
-              data: base64Data,
-              mimeType: "image/jpeg"
+      const candidateModels = ["gemini-2.0-flash-exp", "gemini-2.0-flash"];
+      for (const modelName of candidateModels) {
+        try {
+          const response = await aiClient.models.generateContent({
+            model: modelName,
+            contents: [
+              {
+                inlineData: {
+                  data: base64Data,
+                  mimeType
+                }
+              },
+              promptText
+            ],
+            config: {
+              responseModalities: ["IMAGE", "TEXT"]
             }
-          },
-          promptText
-        ],
-        config: {
-          responseModalities: ["IMAGE", "TEXT"]
-        }
-      });
+          });
 
-      const part = response.candidates?.[0]?.content?.parts?.find((p: any) => p.inlineData);
-      if (part && part.inlineData && part.inlineData.data) {
-        return `data:image/png;base64,${part.inlineData.data}`;
+          const part = response.candidates?.[0]?.content?.parts?.find((p: any) => p.inlineData);
+          if (part && part.inlineData && part.inlineData.data) {
+            const outMime = part.inlineData.mimeType || 'image/png';
+            return `data:${outMime};base64,${part.inlineData.data}`;
+          }
+        } catch (subErr: any) {
+          console.warn(`Model ${modelName} image render attempt failed: ${subErr.message}`);
+        }
       }
       return null;
     } catch (err: any) {
