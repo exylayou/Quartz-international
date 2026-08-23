@@ -447,10 +447,12 @@ export default function Admin() {
     const timeframeEstimatorLeads = timeframeFilteredLeads.filter(l => l.layout && l.layout !== 'Contact Form').length;
     const submittedWithEmailCount = Math.max(submittedEvents.length, timeframeEstimatorLeads);
 
-    let completedCount = Math.max(completedEvents.length, submittedWithEmailCount);
+    // Anonymous completed estimations (calculations finished without email)
+    const anonymousCompletedCount = Math.max(abandonedEvents.length, completedEvents.length);
 
-    // Any completed estimation that did not submit an email is categorized as completed without email (abandoned)
-    const abandonedNoEmailCount = completedCount > 0 ? Math.max(abandonedEvents.length, completedCount - submittedWithEmailCount) : 0;
+    // Total Completed Estimations = Anonymous Calculations + Emailed Leads
+    const completedCount = anonymousCompletedCount + submittedWithEmailCount;
+    const abandonedNoEmailCount = anonymousCompletedCount;
     const downloadedCount = downloadedEvents.length;
 
     const abandonRate = completedCount > 0 ? Math.round((abandonedNoEmailCount / completedCount) * 100) : 0;
