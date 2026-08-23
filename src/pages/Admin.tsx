@@ -187,24 +187,79 @@ export default function Admin() {
   const customersWithLeadsCount = customers.filter(c => leads.some(l => l.customerId === c.id || (l.email && c.email && l.email.toLowerCase() === c.email.toLowerCase()))).length;
   const customerApprovedConversion = customers.length ? Math.round((leads.filter(l => l.quoteNumber && l.quoteStatus === 'approved').length / customers.length) * 100) : 0;
 
+  // Analytics filtering and calculations
+  const [analyticsTimeframe, setAnalyticsTimeframe] = React.useState<'today' | '7days' | '30days' | '90days' | 'all'>('7days');
+
+  const filteredEvents = React.useMemo(() => {
+    const now = new Date();
+    return analyticsEvents.filter(event => {
+      const eventDate = new Date(event.timestamp);
+      const diffMs = now.getTime() - eventDate.getTime();
+      const diffDays = diffMs / (1000 * 60 * 60 * 24);
+      
+      if (analyticsTimeframe === 'today') {
+        const todayStart = new Date();
+        todayStart.setHours(0, 0, 0, 0);
+        return eventDate >= todayStart;
+      }
+      if (analyticsTimeframe === '7days') {
+        return diffDays <= 7;
+      }
+      if (analyticsTimeframe === '30days') {
+        return diffDays <= 30;
+      }
+      if (analyticsTimeframe === '90days') {
+        return diffDays <= 90;
+      }
+      return true;
+    });
+  }, [analyticsEvents, analyticsTimeframe]);
+
+  const timeframeFilteredLeads = React.useMemo(() => {
+    const now = new Date();
+    return leads.filter(lead => {
+      if (!lead.createdAt) return true;
+      const leadDate = new Date(lead.createdAt);
+      const diffMs = now.getTime() - leadDate.getTime();
+      const diffDays = diffMs / (1000 * 60 * 60 * 24);
+
+      if (analyticsTimeframe === 'today') {
+        const todayStart = new Date();
+        todayStart.setHours(0, 0, 0, 0);
+        return leadDate >= todayStart;
+      }
+      if (analyticsTimeframe === '7days') {
+        return diffDays <= 7;
+      }
+      if (analyticsTimeframe === '30days') {
+        return diffDays <= 30;
+      }
+      if (analyticsTimeframe === '90days') {
+        return diffDays <= 90;
+      }
+      return true;
+    });
+  }, [leads, analyticsTimeframe]);
+
   // Google Ads UTM & User Behavior Analytics Calculations
   const analyticsData = React.useMemo(() => {
+    const timeframeLeadsCount = timeframeFilteredLeads.length;
     // 1. Google Ads UTM & attribution counts
-    const adAttributedLeads = leads.filter(l => {
+    const adAttributedLeads = timeframeFilteredLeads.filter(l => {
       const src = (l.utmSource || '').toLowerCase();
       const med = (l.utmMedium || '').toLowerCase();
       return src.includes('google') || src.includes('ad') || med === 'cpc' || l.gclid;
     });
     const adAttributedLeadsCount = adAttributedLeads.length;
-    const attributionRate = totalLeads ? Math.round((adAttributedLeadsCount / totalLeads) * 100) : 0;
+    const attributionRate = timeframeLeadsCount ? Math.round((adAttributedLeadsCount / timeframeLeadsCount) * 100) : 0;
     
-    // 2. Paid Pipeline Opportunity (using average project value or estimate totals)
+    // 2. Paid Pipeline Opportunity
     const paidPipelineValue = adAttributedLeads.reduce((acc, l) => acc + (l.totalCostHigh || 0), 0);
     const avgAdLeadValue = adAttributedLeadsCount ? Math.round(paidPipelineValue / adAttributedLeadsCount) : 0;
     
     // 3. Channels split
     const channelsMap: Record<string, { count: number; pipeline: number }> = {};
-    leads.forEach(l => {
+    timeframeFilteredLeads.forEach(l => {
       const source = l.utmSource || 'organic / direct';
       const medium = l.utmMedium || '';
       const key = `${source}${medium ? ' (' + medium + ')' : ''}`;
@@ -219,12 +274,12 @@ export default function Admin() {
       name,
       count: data.count,
       pipeline: data.pipeline,
-      percentage: totalLeads ? Math.round((data.count / totalLeads) * 100) : 0
+      percentage: timeframeLeadsCount ? Math.round((data.count / timeframeLeadsCount) * 100) : 0
     })).sort((a, b) => b.count - a.count);
 
     // 4. Campaigns split
     const campaignsMap: Record<string, { count: number; pipeline: number }> = {};
-    leads.forEach(l => {
+    timeframeFilteredLeads.forEach(l => {
       if (l.utmCampaign) {
         if (!campaignsMap[l.utmCampaign]) {
           campaignsMap[l.utmCampaign] = { count: 0, pipeline: 0 };
@@ -242,7 +297,7 @@ export default function Admin() {
 
     // 5. Keywords split
     const keywordsMap: Record<string, { count: number; pipeline: number }> = {};
-    leads.forEach(l => {
+    timeframeFilteredLeads.forEach(l => {
       if (l.utmTerm) {
         if (!keywordsMap[l.utmTerm]) {
           keywordsMap[l.utmTerm] = { count: 0, pipeline: 0 };
@@ -265,7 +320,7 @@ export default function Admin() {
     let leadsWithBehavior = 0;
     const landingPagesMap: Record<string, number> = {};
 
-    leads.forEach(l => {
+    timeframeFilteredLeads.forEach(l => {
       if (l.behavior) {
         leadsWithBehavior += 1;
         totalPageViews += l.behavior.pageViews?.length || 0;
@@ -286,10 +341,11 @@ export default function Admin() {
     const landingPages = Object.entries(landingPagesMap).map(([path, count]) => ({
       path,
       count,
-      percentage: totalLeads ? Math.round((count / totalLeads) * 100) : 0
+      percentage: timeframeLeadsCount ? Math.round((count / timeframeLeadsCount) * 100) : 0
     })).sort((a, b) => b.count - a.count);
 
     return {
+      timeframeLeadsCount,
       adAttributedLeadsCount,
       attributionRate,
       paidPipelineValue,
@@ -303,32 +359,7 @@ export default function Admin() {
       landingPages,
       leadsWithBehavior
     };
-  }, [leads, totalLeads]);
-
-  // Analytics filtering and calculations
-  const [analyticsTimeframe, setAnalyticsTimeframe] = React.useState<'today' | '7days' | '30days' | 'all'>('7days');
-
-  const filteredEvents = React.useMemo(() => {
-    const now = new Date();
-    return analyticsEvents.filter(event => {
-      const eventDate = new Date(event.timestamp);
-      const diffMs = now.getTime() - eventDate.getTime();
-      const diffDays = diffMs / (1000 * 60 * 60 * 24);
-      
-      if (analyticsTimeframe === 'today') {
-        const todayStart = new Date();
-        todayStart.setHours(0, 0, 0, 0);
-        return eventDate >= todayStart;
-      }
-      if (analyticsTimeframe === '7days') {
-        return diffDays <= 7;
-      }
-      if (analyticsTimeframe === '30days') {
-        return diffDays <= 30;
-      }
-      return true;
-    });
-  }, [analyticsEvents, analyticsTimeframe]);
+  }, [timeframeFilteredLeads]);
 
   const trafficMetrics = React.useMemo(() => {
     const sessions = filteredEvents.filter(e => e.type === 'session_start');
@@ -2918,10 +2949,40 @@ export default function Admin() {
         {/* GOOGLE ADS & BEHAVIOR ANALYTICS PANEL */}
         {activeTab === 'analytics' && (
           <div className="space-y-8 animate-fade-in text-left">
+            {/* GLOBAL TIMEFRAME FILTER BAR */}
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-5 rounded-3xl border border-accent/30 shadow-md">
+              <div>
+                <span className="text-[10px] font-extrabold text-accent uppercase tracking-widest block mb-0.5">Global Timeframe Filter</span>
+                <h3 className="text-lg font-bold text-gray-850">Performance & Analytics Overview</h3>
+              </div>
+              <div className="flex items-center gap-1.5 bg-gray-100 p-1.5 rounded-2xl border border-border-custom overflow-x-auto">
+                {[
+                  { id: 'today', label: 'Today (24 Hrs)' },
+                  { id: '7days', label: 'Last 7 Days' },
+                  { id: '30days', label: 'Last 30 Days' },
+                  { id: '90days', label: 'Last 90 Days' },
+                  { id: 'all', label: 'All Time' }
+                ].map(tf => (
+                  <button
+                    key={tf.id}
+                    onClick={() => setAnalyticsTimeframe(tf.id as any)}
+                    className={cn(
+                      "px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap cursor-pointer",
+                      analyticsTimeframe === tf.id
+                        ? "bg-accent text-gray-950 shadow-sm border border-accent font-black"
+                        : "text-gray-600 hover:text-gray-900 hover:bg-white/80"
+                    )}
+                  >
+                    {tf.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
             {/* KPI Cards Row */}
             <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
               {[
-                { label: 'Total Leads Captured', value: totalLeads, desc: 'Overall inquiries in CRM', icon: <Users className="text-[#3B82F6]" size={20} /> },
+                { label: 'Timeframe Leads', value: analyticsData.timeframeLeadsCount, desc: 'Inquiries in selected timeframe', icon: <Users className="text-[#3B82F6]" size={20} /> },
                 { 
                   label: 'Ad-Attributed Leads', 
                   value: analyticsData.adAttributedLeadsCount, 
