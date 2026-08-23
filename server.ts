@@ -213,6 +213,23 @@ app.post("/api/leads", async (req, res) => {
     if (saved) {
       console.log("Lead saved successfully:", leadData.id);
       
+      // Auto-record analytics event for email lead submission & completion
+      await saveAnalyticsEvent({
+        id: Math.random().toString(36).substr(2, 9),
+        sessionId: req.body.sessionId || Math.random().toString(36).substr(2, 9),
+        type: 'lead_submitted_with_email',
+        path: req.body.path || '/estimator',
+        timestamp: new Date().toISOString()
+      }).catch(err => console.error("Failed auto analytics record:", err));
+
+      await saveAnalyticsEvent({
+        id: Math.random().toString(36).substr(2, 9),
+        sessionId: req.body.sessionId || Math.random().toString(36).substr(2, 9),
+        type: 'estimator_completed',
+        path: req.body.path || '/estimator',
+        timestamp: new Date().toISOString()
+      }).catch(err => console.error("Failed auto analytics record:", err));
+      
       if (process.env.SMTP_USER && process.env.SMTP_PASS) {
         // Build list of uploaded files for admin email
         let filesListHtml = "";
