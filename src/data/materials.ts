@@ -430,6 +430,166 @@ export const materials: SlabMaterial[] = [
     ]
   },
   {
+    id: 'tce-1220',
+    name: 'TCE 1220 – Carrara Velo',
+    brand: 'TCE Stone',
+    priceRange: '$58 – $68',
+    typicalCost: '$2,300 – $3,400',
+    category: 'marble',
+    img: 'https://tcestone.com/wp-content/uploads/2025/11/1220-Detail.png',
+    description: 'Part of TCE\'s 2026 Collection. A soft pristine white base detailed with delicate, flowing Carrara grey veining.',
+    features: [
+      '2026 New Collection',
+      'Delicate Carrara veining',
+      'Soft white background',
+      'High stain resistance'
+    ]
+  },
+  {
+    id: 'tce-2049',
+    name: 'TCE 2049 – Calacatta Dorato',
+    brand: 'TCE Stone',
+    priceRange: '$68 – $88',
+    typicalCost: '$2,800 – $4,200',
+    category: 'marble',
+    img: 'https://tcestone.com/wp-content/uploads/2025/11/2049-Full-Slab-VS.png',
+    description: 'High-end Calacatta quartz boasting rich warm gold and soft smoky grey veining paths across a polished white slab.',
+    features: [
+      '2026 New Collection',
+      'Warm gold and grey veining',
+      'Bold Calacatta statement',
+      'Waterfall island favorite'
+    ]
+  },
+  {
+    id: 'tce-2050',
+    name: 'TCE 2050 – Nero Dorato',
+    brand: 'TCE Stone',
+    priceRange: '$72 – $92',
+    typicalCost: '$3,000 – $4,500',
+    category: 'dark',
+    img: 'https://tcestone.com/wp-content/uploads/2025/11/2050-Full-Slab.png',
+    description: 'Dramatic deep obsidian black quartz crossed by striking lightning-bolt veins of gold and crisp white.',
+    features: [
+      '2026 New Collection',
+      'Deep obsidian black base',
+      'Striking gold & white veining',
+      'High contrast luxury'
+    ]
+  },
+  {
+    id: 'tce-2051',
+    name: 'TCE 2051 – Calacatta Venato',
+    brand: 'TCE Stone',
+    priceRange: '$68 – $88',
+    typicalCost: '$2,800 – $4,200',
+    category: 'marble',
+    img: 'https://tcestone.com/wp-content/uploads/2025/11/2051-Full-Slab-Scaled-Edit.png',
+    description: 'Sweeping, directional charcoal grey veining across a clean white field, recreating natural Italian Venato marble.',
+    features: [
+      '2026 New Collection',
+      'Sweeping directional veins',
+      'Italian Venato aesthetic',
+      'Bookmatch available'
+    ]
+  },
+  {
+    id: 'tce-2052',
+    name: 'TCE 2052 – Calacatta Aurora',
+    brand: 'TCE Stone',
+    priceRange: '$70 – $90',
+    typicalCost: '$2,900 – $4,400',
+    category: 'warm',
+    img: 'https://tcestone.com/wp-content/uploads/2025/12/2052-Full-Slab-Scaled-556x930.jpg',
+    description: 'Soft warm ivory background highlighted by subtle rose-gold and soft charcoal veining accents.',
+    features: [
+      '2026 New Collection',
+      'Warm ivory background',
+      'Rose-gold and grey accents',
+      'Seamless full-height backsplash'
+    ]
+  },
+  {
+    id: 'tce-4047',
+    name: 'TCE 4047 – Bianco Oro',
+    brand: 'TCE Stone',
+    priceRange: '$65 – $82',
+    typicalCost: '$2,600 – $3,900',
+    category: 'marble',
+    img: 'https://tcestone.com/wp-content/uploads/2026/02/4047-Full-Slab-Scaled-556x930.jpg',
+    description: 'Crisp bright white quartz matrix laced with rich honey-gold organic veining.',
+    features: [
+      '2026 New Collection',
+      'Bright white matrix',
+      'Honey-gold organic veining',
+      'Complements brass hardware'
+    ]
+  },
+  {
+    id: 'tce-4048',
+    name: 'TCE 4048 – Bianco Blu',
+    brand: 'TCE Stone',
+    priceRange: '$65 – $82',
+    typicalCost: '$2,600 – $3,900',
+    category: 'marble',
+    img: 'https://tcestone.com/wp-content/uploads/2025/12/4048-Full-Slab-556x930.jpg',
+    description: 'Unique cool white stone featuring subtle slate-blue and cool grey veining accents.',
+    features: [
+      '2026 New Collection',
+      'Slate-blue veining accents',
+      'Cool white base',
+      'Ideal for blue & white shaker kitchens'
+    ]
+  },
+  {
+    id: 'tce-4049',
+    name: 'TCE 4049 – Silver Coast',
+    brand: 'TCE Stone',
+    priceRange: '$62 – $78',
+    typicalCost: '$2,500 – $3,800',
+    category: 'grey',
+    img: 'https://tcestone.com/wp-content/uploads/2026/01/4049-Full-Slab-Scaled-556x930.jpg',
+    description: 'Elegant silver-grey and white wave-pattern quartz mimicking coastal shoreline marble.',
+    features: [
+      '2026 New Collection',
+      'Coastal shoreline wave pattern',
+      'Silver-grey tones',
+      'Non-porous durability'
+    ]
+  },
+  {
+    id: 'tce-4060',
+    name: 'TCE 4060 – Botticino Crema',
+    brand: 'TCE Stone',
+    priceRange: '$58 – $72',
+    typicalCost: '$2,300 – $3,500',
+    category: 'warm',
+    img: 'https://tcestone.com/wp-content/uploads/2025/12/4060-Full-Slab-2-Scaled-556x930.jpg',
+    description: 'Warm creamy beige quartz inspired by Italian Botticino marble with soft tonal mottling.',
+    features: [
+      '2026 New Collection',
+      'Italian Botticino marble look',
+      'Warm creamy beige field',
+      'Pairs with natural wood cabinets'
+    ]
+  },
+  {
+    id: 'tce-4061',
+    name: 'TCE 4061 – Nuvolato Grigio',
+    brand: 'TCE Stone',
+    priceRange: '$60 – $76',
+    typicalCost: '$2,400 – $3,600',
+    category: 'grey',
+    img: 'https://tcestone.com/wp-content/uploads/2026/01/4061-Full-Slab-Scaled-556x930.jpg',
+    description: 'Soft stormy grey clouds across a subtle off-white field for modern industrial and transitional kitchen spaces.',
+    features: [
+      '2026 New Collection',
+      'Stormy grey clouding',
+      'Off-white background',
+      'Modern industrial aesthetic'
+    ]
+  },
+  {
     id: 'kstone-k1052',
     name: 'K1052 – Statuario Venato',
     brand: 'Kstone',
