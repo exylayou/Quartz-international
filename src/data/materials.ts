@@ -946,5 +946,165 @@ export const materials: SlabMaterial[] = [
     priceRange: '$52 – $62', typicalCost: '$2,800 – $4,800', category: 'warm',
     img: '/images/slabs/kasa-ky066.jpg', description: 'Inspired by the famous Taj Mahal quartzite, featuring warm creamy beige tones.',
     features: ['Taj Mahal Pre', 'Heat transfer tech', 'Creamy beige tones', 'Warm luxury']
+  },
+  {
+    id: 'kasa-ksl8701',
+    name: 'KSL8701 – Frosted Rift White',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $60',
+    typicalCost: '$2,100 – $3,000',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Crisp frosted white field detailed with subtle rift-pattern veining for a clean, modern aesthetic.',
+    features: [
+      'Frosted Rift White design',
+      'Subtle linear veining',
+      'Clean modern aesthetic',
+      'Non-porous & stain resistant'
+    ]
+  },
+  {
+    id: 'kasa-ksl8602',
+    name: 'KSL8602 – Silver Mist',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $62',
+    typicalCost: '$2,150 – $3,100',
+    category: 'grey',
+    img: '/images/slabs/kasa-ksl8602.jpg',
+    description: 'Soft silver-grey veining flowing softly across a translucent white quartz field.',
+    features: [
+      'Silver Mist veining',
+      'Soft grey movement',
+      'Translucent white base',
+      'High heat & scratch resistance'
+    ]
+  },
+  {
+    id: 'kasa-ksl6032',
+    name: 'KSL6032 – White Castle',
+    brand: 'Kasa Quartz',
+    priceRange: '$54 – $64',
+    typicalCost: '$2,200 – $3,200',
+    category: 'marble',
+    img: '/images/slabs/kasa-ksl6032.jpg',
+    description: 'Regal architectural quartz with dramatic grey clouding and high-definition marble movement.',
+    features: [
+      'White Castle marble look',
+      'Dramatic grey clouding',
+      'High-definition depth',
+      'Waterfall island favorite'
+    ]
+  },
+  {
+    id: 'kasa-ksl6031',
+    name: 'KSL6031 – Silver Sands',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $60',
+    typicalCost: '$2,100 – $3,000',
+    category: 'grey',
+    img: '/images/slabs/kasa-ksl6031.jpg',
+    description: 'Fine shimmering silver sand textures integrated with soft grey linear marble veining.',
+    features: [
+      'Silver Sands texture',
+      'Linear grey veining',
+      'Subtle shimmer detail',
+      'Easy daily maintenance'
+    ]
+  },
+  {
+    id: 'kasa-ksl6030',
+    name: 'KSL6030 – Spiez White',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $60',
+    typicalCost: '$2,100 – $3,000',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6030.jpg',
+    description: 'Pristine Swiss Alpine white quartz featuring delicate, airy grey highlights.',
+    features: [
+      'Spiez Alpine White base',
+      'Delicate airy highlights',
+      'Minimalist design',
+      'Durable engineered quartz'
+    ]
+  },
+  {
+    id: 'kasa-ksl6017',
+    name: 'KSL6017 – Bianco Riviera',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $62',
+    typicalCost: '$2,150 – $3,100',
+    category: 'marble',
+    img: '/images/slabs/kasa-ksl6017.jpg',
+    description: 'Mediterranean-inspired Riviera white quartz with graceful sweeping slate grey veining.',
+    features: [
+      'Bianco Riviera aesthetic',
+      'Sweeping slate grey veins',
+      'Mediterranean elegance',
+      'Hygienic non-porous surface'
+    ]
+  },
+  {
+    id: 'kasa-ksl6016',
+    name: 'KSL6016 – Volakano White',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $62',
+    typicalCost: '$2,150 – $3,100',
+    category: 'marble',
+    img: '/images/slabs/kasa-ksl6016.jpg',
+    description: 'Inspired by Greek Volakas marble, offering subtle smoky grey diagonal veining across pure white.',
+    features: [
+      'Volakas marble inspiration',
+      'Smoky grey diagonal veins',
+      'Bright white backdrop',
+      'Timeless kitchen choice'
+    ]
+  },
+  {
+    id: 'kasa-ksl6015',
+    name: 'KSL6015 – Blizzard',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $60',
+    typicalCost: '$2,100 – $3,000',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6015.jpg',
+    description: 'Dynamic icy white matrix laced with crisp frost-like quartz movement.',
+    features: [
+      'Blizzard icy white matrix',
+      'Frost-like quartz texture',
+      'High light reflectivity',
+      'Stain & impact resistant'
+    ]
+  },
+  {
+    id: 'kasa-ksl6010',
+    name: 'KSL6010 – Glacier Gold',
+    brand: 'Kasa Quartz',
+    priceRange: '$54 – $65',
+    typicalCost: '$2,250 – $3,300',
+    category: 'warm',
+    img: '/images/slabs/kasa-ksl6010.jpg',
+    description: 'Warm golden veining intertwined with cool glacial grey accents over a bright white backdrop.',
+    features: [
+      'Glacier Gold veining',
+      'Warm gold & cool grey accents',
+      'Complements brass & chrome',
+      'Premium polished finish'
+    ]
+  },
+  {
+    id: 'kasa-ksl6005',
+    name: 'KSL6005 – Sahara Dune',
+    brand: 'Kasa Quartz',
+    priceRange: '$51 – $61',
+    typicalCost: '$2,100 – $3,050',
+    category: 'warm',
+    img: '/images/slabs/kasa-ksl6005.jpg',
+    description: 'Warm desert sand tones with soft ivory linear striations for cozy, organic kitchen interiors.',
+    features: [
+      'Sahara Dune warm tone',
+      'Soft ivory striations',
+      'Organic earth-tone design',
+      'Pairs with wood cabinetry'
+    ]
   }
 ];
