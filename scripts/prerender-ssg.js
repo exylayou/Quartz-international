@@ -293,6 +293,23 @@ CABINET_PSEO_SLUGS.forEach(slug => {
   });
 });
 
+// Automatically generate slab detail routes for every material in materials.ts
+const materialsTsPath = path.resolve(__dirname, '../src/data/materials.ts');
+if (fs.existsSync(materialsTsPath)) {
+  const materialsContent = fs.readFileSync(materialsTsPath, 'utf8');
+  const slabRegex = /id:\s*['"]([^'"]+)['"],\s*name:\s*['"]([^'"]+)['"],\s*brand:\s*['"]([^'"]+)['"]/g;
+  let match;
+  while ((match = slabRegex.exec(materialsContent)) !== null) {
+    const [_, id, name, brand] = match;
+    routes.push({
+      path: `/slab/${id}`,
+      title: `${name} by ${brand} Quartz Countertops Toronto | 2026 Price Guide`,
+      description: `Get typical cost, price per square foot installed, and design specifications for ${name} by ${brand} quartz countertops in Toronto & GTA.`,
+      canonical: `https://quartzinternational.ca/slab/${id}`
+    });
+  }
+}
+
 console.log(`🚀 Running SSG Pre-Rendering Generator for ${routes.length} total routes...`);
 
 routes.forEach(route => {

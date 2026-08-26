@@ -31,6 +31,7 @@ import { materials } from '../data/materials';
 const slabs = materials
   .filter(m => m.brand === 'Silestone')
   .map(m => ({
+    id: m.id,
     name: m.name,
     price: m.priceRange,
     img: m.img,
@@ -122,7 +123,7 @@ export default function Silestone() {
                 {...fadeIn}
                 className="group flex flex-col h-full rounded-[2.5rem] overflow-hidden border border-border-custom hover:shadow-2xl transition-all duration-500 bg-white"
               >
-                <Link to={`/slab/${slab.name.toLowerCase().replace(/\s+/g, '-')}`} className="aspect-video overflow-hidden block relative">
+                <Link to={`/slab/${slab.id}`} className="aspect-video overflow-hidden block relative">
                   <img src={slab.img} alt={slab.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                   <div className="absolute top-4 right-4 group-hover:block hidden">
                     <div className="bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-lg">
@@ -132,7 +133,7 @@ export default function Silestone() {
                 </Link>
                 <div className="p-8 flex flex-col flex-grow">
                   <div className="flex justify-between items-start mb-2">
-                    <Link to={`/slab/${slab.name.toLowerCase().replace(/\s+/g, '-')}`} className="block group/link">
+                    <Link to={`/slab/${slab.id}`} className="block group/link">
                       <h3 className="text-2xl font-bold text-text-primary tracking-tight group-hover/link:text-accent transition-colors">{slab.name}</h3>
                     </Link>
                     <ShieldCheck size={20} className="text-accent/40" />
