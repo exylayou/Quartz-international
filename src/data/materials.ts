@@ -238,6 +238,22 @@ export const materials: SlabMaterial[] = [
   },
 
   {
+    id: 'k8801',
+    name: 'K8801 – Calacatta Oro',
+    brand: 'Kasa Quartz',
+    priceRange: '$49 – $56',
+    typicalCost: '$1,950 – $2,800',
+    category: 'marble',
+    img: '/images/slabs/k8801.jpg',
+    description: 'A rich Calacatta Oro quartz featuring warm gold and subtle grey organic veining across a soft white field.',
+    features: [
+      'Calacatta Oro veining',
+      'Warm gold & grey accents',
+      'Luxurious marble look',
+      'Non-porous surface'
+    ]
+  },
+  {
     id: 'k8802',
     name: 'K8802',
     brand: 'Kasa Quartz',
@@ -270,6 +286,22 @@ export const materials: SlabMaterial[] = [
     ]
   },
   {
+    id: 'k8811',
+    name: 'K8811 – Calacatta Alto',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $58',
+    typicalCost: '$2,000 – $2,900',
+    category: 'marble',
+    img: '/images/slabs/k8811.jpg',
+    description: 'Bold sweeping grey marble veining with pristine clarity over a crisp polished white quartz background.',
+    features: [
+      'Calacatta Alto style',
+      'Bold sweeping veins',
+      'High-definition polish',
+      'Stain & scratch resistant'
+    ]
+  },
+  {
     id: 'k8813',
     name: 'K8813',
     brand: 'Kasa Quartz',
@@ -299,6 +331,86 @@ export const materials: SlabMaterial[] = [
       'Polished luxury finish',
       'Perfect for islands and backsplashes',
       'Superior impact resistance'
+    ]
+  },
+  {
+    id: 'k8826',
+    name: 'K8826 – Calacatta Negro',
+    brand: 'Kasa Quartz',
+    priceRange: '$51 – $59',
+    typicalCost: '$2,100 – $3,000',
+    category: 'dark',
+    img: '/images/slabs/k8826.jpg',
+    description: 'Dramatic black quartz crossed by striking white and silver lightning-bolt veins for high contrast luxury.',
+    features: [
+      'Calacatta Negro dark series',
+      'Striking white veining',
+      'High-contrast luxury',
+      'Statement island design'
+    ]
+  },
+  {
+    id: 'k8831',
+    name: 'K8831 – Calacatta Verona',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $59',
+    typicalCost: '$2,000 – $2,950',
+    category: 'marble',
+    img: '/images/slabs/k8831.jpg',
+    description: 'Classic Italian Verona marble aesthetic featuring soft charcoal veining across a bright white base.',
+    features: [
+      'Calacatta Verona marble look',
+      'Soft charcoal veining',
+      'Bright white base',
+      'Zero sealing required'
+    ]
+  },
+  {
+    id: 'k8833',
+    name: 'K8833 – Calacatta Venice',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $58',
+    typicalCost: '$2,000 – $2,900',
+    category: 'marble',
+    img: '/images/slabs/k8833.jpg',
+    description: 'Venetian-inspired white quartz with delicate, interconnected grey marble veining paths.',
+    features: [
+      'Calacatta Venice design',
+      'Interconnected grey veins',
+      'Venetian elegance',
+      'Ideal for waterfall islands'
+    ]
+  },
+  {
+    id: 'k8835',
+    name: 'K8835 – Calacatta Lago',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $58',
+    typicalCost: '$2,000 – $2,900',
+    category: 'marble',
+    img: '/images/slabs/k8835.jpg',
+    description: 'Serene lake-inspired Calacatta quartz presenting soft smoky grey waves over a pristine white field.',
+    features: [
+      'Calacatta Lago veining',
+      'Soft smoky grey waves',
+      'Serene white background',
+      'Durable & hygienic'
+    ]
+  },
+  {
+    id: 'k8836',
+    name: 'K8836 – Calacatta Clara',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $58',
+    typicalCost: '$2,000 – $2,900',
+    category: 'marble',
+    img: '/images/slabs/kasa-k8836.jpg',
+    description: 'Refined Calacatta quartz presenting clean off-white field detailed with subtle, elegant grey veining.',
+    features: [
+      'Calacatta Clara design',
+      'Refined grey veining',
+      'Clean off-white field',
+      'GTA homeowner favorite'
     ]
   },
   {
