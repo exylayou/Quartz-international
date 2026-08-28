@@ -924,6 +924,116 @@ export const materials: SlabMaterial[] = [
     priceRange: '$92 – $126', typicalCost: '$4,500 – $7,200', category: 'grey',
     img: '/images/slabs/georgian-bluffs.jpg', description: 'A light grey base with subtle veining and industrial textures.',
     features: ['Light grey base', 'Industrial nuance', 'Versatile neutral', 'Engineered strength']
+  },
+  {
+    id: 'caesarstone-5114',
+    name: '5114 Calacatta Maximus',
+    brand: 'Caesarstone',
+    priceRange: '$139 – $201',
+    typicalCost: '$5,200 – $8,800',
+    category: 'marble',
+    img: '/images/slabs/caesarstone-5114.jpg',
+    description: 'Dramatic broad grey veins with subtle gold accents flowing across an oversized pure white slab.',
+    features: ['Calacatta Maximus design', 'Broad sweeping veins', 'Gold & grey highlights', 'Luxury focal centerpiece']
+  },
+  {
+    id: 'caesarstone-5144',
+    name: '5144 Rossa Nova',
+    brand: 'Caesarstone',
+    priceRange: '$105 – $150',
+    typicalCost: '$4,600 – $7,400',
+    category: 'warm',
+    img: '/images/slabs/caesarstone-5144.jpg',
+    description: 'Warm creamy background enriched with delicate amber and golden gradient veining for cozy, inviting interiors.',
+    features: ['Rossa Nova warm series', 'Golden amber gradients', 'Soft velvety warmth', 'Ideal for wood cabinetry']
+  },
+  {
+    id: 'caesarstone-5222',
+    name: '5222 Adamina',
+    brand: 'Caesarstone',
+    priceRange: '$95 – $135',
+    typicalCost: '$4,200 – $6,800',
+    category: 'warm',
+    img: '/images/slabs/caesarstone-5222.jpg',
+    description: 'Soft desert sand palette capturing gentle terracotta and golden hues with natural earth-stone warmth.',
+    features: ['Adamina earth palette', 'Warm sandstone texture', 'Organic natural look', 'Non-porous durability']
+  },
+  {
+    id: 'caesarstone-5820',
+    name: '5820 Darcrest',
+    brand: 'Caesarstone',
+    priceRange: '$110 – $160',
+    typicalCost: '$4,800 – $7,900',
+    category: 'dark',
+    img: '/images/slabs/caesarstone-5820.jpg',
+    description: 'Rich dark charcoal honed surface detailed with organic earthy-brown and white mineral sediments.',
+    features: ['Darcrest honed dark finish', 'Earthy mineral sediments', 'Low-glare matte look', 'Scratch & stain resistant']
+  },
+  {
+    id: 'caesarstone-5101',
+    name: '5101 Empira Black',
+    brand: 'Caesarstone',
+    priceRange: '$135 – $195',
+    typicalCost: '$5,400 – $8,900',
+    category: 'dark',
+    img: '/images/slabs/caesarstone-5101.jpg',
+    description: 'Deep obsidian black marble base laced with delicate, webbed white and light grey veining.',
+    features: ['Empira Black marble luxury', 'Obsidian dark base', 'Fine webbed white veins', 'High-contrast statement']
+  },
+  {
+    id: 'caesarstone-4600',
+    name: '4600 Organic White',
+    brand: 'Caesarstone',
+    priceRange: '$85 – $125',
+    typicalCost: '$3,900 – $6,200',
+    category: 'white',
+    img: '/images/slabs/caesarstone-4600.jpg',
+    description: 'Subtle blend of warm white tones and soft grey mottling for a natural, organic minimalist aesthetic.',
+    features: ['Organic White palette', 'Soft grey mottling', 'Versatile modern white', 'Easy maintenance']
+  },
+  {
+    id: 'caesarstone-6003',
+    name: '6003 Coastline',
+    brand: 'Caesarstone',
+    priceRange: '$98 – $142',
+    typicalCost: '$4,400 – $7,100',
+    category: 'grey',
+    img: '/images/slabs/caesarstone-6003.jpg',
+    description: 'Soft driftwood grey and warm sandy taupe movements inspired by rugged Canadian coastal shorelines.',
+    features: ['Coastal driftwood aesthetic', 'Sandy taupe & grey blend', 'Quiet natural movement', 'Engineered strength']
+  },
+  {
+    id: 'caesarstone-5171',
+    name: '5171 Arbetto',
+    brand: 'Caesarstone',
+    priceRange: '$120 – $175',
+    typicalCost: '$5,000 – $8,200',
+    category: 'marble',
+    img: '/images/slabs/caesarstone-5171.jpg',
+    description: 'Sophisticated crisp white quartz accented by dynamic smoky grey marble veins with high visual movement.',
+    features: ['Arbetto marble veining', 'Crisp white quartz base', 'Smoky grey dynamics', 'Waterfall island favorite']
+  },
+  {
+    id: 'caesarstone-5011',
+    name: '5011 Intense White',
+    brand: 'Caesarstone',
+    priceRange: '$85 – $120',
+    typicalCost: '$3,800 – $6,000',
+    category: 'white',
+    img: '/images/slabs/caesarstone-5011.jpg',
+    description: 'Ultra-clean bright white field designed for crisp, light-maximizing contemporary kitchen countertops.',
+    features: ['Intense White pure field', 'Ultra-clean finish', 'Light maximizing surface', 'Stain resistant']
+  },
+  {
+    id: 'caesarstone-5104',
+    name: '5104 Tuscan Dawn',
+    brand: 'Caesarstone',
+    priceRange: '$108 – $155',
+    typicalCost: '$4,700 – $7,500',
+    category: 'warm',
+    img: '/images/slabs/caesarstone-5104.jpg',
+    description: 'Warm taupe field infused with luminous white veil patterns reminiscent of Tuscan morning light.',
+    features: ['Tuscan Dawn warm tones', 'Luminous white veil', 'Soft organic warmth', 'Premium polished surface']
   }, {
     id: 'tce-4005', name: 'TCE 4005 Calacatta', brand: 'TCE Stone',
     priceRange: '$65 – $85', typicalCost: '$3,000 – $5,000', category: 'marble',
