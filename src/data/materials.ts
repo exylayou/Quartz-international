@@ -1328,5 +1328,93 @@ export const materials: SlabMaterial[] = [
       'Organic earth-tone design',
       'Pairs with wood cabinetry'
     ]
+  },
+  {
+    id: 'k7701',
+    name: 'K7701 – Middle Carrara',
+    brand: 'Kasa Quartz',
+    priceRange: '$49 – $56',
+    typicalCost: '$1,950 – $2,800',
+    category: 'marble',
+    img: '/images/slabs/k7701.jpg',
+    description: 'Classic Middle Carrara limestone quartz featuring soft feathered grey veining over a warm white backdrop.',
+    features: ['Middle Carrara series', 'Feathered grey veining', 'Warm white background', 'Non-porous & durable']
+  },
+  {
+    id: 'k7702',
+    name: 'K7702 – Ice White',
+    brand: 'Kasa Quartz',
+    priceRange: '$49 – $56',
+    typicalCost: '$1,950 – $2,800',
+    category: 'white',
+    img: '/images/slabs/k7702.jpg',
+    description: 'Pristine Ice White quartz slab presenting a bright, crisp surface with light reflective clarity.',
+    features: ['Ice White pristine field', 'Bright light reflectivity', 'Minimalist design', 'High stain resistance']
+  },
+  {
+    id: 'k7703',
+    name: 'K7703 – Nero Stellar',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $58',
+    typicalCost: '$2,000 – $2,900',
+    category: 'dark',
+    img: '/images/slabs/k7703.jpg',
+    description: 'Dramatic black quartz infused with subtle stellar shimmer flecks and fine silver accents.',
+    features: ['Nero Stellar dark series', 'Subtle stellar shimmer', 'High contrast luxury', 'Non-porous hygienic stone']
+  },
+  {
+    id: 'k7705',
+    name: 'K7705 – Carrara Select',
+    brand: 'Kasa Quartz',
+    priceRange: '$49 – $56',
+    typicalCost: '$1,950 – $2,800',
+    category: 'marble',
+    img: '/images/slabs/k7705.jpg',
+    description: 'Refined Italian Carrara select aesthetic with gentle slate-grey linear veins across soft ivory quartz.',
+    features: ['Carrara Select design', 'Gentle slate-grey veins', 'Soft ivory base', 'No sealing required']
+  },
+  {
+    id: 'k7708',
+    name: 'K7708 – Phantom Grey',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $58',
+    typicalCost: '$2,000 – $2,900',
+    category: 'grey',
+    img: '/images/slabs/k7708.jpg',
+    description: 'Sophisticated Phantom Grey quartz detailed with subtle cloudy charcoal movement and fine misting.',
+    features: ['Phantom Grey tone', 'Cloudy charcoal movement', 'Urban modern look', 'Scratch & heat resistant']
+  },
+  {
+    id: 'k7710',
+    name: 'K7710 – Antico Blend',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $58',
+    typicalCost: '$2,000 – $2,900',
+    category: 'warm',
+    img: '/images/slabs/k7710.jpg',
+    description: 'Warm antique stone blend showcasing golden ivory tones intertwined with delicate warm grey striations.',
+    features: ['Antico Blend warm series', 'Golden ivory tones', 'Organic earthiness', 'Complements wood cabinetry']
+  },
+  {
+    id: 'ksv7700',
+    name: 'KSV7700 – Ivory Golden Rift',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $62',
+    typicalCost: '$2,150 – $3,100',
+    category: 'warm',
+    img: '/images/slabs/ksv7700.jpg',
+    description: 'Luxurious ivory field presenting elegant golden-copper rift veining and translucent quartz depth.',
+    features: ['Ivory Golden Rift design', 'Golden-copper veining', 'Translucent quartz depth', 'Premium polished finish']
+  },
+  {
+    id: 'ky077',
+    name: 'KY077 – Jade Fusion',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $62',
+    typicalCost: '$2,150 – $3,100',
+    category: 'warm',
+    img: '/images/slabs/ky077.jpg',
+    description: 'State-of-the-art heat transfer quartz capturing organic jade fusion movement with warm emerald & gold waves.',
+    features: ['Jade Fusion heat transfer tech', 'Warm emerald & gold waves', 'Exotic quartzite look', 'High impact durability']
   }
 ];
