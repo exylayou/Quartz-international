@@ -1071,6 +1071,116 @@ export const materials: SlabMaterial[] = [
     features: ['Grand veining', 'Premium TCE tier', 'Luxurious look', 'Great alternative']
   },
   {
+    id: 'tce-1516',
+    name: 'TCE 1516 Absolute Grey',
+    brand: 'TCE Stone',
+    priceRange: '$58 – $72',
+    typicalCost: '$2,700 – $4,200',
+    category: 'grey',
+    img: 'https://tcestone.com/wp-content/uploads/2025/09/1516-Detail.png',
+    description: 'Modern sleek absolute grey quartz with fine uniform texture for minimal, industrial kitchens.',
+    features: ['Absolute Grey series', 'Sleek uniform texture', 'Modern industrial style', 'Stain & scratch resistant']
+  },
+  {
+    id: 'tce-1518',
+    name: 'TCE 1518 Pure Black',
+    brand: 'TCE Stone',
+    priceRange: '$62 – $78',
+    typicalCost: '$2,900 – $4,500',
+    category: 'dark',
+    img: 'https://tcestone.com/wp-content/uploads/2025/11/1518-Detail-Scaled-3000x2000-1.png',
+    description: 'Deep obsidian pure black engineered stone crafted for high-contrast dramatic island countertops.',
+    features: ['Pure Black obsidian base', 'High contrast statement', 'Polished luxury finish', 'Non-porous quartz']
+  },
+  {
+    id: 'tce-2028',
+    name: 'TCE 2028 Crystal Mist II',
+    brand: 'TCE Stone',
+    priceRange: '$52 – $62',
+    typicalCost: '$2,400 – $3,600',
+    category: 'white',
+    img: 'https://tcestone.com/wp-content/uploads/2025/11/2028-Detail-Scaled.png',
+    description: 'Lively crystal white matrix laced with reflective mineral misting for bright interior spaces.',
+    features: ['Crystal Mist matrix', 'Reflective mineral flecks', 'Brightens kitchen space', 'Low maintenance']
+  },
+  {
+    id: 'tce-2045',
+    name: 'TCE 2045 Calacatta Lux',
+    brand: 'TCE Stone',
+    priceRange: '$65 – $82',
+    typicalCost: '$3,000 – $4,900',
+    category: 'marble',
+    img: 'https://tcestone.com/wp-content/uploads/2024/09/2045-Detail-VS-Scaled.png',
+    description: 'Luxurious Calacatta marble design with broad charcoal and warm gold veining across bright white quartz.',
+    features: ['Calacatta Lux design', 'Broad charcoal veining', 'Warm gold highlights', 'Waterfall island favorite']
+  },
+  {
+    id: 'tce-2046',
+    name: 'TCE 2046 Marquina',
+    brand: 'TCE Stone',
+    priceRange: '$68 – $84',
+    typicalCost: '$3,150 – $5,100',
+    category: 'dark',
+    img: 'https://tcestone.com/wp-content/uploads/2024/07/2046-Full-Slab-Scaled.png',
+    description: 'Dramatic Spanish Nero Marquina black quartz crossed with striking white lightning veining.',
+    features: ['Nero Marquina black quartz', 'Striking white lightning veins', 'High contrast luxury', 'Statement countertop']
+  },
+  {
+    id: 'tce-4042',
+    name: 'TCE 4042 Seraphina Oro',
+    brand: 'TCE Stone',
+    priceRange: '$70 – $88',
+    typicalCost: '$3,200 – $5,300',
+    category: 'marble',
+    img: 'https://tcestone.com/wp-content/uploads/2024/07/4042-Full-Slab.png',
+    description: 'Ethereal Seraphina white base infused with soft golden-bronze veining and warm translucent depth.',
+    features: ['Seraphina Oro veining', 'Golden-bronze accents', 'Translucent marble depth', 'Premium polished surface']
+  },
+  {
+    id: 'tce-4043',
+    name: 'TCE 4043 Luna Grigio',
+    brand: 'TCE Stone',
+    priceRange: '$62 – $78',
+    typicalCost: '$2,850 – $4,600',
+    category: 'grey',
+    img: 'https://tcestone.com/wp-content/uploads/2024/07/4043-Full-Slab-Scaled.png',
+    description: 'Luminous moon-grey quartz featuring soft smoky waves and subtle silver clouds.',
+    features: ['Luna Grigio moon-grey', 'Smoky wave movement', 'Subtle silver mist', 'Versatile modern neutral']
+  },
+  {
+    id: 'tce-4044',
+    name: 'TCE 4044 Solara',
+    brand: 'TCE Stone',
+    priceRange: '$66 – $84',
+    typicalCost: '$3,100 – $5,000',
+    category: 'warm',
+    img: 'https://tcestone.com/wp-content/uploads/2024/07/4044-Full-Slab.png',
+    description: 'Radiant sunlit white quartz with warm honey and champagne veining for cozy, inviting kitchens.',
+    features: ['Solara sunlit design', 'Honey & champagne veins', 'Warm inviting aesthetic', 'Complements wood cabinetry']
+  },
+  {
+    id: 'tce-4045',
+    name: 'TCE 4045 Antico',
+    brand: 'TCE Stone',
+    priceRange: '$64 – $80',
+    typicalCost: '$2,950 – $4,800',
+    category: 'warm',
+    img: 'https://tcestone.com/wp-content/uploads/2024/07/4045-Full-Slab-Edit-556x930.jpg',
+    description: 'Antique stone blend exhibiting warm ivory, cream, and soft grey striations.',
+    features: ['Antico stone blend', 'Warm ivory & cream', 'Organic earthiness', 'Engineered durability']
+  },
+  {
+    id: 'tce-4062',
+    name: 'TCE 4062 Dolce Crema',
+    brand: 'TCE Stone',
+    priceRange: '$65 – $82',
+    typicalCost: '$3,000 – $4,900',
+    category: 'warm',
+    img: 'https://tcestone.com/wp-content/uploads/2026/01/4062-Full-Slab-Scaled-556x930.jpg',
+    description: 'Soft Italian crema background detailed with delicate warm ivory and caramel veining.',
+    features: ['Dolce Crema series', 'Caramel & ivory veining', 'Warm velvety texture', 'Ideal for traditional & modern']
+  },
+  {
     id: 'lucent-carrara-grigio', name: 'Carrara Grigio', brand: 'Lucent Quartz',
     priceRange: '$70 – $90', typicalCost: '$3,200 – $5,200', category: 'grey',
     img: '/images/slabs/lucent-carrara-grigio.jpg', description: 'A classic Carrara blend with predominantly grey, cloudy patterns.',
