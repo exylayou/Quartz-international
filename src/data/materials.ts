@@ -926,61 +926,6 @@ export const materials: SlabMaterial[] = [
     features: ['Light grey base', 'Industrial nuance', 'Versatile neutral', 'Engineered strength']
   },
   {
-    id: 'caesarstone-5114',
-    name: '5114 Calacatta Maximus',
-    brand: 'Caesarstone',
-    priceRange: '$139 – $201',
-    typicalCost: '$5,200 – $8,800',
-    category: 'marble',
-    img: '/images/slabs/caesarstone-5114.jpg',
-    description: 'Dramatic broad grey veins with subtle gold accents flowing across an oversized pure white slab.',
-    features: ['Calacatta Maximus design', 'Broad sweeping veins', 'Gold & grey highlights', 'Luxury focal centerpiece']
-  },
-  {
-    id: 'caesarstone-5144',
-    name: '5144 Rossa Nova',
-    brand: 'Caesarstone',
-    priceRange: '$109 – $150',
-    typicalCost: '$4,750 – $7,500',
-    category: 'warm',
-    img: '/images/slabs/caesarstone-5144.jpg',
-    description: 'Warm creamy background enriched with delicate amber and golden gradient veining for cozy, inviting interiors.',
-    features: ['Rossa Nova warm series', 'Golden amber gradients', 'Soft velvety warmth', 'Ideal for wood cabinetry']
-  },
-  {
-    id: 'caesarstone-5222',
-    name: '5222 Adamina',
-    brand: 'Caesarstone',
-    priceRange: '$95 – $135',
-    typicalCost: '$4,200 – $6,800',
-    category: 'warm',
-    img: '/images/slabs/caesarstone-5222.jpg',
-    description: 'Soft desert sand palette capturing gentle terracotta and golden hues with natural earth-stone warmth.',
-    features: ['Adamina earth palette', 'Warm sandstone texture', 'Organic natural look', 'Non-porous durability']
-  },
-  {
-    id: 'caesarstone-5820',
-    name: '5820 Darcrest',
-    brand: 'Caesarstone',
-    priceRange: '$96 – $128',
-    typicalCost: '$4,150 – $6,400',
-    category: 'dark',
-    img: '/images/slabs/caesarstone-5820.jpg',
-    description: 'Rich dark charcoal honed surface detailed with organic earthy-brown and white mineral sediments.',
-    features: ['Darcrest honed dark finish', 'Earthy mineral sediments', 'Low-glare matte look', 'Scratch & stain resistant']
-  },
-  {
-    id: 'caesarstone-5101',
-    name: '5101 Empira Black',
-    brand: 'Caesarstone',
-    priceRange: '$145 – $207',
-    typicalCost: '$5,800 – $9,500',
-    category: 'dark',
-    img: '/images/slabs/caesarstone-5101.jpg',
-    description: 'Deep obsidian black marble base laced with delicate, webbed white and light grey veining.',
-    features: ['Empira Black marble luxury', 'Obsidian dark base', 'Fine webbed white veins', 'High-contrast statement']
-  },
-  {
     id: 'caesarstone-4600',
     name: '4600 Organic White',
     brand: 'Caesarstone',
@@ -1003,37 +948,114 @@ export const materials: SlabMaterial[] = [
     features: ['Coastal grey aesthetic', 'Sandy taupe & grey blend', 'Quiet natural movement', 'Engineered strength']
   },
   {
-    id: 'caesarstone-5171',
-    name: '5171 Arbetto',
+    id: 'caesarstone-5116',
+    name: '5116 Calacatta Nectar',
     brand: 'Caesarstone',
-    priceRange: '$120 – $175',
-    typicalCost: '$5,000 – $8,200',
+    priceRange: '$115 – $160',
+    typicalCost: '$5,000 – $7,800',
     category: 'marble',
-    img: '/images/slabs/caesarstone-5171.jpg',
-    description: 'Sophisticated crisp white quartz accented by dynamic smoky grey marble veins with high visual movement.',
-    features: ['Arbetto marble veining', 'Crisp white quartz base', 'Smoky grey dynamics', 'Waterfall island favorite']
+    img: '/images/slabs/caesarstone-5116.jpg',
+    description: 'Luxurious translucent white base lacing warm honey-gold and soft grey veins across an expansive slab.',
+    features: ['Calacatta Nectar design', 'Warm honey-gold veining', 'Translucent marble base', 'Waterfall island favorite']
   },
   {
-    id: 'caesarstone-5011',
-    name: '5011 Intense White',
+    id: 'caesarstone-5115',
+    name: '5115 Calacatta Stillstorm',
     brand: 'Caesarstone',
-    priceRange: '$85 – $120',
-    typicalCost: '$3,800 – $6,000',
-    category: 'white',
-    img: '/images/slabs/caesarstone-5011.jpg',
-    description: 'Ultra-clean bright white field designed for crisp, light-maximizing contemporary kitchen countertops.',
-    features: ['Intense White pure field', 'Ultra-clean finish', 'Light maximizing surface', 'Stain resistant']
+    priceRange: '$110 – $155',
+    typicalCost: '$4,800 – $7,500',
+    category: 'marble',
+    img: '/images/slabs/caesarstone-5115.jpg',
+    description: 'Serene white quartz background detailed with quiet charcoal and silver storm veining.',
+    features: ['Calacatta Stillstorm', 'Quiet charcoal veining', 'Soft silver accents', 'Ethereal luxury']
   },
   {
-    id: 'caesarstone-5104',
-    name: '5104 Tuscan Dawn',
+    id: 'caesarstone-5105',
+    name: '5105 Calacatta Dreamwave',
     brand: 'Caesarstone',
-    priceRange: '$108 – $155',
-    typicalCost: '$4,700 – $7,500',
+    priceRange: '$120 – $165',
+    typicalCost: '$5,200 – $8,200',
+    category: 'marble',
+    img: '/images/slabs/caesarstone-5105.jpg',
+    description: 'Dynamic flowing waves of slate grey and golden bronze flowing gracefully across crisp white quartz.',
+    features: ['Calacatta Dreamwave', 'Flowing slate & gold waves', 'High visual depth', 'Statement countertop']
+  },
+  {
+    id: 'caesarstone-5140',
+    name: '5140 Dreamy Carrara',
+    brand: 'Caesarstone',
+    priceRange: '$95 – $135',
+    typicalCost: '$4,200 – $6,500',
+    category: 'marble',
+    img: '/images/slabs/caesarstone-5140.jpg',
+    description: 'Gentle, cloudy Carrara marble movement lacing whisper-grey veining over a warm ivory backdrop.',
+    features: ['Dreamy Carrara look', 'Whisper-grey veining', 'Warm ivory field', 'Subtle elegance']
+  },
+  {
+    id: 'caesarstone-5132',
+    name: '5132 Celestial Sky',
+    brand: 'Caesarstone',
+    priceRange: '$98 – $140',
+    typicalCost: '$4,300 – $6,800',
+    category: 'grey',
+    img: '/images/slabs/caesarstone-5132.jpg',
+    description: 'Celestial atmosphere featuring cloudy slate-blue and warm dove-grey movement inspired by atmospheric horizons.',
+    features: ['Celestial Sky palette', 'Atmospheric blue-grey clouds', 'Modern artistic statement', 'Polished finish']
+  },
+  {
+    id: 'caesarstone-8103',
+    name: '8103 Calacatta Nobella',
+    brand: 'Caesarstone',
+    priceRange: '$125 – $175',
+    typicalCost: '$5,500 – $8,500',
+    category: 'marble',
+    img: '/images/slabs/caesarstone-8103.jpg',
+    description: 'Noble Italian Calacatta design with bold, sweeping dark grey veins edged in soft golden warmth.',
+    features: ['Calacatta Nobella luxury', 'Bold sweeping veins', 'Golden-edged detail', 'Oversized slab format']
+  },
+  {
+    id: 'caesarstone-8251',
+    name: '8251 Taj Whisper',
+    brand: 'Caesarstone',
+    priceRange: '$105 – $150',
+    typicalCost: '$4,600 – $7,200',
     category: 'warm',
-    img: '/images/slabs/caesarstone-5104.jpg',
-    description: 'Warm taupe field infused with luminous white veil patterns reminiscent of Tuscan morning light.',
-    features: ['Tuscan Dawn warm tones', 'Luminous white veil', 'Soft organic warmth', 'Premium polished surface']
+    img: '/images/slabs/caesarstone-8251.jpg',
+    description: 'Inspired by Taj Mahal quartzite, presenting warm creamy-beige linear striations with translucent depth.',
+    features: ['Taj Whisper quartzite look', 'Warm creamy-beige field', 'Translucent striations', 'Cozy luxury']
+  },
+  {
+    id: 'caesarstone-4011',
+    name: '4011 Cloudburst Concrete',
+    brand: 'Caesarstone',
+    priceRange: '$89 – $120',
+    typicalCost: '$3,900 – $5,900',
+    category: 'grey',
+    img: '/images/slabs/caesarstone-4011.jpg',
+    description: 'Soft cloud-white concrete texture presenting a tactile rough-honed surface for industrial modern interiors.',
+    features: ['Cloudburst Concrete texture', 'Tactile rough-honed surface', 'Soft cloud-white shade', 'Industrial modern style']
+  },
+  {
+    id: 'caesarstone-6046',
+    name: '6046 Moorland Fog',
+    brand: 'Caesarstone',
+    priceRange: '$92 – $128',
+    typicalCost: '$4,100 – $6,300',
+    category: 'grey',
+    img: '/images/slabs/caesarstone-6046.jpg',
+    description: 'Dense foggy grey matrix enriched with warm granite-like composite flecks and subtle movement.',
+    features: ['Moorland Fog texture', 'Granite-like composite flecks', 'Dense grey movement', 'High durability']
+  },
+  {
+    id: 'caesarstone-8101',
+    name: '8101 Clearlight',
+    brand: 'Caesarstone',
+    priceRange: '$95 – $130',
+    typicalCost: '$4,200 – $6,400',
+    category: 'white',
+    img: '/images/slabs/caesarstone-8101.jpg',
+    description: 'Bright luminous white surface woven with whisper-fine crystal misting for bright, modern spaces.',
+    features: ['Clearlight luminous surface', 'Whisper-fine crystal mist', 'Clean modern white', 'Low maintenance']
   }, {
     id: 'tce-4005', name: 'TCE 4005 Carrara Cloud', brand: 'TCE Stone',
     priceRange: '$65 – $85', typicalCost: '$3,000 – $5,000', category: 'marble',
