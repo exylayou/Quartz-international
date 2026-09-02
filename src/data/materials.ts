@@ -1317,11 +1317,6 @@ export const materials: SlabMaterial[] = [
     img: '/images/slabs/white-arabesque.jpg', description: 'A bright white background heavily threaded with contrasting dark grey veins.',
     features: ['Heavy grey threading', 'Bright white background', 'HybriQ+ Technology', 'Striking contrast']
   }, {
-    id: 'silestone-lagoon', name: 'Lagoon', brand: 'Silestone',
-    priceRange: '$73 – $96', typicalCost: '$4,000 – $6,500', category: 'marble',
-    img: '/images/slabs/lagoon.jpg', description: 'A delicate white surface featuring soft, cloudy grey veining reminiscent of natural stone.',
-    features: ['Cloudy grey veining', 'Delicate white base', 'HybriQ+ Technology', 'Natural stone look']
-  }, {
     id: 'silestone-lusso', name: 'Lusso', brand: 'Silestone',
     priceRange: '$85 – $114', typicalCost: '$4,000 – $6,500', category: 'warm',
     img: '/images/slabs/lusso.jpg', description: 'A warm, creamy background intertwined with golden and pale grey veins.',
@@ -1765,5 +1760,170 @@ export const materials: SlabMaterial[] = [
     img: '/images/slabs/caesarstone-9141.jpg',
     description: 'Official Caesarstone 9141 Ice Snow engineered quartz countertop slab featuring high visual depth and premium durability for modern kitchens.',
     features: ["9141 Ice Snow design", "White quartz palette", "Non-porous & stain resistant", "Polished premium finish"]
+  },
+  {
+    id: 'silestone-versailles-ivory',
+    name: 'Le Chic Versailles Ivory',
+    brand: 'Silestone',
+    priceRange: '$115 – $160',
+    typicalCost: '$5,000 – $7,800',
+    category: 'warm',
+    img: '/images/slabs/silestone-versailles-ivory.jpg',
+    description: 'Golden metallic sparkles and warm ivory veining inspired by 18th century Parisian palaces.',
+    features: ['Le Chic Collection', 'Golden metallic sparkles', 'Warm ivory veining', 'HybriQ+ Technology']
+  },
+  {
+    id: 'silestone-bohemian-flame',
+    name: 'Le Chic Bohemian Flame',
+    brand: 'Silestone',
+    priceRange: '$120 – $165',
+    typicalCost: '$5,200 – $8,200',
+    category: 'warm',
+    img: '/images/slabs/silestone-bohemian-flame.jpg',
+    description: 'Deep copper and metallic amber veining flowing dramatically over a dark matte field.',
+    features: ['Le Chic Bohème Collection', 'Metallic amber veining', 'Deep luxury contrast', 'HybriQ+ Technology']
+  },
+  {
+    id: 'silestone-eclectic-pearl',
+    name: 'Le Chic Eclectic Pearl',
+    brand: 'Silestone',
+    priceRange: '$115 – $160',
+    typicalCost: '$5,000 – $7,800',
+    category: 'white',
+    img: '/images/slabs/silestone-eclectic-pearl.jpg',
+    description: 'Luminous pearl backdrop laced with metallic silver and subtle warm grey gradients.',
+    features: ['Le Chic Collection', 'Luminous pearl base', 'Metallic silver accents', 'HybriQ+ Technology']
+  },
+  {
+    id: 'silestone-victorian-silver',
+    name: 'Le Chic Victorian Silver',
+    brand: 'Silestone',
+    priceRange: '$110 – $155',
+    typicalCost: '$4,800 – $7,500',
+    category: 'grey',
+    img: '/images/slabs/silestone-victorian-silver.jpg',
+    description: 'Soft silver-grey background detailed with subtle gradient white marble veining.',
+    features: ['Le Chic Collection', 'Victorian silver tones', 'Gradient marble veins', 'HybriQ+ Technology']
+  },
+  {
+    id: 'silestone-parisien-bleu',
+    name: 'Le Chic Parisien Bleu',
+    brand: 'Silestone',
+    priceRange: '$125 – $175',
+    typicalCost: '$5,500 – $8,500',
+    category: 'dark',
+    img: '/images/slabs/silestone-parisien-bleu.jpg',
+    description: 'Deep Parisian blue-charcoal field with striking bronze-copper veining.',
+    features: ['Le Chic Collection', 'Parisian blue-charcoal', 'Bronze-copper veins', 'HybriQ+ Technology']
+  },
+  {
+    id: 'silestone-romantic-ash',
+    name: 'Le Chic Romantic Ash',
+    brand: 'Silestone',
+    priceRange: '$110 – $155',
+    typicalCost: '$4,800 – $7,500',
+    category: 'grey',
+    img: '/images/slabs/silestone-romantic-ash.jpg',
+    description: 'Ash grey base with flowing chalk-white and silver striations.',
+    features: ['Le Chic Bohème', 'Ash grey base', 'Chalk-white striations', 'HybriQ+ Technology']
+  },
+  {
+    id: 'silestone-jardin-emerald',
+    name: 'Le Chic Jardin Emerald',
+    brand: 'Silestone',
+    priceRange: '$125 – $175',
+    typicalCost: '$5,500 – $8,500',
+    category: 'dark',
+    img: '/images/slabs/silestone-jardin-emerald.jpg',
+    description: 'Regal dark emerald green quartz with subtle gold and white vein networks.',
+    features: ['Le Chic Bohème', 'Dark emerald green', 'Gold & white veining', 'Exotic luxury statement']
+  },
+  {
+    id: 'silestone-riviere-rose',
+    name: 'Le Chic Riviére Rose',
+    brand: 'Silestone',
+    priceRange: '$120 – $165',
+    typicalCost: '$5,200 – $8,200',
+    category: 'warm',
+    img: '/images/slabs/silestone-riviere-rose.jpg',
+    description: 'Soft rose-quartz blush tone with gentle warm white veining.',
+    features: ['Le Chic Bohème', 'Soft rose blush tone', 'Gentle warm veining', 'HybriQ+ Technology']
+  },
+  {
+    id: 'silestone-lime-delight',
+    name: 'Urban Crush Lime Delight',
+    brand: 'Silestone',
+    priceRange: '$95 – $135',
+    typicalCost: '$4,200 – $6,500',
+    category: 'warm',
+    img: '/images/slabs/silestone-lime-delight.jpg',
+    description: 'Warm limestone-textured beige quartz designed for modern urban minimalism.',
+    features: ['Urban Crush Series', 'Limestone textured beige', 'Tactile matte finish', 'HybriQ+ Technology']
+  },
+  {
+    id: 'silestone-concrete-pulse',
+    name: 'Urban Crush Concrete Pulse',
+    brand: 'Silestone',
+    priceRange: '$92 – $130',
+    typicalCost: '$4,100 – $6,300',
+    category: 'grey',
+    img: '/images/slabs/silestone-concrete-pulse.jpg',
+    description: 'Industrial raw concrete aesthetic featuring subtle grey shading and tactile depth.',
+    features: ['Urban Crush Series', 'Raw concrete look', 'Industrial grey shading', 'HybriQ+ Technology']
+  },
+  {
+    id: 'silestone-brass-relish',
+    name: 'Urban Crush Brass Relish',
+    brand: 'Silestone',
+    priceRange: '$98 – $140',
+    typicalCost: '$4,300 – $6,800',
+    category: 'warm',
+    img: '/images/slabs/silestone-brass-relish.jpg',
+    description: 'Rich brown sandstone texture with subtle brass-golden graining.',
+    features: ['Urban Crush Series', 'Brown sandstone texture', 'Brass-golden graining', 'HybriQ+ Technology']
+  },
+  {
+    id: 'silestone-cinder-craze',
+    name: 'Urban Crush Cinder Craze',
+    brand: 'Silestone',
+    priceRange: '$95 – $135',
+    typicalCost: '$4,200 – $6,500',
+    category: 'dark',
+    img: '/images/slabs/silestone-cinder-craze.jpg',
+    description: 'Dark charcoal cinder finish bringing urban industrial grain to kitchen counters.',
+    features: ['Urban Crush Series', 'Dark charcoal cinder', 'Industrial graining', 'HybriQ+ Technology']
+  },
+  {
+    id: 'silestone-ethereal-dusk',
+    name: 'Ethereal Dusk',
+    brand: 'Silestone',
+    priceRange: '$110 – $155',
+    typicalCost: '$4,800 – $7,500',
+    category: 'marble',
+    img: '/images/slabs/silestone-ethereal-dusk.jpg',
+    description: 'White canvas crossed with modern bluish-grey directionless veining.',
+    features: ['Ethereal Collection', 'Bluish-grey veining', 'Directionless marble flow', 'HybriQ+ Technology']
+  },
+  {
+    id: 'silestone-ethereal-haze',
+    name: 'Ethereal Haze',
+    brand: 'Silestone',
+    priceRange: '$105 – $150',
+    typicalCost: '$4,600 – $7,200',
+    category: 'marble',
+    img: '/images/slabs/silestone-ethereal-haze.jpg',
+    description: 'Soft neutral grey veining drifting gracefully over a crisp white field.',
+    features: ['Ethereal Collection', 'Soft grey drifting veins', 'Versatile modern white', 'HybriQ+ Technology']
+  },
+  {
+    id: 'silestone-ethereal-noctis',
+    name: 'Ethereal Noctis',
+    brand: 'Silestone',
+    priceRange: '$115 – $160',
+    typicalCost: '$5,000 – $7,800',
+    category: 'marble',
+    img: '/images/slabs/silestone-ethereal-noctis.jpg',
+    description: 'Deep black and dark grey veining creating high-contrast architectural depth on pure white quartz.',
+    features: ['Ethereal Collection', 'Deep black & grey veins', 'High-contrast marble depth', 'HybriQ+ Technology']
   }
 ];
