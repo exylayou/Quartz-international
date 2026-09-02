@@ -1035,40 +1035,15 @@ export const materials: SlabMaterial[] = [
     description: 'Warm taupe field infused with luminous white veil patterns reminiscent of Tuscan morning light.',
     features: ['Tuscan Dawn warm tones', 'Luminous white veil', 'Soft organic warmth', 'Premium polished surface']
   }, {
-    id: 'tce-4005', name: 'TCE 4005 Calacatta', brand: 'TCE Stone',
+    id: 'tce-4005', name: 'TCE 4005 Carrara Cloud', brand: 'TCE Stone',
     priceRange: '$65 – $85', typicalCost: '$3,000 – $5,000', category: 'marble',
-    img: 'https://tcestone.com/wp-content/uploads/2024/03/4005-detail-556x930.png', description: 'A popular and affordable Calacatta alternative with distinct grey veining.',
-    features: ['Affordable Calacatta look', 'Distinct grey veining', 'Value focused', 'Beautiful finish']
+    img: 'https://tcestone.com/wp-content/uploads/2024/03/4005-detail-556x930.png', description: 'A popular and affordable Carrara alternative with distinct grey cloudy veining.',
+    features: ['Carrara Cloud look', 'Distinct grey veining', 'Value focused', 'Beautiful finish']
   }, {
-    id: 'tce-4016', name: 'TCE 4016 Statuario', brand: 'TCE Stone',
-    priceRange: '$65 – $85', typicalCost: '$3,000 – $5,000', category: 'marble',
-    img: 'https://tcestone.com/wp-content/uploads/2024/07/4046-Full-Slab.png', description: 'A bright white base with delicate Statuario-style veining.',
-    features: ['Statuario aesthetic', 'Delicate veining', 'Bright base', 'Excellent value']
-  }, {
-    id: 'tce-2040', name: 'TCE 2040 Carrara', brand: 'TCE Stone',
+    id: 'tce-2040', name: 'TCE 2040 Vivid Stream', brand: 'TCE Stone',
     priceRange: '$60 – $80', typicalCost: '$2,800 – $4,800', category: 'marble',
-    img: 'https://tcestone.com/wp-content/uploads/2024/03/2040-556x930.jpg', description: 'A soft, blended Carrara marble look perfect for subtle kitchens.',
-    features: ['Soft Carrara look', 'Blended veins', 'Timeless style', 'Budget friendly']
-  }, {
-    id: 'tce-4015', name: 'TCE 4015', brand: 'TCE Stone',
-    priceRange: '$65 – $85', typicalCost: '$3,000 – $5,000', category: 'white',
-    img: 'https://tcestone.com/wp-content/uploads/2024/07/4042-Full-Slab.png', description: 'A dynamic white quartz with flowing grey patterns.',
-    features: ['Flowing patterns', 'Dynamic visual', 'Stain resistant', 'Economical choice']
-  }, {
-    id: 'tce-5013', name: 'TCE 5013', brand: 'TCE Stone',
-    priceRange: '$70 – $90', typicalCost: '$3,200 – $5,200', category: 'grey',
-    img: 'https://tcestone.com/wp-content/uploads/2024/03/2032-556x930.jpg', description: 'A stylish mid-grey quartz featuring subtle white lines.',
-    features: ['Mid-grey tone', 'Subtle white lines', 'Modern appeal', 'High value']
-  }, {
-    id: 'tce-5011', name: 'TCE 5011', brand: 'TCE Stone',
-    priceRange: '$70 – $90', typicalCost: '$3,200 – $5,200', category: 'dark',
-    img: 'https://tcestone.com/wp-content/uploads/2024/03/2014-556x637.jpg', description: 'A striking dark quartz with intricate veining details.',
-    features: ['Striking dark tone', 'Intricate details', 'Bold statement', 'Durable surface']
-  }, {
-    id: 'tce-5022', name: 'TCE 5022', brand: 'TCE Stone',
-    priceRange: '$75 – $95', typicalCost: '$3,500 – $5,500', category: 'marble',
-    img: 'https://tcestone.com/wp-content/uploads/2024/07/4043-Full-Slab-Scaled.png', description: 'A premium TCE option featuring grand marble-like veining.',
-    features: ['Grand veining', 'Premium TCE tier', 'Luxurious look', 'Great alternative']
+    img: 'https://tcestone.com/wp-content/uploads/2024/03/2040-556x930.jpg', description: 'A soft, blended Carrara marble stream pattern perfect for subtle kitchens.',
+    features: ['Vivid Stream movement', 'Blended veins', 'Timeless style', 'Budget friendly']
   },
   {
     id: 'tce-1516',
