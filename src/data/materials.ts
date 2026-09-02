@@ -1056,6 +1056,83 @@ export const materials: SlabMaterial[] = [
     img: '/images/slabs/caesarstone-8101.jpg',
     description: 'Bright luminous white surface woven with whisper-fine crystal misting for bright, modern spaces.',
     features: ['Clearlight luminous surface', 'Whisper-fine crystal mist', 'Clean modern white', 'Low maintenance']
+  },
+  {
+    id: 'caesarstone-4030',
+    name: '4030 Stone Grey',
+    brand: 'Caesarstone',
+    priceRange: '$85 – $115',
+    typicalCost: '$3,800 – $5,800',
+    category: 'grey',
+    img: '/images/slabs/caesarstone-4030.jpg',
+    description: 'Smooth, subtle mid-toned grey quartz field lacing soft organic neutral shading for contemporary kitchens.',
+    features: ['Stone Grey neutral palette', 'Smooth mid-toned grey', 'Contemporary versatility', 'Low maintenance']
+  },
+  {
+    id: 'caesarstone-2141',
+    name: '2141 Blizzard',
+    brand: 'Caesarstone',
+    priceRange: '$85 – $115',
+    typicalCost: '$3,800 – $5,800',
+    category: 'white',
+    img: '/images/slabs/caesarstone-2141.jpg',
+    description: 'Pristine bright blizzard white matrix studded with tiny reflective flecks to illuminate modern spaces.',
+    features: ['Blizzard bright white base', 'Reflective flecks', 'Illuminates kitchen interiors', 'Stain & scratch resistant']
+  },
+  {
+    id: 'caesarstone-1141',
+    name: '1141 Pure White',
+    brand: 'Caesarstone',
+    priceRange: '$88 – $120',
+    typicalCost: '$3,900 – $6,000',
+    category: 'white',
+    img: '/images/slabs/caesarstone-1141.jpg',
+    description: 'The ultimate pure solid white quartz countertop, famous for its clean, seamless minimalist aesthetic.',
+    features: ['Pure White seamless solid', 'Minimalist architectural favorite', 'Pure uniform bright white', 'Hygienic non-porous surface']
+  },
+  {
+    id: 'caesarstone-3141',
+    name: '3141 Osprey',
+    brand: 'Caesarstone',
+    priceRange: '$85 – $115',
+    typicalCost: '$3,800 – $5,800',
+    category: 'white',
+    img: '/images/slabs/caesarstone-3141.jpg',
+    description: 'Classic fine-grain white and soft grey aggregate pattern creating a subtle, durable engineered stone finish.',
+    features: ['Osprey fine-grain aggregate', 'Subtle grey flecks', 'Durable engineered stone', 'Timeless kitchen neutral']
+  },
+  {
+    id: 'caesarstone-4120',
+    name: '4120 Raven',
+    brand: 'Caesarstone',
+    priceRange: '$88 – $120',
+    typicalCost: '$3,900 – $6,000',
+    category: 'dark',
+    img: '/images/slabs/caesarstone-4120.jpg',
+    description: 'Sleek slate-black and charcoal quartz matrix providing deep contrast for modern and industrial kitchens.',
+    features: ['Raven dark slate charcoal', 'Deep contrast statement', 'Polished luxury finish', 'Stain & heat resistant']
+  },
+  {
+    id: 'caesarstone-5003',
+    name: '5003 Piatra Grey',
+    brand: 'Caesarstone',
+    priceRange: '$98 – $138',
+    typicalCost: '$4,300 – $6,800',
+    category: 'dark',
+    img: '/images/slabs/caesarstone-5003.jpg',
+    description: 'Sophisticated deep slate-grey marble base crossed by delicate chalk-white chalky veining.',
+    features: ['Piatra Grey marble look', 'Deep slate base', 'Chalk-white veining', 'High contrast luxury']
+  },
+  {
+    id: 'caesarstone-5112',
+    name: '5112 Aterra Blanca',
+    brand: 'Caesarstone',
+    priceRange: '$102 – $145',
+    typicalCost: '$4,500 – $7,200',
+    category: 'warm',
+    img: '/images/slabs/caesarstone-5112.jpg',
+    description: 'Ethereal misty white field laced with graceful translucent golden-earth veining for refined luxury interiors.',
+    features: ['Aterra Blanca ICON series', 'Graceful golden veining', 'Ethereal translucent depth', 'Polished premium finish']
   }, {
     id: 'tce-4005', name: 'TCE 4005 Carrara Cloud', brand: 'TCE Stone',
     priceRange: '$65 – $85', typicalCost: '$3,000 – $5,000', category: 'marble',
