@@ -184,7 +184,7 @@ export const cities: Record<string, CityData> = {
     areasServed: 'Vaughan, Concord, Woodbridge, and Maple',
     popularMaterial: 'Premium Quartz',
     localIntro: 'Quartz International delivers top-tier quartz countertop fabrication and installation for Vaughan homeowners and contractors. We specialize in high-end remodels and custom home builds throughout Concord, Woodbridge, and Maple.',
-    showroomGuidance: 'Vaughan and Concord are the hub of the stone industry! Our clients have direct access to TCE Stone, Sio4, and Lucent showrooms right in their backyard, making slab viewing incredibly easy.',
+    showroomGuidance: 'Vaughan and Concord are the hub of the stone industry! Our clients have direct access to TCE Stone, KStone, and Lucent showrooms right in their backyard, making slab viewing incredibly easy.',
     localProjectNotes: 'Vaughan projects frequently feature premium edge profiles, massive kitchen islands, and full-height quartz backsplashes. Because of our proximity to major slab warehouses in Concord, scheduling slab viewings and material delivery is highly efficient.',
     popularOptions: [
       { name: 'Thick Mitered Edge Quartz', desc: 'Highly requested in Vaughan custom builds.' },
@@ -192,7 +192,7 @@ export const cities: Record<string, CityData> = {
       { name: 'Dramatic Veined Quartz', desc: 'Statement pieces for large kitchen islands.' }
     ],
     customFaqs: [
-      { q: 'Can I view the slabs in Vaughan?', a: 'Yes! Vaughan is home to major showrooms like TCE Stone, Sio4, and Lucent, allowing you to easily view and tag your exact slab locally.' }
+      { q: 'Can I view the slabs in Vaughan?', a: 'Yes! Vaughan is home to major showrooms like TCE Stone, KStone, and Lucent, allowing you to easily view and tag your exact slab locally.' }
     ],
     showrooms: [
       { brand: 'TCE', address: '200 Romina Dr, Vaughan' },
