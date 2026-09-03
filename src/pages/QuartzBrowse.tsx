@@ -133,7 +133,10 @@ export default function QuartzBrowse() {
   const [searchParams, setSearchParams] = useSearchParams();
   const [activeLook, setActiveLook] = useState<string | null>(null);
   const [activePrice, setActivePrice] = useState<string | null>(null);
+  const [activeBrand, setActiveBrand] = useState<string | null>(null);
   const slabsRef = useRef<HTMLElement>(null);
+
+  const availableBrands = Array.from(new Set(slabs.map(s => s.brand))).filter(Boolean).sort();
 
   useEffect(() => {
     const styleParam = searchParams.get('style');
@@ -149,13 +152,21 @@ export default function QuartzBrowse() {
     } else {
       setActivePrice(null);
     }
+
+    const brandParam = searchParams.get('brand');
+    if (brandParam && availableBrands.map(b => b.toLowerCase().replace(/\s+/g, '-')).includes(brandParam.toLowerCase())) {
+      const foundBrand = availableBrands.find(b => b.toLowerCase().replace(/\s+/g, '-') === brandParam.toLowerCase());
+      setActiveBrand(foundBrand || null);
+    } else {
+      setActiveBrand(null);
+    }
   }, [searchParams]);
 
   const filteredSlabs = slabs.filter(slab => {
     // 1. Look/Style Filter
     const matchesLook = activeLook ? slab.category === activeLook : true;
     
-    // 2. Price Tier Filter (mapped dynamically based on our actual price ranges using midpoint)
+    // 2. Price Tier Filter
     const priceRange = slab.price;
     const numbers = priceRange.match(/\d+/g);
     let slabTier = 'standard';
@@ -170,13 +181,17 @@ export default function QuartzBrowse() {
     
     const matchesPrice = activePrice ? slabTier === activePrice : true;
     
-    return matchesLook && matchesPrice;
+    // 3. Brand Filter
+    const matchesBrand = activeBrand ? slab.brand.toLowerCase() === activeBrand.toLowerCase() : true;
+    
+    return matchesLook && matchesPrice && matchesBrand;
   });
 
   const handleLookClick = (lookId: string | null) => {
     const newParams: Record<string, string> = {};
     if (lookId) newParams.style = lookId;
     if (activePrice) newParams.price = activePrice;
+    if (activeBrand) newParams.brand = activeBrand.toLowerCase().replace(/\s+/g, '-');
     setSearchParams(newParams);
     setTimeout(() => {
       slabsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -187,6 +202,18 @@ export default function QuartzBrowse() {
     const newParams: Record<string, string> = {};
     if (activeLook) newParams.style = activeLook;
     if (priceId) newParams.price = priceId;
+    if (activeBrand) newParams.brand = activeBrand.toLowerCase().replace(/\s+/g, '-');
+    setSearchParams(newParams);
+    setTimeout(() => {
+      slabsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 100);
+  };
+
+  const handleBrandClick = (brandName: string | null) => {
+    const newParams: Record<string, string> = {};
+    if (activeLook) newParams.style = activeLook;
+    if (activePrice) newParams.price = activePrice;
+    if (brandName) newParams.brand = brandName.toLowerCase().replace(/\s+/g, '-');
     setSearchParams(newParams);
     setTimeout(() => {
       slabsRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -257,16 +284,17 @@ export default function QuartzBrowse() {
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8 text-center md:text-left">
             <div>
               <h2 className="text-3xl md:text-4xl font-bold text-text-primary mb-4 tracking-tight">
-                {activeLook ? `${getLabelFromId(activeLook)} Designs` : 'Most Popular Quartz Designs in Toronto'}
+                {activeBrand ? `${activeBrand} Quartz Slabs` : activeLook ? `${getLabelFromId(activeLook)} Designs` : 'Most Popular Quartz Designs in Toronto'}
               </h2>
               <p className="text-gray-500 max-w-xl">
                 {activeLook 
                   ? `Showing our curated collection of ${getLabelFromId(activeLook).toLowerCase()} slabs.` 
                   : 'Selected by interior designers for their timeless appeal and performance.'}
                 {activePrice && ` Filtered by ${activePrice} budget.`}
+                {activeBrand && ` Filtered by ${activeBrand}.`}
               </p>
             </div>
-            {(activeLook || activePrice) && (
+            {(activeLook || activePrice || activeBrand) && (
               <button 
                 onClick={() => setSearchParams({})}
                 className="flex items-center gap-2 text-xs font-bold text-accent uppercase tracking-[0.2em] hover:text-text-primary transition-colors pb-1 border-b-2 border-accent/20"
@@ -276,71 +304,112 @@ export default function QuartzBrowse() {
             )}
           </div>
 
-          {/* SaaS-style Filter Toolbar */}
+          {/* SaaS-style Mobile-Optimized Filter Toolbar */}
           <div className="flex flex-col gap-4 mb-12 p-6 bg-white border border-border-custom rounded-2xl shadow-sm">
-            {/* Style Filter Row */}
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() => handleLookClick(null)}
-                className={cn(
-                  "px-4 py-2 rounded-lg text-xs font-bold border transition-all duration-300",
-                  activeLook === null
-                    ? "bg-text-primary border-text-primary text-white"
-                    : "bg-white border-border-custom text-text-primary hover:border-text-primary"
-                )}
-              >
-                All Looks
-              </button>
-              {looks.map((look) => (
+            {/* 1. Style Filter Row */}
+            <div>
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2 block">Design Style</span>
+              <div className="flex overflow-x-auto scrollbar-none gap-2 pb-1 -mx-2 px-2 snap-x">
                 <button
-                  key={look.id}
-                  onClick={() => handleLookClick(look.id)}
+                  onClick={() => handleLookClick(null)}
                   className={cn(
-                    "px-4 py-2 rounded-lg text-xs font-bold border transition-all duration-300",
-                    activeLook === look.id
+                    "px-4 py-2 rounded-lg text-xs font-bold border transition-all duration-300 shrink-0 snap-start",
+                    activeLook === null
                       ? "bg-text-primary border-text-primary text-white"
                       : "bg-white border-border-custom text-text-primary hover:border-text-primary"
                   )}
                 >
-                  {look.label}
+                  All Looks
                 </button>
-              ))}
+                {looks.map((look) => (
+                  <button
+                    key={look.id}
+                    onClick={() => handleLookClick(look.id)}
+                    className={cn(
+                      "px-4 py-2 rounded-lg text-xs font-bold border transition-all duration-300 shrink-0 snap-start",
+                      activeLook === look.id
+                        ? "bg-text-primary border-text-primary text-white"
+                        : "bg-white border-border-custom text-text-primary hover:border-text-primary"
+                    )}
+                  >
+                    {look.label}
+                  </button>
+                ))}
+              </div>
             </div>
 
             {/* Divider */}
             <div className="h-px bg-border-custom" />
 
-            {/* Price Filter Row */}
-            <div className="flex flex-wrap gap-2">
-              <button
-                onClick={() => handlePriceClick(null)}
-                className={cn(
-                  "px-4 py-2 rounded-lg text-xs font-bold border transition-all duration-300",
-                  activePrice === null
-                    ? "bg-text-primary border-text-primary text-white"
-                    : "bg-white border-border-custom text-text-primary hover:border-text-primary"
-                )}
-              >
-                All Budgets
-              </button>
-              {[
-                { id: 'standard', label: 'Standard ($48 – $68)' },
-                { id: 'premium', label: 'Premium ($69 – $95)' },
-                { id: 'luxury', label: 'Luxury ($100 – $170)' },
-              ].map((tier) => (
+            {/* 2. Brand Filter Row */}
+            <div>
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2 block">Quartz Brand</span>
+              <div className="flex overflow-x-auto scrollbar-none gap-2 pb-1 -mx-2 px-2 snap-x">
                 <button
-                  key={tier.id}
-                  onClick={() => handlePriceClick(tier.id)}
+                  onClick={() => handleBrandClick(null)}
                   className={cn(
-                    "px-4 py-2 rounded-lg text-xs font-bold border transition-all duration-300",
-                    activePrice === tier.id
+                    "px-4 py-2 rounded-lg text-xs font-bold border transition-all duration-300 shrink-0 snap-start",
+                    activeBrand === null
+                      ? "bg-accent border-accent text-white"
+                      : "bg-white border-border-custom text-text-primary hover:border-accent"
+                  )}
+                >
+                  All Brands
+                </button>
+                {availableBrands.map((b) => (
+                  <button
+                    key={b}
+                    onClick={() => handleBrandClick(b)}
+                    className={cn(
+                      "px-4 py-2 rounded-lg text-xs font-bold border transition-all duration-300 shrink-0 snap-start",
+                      activeBrand === b
+                        ? "bg-accent border-accent text-white"
+                        : "bg-white border-border-custom text-text-primary hover:border-accent"
+                    )}
+                  >
+                    {b}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Divider */}
+            <div className="h-px bg-border-custom" />
+
+            {/* 3. Price Filter Row */}
+            <div>
+              <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2 block">Installed Price Tier</span>
+              <div className="flex overflow-x-auto scrollbar-none gap-2 pb-1 -mx-2 px-2 snap-x">
+                <button
+                  onClick={() => handlePriceClick(null)}
+                  className={cn(
+                    "px-4 py-2 rounded-lg text-xs font-bold border transition-all duration-300 shrink-0 snap-start",
+                    activePrice === null
                       ? "bg-text-primary border-text-primary text-white"
                       : "bg-white border-border-custom text-text-primary hover:border-text-primary"
                   )}
                 >
-                  {tier.label}
+                  All Budgets
                 </button>
-              ))}
+                {[
+                  { id: 'standard', label: 'Standard ($48 – $68)' },
+                  { id: 'premium', label: 'Premium ($69 – $95)' },
+                  { id: 'luxury', label: 'Luxury ($100 – $170)' },
+                ].map((tier) => (
+                  <button
+                    key={tier.id}
+                    onClick={() => handlePriceClick(tier.id)}
+                    className={cn(
+                      "px-4 py-2 rounded-lg text-xs font-bold border transition-all duration-300 shrink-0 snap-start",
+                      activePrice === tier.id
+                        ? "bg-text-primary border-text-primary text-white"
+                        : "bg-white border-border-custom text-text-primary hover:border-text-primary"
+                    )}
+                  >
+                    {tier.label}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
           
