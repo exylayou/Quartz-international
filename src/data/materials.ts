@@ -1270,48 +1270,6 @@ export const materials: SlabMaterial[] = [
     img: '/images/slabs/lucent-sparkle-white.jpg', description: 'A lively white quartz embedded with tiny, reflective mirrored flecks.',
     features: ['Reflective flecks', 'Lively texture', 'Brightens space', 'Fun and modern']
   }, {
-    id: 'sio4-statuario', name: 'Sio4 Statuario', brand: 'Sio4',
-    priceRange: '$139 – $201', typicalCost: '$3,500 – $6,000', category: 'marble',
-    img: '/images/slabs/sio4-statuario.jpg', description: 'A clean, bright white base featuring subtle, elegant Statuario veins.',
-    features: ['Elegant Statuario veins', 'Clean bright base', 'Sophisticated style', 'High durability']
-  }, {
-    id: 'sio4-carrara', name: 'Sio4 Carrara', brand: 'Sio4',
-    priceRange: '$51 – $59', typicalCost: '$3,200 – $5,200', category: 'marble',
-    img: '/images/slabs/sio4-carrara.jpg', description: 'A classic Sio4 Carrara design with soft, feathered grey patterns.',
-    features: ['Classic Carrara design', 'Soft feathered patterns', 'Versatile appeal', 'Excellent value']
-  }, {
-    id: 'sio4-concrete', name: 'Sio4 Concrete', brand: 'Sio4',
-    priceRange: '$92 – $126', typicalCost: '$3,500 – $5,500', category: 'grey',
-    img: '/images/slabs/sio4-concrete.jpg', description: 'An urban grey quartz that beautifully mimics poured architectural concrete.',
-    features: ['Poured concrete look', 'Urban grey', 'Industrial aesthetic', 'Durable finish']
-  }, {
-    id: 'sio4-nero-marquina', name: 'Sio4 Nero Marquina', brand: 'Sio4',
-    priceRange: '$85 – $110', typicalCost: '$4,000 – $6,000', category: 'dark',
-    img: '/images/slabs/sio4-nero-marquina.jpg', description: 'A dramatic black quartz highlighted by energetic white veining.',
-    features: ['Dramatic black base', 'Energetic white veining', 'Luxury statement', 'High contrast']
-  }, {
-    id: 'sio4-pietra-grey', name: 'Sio4 Pietra Grey', brand: 'Sio4',
-    priceRange: '$80 – $105', typicalCost: '$3,800 – $5,800', category: 'dark',
-    img: '/images/slabs/sio4-pietra-grey.jpg', description: 'A warm, sophisticated grey base crossed by striking white lines.',
-    features: ['Warm sophisticated grey', 'Striking white lines', 'Elegant contrast', 'Engineered strength']
-  }, {
-    id: 'sio4-bianco', name: 'Sio4 Bianco', brand: 'Sio4',
-    priceRange: '$51 – $59', typicalCost: '$3,200 – $5,200', category: 'white',
-    img: '/images/slabs/sio4-bianco.jpg', description: 'A lively white quartz featuring subtle texture and depth.',
-    features: ['Subtle texture and depth', 'Lively white', 'Inviting feel', 'Cost-effective']
-  }, {
-    id: 'sio4-grigio', name: 'Sio4 Grigio', brand: 'Sio4',
-    priceRange: '$75 – $95', typicalCost: '$3,500 – $5,500', category: 'grey',
-    img: '/images/slabs/sio4-grigio.jpg', description: 'A versatile mid-grey quartz that pairs beautifully with any cabinet color.',
-    features: ['Versatile mid-grey', 'Pairs well with cabinets', 'Modern neutral', 'Stain resistant']
-  }, {
-    id: 'sio4-venato', name: 'Sio4 Venato', brand: 'Sio4',
-    priceRange: '$70 – $90', typicalCost: '$3,800 – $5,800', category: 'marble',
-    img: '/images/slabs/sio4-venato.jpg', description: 'A stunning white quartz defined by an intricate, sprawling vein network.',
-    features: ['Intricate sprawling veins', 'Stunning white base', 'Premium Sio4 tier', 'Highly durable']
-  }
-
-  , {
     id: 'silestone-white-arabesque', name: 'White Arabesque', brand: 'Silestone',
     priceRange: '$85 – $114', typicalCost: '$4,500 – $7,000', category: 'marble',
     img: '/images/slabs/white-arabesque.jpg', description: 'A bright white background heavily threaded with contrasting dark grey veins.',
