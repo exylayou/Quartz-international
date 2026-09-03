@@ -374,4 +374,30 @@ routes.forEach(route => {
   console.log(`  ✅ Pre-rendered SSG route: ${route.path}`);
 });
 
+// Dynamically generate sitemap.xml for all routes
+const sitemapUrls = [
+  'https://quartzinternational.ca/',
+  ...routes.map(r => r.canonical)
+];
+
+const uniqueSitemapUrls = Array.from(new Set(sitemapUrls));
+const today = new Date().toISOString().split('T')[0];
+
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${uniqueSitemapUrls.map(url => `  <url>
+    <loc>${url}</loc>
+    <lastmod>${today}</lastmod>
+    <changefreq>${url === 'https://quartzinternational.ca/' ? 'daily' : 'weekly'}</changefreq>
+    <priority>${url === 'https://quartzinternational.ca/' ? '1.0' : url.includes('/slab/') ? '0.8' : '0.9'}</priority>
+  </url>`).join('\n')}
+</urlset>`;
+
+const PUBLIC_SITEMAP = path.resolve(__dirname, '../public/sitemap.xml');
+const DIST_SITEMAP = path.join(DIST_DIR, 'sitemap.xml');
+
+fs.writeFileSync(PUBLIC_SITEMAP, sitemapXml, 'utf8');
+fs.writeFileSync(DIST_SITEMAP, sitemapXml, 'utf8');
+
+console.log(`📡 Dynamically generated sitemap.xml with ${uniqueSitemapUrls.length} URLs in public/ and dist/!`);
 console.log(`✨ SSG Pre-rendering Complete! Successfully pre-rendered ${routes.length} static HTML files.`);
