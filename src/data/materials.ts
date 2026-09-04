@@ -1477,5 +1477,170 @@ export const materials: SlabMaterial[] = [
     img: '/images/slabs/kasa-ksl6011.jpg',
     description: 'Official Kasa Quartz JHU200-32 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
     features: ['JHU200-32 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+  {
+    id: 'kasa-k9925',
+    name: 'K9925',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz K9925 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['K9925 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+  {
+    id: 'kasa-k9924',
+    name: 'K9924',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz K9924 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['K9924 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+  {
+    id: 'kasa-k9923',
+    name: 'K9923',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz K9923 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['K9923 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+  {
+    id: 'kasa-k9922',
+    name: 'K9922',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz K9922 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['K9922 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+  {
+    id: 'kasa-k9919',
+    name: 'K9919',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz K9919 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['K9919 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+  {
+    id: 'kasa-k9917',
+    name: 'K9917',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz K9917 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['K9917 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+  {
+    id: 'kasa-k9912',
+    name: 'K9912',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz K9912 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['K9912 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+  {
+    id: 'kasa-k9911',
+    name: 'K9911',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz K9911 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['K9911 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+  {
+    id: 'kasa-k9910',
+    name: 'K9910',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz K9910 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['K9910 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+  {
+    id: 'kasa-k9909',
+    name: 'K9909',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz K9909 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['K9909 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+  {
+    id: 'kasa-k9907',
+    name: 'K9907',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz K9907 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['K9907 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+  {
+    id: 'kasa-k9906',
+    name: 'K9906',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz K9906 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['K9906 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+  {
+    id: 'kasa-k9908',
+    name: 'K9908',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz K9908 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['K9908 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+  {
+    id: 'kasa-k9905',
+    name: 'K9905',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz K9905 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['K9905 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+  {
+    id: 'kasa-k9902',
+    name: 'K9902',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz K9902 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['K9902 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
   }
 ];
