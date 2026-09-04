@@ -12,7 +12,7 @@ export interface SlabMaterial {
 }
 
 export const materials: SlabMaterial[] = [
-  {
+{
     id: 'caesarstone-5112',
     name: '5112 Aterra Blanca',
     brand: 'Caesarstone',
@@ -28,7 +28,7 @@ export const materials: SlabMaterial[] = [
       'Polished premium finish'
     ]
   },
-  {
+{
     id: 'caesarstone-4044',
     name: '4044 Airy Concrete',
     brand: 'Caesarstone',
@@ -44,7 +44,7 @@ export const materials: SlabMaterial[] = [
       'Durable engineered surface'
     ]
   },
-  {
+{
     id: 'caesarstone-5810',
     name: '5810 Black Tempal',
     brand: 'Caesarstone',
@@ -60,7 +60,7 @@ export const materials: SlabMaterial[] = [
       'High impact resistance'
     ]
   },
-  {
+{
     id: 'caesarstone-5131',
     name: '5131 Calacatta Nuvo',
     brand: 'Caesarstone',
@@ -76,7 +76,7 @@ export const materials: SlabMaterial[] = [
       'Elite centerpiece design'
     ]
   },
-  {
+{
     id: 'caesarstone-5111',
     name: '5111 Statuario Nuvo',
     brand: 'Caesarstone',
@@ -92,7 +92,7 @@ export const materials: SlabMaterial[] = [
       'Low maintenance luxury'
     ]
   },
-  {
+{
     id: 'caesarstone-5141',
     name: '5141 Frosty Carrina',
     brand: 'Caesarstone',
@@ -108,7 +108,7 @@ export const materials: SlabMaterial[] = [
       'Timeless sophisticated look'
     ]
   },
-  {
+{
     id: 'caesarstone-5031',
     name: '5031 Statuario Maximus',
     brand: 'Caesarstone',
@@ -124,7 +124,7 @@ export const materials: SlabMaterial[] = [
       'Durable non-porous surface'
     ]
   },
-  {
+{
     id: 'caesarstone-5151',
     name: '5151 Empira White',
     brand: 'Caesarstone',
@@ -140,7 +140,7 @@ export const materials: SlabMaterial[] = [
       'Elegant centerpiece appeal'
     ]
   },
-  {
+{
     id: 'ciq2003-sleek-cement',
     name: 'CIQ2003 – Sleek Cement',
     brand: 'Lucent Quartz',
@@ -156,7 +156,7 @@ export const materials: SlabMaterial[] = [
       'Low maintenance modern style'
     ]
   },
-  {
+{
     id: 'ciq4211-bianco-carrara',
     name: 'CIQ4211 – Bianco Carrara',
     brand: 'Lucent Quartz',
@@ -172,7 +172,7 @@ export const materials: SlabMaterial[] = [
       'Polished premium finish'
     ]
   },
-  {
+{
     id: 'lq6754-serenity-gold',
     name: 'LQ6754 – Serenity Gold',
     brand: 'Lucent Quartz',
@@ -188,7 +188,7 @@ export const materials: SlabMaterial[] = [
       'Excellent for large kitchen islands'
     ]
   },
-  {
+{
     id: 'ciq4111-bianco-oro',
     name: 'CIQ4111 – Bianco Oro',
     brand: 'Lucent Quartz',
@@ -204,7 +204,7 @@ export const materials: SlabMaterial[] = [
       'Certified indoor air quality'
     ]
   },
-  {
+{
     id: 'lq4600-arctic-white',
     name: 'LQ4600 – Arctic White',
     brand: 'Lucent Quartz',
@@ -220,7 +220,7 @@ export const materials: SlabMaterial[] = [
       'Brightens up cabinetry colors'
     ]
   },
-  {
+{
     id: 'lq5131-calacatta',
     name: 'LQ5131 – Calacatta',
     brand: 'Lucent Quartz',
@@ -236,8 +236,7 @@ export const materials: SlabMaterial[] = [
       'High impact resistance'
     ]
   },
-
-  {
+{
     id: 'k8801',
     name: 'K8801 – Calacatta Oro',
     brand: 'Kasa Quartz',
@@ -253,7 +252,7 @@ export const materials: SlabMaterial[] = [
       'Non-porous surface'
     ]
   },
-  {
+{
     id: 'k8802',
     name: 'K8802',
     brand: 'Kasa Quartz',
@@ -269,7 +268,7 @@ export const materials: SlabMaterial[] = [
       'Non-porous hygienic surface'
     ]
   },
-  {
+{
     id: 'k8803',
     name: 'K8803',
     brand: 'Kasa Quartz',
@@ -285,7 +284,7 @@ export const materials: SlabMaterial[] = [
       'GTA homeowner favorite'
     ]
   },
-  {
+{
     id: 'k8811',
     name: 'K8811 – Calacatta Alto',
     brand: 'Kasa Quartz',
@@ -301,7 +300,7 @@ export const materials: SlabMaterial[] = [
       'Stain & scratch resistant'
     ]
   },
-  {
+{
     id: 'k8813',
     name: 'K8813',
     brand: 'Kasa Quartz',
@@ -317,7 +316,7 @@ export const materials: SlabMaterial[] = [
       'Complements any cabinet style'
     ]
   },
-  {
+{
     id: 'k8825',
     name: 'K8825',
     brand: 'Kasa Quartz',
@@ -333,7 +332,7 @@ export const materials: SlabMaterial[] = [
       'Superior impact resistance'
     ]
   },
-  {
+{
     id: 'k8826',
     name: 'K8826 – Calacatta Negro',
     brand: 'Kasa Quartz',
@@ -349,7 +348,7 @@ export const materials: SlabMaterial[] = [
       'Statement island design'
     ]
   },
-  {
+{
     id: 'k8831',
     name: 'K8831 – Calacatta Verona',
     brand: 'Kasa Quartz',
@@ -365,7 +364,7 @@ export const materials: SlabMaterial[] = [
       'Zero sealing required'
     ]
   },
-  {
+{
     id: 'k8833',
     name: 'K8833 – Calacatta Venice',
     brand: 'Kasa Quartz',
@@ -381,7 +380,7 @@ export const materials: SlabMaterial[] = [
       'Ideal for waterfall islands'
     ]
   },
-  {
+{
     id: 'k8835',
     name: 'K8835 – Calacatta Lago',
     brand: 'Kasa Quartz',
@@ -397,7 +396,7 @@ export const materials: SlabMaterial[] = [
       'Durable & hygienic'
     ]
   },
-  {
+{
     id: 'k8836',
     name: 'K8836 – Calacatta Clara',
     brand: 'Kasa Quartz',
@@ -413,7 +412,7 @@ export const materials: SlabMaterial[] = [
       'GTA homeowner favorite'
     ]
   },
-  {
+{
     id: 'k8837',
     name: 'K8837',
     brand: 'Kasa Quartz',
@@ -429,7 +428,7 @@ export const materials: SlabMaterial[] = [
       'Eco-friendly manufacturing'
     ]
   },
-  {
+{
     id: 'k9916',
     name: 'K9916',
     brand: 'Kasa Quartz',
@@ -445,7 +444,7 @@ export const materials: SlabMaterial[] = [
       'Stunning centerpiece design'
     ]
   },
-  {
+{
     id: 'tce-9001',
     name: 'TCE 9001 – Pure White',
     brand: 'TCE Stone',
@@ -461,7 +460,7 @@ export const materials: SlabMaterial[] = [
       'Perfect modern look'
     ]
   },
-  {
+{
     id: 'tce-4052',
     name: 'TCE 4052 – Natural Cream',
     brand: 'TCE Stone',
@@ -477,7 +476,7 @@ export const materials: SlabMaterial[] = [
       'Low-maintenance luxury finish'
     ]
   },
-  {
+{
     id: 'tce-4040',
     name: 'TCE 4040 – Arctic Flow',
     brand: 'TCE Stone',
@@ -493,7 +492,7 @@ export const materials: SlabMaterial[] = [
       'No sealing required'
     ]
   },
-  {
+{
     id: 'tce-4039',
     name: 'TCE 4039 – Golden Flow',
     brand: 'TCE Stone',
@@ -509,7 +508,7 @@ export const materials: SlabMaterial[] = [
       'Non-porous hygienic surface'
     ]
   },
-  {
+{
     id: 'tce-4032',
     name: 'TCE 4032 – Calacatta Flow',
     brand: 'TCE Stone',
@@ -525,7 +524,7 @@ export const materials: SlabMaterial[] = [
       'Stunning design movement'
     ]
   },
-  {
+{
     id: 'tce-2012',
     name: 'TCE 2012 – Speckled Cream',
     brand: 'TCE Stone',
@@ -541,7 +540,7 @@ export const materials: SlabMaterial[] = [
       'Complements wood cabinetry'
     ]
   },
-  {
+{
     id: 'tce-1220',
     name: 'TCE 1220 – Carrara Velo',
     brand: 'TCE Stone',
@@ -557,7 +556,7 @@ export const materials: SlabMaterial[] = [
       'High stain resistance'
     ]
   },
-  {
+{
     id: 'tce-2049',
     name: 'TCE 2049 – Calacatta Dorato',
     brand: 'TCE Stone',
@@ -573,7 +572,7 @@ export const materials: SlabMaterial[] = [
       'Waterfall island favorite'
     ]
   },
-  {
+{
     id: 'tce-2050',
     name: 'TCE 2050 – Nero Dorato',
     brand: 'TCE Stone',
@@ -589,7 +588,7 @@ export const materials: SlabMaterial[] = [
       'High contrast luxury'
     ]
   },
-  {
+{
     id: 'tce-2051',
     name: 'TCE 2051 – Calacatta Venato',
     brand: 'TCE Stone',
@@ -605,7 +604,7 @@ export const materials: SlabMaterial[] = [
       'Bookmatch available'
     ]
   },
-  {
+{
     id: 'tce-2052',
     name: 'TCE 2052 – Calacatta Aurora',
     brand: 'TCE Stone',
@@ -621,7 +620,7 @@ export const materials: SlabMaterial[] = [
       'Seamless full-height backsplash'
     ]
   },
-  {
+{
     id: 'tce-4047',
     name: 'TCE 4047 – Bianco Oro',
     brand: 'TCE Stone',
@@ -637,7 +636,7 @@ export const materials: SlabMaterial[] = [
       'Complements brass hardware'
     ]
   },
-  {
+{
     id: 'tce-4048',
     name: 'TCE 4048 – Bianco Blu',
     brand: 'TCE Stone',
@@ -653,7 +652,7 @@ export const materials: SlabMaterial[] = [
       'Ideal for blue & white shaker kitchens'
     ]
   },
-  {
+{
     id: 'tce-4049',
     name: 'TCE 4049 – Silver Coast',
     brand: 'TCE Stone',
@@ -669,7 +668,7 @@ export const materials: SlabMaterial[] = [
       'Non-porous durability'
     ]
   },
-  {
+{
     id: 'tce-4060',
     name: 'TCE 4060 – Botticino Crema',
     brand: 'TCE Stone',
@@ -685,7 +684,7 @@ export const materials: SlabMaterial[] = [
       'Pairs with natural wood cabinets'
     ]
   },
-  {
+{
     id: 'tce-4061',
     name: 'TCE 4061 – Nuvolato Grigio',
     brand: 'TCE Stone',
@@ -701,7 +700,7 @@ export const materials: SlabMaterial[] = [
       'Modern industrial aesthetic'
     ]
   },
-  {
+{
     id: 'kstone-k1052',
     name: 'K1052 – Statuario Venato',
     brand: 'Kstone',
@@ -717,7 +716,7 @@ export const materials: SlabMaterial[] = [
       'High-gloss polished finish'
     ]
   },
-  {
+{
     id: 'kstone-k1055',
     name: 'K1055 – Pandora White',
     brand: 'Kstone',
@@ -733,7 +732,7 @@ export const materials: SlabMaterial[] = [
       'Certified safe for food prep'
     ]
   },
-  {
+{
     id: 'kstone-k1056',
     name: 'K1056 – Arabescato White',
     brand: 'Kstone',
@@ -749,7 +748,7 @@ export const materials: SlabMaterial[] = [
       'Ideal for backsplashes'
     ]
   },
-  {
+{
     id: 'kstone-k1066',
     name: 'K1066 – Statuario Thunder',
     brand: 'Kstone',
@@ -765,7 +764,7 @@ export const materials: SlabMaterial[] = [
       'Perfect for kitchen islands'
     ]
   },
-  {
+{
     id: 'kstone-k1069',
     name: 'K1069 – Taj Mahal',
     brand: 'Kstone',
@@ -781,7 +780,7 @@ export const materials: SlabMaterial[] = [
       'Luxurious polished surface'
     ]
   },
-  {
+{
     id: 'kstone-y9020',
     name: 'Y9020 – White Fantasy',
     brand: 'Kstone',
@@ -797,7 +796,7 @@ export const materials: SlabMaterial[] = [
       'Seamless jumbo slab formats'
     ]
   },
-  {
+{
     id: 'silestone-calacatta-gold',
     name: 'Eternal Calacatta Gold',
     brand: 'Silestone',
@@ -808,7 +807,7 @@ export const materials: SlabMaterial[] = [
     description: 'A striking white background with elegant, thick grey veins and delicate gold accents.',
     features: ['Thick grey veining', 'Subtle gold accents', 'HybriQ+ Technology', 'High stain resistance']
   },
-  {
+{
     id: 'silestone-statuario',
     name: 'Eternal Statuario',
     brand: 'Silestone',
@@ -819,7 +818,7 @@ export const materials: SlabMaterial[] = [
     description: 'Inspired by classic Italian Carrara marble, featuring soft, subtle grey veins on a white surface.',
     features: ['Soft grey veining', 'Classic Italian marble look', 'HybriQ+ Technology', 'High stain resistance']
   },
-  {
+{
     id: 'silestone-miami-white',
     name: 'Miami White',
     brand: 'Silestone',
@@ -830,7 +829,7 @@ export const materials: SlabMaterial[] = [
     description: 'A clean, pure white for a bright and modern aesthetic.',
     features: ['Pure bright white', 'Consistent solid color', 'HybriQ+ Technology', 'Perfect for modern kitchens']
   },
-  {
+{
     id: 'silestone-desert-silver',
     name: 'Desert Silver',
     brand: 'Silestone',
@@ -841,7 +840,7 @@ export const materials: SlabMaterial[] = [
     description: 'A frosted grey base traversed by fine and clear veins, offering an elegant icy look.',
     features: ['Frosted grey base', 'Fine icy veining', 'HybriQ+ Technology', 'Sophisticated neutral']
   },
-  {
+{
     id: 'silestone-charcoal-soapstone',
     name: 'Charcoal Soapstone',
     brand: 'Silestone',
@@ -852,7 +851,7 @@ export const materials: SlabMaterial[] = [
     description: 'A deep bluish-grey base with energetic white veining, inspired by natural soapstone.',
     features: ['Bluish-grey base', 'Energetic white veins', 'HybriQ+ Technology', 'Natural soapstone look']
   },
-  {
+{
     id: 'silestone-pearl-jasmine',
     name: 'Pearl Jasmine',
     brand: 'Silestone',
@@ -863,7 +862,7 @@ export const materials: SlabMaterial[] = [
     description: 'A white limestone look intertwined with subtle grey veins.',
     features: ['Limestone texture look', 'Subtle grey veining', 'HybriQ+ Technology', 'Warm and inviting']
   },
-  {
+{
     id: 'silestone-ethereal-glow',
     name: 'Ethereal Glow',
     brand: 'Silestone',
@@ -873,59 +872,68 @@ export const materials: SlabMaterial[] = [
     img: '/images/slabs/ethereal-glow.jpg',
     description: 'A modernized evolution of Calacatta Gold with a white background and veins of gold and grey.',
     features: ['Modern Calacatta evolution', 'Gold and grey veining', 'HybriQ+ Technology', 'Premium luxury tier']
-  }
-  ,{
+  },
+{
     id: 'caesarstone-1141', name: '1141 Pure White', brand: 'Caesarstone',
     priceRange: '$92 – $126', typicalCost: '$4,000 – $6,500', category: 'white',
     img: '/images/slabs/pure-white.jpg', description: 'The cleanest, purest white available in the Caesarstone collection.',
     features: ['Crisp solid white', 'Minimalist aesthetic', 'High stain resistance', 'Perfect for modern designs']
-  }, {
+  },
+{
     id: 'caesarstone-5143', name: '5143 White Attica', brand: 'Caesarstone',
     priceRange: '$103 – $144', typicalCost: '$4,800 – $7,500', category: 'marble',
     img: '/images/slabs/white-attica.jpg', description: 'A brilliant white base featuring dense, dark blue-grey interlaced veins.',
     features: ['Bold dark veining', 'Classic marble look', 'Durable engineered stone', 'High visual impact']
-  }, {
+  },
+{
     id: 'caesarstone-4001', name: '4001 Fresh Concrete', brand: 'Caesarstone',
     priceRange: '$92 – $126', typicalCost: '$4,500 – $7,000', category: 'grey',
     img: '/images/slabs/fresh-concrete.jpg', description: 'A delicate white concrete look with fine textured grey accents.',
     features: ['Light industrial feel', 'Matte finish option', 'Versatile grey-white', 'Hygienic non-porous']
-  }, {
+  },
+{
     id: 'caesarstone-4004', name: '4004 Raw Concrete', brand: 'Caesarstone',
     priceRange: '$92 – $126', typicalCost: '$4,500 – $7,000', category: 'grey',
     img: '/images/slabs/raw-concrete.jpg', description: 'An authentic mid-grey concrete finish with subtle tonal variations.',
     features: ['Authentic raw texture', 'Mid-grey tone', 'Durable urban aesthetic', 'Industrial chic']
-  }, {
+  },
+{
     id: 'caesarstone-5000', name: '5000 London Grey', brand: 'Caesarstone',
     priceRange: '$103 – $144', typicalCost: '$4,800 – $7,500', category: 'grey',
     img: '/images/slabs/london-grey.jpg', description: 'An elegant light grey with soft charcoal veining.',
     features: ['Elegant light grey', 'Soft charcoal veins', 'Timeless aesthetic', 'Superior durability']
-  }, {
+  },
+{
     id: 'caesarstone-4033', name: '4033 Rugged Concrete', brand: 'Caesarstone',
     priceRange: '$103 – $144', typicalCost: '$5,000 – $7,800', category: 'dark',
     img: '/images/slabs/rugged-concrete.jpg', description: 'A deeply textured grey surface reflecting the look of authentic cast concrete.',
     features: ['Deeply textured look', 'Robust urban style', 'Advanced finish', 'Distinctive variations']
-  }, {
+  },
+{
     id: 'caesarstone-5100', name: '5100 Vanilla Noir', brand: 'Caesarstone',
     priceRange: '$103 – $144', typicalCost: '$4,800 – $7,500', category: 'dark',
     img: '/images/slabs/vanilla-noir.jpg', description: 'A rich black base heavily laced with bold white vanilla veins.',
     features: ['Rich black base', 'Bold vanilla veins', 'Dramatic luxury', 'Striking contrast']
-  }, {
+  },
+{
     id: 'caesarstone-5133', name: '5133 Symphony Grey', brand: 'Caesarstone',
     priceRange: '$92 – $126', typicalCost: '$4,500 – $7,200', category: 'grey',
     img: '/images/slabs/symphony-grey.jpg', description: 'A symphony of grey tones featuring dark and light contrasting veining.',
     features: ['Complex grey tones', 'Dynamic visual texture', 'Stain resistant', 'Elegant mid-tone']
-  }, {
+  },
+{
     id: 'caesarstone-5110', name: '5110 Alpine Mist', brand: 'Caesarstone',
     priceRange: '$103 – $144', typicalCost: '$4,600 – $7,300', category: 'grey',
     img: '/images/slabs/alpine-mist.jpg', description: 'A cool grey background detailed with crisp white veins.',
     features: ['Cool grey background', 'Crisp white veining', 'Fresh and clean', 'Enduring style']
-  }, {
+  },
+{
     id: 'caesarstone-6134', name: '6134 Georgian Bluffs', brand: 'Caesarstone',
     priceRange: '$92 – $126', typicalCost: '$4,500 – $7,200', category: 'grey',
     img: '/images/slabs/georgian-bluffs.jpg', description: 'A light grey base with subtle veining and industrial textures.',
     features: ['Light grey base', 'Industrial nuance', 'Versatile neutral', 'Engineered strength']
   },
-  {
+{
     id: 'caesarstone-4600',
     name: '4600 Organic White',
     brand: 'Caesarstone',
@@ -936,7 +944,7 @@ export const materials: SlabMaterial[] = [
     description: 'Subtle blend of warm white tones and soft grey mottling for a natural, organic minimalist aesthetic.',
     features: ['Organic White palette', 'Soft grey mottling', 'Versatile modern white', 'Easy maintenance']
   },
-  {
+{
     id: 'caesarstone-6003',
     name: '6003 Coastal Grey',
     brand: 'Caesarstone',
@@ -947,7 +955,7 @@ export const materials: SlabMaterial[] = [
     description: 'Soft driftwood grey and warm sandy taupe movements inspired by rugged Canadian coastal shorelines.',
     features: ['Coastal grey aesthetic', 'Sandy taupe & grey blend', 'Quiet natural movement', 'Engineered strength']
   },
-  {
+{
     id: 'caesarstone-5116',
     name: '5116 Calacatta Nectar',
     brand: 'Caesarstone',
@@ -958,7 +966,7 @@ export const materials: SlabMaterial[] = [
     description: 'Luxurious translucent white base lacing warm honey-gold and soft grey veins across an expansive slab.',
     features: ['Calacatta Nectar design', 'Warm honey-gold veining', 'Translucent marble base', 'Waterfall island favorite']
   },
-  {
+{
     id: 'caesarstone-5115',
     name: '5115 Calacatta Stillstorm',
     brand: 'Caesarstone',
@@ -969,7 +977,7 @@ export const materials: SlabMaterial[] = [
     description: 'Serene white quartz background detailed with quiet charcoal and silver storm veining.',
     features: ['Calacatta Stillstorm', 'Quiet charcoal veining', 'Soft silver accents', 'Ethereal luxury']
   },
-  {
+{
     id: 'caesarstone-5105',
     name: '5105 Calacatta Dreamwave',
     brand: 'Caesarstone',
@@ -980,7 +988,7 @@ export const materials: SlabMaterial[] = [
     description: 'Dynamic flowing waves of slate grey and golden bronze flowing gracefully across crisp white quartz.',
     features: ['Calacatta Dreamwave', 'Flowing slate & gold waves', 'High visual depth', 'Statement countertop']
   },
-  {
+{
     id: 'caesarstone-5140',
     name: '5140 Dreamy Carrara',
     brand: 'Caesarstone',
@@ -991,7 +999,7 @@ export const materials: SlabMaterial[] = [
     description: 'Gentle, cloudy Carrara marble movement lacing whisper-grey veining over a warm ivory backdrop.',
     features: ['Dreamy Carrara look', 'Whisper-grey veining', 'Warm ivory field', 'Subtle elegance']
   },
-  {
+{
     id: 'caesarstone-5132',
     name: '5132 Celestial Sky',
     brand: 'Caesarstone',
@@ -1002,7 +1010,7 @@ export const materials: SlabMaterial[] = [
     description: 'Celestial atmosphere featuring cloudy slate-blue and warm dove-grey movement inspired by atmospheric horizons.',
     features: ['Celestial Sky palette', 'Atmospheric blue-grey clouds', 'Modern artistic statement', 'Polished finish']
   },
-  {
+{
     id: 'caesarstone-8103',
     name: '8103 Calacatta Nobella',
     brand: 'Caesarstone',
@@ -1013,7 +1021,7 @@ export const materials: SlabMaterial[] = [
     description: 'Noble Italian Calacatta design with bold, sweeping dark grey veins edged in soft golden warmth.',
     features: ['Calacatta Nobella luxury', 'Bold sweeping veins', 'Golden-edged detail', 'Oversized slab format']
   },
-  {
+{
     id: 'caesarstone-8251',
     name: '8251 Taj Whisper',
     brand: 'Caesarstone',
@@ -1024,7 +1032,7 @@ export const materials: SlabMaterial[] = [
     description: 'Inspired by Taj Mahal quartzite, presenting warm creamy-beige linear striations with translucent depth.',
     features: ['Taj Whisper quartzite look', 'Warm creamy-beige field', 'Translucent striations', 'Cozy luxury']
   },
-  {
+{
     id: 'caesarstone-4011',
     name: '4011 Cloudburst Concrete',
     brand: 'Caesarstone',
@@ -1035,7 +1043,7 @@ export const materials: SlabMaterial[] = [
     description: 'Soft cloud-white concrete texture presenting a tactile rough-honed surface for industrial modern interiors.',
     features: ['Cloudburst Concrete texture', 'Tactile rough-honed surface', 'Soft cloud-white shade', 'Industrial modern style']
   },
-  {
+{
     id: 'caesarstone-6046',
     name: '6046 Moorland Fog',
     brand: 'Caesarstone',
@@ -1046,7 +1054,7 @@ export const materials: SlabMaterial[] = [
     description: 'Dense foggy grey matrix enriched with warm granite-like composite flecks and subtle movement.',
     features: ['Moorland Fog texture', 'Granite-like composite flecks', 'Dense grey movement', 'High durability']
   },
-  {
+{
     id: 'caesarstone-8101',
     name: '8101 Clearlight',
     brand: 'Caesarstone',
@@ -1057,7 +1065,7 @@ export const materials: SlabMaterial[] = [
     description: 'Bright luminous white surface woven with whisper-fine crystal misting for bright, modern spaces.',
     features: ['Clearlight luminous surface', 'Whisper-fine crystal mist', 'Clean modern white', 'Low maintenance']
   },
-  {
+{
     id: 'caesarstone-4030',
     name: '4030 Stone Grey',
     brand: 'Caesarstone',
@@ -1068,7 +1076,7 @@ export const materials: SlabMaterial[] = [
     description: 'Smooth, subtle mid-toned grey quartz field lacing soft organic neutral shading for contemporary kitchens.',
     features: ['Stone Grey neutral palette', 'Smooth mid-toned grey', 'Contemporary versatility', 'Low maintenance']
   },
-  {
+{
     id: 'caesarstone-2141',
     name: '2141 Blizzard',
     brand: 'Caesarstone',
@@ -1079,18 +1087,7 @@ export const materials: SlabMaterial[] = [
     description: 'Pristine bright blizzard white matrix studded with tiny reflective flecks to illuminate modern spaces.',
     features: ['Blizzard bright white base', 'Reflective flecks', 'Illuminates kitchen interiors', 'Stain & scratch resistant']
   },
-  {
-    id: 'caesarstone-1141',
-    name: '1141 Pure White',
-    brand: 'Caesarstone',
-    priceRange: '$88 – $120',
-    typicalCost: '$3,900 – $6,000',
-    category: 'white',
-    img: '/images/slabs/caesarstone-1141.jpg',
-    description: 'The ultimate pure solid white quartz countertop, famous for its clean, seamless minimalist aesthetic.',
-    features: ['Pure White seamless solid', 'Minimalist architectural favorite', 'Pure uniform bright white', 'Hygienic non-porous surface']
-  },
-  {
+{
     id: 'caesarstone-3141',
     name: '3141 Osprey',
     brand: 'Caesarstone',
@@ -1101,7 +1098,7 @@ export const materials: SlabMaterial[] = [
     description: 'Classic fine-grain white and soft grey aggregate pattern creating a subtle, durable engineered stone finish.',
     features: ['Osprey fine-grain aggregate', 'Subtle grey flecks', 'Durable engineered stone', 'Timeless kitchen neutral']
   },
-  {
+{
     id: 'caesarstone-4120',
     name: '4120 Raven',
     brand: 'Caesarstone',
@@ -1112,7 +1109,7 @@ export const materials: SlabMaterial[] = [
     description: 'Sleek slate-black and charcoal quartz matrix providing deep contrast for modern and industrial kitchens.',
     features: ['Raven dark slate charcoal', 'Deep contrast statement', 'Polished luxury finish', 'Stain & heat resistant']
   },
-  {
+{
     id: 'caesarstone-5003',
     name: '5003 Piatra Grey',
     brand: 'Caesarstone',
@@ -1123,28 +1120,19 @@ export const materials: SlabMaterial[] = [
     description: 'Sophisticated deep slate-grey marble base crossed by delicate chalk-white chalky veining.',
     features: ['Piatra Grey marble look', 'Deep slate base', 'Chalk-white veining', 'High contrast luxury']
   },
-  {
-    id: 'caesarstone-5112',
-    name: '5112 Aterra Blanca',
-    brand: 'Caesarstone',
-    priceRange: '$102 – $145',
-    typicalCost: '$4,500 – $7,200',
-    category: 'warm',
-    img: '/images/slabs/caesarstone-5112.jpg',
-    description: 'Ethereal misty white field laced with graceful translucent golden-earth veining for refined luxury interiors.',
-    features: ['Aterra Blanca ICON series', 'Graceful golden veining', 'Ethereal translucent depth', 'Polished premium finish']
-  }, {
+{
     id: 'tce-4005', name: 'TCE 4005 Carrara Cloud', brand: 'TCE Stone',
     priceRange: '$65 – $85', typicalCost: '$3,000 – $5,000', category: 'marble',
     img: 'https://tcestone.com/wp-content/uploads/2024/03/4005-detail-556x930.png', description: 'A popular and affordable Carrara alternative with distinct grey cloudy veining.',
     features: ['Carrara Cloud look', 'Distinct grey veining', 'Value focused', 'Beautiful finish']
-  }, {
+  },
+{
     id: 'tce-2040', name: 'TCE 2040 Vivid Stream', brand: 'TCE Stone',
     priceRange: '$60 – $80', typicalCost: '$2,800 – $4,800', category: 'marble',
     img: 'https://tcestone.com/wp-content/uploads/2024/03/2040-556x930.jpg', description: 'A soft, blended Carrara marble stream pattern perfect for subtle kitchens.',
     features: ['Vivid Stream movement', 'Blended veins', 'Timeless style', 'Budget friendly']
   },
-  {
+{
     id: 'tce-1516',
     name: 'TCE 1516 Absolute Grey',
     brand: 'TCE Stone',
@@ -1155,7 +1143,7 @@ export const materials: SlabMaterial[] = [
     description: 'Modern sleek absolute grey quartz with fine uniform texture for minimal, industrial kitchens.',
     features: ['Absolute Grey series', 'Sleek uniform texture', 'Modern industrial style', 'Stain & scratch resistant']
   },
-  {
+{
     id: 'tce-1518',
     name: 'TCE 1518 Pure Black',
     brand: 'TCE Stone',
@@ -1166,7 +1154,7 @@ export const materials: SlabMaterial[] = [
     description: 'Deep obsidian pure black engineered stone crafted for high-contrast dramatic island countertops.',
     features: ['Pure Black obsidian base', 'High contrast statement', 'Polished luxury finish', 'Non-porous quartz']
   },
-  {
+{
     id: 'tce-2028',
     name: 'TCE 2028 Crystal Mist II',
     brand: 'TCE Stone',
@@ -1177,7 +1165,7 @@ export const materials: SlabMaterial[] = [
     description: 'Lively crystal white matrix laced with reflective mineral misting for bright interior spaces.',
     features: ['Crystal Mist matrix', 'Reflective mineral flecks', 'Brightens kitchen space', 'Low maintenance']
   },
-  {
+{
     id: 'tce-2045',
     name: 'TCE 2045 Calacatta Lux',
     brand: 'TCE Stone',
@@ -1188,7 +1176,7 @@ export const materials: SlabMaterial[] = [
     description: 'Luxurious Calacatta marble design with broad charcoal and warm gold veining across bright white quartz.',
     features: ['Calacatta Lux design', 'Broad charcoal veining', 'Warm gold highlights', 'Waterfall island favorite']
   },
-  {
+{
     id: 'tce-2046',
     name: 'TCE 2046 Marquina',
     brand: 'TCE Stone',
@@ -1199,7 +1187,7 @@ export const materials: SlabMaterial[] = [
     description: 'Dramatic Spanish Nero Marquina black quartz crossed with striking white lightning veining.',
     features: ['Nero Marquina black quartz', 'Striking white lightning veins', 'High contrast luxury', 'Statement countertop']
   },
-  {
+{
     id: 'tce-4042',
     name: 'TCE 4042 Seraphina Oro',
     brand: 'TCE Stone',
@@ -1210,7 +1198,7 @@ export const materials: SlabMaterial[] = [
     description: 'Ethereal Seraphina white base infused with soft golden-bronze veining and warm translucent depth.',
     features: ['Seraphina Oro veining', 'Golden-bronze accents', 'Translucent marble depth', 'Premium polished surface']
   },
-  {
+{
     id: 'tce-4043',
     name: 'TCE 4043 Luna Grigio',
     brand: 'TCE Stone',
@@ -1221,7 +1209,7 @@ export const materials: SlabMaterial[] = [
     description: 'Luminous moon-grey quartz featuring soft smoky waves and subtle silver clouds.',
     features: ['Luna Grigio moon-grey', 'Smoky wave movement', 'Subtle silver mist', 'Versatile modern neutral']
   },
-  {
+{
     id: 'tce-4044',
     name: 'TCE 4044 Solara',
     brand: 'TCE Stone',
@@ -1232,7 +1220,7 @@ export const materials: SlabMaterial[] = [
     description: 'Radiant sunlit white quartz with warm honey and champagne veining for cozy, inviting kitchens.',
     features: ['Solara sunlit design', 'Honey & champagne veins', 'Warm inviting aesthetic', 'Complements wood cabinetry']
   },
-  {
+{
     id: 'tce-4045',
     name: 'TCE 4045 Antico',
     brand: 'TCE Stone',
@@ -1243,7 +1231,7 @@ export const materials: SlabMaterial[] = [
     description: 'Antique stone blend exhibiting warm ivory, cream, and soft grey striations.',
     features: ['Antico stone blend', 'Warm ivory & cream', 'Organic earthiness', 'Engineered durability']
   },
-  {
+{
     id: 'tce-4062',
     name: 'TCE 4062 Dolce Crema',
     brand: 'TCE Stone',
@@ -1254,59 +1242,67 @@ export const materials: SlabMaterial[] = [
     description: 'Soft Italian crema background detailed with delicate warm ivory and caramel veining.',
     features: ['Dolce Crema series', 'Caramel & ivory veining', 'Warm velvety texture', 'Ideal for traditional & modern']
   },
-  {
+{
     id: 'lucent-carrara-grigio', name: 'Carrara Grigio', brand: 'Lucent Quartz',
     priceRange: '$70 – $90', typicalCost: '$3,200 – $5,200', category: 'grey',
     img: '/images/slabs/lucent-carrara-grigio.jpg', description: 'A classic Carrara blend with predominantly grey, cloudy patterns.',
     features: ['Classic cloudy Carrara', 'Grey dominant', 'Soft texture', 'Versatile design']
-  }, {
+  },
+{
     id: 'lucent-noir-striato', name: 'Noir Striato', brand: 'Lucent Quartz',
     priceRange: '$85 – $110', typicalCost: '$4,000 – $6,000', category: 'dark',
     img: '/images/slabs/lucent-noir-striato.jpg', description: 'A deep black quartz featuring distinctive white striations.',
     features: ['Deep black base', 'Distinct white striations', 'Bold architecture', 'Durable engineered stone']
-  }, {
+  },
+{
     id: 'lucent-sparkle-white', name: 'Sparkle White', brand: 'Lucent Quartz',
     priceRange: '$65 – $85', typicalCost: '$3,000 – $5,000', category: 'white',
     img: '/images/slabs/lucent-sparkle-white.jpg', description: 'A lively white quartz embedded with tiny, reflective mirrored flecks.',
     features: ['Reflective flecks', 'Lively texture', 'Brightens space', 'Fun and modern']
-  }, {
+  },
+{
     id: 'silestone-white-arabesque', name: 'White Arabesque', brand: 'Silestone',
     priceRange: '$85 – $114', typicalCost: '$4,500 – $7,000', category: 'marble',
     img: '/images/slabs/white-arabesque.jpg', description: 'A bright white background heavily threaded with contrasting dark grey veins.',
     features: ['Heavy grey threading', 'Bright white background', 'HybriQ+ Technology', 'Striking contrast']
-  }, {
+  },
+{
     id: 'silestone-lusso', name: 'Lusso', brand: 'Silestone',
     priceRange: '$85 – $114', typicalCost: '$4,000 – $6,500', category: 'warm',
     img: '/images/slabs/lusso.jpg', description: 'A warm, creamy background intertwined with golden and pale grey veins.',
     features: ['Creamy warm base', 'Golden and grey veins', 'HybriQ+ Technology', 'Inviting luxury']
-  }
-  , {
+  },
+{
     id: 'kasa-ksl6011', name: 'KSL6011 - Alabaster Vein', brand: 'Kasa Quartz',
     priceRange: '$57 – $70', typicalCost: '$3,500 – $5,500', category: 'white',
     img: '/images/slabs/kasa-ksl6011.jpg', description: 'Soft alabaster background with delicate veining for a timeless look.',
     features: ['Alabaster Vein', 'Soft background', 'Timeless', 'Elegant']
-  }, {
+  },
+{
     id: 'kasa-ksv5101', name: 'KSV5101 - Lightning Gold', brand: 'Kasa Quartz',
     priceRange: '$52 – $62', typicalCost: '$3,500 – $5,500', category: 'marble',
     img: '/images/slabs/kasa-ksv5101.jpg', description: 'Striking lightning-like gold veins over a bright white base.',
     features: ['Lightning Gold', 'Striking veins', 'Bright white base', 'Luxury statement']
-  }, {
+  },
+{
     id: 'kasa-ksv1102', name: 'KSV1102 - Calacatta Misty Gold', brand: 'Kasa Quartz',
     priceRange: '$53 – $63', typicalCost: '$3,500 – $5,500', category: 'marble',
     img: '/images/slabs/kasa-ksv1102.jpg', description: 'Calacatta marble look with misty grey and subtle gold highlights.',
     features: ['Calacatta Misty Gold', 'Misty grey', 'Gold highlights', 'Elegant detail']
-  }, {
+  },
+{
     id: 'kasa-ksv1101', name: 'KSV1101 - Calacatta Misty Grey', brand: 'Kasa Quartz',
     priceRange: '$53 – $63', typicalCost: '$3,500 – $5,500', category: 'marble',
     img: '/images/slabs/kasa-ksv1101.jpg', description: 'A cooler-toned Calacatta featuring misty grey veins and shading.',
     features: ['Calacatta Misty Grey', 'Cooler tones', 'Grey veins', 'Modern classic']
-  }, {
+  },
+{
     id: 'kasa-ky066', name: 'KY066 - Taj Mahal Pre', brand: 'Kasa Quartz',
     priceRange: '$52 – $62', typicalCost: '$2,800 – $4,800', category: 'warm',
     img: '/images/slabs/kasa-ky066.jpg', description: 'Inspired by the famous Taj Mahal quartzite, featuring warm creamy beige tones.',
     features: ['Taj Mahal Pre', 'Heat transfer tech', 'Creamy beige tones', 'Warm luxury']
   },
-  {
+{
     id: 'kasa-ksl8701',
     name: 'KSL8701 – Frosted Rift White',
     brand: 'Kasa Quartz',
@@ -1322,7 +1318,7 @@ export const materials: SlabMaterial[] = [
       'Non-porous & stain resistant'
     ]
   },
-  {
+{
     id: 'kasa-ksl8602',
     name: 'KSL8602 – Silver Mist',
     brand: 'Kasa Quartz',
@@ -1338,7 +1334,7 @@ export const materials: SlabMaterial[] = [
       'High heat & scratch resistance'
     ]
   },
-  {
+{
     id: 'kasa-ksl6032',
     name: 'KSL6032 – White Castle',
     brand: 'Kasa Quartz',
@@ -1354,7 +1350,7 @@ export const materials: SlabMaterial[] = [
       'Waterfall island favorite'
     ]
   },
-  {
+{
     id: 'kasa-ksl6031',
     name: 'KSL6031 – Silver Sands',
     brand: 'Kasa Quartz',
@@ -1370,7 +1366,7 @@ export const materials: SlabMaterial[] = [
       'Easy daily maintenance'
     ]
   },
-  {
+{
     id: 'kasa-ksl6030',
     name: 'KSL6030 – Spiez White',
     brand: 'Kasa Quartz',
@@ -1386,7 +1382,7 @@ export const materials: SlabMaterial[] = [
       'Durable engineered quartz'
     ]
   },
-  {
+{
     id: 'kasa-ksl6017',
     name: 'KSL6017 – Bianco Riviera',
     brand: 'Kasa Quartz',
@@ -1402,7 +1398,7 @@ export const materials: SlabMaterial[] = [
       'Hygienic non-porous surface'
     ]
   },
-  {
+{
     id: 'kasa-ksl6016',
     name: 'KSL6016 – Volakano White',
     brand: 'Kasa Quartz',
@@ -1418,7 +1414,7 @@ export const materials: SlabMaterial[] = [
       'Timeless kitchen choice'
     ]
   },
-  {
+{
     id: 'kasa-ksl6015',
     name: 'KSL6015 – Blizzard',
     brand: 'Kasa Quartz',
@@ -1434,7 +1430,7 @@ export const materials: SlabMaterial[] = [
       'Stain & impact resistant'
     ]
   },
-  {
+{
     id: 'kasa-ksl6010',
     name: 'KSL6010 – Glacier Gold',
     brand: 'Kasa Quartz',
@@ -1450,7 +1446,7 @@ export const materials: SlabMaterial[] = [
       'Premium polished finish'
     ]
   },
-  {
+{
     id: 'kasa-ksl6005',
     name: 'KSL6005 – Sahara Dune',
     brand: 'Kasa Quartz',
@@ -1466,7 +1462,7 @@ export const materials: SlabMaterial[] = [
       'Pairs with wood cabinetry'
     ]
   },
-  {
+{
     id: 'k7701',
     name: 'K7701 – Middle Carrara',
     brand: 'Kasa Quartz',
@@ -1477,7 +1473,7 @@ export const materials: SlabMaterial[] = [
     description: 'Classic Middle Carrara limestone quartz featuring soft feathered grey veining over a warm white backdrop.',
     features: ['Middle Carrara series', 'Feathered grey veining', 'Warm white background', 'Non-porous & durable']
   },
-  {
+{
     id: 'k7702',
     name: 'K7702 – Ice White',
     brand: 'Kasa Quartz',
@@ -1488,7 +1484,7 @@ export const materials: SlabMaterial[] = [
     description: 'Pristine Ice White quartz slab presenting a bright, crisp surface with light reflective clarity.',
     features: ['Ice White pristine field', 'Bright light reflectivity', 'Minimalist design', 'High stain resistance']
   },
-  {
+{
     id: 'k7703',
     name: 'K7703 – Nero Stellar',
     brand: 'Kasa Quartz',
@@ -1499,7 +1495,7 @@ export const materials: SlabMaterial[] = [
     description: 'Dramatic black quartz infused with subtle stellar shimmer flecks and fine silver accents.',
     features: ['Nero Stellar dark series', 'Subtle stellar shimmer', 'High contrast luxury', 'Non-porous hygienic stone']
   },
-  {
+{
     id: 'k7705',
     name: 'K7705 – Carrara Select',
     brand: 'Kasa Quartz',
@@ -1510,7 +1506,7 @@ export const materials: SlabMaterial[] = [
     description: 'Refined Italian Carrara select aesthetic with gentle slate-grey linear veins across soft ivory quartz.',
     features: ['Carrara Select design', 'Gentle slate-grey veins', 'Soft ivory base', 'No sealing required']
   },
-  {
+{
     id: 'k7708',
     name: 'K7708 – Phantom Grey',
     brand: 'Kasa Quartz',
@@ -1521,7 +1517,7 @@ export const materials: SlabMaterial[] = [
     description: 'Sophisticated Phantom Grey quartz detailed with subtle cloudy charcoal movement and fine misting.',
     features: ['Phantom Grey tone', 'Cloudy charcoal movement', 'Urban modern look', 'Scratch & heat resistant']
   },
-  {
+{
     id: 'k7710',
     name: 'K7710 – Antico Blend',
     brand: 'Kasa Quartz',
@@ -1532,7 +1528,7 @@ export const materials: SlabMaterial[] = [
     description: 'Warm antique stone blend showcasing golden ivory tones intertwined with delicate warm grey striations.',
     features: ['Antico Blend warm series', 'Golden ivory tones', 'Organic earthiness', 'Complements wood cabinetry']
   },
-  {
+{
     id: 'ksv7700',
     name: 'KSV7700 – Ivory Golden Rift',
     brand: 'Kasa Quartz',
@@ -1543,7 +1539,7 @@ export const materials: SlabMaterial[] = [
     description: 'Luxurious ivory field presenting elegant golden-copper rift veining and translucent quartz depth.',
     features: ['Ivory Golden Rift design', 'Golden-copper veining', 'Translucent quartz depth', 'Premium polished finish']
   },
-  {
+{
     id: 'ky077',
     name: 'KY077 – Jade Fusion',
     brand: 'Kasa Quartz',
@@ -1554,7 +1550,7 @@ export const materials: SlabMaterial[] = [
     description: 'State-of-the-art heat transfer quartz capturing organic jade fusion movement with warm emerald & gold waves.',
     features: ['Jade Fusion heat transfer tech', 'Warm emerald & gold waves', 'Exotic quartzite look', 'High impact durability']
   },
-  {
+{
     id: 'caesarstone-3100',
     name: '3100 Jet Black',
     brand: 'Caesarstone',
@@ -1565,7 +1561,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Caesarstone 3100 Jet Black engineered quartz countertop slab featuring high visual depth and premium durability for modern kitchens.',
     features: ["3100 Jet Black design", "Dark quartz palette", "Non-porous & stain resistant", "Polished premium finish"]
   },
-  {
+{
     id: 'caesarstone-4043',
     name: '4043 Primordia',
     brand: 'Caesarstone',
@@ -1576,7 +1572,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Caesarstone 4043 Primordia engineered quartz countertop slab featuring high visual depth and premium durability for modern kitchens.',
     features: ["4043 Primordia design", "White quartz palette", "Non-porous & stain resistant", "Polished premium finish"]
   },
-  {
+{
     id: 'caesarstone-4141',
     name: '4141 Misty Carrera',
     brand: 'Caesarstone',
@@ -1587,7 +1583,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Caesarstone 4141 Misty Carrera engineered quartz countertop slab featuring high visual depth and premium durability for modern kitchens.',
     features: ["4141 Misty Carrera design", "Marble quartz palette", "Non-porous & stain resistant", "Polished premium finish"]
   },
-  {
+{
     id: 'caesarstone-4601',
     name: '4601 Frozen Terra',
     brand: 'Caesarstone',
@@ -1598,7 +1594,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Caesarstone 4601 Frozen Terra engineered quartz countertop slab featuring high visual depth and premium durability for modern kitchens.',
     features: ["4601 Frozen Terra design", "White quartz palette", "Non-porous & stain resistant", "Polished premium finish"]
   },
-  {
+{
     id: 'caesarstone-5113',
     name: '5113 Solenna',
     brand: 'Caesarstone',
@@ -1609,7 +1605,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Caesarstone 5113 Solenna engineered quartz countertop slab featuring high visual depth and premium durability for modern kitchens.',
     features: ["5113 Solenna design", "Warm quartz palette", "Non-porous & stain resistant", "Polished premium finish"]
   },
-  {
+{
     id: 'caesarstone-5130',
     name: '5130 Cosmopolitan White',
     brand: 'Caesarstone',
@@ -1620,7 +1616,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Caesarstone 5130 Cosmopolitan White engineered quartz countertop slab featuring high visual depth and premium durability for modern kitchens.',
     features: ["5130 Cosmopolitan White design", "White quartz palette", "Non-porous & stain resistant", "Polished premium finish"]
   },
-  {
+{
     id: 'caesarstone-5144',
     name: '5144 Rossa Nova',
     brand: 'Caesarstone',
@@ -1631,7 +1627,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Caesarstone 5144 Rossa Nova engineered quartz countertop slab featuring high visual depth and premium durability for modern kitchens.',
     features: ["5144 Rossa Nova design", "White quartz palette", "Non-porous & stain resistant", "Polished premium finish"]
   },
-  {
+{
     id: 'caesarstone-5310',
     name: '5310 Brillianza',
     brand: 'Caesarstone',
@@ -1642,7 +1638,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Caesarstone 5310 Brillianza engineered quartz countertop slab featuring high visual depth and premium durability for modern kitchens.',
     features: ["5310 Brillianza design", "White quartz palette", "Non-porous & stain resistant", "Polished premium finish"]
   },
-  {
+{
     id: 'caesarstone-5820',
     name: '5820 Darcrest',
     brand: 'Caesarstone',
@@ -1653,7 +1649,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Caesarstone 5820 Darcrest engineered quartz countertop slab featuring high visual depth and premium durability for modern kitchens.',
     features: ["5820 Darcrest design", "White quartz palette", "Non-porous & stain resistant", "Polished premium finish"]
   },
-  {
+{
     id: 'caesarstone-6131',
     name: '6131 Bianco Drift',
     brand: 'Caesarstone',
@@ -1664,7 +1660,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Caesarstone 6131 Bianco Drift engineered quartz countertop slab featuring high visual depth and premium durability for modern kitchens.',
     features: ["6131 Bianco Drift design", "Grey quartz palette", "Non-porous & stain resistant", "Polished premium finish"]
   },
-  {
+{
     id: 'caesarstone-6141',
     name: '6141 Ocean Foam',
     brand: 'Caesarstone',
@@ -1675,7 +1671,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Caesarstone 6141 Ocean Foam engineered quartz countertop slab featuring high visual depth and premium durability for modern kitchens.',
     features: ["6141 Ocean Foam design", "White quartz palette", "Non-porous & stain resistant", "Polished premium finish"]
   },
-  {
+{
     id: 'caesarstone-6600',
     name: '6600 Nougat',
     brand: 'Caesarstone',
@@ -1686,7 +1682,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Caesarstone 6600 Nougat engineered quartz countertop slab featuring high visual depth and premium durability for modern kitchens.',
     features: ["6600 Nougat design", "White quartz palette", "Non-porous & stain resistant", "Polished premium finish"]
   },
-  {
+{
     id: 'caesarstone-8252',
     name: '8252 Sedara',
     brand: 'Caesarstone',
@@ -1697,7 +1693,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Caesarstone 8252 Sedara engineered quartz countertop slab featuring high visual depth and premium durability for modern kitchens.',
     features: ["8252 Sedara design", "White quartz palette", "Non-porous & stain resistant", "Polished premium finish"]
   },
-  {
+{
     id: 'caesarstone-8477',
     name: '8477 Ocean Sage',
     brand: 'Caesarstone',
@@ -1708,7 +1704,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Caesarstone 8477 Ocean Sage engineered quartz countertop slab featuring high visual depth and premium durability for modern kitchens.',
     features: ["8477 Ocean Sage design", "White quartz palette", "Non-porous & stain resistant", "Polished premium finish"]
   },
-  {
+{
     id: 'caesarstone-9141',
     name: '9141 Ice Snow',
     brand: 'Caesarstone',
@@ -1719,7 +1715,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Caesarstone 9141 Ice Snow engineered quartz countertop slab featuring high visual depth and premium durability for modern kitchens.',
     features: ["9141 Ice Snow design", "White quartz palette", "Non-porous & stain resistant", "Polished premium finish"]
   },
-  {
+{
     id: 'silestone-versailles-ivory',
     name: 'Le Chic Versailles Ivory',
     brand: 'Silestone',
@@ -1730,7 +1726,7 @@ export const materials: SlabMaterial[] = [
     description: 'Golden metallic sparkles and warm ivory veining inspired by 18th century Parisian palaces.',
     features: ['Le Chic Collection', 'Golden metallic sparkles', 'Warm ivory veining', 'HybriQ+ Technology']
   },
-  {
+{
     id: 'silestone-bohemian-flame',
     name: 'Le Chic Bohemian Flame',
     brand: 'Silestone',
@@ -1741,7 +1737,7 @@ export const materials: SlabMaterial[] = [
     description: 'Deep copper and metallic amber veining flowing dramatically over a dark matte field.',
     features: ['Le Chic Bohème Collection', 'Metallic amber veining', 'Deep luxury contrast', 'HybriQ+ Technology']
   },
-  {
+{
     id: 'silestone-eclectic-pearl',
     name: 'Le Chic Eclectic Pearl',
     brand: 'Silestone',
@@ -1752,7 +1748,7 @@ export const materials: SlabMaterial[] = [
     description: 'Luminous pearl backdrop laced with metallic silver and subtle warm grey gradients.',
     features: ['Le Chic Collection', 'Luminous pearl base', 'Metallic silver accents', 'HybriQ+ Technology']
   },
-  {
+{
     id: 'silestone-victorian-silver',
     name: 'Le Chic Victorian Silver',
     brand: 'Silestone',
@@ -1763,7 +1759,7 @@ export const materials: SlabMaterial[] = [
     description: 'Soft silver-grey background detailed with subtle gradient white marble veining.',
     features: ['Le Chic Collection', 'Victorian silver tones', 'Gradient marble veins', 'HybriQ+ Technology']
   },
-  {
+{
     id: 'silestone-parisien-bleu',
     name: 'Le Chic Parisien Bleu',
     brand: 'Silestone',
@@ -1774,7 +1770,7 @@ export const materials: SlabMaterial[] = [
     description: 'Deep Parisian blue-charcoal field with striking bronze-copper veining.',
     features: ['Le Chic Collection', 'Parisian blue-charcoal', 'Bronze-copper veins', 'HybriQ+ Technology']
   },
-  {
+{
     id: 'silestone-romantic-ash',
     name: 'Le Chic Romantic Ash',
     brand: 'Silestone',
@@ -1785,7 +1781,7 @@ export const materials: SlabMaterial[] = [
     description: 'Ash grey base with flowing chalk-white and silver striations.',
     features: ['Le Chic Bohème', 'Ash grey base', 'Chalk-white striations', 'HybriQ+ Technology']
   },
-  {
+{
     id: 'silestone-jardin-emerald',
     name: 'Le Chic Jardin Emerald',
     brand: 'Silestone',
@@ -1796,7 +1792,7 @@ export const materials: SlabMaterial[] = [
     description: 'Regal dark emerald green quartz with subtle gold and white vein networks.',
     features: ['Le Chic Bohème', 'Dark emerald green', 'Gold & white veining', 'Exotic luxury statement']
   },
-  {
+{
     id: 'silestone-riviere-rose',
     name: 'Le Chic Riviére Rose',
     brand: 'Silestone',
@@ -1807,7 +1803,7 @@ export const materials: SlabMaterial[] = [
     description: 'Soft rose-quartz blush tone with gentle warm white veining.',
     features: ['Le Chic Bohème', 'Soft rose blush tone', 'Gentle warm veining', 'HybriQ+ Technology']
   },
-  {
+{
     id: 'silestone-lime-delight',
     name: 'Urban Crush Lime Delight',
     brand: 'Silestone',
@@ -1818,7 +1814,7 @@ export const materials: SlabMaterial[] = [
     description: 'Warm limestone-textured beige quartz designed for modern urban minimalism.',
     features: ['Urban Crush Series', 'Limestone textured beige', 'Tactile matte finish', 'HybriQ+ Technology']
   },
-  {
+{
     id: 'silestone-concrete-pulse',
     name: 'Urban Crush Concrete Pulse',
     brand: 'Silestone',
@@ -1829,7 +1825,7 @@ export const materials: SlabMaterial[] = [
     description: 'Industrial raw concrete aesthetic featuring subtle grey shading and tactile depth.',
     features: ['Urban Crush Series', 'Raw concrete look', 'Industrial grey shading', 'HybriQ+ Technology']
   },
-  {
+{
     id: 'silestone-brass-relish',
     name: 'Urban Crush Brass Relish',
     brand: 'Silestone',
@@ -1840,7 +1836,7 @@ export const materials: SlabMaterial[] = [
     description: 'Rich brown sandstone texture with subtle brass-golden graining.',
     features: ['Urban Crush Series', 'Brown sandstone texture', 'Brass-golden graining', 'HybriQ+ Technology']
   },
-  {
+{
     id: 'silestone-cinder-craze',
     name: 'Urban Crush Cinder Craze',
     brand: 'Silestone',
@@ -1851,7 +1847,7 @@ export const materials: SlabMaterial[] = [
     description: 'Dark charcoal cinder finish bringing urban industrial grain to kitchen counters.',
     features: ['Urban Crush Series', 'Dark charcoal cinder', 'Industrial graining', 'HybriQ+ Technology']
   },
-  {
+{
     id: 'silestone-ethereal-dusk',
     name: 'Ethereal Dusk',
     brand: 'Silestone',
@@ -1862,7 +1858,7 @@ export const materials: SlabMaterial[] = [
     description: 'White canvas crossed with modern bluish-grey directionless veining.',
     features: ['Ethereal Collection', 'Bluish-grey veining', 'Directionless marble flow', 'HybriQ+ Technology']
   },
-  {
+{
     id: 'silestone-ethereal-haze',
     name: 'Ethereal Haze',
     brand: 'Silestone',
@@ -1873,7 +1869,7 @@ export const materials: SlabMaterial[] = [
     description: 'Soft neutral grey veining drifting gracefully over a crisp white field.',
     features: ['Ethereal Collection', 'Soft grey drifting veins', 'Versatile modern white', 'HybriQ+ Technology']
   },
-  {
+{
     id: 'silestone-ethereal-noctis',
     name: 'Ethereal Noctis',
     brand: 'Silestone',
@@ -1884,7 +1880,7 @@ export const materials: SlabMaterial[] = [
     description: 'Deep black and dark grey veining creating high-contrast architectural depth on pure white quartz.',
     features: ['Ethereal Collection', 'Deep black & grey veins', 'High-contrast marble depth', 'HybriQ+ Technology']
   },
-  {
+{
     id: 'tce-2015',
     name: 'TCE 2015 Starry Night<mark style="background',
     brand: 'TCE Stone',
@@ -1895,7 +1891,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 2015 Starry Night<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 2015 Starry Night<mark style=\"background design", "Dark quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-1216',
     name: 'TCE 1216 Electric Yellow<mark style="background',
     brand: 'TCE Stone',
@@ -1906,7 +1902,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 1216 Electric Yellow<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 1216 Electric Yellow<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-1219',
     name: 'TCE 1219 Gardenia<mark style="background',
     brand: 'TCE Stone',
@@ -1917,7 +1913,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 1219 Gardenia<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 1219 Gardenia<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-1414',
     name: 'TCE 1414 Coral Bay<mark style="background',
     brand: 'TCE Stone',
@@ -1928,7 +1924,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 1414 Coral Bay<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 1414 Coral Bay<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-1504',
     name: 'TCE 1504 Pure Grey<mark style="background',
     brand: 'TCE Stone',
@@ -1939,7 +1935,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 1504 Pure Grey<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 1504 Pure Grey<mark style=\"background design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-1529',
     name: 'TCE 1529 Light Brick<mark style="background',
     brand: 'TCE Stone',
@@ -1950,7 +1946,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 1529 Light Brick<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 1529 Light Brick<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-1531',
     name: 'TCE 1531 Espresso Swirl<mark style="background',
     brand: 'TCE Stone',
@@ -1961,7 +1957,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 1531 Espresso Swirl<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 1531 Espresso Swirl<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-1538',
     name: 'TCE 1538 Electric Red<mark style="background',
     brand: 'TCE Stone',
@@ -1972,7 +1968,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 1538 Electric Red<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 1538 Electric Red<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-1560',
     name: 'TCE 1560 Slate Grey<mark style="background',
     brand: 'TCE Stone',
@@ -1983,7 +1979,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 1560 Slate Grey<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 1560 Slate Grey<mark style=\"background design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-1565',
     name: 'TCE 1565 Moss Green<mark style="background',
     brand: 'TCE Stone',
@@ -1994,7 +1990,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 1565 Moss Green<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 1565 Moss Green<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-1607',
     name: 'TCE 1607 Pacific Grey<mark style="background',
     brand: 'TCE Stone',
@@ -2005,7 +2001,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 1607 Pacific Grey<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 1607 Pacific Grey<mark style=\"background design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-1612',
     name: 'TCE 1612 Salmon Pink<mark style="background',
     brand: 'TCE Stone',
@@ -2016,7 +2012,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 1612 Salmon Pink<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 1612 Salmon Pink<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-1674',
     name: 'TCE 1674 Baltic Brown<mark style="background',
     brand: 'TCE Stone',
@@ -2027,7 +2023,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 1674 Baltic Brown<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 1674 Baltic Brown<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-1902',
     name: 'TCE 1902 Simple Stream<mark style="background',
     brand: 'TCE Stone',
@@ -2038,7 +2034,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 1902 Simple Stream<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 1902 Simple Stream<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-2011',
     name: 'TCE 2011 Cream Nougat<mark style="background',
     brand: 'TCE Stone',
@@ -2049,7 +2045,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 2011 Cream Nougat<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 2011 Cream Nougat<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-2013',
     name: 'TCE 2013 Crystal Frost<mark style="background',
     brand: 'TCE Stone',
@@ -2060,7 +2056,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 2013 Crystal Frost<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 2013 Crystal Frost<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-2014',
     name: 'TCE 2014 Jet Black<mark style="background',
     brand: 'TCE Stone',
@@ -2071,7 +2067,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 2014 Jet Black<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 2014 Jet Black<mark style=\"background design", "Dark quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-2016',
     name: 'TCE 2016 Crystal Grey<mark style="background',
     brand: 'TCE Stone',
@@ -2082,7 +2078,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 2016 Crystal Grey<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 2016 Crystal Grey<mark style=\"background design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-2017',
     name: 'TCE 2017 Crystal Black<mark style="background',
     brand: 'TCE Stone',
@@ -2093,7 +2089,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 2017 Crystal Black<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 2017 Crystal Black<mark style=\"background design", "Dark quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-2019',
     name: 'TCE 2019 Crystal White<mark style="background',
     brand: 'TCE Stone',
@@ -2104,7 +2100,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 2019 Crystal White<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 2019 Crystal White<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-2020',
     name: 'TCE 2020 Butter White<mark style="background',
     brand: 'TCE Stone',
@@ -2115,7 +2111,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 2020 Butter White<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 2020 Butter White<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-2025',
     name: 'TCE 2025 Crystal Brown<mark style="background',
     brand: 'TCE Stone',
@@ -2126,7 +2122,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 2025 Crystal Brown<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 2025 Crystal Brown<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-2026',
     name: 'TCE 2026 Crystal Mist<mark style="background',
     brand: 'TCE Stone',
@@ -2137,7 +2133,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 2026 Crystal Mist<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 2026 Crystal Mist<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-2027',
     name: 'TCE 2027 Crystal Mustard<mark style="background',
     brand: 'TCE Stone',
@@ -2148,7 +2144,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 2027 Crystal Mustard<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 2027 Crystal Mustard<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-2031',
     name: 'TCE 2031 Crystal Khaki<mark style="background',
     brand: 'TCE Stone',
@@ -2159,7 +2155,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 2031 Crystal Khaki<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 2031 Crystal Khaki<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-2032',
     name: 'TCE 2032 Multi Grey<mark style="background',
     brand: 'TCE Stone',
@@ -2170,7 +2166,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 2032 Multi Grey<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 2032 Multi Grey<mark style=\"background design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-2033',
     name: 'TCE 2033 Multi Rust<mark style="background',
     brand: 'TCE Stone',
@@ -2181,7 +2177,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 2033 Multi Rust<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 2033 Multi Rust<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-2034',
     name: 'TCE 2034 Multi Taro<mark style="background',
     brand: 'TCE Stone',
@@ -2192,7 +2188,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 2034 Multi Taro<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 2034 Multi Taro<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-2035',
     name: 'TCE 2035 Multi Espresso<mark style="background',
     brand: 'TCE Stone',
@@ -2203,7 +2199,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 2035 Multi Espresso<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 2035 Multi Espresso<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-2036',
     name: 'TCE 2036 Multi Panda<mark style="background',
     brand: 'TCE Stone',
@@ -2214,7 +2210,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 2036 Multi Panda<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 2036 Multi Panda<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-2037',
     name: 'TCE 2037 Multi Light<mark style="background',
     brand: 'TCE Stone',
@@ -2225,7 +2221,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 2037 Multi Light<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 2037 Multi Light<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-2038',
     name: 'TCE 2038 Classic Calacatta<mark style="background',
     brand: 'TCE Stone',
@@ -2236,7 +2232,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 2038 Classic Calacatta<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 2038 Classic Calacatta<mark style=\"background design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-2041',
     name: 'TCE 2041 Striking Stream<mark style="background',
     brand: 'TCE Stone',
@@ -2247,7 +2243,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 2041 Striking Stream<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 2041 Striking Stream<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-2042',
     name: 'TCE 2042 Calacatta Extra<mark style="background',
     brand: 'TCE Stone',
@@ -2258,7 +2254,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 2042 Calacatta Extra<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 2042 Calacatta Extra<mark style=\"background design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4002',
     name: 'TCE 4002 Ivory White<mark style="background',
     brand: 'TCE Stone',
@@ -2269,7 +2265,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4002 Ivory White<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4002 Ivory White<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4004',
     name: 'TCE 4004 Ivory Nougat<mark style="background',
     brand: 'TCE Stone',
@@ -2280,7 +2276,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4004 Ivory Nougat<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4004 Ivory Nougat<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4006',
     name: 'TCE 4006 Organic Grey<mark style="background',
     brand: 'TCE Stone',
@@ -2291,7 +2287,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4006 Organic Grey<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4006 Organic Grey<mark style=\"background design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4007',
     name: 'TCE 4007 Organic Sand<mark style="background',
     brand: 'TCE Stone',
@@ -2302,7 +2298,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4007 Organic Sand<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4007 Organic Sand<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4008',
     name: 'TCE 4008 Organic Umber<mark style="background',
     brand: 'TCE Stone',
@@ -2313,7 +2309,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4008 Organic Umber<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4008 Organic Umber<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4012',
     name: 'TCE 4012 Pure Espresso<mark style="background',
     brand: 'TCE Stone',
@@ -2324,7 +2320,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4012 Pure Espresso<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4012 Pure Espresso<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4013',
     name: 'TCE 4013 Pure Cedar<mark style="background',
     brand: 'TCE Stone',
@@ -2335,7 +2331,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4013 Pure Cedar<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4013 Pure Cedar<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4018',
     name: 'TCE 4018 Soft Haze<mark style="background',
     brand: 'TCE Stone',
@@ -2346,7 +2342,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4018 Soft Haze<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4018 Soft Haze<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4019',
     name: 'TCE 4019 Reflective Scatter<mark style="background',
     brand: 'TCE Stone',
@@ -2357,7 +2353,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4019 Reflective Scatter<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4019 Reflective Scatter<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4020',
     name: 'TCE 4020 Reflective Grey<mark style="background',
     brand: 'TCE Stone',
@@ -2368,7 +2364,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4020 Reflective Grey<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4020 Reflective Grey<mark style=\"background design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4021',
     name: 'TCE 4021 Reflective Black<mark style="background',
     brand: 'TCE Stone',
@@ -2379,7 +2375,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4021 Reflective Black<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4021 Reflective Black<mark style=\"background design", "Dark quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4022',
     name: 'TCE 4022 Lagoon<mark style="background',
     brand: 'TCE Stone',
@@ -2390,7 +2386,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4022 Lagoon<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4022 Lagoon<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4023',
     name: 'TCE 4023 Estuary<mark style="background',
     brand: 'TCE Stone',
@@ -2401,7 +2397,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4023 Estuary<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4023 Estuary<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4024',
     name: 'TCE 4024 Carrara Bianca<mark style="background',
     brand: 'TCE Stone',
@@ -2412,7 +2408,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4024 Carrara Bianca<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4024 Carrara Bianca<mark style=\"background design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4025',
     name: 'TCE 4025 Carrara Crema<mark style="background',
     brand: 'TCE Stone',
@@ -2423,7 +2419,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4025 Carrara Crema<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4025 Carrara Crema<mark style=\"background design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4026',
     name: 'TCE 4026 Carrara Bruno<mark style="background',
     brand: 'TCE Stone',
@@ -2434,7 +2430,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4026 Carrara Bruno<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4026 Carrara Bruno<mark style=\"background design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4028',
     name: 'TCE 4028 Ice River<mark style="background',
     brand: 'TCE Stone',
@@ -2445,7 +2441,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4028 Ice River<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4028 Ice River<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4029',
     name: 'TCE 4029 Calacatta Max<mark style="background',
     brand: 'TCE Stone',
@@ -2456,7 +2452,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4029 Calacatta Max<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4029 Calacatta Max<mark style=\"background design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4030',
     name: 'TCE 4030 Glacier<mark style="background',
     brand: 'TCE Stone',
@@ -2467,7 +2463,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4030 Glacier<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4030 Glacier<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4031',
     name: 'TCE 4031 Calacatta Forest<mark style="background',
     brand: 'TCE Stone',
@@ -2478,7 +2474,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4031 Calacatta Forest<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4031 Calacatta Forest<mark style=\"background design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4033',
     name: 'TCE 4033 Winter Whisper<mark style="background',
     brand: 'TCE Stone',
@@ -2489,7 +2485,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4033 Winter Whisper<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4033 Winter Whisper<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4034',
     name: 'TCE 4034 Origin<mark style="background',
     brand: 'TCE Stone',
@@ -2500,7 +2496,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4034 Origin<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4034 Origin<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4035',
     name: 'TCE 4035 Blossom<mark style="background',
     brand: 'TCE Stone',
@@ -2511,7 +2507,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4035 Blossom<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4035 Blossom<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4036',
     name: 'TCE 4036 Tranquility<mark style="background',
     brand: 'TCE Stone',
@@ -2522,7 +2518,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4036 Tranquility<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4036 Tranquility<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4037',
     name: 'TCE 4037 Misty Arabescato<mark style="background',
     brand: 'TCE Stone',
@@ -2533,7 +2529,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4037 Misty Arabescato<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4037 Misty Arabescato<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4038',
     name: 'TCE 4038 Charcoal Arabescato<mark style="background',
     brand: 'TCE Stone',
@@ -2544,7 +2540,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4038 Charcoal Arabescato<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4038 Charcoal Arabescato<mark style=\"background design", "Dark quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4041',
     name: 'TCE 4041 Tundra<mark style="background',
     brand: 'TCE Stone',
@@ -2555,7 +2551,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4041 Tundra<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4041 Tundra<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4046',
     name: 'TCE 4046 Statuario Grigio<mark style="background',
     brand: 'TCE Stone',
@@ -2566,7 +2562,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4046 Statuario Grigio<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4046 Statuario Grigio<mark style=\"background design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4050',
     name: 'TCE 4050 Deep Concrete<mark style="background',
     brand: 'TCE Stone',
@@ -2577,7 +2573,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4050 Deep Concrete<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4050 Deep Concrete<mark style=\"background design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-4051',
     name: 'TCE 4051 Light Concrete<mark style="background',
     brand: 'TCE Stone',
@@ -2588,7 +2584,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 4051 Light Concrete<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 4051 Light Concrete<mark style=\"background design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-6002',
     name: 'TCE 6002 Spring Sky<mark style="background',
     brand: 'TCE Stone',
@@ -2599,7 +2595,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 6002 Spring Sky<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 6002 Spring Sky<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-6021',
     name: 'TCE 6021 Sepia Swirl<mark style="background',
     brand: 'TCE Stone',
@@ -2610,7 +2606,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 6021 Sepia Swirl<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 6021 Sepia Swirl<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-6024',
     name: 'TCE 6024 Linen Swirl<mark style="background',
     brand: 'TCE Stone',
@@ -2621,7 +2617,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 6024 Linen Swirl<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 6024 Linen Swirl<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'tce-8003',
     name: 'TCE 8003 Icy Mist<mark style="background',
     brand: 'TCE Stone',
@@ -2632,7 +2628,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official TCE Stone TCE 8003 Icy Mist<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 8003 Icy Mist<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ksl8701',
     name: 'Kasa KSL8701',
     brand: 'Kasa Quartz',
@@ -2643,7 +2639,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KSL8701 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KSL8701 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ksl8602',
     name: 'Kasa KSL8602',
     brand: 'Kasa Quartz',
@@ -2654,7 +2650,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KSL8602 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KSL8602 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ksl6011',
     name: 'Kasa KSL6011',
     brand: 'Kasa Quartz',
@@ -2665,7 +2661,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KSL6011 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KSL6011 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ksl6010',
     name: 'Kasa KSL6010',
     brand: 'Kasa Quartz',
@@ -2676,7 +2672,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KSL6010 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KSL6010 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ksv5101',
     name: 'Kasa KSV5101',
     brand: 'Kasa Quartz',
@@ -2687,7 +2683,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KSV5101 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KSV5101 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ksv1105',
     name: 'Kasa KSV1105',
     brand: 'Kasa Quartz',
@@ -2698,7 +2694,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KSV1105 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KSV1105 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ksv1102',
     name: 'Kasa KSV1102',
     brand: 'Kasa Quartz',
@@ -2709,7 +2705,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KSV1102 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KSV1102 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ksv1101',
     name: 'Kasa KSV1101',
     brand: 'Kasa Quartz',
@@ -2720,7 +2716,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KSV1101 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KSV1101 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky078',
     name: 'Kasa KY078',
     brand: 'Kasa Quartz',
@@ -2731,7 +2727,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY078 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY078 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky066',
     name: 'Kasa KY066',
     brand: 'Kasa Quartz',
@@ -2742,7 +2738,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY066 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY066 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky063',
     name: 'Kasa KY063',
     brand: 'Kasa Quartz',
@@ -2753,7 +2749,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY063 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY063 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky060',
     name: 'Kasa KY060',
     brand: 'Kasa Quartz',
@@ -2764,7 +2760,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY060 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY060 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky059',
     name: 'Kasa KY059',
     brand: 'Kasa Quartz',
@@ -2775,7 +2771,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY059 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY059 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky057',
     name: 'Kasa KY057',
     brand: 'Kasa Quartz',
@@ -2786,7 +2782,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY057 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY057 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky055',
     name: 'Kasa KY055',
     brand: 'Kasa Quartz',
@@ -2797,7 +2793,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY055 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY055 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky052',
     name: 'Kasa KY052',
     brand: 'Kasa Quartz',
@@ -2808,7 +2804,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY052 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY052 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ksl8601',
     name: 'Kasa KSL8601',
     brand: 'Kasa Quartz',
@@ -2819,7 +2815,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KSL8601 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KSL8601 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ksl6017',
     name: 'Kasa KSL6017',
     brand: 'Kasa Quartz',
@@ -2830,7 +2826,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KSL6017 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KSL6017 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ksl6015',
     name: 'Kasa KSL6015',
     brand: 'Kasa Quartz',
@@ -2841,7 +2837,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KSL6015 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KSL6015 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ksv9200',
     name: 'Kasa KSV9200',
     brand: 'Kasa Quartz',
@@ -2852,7 +2848,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KSV9200 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KSV9200 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ksv1106',
     name: 'Kasa KSV1106',
     brand: 'Kasa Quartz',
@@ -2863,7 +2859,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KSV1106 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KSV1106 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky070',
     name: 'Kasa KY070',
     brand: 'Kasa Quartz',
@@ -2874,7 +2870,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY070 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY070 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky067',
     name: 'Kasa KY067',
     brand: 'Kasa Quartz',
@@ -2885,7 +2881,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY067 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY067 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky061',
     name: 'Kasa KY061',
     brand: 'Kasa Quartz',
@@ -2896,7 +2892,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY061 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY061 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky058',
     name: 'Kasa KY058',
     brand: 'Kasa Quartz',
@@ -2907,7 +2903,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY058 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY058 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky056',
     name: 'Kasa KY056',
     brand: 'Kasa Quartz',
@@ -2918,7 +2914,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY056 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY056 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky046',
     name: 'Kasa KY046',
     brand: 'Kasa Quartz',
@@ -2929,7 +2925,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY046 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY046 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky045',
     name: 'Kasa KY045',
     brand: 'Kasa Quartz',
@@ -2940,7 +2936,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY045 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY045 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky043',
     name: 'Kasa KY043',
     brand: 'Kasa Quartz',
@@ -2951,7 +2947,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY043 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY043 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky042',
     name: 'Kasa KY042',
     brand: 'Kasa Quartz',
@@ -2962,7 +2958,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY042 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY042 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky041',
     name: 'Kasa KY041',
     brand: 'Kasa Quartz',
@@ -2973,7 +2969,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY041 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY041 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky040',
     name: 'Kasa KY040',
     brand: 'Kasa Quartz',
@@ -2984,7 +2980,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY040 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY040 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky037',
     name: 'Kasa KY037',
     brand: 'Kasa Quartz',
@@ -2995,7 +2991,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY037 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY037 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ksl6032',
     name: 'Kasa KSL6032',
     brand: 'Kasa Quartz',
@@ -3006,7 +3002,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KSL6032 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KSL6032 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ksl6031',
     name: 'Kasa KSL6031',
     brand: 'Kasa Quartz',
@@ -3017,7 +3013,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KSL6031 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KSL6031 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ksl6030',
     name: 'Kasa KSL6030',
     brand: 'Kasa Quartz',
@@ -3028,7 +3024,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KSL6030 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KSL6030 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ksl6016',
     name: 'Kasa KSL6016',
     brand: 'Kasa Quartz',
@@ -3039,7 +3035,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KSL6016 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KSL6016 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky036',
     name: 'Kasa KY036',
     brand: 'Kasa Quartz',
@@ -3050,7 +3046,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY036 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY036 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky031',
     name: 'Kasa KY031',
     brand: 'Kasa Quartz',
@@ -3061,7 +3057,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY031 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY031 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky028',
     name: 'Kasa KY028',
     brand: 'Kasa Quartz',
@@ -3072,7 +3068,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY028 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY028 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky025',
     name: 'Kasa KY025',
     brand: 'Kasa Quartz',
@@ -3083,7 +3079,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY025 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY025 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky021',
     name: 'Kasa KY021',
     brand: 'Kasa Quartz',
@@ -3094,7 +3090,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY021 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY021 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky008',
     name: 'Kasa KY008',
     brand: 'Kasa Quartz',
@@ -3105,7 +3101,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY008 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY008 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'ky007',
     name: 'Kasa KY007',
     brand: 'Kasa Quartz',
@@ -3116,7 +3112,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KY007 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KY007 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kd017',
     name: 'Kasa KD017',
     brand: 'Kasa Quartz',
@@ -3127,7 +3123,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KD017 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KD017 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kd016',
     name: 'Kasa KD016',
     brand: 'Kasa Quartz',
@@ -3138,7 +3134,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KD016 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KD016 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kd008',
     name: 'Kasa KD008',
     brand: 'Kasa Quartz',
@@ -3149,7 +3145,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KD008 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KD008 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kd007',
     name: 'Kasa KD007',
     brand: 'Kasa Quartz',
@@ -3160,7 +3156,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KD007 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KD007 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kv019',
     name: 'Kasa KV019',
     brand: 'Kasa Quartz',
@@ -3171,7 +3167,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KV019 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KV019 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kv018',
     name: 'Kasa KV018',
     brand: 'Kasa Quartz',
@@ -3182,7 +3178,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KV018 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KV018 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kv017',
     name: 'Kasa KV017',
     brand: 'Kasa Quartz',
@@ -3193,7 +3189,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KV017 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KV017 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kv016',
     name: 'Kasa KV016',
     brand: 'Kasa Quartz',
@@ -3204,7 +3200,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KV016 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KV016 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kv015',
     name: 'Kasa KV015',
     brand: 'Kasa Quartz',
@@ -3215,7 +3211,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KV015 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KV015 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kv011',
     name: 'Kasa KV011',
     brand: 'Kasa Quartz',
@@ -3226,7 +3222,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KV011 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KV011 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kv007',
     name: 'Kasa KV007',
     brand: 'Kasa Quartz',
@@ -3237,7 +3233,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KV007 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KV007 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kv006',
     name: 'Kasa KV006',
     brand: 'Kasa Quartz',
@@ -3248,7 +3244,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KV006 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KV006 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kv005',
     name: 'Kasa KV005',
     brand: 'Kasa Quartz',
@@ -3259,7 +3255,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KV005 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KV005 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kv003',
     name: 'Kasa KV003',
     brand: 'Kasa Quartz',
@@ -3270,7 +3266,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KV003 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KV003 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kv002',
     name: 'Kasa KV002',
     brand: 'Kasa Quartz',
@@ -3281,7 +3277,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KV002 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KV002 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kv001',
     name: 'Kasa KV001',
     brand: 'Kasa Quartz',
@@ -3292,7 +3288,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KV001 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KV001 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kr7009',
     name: 'Kasa KR7009',
     brand: 'Kasa Quartz',
@@ -3303,9 +3299,9 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa KR7009 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa KR7009 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'k9927',
-    name: 'Kasa K9927',
+    name: 'K9927',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
     typicalCost: '$1,900 – $2,800',
@@ -3314,9 +3310,9 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa K9927 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa K9927 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'k9926',
-    name: 'Kasa K9926',
+    name: 'K9926',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
     typicalCost: '$1,900 – $2,800',
@@ -3325,9 +3321,9 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa K9926 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa K9926 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'k9925',
-    name: 'Kasa K9925',
+    name: 'K9925',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
     typicalCost: '$1,900 – $2,800',
@@ -3336,9 +3332,9 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa K9925 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa K9925 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'k9924',
-    name: 'Kasa K9924',
+    name: 'K9924',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
     typicalCost: '$1,900 – $2,800',
@@ -3347,9 +3343,9 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa K9924 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa K9924 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'k9923',
-    name: 'Kasa K9923',
+    name: 'K9923',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
     typicalCost: '$1,900 – $2,800',
@@ -3358,9 +3354,9 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa K9923 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa K9923 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'k9922',
-    name: 'Kasa K9922',
+    name: 'K9922',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
     typicalCost: '$1,900 – $2,800',
@@ -3369,9 +3365,9 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa K9922 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa K9922 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'k9919',
-    name: 'Kasa K9919',
+    name: 'K9919',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
     typicalCost: '$1,900 – $2,800',
@@ -3380,9 +3376,9 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa K9919 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa K9919 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'k9917',
-    name: 'Kasa K9917',
+    name: 'K9917',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
     typicalCost: '$1,900 – $2,800',
@@ -3391,9 +3387,9 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa K9917 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa K9917 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'k9912',
-    name: 'Kasa K9912',
+    name: 'K9912',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
     typicalCost: '$1,900 – $2,800',
@@ -3402,9 +3398,9 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa K9912 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa K9912 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'k9911',
-    name: 'Kasa K9911',
+    name: 'K9911',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
     typicalCost: '$1,900 – $2,800',
@@ -3413,9 +3409,9 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa K9911 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa K9911 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'k9910',
-    name: 'Kasa K9910',
+    name: 'K9910',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
     typicalCost: '$1,900 – $2,800',
@@ -3424,9 +3420,9 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa K9910 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa K9910 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'k9909',
-    name: 'Kasa K9909',
+    name: 'K9909',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
     typicalCost: '$1,900 – $2,800',
@@ -3435,9 +3431,9 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa K9909 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa K9909 design", "Dark quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'k9907',
-    name: 'Kasa K9907',
+    name: 'K9907',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
     typicalCost: '$1,900 – $2,800',
@@ -3446,9 +3442,9 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa K9907 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa K9907 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'k9906',
-    name: 'Kasa K9906',
+    name: 'K9906',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
     typicalCost: '$1,900 – $2,800',
@@ -3457,9 +3453,9 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa K9906 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa K9906 design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'k9908',
-    name: 'Kasa K9908',
+    name: 'K9908',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
     typicalCost: '$1,900 – $2,800',
@@ -3468,9 +3464,9 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa K9908 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa K9908 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'k9905',
-    name: 'Kasa K9905',
+    name: 'K9905',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
     typicalCost: '$1,900 – $2,800',
@@ -3479,9 +3475,9 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa K9905 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa K9905 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'k9902',
-    name: 'Kasa K9902',
+    name: 'K9902',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
     typicalCost: '$1,900 – $2,800',
@@ -3490,7 +3486,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa K9902 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa K9902 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kasa-r9020',
     name: 'Kasa R9020',
     brand: 'Kasa Quartz',
@@ -3501,7 +3497,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa R9020 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa R9020 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kasa-r9019',
     name: 'Kasa R9019',
     brand: 'Kasa Quartz',
@@ -3512,7 +3508,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa R9019 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa R9019 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kasa-r9018',
     name: 'Kasa R9018',
     brand: 'Kasa Quartz',
@@ -3523,7 +3519,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa R9018 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa R9018 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kasa-r9017',
     name: 'Kasa R9017',
     brand: 'Kasa Quartz',
@@ -3534,7 +3530,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa R9017 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa R9017 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kasa-r9016',
     name: 'Kasa R9016',
     brand: 'Kasa Quartz',
@@ -3545,7 +3541,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa R9016 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa R9016 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kasa-r9015',
     name: 'Kasa R9015',
     brand: 'Kasa Quartz',
@@ -3556,7 +3552,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa R9015 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa R9015 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kasa-r9013',
     name: 'Kasa R9013',
     brand: 'Kasa Quartz',
@@ -3567,7 +3563,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa R9013 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa R9013 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kasa-r9012',
     name: 'Kasa R9012',
     brand: 'Kasa Quartz',
@@ -3578,7 +3574,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa R9012 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa R9012 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kasa-r9011',
     name: 'Kasa R9011',
     brand: 'Kasa Quartz',
@@ -3589,7 +3585,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa R9011 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa R9011 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kasa-r9010',
     name: 'Kasa R9010',
     brand: 'Kasa Quartz',
@@ -3600,7 +3596,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa R9010 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa R9010 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kasa-r9009',
     name: 'Kasa R9009',
     brand: 'Kasa Quartz',
@@ -3611,7 +3607,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa R9009 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa R9009 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kasa-r9008',
     name: 'Kasa R9008',
     brand: 'Kasa Quartz',
@@ -3622,7 +3618,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa R9008 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa R9008 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kasa-r9006',
     name: 'Kasa R9006',
     brand: 'Kasa Quartz',
@@ -3633,7 +3629,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa R9006 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa R9006 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kasa-r9005',
     name: 'Kasa R9005',
     brand: 'Kasa Quartz',
@@ -3644,7 +3640,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa R9005 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa R9005 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kasa-r9001',
     name: 'Kasa R9001',
     brand: 'Kasa Quartz',
@@ -3655,7 +3651,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa R9001 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa R9001 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kasa-r8008',
     name: 'Kasa R8008',
     brand: 'Kasa Quartz',
@@ -3666,7 +3662,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa R8008 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa R8008 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kasa-r8007',
     name: 'Kasa R8007',
     brand: 'Kasa Quartz',
@@ -3677,7 +3673,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa R8007 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa R8007 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kasa-r8006',
     name: 'Kasa R8006',
     brand: 'Kasa Quartz',
@@ -3688,7 +3684,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa R8006 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa R8006 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kasa-jhu100',
     name: 'Kasa JHU100',
     brand: 'Kasa Quartz',
@@ -3699,7 +3695,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa JHU100 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa JHU100 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kasa-jhu200',
     name: 'Kasa JHU200',
     brand: 'Kasa Quartz',
@@ -3710,7 +3706,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz Kasa JHU200 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
     features: ["Kasa JHU200 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2002',
     name: 'KStone P2002 Statuario / H Statuario (Honed)',
     brand: 'KStone Surfaces',
@@ -3721,7 +3717,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2002 Statuario / H Statuario (Honed) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2002 Statuario / H Statuario (Honed) design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2003',
     name: 'KStone P2003 Thunder Night / H Thunder Night (Honed)',
     brand: 'KStone Surfaces',
@@ -3732,7 +3728,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2003 Thunder Night / H Thunder Night (Honed) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2003 Thunder Night / H Thunder Night (Honed) design", "Dark quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2006',
     name: 'KStone P2006 Nero Marquina/ Nero Marquina (Honed)',
     brand: 'KStone Surfaces',
@@ -3743,7 +3739,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2006 Nero Marquina/ Nero Marquina (Honed) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2006 Nero Marquina/ Nero Marquina (Honed) design", "Dark quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2007',
     name: 'KStone P2007 Statuario Extra',
     brand: 'KStone Surfaces',
@@ -3754,7 +3750,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2007 Statuario Extra quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2007 Statuario Extra design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2008',
     name: 'KStone P2008 Calacatta White (Full Body Pattern)',
     brand: 'KStone Surfaces',
@@ -3765,7 +3761,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2008 Calacatta White (Full Body Pattern) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2008 Calacatta White (Full Body Pattern) design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2009',
     name: 'KStone P2009 Statuario Bello (Full Body Pattern)',
     brand: 'KStone Surfaces',
@@ -3776,7 +3772,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2009 Statuario Bello (Full Body Pattern) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2009 Statuario Bello (Full Body Pattern) design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2010',
     name: 'KStone P2010 Pietra Grigio/ H Pietra Grigio (Honed)',
     brand: 'KStone Surfaces',
@@ -3787,7 +3783,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2010 Pietra Grigio/ H Pietra Grigio (Honed) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2010 Pietra Grigio/ H Pietra Grigio (Honed) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2011',
     name: 'KStone P2011 Imperial Fantasy / H Imperial Fantasy (Honed)',
     brand: 'KStone Surfaces',
@@ -3798,7 +3794,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2011 Imperial Fantasy / H Imperial Fantasy (Honed) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2011 Imperial Fantasy / H Imperial Fantasy (Honed) design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2012',
     name: 'KStone P2012 Statuario Gold / H Statuario Gold(Honed)',
     brand: 'KStone Surfaces',
@@ -3809,7 +3805,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2012 Statuario Gold / H Statuario Gold(Honed) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2012 Statuario Gold / H Statuario Gold(Honed) design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2014',
     name: 'KStone P2014 Carrara Gold',
     brand: 'KStone Surfaces',
@@ -3820,7 +3816,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2014 Carrara Gold quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2014 Carrara Gold design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2015',
     name: 'KStone P2015 Arabescato',
     brand: 'KStone Surfaces',
@@ -3831,7 +3827,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2015 Arabescato quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2015 Arabescato design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2016',
     name: 'KStone P2016 Bianco Staturio (Full Body Pattern)',
     brand: 'KStone Surfaces',
@@ -3842,7 +3838,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2016 Bianco Staturio (Full Body Pattern) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2016 Bianco Staturio (Full Body Pattern) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2017',
     name: 'KStone P2017 Calacatta Oro',
     brand: 'KStone Surfaces',
@@ -3853,7 +3849,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2017 Calacatta Oro quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2017 Calacatta Oro design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2018',
     name: 'KStone P2018 White Beauty (Continuous pattern)',
     brand: 'KStone Surfaces',
@@ -3864,7 +3860,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2018 White Beauty (Continuous pattern) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2018 White Beauty (Continuous pattern) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2020',
     name: 'KStone P2020 Taj Mahal/ H Taj Mahal (Honed)',
     brand: 'KStone Surfaces',
@@ -3875,7 +3871,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2020 Taj Mahal/ H Taj Mahal (Honed) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2020 Taj Mahal/ H Taj Mahal (Honed) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2021h',
     name: 'KStone P2021H Travertina (Honed)',
     brand: 'KStone Surfaces',
@@ -3886,7 +3882,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2021H Travertina (Honed) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2021H Travertina (Honed) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2022h',
     name: 'KStone P2022H Travertine (Honed)',
     brand: 'KStone Surfaces',
@@ -3897,7 +3893,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2022H Travertine (Honed) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2022H Travertine (Honed) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2033',
     name: 'KStone P2033 Crystal White/ Crystal White (Honed)',
     brand: 'KStone Surfaces',
@@ -3908,7 +3904,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2033 Crystal White/ Crystal White (Honed) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2033 Crystal White/ Crystal White (Honed) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2035h',
     name: 'KStone P2035H Pure Black (Honed)',
     brand: 'KStone Surfaces',
@@ -3919,7 +3915,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2035H Pure Black (Honed) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2035H Pure Black (Honed) design", "Dark quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2055',
     name: 'KStone P2055 Patagon Grey (6mm, Continuous pattern)',
     brand: 'KStone Surfaces',
@@ -3930,7 +3926,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2055 Patagon Grey (6mm, Continuous pattern) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2055 Patagon Grey (6mm, Continuous pattern) design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2055h',
     name: 'KStone P2055H Alaska White (Honed)',
     brand: 'KStone Surfaces',
@@ -3941,7 +3937,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2055H Alaska White (Honed) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2055H Alaska White (Honed) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2056h',
     name: 'KStone P2056H Calcatta Viola',
     brand: 'KStone Surfaces',
@@ -3952,7 +3948,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2056H Calcatta Viola quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2056H Calcatta Viola design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2058',
     name: 'KStone P2058 Lapis Blue (6mm, Continuous pattern)',
     brand: 'KStone Surfaces',
@@ -3963,7 +3959,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2058 Lapis Blue (6mm, Continuous pattern) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2058 Lapis Blue (6mm, Continuous pattern) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2061h',
     name: 'KStone P2061H Glacier (Honed)',
     brand: 'KStone Surfaces',
@@ -3974,7 +3970,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2061H Glacier (Honed) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2061H Glacier (Honed) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2101',
     name: 'KStone P2101 Macchia Antica',
     brand: 'KStone Surfaces',
@@ -3985,7 +3981,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2101 Macchia Antica quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2101 Macchia Antica design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2104',
     name: 'KStone P2104 Invisible Grey',
     brand: 'KStone Surfaces',
@@ -3996,7 +3992,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2104 Invisible Grey quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2104 Invisible Grey design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2105',
     name: 'KStone P2105 Calacatta Vagli',
     brand: 'KStone Surfaces',
@@ -4007,7 +4003,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2105 Calacatta Vagli quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2105 Calacatta Vagli design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-p2107',
     name: 'KStone P2107 Pietra Grey',
     brand: 'KStone Surfaces',
@@ -4018,7 +4014,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone P2107 Pietra Grey quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone P2107 Pietra Grey design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-a3000',
     name: 'KStone A3000 Cemento',
     brand: 'KStone Surfaces',
@@ -4029,7 +4025,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone A3000 Cemento quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone A3000 Cemento design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-a3011',
     name: 'KStone A3011 Sprinkle Salt',
     brand: 'KStone Surfaces',
@@ -4040,7 +4036,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone A3011 Sprinkle Salt quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone A3011 Sprinkle Salt design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-a3022',
     name: 'KStone A3022 Smoky Grey',
     brand: 'KStone Surfaces',
@@ -4051,7 +4047,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone A3022 Smoky Grey quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone A3022 Smoky Grey design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-a3097',
     name: 'KStone A3097 Glossy White',
     brand: 'KStone Surfaces',
@@ -4062,7 +4058,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone A3097 Glossy White quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone A3097 Glossy White design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-b4001',
     name: 'KStone B4001 Crystal Dust',
     brand: 'KStone Surfaces',
@@ -4073,7 +4069,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone B4001 Crystal Dust quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone B4001 Crystal Dust design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-b4002',
     name: 'KStone B4002 White Sea Salt',
     brand: 'KStone Surfaces',
@@ -4084,7 +4080,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone B4002 White Sea Salt quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone B4002 White Sea Salt design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-b4005',
     name: 'KStone B4005 Sparkle Cream',
     brand: 'KStone Surfaces',
@@ -4095,7 +4091,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone B4005 Sparkle Cream quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone B4005 Sparkle Cream design", "Warm quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-b4011',
     name: 'KStone B4011 Black Galaxy',
     brand: 'KStone Surfaces',
@@ -4106,7 +4102,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone B4011 Black Galaxy quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone B4011 Black Galaxy design", "Dark quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-c5000',
     name: 'KStone C5000 Buttery Cream',
     brand: 'KStone Surfaces',
@@ -4117,7 +4113,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone C5000 Buttery Cream quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone C5000 Buttery Cream design", "Warm quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-c5009',
     name: 'KStone C5009 Cristallo Bianco',
     brand: 'KStone Surfaces',
@@ -4128,7 +4124,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone C5009 Cristallo Bianco quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone C5009 Cristallo Bianco design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-c5010',
     name: 'KStone C5010 Smoky White',
     brand: 'KStone Surfaces',
@@ -4139,7 +4135,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone C5010 Smoky White quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone C5010 Smoky White design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-c5013',
     name: 'KStone C5013 Chestnut',
     brand: 'KStone Surfaces',
@@ -4150,7 +4146,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone C5013 Chestnut quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone C5013 Chestnut design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-c5027',
     name: 'KStone C5027 White Pearl',
     brand: 'KStone Surfaces',
@@ -4161,7 +4157,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone C5027 White Pearl quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone C5027 White Pearl design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-c5079',
     name: 'KStone C5079 Cotton Grey',
     brand: 'KStone Surfaces',
@@ -4172,7 +4168,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone C5079 Cotton Grey quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone C5079 Cotton Grey design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-c5109',
     name: 'KStone C5109 Carrara White',
     brand: 'KStone Surfaces',
@@ -4183,7 +4179,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone C5109 Carrara White quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone C5109 Carrara White design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-c5110',
     name: 'KStone C5110 Grigio Imperiale',
     brand: 'KStone Surfaces',
@@ -4194,7 +4190,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone C5110 Grigio Imperiale quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone C5110 Grigio Imperiale design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-c5111',
     name: 'KStone C5111',
     brand: 'KStone Surfaces',
@@ -4205,7 +4201,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone C5111 quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone C5111 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-c5121',
     name: 'KStone C5121 Seashell',
     brand: 'KStone Surfaces',
@@ -4216,7 +4212,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone C5121 Seashell quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone C5121 Seashell design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-c5123',
     name: 'KStone C5123 Satin light Concrete',
     brand: 'KStone Surfaces',
@@ -4227,7 +4223,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone C5123 Satin light Concrete quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone C5123 Satin light Concrete design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-c5126',
     name: 'KStone C5126 Venato Carrara',
     brand: 'KStone Surfaces',
@@ -4238,7 +4234,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone C5126 Venato Carrara quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone C5126 Venato Carrara design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-c5127',
     name: 'KStone C5127 Satin Fresh Concrete',
     brand: 'KStone Surfaces',
@@ -4249,7 +4245,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone C5127 Satin Fresh Concrete quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone C5127 Satin Fresh Concrete design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-f7004',
     name: 'KStone F7004 Elbony Grey',
     brand: 'KStone Surfaces',
@@ -4260,7 +4256,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone F7004 Elbony Grey quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone F7004 Elbony Grey design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-k1001',
     name: 'KStone K1001 Macchia Gold (Printed Quartz)',
     brand: 'KStone Surfaces',
@@ -4271,7 +4267,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone K1001 Macchia Gold (Printed Quartz) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone K1001 Macchia Gold (Printed Quartz) design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-k1002',
     name: 'KStone K1002 Symphony Grey (Printed Quartz)',
     brand: 'KStone Surfaces',
@@ -4282,7 +4278,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone K1002 Symphony Grey (Printed Quartz) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone K1002 Symphony Grey (Printed Quartz) design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-k1003',
     name: 'KStone K1003 Azul Veil (Printed Quartz)',
     brand: 'KStone Surfaces',
@@ -4293,7 +4289,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone K1003 Azul Veil (Printed Quartz) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone K1003 Azul Veil (Printed Quartz) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-k1025',
     name: 'KStone K1025 Spindrift',
     brand: 'KStone Surfaces',
@@ -4304,7 +4300,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone K1025 Spindrift quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone K1025 Spindrift design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-k1026',
     name: 'KStone K1026 Cristallo Gold',
     brand: 'KStone Surfaces',
@@ -4315,7 +4311,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone K1026 Cristallo Gold quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone K1026 Cristallo Gold design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-k1050',
     name: 'KStone K1050 Gold Statuario',
     brand: 'KStone Surfaces',
@@ -4326,7 +4322,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone K1050 Gold Statuario quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone K1050 Gold Statuario design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-k1053',
     name: 'KStone K1053 Arabescato Venato',
     brand: 'KStone Surfaces',
@@ -4337,7 +4333,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone K1053 Arabescato Venato quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone K1053 Arabescato Venato design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-k1058',
     name: 'KStone K1058 Ocean Wave',
     brand: 'KStone Surfaces',
@@ -4348,7 +4344,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone K1058 Ocean Wave quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone K1058 Ocean Wave design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-k1060',
     name: 'KStone K1060 Ocean Shore',
     brand: 'KStone Surfaces',
@@ -4359,7 +4355,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone K1060 Ocean Shore quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone K1060 Ocean Shore design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-k1062',
     name: 'KStone K1062 Taj White',
     brand: 'KStone Surfaces',
@@ -4370,7 +4366,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone K1062 Taj White quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone K1062 Taj White design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-k1064',
     name: 'KStone K1064 Taj Desert',
     brand: 'KStone Surfaces',
@@ -4381,7 +4377,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone K1064 Taj Desert quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone K1064 Taj Desert design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-k1065',
     name: 'KStone K1065 Taj Cremo',
     brand: 'KStone Surfaces',
@@ -4392,7 +4388,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone K1065 Taj Cremo quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone K1065 Taj Cremo design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-k1065m',
     name: 'KStone K1065M Taj Cremo (Matte)',
     brand: 'KStone Surfaces',
@@ -4403,7 +4399,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone K1065M Taj Cremo (Matte) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone K1065M Taj Cremo (Matte) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-k1069m',
     name: 'KStone K1069M Taj Mahal (Matte)',
     brand: 'KStone Surfaces',
@@ -4414,7 +4410,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone K1069M Taj Mahal (Matte) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone K1069M Taj Mahal (Matte) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-k1072',
     name: 'KStone K1072 Bianco Namibia',
     brand: 'KStone Surfaces',
@@ -4425,7 +4421,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone K1072 Bianco Namibia quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone K1072 Bianco Namibia design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-k1074',
     name: 'KStone K1074 Naica',
     brand: 'KStone Surfaces',
@@ -4436,7 +4432,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone K1074 Naica quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone K1074 Naica design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-k1076',
     name: 'KStone K1076 Travertine White (Leathered)',
     brand: 'KStone Surfaces',
@@ -4447,7 +4443,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone K1076 Travertine White (Leathered) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone K1076 Travertine White (Leathered) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-k1103',
     name: 'KStone K1103 Cremo Fantasy',
     brand: 'KStone Surfaces',
@@ -4458,7 +4454,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone K1103 Cremo Fantasy quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone K1103 Cremo Fantasy design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-k1103m',
     name: 'KStone K1103M Cremo Fantasy (Matte)',
     brand: 'KStone Surfaces',
@@ -4469,7 +4465,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone K1103M Cremo Fantasy (Matte) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone K1103M Cremo Fantasy (Matte) design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-k1104',
     name: 'KStone K1104 Silky Shore',
     brand: 'KStone Surfaces',
@@ -4480,7 +4476,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone K1104 Silky Shore quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone K1104 Silky Shore design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-q6101',
     name: 'KStone Q6101 Calacatta Gold',
     brand: 'KStone Surfaces',
@@ -4491,7 +4487,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Q6101 Calacatta Gold quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Q6101 Calacatta Gold design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-q6102',
     name: 'KStone Q6102 Kingsman',
     brand: 'KStone Surfaces',
@@ -4502,7 +4498,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Q6102 Kingsman quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Q6102 Kingsman design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-q6103',
     name: 'KStone Q6103 Nova Grey',
     brand: 'KStone Surfaces',
@@ -4513,7 +4509,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Q6103 Nova Grey quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Q6103 Nova Grey design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-q6104',
     name: 'KStone Q6104 Misty Drift',
     brand: 'KStone Surfaces',
@@ -4524,7 +4520,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Q6104 Misty Drift quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Q6104 Misty Drift design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-q6106',
     name: 'KStone Q6106 Botanica White',
     brand: 'KStone Surfaces',
@@ -4535,7 +4531,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Q6106 Botanica White quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Q6106 Botanica White design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-q6107',
     name: 'KStone Q6107 Statuario Pearl',
     brand: 'KStone Surfaces',
@@ -4546,7 +4542,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Q6107 Statuario Pearl quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Q6107 Statuario Pearl design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-q6108',
     name: 'KStone Q6108 Polar White',
     brand: 'KStone Surfaces',
@@ -4557,7 +4553,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Q6108 Polar White quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Q6108 Polar White design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-q6109',
     name: 'KStone Q6109 Imperial White',
     brand: 'KStone Surfaces',
@@ -4568,7 +4564,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Q6109 Imperial White quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Q6109 Imperial White design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-q6110',
     name: 'KStone Q6110 Calacatta Arctic',
     brand: 'KStone Surfaces',
@@ -4579,7 +4575,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Q6110 Calacatta Arctic quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Q6110 Calacatta Arctic design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-q6111',
     name: 'KStone Q6111 River Gold',
     brand: 'KStone Surfaces',
@@ -4590,7 +4586,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Q6111 River Gold quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Q6111 River Gold design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-q6112',
     name: 'KStone Q6112 Urban Noir',
     brand: 'KStone Surfaces',
@@ -4601,7 +4597,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Q6112 Urban Noir quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Q6112 Urban Noir design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-q6113',
     name: 'KStone Q6113 Sahara Noir',
     brand: 'KStone Surfaces',
@@ -4612,7 +4608,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Q6113 Sahara Noir quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Q6113 Sahara Noir design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-q6114',
     name: 'KStone Q6114 Lunar Grey',
     brand: 'KStone Surfaces',
@@ -4623,7 +4619,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Q6114 Lunar Grey quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Q6114 Lunar Grey design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-q6116',
     name: 'KStone Q6116 Panda',
     brand: 'KStone Surfaces',
@@ -4634,7 +4630,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Q6116 Panda quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Q6116 Panda design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-q6118',
     name: 'KStone Q6118 Bianco Thunder',
     brand: 'KStone Surfaces',
@@ -4645,7 +4641,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Q6118 Bianco Thunder quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Q6118 Bianco Thunder design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-q6119',
     name: 'KStone Q6119 Tranquility Gold',
     brand: 'KStone Surfaces',
@@ -4656,7 +4652,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Q6119 Tranquility Gold quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Q6119 Tranquility Gold design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-q6120',
     name: 'KStone Q6120 Fusion Caramel',
     brand: 'KStone Surfaces',
@@ -4667,7 +4663,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Q6120 Fusion Caramel quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Q6120 Fusion Caramel design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-q6122',
     name: 'KStone Q6122 White Lux',
     brand: 'KStone Surfaces',
@@ -4678,7 +4674,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Q6122 White Lux quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Q6122 White Lux design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-q6125',
     name: 'KStone Q6125 Aqua',
     brand: 'KStone Surfaces',
@@ -4689,7 +4685,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Q6125 Aqua quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Q6125 Aqua design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-q6155',
     name: 'KStone Q6155 Misty Grey',
     brand: 'KStone Surfaces',
@@ -4700,7 +4696,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Q6155 Misty Grey quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Q6155 Misty Grey design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-v8001',
     name: 'KStone V8001 Calacatta Vintage',
     brand: 'KStone Surfaces',
@@ -4711,7 +4707,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone V8001 Calacatta Vintage quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone V8001 Calacatta Vintage design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-v8002',
     name: 'KStone V8002 Statuario Caldia',
     brand: 'KStone Surfaces',
@@ -4722,7 +4718,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone V8002 Statuario Caldia quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone V8002 Statuario Caldia design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-v8004',
     name: 'KStone V8004 Bianco Nuvo',
     brand: 'KStone Surfaces',
@@ -4733,7 +4729,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone V8004 Bianco Nuvo quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone V8004 Bianco Nuvo design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-v8005',
     name: 'KStone V8005 Calacatta Snow',
     brand: 'KStone Surfaces',
@@ -4744,7 +4740,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone V8005 Calacatta Snow quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone V8005 Calacatta Snow design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-v8006',
     name: 'KStone V8006 Dove White',
     brand: 'KStone Surfaces',
@@ -4755,7 +4751,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone V8006 Dove White quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone V8006 Dove White design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-v8007',
     name: 'KStone V8007 Calacatta Fusion',
     brand: 'KStone Surfaces',
@@ -4766,7 +4762,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone V8007 Calacatta Fusion quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone V8007 Calacatta Fusion design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-v8008',
     name: 'KStone V8008 Calacatta Extra',
     brand: 'KStone Surfaces',
@@ -4777,7 +4773,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone V8008 Calacatta Extra quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone V8008 Calacatta Extra design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-v8010',
     name: 'KStone V8010 Venato Gold',
     brand: 'KStone Surfaces',
@@ -4788,7 +4784,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone V8010 Venato Gold quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone V8010 Venato Gold design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-v8011',
     name: 'KStone V8011 White Dream',
     brand: 'KStone Surfaces',
@@ -4799,7 +4795,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone V8011 White Dream quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone V8011 White Dream design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-v8012',
     name: 'KStone V8012 Maquina Night',
     brand: 'KStone Surfaces',
@@ -4810,7 +4806,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone V8012 Maquina Night quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone V8012 Maquina Night design", "Dark quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-v8015',
     name: 'KStone V8015 Calacatta Ice',
     brand: 'KStone Surfaces',
@@ -4821,7 +4817,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone V8015 Calacatta Ice quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone V8015 Calacatta Ice design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-v8016',
     name: 'KStone V8016 Calacatta Oro',
     brand: 'KStone Surfaces',
@@ -4832,7 +4828,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone V8016 Calacatta Oro quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone V8016 Calacatta Oro design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-y9006',
     name: 'KStone Y9006 Forest River',
     brand: 'KStone Surfaces',
@@ -4843,7 +4839,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Y9006 Forest River quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Y9006 Forest River design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-y9008',
     name: 'KStone Y9008 Oceano',
     brand: 'KStone Surfaces',
@@ -4854,7 +4850,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Y9008 Oceano quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Y9008 Oceano design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-y9014',
     name: 'KStone Y9014 Colonial Cream',
     brand: 'KStone Surfaces',
@@ -4865,7 +4861,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Y9014 Colonial Cream quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Y9014 Colonial Cream design", "Warm quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-y9015',
     name: 'KStone Y9015 Imperial Grey',
     brand: 'KStone Surfaces',
@@ -4876,7 +4872,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Y9015 Imperial Grey quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Y9015 Imperial Grey design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-y9016',
     name: 'KStone Y9016 Imperial Titanium',
     brand: 'KStone Surfaces',
@@ -4887,7 +4883,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Y9016 Imperial Titanium quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Y9016 Imperial Titanium design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-y9017',
     name: 'KStone Y9017 Crystal Lake',
     brand: 'KStone Surfaces',
@@ -4898,7 +4894,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Y9017 Crystal Lake quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Y9017 Crystal Lake design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-y9022',
     name: 'KStone Y9022 Crystallo Fog',
     brand: 'KStone Surfaces',
@@ -4909,7 +4905,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Y9022 Crystallo Fog quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Y9022 Crystallo Fog design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-y9028',
     name: 'KStone Y9028 Cotton Cloud',
     brand: 'KStone Surfaces',
@@ -4920,7 +4916,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Y9028 Cotton Cloud quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Y9028 Cotton Cloud design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-0002',
     name: 'KStone 0002 Alpinus 8326',
     brand: 'KStone Surfaces',
@@ -4931,7 +4927,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 0002 Alpinus 8326 quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 0002 Alpinus 8326 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-3307',
     name: 'KStone 3307 Alpinus',
     brand: 'KStone Surfaces',
@@ -4942,7 +4938,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 3307 Alpinus quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 3307 Alpinus design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-avalanche',
     name: 'KStone Avalanche',
     brand: 'KStone Surfaces',
@@ -4953,7 +4949,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Avalanche quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Avalanche design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2867',
     name: 'KStone 2867 Avocatus 3 (Leathered)',
     brand: 'KStone Surfaces',
@@ -4964,7 +4960,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2867 Avocatus 3 (Leathered) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2867 Avocatus 3 (Leathered) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-3151',
     name: 'KStone 3151 Avocatus',
     brand: 'KStone Surfaces',
@@ -4975,7 +4971,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 3151 Avocatus quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 3151 Avocatus design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2073',
     name: 'KStone 2073 Biancatto',
     brand: 'KStone Surfaces',
@@ -4986,7 +4982,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2073 Biancatto quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2073 Biancatto design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2079',
     name: 'KStone 2079 Macchia Vecchia',
     brand: 'KStone Surfaces',
@@ -4997,7 +4993,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2079 Macchia Vecchia quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2079 Macchia Vecchia design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2083',
     name: 'KStone 2083 Bianco Superiore',
     brand: 'KStone Surfaces',
@@ -5008,7 +5004,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2083 Bianco Superiore quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2083 Bianco Superiore design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-7155',
     name: 'KStone 7155 Black Galaxy',
     brand: 'KStone Surfaces',
@@ -5019,7 +5015,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 7155 Black Galaxy quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 7155 Black Galaxy design", "Dark quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-3318',
     name: 'KStone 3318 Blue Deep',
     brand: 'KStone Surfaces',
@@ -5030,7 +5026,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 3318 Blue Deep quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 3318 Blue Deep design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-classic',
     name: 'KStone Classic White',
     brand: 'KStone Surfaces',
@@ -5041,7 +5037,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Classic White quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Classic White design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2046',
     name: 'KStone 2046 Cristallo Bianco',
     brand: 'KStone Surfaces',
@@ -5052,7 +5048,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2046 Cristallo Bianco quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2046 Cristallo Bianco design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2086',
     name: 'KStone 2086 Cristallo Gold',
     brand: 'KStone Surfaces',
@@ -5063,7 +5059,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2086 Cristallo Gold quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2086 Cristallo Gold design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-3238',
     name: 'KStone 3238 Cristallo Gold',
     brand: 'KStone Surfaces',
@@ -5074,7 +5070,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 3238 Cristallo Gold quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 3238 Cristallo Gold design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2066',
     name: 'KStone 2066 Cristallo Iluminato',
     brand: 'KStone Surfaces',
@@ -5085,7 +5081,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2066 Cristallo Iluminato quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2066 Cristallo Iluminato design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-3092',
     name: 'KStone 3092 Negresco',
     brand: 'KStone Surfaces',
@@ -5096,7 +5092,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 3092 Negresco quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 3092 Negresco design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-fantasy',
     name: 'KStone Fantasy Brown 3cm',
     brand: 'KStone Surfaces',
@@ -5107,7 +5103,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Fantasy Brown 3cm quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Fantasy Brown 3cm design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-0209',
     name: 'KStone 0209 Fusion',
     brand: 'KStone Surfaces',
@@ -5118,7 +5114,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 0209 Fusion quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 0209 Fusion design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2062',
     name: 'KStone 2062 Matarazzo',
     brand: 'KStone Surfaces',
@@ -5129,7 +5125,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2062 Matarazzo quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2062 Matarazzo design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-z1014',
     name: 'KStone Z1014 Mont Blanc (Y3)',
     brand: 'KStone Surfaces',
@@ -5140,7 +5136,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Z1014 Mont Blanc (Y3) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Z1014 Mont Blanc (Y3) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2072',
     name: 'KStone 2072 Namib Calacatta',
     brand: 'KStone Surfaces',
@@ -5151,7 +5147,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2072 Namib Calacatta quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2072 Namib Calacatta design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2087',
     name: 'KStone 2087 Negresco',
     brand: 'KStone Surfaces',
@@ -5162,7 +5158,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2087 Negresco quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2087 Negresco design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2021',
     name: 'KStone 2021 Negresco 3cm Leathered',
     brand: 'KStone Surfaces',
@@ -5173,7 +5169,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2021 Negresco 3cm Leathered quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2021 Negresco 3cm Leathered design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-nero',
     name: 'KStone Nero Assoluto 3cm',
     brand: 'KStone Surfaces',
@@ -5184,7 +5180,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Nero Assoluto 3cm quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Nero Assoluto 3cm design", "Dark quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-v3501',
     name: 'KStone V3501 Oyster White (SF)',
     brand: 'KStone Surfaces',
@@ -5195,7 +5191,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone V3501 Oyster White (SF) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone V3501 Oyster White (SF) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2060',
     name: 'KStone 2060 Patagonia',
     brand: 'KStone Surfaces',
@@ -5206,7 +5202,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2060 Patagonia quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2060 Patagonia design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-3375',
     name: 'KStone 3375 Patagonia Alpinus 5',
     brand: 'KStone Surfaces',
@@ -5217,7 +5213,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 3375 Patagonia Alpinus 5 quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 3375 Patagonia Alpinus 5 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2410',
     name: 'KStone 2410 Platinus Polished',
     brand: 'KStone Surfaces',
@@ -5228,7 +5224,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2410 Platinus Polished quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2410 Platinus Polished design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-statuario',
     name: 'KStone Statuario Extra',
     brand: 'KStone Surfaces',
@@ -5239,7 +5235,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone Statuario Extra quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone Statuario Extra design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2260',
     name: 'KStone 2260 Steel Grey Leathered',
     brand: 'KStone Surfaces',
@@ -5250,7 +5246,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2260 Steel Grey Leathered quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2260 Steel Grey Leathered design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2281',
     name: 'KStone 2281 Steel Grey Leathered 3cm',
     brand: 'KStone Surfaces',
@@ -5261,7 +5257,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2281 Steel Grey Leathered 3cm quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2281 Steel Grey Leathered 3cm design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2077',
     name: 'KStone 2077 Taj Blue',
     brand: 'KStone Surfaces',
@@ -5272,7 +5268,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2077 Taj Blue quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2077 Taj Blue design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-0208',
     name: 'KStone 0208 Taj Mahal',
     brand: 'KStone Surfaces',
@@ -5283,7 +5279,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 0208 Taj Mahal quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 0208 Taj Mahal design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-1256',
     name: 'KStone 1256 Taj Mahal (Honed)',
     brand: 'KStone Surfaces',
@@ -5294,7 +5290,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 1256 Taj Mahal (Honed) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 1256 Taj Mahal (Honed) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2082',
     name: 'KStone 2082 Taj Mahal (Honed)',
     brand: 'KStone Surfaces',
@@ -5305,7 +5301,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2082 Taj Mahal (Honed) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2082 Taj Mahal (Honed) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2076',
     name: 'KStone 2076 Taj Mahal 3cm',
     brand: 'KStone Surfaces',
@@ -5316,7 +5312,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2076 Taj Mahal 3cm quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2076 Taj Mahal 3cm design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2092',
     name: 'KStone 2092 Taj Mahal 3cm',
     brand: 'KStone Surfaces',
@@ -5327,7 +5323,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2092 Taj Mahal 3cm quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2092 Taj Mahal 3cm design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2055',
     name: 'KStone 2055 Taj Mahal 3cm Leathered',
     brand: 'KStone Surfaces',
@@ -5338,7 +5334,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2055 Taj Mahal 3cm Leathered quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2055 Taj Mahal 3cm Leathered design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-ss600',
     name: 'KStone SS600 Taj Mahal Honed',
     brand: 'KStone Surfaces',
@@ -5349,7 +5345,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone SS600 Taj Mahal Honed quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone SS600 Taj Mahal Honed design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-t1955',
     name: 'KStone T1955 Taj Mahal',
     brand: 'KStone Surfaces',
@@ -5360,7 +5356,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone T1955 Taj Mahal quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone T1955 Taj Mahal design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-t2511',
     name: 'KStone T2511 Taj Mahal',
     brand: 'KStone Surfaces',
@@ -5371,7 +5367,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone T2511 Taj Mahal quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone T2511 Taj Mahal design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-ss579',
     name: 'KStone SS579 Taj Mahal (Honed)',
     brand: 'KStone Surfaces',
@@ -5382,7 +5378,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone SS579 Taj Mahal (Honed) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone SS579 Taj Mahal (Honed) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-1258',
     name: 'KStone 1258 Taj Mahal Leathered',
     brand: 'KStone Surfaces',
@@ -5393,7 +5389,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 1258 Taj Mahal Leathered quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 1258 Taj Mahal Leathered design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2201',
     name: 'KStone 2201 Taj Mahal Leathered',
     brand: 'KStone Surfaces',
@@ -5404,7 +5400,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2201 Taj Mahal Leathered quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2201 Taj Mahal Leathered design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2202',
     name: 'KStone 2202 Taj Mahal Leathered',
     brand: 'KStone Surfaces',
@@ -5415,7 +5411,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2202 Taj Mahal Leathered quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2202 Taj Mahal Leathered design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2203',
     name: 'KStone 2203 Taj Mahal Leathered 3cm',
     brand: 'KStone Surfaces',
@@ -5426,7 +5422,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2203 Taj Mahal Leathered 3cm quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2203 Taj Mahal Leathered 3cm design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-j2407',
     name: 'KStone J2407 Taj Mahal Leathered (T20)',
     brand: 'KStone Surfaces',
@@ -5437,7 +5433,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone J2407 Taj Mahal Leathered (T20) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone J2407 Taj Mahal Leathered (T20) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-j5992',
     name: 'KStone J5992 Taj Mahal Leathered',
     brand: 'KStone Surfaces',
@@ -5448,7 +5444,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone J5992 Taj Mahal Leathered quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone J5992 Taj Mahal Leathered design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-l1571',
     name: 'KStone L1571 Taj Mahal',
     brand: 'KStone Surfaces',
@@ -5459,7 +5455,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone L1571 Taj Mahal quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone L1571 Taj Mahal design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-3142',
     name: 'KStone 3142 Preto Titanium',
     brand: 'KStone Surfaces',
@@ -5470,7 +5466,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 3142 Preto Titanium quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 3142 Preto Titanium design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-3236',
     name: 'KStone 3236 Titanium',
     brand: 'KStone Surfaces',
@@ -5481,7 +5477,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 3236 Titanium quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 3236 Titanium design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2058',
     name: 'KStone 2058 Titanium Gold 00 Leathered',
     brand: 'KStone Surfaces',
@@ -5492,7 +5488,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2058 Titanium Gold 00 Leathered quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2058 Titanium Gold 00 Leathered design", "Marble quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-x2403',
     name: 'KStone X2403 Titanium (H)',
     brand: 'KStone Surfaces',
@@ -5503,7 +5499,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone X2403 Titanium (H) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone X2403 Titanium (H) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-3391',
     name: 'KStone 3391 Titanium Leathered',
     brand: 'KStone Surfaces',
@@ -5514,7 +5510,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 3391 Titanium Leathered quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 3391 Titanium Leathered design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-t2147',
     name: 'KStone T2147 Vermont Black (H)',
     brand: 'KStone Surfaces',
@@ -5525,7 +5521,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone T2147 Vermont Black (H) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone T2147 Vermont Black (H) design", "Dark quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'kstone-2607',
     name: 'KStone 2607 Winter Ridge (#)',
     brand: 'KStone Surfaces',
@@ -5536,7 +5532,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official KStone Surfaces KStone 2607 Winter Ridge (#) quartz countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["KStone 2607 Winter Ridge (#) design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq4506',
     name: 'Lucent CIQ4506',
     brand: 'Lucent Quartz',
@@ -5547,7 +5543,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ4506 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ4506 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqy2285',
     name: 'Lucent LQY2285',
     brand: 'Lucent Quartz',
@@ -5558,7 +5554,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQY2285 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQY2285 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-yew',
     name: 'Lucent YEW',
     brand: 'Lucent Quartz',
@@ -5569,7 +5565,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent YEW countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent YEW design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ypb',
     name: 'Lucent YPB',
     brand: 'Lucent Quartz',
@@ -5580,7 +5576,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent YPB countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent YPB design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq5518',
     name: 'Lucent LQ5518',
     brand: 'Lucent Quartz',
@@ -5591,7 +5587,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ5518 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ5518 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6300l',
     name: 'Lucent LQ6300L',
     brand: 'Lucent Quartz',
@@ -5602,7 +5598,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6300L countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6300L design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq4211',
     name: 'Lucent CIQ4211',
     brand: 'Lucent Quartz',
@@ -5613,7 +5609,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ4211 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ4211 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq1141',
     name: 'Lucent CIQ1141',
     brand: 'Lucent Quartz',
@@ -5624,7 +5620,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ1141 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ1141 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq1168',
     name: 'Lucent CIQ1168',
     brand: 'Lucent Quartz',
@@ -5635,7 +5631,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ1168 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ1168 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq1196',
     name: 'Lucent CIQ1196',
     brand: 'Lucent Quartz',
@@ -5646,7 +5642,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ1196 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ1196 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqy1592',
     name: 'Lucent LQY1592',
     brand: 'Lucent Quartz',
@@ -5657,7 +5653,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQY1592 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQY1592 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ycw',
     name: 'Lucent YCW',
     brand: 'Lucent Quartz',
@@ -5668,7 +5664,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent YCW countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent YCW design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqy2283',
     name: 'Lucent LQY2283',
     brand: 'Lucent Quartz',
@@ -5679,7 +5675,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQY2283 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQY2283 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq1019',
     name: 'Lucent CIQ1019',
     brand: 'Lucent Quartz',
@@ -5690,7 +5686,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ1019 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ1019 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq4518',
     name: 'Lucent CIQ4518',
     brand: 'Lucent Quartz',
@@ -5701,7 +5697,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ4518 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ4518 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq1016',
     name: 'Lucent CIQ1016',
     brand: 'Lucent Quartz',
@@ -5712,7 +5708,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ1016 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ1016 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq3009',
     name: 'Lucent CIQ3009',
     brand: 'Lucent Quartz',
@@ -5723,7 +5719,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ3009 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ3009 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp4600',
     name: 'Lucent LQP4600',
     brand: 'Lucent Quartz',
@@ -5734,7 +5730,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP4600 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP4600 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq1580',
     name: 'Lucent CIQ1580',
     brand: 'Lucent Quartz',
@@ -5745,7 +5741,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ1580 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ1580 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq3505',
     name: 'Lucent CIQ3505',
     brand: 'Lucent Quartz',
@@ -5756,7 +5752,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ3505 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ3505 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqq9090',
     name: 'Lucent LQQ9090',
     brand: 'Lucent Quartz',
@@ -5767,7 +5763,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQQ9090 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQQ9090 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq3104',
     name: 'Lucent CIQ3104',
     brand: 'Lucent Quartz',
@@ -5778,7 +5774,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ3104 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ3104 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq3508',
     name: 'Lucent CIQ3508',
     brand: 'Lucent Quartz',
@@ -5789,7 +5785,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ3508 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ3508 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq1611',
     name: 'Lucent CIQ1611',
     brand: 'Lucent Quartz',
@@ -5800,7 +5796,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ1611 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ1611 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq4504',
     name: 'Lucent CIQ4504',
     brand: 'Lucent Quartz',
@@ -5811,7 +5807,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ4504 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ4504 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq4722',
     name: 'Lucent LQ4722',
     brand: 'Lucent Quartz',
@@ -5822,7 +5818,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ4722 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ4722 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq3401',
     name: 'Lucent CIQ3401',
     brand: 'Lucent Quartz',
@@ -5833,7 +5829,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ3401 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ3401 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq1402',
     name: 'Lucent CIQ1402',
     brand: 'Lucent Quartz',
@@ -5844,7 +5840,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ1402 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ1402 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq5162',
     name: 'Lucent CIQ5162',
     brand: 'Lucent Quartz',
@@ -5855,7 +5851,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ5162 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ5162 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq4161',
     name: 'Lucent CIQ4161',
     brand: 'Lucent Quartz',
@@ -5866,7 +5862,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ4161 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ4161 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq2324',
     name: 'Lucent CIQ2324',
     brand: 'Lucent Quartz',
@@ -5877,7 +5873,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ2324 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ2324 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq2519',
     name: 'Lucent CIQ2519',
     brand: 'Lucent Quartz',
@@ -5888,7 +5884,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ2519 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ2519 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq5081',
     name: 'Lucent LQ5081',
     brand: 'Lucent Quartz',
@@ -5899,7 +5895,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ5081 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ5081 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq4013',
     name: 'Lucent CIQ4013',
     brand: 'Lucent Quartz',
@@ -5910,7 +5906,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ4013 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ4013 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq7306',
     name: 'Lucent LQ7306',
     brand: 'Lucent Quartz',
@@ -5921,7 +5917,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ7306 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ7306 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq2094',
     name: 'Lucent CIQ2094',
     brand: 'Lucent Quartz',
@@ -5932,7 +5928,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ2094 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ2094 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq2580',
     name: 'Lucent CIQ2580',
     brand: 'Lucent Quartz',
@@ -5943,7 +5939,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ2580 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ2580 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp6400',
     name: 'Lucent LQP6400',
     brand: 'Lucent Quartz',
@@ -5954,7 +5950,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP6400 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP6400 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6500',
     name: 'Lucent LQ6500',
     brand: 'Lucent Quartz',
@@ -5965,7 +5961,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6500 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6500 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq3203l',
     name: 'Lucent LQ3203L',
     brand: 'Lucent Quartz',
@@ -5976,7 +5972,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ3203L countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ3203L design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqq8383',
     name: 'Lucent LQQ8383',
     brand: 'Lucent Quartz',
@@ -5987,7 +5983,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQQ8383 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQQ8383 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq3131',
     name: 'Lucent CIQ3131',
     brand: 'Lucent Quartz',
@@ -5998,7 +5994,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ3131 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ3131 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6103',
     name: 'Lucent LQ6103',
     brand: 'Lucent Quartz',
@@ -6009,7 +6005,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6103 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6103 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq2270',
     name: 'Lucent CIQ2270',
     brand: 'Lucent Quartz',
@@ -6020,7 +6016,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ2270 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ2270 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6754',
     name: 'Lucent LQ6754',
     brand: 'Lucent Quartz',
@@ -6031,7 +6027,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6754 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6754 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq3100',
     name: 'Lucent CIQ3100',
     brand: 'Lucent Quartz',
@@ -6042,7 +6038,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ3100 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ3100 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq2401',
     name: 'Lucent CIQ2401',
     brand: 'Lucent Quartz',
@@ -6053,7 +6049,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ2401 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ2401 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp4220',
     name: 'Lucent LQP4220',
     brand: 'Lucent Quartz',
@@ -6064,7 +6060,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP4220 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP4220 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq4106',
     name: 'Lucent CIQ4106',
     brand: 'Lucent Quartz',
@@ -6075,7 +6071,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ4106 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ4106 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq5008',
     name: 'Lucent CIQ5008',
     brand: 'Lucent Quartz',
@@ -6086,7 +6082,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ5008 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ5008 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqq8282',
     name: 'Lucent LQQ8282',
     brand: 'Lucent Quartz',
@@ -6097,7 +6093,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQQ8282 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQQ8282 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6008',
     name: 'Lucent LQ6008',
     brand: 'Lucent Quartz',
@@ -6108,7 +6104,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6008 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6008 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp4003',
     name: 'Lucent LQP4003',
     brand: 'Lucent Quartz',
@@ -6119,7 +6115,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP4003 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP4003 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq3005',
     name: 'Lucent LQ3005',
     brand: 'Lucent Quartz',
@@ -6130,7 +6126,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ3005 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ3005 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6902',
     name: 'Lucent LQ6902',
     brand: 'Lucent Quartz',
@@ -6141,7 +6137,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6902 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6902 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq4230',
     name: 'Lucent LQ4230',
     brand: 'Lucent Quartz',
@@ -6152,7 +6148,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ4230 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ4230 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq2003',
     name: 'Lucent CIQ2003',
     brand: 'Lucent Quartz',
@@ -6163,7 +6159,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ2003 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ2003 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq4018',
     name: 'Lucent CIQ4018',
     brand: 'Lucent Quartz',
@@ -6174,7 +6170,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ4018 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ4018 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq4528',
     name: 'Lucent CIQ4528',
     brand: 'Lucent Quartz',
@@ -6185,7 +6181,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ4528 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ4528 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq4000',
     name: 'Lucent LQ4000',
     brand: 'Lucent Quartz',
@@ -6196,7 +6192,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ4000 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ4000 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6568',
     name: 'Lucent LQ6568',
     brand: 'Lucent Quartz',
@@ -6207,7 +6203,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6568 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6568 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq3014',
     name: 'Lucent CIQ3014',
     brand: 'Lucent Quartz',
@@ -6218,7 +6214,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ3014 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ3014 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp4612',
     name: 'Lucent LQP4612',
     brand: 'Lucent Quartz',
@@ -6229,7 +6225,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP4612 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP4612 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp4609',
     name: 'Lucent LQP4609',
     brand: 'Lucent Quartz',
@@ -6240,7 +6236,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP4609 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP4609 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq4380',
     name: 'Lucent LQ4380',
     brand: 'Lucent Quartz',
@@ -6251,7 +6247,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ4380 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ4380 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq5512',
     name: 'Lucent LQ5512',
     brand: 'Lucent Quartz',
@@ -6262,7 +6258,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ5512 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ5512 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq4712',
     name: 'Lucent LQ4712',
     brand: 'Lucent Quartz',
@@ -6273,7 +6269,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ4712 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ4712 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq4723',
     name: 'Lucent LQ4723',
     brand: 'Lucent Quartz',
@@ -6284,7 +6280,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ4723 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ4723 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp5310',
     name: 'Lucent LQP5310',
     brand: 'Lucent Quartz',
@@ -6295,7 +6291,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP5310 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP5310 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6001',
     name: 'Lucent LQ6001',
     brand: 'Lucent Quartz',
@@ -6306,7 +6302,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6001 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6001 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp6080',
     name: 'Lucent LQP6080',
     brand: 'Lucent Quartz',
@@ -6317,7 +6313,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP6080 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP6080 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6025',
     name: 'Lucent LQ6025',
     brand: 'Lucent Quartz',
@@ -6328,7 +6324,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6025 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6025 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp6081',
     name: 'Lucent LQP6081',
     brand: 'Lucent Quartz',
@@ -6339,7 +6335,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP6081 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP6081 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6226',
     name: 'Lucent LQ6226',
     brand: 'Lucent Quartz',
@@ -6350,7 +6346,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6226 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6226 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp6029',
     name: 'Lucent LQP6029',
     brand: 'Lucent Quartz',
@@ -6361,7 +6357,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP6029 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP6029 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp5604',
     name: 'Lucent LQP5604',
     brand: 'Lucent Quartz',
@@ -6372,7 +6368,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP5604 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP5604 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq5538',
     name: 'Lucent LQ5538',
     brand: 'Lucent Quartz',
@@ -6383,7 +6379,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ5538 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ5538 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6200',
     name: 'Lucent LQ6200',
     brand: 'Lucent Quartz',
@@ -6394,7 +6390,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6200 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6200 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6020',
     name: 'Lucent LQ6020',
     brand: 'Lucent Quartz',
@@ -6405,7 +6401,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6020 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6020 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq4720',
     name: 'Lucent LQ4720',
     brand: 'Lucent Quartz',
@@ -6416,7 +6412,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ4720 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ4720 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq4718',
     name: 'Lucent LQ4718',
     brand: 'Lucent Quartz',
@@ -6427,7 +6423,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ4718 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ4718 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq2012',
     name: 'Lucent CIQ2012',
     brand: 'Lucent Quartz',
@@ -6438,7 +6434,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ2012 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ2012 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq5997',
     name: 'Lucent LQ5997',
     brand: 'Lucent Quartz',
@@ -6449,7 +6445,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ5997 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ5997 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6757',
     name: 'Lucent LQ6757',
     brand: 'Lucent Quartz',
@@ -6460,7 +6456,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6757 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6757 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq5528',
     name: 'Lucent LQ5528',
     brand: 'Lucent Quartz',
@@ -6471,7 +6467,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ5528 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ5528 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6800',
     name: 'Lucent LQ6800',
     brand: 'Lucent Quartz',
@@ -6482,7 +6478,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6800 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6800 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqq8585',
     name: 'Lucent LQQ8585',
     brand: 'Lucent Quartz',
@@ -6493,7 +6489,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQQ8585 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQQ8585 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq3121',
     name: 'Lucent CIQ3121',
     brand: 'Lucent Quartz',
@@ -6504,7 +6500,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ3121 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ3121 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqq9111',
     name: 'Lucent LQQ9111',
     brand: 'Lucent Quartz',
@@ -6515,7 +6511,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQQ9111 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQQ9111 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqy0501',
     name: 'Lucent LQY0501',
     brand: 'Lucent Quartz',
@@ -6526,7 +6522,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQY0501 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQY0501 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp9373',
     name: 'Lucent LQP9373',
     brand: 'Lucent Quartz',
@@ -6537,7 +6533,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP9373 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP9373 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp9686',
     name: 'Lucent LQP9686',
     brand: 'Lucent Quartz',
@@ -6548,7 +6544,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP9686 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP9686 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp5817',
     name: 'Lucent LQP5817',
     brand: 'Lucent Quartz',
@@ -6559,7 +6555,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP5817 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP5817 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp9787',
     name: 'Lucent LQP9787',
     brand: 'Lucent Quartz',
@@ -6570,7 +6566,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP9787 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP9787 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp7308',
     name: 'Lucent LQP7308',
     brand: 'Lucent Quartz',
@@ -6581,7 +6577,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP7308 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP7308 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6311l',
     name: 'Lucent LQ6311L',
     brand: 'Lucent Quartz',
@@ -6592,7 +6588,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6311L countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6311L design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq5998',
     name: 'Lucent LQ5998',
     brand: 'Lucent Quartz',
@@ -6603,7 +6599,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ5998 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ5998 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqq8484',
     name: 'Lucent LQQ8484',
     brand: 'Lucent Quartz',
@@ -6614,7 +6610,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQQ8484 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQQ8484 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6756',
     name: 'Lucent LQ6756',
     brand: 'Lucent Quartz',
@@ -6625,7 +6621,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6756 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6756 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq5607',
     name: 'Lucent LQ5607',
     brand: 'Lucent Quartz',
@@ -6636,7 +6632,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ5607 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ5607 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqq8181',
     name: 'Lucent LQQ8181',
     brand: 'Lucent Quartz',
@@ -6647,7 +6643,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQQ8181 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQQ8181 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-yfd',
     name: 'Lucent YFD',
     brand: 'Lucent Quartz',
@@ -6658,7 +6654,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent YFD countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent YFD design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqy1846',
     name: 'Lucent LQY1846',
     brand: 'Lucent Quartz',
@@ -6669,7 +6665,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQY1846 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQY1846 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqy2332',
     name: 'Lucent LQY2332',
     brand: 'Lucent Quartz',
@@ -6680,7 +6676,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQY2332 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQY2332 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-yss',
     name: 'Lucent YSS',
     brand: 'Lucent Quartz',
@@ -6691,7 +6687,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent YSS countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent YSS design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqy2367',
     name: 'Lucent LQY2367',
     brand: 'Lucent Quartz',
@@ -6702,7 +6698,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQY2367 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQY2367 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq5318',
     name: 'Lucent LQ5318',
     brand: 'Lucent Quartz',
@@ -6713,7 +6709,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ5318 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ5318 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp4922',
     name: 'Lucent LQP4922',
     brand: 'Lucent Quartz',
@@ -6724,7 +6720,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP4922 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP4922 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq7015',
     name: 'Lucent LQ7015',
     brand: 'Lucent Quartz',
@@ -6735,7 +6731,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ7015 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ7015 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq4911',
     name: 'Lucent CIQ4911',
     brand: 'Lucent Quartz',
@@ -6746,7 +6742,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ4911 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ4911 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq3003',
     name: 'Lucent CIQ3003',
     brand: 'Lucent Quartz',
@@ -6757,7 +6753,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ3003 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ3003 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqq9666',
     name: 'Lucent LQQ9666',
     brand: 'Lucent Quartz',
@@ -6768,7 +6764,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQQ9666 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQQ9666 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqq9505l',
     name: 'Lucent LQQ9505L',
     brand: 'Lucent Quartz',
@@ -6779,7 +6775,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQQ9505L countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQQ9505L design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq4006',
     name: 'Lucent CIQ4006',
     brand: 'Lucent Quartz',
@@ -6790,7 +6786,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ4006 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ4006 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq2560',
     name: 'Lucent CIQ2560',
     brand: 'Lucent Quartz',
@@ -6801,7 +6797,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ2560 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ2560 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6007',
     name: 'Lucent LQ6007',
     brand: 'Lucent Quartz',
@@ -6812,7 +6808,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6007 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6007 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq5609',
     name: 'Lucent LQ5609',
     brand: 'Lucent Quartz',
@@ -6823,7 +6819,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ5609 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ5609 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq4412l',
     name: 'Lucent LQ4412L',
     brand: 'Lucent Quartz',
@@ -6834,7 +6830,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ4412L countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ4412L design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqy2018',
     name: 'Lucent LQY2018',
     brand: 'Lucent Quartz',
@@ -6845,7 +6841,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQY2018 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQY2018 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq1014',
     name: 'Lucent CIQ1014',
     brand: 'Lucent Quartz',
@@ -6856,7 +6852,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ1014 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ1014 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq3447',
     name: 'Lucent CIQ3447',
     brand: 'Lucent Quartz',
@@ -6867,7 +6863,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ3447 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ3447 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq5335',
     name: 'Lucent LQ5335',
     brand: 'Lucent Quartz',
@@ -6878,7 +6874,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ5335 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ5335 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq1505',
     name: 'Lucent CIQ1505',
     brand: 'Lucent Quartz',
@@ -6889,7 +6885,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ1505 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ1505 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ybl',
     name: 'Lucent YBL',
     brand: 'Lucent Quartz',
@@ -6900,7 +6896,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent YBL countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent YBL design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqq9989',
     name: 'Lucent LQQ9989',
     brand: 'Lucent Quartz',
@@ -6911,7 +6907,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQQ9989 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQQ9989 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ybg',
     name: 'Lucent YBG',
     brand: 'Lucent Quartz',
@@ -6922,7 +6918,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent YBG countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent YBG design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6014',
     name: 'Lucent LQ6014',
     brand: 'Lucent Quartz',
@@ -6933,7 +6929,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6014 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6014 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq2600',
     name: 'Lucent LQ2600',
     brand: 'Lucent Quartz',
@@ -6944,7 +6940,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ2600 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ2600 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp3000',
     name: 'Lucent LQP3000',
     brand: 'Lucent Quartz',
@@ -6955,7 +6951,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP3000 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP3000 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq4007',
     name: 'Lucent LQ4007',
     brand: 'Lucent Quartz',
@@ -6966,7 +6962,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ4007 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ4007 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq4004',
     name: 'Lucent LQ4004',
     brand: 'Lucent Quartz',
@@ -6977,7 +6973,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ4004 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ4004 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq5014',
     name: 'Lucent LQ5014',
     brand: 'Lucent Quartz',
@@ -6988,7 +6984,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ5014 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ5014 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6713',
     name: 'Lucent LQ6713',
     brand: 'Lucent Quartz',
@@ -6999,7 +6995,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6713 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6713 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq3141',
     name: 'Lucent LQ3141',
     brand: 'Lucent Quartz',
@@ -7010,7 +7006,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ3141 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ3141 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq5608',
     name: 'Lucent CIQ5608',
     brand: 'Lucent Quartz',
@@ -7021,7 +7017,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ5608 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ5608 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6838',
     name: 'Lucent LQ6838',
     brand: 'Lucent Quartz',
@@ -7032,7 +7028,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6838 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6838 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq7701',
     name: 'Lucent LQ7701',
     brand: 'Lucent Quartz',
@@ -7043,7 +7039,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ7701 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ7701 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6911',
     name: 'Lucent LQ6911',
     brand: 'Lucent Quartz',
@@ -7054,7 +7050,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6911 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6911 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq6716',
     name: 'Lucent LQ6716',
     brand: 'Lucent Quartz',
@@ -7065,7 +7061,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ6716 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ6716 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq5313',
     name: 'Lucent LQ5313',
     brand: 'Lucent Quartz',
@@ -7076,7 +7072,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ5313 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ5313 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq4164',
     name: 'Lucent LQ4164',
     brand: 'Lucent Quartz',
@@ -7087,7 +7083,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ4164 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ4164 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq4111',
     name: 'Lucent CIQ4111',
     brand: 'Lucent Quartz',
@@ -7098,7 +7094,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ4111 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ4111 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq3105',
     name: 'Lucent CIQ3105',
     brand: 'Lucent Quartz',
@@ -7109,7 +7105,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ3105 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ3105 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqq9888',
     name: 'Lucent LQQ9888',
     brand: 'Lucent Quartz',
@@ -7120,7 +7116,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQQ9888 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQQ9888 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqy0383',
     name: 'Lucent LQY0383',
     brand: 'Lucent Quartz',
@@ -7131,7 +7127,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQY0383 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQY0383 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp9878',
     name: 'Lucent LQP9878',
     brand: 'Lucent Quartz',
@@ -7142,7 +7138,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP9878 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP9878 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ciq3132',
     name: 'Lucent CIQ3132',
     brand: 'Lucent Quartz',
@@ -7153,7 +7149,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent CIQ3132 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent CIQ3132 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp5131',
     name: 'Lucent LQP5131',
     brand: 'Lucent Quartz',
@@ -7164,7 +7160,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP5131 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP5131 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqy2019',
     name: 'Lucent LQY2019',
     brand: 'Lucent Quartz',
@@ -7175,7 +7171,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQY2019 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQY2019 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq4611',
     name: 'Lucent LQ4611',
     brand: 'Lucent Quartz',
@@ -7186,7 +7182,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ4611 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ4611 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq4001',
     name: 'Lucent LQ4001',
     brand: 'Lucent Quartz',
@@ -7197,7 +7193,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ4001 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ4001 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqy2287',
     name: 'Lucent LQY2287',
     brand: 'Lucent Quartz',
@@ -7208,7 +7204,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQY2287 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQY2287 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-yca',
     name: 'Lucent YCA',
     brand: 'Lucent Quartz',
@@ -7219,7 +7215,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent YCA countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent YCA design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-yci',
     name: 'Lucent YCI',
     brand: 'Lucent Quartz',
@@ -7230,7 +7226,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent YCI countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent YCI design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-yds',
     name: 'Lucent YDS',
     brand: 'Lucent Quartz',
@@ -7241,7 +7237,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent YDS countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent YDS design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp4002',
     name: 'Lucent LQP4002',
     brand: 'Lucent Quartz',
@@ -7252,7 +7248,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP4002 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP4002 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp4700',
     name: 'Lucent LQP4700',
     brand: 'Lucent Quartz',
@@ -7263,7 +7259,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP4700 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP4700 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lq4930',
     name: 'Lucent LQ4930',
     brand: 'Lucent Quartz',
@@ -7274,7 +7270,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQ4930 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQ4930 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ycb',
     name: 'Lucent YCB',
     brand: 'Lucent Quartz',
@@ -7285,7 +7281,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent YCB countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent YCB design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ycp',
     name: 'Lucent YCP',
     brand: 'Lucent Quartz',
@@ -7296,7 +7292,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent YCP countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent YCP design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-yeg',
     name: 'Lucent YEG',
     brand: 'Lucent Quartz',
@@ -7307,7 +7303,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent YEG countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent YEG design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqy2286',
     name: 'Lucent LQY2286',
     brand: 'Lucent Quartz',
@@ -7318,7 +7314,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQY2286 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQY2286 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-lqp4800',
     name: 'Lucent LQP4800',
     brand: 'Lucent Quartz',
@@ -7329,7 +7325,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent LQP4800 countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent LQP4800 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
+{
     id: 'lucent-ahb',
     name: 'Lucent AHB',
     brand: 'Lucent Quartz',
@@ -7340,205 +7336,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Lucent Quartz Lucent AHB countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent AHB design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
-  {
-    id: 'kasa-k9927',
-    name: 'K9927',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz K9927 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['K9927 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
-    id: 'kasa-k9926',
-    name: 'K9926',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz K9926 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['K9926 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
-    id: 'kasa-k9925',
-    name: 'K9925',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz K9925 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['K9925 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
-    id: 'kasa-k9924',
-    name: 'K9924',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz K9924 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['K9924 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
-    id: 'kasa-k9923',
-    name: 'K9923',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz K9923 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['K9923 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
-    id: 'kasa-k9922',
-    name: 'K9922',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz K9922 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['K9922 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
-    id: 'kasa-k9919',
-    name: 'K9919',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz K9919 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['K9919 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
-    id: 'kasa-k9917',
-    name: 'K9917',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz K9917 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['K9917 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
-    id: 'kasa-k9912',
-    name: 'K9912',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz K9912 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['K9912 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
-    id: 'kasa-k9911',
-    name: 'K9911',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz K9911 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['K9911 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
-    id: 'kasa-k9910',
-    name: 'K9910',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz K9910 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['K9910 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
-    id: 'kasa-k9909',
-    name: 'K9909',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz K9909 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['K9909 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
-    id: 'kasa-k9907',
-    name: 'K9907',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz K9907 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['K9907 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
-    id: 'kasa-k9906',
-    name: 'K9906',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz K9906 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['K9906 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
-    id: 'kasa-k9908',
-    name: 'K9908',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz K9908 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['K9908 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
-    id: 'kasa-k9905',
-    name: 'K9905',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz K9905 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['K9905 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
-    id: 'kasa-k9902',
-    name: 'K9902',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz K9902 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['K9902 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
-    id: 'kasa-ksl8601',
-    name: 'KSL8601',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8601.jpg',
-    description: 'Official Kasa Quartz KSL8601 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['KSL8601 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
+{
     id: 'kasa-ksl6001',
     name: 'KSL6001',
     brand: 'Kasa Quartz',
@@ -7549,18 +7347,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz KSL6001 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
     features: ['KSL6001 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
   },
-  {
-    id: 'kasa-ksv9200',
-    name: 'KSV9200',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz KSV9200 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['KSV9200 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
+{
     id: 'kasa-ksv7700',
     name: 'KSV7700',
     brand: 'Kasa Quartz',
@@ -7571,18 +7358,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz KSV7700 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
     features: ['KSV7700 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
   },
-  {
-    id: 'kasa-ksv1105',
-    name: 'KSV1105',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1105.jpg',
-    description: 'Official Kasa Quartz KSV1105 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['KSV1105 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
+{
     id: 'kasa-ky077',
     name: 'KY077',
     brand: 'Kasa Quartz',
@@ -7593,51 +7369,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz KY077 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
     features: ['KY077 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
   },
-  {
-    id: 'kasa-ky070',
-    name: 'KY070',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz KY070 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['KY070 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
-    id: 'kasa-ky078',
-    name: 'KY078',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz KY078 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['KY078 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
-    id: 'kasa-kd007',
-    name: 'KD007',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz KD007 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['KD007 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
-    id: 'kasa-kv019',
-    name: 'KV019',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz KV019 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['KV019 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-  {
+{
     id: 'kasa-jhu10023',
     name: 'JHU100-23',
     brand: 'Kasa Quartz',
@@ -7648,7 +7380,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz JHU100-23 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
     features: ['JHU100-23 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
   },
-  {
+{
     id: 'kasa-jhu10025',
     name: 'JHU100-25',
     brand: 'Kasa Quartz',
@@ -7659,7 +7391,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz JHU100-25 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
     features: ['JHU100-25 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
   },
-  {
+{
     id: 'kasa-jhu10030',
     name: 'JHU100-30',
     brand: 'Kasa Quartz',
@@ -7670,7 +7402,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz JHU100-30 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
     features: ['JHU100-30 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
   },
-  {
+{
     id: 'kasa-jhu10032',
     name: 'JHU100-32',
     brand: 'Kasa Quartz',
@@ -7681,7 +7413,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz JHU100-32 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
     features: ['JHU100-32 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
   },
-  {
+{
     id: 'kasa-jhu20031',
     name: 'JHU200-31',
     brand: 'Kasa Quartz',
@@ -7692,7 +7424,7 @@ export const materials: SlabMaterial[] = [
     description: 'Official Kasa Quartz JHU200-31 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
     features: ['JHU200-31 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
   },
-  {
+{
     id: 'kasa-jhu20032',
     name: 'JHU200-32',
     brand: 'Kasa Quartz',

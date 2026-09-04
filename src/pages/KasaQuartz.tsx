@@ -53,12 +53,48 @@ const faqs = [
   { q: 'Can I use Kasa Quartz for my backsplash?', a: 'Yes, Kasa Quartz is excellent for backsplashes, especially in jumbo slab formats for a seamless, grout-free look.' },
 ];
 
+import { useState } from 'react';
+
+const seriesList = [
+  { id: 'all', label: 'All Kasa Models' },
+  { id: 'k99', label: 'K99 Series (18)' },
+  { id: 'k88', label: 'K88 Series' },
+  { id: 'k77', label: 'K77 Series' },
+  { id: 'ksl', label: 'KSL Series' },
+  { id: 'ksv', label: 'KSV Series' },
+  { id: 'ky', label: 'KY Series' },
+];
+
 export default function KasaQuartz() {
   const { openCalculator } = useCalculator();
+  const [searchQuery, setSearchQuery] = useState('');
+  const [activeSeries, setActiveSeries] = useState('all');
   
+  const filteredSlabs = slabs.filter(slab => {
+    const q = searchQuery.trim().toLowerCase();
+    const nameLower = slab.name.toLowerCase();
+    const idLower = slab.id.toLowerCase();
+
+    // Series filter
+    if (activeSeries !== 'all') {
+      if (activeSeries === 'k99' && !nameLower.includes('k99') && !idLower.includes('k99')) return false;
+      if (activeSeries === 'k88' && !nameLower.includes('k88') && !idLower.includes('k88')) return false;
+      if (activeSeries === 'k77' && !nameLower.includes('k77') && !idLower.includes('k77')) return false;
+      if (activeSeries === 'ksl' && !nameLower.includes('ksl') && !idLower.includes('ksl')) return false;
+      if (activeSeries === 'ksv' && !nameLower.includes('ksv') && !idLower.includes('ksv')) return false;
+      if (activeSeries === 'ky' && !nameLower.includes('ky') && !idLower.includes('ky')) return false;
+    }
+
+    // Search query
+    if (q) {
+      return nameLower.includes(q) || idLower.includes(q) || slab.desc.toLowerCase().includes(q);
+    }
+    return true;
+  });
+
   return (
     <div className="bg-background transition-colors duration-500">
-      <SEO title="Kasa Quartz | Quartz International" description="Learn more about Kasa Quartz at Quartz International. We provide premium countertops and cabinetry in Toronto and the GTA." />
+      <SEO title="Kasa Quartz Countertops Toronto | 2026 Models & Prices" description="Explore all official Kasa Quartz countertop slabs including K9902-K9927, K88, and KSL series. Linear & installed square foot pricing for Toronto and GTA." />
 
       {/* 1. HERO */}
       <section className="relative pt-32 pb-24 overflow-hidden bg-white">
@@ -78,7 +114,7 @@ export default function KasaQuartz() {
               <span className="text-accent underline decoration-accent/10 underline-offset-8">Cost & Models 2026</span>
             </h1>
             <p className="text-xl text-gray-500 mb-12 leading-relaxed font-medium">
-              Discover the latest Kasa Quartz collections including K8802 and K9916. 
+              Discover the latest Kasa Quartz collections including K9927, K9902, K8802, and KSL series. 
               <br className="hidden md:block" /> Professional installation in the GTA from <span className="text-text-primary font-bold underline decoration-accent/20">$48 – $59 per sq ft.</span>
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -103,7 +139,7 @@ export default function KasaQuartz() {
                  In 2026, Kasa Quartz countertops in the Greater Toronto Area typically range from <span className="text-text-primary font-bold">$48–$59 per square foot fully installed</span>.
                </p>
                <p>
-                 Popular models like <span className="text-text-primary font-medium italic">K8803</span> and <span className="text-text-primary font-medium italic">K9916</span> are currently trending for their clean aesthetics and high durability.
+                 Popular models like <span className="text-text-primary font-medium italic">K9927</span>, <span className="text-text-primary font-medium italic">K9902</span>, and <span className="text-text-primary font-medium italic">K8803</span> are currently trending for their clean aesthetics and high durability.
                </p>
              </div>
           </motion.div>
@@ -111,47 +147,110 @@ export default function KasaQuartz() {
       </section>
 
       {/* 3. FEATURED MODELS */}
-      <section className="py-32 bg-white">
+      <section className="py-32 bg-white" id="catalog">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12">
             <h2 className="text-3xl md:text-5xl font-bold text-text-primary mb-4 tracking-tight leading-none">Kasa Quartz Slab Models</h2>
-            <p className="text-gray-500">Premium surfaces for modern Toronto living.</p>
+            <p className="text-gray-500 mb-8">Filter by collection or search any Kasa Quartz model number below.</p>
+          </div>
+
+          {/* Search & Series Filter Bar */}
+          <div className="max-w-4xl mx-auto mb-16 p-6 bg-background rounded-3xl border border-border-custom shadow-sm space-y-4">
+            {/* Search Input */}
+            <div className="relative">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search Kasa Quartz models (e.g. K9927, K9902, K8802, Taj Mahal...)"
+                className="w-full px-6 py-4 pl-12 rounded-full border border-border-custom bg-white text-text-primary placeholder-gray-400 font-medium focus:outline-none focus:border-accent shadow-inner text-sm"
+              />
+              <Sparkles size={18} className="absolute left-4 top-1/2 -translate-y-1/2 text-accent" />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-text-primary text-xs font-bold bg-gray-100 px-2.5 py-1 rounded-full"
+                >
+                  Clear
+                </button>
+              )}
+            </div>
+
+            {/* Series Filter Pills */}
+            <div className="flex flex-wrap gap-2 justify-center items-center pt-2">
+              <span className="text-xs font-bold uppercase tracking-wider text-gray-400 mr-2">Series:</span>
+              {seriesList.map(series => (
+                <button
+                  key={series.id}
+                  onClick={() => setActiveSeries(series.id)}
+                  className={cn(
+                    "px-4 py-2 rounded-full text-xs font-bold transition-all duration-300 border cursor-pointer",
+                    activeSeries === series.id
+                      ? "bg-accent border-accent text-white shadow-md scale-105"
+                      : "bg-white border-border-custom text-text-primary hover:border-accent"
+                  )}
+                >
+                  {series.label}
+                </button>
+              ))}
+            </div>
+
+            {/* Matching Count */}
+            <div className="text-center text-xs font-bold text-gray-400 uppercase tracking-widest pt-2">
+              Showing {filteredSlabs.length} Kasa Quartz Slabs
+            </div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {slabs.map((slab, idx) => (
-              <motion.div
-                key={idx}
-                {...fadeIn}
-                className="group flex flex-col h-full rounded-[2.5rem] overflow-hidden border border-border-custom hover:shadow-2xl transition-all duration-500 bg-white"
-              >
-                <Link to={`/slab/${slab.id}`} className="aspect-video overflow-hidden block relative">
-                  <img src={slab.img} alt={slab.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute top-4 right-4 group-hover:block hidden">
-                    <div className="bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-lg">
-                      <Plus size={16} className="text-accent" />
+          {filteredSlabs.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+              {filteredSlabs.map((slab, idx) => (
+                <motion.div
+                  key={idx}
+                  {...fadeIn}
+                  className="group flex flex-col h-full rounded-[2.5rem] overflow-hidden border border-border-custom hover:shadow-2xl transition-all duration-500 bg-white"
+                >
+                  <Link to={`/slab/${slab.id}`} className="aspect-video overflow-hidden block relative">
+                    <img src={slab.img} alt={slab.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                    <div className="absolute top-4 left-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full border border-border-custom">
+                      <span className="text-[10px] font-bold text-accent uppercase tracking-widest">Kasa Quartz</span>
                     </div>
+                    <div className="absolute top-4 right-4 group-hover:block hidden">
+                      <div className="bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-lg">
+                        <Plus size={16} className="text-accent" />
+                      </div>
+                    </div>
+                  </Link>
+                  <div className="p-8 flex flex-col flex-grow">
+                    <div className="flex justify-between items-start mb-2">
+                      <Link to={`/slab/${slab.id}`} className="block group/link">
+                        <h3 className="text-2xl font-bold text-text-primary tracking-tight group-hover/link:text-accent transition-colors">{slab.name}</h3>
+                      </Link>
+                      <ShieldCheck size={20} className="text-accent/40" />
+                    </div>
+                    <p className="text-sm text-gray-500 mb-6 leading-relaxed flex-grow">{slab.desc}</p>
+                    <p className="text-lg font-bold text-accent mb-8">{slab.price} <span className="text-xs text-gray-400 font-medium">/ sq ft installed</span></p>
+                    <button 
+                      onClick={() => openCalculator({ slab: slab.name, brand: 'Kasa Quartz' })}
+                      className="mt-auto inline-flex items-center justify-center bg-background border border-border-custom py-4 rounded-full text-sm font-bold text-text-primary hover:bg-accent hover:text-white hover:border-accent transition-all group/btn"
+                    >
+                      Estimate My Kitchen <ArrowRight size={16} className="ml-2 group-hover/btn:translate-x-1 transition-transform" />
+                    </button>
                   </div>
-                </Link>
-                <div className="p-8 flex flex-col flex-grow">
-                  <div className="flex justify-between items-start mb-2">
-                    <Link to={`/slab/${slab.id}`} className="block group/link">
-                      <h3 className="text-2xl font-bold text-text-primary tracking-tight group-hover/link:text-accent transition-colors">{slab.name}</h3>
-                    </Link>
-                    <ShieldCheck size={20} className="text-accent/40" />
-                  </div>
-                  <p className="text-sm text-gray-500 mb-6 leading-relaxed">{slab.desc}</p>
-                  <p className="text-lg font-bold text-accent mb-8">{slab.price} <span className="text-xs text-gray-400 font-medium">/ sq ft installed</span></p>
-                  <button 
-                    onClick={() => openCalculator({ slab: slab.name, brand: 'Kasa Quartz' })}
-                    className="mt-auto inline-flex items-center justify-center bg-background border border-border-custom py-4 rounded-full text-sm font-bold text-text-primary hover:bg-accent hover:text-white hover:border-accent transition-all group/btn"
-                  >
-                    Estimate My Kitchen <ArrowRight size={16} className="ml-2 group-hover/btn:translate-x-1 transition-transform" />
-                  </button>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+                </motion.div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-20 bg-background rounded-3xl border border-border-custom">
+              <p className="text-lg font-bold text-text-primary mb-2">No Kasa Quartz models match your search.</p>
+              <p className="text-sm text-gray-500 mb-6">Try clearing your search term or selecting "All Kasa Models".</p>
+              <button
+                onClick={() => { setSearchQuery(''); setActiveSeries('all'); }}
+                className="btn-primary px-8 py-3 text-xs"
+              >
+                Reset Search Filters
+              </button>
+            </div>
+          )}
         </div>
       </section>
 

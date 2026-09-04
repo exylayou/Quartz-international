@@ -134,6 +134,7 @@ export default function QuartzBrowse() {
   const [activeLook, setActiveLook] = useState<string | null>(null);
   const [activePrice, setActivePrice] = useState<string | null>(null);
   const [activeBrand, setActiveBrand] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState<string>('');
   const slabsRef = useRef<HTMLElement>(null);
 
   const availableBrands = Array.from(new Set(slabs.map(s => s.brand))).filter(Boolean).sort();
@@ -163,6 +164,14 @@ export default function QuartzBrowse() {
   }, [searchParams]);
 
   const filteredSlabs = slabs.filter(slab => {
+    // 0. Search Query Filter
+    if (searchQuery.trim()) {
+      const q = searchQuery.trim().toLowerCase();
+      const matchesName = slab.name.toLowerCase().includes(q);
+      const matchesBrandName = slab.brand.toLowerCase().includes(q);
+      if (!matchesName && !matchesBrandName) return false;
+    }
+
     // 1. Look/Style Filter
     const matchesLook = activeLook ? slab.category === activeLook : true;
     
@@ -306,6 +315,29 @@ export default function QuartzBrowse() {
 
           {/* SaaS-style Mobile-Optimized Filter Toolbar */}
           <div className="flex flex-col gap-4 mb-12 p-6 bg-white border border-border-custom rounded-2xl shadow-sm">
+            {/* 0. Search Input Row */}
+            <div className="relative">
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Search models or brands (e.g. K9927, K8802, Taj Mahal, Caesarstone 5112...)"
+                className="w-full px-5 py-3 pl-11 rounded-xl border border-border-custom bg-background text-text-primary placeholder-gray-400 font-medium focus:outline-none focus:border-accent text-xs shadow-inner"
+              />
+              <Sparkles size={16} className="absolute left-4 top-1/2 -translate-y-1/2 text-accent" />
+              {searchQuery && (
+                <button
+                  onClick={() => setSearchQuery('')}
+                  className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-text-primary text-[10px] font-bold bg-gray-200 px-2 py-0.5 rounded-full"
+                >
+                  Clear
+                </button>
+              )}
+            </div>
+
+            {/* Divider */}
+            <div className="h-px bg-border-custom" />
+
             {/* 1. Style Filter Row */}
             <div>
               <span className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2 block">Design Style</span>
