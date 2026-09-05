@@ -299,14 +299,35 @@ if (fs.existsSync(materialsTsPath)) {
   const materialsContent = fs.readFileSync(materialsTsPath, 'utf8');
   const slabRegex = /id:\s*['"]([^'"]+)['"],\s*name:\s*['"]([^'"]+)['"],\s*brand:\s*['"]([^'"]+)['"]/g;
   let match;
+  const addedPaths = new Set();
+
   while ((match = slabRegex.exec(materialsContent)) !== null) {
     const [_, id, name, brand] = match;
-    routes.push({
-      path: `/slab/${id}`,
-      title: `${name} by ${brand} Quartz Countertops Toronto | 2026 Price Guide`,
-      description: `Get typical cost, price per square foot installed, and design specifications for ${name} by ${brand} quartz countertops in Toronto & GTA.`,
-      canonical: `https://quartzinternational.ca/slab/${id}`
-    });
+    const primaryPath = `/slab/${id}`;
+    if (!addedPaths.has(primaryPath)) {
+      addedPaths.add(primaryPath);
+      routes.push({
+        path: primaryPath,
+        title: `${name} by ${brand} Quartz Countertops Toronto | 2026 Price Guide`,
+        description: `Get typical cost, price per square foot installed, and design specifications for ${name} by ${brand} quartz countertops in Toronto & GTA.`,
+        canonical: `https://quartzinternational.ca/slab/${id}`
+      });
+    }
+
+    // Also pre-render bare ID alias route (e.g. /slab/k9927 if id is kasa-k9927)
+    if (id.startsWith('kasa-')) {
+      const bareId = id.replace(/^kasa-/, '');
+      const aliasPath = `/slab/${bareId}`;
+      if (!addedPaths.has(aliasPath)) {
+        addedPaths.add(aliasPath);
+        routes.push({
+          path: aliasPath,
+          title: `${name} by ${brand} Quartz Countertops Toronto | 2026 Price Guide`,
+          description: `Get typical cost, price per square foot installed, and design specifications for ${name} by ${brand} quartz countertops in Toronto & GTA.`,
+          canonical: `https://quartzinternational.ca/slab/${bareId}`
+        });
+      }
+    }
   }
 }
 

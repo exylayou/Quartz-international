@@ -33,13 +33,18 @@ export default function SlabDetail() {
   const { openCalculator } = useCalculator();
   
   const rawId = (id || '').toLowerCase();
-  const material = materials.find(m => 
-    m.id.toLowerCase() === rawId ||
-    m.id.toLowerCase().replace(/[^a-z0-9]/g, '') === rawId.replace(/[^a-z0-9]/g, '') ||
-    m.name.toLowerCase().replace(/[^a-z0-9]/g, '-') === rawId.replace(/[^a-z0-9]/g, '-') ||
-    m.name.toLowerCase().includes(rawId) ||
-    rawId.includes(m.id.toLowerCase())
-  );
+  const cleanRaw = rawId.replace(/^kasa-/, '').replace(/[^a-z0-9]/g, '');
+  
+  const material = materials.find(m => {
+    const mIdLower = m.id.toLowerCase();
+    const mClean = mIdLower.replace(/^kasa-/, '').replace(/[^a-z0-9]/g, '');
+    const mNameClean = m.name.toLowerCase().replace(/[^a-z0-9]/g, '');
+    
+    return mIdLower === rawId ||
+           mClean === cleanRaw ||
+           mNameClean === cleanRaw ||
+           m.name.toLowerCase().replace(/[^a-z0-9]/g, '-') === rawId.replace(/[^a-z0-9]/g, '-');
+  });
 
   if (!material) {
     return <Navigate to="/quartz-countertops-toronto" />;

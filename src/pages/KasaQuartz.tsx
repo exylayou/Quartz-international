@@ -38,7 +38,14 @@ const slabs = materials
     price: m.priceRange,
     img: m.img,
     desc: m.description,
-  }));
+  }))
+  .sort((a, b) => {
+    const aIsK99 = a.name.toLowerCase().includes('k99') || a.id.toLowerCase().includes('k99');
+    const bIsK99 = b.name.toLowerCase().includes('k99') || b.id.toLowerCase().includes('k99');
+    if (aIsK99 && !bIsK99) return -1;
+    if (!aIsK99 && bIsK99) return 1;
+    return a.name.localeCompare(b.name);
+  });
 
 const kitchens = [
   { title: 'Luxury Condo', price: '$5,200 – $7,500', img: clientLuxuryCondo },

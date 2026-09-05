@@ -429,7 +429,7 @@ export const materials: SlabMaterial[] = [
     ]
   },
 {
-    id: 'k9916',
+    id: 'kasa-k9916',
     name: 'K9916',
     brand: 'Kasa Quartz',
     priceRange: '$50 – $58',
@@ -3300,7 +3300,7 @@ export const materials: SlabMaterial[] = [
     features: ["Kasa KR7009 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
 {
-    id: 'k9927',
+    id: 'kasa-k9927',
     name: 'K9927',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
@@ -3311,7 +3311,7 @@ export const materials: SlabMaterial[] = [
     features: ["Kasa K9927 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
 {
-    id: 'k9926',
+    id: 'kasa-k9926',
     name: 'K9926',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
@@ -3322,7 +3322,7 @@ export const materials: SlabMaterial[] = [
     features: ["Kasa K9926 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
 {
-    id: 'k9925',
+    id: 'kasa-k9925',
     name: 'K9925',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
@@ -3333,7 +3333,7 @@ export const materials: SlabMaterial[] = [
     features: ["Kasa K9925 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
 {
-    id: 'k9924',
+    id: 'kasa-k9924',
     name: 'K9924',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
@@ -3344,7 +3344,7 @@ export const materials: SlabMaterial[] = [
     features: ["Kasa K9924 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
 {
-    id: 'k9923',
+    id: 'kasa-k9923',
     name: 'K9923',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
@@ -3355,7 +3355,7 @@ export const materials: SlabMaterial[] = [
     features: ["Kasa K9923 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
 {
-    id: 'k9922',
+    id: 'kasa-k9922',
     name: 'K9922',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
@@ -3366,7 +3366,7 @@ export const materials: SlabMaterial[] = [
     features: ["Kasa K9922 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
 {
-    id: 'k9919',
+    id: 'kasa-k9919',
     name: 'K9919',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
@@ -3377,7 +3377,7 @@ export const materials: SlabMaterial[] = [
     features: ["Kasa K9919 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
 {
-    id: 'k9917',
+    id: 'kasa-k9917',
     name: 'K9917',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
@@ -3388,7 +3388,7 @@ export const materials: SlabMaterial[] = [
     features: ["Kasa K9917 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
 {
-    id: 'k9912',
+    id: 'kasa-k9912',
     name: 'K9912',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
@@ -3399,7 +3399,7 @@ export const materials: SlabMaterial[] = [
     features: ["Kasa K9912 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
 {
-    id: 'k9911',
+    id: 'kasa-k9911',
     name: 'K9911',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
@@ -3410,7 +3410,7 @@ export const materials: SlabMaterial[] = [
     features: ["Kasa K9911 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
 {
-    id: 'k9910',
+    id: 'kasa-k9910',
     name: 'K9910',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
@@ -3421,7 +3421,7 @@ export const materials: SlabMaterial[] = [
     features: ["Kasa K9910 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
 {
-    id: 'k9909',
+    id: 'kasa-k9909',
     name: 'K9909',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
@@ -3432,7 +3432,7 @@ export const materials: SlabMaterial[] = [
     features: ["Kasa K9909 design", "Dark quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
 {
-    id: 'k9907',
+    id: 'kasa-k9907',
     name: 'K9907',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
@@ -3443,7 +3443,7 @@ export const materials: SlabMaterial[] = [
     features: ["Kasa K9907 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
 {
-    id: 'k9906',
+    id: 'kasa-k9906',
     name: 'K9906',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
@@ -3454,7 +3454,7 @@ export const materials: SlabMaterial[] = [
     features: ["Kasa K9906 design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
 {
-    id: 'k9908',
+    id: 'kasa-k9908',
     name: 'K9908',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
@@ -3465,7 +3465,7 @@ export const materials: SlabMaterial[] = [
     features: ["Kasa K9908 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
 {
-    id: 'k9905',
+    id: 'kasa-k9905',
     name: 'K9905',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
@@ -3476,7 +3476,7 @@ export const materials: SlabMaterial[] = [
     features: ["Kasa K9905 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
 {
-    id: 'k9902',
+    id: 'kasa-k9902',
     name: 'K9902',
     brand: 'Kasa Quartz',
     priceRange: '$48 – $56',
