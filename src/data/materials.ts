@@ -13,6 +13,1669 @@ export interface SlabMaterial {
 
 export const materials: SlabMaterial[] = [
 {
+    id: 'kasa-k9927',
+    name: 'K9927',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa K9927 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa K9927 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-k9926',
+    name: 'K9926',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa K9926 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa K9926 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-k9925',
+    name: 'K9925',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa K9925 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa K9925 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-k9924',
+    name: 'K9924',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa K9924 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa K9924 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-k9923',
+    name: 'K9923',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa K9923 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa K9923 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-k9922',
+    name: 'K9922',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa K9922 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa K9922 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-k9919',
+    name: 'K9919',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa K9919 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa K9919 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-k9917',
+    name: 'K9917',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa K9917 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa K9917 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-k9916',
+    name: 'K9916',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $58',
+    typicalCost: '$2,000 – $2,900',
+    category: 'marble',
+    img: '/images/slabs/k9916.jpg',
+    description: 'A premium, complex Calacatta polished slab with dramatic, striking grey veins that create a bold statement.',
+    features: [
+      'Intricate, dramatic veining',
+      'Top-tier premium model',
+      'High-gloss luxury polish',
+      'Stunning centerpiece design'
+    ]
+  },
+{
+    id: 'kasa-k9912',
+    name: 'K9912',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa K9912 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa K9912 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-k9911',
+    name: 'K9911',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa K9911 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa K9911 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-k9910',
+    name: 'K9910',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa K9910 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa K9910 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-k9909',
+    name: 'K9909',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'dark',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa K9909 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa K9909 design", "Dark quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-k9908',
+    name: 'K9908',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa K9908 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa K9908 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-k9907',
+    name: 'K9907',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa K9907 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa K9907 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-k9906',
+    name: 'K9906',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'grey',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa K9906 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa K9906 design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-k9905',
+    name: 'K9905',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa K9905 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa K9905 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-k9902',
+    name: 'K9902',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa K9902 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa K9902 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'k8801',
+    name: 'K8801 – Calacatta Oro',
+    brand: 'Kasa Quartz',
+    priceRange: '$49 – $56',
+    typicalCost: '$1,950 – $2,800',
+    category: 'marble',
+    img: '/images/slabs/k8801.jpg',
+    description: 'A rich Calacatta Oro quartz featuring warm gold and subtle grey organic veining across a soft white field.',
+    features: [
+      'Calacatta Oro veining',
+      'Warm gold & grey accents',
+      'Luxurious marble look',
+      'Non-porous surface'
+    ]
+  },
+{
+    id: 'k8802',
+    name: 'K8802',
+    brand: 'Kasa Quartz',
+    priceRange: '$49 – $56',
+    typicalCost: '$1,950 – $2,800',
+    category: 'marble',
+    img: '/images/slabs/k8802.jpg',
+    description: 'A beautiful white-based Calacatta quartz featuring refined grey veining for a contemporary kitchen design.',
+    features: [
+      'Calacatta series design',
+      'Modern white background',
+      'Stain and scratch resistant',
+      'Non-porous hygienic surface'
+    ]
+  },
+{
+    id: 'k8803',
+    name: 'K8803',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $55',
+    typicalCost: '$1,900 – $2,750',
+    category: 'marble',
+    img: '/images/slabs/k8803.jpg',
+    description: 'A classic Calacatta quartz presenting a clean white background with graceful, flowing grey veining.',
+    features: [
+      'Graceful grey veins',
+      'Timeless marble appearance',
+      'Low maintenance luxury',
+      'GTA homeowner favorite'
+    ]
+  },
+{
+    id: 'k8811',
+    name: 'K8811 – Calacatta Alto',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $58',
+    typicalCost: '$2,000 – $2,900',
+    category: 'marble',
+    img: '/images/slabs/k8811.jpg',
+    description: 'Bold sweeping grey marble veining with pristine clarity over a crisp polished white quartz background.',
+    features: [
+      'Calacatta Alto style',
+      'Bold sweeping veins',
+      'High-definition polish',
+      'Stain & scratch resistant'
+    ]
+  },
+{
+    id: 'k8813',
+    name: 'K8813',
+    brand: 'Kasa Quartz',
+    priceRange: '$49 – $56',
+    typicalCost: '$1,950 – $2,800',
+    category: 'white',
+    img: '/images/slabs/k8813.jpg',
+    description: 'A premium Calacatta White quartz slab offering a bright, crisp surface that is highly reflective and durable.',
+    features: [
+      'Bright Calacatta White base',
+      'Consistent, pristine finish',
+      'Highly stain resistant',
+      'Complements any cabinet style'
+    ]
+  },
+{
+    id: 'k8825',
+    name: 'K8825',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $58',
+    typicalCost: '$2,000 – $2,900',
+    category: 'marble',
+    img: '/images/slabs/k8825.jpg',
+    description: 'An elegant polished quartz showing natural marble texture with bold architectural grey patterns.',
+    features: [
+      'Deep design depth',
+      'Polished luxury finish',
+      'Perfect for islands and backsplashes',
+      'Superior impact resistance'
+    ]
+  },
+{
+    id: 'k8826',
+    name: 'K8826 – Calacatta Negro',
+    brand: 'Kasa Quartz',
+    priceRange: '$51 – $59',
+    typicalCost: '$2,100 – $3,000',
+    category: 'dark',
+    img: '/images/slabs/k8826.jpg',
+    description: 'Dramatic black quartz crossed by striking white and silver lightning-bolt veins for high contrast luxury.',
+    features: [
+      'Calacatta Negro dark series',
+      'Striking white veining',
+      'High-contrast luxury',
+      'Statement island design'
+    ]
+  },
+{
+    id: 'k8831',
+    name: 'K8831 – Calacatta Verona',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $59',
+    typicalCost: '$2,000 – $2,950',
+    category: 'marble',
+    img: '/images/slabs/k8831.jpg',
+    description: 'Classic Italian Verona marble aesthetic featuring soft charcoal veining across a bright white base.',
+    features: [
+      'Calacatta Verona marble look',
+      'Soft charcoal veining',
+      'Bright white base',
+      'Zero sealing required'
+    ]
+  },
+{
+    id: 'k8833',
+    name: 'K8833 – Calacatta Venice',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $58',
+    typicalCost: '$2,000 – $2,900',
+    category: 'marble',
+    img: '/images/slabs/k8833.jpg',
+    description: 'Venetian-inspired white quartz with delicate, interconnected grey marble veining paths.',
+    features: [
+      'Calacatta Venice design',
+      'Interconnected grey veins',
+      'Venetian elegance',
+      'Ideal for waterfall islands'
+    ]
+  },
+{
+    id: 'k8835',
+    name: 'K8835 – Calacatta Lago',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $58',
+    typicalCost: '$2,000 – $2,900',
+    category: 'marble',
+    img: '/images/slabs/k8835.jpg',
+    description: 'Serene lake-inspired Calacatta quartz presenting soft smoky grey waves over a pristine white field.',
+    features: [
+      'Calacatta Lago veining',
+      'Soft smoky grey waves',
+      'Serene white background',
+      'Durable & hygienic'
+    ]
+  },
+{
+    id: 'k8836',
+    name: 'K8836 – Calacatta Clara',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $58',
+    typicalCost: '$2,000 – $2,900',
+    category: 'marble',
+    img: '/images/slabs/kasa-k8836.jpg',
+    description: 'Refined Calacatta quartz presenting clean off-white field detailed with subtle, elegant grey veining.',
+    features: [
+      'Calacatta Clara design',
+      'Refined grey veining',
+      'Clean off-white field',
+      'GTA homeowner favorite'
+    ]
+  },
+{
+    id: 'k8837',
+    name: 'K8837',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $59',
+    typicalCost: '$2,000 – $2,950',
+    category: 'marble',
+    img: '/images/slabs/k8837.jpg',
+    description: 'A high-definition Calacatta quartz presenting a delicate off-white base with soft, subtle veining.',
+    features: [
+      'Soft subtle veining',
+      'Warm white aesthetics',
+      'No sealing required',
+      'Eco-friendly manufacturing'
+    ]
+  },
+{
+    id: 'kasa-ksl6011', name: 'KSL6011 - Alabaster Vein', brand: 'Kasa Quartz',
+    priceRange: '$57 – $70', typicalCost: '$3,500 – $5,500', category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg', description: 'Soft alabaster background with delicate veining for a timeless look.',
+    features: ['Alabaster Vein', 'Soft background', 'Timeless', 'Elegant']
+  },
+{
+    id: 'kasa-ksv5101', name: 'KSV5101 - Lightning Gold', brand: 'Kasa Quartz',
+    priceRange: '$52 – $62', typicalCost: '$3,500 – $5,500', category: 'marble',
+    img: '/images/slabs/kasa-ksv5101.jpg', description: 'Striking lightning-like gold veins over a bright white base.',
+    features: ['Lightning Gold', 'Striking veins', 'Bright white base', 'Luxury statement']
+  },
+{
+    id: 'kasa-ksv1102', name: 'KSV1102 - Calacatta Misty Gold', brand: 'Kasa Quartz',
+    priceRange: '$53 – $63', typicalCost: '$3,500 – $5,500', category: 'marble',
+    img: '/images/slabs/kasa-ksv1102.jpg', description: 'Calacatta marble look with misty grey and subtle gold highlights.',
+    features: ['Calacatta Misty Gold', 'Misty grey', 'Gold highlights', 'Elegant detail']
+  },
+{
+    id: 'kasa-ksv1101', name: 'KSV1101 - Calacatta Misty Grey', brand: 'Kasa Quartz',
+    priceRange: '$53 – $63', typicalCost: '$3,500 – $5,500', category: 'marble',
+    img: '/images/slabs/kasa-ksv1101.jpg', description: 'A cooler-toned Calacatta featuring misty grey veins and shading.',
+    features: ['Calacatta Misty Grey', 'Cooler tones', 'Grey veins', 'Modern classic']
+  },
+{
+    id: 'kasa-ky066', name: 'KY066 - Taj Mahal Pre', brand: 'Kasa Quartz',
+    priceRange: '$52 – $62', typicalCost: '$2,800 – $4,800', category: 'warm',
+    img: '/images/slabs/kasa-ky066.jpg', description: 'Inspired by the famous Taj Mahal quartzite, featuring warm creamy beige tones.',
+    features: ['Taj Mahal Pre', 'Heat transfer tech', 'Creamy beige tones', 'Warm luxury']
+  },
+{
+    id: 'kasa-ksl8701',
+    name: 'KSL8701 – Frosted Rift White',
+    brand: 'Kasa Quartz',
+    priceRange: '$57 – $70',
+    typicalCost: '$2,350 – $3,500',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Crisp frosted white field detailed with subtle rift-pattern veining for a clean, modern aesthetic.',
+    features: [
+      'Frosted Rift White design',
+      'Subtle linear veining',
+      'Clean modern aesthetic',
+      'Non-porous & stain resistant'
+    ]
+  },
+{
+    id: 'kasa-ksl8602',
+    name: 'KSL8602 – Silver Mist',
+    brand: 'Kasa Quartz',
+    priceRange: '$57 – $70',
+    typicalCost: '$2,350 – $3,500',
+    category: 'grey',
+    img: '/images/slabs/kasa-ksl8602.jpg',
+    description: 'Soft silver-grey veining flowing softly across a translucent white quartz field.',
+    features: [
+      'Silver Mist veining',
+      'Soft grey movement',
+      'Translucent white base',
+      'High heat & scratch resistance'
+    ]
+  },
+{
+    id: 'kasa-ksl6032',
+    name: 'KSL6032 – White Castle',
+    brand: 'Kasa Quartz',
+    priceRange: '$57 – $70',
+    typicalCost: '$2,350 – $3,500',
+    category: 'marble',
+    img: '/images/slabs/kasa-ksl6032.jpg',
+    description: 'Regal architectural quartz with dramatic grey clouding and high-definition marble movement.',
+    features: [
+      'White Castle marble look',
+      'Dramatic grey clouding',
+      'High-definition depth',
+      'Waterfall island favorite'
+    ]
+  },
+{
+    id: 'kasa-ksl6031',
+    name: 'KSL6031 – Silver Sands',
+    brand: 'Kasa Quartz',
+    priceRange: '$57 – $70',
+    typicalCost: '$2,350 – $3,500',
+    category: 'grey',
+    img: '/images/slabs/kasa-ksl6031.jpg',
+    description: 'Fine shimmering silver sand textures integrated with soft grey linear marble veining.',
+    features: [
+      'Silver Sands texture',
+      'Linear grey veining',
+      'Subtle shimmer detail',
+      'Easy daily maintenance'
+    ]
+  },
+{
+    id: 'kasa-ksl6030',
+    name: 'KSL6030 – Spiez White',
+    brand: 'Kasa Quartz',
+    priceRange: '$57 – $70',
+    typicalCost: '$2,350 – $3,500',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6030.jpg',
+    description: 'Pristine Swiss Alpine white quartz featuring delicate, airy grey highlights.',
+    features: [
+      'Spiez Alpine White base',
+      'Delicate airy highlights',
+      'Minimalist design',
+      'Durable engineered quartz'
+    ]
+  },
+{
+    id: 'kasa-ksl6017',
+    name: 'KSL6017 – Bianco Riviera',
+    brand: 'Kasa Quartz',
+    priceRange: '$57 – $70',
+    typicalCost: '$2,350 – $3,500',
+    category: 'marble',
+    img: '/images/slabs/kasa-ksl6017.jpg',
+    description: 'Mediterranean-inspired Riviera white quartz with graceful sweeping slate grey veining.',
+    features: [
+      'Bianco Riviera aesthetic',
+      'Sweeping slate grey veins',
+      'Mediterranean elegance',
+      'Hygienic non-porous surface'
+    ]
+  },
+{
+    id: 'kasa-ksl6016',
+    name: 'KSL6016 – Volakano White',
+    brand: 'Kasa Quartz',
+    priceRange: '$57 – $70',
+    typicalCost: '$2,350 – $3,500',
+    category: 'marble',
+    img: '/images/slabs/kasa-ksl6016.jpg',
+    description: 'Inspired by Greek Volakas marble, offering subtle smoky grey diagonal veining across pure white.',
+    features: [
+      'Volakas marble inspiration',
+      'Smoky grey diagonal veins',
+      'Bright white backdrop',
+      'Timeless kitchen choice'
+    ]
+  },
+{
+    id: 'kasa-ksl6015',
+    name: 'KSL6015 – Blizzard',
+    brand: 'Kasa Quartz',
+    priceRange: '$57 – $70',
+    typicalCost: '$2,350 – $3,500',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6015.jpg',
+    description: 'Dynamic icy white matrix laced with crisp frost-like quartz movement.',
+    features: [
+      'Blizzard icy white matrix',
+      'Frost-like quartz texture',
+      'High light reflectivity',
+      'Stain & impact resistant'
+    ]
+  },
+{
+    id: 'kasa-ksl6010',
+    name: 'KSL6010 – Glacier Gold',
+    brand: 'Kasa Quartz',
+    priceRange: '$57 – $70',
+    typicalCost: '$2,350 – $3,500',
+    category: 'warm',
+    img: '/images/slabs/kasa-ksl6010.jpg',
+    description: 'Warm golden veining intertwined with cool glacial grey accents over a bright white backdrop.',
+    features: [
+      'Glacier Gold veining',
+      'Warm gold & cool grey accents',
+      'Complements brass & chrome',
+      'Premium polished finish'
+    ]
+  },
+{
+    id: 'kasa-ksl6005',
+    name: 'KSL6005 – Sahara Dune',
+    brand: 'Kasa Quartz',
+    priceRange: '$57 – $70',
+    typicalCost: '$2,350 – $3,500',
+    category: 'warm',
+    img: '/images/slabs/kasa-ksl6005.jpg',
+    description: 'Warm desert sand tones with soft ivory linear striations for cozy, organic kitchen interiors.',
+    features: [
+      'Sahara Dune warm tone',
+      'Soft ivory striations',
+      'Organic earth-tone design',
+      'Pairs with wood cabinetry'
+    ]
+  },
+{
+    id: 'k7701',
+    name: 'K7701 – Middle Carrara',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $55',
+    typicalCost: '$1,900 – $2,750',
+    category: 'marble',
+    img: '/images/slabs/k7701.jpg',
+    description: 'Classic Middle Carrara limestone quartz featuring soft feathered grey veining over a warm white backdrop.',
+    features: ['Middle Carrara series', 'Feathered grey veining', 'Warm white background', 'Non-porous & durable']
+  },
+{
+    id: 'k7702',
+    name: 'K7702 – Ice White',
+    brand: 'Kasa Quartz',
+    priceRange: '$49 – $56',
+    typicalCost: '$1,950 – $2,800',
+    category: 'white',
+    img: '/images/slabs/k7702.jpg',
+    description: 'Pristine Ice White quartz slab presenting a bright, crisp surface with light reflective clarity.',
+    features: ['Ice White pristine field', 'Bright light reflectivity', 'Minimalist design', 'High stain resistance']
+  },
+{
+    id: 'k7703',
+    name: 'K7703 – Nero Stellar',
+    brand: 'Kasa Quartz',
+    priceRange: '$55 – $66',
+    typicalCost: '$2,250 – $3,300',
+    category: 'dark',
+    img: '/images/slabs/k7703.jpg',
+    description: 'Dramatic black quartz infused with subtle stellar shimmer flecks and fine silver accents.',
+    features: ['Nero Stellar dark series', 'Subtle stellar shimmer', 'High contrast luxury', 'Non-porous hygienic stone']
+  },
+{
+    id: 'k7705',
+    name: 'K7705 – Carrara Select',
+    brand: 'Kasa Quartz',
+    priceRange: '$49 – $56',
+    typicalCost: '$1,950 – $2,800',
+    category: 'marble',
+    img: '/images/slabs/k7705.jpg',
+    description: 'Refined Italian Carrara select aesthetic with gentle slate-grey linear veins across soft ivory quartz.',
+    features: ['Carrara Select design', 'Gentle slate-grey veins', 'Soft ivory base', 'No sealing required']
+  },
+{
+    id: 'k7708',
+    name: 'K7708 – Phantom Grey',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $58',
+    typicalCost: '$2,000 – $2,900',
+    category: 'grey',
+    img: '/images/slabs/k7708.jpg',
+    description: 'Sophisticated Phantom Grey quartz detailed with subtle cloudy charcoal movement and fine misting.',
+    features: ['Phantom Grey tone', 'Cloudy charcoal movement', 'Urban modern look', 'Scratch & heat resistant']
+  },
+{
+    id: 'k7710',
+    name: 'K7710 – Antico Blend',
+    brand: 'Kasa Quartz',
+    priceRange: '$54 – $64',
+    typicalCost: '$2,200 – $3,200',
+    category: 'warm',
+    img: '/images/slabs/k7710.jpg',
+    description: 'Warm antique stone blend showcasing golden ivory tones intertwined with delicate warm grey striations.',
+    features: ['Antico Blend warm series', 'Golden ivory tones', 'Organic earthiness', 'Complements wood cabinetry']
+  },
+{
+    id: 'ksv7700',
+    name: 'KSV7700 – Ivory Golden Rift',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $62',
+    typicalCost: '$2,150 – $3,100',
+    category: 'warm',
+    img: '/images/slabs/ksv7700.jpg',
+    description: 'Luxurious ivory field presenting elegant golden-copper rift veining and translucent quartz depth.',
+    features: ['Ivory Golden Rift design', 'Golden-copper veining', 'Translucent quartz depth', 'Premium polished finish']
+  },
+{
+    id: 'ky077',
+    name: 'KY077 – Jade Fusion',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $62',
+    typicalCost: '$2,150 – $3,100',
+    category: 'warm',
+    img: '/images/slabs/ky077.jpg',
+    description: 'State-of-the-art heat transfer quartz capturing organic jade fusion movement with warm emerald & gold waves.',
+    features: ['Jade Fusion heat transfer tech', 'Warm emerald & gold waves', 'Exotic quartzite look', 'High impact durability']
+  },
+{
+    id: 'ksl8701',
+    name: 'Kasa KSL8701',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $65',
+    typicalCost: '$2,100 – $3,300',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa KSL8701 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KSL8701 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ksl8602',
+    name: 'Kasa KSL8602',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $65',
+    typicalCost: '$2,100 – $3,300',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa KSL8602 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KSL8602 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ksl6011',
+    name: 'Kasa KSL6011',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $65',
+    typicalCost: '$2,100 – $3,300',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa KSL6011 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KSL6011 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ksl6010',
+    name: 'Kasa KSL6010',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $65',
+    typicalCost: '$2,100 – $3,300',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa KSL6010 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KSL6010 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ksv5101',
+    name: 'Kasa KSV5101',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $65',
+    typicalCost: '$2,100 – $3,300',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa KSV5101 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KSV5101 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ksv1105',
+    name: 'Kasa KSV1105',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $65',
+    typicalCost: '$2,100 – $3,300',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa KSV1105 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KSV1105 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ksv1102',
+    name: 'Kasa KSV1102',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $65',
+    typicalCost: '$2,100 – $3,300',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa KSV1102 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KSV1102 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ksv1101',
+    name: 'Kasa KSV1101',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $65',
+    typicalCost: '$2,100 – $3,300',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa KSV1101 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KSV1101 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky078',
+    name: 'Kasa KY078',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa KY078 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY078 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky066',
+    name: 'Kasa KY066',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa KY066 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY066 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky063',
+    name: 'Kasa KY063',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa KY063 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY063 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky060',
+    name: 'Kasa KY060',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa KY060 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY060 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky059',
+    name: 'Kasa KY059',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa KY059 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY059 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky057',
+    name: 'Kasa KY057',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa KY057 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY057 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky055',
+    name: 'Kasa KY055',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa KY055 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY055 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky052',
+    name: 'Kasa KY052',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa KY052 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY052 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ksl8601',
+    name: 'Kasa KSL8601',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $65',
+    typicalCost: '$2,100 – $3,300',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa KSL8601 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KSL8601 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ksl6017',
+    name: 'Kasa KSL6017',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $65',
+    typicalCost: '$2,100 – $3,300',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa KSL6017 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KSL6017 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ksl6015',
+    name: 'Kasa KSL6015',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $65',
+    typicalCost: '$2,100 – $3,300',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa KSL6015 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KSL6015 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ksv9200',
+    name: 'Kasa KSV9200',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $65',
+    typicalCost: '$2,100 – $3,300',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa KSV9200 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KSV9200 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ksv1106',
+    name: 'Kasa KSV1106',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $65',
+    typicalCost: '$2,100 – $3,300',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa KSV1106 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KSV1106 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky070',
+    name: 'Kasa KY070',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa KY070 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY070 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky067',
+    name: 'Kasa KY067',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa KY067 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY067 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky061',
+    name: 'Kasa KY061',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa KY061 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY061 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky058',
+    name: 'Kasa KY058',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa KY058 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY058 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky056',
+    name: 'Kasa KY056',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa KY056 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY056 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky046',
+    name: 'Kasa KY046',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa KY046 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY046 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky045',
+    name: 'Kasa KY045',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa KY045 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY045 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky043',
+    name: 'Kasa KY043',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa KY043 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY043 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky042',
+    name: 'Kasa KY042',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa KY042 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY042 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky041',
+    name: 'Kasa KY041',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa KY041 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY041 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky040',
+    name: 'Kasa KY040',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa KY040 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY040 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky037',
+    name: 'Kasa KY037',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa KY037 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY037 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ksl6032',
+    name: 'Kasa KSL6032',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $65',
+    typicalCost: '$2,100 – $3,300',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa KSL6032 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KSL6032 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ksl6031',
+    name: 'Kasa KSL6031',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $65',
+    typicalCost: '$2,100 – $3,300',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa KSL6031 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KSL6031 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ksl6030',
+    name: 'Kasa KSL6030',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $65',
+    typicalCost: '$2,100 – $3,300',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa KSL6030 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KSL6030 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ksl6016',
+    name: 'Kasa KSL6016',
+    brand: 'Kasa Quartz',
+    priceRange: '$52 – $65',
+    typicalCost: '$2,100 – $3,300',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa KSL6016 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KSL6016 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky036',
+    name: 'Kasa KY036',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa KY036 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY036 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky031',
+    name: 'Kasa KY031',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa KY031 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY031 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky028',
+    name: 'Kasa KY028',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa KY028 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY028 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky025',
+    name: 'Kasa KY025',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa KY025 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY025 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky021',
+    name: 'Kasa KY021',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa KY021 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY021 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky008',
+    name: 'Kasa KY008',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa KY008 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY008 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'ky007',
+    name: 'Kasa KY007',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa KY007 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KY007 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kd017',
+    name: 'Kasa KD017',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa KD017 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KD017 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kd016',
+    name: 'Kasa KD016',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa KD016 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KD016 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kd008',
+    name: 'Kasa KD008',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa KD008 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KD008 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kd007',
+    name: 'Kasa KD007',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa KD007 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KD007 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kv019',
+    name: 'Kasa KV019',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa KV019 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KV019 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kv018',
+    name: 'Kasa KV018',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa KV018 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KV018 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kv017',
+    name: 'Kasa KV017',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa KV017 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KV017 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kv016',
+    name: 'Kasa KV016',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa KV016 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KV016 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kv015',
+    name: 'Kasa KV015',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa KV015 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KV015 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kv011',
+    name: 'Kasa KV011',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa KV011 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KV011 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kv007',
+    name: 'Kasa KV007',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa KV007 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KV007 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kv006',
+    name: 'Kasa KV006',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa KV006 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KV006 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kv005',
+    name: 'Kasa KV005',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa KV005 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KV005 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kv003',
+    name: 'Kasa KV003',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa KV003 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KV003 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kv002',
+    name: 'Kasa KV002',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa KV002 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KV002 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kv001',
+    name: 'Kasa KV001',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa KV001 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KV001 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kr7009',
+    name: 'Kasa KR7009',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa KR7009 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa KR7009 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-r9020',
+    name: 'Kasa R9020',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa R9020 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa R9020 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-r9019',
+    name: 'Kasa R9019',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa R9019 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa R9019 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-r9018',
+    name: 'Kasa R9018',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa R9018 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa R9018 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-r9017',
+    name: 'Kasa R9017',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa R9017 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa R9017 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-r9016',
+    name: 'Kasa R9016',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa R9016 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa R9016 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-r9015',
+    name: 'Kasa R9015',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa R9015 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa R9015 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-r9013',
+    name: 'Kasa R9013',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa R9013 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa R9013 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-r9012',
+    name: 'Kasa R9012',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa R9012 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa R9012 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-r9011',
+    name: 'Kasa R9011',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa R9011 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa R9011 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-r9010',
+    name: 'Kasa R9010',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa R9010 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa R9010 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-r9009',
+    name: 'Kasa R9009',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa R9009 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa R9009 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-r9008',
+    name: 'Kasa R9008',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa R9008 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa R9008 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-r9006',
+    name: 'Kasa R9006',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa R9006 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa R9006 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-r9005',
+    name: 'Kasa R9005',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa R9005 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa R9005 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-r9001',
+    name: 'Kasa R9001',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa R9001 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa R9001 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-r8008',
+    name: 'Kasa R8008',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa R8008 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa R8008 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-r8007',
+    name: 'Kasa R8007',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv5101.jpg',
+    description: 'Official Kasa Quartz Kasa R8007 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa R8007 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-r8006',
+    name: 'Kasa R8006',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksv1101.jpg',
+    description: 'Official Kasa Quartz Kasa R8006 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa R8006 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-jhu100',
+    name: 'Kasa JHU100',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl8701.jpg',
+    description: 'Official Kasa Quartz Kasa JHU100 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa JHU100 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-jhu200',
+    name: 'Kasa JHU200',
+    brand: 'Kasa Quartz',
+    priceRange: '$48 – $56',
+    typicalCost: '$1,900 – $2,800',
+    category: 'white',
+    img: '/images/slabs/kasa-ksl6011.jpg',
+    description: 'Official Kasa Quartz Kasa JHU200 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
+    features: ["Kasa JHU200 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
+  },
+{
+    id: 'kasa-ksl6001',
+    name: 'KSL6001',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz KSL6001 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['KSL6001 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+{
+    id: 'kasa-ksv7700',
+    name: 'KSV7700',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz KSV7700 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['KSV7700 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+{
+    id: 'kasa-ky077',
+    name: 'KY077',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz KY077 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['KY077 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+{
+    id: 'kasa-jhu10023',
+    name: 'JHU100-23',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz JHU100-23 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['JHU100-23 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+{
+    id: 'kasa-jhu10025',
+    name: 'JHU100-25',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz JHU100-25 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['JHU100-25 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+{
+    id: 'kasa-jhu10030',
+    name: 'JHU100-30',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz JHU100-30 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['JHU100-30 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+{
+    id: 'kasa-jhu10032',
+    name: 'JHU100-32',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz JHU100-32 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['JHU100-32 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+{
+    id: 'kasa-jhu20031',
+    name: 'JHU200-31',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz JHU200-31 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['JHU200-31 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+{
+    id: 'kasa-jhu20032',
+    name: 'JHU200-32',
+    brand: 'Kasa Quartz',
+    priceRange: '$50 – $75',
+    typicalCost: '$2,200 – $3,900',
+    category: 'white',
+    img: '/images/slabs/kasa-k9927.jpg',
+    description: 'Official Kasa Quartz JHU200-32 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
+    features: ['JHU200-32 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
+  },
+{
     id: 'caesarstone-5112',
     name: '5112 Aterra Blanca',
     brand: 'Caesarstone',
@@ -234,214 +1897,6 @@ export const materials: SlabMaterial[] = [
       'Premium luxury statement piece',
       'Perfect for backsplashes',
       'High impact resistance'
-    ]
-  },
-{
-    id: 'k8801',
-    name: 'K8801 – Calacatta Oro',
-    brand: 'Kasa Quartz',
-    priceRange: '$49 – $56',
-    typicalCost: '$1,950 – $2,800',
-    category: 'marble',
-    img: '/images/slabs/k8801.jpg',
-    description: 'A rich Calacatta Oro quartz featuring warm gold and subtle grey organic veining across a soft white field.',
-    features: [
-      'Calacatta Oro veining',
-      'Warm gold & grey accents',
-      'Luxurious marble look',
-      'Non-porous surface'
-    ]
-  },
-{
-    id: 'k8802',
-    name: 'K8802',
-    brand: 'Kasa Quartz',
-    priceRange: '$49 – $56',
-    typicalCost: '$1,950 – $2,800',
-    category: 'marble',
-    img: '/images/slabs/k8802.jpg',
-    description: 'A beautiful white-based Calacatta quartz featuring refined grey veining for a contemporary kitchen design.',
-    features: [
-      'Calacatta series design',
-      'Modern white background',
-      'Stain and scratch resistant',
-      'Non-porous hygienic surface'
-    ]
-  },
-{
-    id: 'k8803',
-    name: 'K8803',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $55',
-    typicalCost: '$1,900 – $2,750',
-    category: 'marble',
-    img: '/images/slabs/k8803.jpg',
-    description: 'A classic Calacatta quartz presenting a clean white background with graceful, flowing grey veining.',
-    features: [
-      'Graceful grey veins',
-      'Timeless marble appearance',
-      'Low maintenance luxury',
-      'GTA homeowner favorite'
-    ]
-  },
-{
-    id: 'k8811',
-    name: 'K8811 – Calacatta Alto',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $58',
-    typicalCost: '$2,000 – $2,900',
-    category: 'marble',
-    img: '/images/slabs/k8811.jpg',
-    description: 'Bold sweeping grey marble veining with pristine clarity over a crisp polished white quartz background.',
-    features: [
-      'Calacatta Alto style',
-      'Bold sweeping veins',
-      'High-definition polish',
-      'Stain & scratch resistant'
-    ]
-  },
-{
-    id: 'k8813',
-    name: 'K8813',
-    brand: 'Kasa Quartz',
-    priceRange: '$49 – $56',
-    typicalCost: '$1,950 – $2,800',
-    category: 'white',
-    img: '/images/slabs/k8813.jpg',
-    description: 'A premium Calacatta White quartz slab offering a bright, crisp surface that is highly reflective and durable.',
-    features: [
-      'Bright Calacatta White base',
-      'Consistent, pristine finish',
-      'Highly stain resistant',
-      'Complements any cabinet style'
-    ]
-  },
-{
-    id: 'k8825',
-    name: 'K8825',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $58',
-    typicalCost: '$2,000 – $2,900',
-    category: 'marble',
-    img: '/images/slabs/k8825.jpg',
-    description: 'An elegant polished quartz showing natural marble texture with bold architectural grey patterns.',
-    features: [
-      'Deep design depth',
-      'Polished luxury finish',
-      'Perfect for islands and backsplashes',
-      'Superior impact resistance'
-    ]
-  },
-{
-    id: 'k8826',
-    name: 'K8826 – Calacatta Negro',
-    brand: 'Kasa Quartz',
-    priceRange: '$51 – $59',
-    typicalCost: '$2,100 – $3,000',
-    category: 'dark',
-    img: '/images/slabs/k8826.jpg',
-    description: 'Dramatic black quartz crossed by striking white and silver lightning-bolt veins for high contrast luxury.',
-    features: [
-      'Calacatta Negro dark series',
-      'Striking white veining',
-      'High-contrast luxury',
-      'Statement island design'
-    ]
-  },
-{
-    id: 'k8831',
-    name: 'K8831 – Calacatta Verona',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $59',
-    typicalCost: '$2,000 – $2,950',
-    category: 'marble',
-    img: '/images/slabs/k8831.jpg',
-    description: 'Classic Italian Verona marble aesthetic featuring soft charcoal veining across a bright white base.',
-    features: [
-      'Calacatta Verona marble look',
-      'Soft charcoal veining',
-      'Bright white base',
-      'Zero sealing required'
-    ]
-  },
-{
-    id: 'k8833',
-    name: 'K8833 – Calacatta Venice',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $58',
-    typicalCost: '$2,000 – $2,900',
-    category: 'marble',
-    img: '/images/slabs/k8833.jpg',
-    description: 'Venetian-inspired white quartz with delicate, interconnected grey marble veining paths.',
-    features: [
-      'Calacatta Venice design',
-      'Interconnected grey veins',
-      'Venetian elegance',
-      'Ideal for waterfall islands'
-    ]
-  },
-{
-    id: 'k8835',
-    name: 'K8835 – Calacatta Lago',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $58',
-    typicalCost: '$2,000 – $2,900',
-    category: 'marble',
-    img: '/images/slabs/k8835.jpg',
-    description: 'Serene lake-inspired Calacatta quartz presenting soft smoky grey waves over a pristine white field.',
-    features: [
-      'Calacatta Lago veining',
-      'Soft smoky grey waves',
-      'Serene white background',
-      'Durable & hygienic'
-    ]
-  },
-{
-    id: 'k8836',
-    name: 'K8836 – Calacatta Clara',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $58',
-    typicalCost: '$2,000 – $2,900',
-    category: 'marble',
-    img: '/images/slabs/kasa-k8836.jpg',
-    description: 'Refined Calacatta quartz presenting clean off-white field detailed with subtle, elegant grey veining.',
-    features: [
-      'Calacatta Clara design',
-      'Refined grey veining',
-      'Clean off-white field',
-      'GTA homeowner favorite'
-    ]
-  },
-{
-    id: 'k8837',
-    name: 'K8837',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $59',
-    typicalCost: '$2,000 – $2,950',
-    category: 'marble',
-    img: '/images/slabs/k8837.jpg',
-    description: 'A high-definition Calacatta quartz presenting a delicate off-white base with soft, subtle veining.',
-    features: [
-      'Soft subtle veining',
-      'Warm white aesthetics',
-      'No sealing required',
-      'Eco-friendly manufacturing'
-    ]
-  },
-{
-    id: 'kasa-k9916',
-    name: 'K9916',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $58',
-    typicalCost: '$2,000 – $2,900',
-    category: 'marble',
-    img: '/images/slabs/k9916.jpg',
-    description: 'A premium, complex Calacatta polished slab with dramatic, striking grey veins that create a bold statement.',
-    features: [
-      'Intricate, dramatic veining',
-      'Top-tier premium model',
-      'High-gloss luxury polish',
-      'Stunning centerpiece design'
     ]
   },
 {
@@ -1271,284 +2726,6 @@ export const materials: SlabMaterial[] = [
     priceRange: '$85 – $114', typicalCost: '$4,000 – $6,500', category: 'warm',
     img: '/images/slabs/lusso.jpg', description: 'A warm, creamy background intertwined with golden and pale grey veins.',
     features: ['Creamy warm base', 'Golden and grey veins', 'HybriQ+ Technology', 'Inviting luxury']
-  },
-{
-    id: 'kasa-ksl6011', name: 'KSL6011 - Alabaster Vein', brand: 'Kasa Quartz',
-    priceRange: '$57 – $70', typicalCost: '$3,500 – $5,500', category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg', description: 'Soft alabaster background with delicate veining for a timeless look.',
-    features: ['Alabaster Vein', 'Soft background', 'Timeless', 'Elegant']
-  },
-{
-    id: 'kasa-ksv5101', name: 'KSV5101 - Lightning Gold', brand: 'Kasa Quartz',
-    priceRange: '$52 – $62', typicalCost: '$3,500 – $5,500', category: 'marble',
-    img: '/images/slabs/kasa-ksv5101.jpg', description: 'Striking lightning-like gold veins over a bright white base.',
-    features: ['Lightning Gold', 'Striking veins', 'Bright white base', 'Luxury statement']
-  },
-{
-    id: 'kasa-ksv1102', name: 'KSV1102 - Calacatta Misty Gold', brand: 'Kasa Quartz',
-    priceRange: '$53 – $63', typicalCost: '$3,500 – $5,500', category: 'marble',
-    img: '/images/slabs/kasa-ksv1102.jpg', description: 'Calacatta marble look with misty grey and subtle gold highlights.',
-    features: ['Calacatta Misty Gold', 'Misty grey', 'Gold highlights', 'Elegant detail']
-  },
-{
-    id: 'kasa-ksv1101', name: 'KSV1101 - Calacatta Misty Grey', brand: 'Kasa Quartz',
-    priceRange: '$53 – $63', typicalCost: '$3,500 – $5,500', category: 'marble',
-    img: '/images/slabs/kasa-ksv1101.jpg', description: 'A cooler-toned Calacatta featuring misty grey veins and shading.',
-    features: ['Calacatta Misty Grey', 'Cooler tones', 'Grey veins', 'Modern classic']
-  },
-{
-    id: 'kasa-ky066', name: 'KY066 - Taj Mahal Pre', brand: 'Kasa Quartz',
-    priceRange: '$52 – $62', typicalCost: '$2,800 – $4,800', category: 'warm',
-    img: '/images/slabs/kasa-ky066.jpg', description: 'Inspired by the famous Taj Mahal quartzite, featuring warm creamy beige tones.',
-    features: ['Taj Mahal Pre', 'Heat transfer tech', 'Creamy beige tones', 'Warm luxury']
-  },
-{
-    id: 'kasa-ksl8701',
-    name: 'KSL8701 – Frosted Rift White',
-    brand: 'Kasa Quartz',
-    priceRange: '$57 – $70',
-    typicalCost: '$2,350 – $3,500',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Crisp frosted white field detailed with subtle rift-pattern veining for a clean, modern aesthetic.',
-    features: [
-      'Frosted Rift White design',
-      'Subtle linear veining',
-      'Clean modern aesthetic',
-      'Non-porous & stain resistant'
-    ]
-  },
-{
-    id: 'kasa-ksl8602',
-    name: 'KSL8602 – Silver Mist',
-    brand: 'Kasa Quartz',
-    priceRange: '$57 – $70',
-    typicalCost: '$2,350 – $3,500',
-    category: 'grey',
-    img: '/images/slabs/kasa-ksl8602.jpg',
-    description: 'Soft silver-grey veining flowing softly across a translucent white quartz field.',
-    features: [
-      'Silver Mist veining',
-      'Soft grey movement',
-      'Translucent white base',
-      'High heat & scratch resistance'
-    ]
-  },
-{
-    id: 'kasa-ksl6032',
-    name: 'KSL6032 – White Castle',
-    brand: 'Kasa Quartz',
-    priceRange: '$57 – $70',
-    typicalCost: '$2,350 – $3,500',
-    category: 'marble',
-    img: '/images/slabs/kasa-ksl6032.jpg',
-    description: 'Regal architectural quartz with dramatic grey clouding and high-definition marble movement.',
-    features: [
-      'White Castle marble look',
-      'Dramatic grey clouding',
-      'High-definition depth',
-      'Waterfall island favorite'
-    ]
-  },
-{
-    id: 'kasa-ksl6031',
-    name: 'KSL6031 – Silver Sands',
-    brand: 'Kasa Quartz',
-    priceRange: '$57 – $70',
-    typicalCost: '$2,350 – $3,500',
-    category: 'grey',
-    img: '/images/slabs/kasa-ksl6031.jpg',
-    description: 'Fine shimmering silver sand textures integrated with soft grey linear marble veining.',
-    features: [
-      'Silver Sands texture',
-      'Linear grey veining',
-      'Subtle shimmer detail',
-      'Easy daily maintenance'
-    ]
-  },
-{
-    id: 'kasa-ksl6030',
-    name: 'KSL6030 – Spiez White',
-    brand: 'Kasa Quartz',
-    priceRange: '$57 – $70',
-    typicalCost: '$2,350 – $3,500',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6030.jpg',
-    description: 'Pristine Swiss Alpine white quartz featuring delicate, airy grey highlights.',
-    features: [
-      'Spiez Alpine White base',
-      'Delicate airy highlights',
-      'Minimalist design',
-      'Durable engineered quartz'
-    ]
-  },
-{
-    id: 'kasa-ksl6017',
-    name: 'KSL6017 – Bianco Riviera',
-    brand: 'Kasa Quartz',
-    priceRange: '$57 – $70',
-    typicalCost: '$2,350 – $3,500',
-    category: 'marble',
-    img: '/images/slabs/kasa-ksl6017.jpg',
-    description: 'Mediterranean-inspired Riviera white quartz with graceful sweeping slate grey veining.',
-    features: [
-      'Bianco Riviera aesthetic',
-      'Sweeping slate grey veins',
-      'Mediterranean elegance',
-      'Hygienic non-porous surface'
-    ]
-  },
-{
-    id: 'kasa-ksl6016',
-    name: 'KSL6016 – Volakano White',
-    brand: 'Kasa Quartz',
-    priceRange: '$57 – $70',
-    typicalCost: '$2,350 – $3,500',
-    category: 'marble',
-    img: '/images/slabs/kasa-ksl6016.jpg',
-    description: 'Inspired by Greek Volakas marble, offering subtle smoky grey diagonal veining across pure white.',
-    features: [
-      'Volakas marble inspiration',
-      'Smoky grey diagonal veins',
-      'Bright white backdrop',
-      'Timeless kitchen choice'
-    ]
-  },
-{
-    id: 'kasa-ksl6015',
-    name: 'KSL6015 – Blizzard',
-    brand: 'Kasa Quartz',
-    priceRange: '$57 – $70',
-    typicalCost: '$2,350 – $3,500',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6015.jpg',
-    description: 'Dynamic icy white matrix laced with crisp frost-like quartz movement.',
-    features: [
-      'Blizzard icy white matrix',
-      'Frost-like quartz texture',
-      'High light reflectivity',
-      'Stain & impact resistant'
-    ]
-  },
-{
-    id: 'kasa-ksl6010',
-    name: 'KSL6010 – Glacier Gold',
-    brand: 'Kasa Quartz',
-    priceRange: '$57 – $70',
-    typicalCost: '$2,350 – $3,500',
-    category: 'warm',
-    img: '/images/slabs/kasa-ksl6010.jpg',
-    description: 'Warm golden veining intertwined with cool glacial grey accents over a bright white backdrop.',
-    features: [
-      'Glacier Gold veining',
-      'Warm gold & cool grey accents',
-      'Complements brass & chrome',
-      'Premium polished finish'
-    ]
-  },
-{
-    id: 'kasa-ksl6005',
-    name: 'KSL6005 – Sahara Dune',
-    brand: 'Kasa Quartz',
-    priceRange: '$57 – $70',
-    typicalCost: '$2,350 – $3,500',
-    category: 'warm',
-    img: '/images/slabs/kasa-ksl6005.jpg',
-    description: 'Warm desert sand tones with soft ivory linear striations for cozy, organic kitchen interiors.',
-    features: [
-      'Sahara Dune warm tone',
-      'Soft ivory striations',
-      'Organic earth-tone design',
-      'Pairs with wood cabinetry'
-    ]
-  },
-{
-    id: 'k7701',
-    name: 'K7701 – Middle Carrara',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $55',
-    typicalCost: '$1,900 – $2,750',
-    category: 'marble',
-    img: '/images/slabs/k7701.jpg',
-    description: 'Classic Middle Carrara limestone quartz featuring soft feathered grey veining over a warm white backdrop.',
-    features: ['Middle Carrara series', 'Feathered grey veining', 'Warm white background', 'Non-porous & durable']
-  },
-{
-    id: 'k7702',
-    name: 'K7702 – Ice White',
-    brand: 'Kasa Quartz',
-    priceRange: '$49 – $56',
-    typicalCost: '$1,950 – $2,800',
-    category: 'white',
-    img: '/images/slabs/k7702.jpg',
-    description: 'Pristine Ice White quartz slab presenting a bright, crisp surface with light reflective clarity.',
-    features: ['Ice White pristine field', 'Bright light reflectivity', 'Minimalist design', 'High stain resistance']
-  },
-{
-    id: 'k7703',
-    name: 'K7703 – Nero Stellar',
-    brand: 'Kasa Quartz',
-    priceRange: '$55 – $66',
-    typicalCost: '$2,250 – $3,300',
-    category: 'dark',
-    img: '/images/slabs/k7703.jpg',
-    description: 'Dramatic black quartz infused with subtle stellar shimmer flecks and fine silver accents.',
-    features: ['Nero Stellar dark series', 'Subtle stellar shimmer', 'High contrast luxury', 'Non-porous hygienic stone']
-  },
-{
-    id: 'k7705',
-    name: 'K7705 – Carrara Select',
-    brand: 'Kasa Quartz',
-    priceRange: '$49 – $56',
-    typicalCost: '$1,950 – $2,800',
-    category: 'marble',
-    img: '/images/slabs/k7705.jpg',
-    description: 'Refined Italian Carrara select aesthetic with gentle slate-grey linear veins across soft ivory quartz.',
-    features: ['Carrara Select design', 'Gentle slate-grey veins', 'Soft ivory base', 'No sealing required']
-  },
-{
-    id: 'k7708',
-    name: 'K7708 – Phantom Grey',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $58',
-    typicalCost: '$2,000 – $2,900',
-    category: 'grey',
-    img: '/images/slabs/k7708.jpg',
-    description: 'Sophisticated Phantom Grey quartz detailed with subtle cloudy charcoal movement and fine misting.',
-    features: ['Phantom Grey tone', 'Cloudy charcoal movement', 'Urban modern look', 'Scratch & heat resistant']
-  },
-{
-    id: 'k7710',
-    name: 'K7710 – Antico Blend',
-    brand: 'Kasa Quartz',
-    priceRange: '$54 – $64',
-    typicalCost: '$2,200 – $3,200',
-    category: 'warm',
-    img: '/images/slabs/k7710.jpg',
-    description: 'Warm antique stone blend showcasing golden ivory tones intertwined with delicate warm grey striations.',
-    features: ['Antico Blend warm series', 'Golden ivory tones', 'Organic earthiness', 'Complements wood cabinetry']
-  },
-{
-    id: 'ksv7700',
-    name: 'KSV7700 – Ivory Golden Rift',
-    brand: 'Kasa Quartz',
-    priceRange: '$52 – $62',
-    typicalCost: '$2,150 – $3,100',
-    category: 'warm',
-    img: '/images/slabs/ksv7700.jpg',
-    description: 'Luxurious ivory field presenting elegant golden-copper rift veining and translucent quartz depth.',
-    features: ['Ivory Golden Rift design', 'Golden-copper veining', 'Translucent quartz depth', 'Premium polished finish']
-  },
-{
-    id: 'ky077',
-    name: 'KY077 – Jade Fusion',
-    brand: 'Kasa Quartz',
-    priceRange: '$52 – $62',
-    typicalCost: '$2,150 – $3,100',
-    category: 'warm',
-    img: '/images/slabs/ky077.jpg',
-    description: 'State-of-the-art heat transfer quartz capturing organic jade fusion movement with warm emerald & gold waves.',
-    features: ['Jade Fusion heat transfer tech', 'Warm emerald & gold waves', 'Exotic quartzite look', 'High impact durability']
   },
 {
     id: 'caesarstone-3100',
@@ -2627,1084 +3804,6 @@ export const materials: SlabMaterial[] = [
     img: '/images/slabs/tce-8003.jpg',
     description: 'Official TCE Stone TCE 8003 Icy Mist<mark style="background quartz countertop slab. Premium engineered surface designed for residential and commercial kitchens.',
     features: ["TCE 8003 Icy Mist<mark style=\"background design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ksl8701',
-    name: 'Kasa KSL8701',
-    brand: 'Kasa Quartz',
-    priceRange: '$52 – $65',
-    typicalCost: '$2,100 – $3,300',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa KSL8701 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KSL8701 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ksl8602',
-    name: 'Kasa KSL8602',
-    brand: 'Kasa Quartz',
-    priceRange: '$52 – $65',
-    typicalCost: '$2,100 – $3,300',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa KSL8602 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KSL8602 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ksl6011',
-    name: 'Kasa KSL6011',
-    brand: 'Kasa Quartz',
-    priceRange: '$52 – $65',
-    typicalCost: '$2,100 – $3,300',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa KSL6011 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KSL6011 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ksl6010',
-    name: 'Kasa KSL6010',
-    brand: 'Kasa Quartz',
-    priceRange: '$52 – $65',
-    typicalCost: '$2,100 – $3,300',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa KSL6010 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KSL6010 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ksv5101',
-    name: 'Kasa KSV5101',
-    brand: 'Kasa Quartz',
-    priceRange: '$52 – $65',
-    typicalCost: '$2,100 – $3,300',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa KSV5101 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KSV5101 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ksv1105',
-    name: 'Kasa KSV1105',
-    brand: 'Kasa Quartz',
-    priceRange: '$52 – $65',
-    typicalCost: '$2,100 – $3,300',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa KSV1105 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KSV1105 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ksv1102',
-    name: 'Kasa KSV1102',
-    brand: 'Kasa Quartz',
-    priceRange: '$52 – $65',
-    typicalCost: '$2,100 – $3,300',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa KSV1102 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KSV1102 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ksv1101',
-    name: 'Kasa KSV1101',
-    brand: 'Kasa Quartz',
-    priceRange: '$52 – $65',
-    typicalCost: '$2,100 – $3,300',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa KSV1101 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KSV1101 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky078',
-    name: 'Kasa KY078',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa KY078 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY078 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky066',
-    name: 'Kasa KY066',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa KY066 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY066 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky063',
-    name: 'Kasa KY063',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa KY063 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY063 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky060',
-    name: 'Kasa KY060',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa KY060 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY060 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky059',
-    name: 'Kasa KY059',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa KY059 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY059 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky057',
-    name: 'Kasa KY057',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa KY057 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY057 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky055',
-    name: 'Kasa KY055',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa KY055 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY055 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky052',
-    name: 'Kasa KY052',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa KY052 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY052 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ksl8601',
-    name: 'Kasa KSL8601',
-    brand: 'Kasa Quartz',
-    priceRange: '$52 – $65',
-    typicalCost: '$2,100 – $3,300',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa KSL8601 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KSL8601 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ksl6017',
-    name: 'Kasa KSL6017',
-    brand: 'Kasa Quartz',
-    priceRange: '$52 – $65',
-    typicalCost: '$2,100 – $3,300',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa KSL6017 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KSL6017 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ksl6015',
-    name: 'Kasa KSL6015',
-    brand: 'Kasa Quartz',
-    priceRange: '$52 – $65',
-    typicalCost: '$2,100 – $3,300',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa KSL6015 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KSL6015 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ksv9200',
-    name: 'Kasa KSV9200',
-    brand: 'Kasa Quartz',
-    priceRange: '$52 – $65',
-    typicalCost: '$2,100 – $3,300',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa KSV9200 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KSV9200 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ksv1106',
-    name: 'Kasa KSV1106',
-    brand: 'Kasa Quartz',
-    priceRange: '$52 – $65',
-    typicalCost: '$2,100 – $3,300',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa KSV1106 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KSV1106 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky070',
-    name: 'Kasa KY070',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa KY070 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY070 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky067',
-    name: 'Kasa KY067',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa KY067 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY067 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky061',
-    name: 'Kasa KY061',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa KY061 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY061 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky058',
-    name: 'Kasa KY058',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa KY058 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY058 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky056',
-    name: 'Kasa KY056',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa KY056 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY056 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky046',
-    name: 'Kasa KY046',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa KY046 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY046 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky045',
-    name: 'Kasa KY045',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa KY045 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY045 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky043',
-    name: 'Kasa KY043',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa KY043 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY043 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky042',
-    name: 'Kasa KY042',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa KY042 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY042 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky041',
-    name: 'Kasa KY041',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa KY041 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY041 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky040',
-    name: 'Kasa KY040',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa KY040 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY040 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky037',
-    name: 'Kasa KY037',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa KY037 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY037 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ksl6032',
-    name: 'Kasa KSL6032',
-    brand: 'Kasa Quartz',
-    priceRange: '$52 – $65',
-    typicalCost: '$2,100 – $3,300',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa KSL6032 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KSL6032 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ksl6031',
-    name: 'Kasa KSL6031',
-    brand: 'Kasa Quartz',
-    priceRange: '$52 – $65',
-    typicalCost: '$2,100 – $3,300',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa KSL6031 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KSL6031 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ksl6030',
-    name: 'Kasa KSL6030',
-    brand: 'Kasa Quartz',
-    priceRange: '$52 – $65',
-    typicalCost: '$2,100 – $3,300',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa KSL6030 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KSL6030 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ksl6016',
-    name: 'Kasa KSL6016',
-    brand: 'Kasa Quartz',
-    priceRange: '$52 – $65',
-    typicalCost: '$2,100 – $3,300',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa KSL6016 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KSL6016 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky036',
-    name: 'Kasa KY036',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa KY036 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY036 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky031',
-    name: 'Kasa KY031',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa KY031 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY031 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky028',
-    name: 'Kasa KY028',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa KY028 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY028 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky025',
-    name: 'Kasa KY025',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa KY025 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY025 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky021',
-    name: 'Kasa KY021',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa KY021 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY021 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky008',
-    name: 'Kasa KY008',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa KY008 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY008 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'ky007',
-    name: 'Kasa KY007',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa KY007 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KY007 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kd017',
-    name: 'Kasa KD017',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa KD017 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KD017 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kd016',
-    name: 'Kasa KD016',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa KD016 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KD016 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kd008',
-    name: 'Kasa KD008',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa KD008 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KD008 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kd007',
-    name: 'Kasa KD007',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa KD007 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KD007 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kv019',
-    name: 'Kasa KV019',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa KV019 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KV019 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kv018',
-    name: 'Kasa KV018',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa KV018 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KV018 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kv017',
-    name: 'Kasa KV017',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa KV017 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KV017 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kv016',
-    name: 'Kasa KV016',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa KV016 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KV016 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kv015',
-    name: 'Kasa KV015',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa KV015 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KV015 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kv011',
-    name: 'Kasa KV011',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa KV011 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KV011 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kv007',
-    name: 'Kasa KV007',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa KV007 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KV007 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kv006',
-    name: 'Kasa KV006',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa KV006 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KV006 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kv005',
-    name: 'Kasa KV005',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa KV005 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KV005 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kv003',
-    name: 'Kasa KV003',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa KV003 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KV003 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kv002',
-    name: 'Kasa KV002',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa KV002 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KV002 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kv001',
-    name: 'Kasa KV001',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa KV001 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KV001 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kr7009',
-    name: 'Kasa KR7009',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa KR7009 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa KR7009 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-k9927',
-    name: 'K9927',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa K9927 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa K9927 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-k9926',
-    name: 'K9926',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa K9926 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa K9926 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-k9925',
-    name: 'K9925',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa K9925 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa K9925 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-k9924',
-    name: 'K9924',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa K9924 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa K9924 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-k9923',
-    name: 'K9923',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa K9923 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa K9923 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-k9922',
-    name: 'K9922',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa K9922 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa K9922 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-k9919',
-    name: 'K9919',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa K9919 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa K9919 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-k9917',
-    name: 'K9917',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa K9917 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa K9917 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-k9912',
-    name: 'K9912',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa K9912 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa K9912 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-k9911',
-    name: 'K9911',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa K9911 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa K9911 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-k9910',
-    name: 'K9910',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa K9910 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa K9910 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-k9909',
-    name: 'K9909',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'dark',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa K9909 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa K9909 design", "Dark quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-k9907',
-    name: 'K9907',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa K9907 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa K9907 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-k9906',
-    name: 'K9906',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'grey',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa K9906 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa K9906 design", "Grey quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-k9908',
-    name: 'K9908',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa K9908 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa K9908 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-k9905',
-    name: 'K9905',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa K9905 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa K9905 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-k9902',
-    name: 'K9902',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa K9902 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa K9902 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-r9020',
-    name: 'Kasa R9020',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa R9020 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa R9020 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-r9019',
-    name: 'Kasa R9019',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa R9019 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa R9019 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-r9018',
-    name: 'Kasa R9018',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa R9018 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa R9018 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-r9017',
-    name: 'Kasa R9017',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa R9017 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa R9017 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-r9016',
-    name: 'Kasa R9016',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa R9016 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa R9016 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-r9015',
-    name: 'Kasa R9015',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa R9015 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa R9015 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-r9013',
-    name: 'Kasa R9013',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa R9013 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa R9013 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-r9012',
-    name: 'Kasa R9012',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa R9012 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa R9012 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-r9011',
-    name: 'Kasa R9011',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa R9011 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa R9011 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-r9010',
-    name: 'Kasa R9010',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa R9010 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa R9010 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-r9009',
-    name: 'Kasa R9009',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa R9009 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa R9009 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-r9008',
-    name: 'Kasa R9008',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa R9008 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa R9008 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-r9006',
-    name: 'Kasa R9006',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa R9006 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa R9006 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-r9005',
-    name: 'Kasa R9005',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa R9005 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa R9005 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-r9001',
-    name: 'Kasa R9001',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa R9001 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa R9001 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-r8008',
-    name: 'Kasa R8008',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa R8008 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa R8008 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-r8007',
-    name: 'Kasa R8007',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv5101.jpg',
-    description: 'Official Kasa Quartz Kasa R8007 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa R8007 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-r8006',
-    name: 'Kasa R8006',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksv1101.jpg',
-    description: 'Official Kasa Quartz Kasa R8006 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa R8006 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-jhu100',
-    name: 'Kasa JHU100',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl8701.jpg',
-    description: 'Official Kasa Quartz Kasa JHU100 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa JHU100 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-jhu200',
-    name: 'Kasa JHU200',
-    brand: 'Kasa Quartz',
-    priceRange: '$48 – $56',
-    typicalCost: '$1,900 – $2,800',
-    category: 'white',
-    img: '/images/slabs/kasa-ksl6011.jpg',
-    description: 'Official Kasa Quartz Kasa JHU200 countertop slab. Factory-direct engineered quartz surface for Toronto & GTA kitchen renovations.',
-    features: ["Kasa JHU200 design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
   },
 {
     id: 'kstone-p2002',
@@ -7335,104 +7434,5 @@ export const materials: SlabMaterial[] = [
     img: '/images/slabs/lucent-ahb.jpg',
     description: 'Official Lucent Quartz Lucent AHB countertop slab. Premium engineered surface designed for residential and commercial kitchen applications.',
     features: ["Lucent AHB design", "White quartz palette", "Factory direct engineered quartz", "Polished durable finish"]
-  },
-{
-    id: 'kasa-ksl6001',
-    name: 'KSL6001',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz KSL6001 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['KSL6001 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-{
-    id: 'kasa-ksv7700',
-    name: 'KSV7700',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz KSV7700 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['KSV7700 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-{
-    id: 'kasa-ky077',
-    name: 'KY077',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz KY077 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['KY077 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-{
-    id: 'kasa-jhu10023',
-    name: 'JHU100-23',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz JHU100-23 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['JHU100-23 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-{
-    id: 'kasa-jhu10025',
-    name: 'JHU100-25',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz JHU100-25 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['JHU100-25 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-{
-    id: 'kasa-jhu10030',
-    name: 'JHU100-30',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz JHU100-30 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['JHU100-30 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-{
-    id: 'kasa-jhu10032',
-    name: 'JHU100-32',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz JHU100-32 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['JHU100-32 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-{
-    id: 'kasa-jhu20031',
-    name: 'JHU200-31',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz JHU200-31 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['JHU200-31 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
-  },
-{
-    id: 'kasa-jhu20032',
-    name: 'JHU200-32',
-    brand: 'Kasa Quartz',
-    priceRange: '$50 – $75',
-    typicalCost: '$2,200 – $3,900',
-    category: 'white',
-    img: '/images/slabs/kasa-k9927.jpg',
-    description: 'Official Kasa Quartz JHU200-32 countertop slab. Engineered quartz surface designed for luxury residential and commercial kitchens and bathrooms.',
-    features: ['JHU200-32 design', 'High durability quartz surface', 'Non-porous stain resistance', 'Polished premium finish']
   }
 ];

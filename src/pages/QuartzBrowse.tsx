@@ -53,13 +53,14 @@ const looks = [
 
 const slabs = [
   ...materials.map(m => ({
+    id: m.id,
     name: m.name,
     brand: m.brand,
     price: m.priceRange,
     category: m.category,
     img: m.name.includes('5131') ? calacattaNuvo : m.img
   })),
-  { name: 'Skara Brae', brand: 'Lucent Quartz', price: '$115–$140', category: 'marble', img: 'https://images.unsplash.com/photo-1556909172-fd60538a7956?auto=format&fit=crop&q=80&w=600' }
+  { id: 'lucent-skara-brae', name: 'Skara Brae', brand: 'Lucent Quartz', price: '$115–$140', category: 'marble', img: 'https://images.unsplash.com/photo-1556909172-fd60538a7956?auto=format&fit=crop&q=80&w=600' }
 ];
 
 const brands = [
@@ -451,16 +452,11 @@ export default function QuartzBrowse() {
           >
             <AnimatePresence mode="popLayout">
               {filteredSlabs.map((slab) => {
-                const matchedMaterial = materials.find(m => 
-                  m.name.toLowerCase() === slab.name.toLowerCase() || 
-                  m.name.toLowerCase().replace(/–/g, '-').replace(/\s+/g, '') === slab.name.toLowerCase().replace(/–/g, '-').replace(/\s+/g, '')
-                );
-                const slabId = matchedMaterial ? matchedMaterial.id : slab.name.toLowerCase().replace(/\s+/g, '-');
-                const detailLink = `/slab/${slabId}`;
+                const detailLink = `/slab/${slab.id}`;
                 
                 return (
                   <motion.div
-                    key={slab.name}
+                    key={slab.id}
                     layout
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
