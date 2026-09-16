@@ -392,7 +392,6 @@ routes.forEach(route => {
 
   const outputPath = path.join(routeDir, 'index.html');
   fs.writeFileSync(outputPath, html, 'utf8');
-  console.log(`  ✅ Pre-rendered SSG route: ${route.path}`);
 });
 
 // Dynamically generate sitemap.xml for all routes
