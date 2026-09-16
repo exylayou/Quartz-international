@@ -31,9 +31,13 @@
       "destination": "/index.html"
     }
   ],
+  "env": {
+    "VERCEL_SUPPORT_LARGE_FUNCTIONS": "1"
+  },
   "functions": {
     "api/index.ts": {
-      "includeFiles": "seeds/*"
+      "includeFiles": "seeds/*",
+      "maxDuration": 60
     }
   }
 }
