@@ -37,6 +37,7 @@
   "functions": {
     "api/index.ts": {
       "includeFiles": "seeds/*",
+      "excludeFiles": "{src/assets/**,slabs/**,scratch/**,public/**}",
       "maxDuration": 60
     }
   }
