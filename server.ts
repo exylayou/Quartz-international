@@ -1,6 +1,6 @@
 import express from "express";
+import { getAdminIdentity } from "./src/services/adminAuth.js";
 import path from "path";
-import fs from "fs/promises";
 import dotenv from "dotenv";
 import nodemailer from "nodemailer";
 import Stripe from "stripe";
@@ -70,11 +70,7 @@ if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
 // Helper to get SMTP 'from' header dynamically based on admin secret
 function getFromEmail(adminSecret?: any, defaultPrefix: string = "Quartz International") {
   let senderName = defaultPrefix;
-  if (adminSecret === 'aura-admin-2026') {
-    senderName = "Ken";
-  } else if (adminSecret === 'qi-admin-2026') {
-    senderName = "Jay";
-  }
+  senderName = getAdminIdentity(adminSecret) || defaultPrefix;
 
   let fromEmail = "info@quartzinternational.ca";
   if (process.env.SMTP_FROM) {
@@ -875,7 +871,7 @@ app.post("/api/leads", async (req, res) => {
   // Get all leads (Admin Protected)
   app.get("/api/leads", async (req, res) => {
     const adminSecret = req.headers['x-admin-secret'];
-    if (adminSecret !== 'aura-admin-2026' && adminSecret !== 'qi-admin-2026') {
+    if (!getAdminIdentity(adminSecret)) {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const currentLeads = await getLeads();
@@ -885,7 +881,7 @@ app.post("/api/leads", async (req, res) => {
   // Save or update quote details for a specific lead (Admin Protected)
   app.post("/api/leads/:id/quote", async (req, res) => {
     const adminSecret = req.headers['x-admin-secret'];
-    if (adminSecret !== 'aura-admin-2026' && adminSecret !== 'qi-admin-2026') {
+    if (!getAdminIdentity(adminSecret)) {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const { id } = req.params;
@@ -1184,7 +1180,7 @@ app.post("/api/leads", async (req, res) => {
   // Get all customers (Admin Protected)
   app.get("/api/customers", async (req, res) => {
     const adminSecret = req.headers['x-admin-secret'];
-    if (adminSecret !== 'aura-admin-2026' && adminSecret !== 'qi-admin-2026') {
+    if (!getAdminIdentity(adminSecret)) {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const customers = await getCustomers();
@@ -1194,7 +1190,7 @@ app.post("/api/leads", async (req, res) => {
   // Create customer manually (Admin Protected)
   app.post("/api/customers", async (req, res) => {
     const adminSecret = req.headers['x-admin-secret'];
-    if (adminSecret !== 'aura-admin-2026' && adminSecret !== 'qi-admin-2026') {
+    if (!getAdminIdentity(adminSecret)) {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const { name, email, phone, notes } = req.body;
@@ -1218,7 +1214,7 @@ app.post("/api/leads", async (req, res) => {
   // Update customer (Admin Protected)
   app.put("/api/customers/:id", async (req, res) => {
     const adminSecret = req.headers['x-admin-secret'];
-    if (adminSecret !== 'aura-admin-2026' && adminSecret !== 'qi-admin-2026') {
+    if (!getAdminIdentity(adminSecret)) {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const { id } = req.params;
@@ -1244,7 +1240,7 @@ app.post("/api/leads", async (req, res) => {
   // Add mock file upload details to a customer (Admin Protected)
   app.post("/api/customers/:id/files", async (req, res) => {
     const adminSecret = req.headers['x-admin-secret'];
-    if (adminSecret !== 'aura-admin-2026' && adminSecret !== 'qi-admin-2026') {
+    if (!getAdminIdentity(adminSecret)) {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const { id } = req.params;
@@ -1278,7 +1274,7 @@ app.post("/api/leads", async (req, res) => {
   // Get unified messages history (Admin Protected)
   app.get("/api/messages", async (req, res) => {
     const adminSecret = req.headers['x-admin-secret'];
-    if (adminSecret !== 'aura-admin-2026' && adminSecret !== 'qi-admin-2026') {
+    if (!getAdminIdentity(adminSecret)) {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const messages = await getMessages();
@@ -1288,7 +1284,7 @@ app.post("/api/leads", async (req, res) => {
   // Save outbound message and simulate delayed mock customer reply (Admin Protected)
   app.post("/api/messages", async (req, res) => {
     const adminSecret = req.headers['x-admin-secret'];
-    if (adminSecret !== 'aura-admin-2026' && adminSecret !== 'qi-admin-2026') {
+    if (!getAdminIdentity(adminSecret)) {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const { customerId, channel, text, sender } = req.body;
@@ -1380,7 +1376,7 @@ app.post("/api/leads", async (req, res) => {
   // Mark messages as read for a customer (Admin Protected)
   app.post("/api/messages/read", async (req, res) => {
     const adminSecret = req.headers['x-admin-secret'];
-    if (adminSecret !== 'aura-admin-2026' && adminSecret !== 'qi-admin-2026') {
+    if (!getAdminIdentity(adminSecret)) {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const { customerId } = req.body;
@@ -1420,7 +1416,7 @@ app.post("/api/leads", async (req, res) => {
   // Get all analytics events (Admin Protected)
   app.get("/api/analytics", async (req, res) => {
     const adminSecret = req.headers['x-admin-secret'];
-    if (adminSecret !== 'aura-admin-2026' && adminSecret !== 'qi-admin-2026') {
+    if (!getAdminIdentity(adminSecret)) {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const events = await getAnalyticsEvents();
@@ -1436,14 +1432,22 @@ app.post("/api/leads", async (req, res) => {
       return res.status(404).json({ error: "Quote not found" });
     }
 
-    // Determine amount to charge
-    let amount = lead.quoteTotal;
-    let description = `Full invoice payment for proposal ${lead.quoteNumber}`;
+    // Reject incomplete or invalid quotes before building a payment request.
+    const total = lead.quoteTotal;
+    if (typeof total !== 'number' || !Number.isFinite(total) || total <= 0) {
+      return res.status(400).json({ error: "Invoice total must be greater than zero." });
+    }
+    const quoteNumber = lead.quoteNumber || lead.id;
+    let amount = total;
+    let description = `Full invoice payment for proposal ${quoteNumber}`;
 
     if (lead.quoteStatus === 'approved') {
-      const depositPercent = lead.quoteDepositPercent !== undefined ? lead.quoteDepositPercent : 50;
-      amount = Math.round(lead.quoteTotal * (depositPercent / 100));
-      description = `${depositPercent}% Project Deposit for proposal ${lead.quoteNumber}`;
+      const depositPercent = lead.quoteDepositPercent ?? 50;
+      if (typeof depositPercent !== 'number' || !Number.isFinite(depositPercent) || depositPercent < 0 || depositPercent > 100) {
+        return res.status(400).json({ error: "Deposit percentage must be between 0 and 100." });
+      }
+      amount = Math.round(total * (depositPercent / 100));
+      description = `${depositPercent}% Project Deposit for proposal ${quoteNumber}`;
     }
 
     if (amount <= 0) {
@@ -1484,7 +1488,7 @@ app.post("/api/leads", async (req, res) => {
         cancel_url: `${origin}/quote/${id}?canceled=true`,
         metadata: {
           leadId: id,
-          quoteNumber: lead.quoteNumber,
+          quoteNumber,
           paymentType: lead.quoteStatus === 'approved' ? 'deposit' : 'full'
         }
       });
@@ -1554,32 +1558,3 @@ app.post("/api/leads", async (req, res) => {
   });
 
 export default app;
-
-if (!process.env.VERCEL) {
-  const startLocalServer = async () => {
-    const PORT = process.env.PORT || 3000;
-    // Vite middleware for development
-    if (process.env.NODE_ENV !== "production") {
-      const { createServer: createViteServer } = await import("vite");
-      const vite = await createViteServer({
-        server: { middlewareMode: true },
-        appType: "spa",
-      });
-      app.use(vite.middlewares);
-    } else {
-      const distPath = path.join(process.cwd(), 'dist');
-      app.use(express.static(distPath));
-      app.get('*', (req, res) => {
-        res.sendFile(path.join(distPath, 'index.html'));
-      });
-    }
-
-    app.listen(PORT, () => {
-      console.log(`Server running on http://localhost:${PORT}`);
-    });
-  };
-
-  startLocalServer().catch(err => {
-    console.error("Failed to start local dev server:", err);
-  });
-}

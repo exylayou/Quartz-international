@@ -1,6 +1,36 @@
 {
   "redirects": [
     {
+      "source": "/kitchen-cabinets",
+      "destination": "/cabinets",
+      "permanent": true
+    },
+    {
+      "source": "/quartz-countertops-kasa",
+      "destination": "/kasa-quartz",
+      "permanent": true
+    },
+    {
+      "source": "/quartz-countertops-kstone",
+      "destination": "/kstone",
+      "permanent": true
+    },
+    {
+      "source": "/quartz-countertops-lucent",
+      "destination": "/lucent-quartz",
+      "permanent": true
+    },
+    {
+      "source": "/quartz-countertops-tce",
+      "destination": "/tce-stone",
+      "permanent": true
+    },
+    {
+      "source": "/quartz-vs-quartzite",
+      "destination": "/quartz-vs-quartzite-countertops-toronto",
+      "permanent": true
+    },
+    {
       "source": "/quartz-countertop-cost/:path*",
       "destination": "/cost",
       "permanent": true
@@ -27,8 +57,16 @@
       "destination": "/api/index"
     },
     {
-      "source": "/((?!api|assets|.*\\.).*)",
-      "destination": "/index.html"
+      "source": "/admin",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/results",
+      "destination": "/app-shell.html"
+    },
+    {
+      "source": "/quote/:path*",
+      "destination": "/app-shell.html"
     }
   ],
   "env": {
@@ -37,8 +75,46 @@
   "functions": {
     "api/index.ts": {
       "includeFiles": "seeds/*",
-      "excludeFiles": "{src/assets/**,slabs/**,scratch/**,public/**}",
+      "excludeFiles": "{dist/**,.ssg/**,src/assets/**,slabs/**,scratch/**,public/**,backup_temp/**,docs/**,local-server.ts,*.zip,*.mhtml}",
       "maxDuration": 60
     }
-  }
+  },
+  "headers": [
+    {
+      "source": "/app-shell.html",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/admin",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/results",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/quote/:path*",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    }
+  ]
 }

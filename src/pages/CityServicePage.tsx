@@ -1,3 +1,4 @@
+import NotFound from '../components/NotFound';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowRight, Star, CheckCircle2, MapPin, Check, ChevronDown, Building, PenTool, LayoutTemplate, Zap, Map } from 'lucide-react';
@@ -22,7 +23,7 @@ export default function CityServicePage() {
   const cityData = cities[citySlug];
 
   if (!cityData) {
-    return <Navigate to="/" replace />;
+    return <NotFound />;
   }
 
   const standardFaqs = [

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
+import { useLocation } from 'react-router-dom';
 
 interface SEOProps {
   title: string;
@@ -19,34 +20,25 @@ export function SEO({
   keywords = 'quartz countertops, kitchen cabinets, toronto, gta, custom kitchens'
 }: SEOProps) {
   const siteUrl = 'https://quartzinternational.ca';
-  const canonicalUrl = canonical ? `${siteUrl}${canonical}` : siteUrl;
+  const { pathname } = useLocation();
+  const canonicalUrl = new URL(canonical || pathname, siteUrl).href;
   const imageUrl = image.startsWith('http') ? image : `${siteUrl}${image}`;
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
-    "@type": ["LocalBusiness", "HomeGoodsStore", "ProfessionalService"],
+    "@type": ["HomeAndConstructionBusiness"],
     "name": "Quartz International",
     "image": imageUrl,
-    "@id": siteUrl,
+    "@id": `${siteUrl}/#organization`,
     "url": siteUrl,
     "telephone": "(647) 370-6938",
     "priceRange": "$$",
     "email": "info@quartzinternational.ca",
     "description": description || "Leading supplier and installer of turnkey kitchen cabinet packages and quartz countertops across Toronto and the Greater Toronto Area.",
     "sameAs": [
-      "https://share.google/kkKyItFobaGVXcr12"
+      "https://share.google/kkKyItFobaGVXcr12",
+      "https://www.homestars.com/profile/2930766-quartz-international"
     ],
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "Toronto",
-      "addressRegion": "ON",
-      "addressCountry": "CA"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 43.6532,
-      "longitude": -79.3832
-    },
     "areaServed": [
       { "@type": "City", "name": "Toronto" },
       { "@type": "City", "name": "Vaughan" },

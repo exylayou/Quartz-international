@@ -9,3 +9,5 @@ coverage/
 /data/
 backup_temp/
 .vercel
+
+.ssg/

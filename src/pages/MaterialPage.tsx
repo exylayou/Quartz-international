@@ -10,7 +10,7 @@ export default function MaterialPage() {
 
   return (
     <div className="bg-background">
-      <SEO title="Material Page | Quartz International" description="Learn more about Material Page at Quartz International. We provide premium countertops and cabinetry in Toronto and the GTA." />
+      <SEO title={`${material.name} Countertops Toronto & GTA | Quartz International`} description={`${material.description} Explore ${material.name} countertop options and request a project estimate in Toronto and the GTA.`} canonical={`/material/${material.id}`} />
 
       {/* Hero */}
       <section className="relative h-[60vh] flex items-center overflow-hidden">

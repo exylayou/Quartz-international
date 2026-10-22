@@ -1,3 +1,4 @@
+import NotFound from '../components/NotFound';
 
 import { motion } from 'motion/react';
 import { useParams, Navigate } from 'react-router-dom';
@@ -47,7 +48,7 @@ export default function SlabDetail() {
   });
 
   if (!material) {
-    return <Navigate to="/quartz-countertops-toronto" />;
+    return <NotFound />;
   }
 
   const similarSlabs = materials

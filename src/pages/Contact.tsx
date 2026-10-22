@@ -101,7 +101,7 @@ export default function Contact() {
             </motion.div>
             <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-8 text-text-primary uppercase">Contact Our Team</h1>
             <p className="text-xl text-text-muted leading-relaxed mb-12">
-              Ready to start your kitchen transformation? Whether you have a question about pricing, want to schedule a visit, or need to upload your project files, we are here to help.
+              Quartz International is a service business supplying and installing kitchen cabinets and quartz surfaces across Toronto and the GTA. We do not operate our own showroom. Contact us to arrange slab viewing at a supplier or partner showroom, discuss your project, or request a written quote.
             </p>
 
             <div className="space-y-10">
@@ -136,11 +136,11 @@ export default function Contact() {
                 </div>
                 <div>
                   <div className="flex items-center gap-1.5 text-amber-500">
-                    <span className="font-extrabold text-sm text-text-primary mr-1">4.9 / 5.0 Rating</span>
-                    {"★".repeat(5)}
+                    <span className="font-extrabold text-sm text-text-primary mr-1">View our Google profile</span>
+
                   </div>
                   <p className="text-xs text-text-muted font-medium group-hover:text-accent transition-colors">
-                    Verified Google Business Profile • Toronto & GTA Service Area
+                    Quartz International • Toronto & GTA service area
                   </p>
                 </div>
               </a>

@@ -1,6 +1,7 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate, useParams } from 'react-router-dom';
+import { Routes, Route, Navigate, useParams } from 'react-router-dom';
 import Layout from './components/Layout';
+import NotFound from './components/NotFound';
 import ScrollToTop from './components/ScrollToTop';
 import { CalculatorProvider } from './context/CalculatorContext';
 import CalculatorModal from './components/CalculatorModal';
@@ -81,7 +82,6 @@ function CityRedirect() {
 
 export default function App() {
   return (
-    <BrowserRouter>
       <CalculatorProvider>
         <ScrollToTop />
         <Layout>
@@ -158,12 +158,11 @@ export default function App() {
             <Route path="/quartz-countertop-cost/*" element={<Navigate to="/cost" replace />} />
             <Route path="/quartz-kitchen-countertops/*" element={<Navigate to="/quartz-kitchen-countertops" replace />} />
             <Route path="/kitchen-cabinets/*" element={<Navigate to="/cabinets" replace />} />
-            <Route path="*" element={<Navigate to="/" replace />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </Layout>
         <CalculatorModal />
         <AIChat />
       </CalculatorProvider>
-    </BrowserRouter>
   );
 }
