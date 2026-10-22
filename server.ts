@@ -1,7 +1,6 @@
 import express from "express";
 import { getAdminIdentity } from "./src/services/adminAuth.js";
 import path from "path";
-import fs from "fs/promises";
 import dotenv from "dotenv";
 import nodemailer from "nodemailer";
 import Stripe from "stripe";
@@ -1433,14 +1432,22 @@ app.post("/api/leads", async (req, res) => {
       return res.status(404).json({ error: "Quote not found" });
     }
 
-    // Determine amount to charge
-    let amount = lead.quoteTotal;
-    let description = `Full invoice payment for proposal ${lead.quoteNumber}`;
+    // Reject incomplete or invalid quotes before building a payment request.
+    const total = lead.quoteTotal;
+    if (typeof total !== 'number' || !Number.isFinite(total) || total <= 0) {
+      return res.status(400).json({ error: "Invoice total must be greater than zero." });
+    }
+    const quoteNumber = lead.quoteNumber || lead.id;
+    let amount = total;
+    let description = `Full invoice payment for proposal ${quoteNumber}`;
 
     if (lead.quoteStatus === 'approved') {
-      const depositPercent = lead.quoteDepositPercent !== undefined ? lead.quoteDepositPercent : 50;
-      amount = Math.round(lead.quoteTotal * (depositPercent / 100));
-      description = `${depositPercent}% Project Deposit for proposal ${lead.quoteNumber}`;
+      const depositPercent = lead.quoteDepositPercent ?? 50;
+      if (typeof depositPercent !== 'number' || !Number.isFinite(depositPercent) || depositPercent < 0 || depositPercent > 100) {
+        return res.status(400).json({ error: "Deposit percentage must be between 0 and 100." });
+      }
+      amount = Math.round(total * (depositPercent / 100));
+      description = `${depositPercent}% Project Deposit for proposal ${quoteNumber}`;
     }
 
     if (amount <= 0) {
@@ -1481,7 +1488,7 @@ app.post("/api/leads", async (req, res) => {
         cancel_url: `${origin}/quote/${id}?canceled=true`,
         metadata: {
           leadId: id,
-          quoteNumber: lead.quoteNumber,
+          quoteNumber,
           paymentType: lead.quoteStatus === 'approved' ? 'deposit' : 'full'
         }
       });
@@ -1551,48 +1558,3 @@ app.post("/api/leads", async (req, res) => {
   });
 
 export default app;
-
-if (!process.env.VERCEL) {
-  const startLocalServer = async () => {
-    const PORT = process.env.PORT || 3000;
-    // Vite middleware for development
-    if (process.env.NODE_ENV !== "production") {
-      const { createServer: createViteServer } = await import("vite");
-      const vite = await createViteServer({
-        server: { middlewareMode: true },
-        appType: "spa",
-      });
-      app.use(vite.middlewares);
-    } else {
-      const distPath = path.join(process.cwd(), 'dist');
-      const hosting = JSON.parse(await fs.readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'));
-      for (const redirect of hosting.redirects) {
-        const source = redirect.source.replace('/:path*', '/:path(*)?');
-        app.get(source, (req, res) => {
-          const destination = redirect.destination.replace(/:([A-Za-z]+)/g,
-            (_: string, key: string) => encodeURIComponent(String(req.params[key] || '')));
-          res.redirect(308, destination);
-        });
-      }
-      const publicRoutes: string[] = JSON.parse(await fs.readFile(path.join(distPath, 'prerender-manifest.json'), 'utf8'));
-      for (const route of publicRoutes) {
-        app.get(route, (_req, res) => res.sendFile(path.join(distPath, route.slice(1), 'index.html')));
-      }
-      app.use(express.static(distPath));
-      app.get(['/admin', '/results', '/quote/:id'], (req, res) => {
-        res.sendFile(path.join(distPath, 'app-shell.html'));
-      });
-      app.get('*', (req, res) => {
-        res.status(404).sendFile(path.join(distPath, '404.html'));
-      });
-    }
-
-    app.listen(PORT, () => {
-      console.log(`Server running on http://localhost:${PORT}`);
-    });
-  };
-
-  startLocalServer().catch(err => {
-    console.error("Failed to start local dev server:", err);
-  });
-}

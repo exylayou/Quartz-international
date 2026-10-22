@@ -75,7 +75,7 @@
   "functions": {
     "api/index.ts": {
       "includeFiles": "seeds/*",
-      "excludeFiles": "{src/assets/**,slabs/**,scratch/**,public/**}",
+      "excludeFiles": "{dist/**,.ssg/**,src/assets/**,slabs/**,scratch/**,public/**,backup_temp/**,docs/**,local-server.ts,*.zip,*.mhtml}",
       "maxDuration": 60
     }
   },

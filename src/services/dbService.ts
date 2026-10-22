@@ -109,6 +109,8 @@ export interface Lead {
   // Quote / Invoicing System Fields
   quoteStatus?: 'draft' | 'sent' | 'approved' | 'invoiced' | 'paid';
   quoteNumber?: string;
+  quoteNotes?: string;
+  quoteDepositPercent?: number;
   quoteItems?: QuoteItem[];
   quoteTaxRate?: number;
   quoteDiscount?: number;
