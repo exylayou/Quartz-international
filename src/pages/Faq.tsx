@@ -212,19 +212,19 @@ export default function Faq() {
     '@graph': [
       {
         '@type': 'Organization',
-        '@id': 'https://www.quartzinternational.ca/#organization',
+        '@id': 'https://quartzinternational.ca/#organization',
         name: 'Quartz International',
-        url: 'https://www.quartzinternational.ca/',
+        url: 'https://quartzinternational.ca/',
       },
       {
         '@type': 'WebPage',
-        '@id': 'https://www.quartzinternational.ca/faq#webpage',
-        url: 'https://www.quartzinternational.ca/faq',
+        '@id': 'https://quartzinternational.ca/faq#webpage',
+        url: 'https://quartzinternational.ca/faq',
         name: 'Frequently Asked Questions — Quartz International',
       },
       {
         '@type': 'FAQPage',
-        '@id': 'https://www.quartzinternational.ca/faq#faq',
+        '@id': 'https://quartzinternational.ca/faq#faq',
         mainEntity: allFaqs.map((faq) => ({
           '@type': 'Question',
           name: faq.q,

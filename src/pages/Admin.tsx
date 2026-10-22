@@ -712,9 +712,7 @@ export default function Admin() {
 
   React.useEffect(() => {
     const savedSecret = localStorage.getItem('admin_secret');
-    if (savedSecret === 'aura-admin-2026') {
-      localStorage.removeItem('admin_secret');
-    } else if (savedSecret) {
+    if (savedSecret) {
       setSecret(savedSecret);
       setLoading(true);
       fetch('/api/leads', {

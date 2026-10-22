@@ -1,4 +1,5 @@
 import express from "express";
+import { getAdminIdentity } from "./src/services/adminAuth.js";
 import path from "path";
 import fs from "fs/promises";
 import dotenv from "dotenv";
@@ -70,11 +71,7 @@ if (!process.env.SMTP_USER || !process.env.SMTP_PASS) {
 // Helper to get SMTP 'from' header dynamically based on admin secret
 function getFromEmail(adminSecret?: any, defaultPrefix: string = "Quartz International") {
   let senderName = defaultPrefix;
-  if (adminSecret === 'aura-admin-2026') {
-    senderName = "Ken";
-  } else if (adminSecret === 'qi-admin-2026') {
-    senderName = "Jay";
-  }
+  senderName = getAdminIdentity(adminSecret) || defaultPrefix;
 
   let fromEmail = "info@quartzinternational.ca";
   if (process.env.SMTP_FROM) {
@@ -875,7 +872,7 @@ app.post("/api/leads", async (req, res) => {
   // Get all leads (Admin Protected)
   app.get("/api/leads", async (req, res) => {
     const adminSecret = req.headers['x-admin-secret'];
-    if (adminSecret !== 'aura-admin-2026' && adminSecret !== 'qi-admin-2026') {
+    if (!getAdminIdentity(adminSecret)) {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const currentLeads = await getLeads();
@@ -885,7 +882,7 @@ app.post("/api/leads", async (req, res) => {
   // Save or update quote details for a specific lead (Admin Protected)
   app.post("/api/leads/:id/quote", async (req, res) => {
     const adminSecret = req.headers['x-admin-secret'];
-    if (adminSecret !== 'aura-admin-2026' && adminSecret !== 'qi-admin-2026') {
+    if (!getAdminIdentity(adminSecret)) {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const { id } = req.params;
@@ -1184,7 +1181,7 @@ app.post("/api/leads", async (req, res) => {
   // Get all customers (Admin Protected)
   app.get("/api/customers", async (req, res) => {
     const adminSecret = req.headers['x-admin-secret'];
-    if (adminSecret !== 'aura-admin-2026' && adminSecret !== 'qi-admin-2026') {
+    if (!getAdminIdentity(adminSecret)) {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const customers = await getCustomers();
@@ -1194,7 +1191,7 @@ app.post("/api/leads", async (req, res) => {
   // Create customer manually (Admin Protected)
   app.post("/api/customers", async (req, res) => {
     const adminSecret = req.headers['x-admin-secret'];
-    if (adminSecret !== 'aura-admin-2026' && adminSecret !== 'qi-admin-2026') {
+    if (!getAdminIdentity(adminSecret)) {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const { name, email, phone, notes } = req.body;
@@ -1218,7 +1215,7 @@ app.post("/api/leads", async (req, res) => {
   // Update customer (Admin Protected)
   app.put("/api/customers/:id", async (req, res) => {
     const adminSecret = req.headers['x-admin-secret'];
-    if (adminSecret !== 'aura-admin-2026' && adminSecret !== 'qi-admin-2026') {
+    if (!getAdminIdentity(adminSecret)) {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const { id } = req.params;
@@ -1244,7 +1241,7 @@ app.post("/api/leads", async (req, res) => {
   // Add mock file upload details to a customer (Admin Protected)
   app.post("/api/customers/:id/files", async (req, res) => {
     const adminSecret = req.headers['x-admin-secret'];
-    if (adminSecret !== 'aura-admin-2026' && adminSecret !== 'qi-admin-2026') {
+    if (!getAdminIdentity(adminSecret)) {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const { id } = req.params;
@@ -1278,7 +1275,7 @@ app.post("/api/leads", async (req, res) => {
   // Get unified messages history (Admin Protected)
   app.get("/api/messages", async (req, res) => {
     const adminSecret = req.headers['x-admin-secret'];
-    if (adminSecret !== 'aura-admin-2026' && adminSecret !== 'qi-admin-2026') {
+    if (!getAdminIdentity(adminSecret)) {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const messages = await getMessages();
@@ -1288,7 +1285,7 @@ app.post("/api/leads", async (req, res) => {
   // Save outbound message and simulate delayed mock customer reply (Admin Protected)
   app.post("/api/messages", async (req, res) => {
     const adminSecret = req.headers['x-admin-secret'];
-    if (adminSecret !== 'aura-admin-2026' && adminSecret !== 'qi-admin-2026') {
+    if (!getAdminIdentity(adminSecret)) {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const { customerId, channel, text, sender } = req.body;
@@ -1380,7 +1377,7 @@ app.post("/api/leads", async (req, res) => {
   // Mark messages as read for a customer (Admin Protected)
   app.post("/api/messages/read", async (req, res) => {
     const adminSecret = req.headers['x-admin-secret'];
-    if (adminSecret !== 'aura-admin-2026' && adminSecret !== 'qi-admin-2026') {
+    if (!getAdminIdentity(adminSecret)) {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const { customerId } = req.body;
@@ -1420,7 +1417,7 @@ app.post("/api/leads", async (req, res) => {
   // Get all analytics events (Admin Protected)
   app.get("/api/analytics", async (req, res) => {
     const adminSecret = req.headers['x-admin-secret'];
-    if (adminSecret !== 'aura-admin-2026' && adminSecret !== 'qi-admin-2026') {
+    if (!getAdminIdentity(adminSecret)) {
       return res.status(401).json({ error: "Unauthorized" });
     }
     const events = await getAnalyticsEvents();
@@ -1568,9 +1565,25 @@ if (!process.env.VERCEL) {
       app.use(vite.middlewares);
     } else {
       const distPath = path.join(process.cwd(), 'dist');
+      const hosting = JSON.parse(await fs.readFile(path.join(process.cwd(), 'vercel.json'), 'utf8'));
+      for (const redirect of hosting.redirects) {
+        const source = redirect.source.replace('/:path*', '/:path(*)?');
+        app.get(source, (req, res) => {
+          const destination = redirect.destination.replace(/:([A-Za-z]+)/g,
+            (_: string, key: string) => encodeURIComponent(String(req.params[key] || '')));
+          res.redirect(308, destination);
+        });
+      }
+      const publicRoutes: string[] = JSON.parse(await fs.readFile(path.join(distPath, 'prerender-manifest.json'), 'utf8'));
+      for (const route of publicRoutes) {
+        app.get(route, (_req, res) => res.sendFile(path.join(distPath, route.slice(1), 'index.html')));
+      }
       app.use(express.static(distPath));
+      app.get(['/admin', '/results', '/quote/:id'], (req, res) => {
+        res.sendFile(path.join(distPath, 'app-shell.html'));
+      });
       app.get('*', (req, res) => {
-        res.sendFile(path.join(distPath, 'index.html'));
+        res.status(404).sendFile(path.join(distPath, '404.html'));
       });
     }
 

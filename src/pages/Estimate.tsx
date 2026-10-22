@@ -206,10 +206,10 @@ export default function Estimate() {
               >
                 {state.step === 1 && (
                   <div className="space-y-8">
-                    <h2 className="text-3xl font-bold mb-4 flex items-center gap-3">
+                    <h1 className="text-3xl font-bold mb-4 flex items-center gap-3">
                       <Maximize className="text-accent" />
                       What is the total length of your countertop walls?
-                    </h2>
+                    </h1>
                     <p className="text-gray-600 mb-6">Measure the walls that will have countertops.</p>
                     
                     <div className="space-y-12 py-8">

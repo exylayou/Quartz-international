@@ -1,8 +1,6 @@
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ 
-  apiKey: process.env.GEMINI_API_KEY || '' 
-});
+// Initialize only when a visitor requests a response, never during static rendering.
 
 const SYSTEM_INSTRUCTION = `
 You are the Quartz International AI Assistant. You help users with kitchen remodeling, cabinetry styles, materials, and pricing.
@@ -21,6 +19,7 @@ Be professional, helpful, and keep responses concise. If asked about pricing, me
 
 export async function getAIChatResponse(message: string, history: { role: 'user' | 'model', parts: { text: string }[] }[] = []) {
   try {
+    const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || '' });
     const chat = ai.chats.create({
       model: "gemini-3-flash-preview",
       config: {

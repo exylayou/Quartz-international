@@ -1,4 +1,22 @@
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /quote/
+Disallow: /results
+Disallow: /api/
+
+# Discovery and search agents may read the same public pages as visitors.
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: GPTBot
+User-agent: ClaudeBot
+User-agent: PerplexityBot
+User-agent: Bingbot
+User-agent: Google-Extended
+Allow: /
+Disallow: /admin
+Disallow: /quote/
+Disallow: /results
+Disallow: /api/
 
 Sitemap: https://quartzinternational.ca/sitemap.xml

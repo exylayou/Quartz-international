@@ -1717,6 +1717,7 @@ export default function Blog() {
 
   return (
     <div className="bg-background pt-20 pb-32">
+      <SEO title="Kitchen Design Blog | Quartz International Toronto & GTA" description="Quartz countertop advice, kitchen cabinet guides, material comparisons and renovation planning for Toronto and GTA homes." canonical="/blog" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <motion.div

@@ -1,5 +1,6 @@
 import {StrictMode} from 'react';
 import {createRoot} from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import App from './App.tsx';
 import './index.css';
@@ -42,10 +43,28 @@ if (typeof window !== 'undefined') {
   });
 }
 
-createRoot(document.getElementById('root')!).render(
+const root = document.getElementById('root')!;
+const app = (
   <StrictMode>
     <HelmetProvider>
-      <App />
+      <BrowserRouter><App /></BrowserRouter>
     </HelmetProvider>
-  </StrictMode>,
+  </StrictMode>
 );
+
+// Static pages remain readable before JavaScript loads. The interactive app
+// replaces that snapshot, including time-sensitive estimator/PDF templates.
+// Transfer metadata ownership to React so prerendered head tags do not duplicate.
+let inStaticHead = false;
+for (const node of Array.from(document.head.childNodes)) {
+  if (node.nodeType === Node.COMMENT_NODE && node.textContent === 'ssg-head:start') {
+    inStaticHead = true;
+    node.remove();
+  } else if (node.nodeType === Node.COMMENT_NODE && node.textContent === 'ssg-head:end') {
+    inStaticHead = false;
+    node.remove();
+  } else if (inStaticHead) {
+    node.remove();
+  }
+}
+createRoot(root).render(app);

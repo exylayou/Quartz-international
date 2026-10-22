@@ -35,38 +35,6 @@ export default function Home() {
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
-        "@id": "https://quartzinternational.ca/#organization",
-        "name": "Quartz International",
-        "url": "https://quartzinternational.ca/",
-        "logo": "https://quartzinternational.ca/images/hero8.jpeg",
-        "image": "https://quartzinternational.ca/images/hero8.jpeg",
-        "telephone": "+16473706938",
-        "email": "info@quartzinternational.ca",
-        "priceRange": "$$",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Toronto",
-          "addressRegion": "ON",
-          "addressCountry": "CA"
-        },
-        "areaServed": [
-          "Toronto", "Markham", "Vaughan", "Mississauga", "Richmond Hill", 
-          "Brampton", "Oakville", "Burlington", "Pickering", "Scarborough", "Etobicoke"
-        ].map(city => ({ "@type": "City", "name": city })),
-        "openingHoursSpecification": {
-          "@type": "OpeningHoursSpecification",
-          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
-          "opens": "08:00",
-          "closes": "18:00"
-        },
-        "aggregateRating": {
-          "@type": "AggregateRating",
-          "ratingValue": "4.9",
-          "reviewCount": "128"
-        }
-      },
-      {
         "@type": "WebSite",
         "@id": "https://quartzinternational.ca/#website",
         "url": "https://quartzinternational.ca/",
@@ -203,7 +171,7 @@ export default function Home() {
             {[
               { label: '18+ Years Serving GTA', icon: <MapPin size={24} /> },
               { label: '5,000+ Installations', icon: <CheckCircle2 size={24} /> },
-              { label: '4.9★ Customer Rating', icon: <Star size={24} /> },
+              { label: '4.8/5 · 36 HomeStars reviews', icon: <Star size={24} /> },
               { label: 'Licensed & Insured', icon: <ShieldCheck size={24} /> }
             ].map((item, i) => (
               <div key={i} className="flex flex-col items-center text-center gap-4 group">
@@ -570,82 +538,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. Google Reviews Section */}
+      {/* Public review proof: keep platform, count and verification date together. */}
       <section className="py-24 bg-[#F8F9FA] border-t border-border-custom">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-1.5 bg-[#4285F4]/10 border border-[#4285F4]/20 px-3.5 py-1.5 rounded-full mb-4">
-              <svg className="w-3.5 h-3.5 fill-[#4285F4]" viewBox="0 0 24 24">
-                <path d="M12.24 10.285V14.4h6.887c-.648 2.41-2.519 4.113-5.136 4.113A5.99 5.99 0 018 12.527a5.99 5.99 0 015.99-5.99c2.51 0 4.29 1.09 5.25 2l3.24-3.24C20.53 3.32 17.56 2 13.99 2 7.92 2 3 6.92 3 13s4.92 11 11 11c6.28 0 10.45-4.41 10.45-10.63 0-.715-.065-1.425-.195-2.085H12.24z"/>
-              </svg>
-              <span className="text-[10px] font-bold text-[#4285F4] uppercase tracking-widest leading-none">Google Reviews</span>
-            </div>
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">What Our Clients Say</h2>
-            <div className="flex items-center justify-center gap-1.5 text-center">
-              <span className="text-sm font-bold text-text-primary">4.9</span>
-              <div className="flex text-amber-400">
-                {[...Array(5)].map((_, i) => (
-                  <Star key={i} size={14} fill="currentColor" className="text-amber-400" />
-                ))}
-              </div>
-              <span className="text-xs text-text-muted font-medium">Customer Rating</span>
-            </div>
-          </div>
-
-          {/* Desktop Grid / Mobile horizontal scroll */}
-          <div className="flex md:grid md:grid-cols-4 gap-6 overflow-x-auto md:overflow-visible pb-8 md:pb-0 no-scrollbar snap-x snap-mandatory -mx-4 px-4 sm:mx-0 sm:px-0">
-            {[
-              {
-                stars: 5,
-                text: "Amazing experience working with Quartz International! The instant online price calculator was spot-on. They fabricated and installed our Caesarstone countertops in less than a week. The seam placement is practically invisible. Highly recommend!",
-                author: "Sarah M.",
-                location: "Toronto"
-              },
-              {
-                stars: 5,
-                text: "Super professional team. We went with a standard-level TCE Quartz for our condo and it looks incredible. The installers were fast, polite, and cleaned up everything before leaving. Great value and no hidden fees.",
-                author: "David K.",
-                location: "Richmond Hill"
-              },
-              {
-                stars: 5,
-                text: "We had a large waterfall island installed using Kasa Quartz. The craftsmanship is top-tier. They aligned the veining perfectly down the sides. Transparent pricing and exceptional customer service throughout.",
-                author: "Elena R.",
-                location: "Mississauga"
-              },
-              {
-                stars: 5,
-                text: "We were skeptical about the online pricing at first, but the final quote matched our estimate exactly. Excellent communication from the team, and the installation took just a few hours. Absolutely love our new kitchen!",
-                author: "Marcus & Chloe",
-                location: "Markham"
-              }
-            ].map((rev, idx) => (
-              <div 
-                key={idx} 
-                className="w-[280px] md:w-auto shrink-0 snap-center bg-white border border-border-custom p-8 rounded-3xl flex flex-col justify-between shadow-sm hover:shadow-md transition-all duration-300"
-              >
-                <div>
-                  <div className="flex gap-0.5 text-amber-400 mb-4">
-                    {[...Array(rev.stars)].map((_, i) => (
-                      <Star key={i} size={12} fill="currentColor" className="text-amber-400" />
-                    ))}
-                  </div>
-                  <p className="text-sm text-text-primary leading-relaxed mb-6 font-medium">
-                    "{rev.text}"
-                  </p>
-                </div>
-                <div className="flex items-center gap-3 border-t border-gray-100 pt-4 mt-auto">
-                  <div className="w-8 h-8 rounded-full bg-accent/10 flex items-center justify-center text-xs font-black text-accent shrink-0">
-                    {rev.author[0]}
-                  </div>
-                  <div>
-                    <h4 className="text-xs font-bold text-text-primary leading-none mb-1">{rev.author}</h4>
-                    <p className="text-[9px] text-text-muted font-semibold tracking-wider uppercase leading-none">{rev.location}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+        <div className="max-w-4xl mx-auto px-4 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Read Our Customer Reviews</h2>
+          <p className="text-lg text-text-primary mb-3">HomeStars: 4.8 out of 5 from 36 reviews.</p>
+          <p className="text-sm text-text-muted mb-8">Checked October 22, 2026. Visit HomeStars for current ratings and individual reviews.</p>
+          <a href="https://www.homestars.com/profile/2930766-quartz-international/reviews" target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex">Read reviews on HomeStars</a>
         </div>
       </section>
 
