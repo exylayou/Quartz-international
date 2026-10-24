@@ -188,6 +188,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
               <div>
                 <h4 className="text-xs font-bold uppercase tracking-[0.2em] text-accent mb-8">Resources</h4>
                 <ul className="space-y-4 text-gray-400 font-medium text-sm">
+                  <li><Link to="/quartz-countertop-guide-2026" className="hover:text-white transition-colors">Quartz Countertop Buyer Guide 2026</Link></li>
                   <li><Link to="/cost" className="hover:text-white transition-colors">Quartz Countertop Cost Guide</Link></li>
                   <li><Link to="/quartz-countertop-estimator" className="hover:text-white transition-colors">Quartz Countertop Estimator</Link></li>
                   <li><Link to="/kitchen-cabinet-cost" className="hover:text-white transition-colors">Kitchen Cabinet Cost Guide</Link></li>

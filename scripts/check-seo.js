@@ -31,6 +31,28 @@ for (const route of ['/', '/cost', '/faq', '/toronto', '/scarborough', '/brampto
   assert.ok(words > 300, `${route}: only ${words} words`);
   console.log(`${route}: ${words} words in initial page content`);
 }
+// The buyer guide must contain the buying answers in initial HTML, not a trend stub.
+const guide = read('/quartz-countertop-guide-2026');
+const guideArticle = guide.match(/<article[^>]*data-testid="quartz-buyer-guide"[^>]*>([\s\S]*?)<\/article>/)?.[1];
+assert.ok(guideArticle, 'Missing buyer-guide article');
+const guideText = plainText(guideArticle);
+const guideWords = guideText.split(' ').length;
+assert.ok(guideWords > 1200, `Buyer guide is too thin: ${guideWords} words`);
+for (const answer of ['$1,440', '$2,040', '$2,400', '$3,400', 'supplier or partner showrooms', '7–10 days', '2–3 hours', 'HST']) {
+  assert.ok(guideText.includes(answer), `Buyer guide missing ${answer}`);
+}
+assert.ok(!guide.includes('Industry Report'));
+assert.ok(!guide.includes('Guide2026 | Quartz International'));
+const guideSchemas = [...guide.matchAll(/<script[^>]*type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)].map(match => JSON.parse(match[1]));
+const business = guideSchemas.find(item => item['@type']?.includes('HomeAndConstructionBusiness'));
+assert.ok(business.priceRange.includes('48') && business.priceRange.includes('170') && business.priceRange.includes('per sq ft installed'));
+assert.ok(!business.geo && !business.address?.streetAddress, 'Do not invent a public company location');
+const graph = guideSchemas.flatMap(item => item['@graph'] || []);
+assert.ok(graph.some(item => item['@type'] === 'Article' && item.dateModified === '2026-10-24'));
+assert.equal(graph.find(item => item['@type'] === 'FAQPage')?.mainEntity.length, 6);
+assert.ok(fs.readFileSync(path.join(dist, 'llms-full.txt'), 'utf8').includes('/quartz-countertop-guide-2026'));
+console.log(`Buyer guide: ${guideWords} article words, price examples and matching FAQ/Article structured data`);
+
 assert.ok(read('/faq').includes('FAQPage'));
 assert.ok(read('/cost').includes('FAQPage'));
 assert.ok(read('/contact').includes('We do not operate our own showroom'));

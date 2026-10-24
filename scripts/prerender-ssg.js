@@ -26,7 +26,7 @@ for (const route of routes) {
   fs.writeFileSync(path.join(dir, 'index.html'), html);
   // A body-only text export provides a readable long-form AI reference using
   // exactly the public page content, without invented claims or extra copy.
-  if (['/', '/cost', '/faq', '/best-countertop-for-rental-properties', '/contact'].includes(route)) {
+  if (['/', '/cost', '/faq', '/best-countertop-for-rental-properties', '/contact', '/quartz-countertop-guide-2026'].includes(route)) {
     const text = body.replace(/<script\b[^>]*>[\s\S]*?<\/script>/gi, '')
       .replace(/<style\b[^>]*>[\s\S]*?<\/style>/gi, '')
       .replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();

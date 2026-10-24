@@ -47,6 +47,9 @@ export const PRICING_CONSTANTS = {
   },
 } as const;
 
+// Reuse the same published range in page content and business structured data.
+export const QUARTZ_INSTALLED_PRICE_RANGE = `$${PRICING_CONSTANTS.LEVELS.standard.low}–$${PRICING_CONSTANTS.LEVELS.luxury.high}+ CAD per sq ft installed`;
+
 // ─── Calculator State ────────────────────────────────────────────────────────
 
 export interface CalculatorState {
