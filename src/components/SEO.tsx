@@ -1,6 +1,7 @@
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
+import { QUARTZ_INSTALLED_PRICE_RANGE } from '../constants';
 
 interface SEOProps {
   title: string;
@@ -32,7 +33,7 @@ export function SEO({
     "@id": `${siteUrl}/#organization`,
     "url": siteUrl,
     "telephone": "(647) 370-6938",
-    "priceRange": "$$",
+    "priceRange": `${QUARTZ_INSTALLED_PRICE_RANGE} (quartz countertops)`,
     "email": "info@quartzinternational.ca",
     "description": description || "Leading supplier and installer of turnkey kitchen cabinet packages and quartz countertops across Toronto and the Greater Toronto Area.",
     "sameAs": [
