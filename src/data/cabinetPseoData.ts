@@ -197,13 +197,13 @@ export const cabinetPseoPages: CabinetPseoData[] = [
     slug: '10x10-kitchen-cabinets-toronto',
     pageType: 'package',
     seoTitle: '10x10 Kitchen Cabinets Toronto: Starting from $5,999 | Quartz Package',
-    metaDescription: '10x10 kitchen cabinets in Toronto starting from $5,999 for complete cabinet + quartz packages. Includes layout guide, inclusions, style options, and quick estimates.',
+    metaDescription: '10x10 kitchen packages in Toronto from $5,999 with cabinets, quartz countertops and a sink included. Backsplash is not included. Get an estimate.',
     h1: '10×10 Kitchen Cabinets in Toronto: Simple Package Pricing for a Practical Kitchen Upgrade',
-    heroCopy: 'A 10×10 kitchen is the industry-standard benchmark (approx. 20 linear feet) used to calculate baseline cabinet and countertop costs. At Quartz International, our turnkey 10×10 cabinet and quartz packages start from $5,999, giving Toronto homeowners, landlords, and flippers an affordable, transparent baseline before customizing layout, door styles, and drawer upgrades.',
+    heroCopy: 'A 10×10 kitchen is the industry-standard benchmark (approx. 20 linear feet) used to calculate baseline cabinet and countertop costs. At Quartz International, our turnkey 10×10 package starts from $5,999 and includes cabinets, Group 1 quartz countertops and a sink. A backsplash is not included. Customize your layout, door styles and drawer upgrades with a quote for your kitchen.',
     pricingTable: [
       { title: '10×10 RTA Cabinet Supply Only', range: 'Starting from $3,200', notes: 'Flat-packed 10-cabinet supply, DIY assembly required' },
       { title: '10×10 Fully Installed Cabinets', range: 'Starting from $4,800', notes: 'Factory pre-assembled cabinets + professional Toronto installation' },
-      { title: '10×10 Cabinets + Quartz Countertop Package', range: 'Starting from $5,999', notes: 'Turnkey bundle: Plywood/MDF cabinets + Group 1 quartz countertops installed' }
+      { title: '10×10 Cabinets + Quartz Countertop Package', range: 'Starting from $5,999', notes: 'Cabinets, Group 1 quartz countertops and sink included; backsplash excluded' }
     ],
     pricingNote: 'Prices are based on standard 10×10 L-shaped layouts (approx. 20 linear feet) with standard door base cabinets and Group 1 quartz. Final cost depends on your exact dimensions, door finish, number of drawer banks, pantry towers, and countertop color selection.',
     bestForTitle: 'What a 10×10 Kitchen Benchmark Includes',
@@ -221,11 +221,11 @@ export const cabinetPseoPages: CabinetPseoData[] = [
       },
       {
         q: 'What is included in the $5,999 10×10 package?',
-        a: 'The $5,999 baseline package includes solid plywood or high-density MDF cabinet boxes, full-overlay door and drawer fronts, heavy-duty soft-close hinges, standard base and wall cabinets (approx. 20 LF), basic hardware pulls, and Group 1 quartz countertops with professional measurement and installation.'
+        a: 'The $5,999 baseline package includes solid plywood or high-density MDF cabinet boxes, full-overlay door and drawer fronts, heavy-duty soft-close hinges, standard base and wall cabinets (approx. 20 LF), basic hardware pulls, Group 1 quartz countertops, and a sink, with professional quartz measurement and installation. A backsplash is not included.'
       },
       {
         q: 'What is NOT included in the baseline 10×10 package?',
-        a: 'The starting price excludes appliance removal, plumbing hookups, electrical work, tile backsplashes, sink fixtures, and structural wall removals. These services can be added upon request.'
+        a: 'The starting price excludes a backsplash, appliance removal, plumbing reconnection, electrical work, faucet and other sink fixtures, and structural wall removals. A full-height quartz backsplash can be quoted separately; we do not install tile backsplashes.'
       },
       {
         q: 'Can I customize the layout if my kitchen is not exactly 10×10?',
