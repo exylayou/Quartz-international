@@ -240,7 +240,7 @@ export const cabinetPseoPages: CabinetPseoData[] = [
         a: 'Cabinet assembly and installation typically take 1 to 2 days. As soon as the base cabinets are anchored, our technician templates the quartz using a 3D laser scanner. Quartz fabrication takes 5 to 7 days, and final countertop installation is completed in about 3 to 4 hours. Your kitchen is fully functional in 7 to 10 days from start to finish.'
       }
     ],
-    image: '/images/white_shaker_kitchen_hero.png'
+    image: '/images/bright-compact-oak-l-kitchen.webp'
   },
   {
     slug: 'kitchen-cabinets-and-quartz-countertops-toronto',
