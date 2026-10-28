@@ -207,6 +207,7 @@ export default function CabinetPseoPage() {
                   "Heavy-duty DTC soft-close hinges & undermount glides",
                   "Standard hardware pulls & adjustable shelving",
                   "Group 1 Quartz Countertop supply (approx. 20–25 sq ft)",
+                  ...(pageData.slug === '10x10-kitchen-cabinets-toronto' ? ["Sink"] : []),
                   "Professional quartz measurement, fabrication, & installation"
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-start gap-2.5">
@@ -227,7 +228,9 @@ export default function CabinetPseoPage() {
                 {[
                   "Appliance disconnects & reconnection (plumbing/gas)",
                   "Existing cabinet demolition & haul-away (optional add-on)",
-                  "Tile backsplash installation",
+                  ...(pageData.slug === '10x10-kitchen-cabinets-toronto'
+                    ? ["Backsplash is not included (full-height quartz available as an add-on)"]
+                    : ["Tile backsplash installation"]),
                   "Structural wall removals or bulkhead modifications",
                   "Electrical wiring or under-cabinet lighting",
                   "Luxury tier quartz slabs (Group 2+ veined quartz optional upgrade)"
