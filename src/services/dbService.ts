@@ -207,6 +207,9 @@ async function setDbKey<T>(key: string, value: T, fileFallbackPath: string): Pro
   return new Promise((resolve) => {
     writeQueue = writeQueue.then(async () => {
       try {
+        // Persistent storage can bypass file initialization, so the cache directory
+        // may not exist in a fresh Vercel function instance.
+        await fs.mkdir(path.dirname(fileFallbackPath), { recursive: true });
         await fs.writeFile(fileFallbackPath, JSON.stringify(value, null, 2), 'utf-8');
         resolve(persisted || true);
       } catch (err) {
