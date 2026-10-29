@@ -78,6 +78,7 @@ export default function KitchenRenovationEstimator() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [showForm, setShowForm] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [submitError, setSubmitError] = useState('');
   const [isGeneratingPdf, setIsGeneratingPdf] = useState(false);
   const pdfTemplateRef = useRef<HTMLDivElement>(null);
 
@@ -147,6 +148,7 @@ export default function KitchenRenovationEstimator() {
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    setSubmitError('');
 
     try {
       let utmParams = {};
@@ -198,19 +200,18 @@ export default function KitchenRenovationEstimator() {
         behavior: behaviorMetadata
       };
 
-      await fetch('/api/leads', {
+      const response = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(postBody)
       });
+      if (!response.ok) throw new Error(`Lead request failed: ${response.status}`);
       localStorage.setItem('qi_has_contacted', '1');
       setIsSubmitted(true);
       trackLeadConversion(cost.totalHigh);
     } catch (err) {
       console.error('Lead capture submission error:', err);
-      localStorage.setItem('qi_has_contacted', '1');
-      setIsSubmitted(true);
-      trackLeadConversion(cost.totalHigh);
+      setSubmitError('We could not send your estimate. Please try again or call 647-370-6938.');
     } finally {
       setIsLoading(false);
     }
@@ -836,6 +837,7 @@ export default function KitchenRenovationEstimator() {
                               >
                                 {isLoading ? 'Processing...' : 'Email My Estimate'}
                               </button>
+                              {submitError && <p role="alert" className="text-sm text-red-700">{submitError}</p>}
                             </form>
                           </div>
                         )}
