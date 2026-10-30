@@ -271,12 +271,10 @@ export default function CalculatorModal() {
       } else {
         console.error('Failed to submit lead');
         setEmailError(true);
-
       }
     } catch (error) {
       console.error('Error submitting lead:', error);
       setEmailError(true);
-
     } finally {
       setIsSubmitting(false);
     }
