@@ -1345,28 +1345,6 @@ app.post("/api/leads", async (req, res) => {
         }
       }
 
-      // Simulate client inbound response after 5 seconds
-      setTimeout(async () => {
-        try {
-          const customers = await getCustomers();
-          const cust = customers.find(c => c.id === customerId);
-          const replyMessage: Message = {
-            id: Math.random().toString(36).substr(2, 9),
-            customerId,
-            channel,
-            direction: 'inbound',
-            sender: cust?.email || cust?.phone || 'client',
-            text: `Thanks for the updates! We will review the proposal details.`,
-            timestamp: new Date().toISOString(),
-            isRead: false
-          };
-          await saveMessage(replyMessage);
-          console.log("Mock inbound reply simulated.");
-        } catch (err) {
-          console.error("Failed mock response simulation:", err);
-        }
-      }, 5000);
-
       res.status(201).json(message);
     } else {
       res.status(500).json({ error: "Failed to save message" });
