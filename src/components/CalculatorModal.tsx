@@ -271,18 +271,10 @@ export default function CalculatorModal() {
       } else {
         console.error('Failed to submit lead');
         setEmailError(true);
-        localStorage.setItem('qi_has_contacted', '1');
-        setIsSubmitted(true); // Fallback so they can download PDF
-        trackLeadConversion(results?.total?.high);
-        trackEvent('lead_submitted_with_email');
       }
     } catch (error) {
       console.error('Error submitting lead:', error);
       setEmailError(true);
-      localStorage.setItem('qi_has_contacted', '1');
-      setIsSubmitted(true); // Fallback so they can download PDF
-      trackLeadConversion(results?.total?.high);
-      trackEvent('lead_submitted_with_email');
     } finally {
       setIsSubmitting(false);
     }

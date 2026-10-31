@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Upload, CheckCircle2, Sparkles, Send, ShieldCheck, ArrowRight, Calculator, FileText, Camera } from 'lucide-react';
 import { trackEvent } from '../lib/analytics';
+import { trackLeadConversion } from '../lib/utils';
 
 interface QuoterFunnelProps {
   onSuccess?: () => void;
@@ -20,6 +21,7 @@ export function CostQuoterFunnel({ onSuccess }: QuoterFunnelProps) {
   const [files, setFiles] = useState<File[]>([]);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const [submitError, setSubmitError] = useState('');
 
   // User details
   const [name, setName] = useState('');
@@ -100,6 +102,7 @@ export function CostQuoterFunnel({ onSuccess }: QuoterFunnelProps) {
     }
 
     setIsSubmitting(true);
+    setSubmitError('');
 
     try {
       const fileSummary = files.map(f => ({ name: f.name, size: f.size }));
@@ -112,21 +115,22 @@ export function CostQuoterFunnel({ onSuccess }: QuoterFunnelProps) {
         files: fileSummary
       };
 
-      await fetch('/api/leads', {
+      const response = await fetch('/api/leads', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(leadPayload)
       });
+      if (!response.ok) throw new Error(`Lead request failed: ${response.status}`);
 
+      trackLeadConversion();
       trackEvent('lead_submitted_with_email');
-      setIsSubmitting(false);
       setIsSubmitted(true);
       if (onSuccess) onSuccess();
     } catch (err) {
       console.error('Lead submit error:', err);
-      trackEvent('lead_submitted_with_email');
+      setSubmitError('We could not send your quote request. Please try again or call 647-370-6938.');
+    } finally {
       setIsSubmitting(false);
-      setIsSubmitted(true); // Graceful fallback
     }
   };
 
@@ -421,6 +425,7 @@ export function CostQuoterFunnel({ onSuccess }: QuoterFunnelProps) {
                 </>
               )}
             </button>
+            {submitError && <p role="alert" className="text-sm text-red-300">{submitError}</p>}
           </div>
         </form>
       ) : (

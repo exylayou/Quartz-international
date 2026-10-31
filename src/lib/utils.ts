@@ -17,5 +17,11 @@ export function trackLeadConversion(value?: number, currency: string = 'CAD') {
       'value': conversionValue,
       'currency': currency
     });
+    // Separate Google Ads account: count one saved quote request as a lead.
+    gtag('event', 'conversion', {
+      'send_to': 'AW-18273241262/qLaMCJH1n60dEK6RrolE',
+      'value': 1.0,
+      'currency': 'CAD'
+    });
   }
 }
