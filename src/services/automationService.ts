@@ -86,6 +86,8 @@ export async function runAutomations() {
     const leads = await getLeads();
     const now = Date.now();
     const msInDay = 24 * 60 * 60 * 1000;
+    // Do not restart the paused campaign for leads/quotes created before the fix.
+    const campaignStart = Date.parse('2026-11-02T14:45:00Z');
 
     for (const lead of leads) {
       const followupsLog = lead.followupsLog || [];
@@ -93,7 +95,7 @@ export async function runAutomations() {
       if (!lead.customerId || ['Completed', 'Deposit Received', 'Installation Scheduled'].includes(lead.leadStatus || '')) continue;
 
       // --- ESTIMATE FOLLOW-UPS ---
-      if (lead.createdAt && (!lead.quoteSentAt || lead.quoteStatus !== 'sent')) {
+      if (lead.createdAt && Date.parse(lead.createdAt) >= campaignStart && (!lead.quoteSentAt || lead.quoteStatus !== 'sent')) {
         const daysSinceEstimate = (now - new Date(lead.createdAt).getTime()) / msInDay;
 
         // Day 3 Estimate Follow-up (No Day 6)
@@ -105,7 +107,7 @@ export async function runAutomations() {
       }
 
       // --- QUOTE FOLLOW-UPS ---
-      if (lead.quoteSentAt && lead.quoteStatus === 'sent') {
+      if (lead.quoteSentAt && Date.parse(lead.quoteSentAt) >= campaignStart && lead.quoteStatus === 'sent') {
         const daysSinceQuote = (now - new Date(lead.quoteSentAt).getTime()) / msInDay;
 
         // Day 3 Quote Follow-up
