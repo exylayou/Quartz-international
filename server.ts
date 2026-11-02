@@ -1,4 +1,6 @@
 import express from "express";
+import { timingSafeEqual } from "node:crypto";
+import { runAutomations } from "./src/services/automationService.js";
 import { getAdminIdentity } from "./src/services/adminAuth.js";
 import path from "path";
 import dotenv from "dotenv";
@@ -81,6 +83,25 @@ function getFromEmail(adminSecret?: any, defaultPrefix: string = "Quartz Interna
 
 const app = express();
 app.use(express.json({ limit: '10mb' }));
+
+// Only Vercel's scheduled request can trigger follow-ups.
+app.get("/api/cron/followups", async (req, res) => {
+  const secret = process.env.CRON_SECRET;
+  const supplied = req.headers.authorization;
+  if (!secret || secret.length < 32) return res.status(503).json({ error: "Cron secret not configured" });
+  const expected = Buffer.from(`Bearer ${secret}`);
+  const received = Buffer.from(typeof supplied === 'string' ? supplied : '');
+  if (expected.length !== received.length || !timingSafeEqual(expected, received)) {
+    return res.status(401).json({ error: "Unauthorized" });
+  }
+  try {
+    await runAutomations();
+    return res.json({ status: 'completed' });
+  } catch (err) {
+    console.error("Scheduled follow-ups failed:", err);
+    return res.status(500).json({ error: "Follow-up run failed" });
+  }
+});
 
 // API routes
 app.post("/api/leads", async (req, res) => {
