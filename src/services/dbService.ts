@@ -625,6 +625,31 @@ async function ensureDbInitialized() {
   }
 }
 
+// Claim each follow-up before SMTP. A permanent key prevents duplicate sends even if
+// a cron invocation overlaps or a serverless function terminates after SMTP succeeds.
+export async function claimFollowUp(leadId: string, stepId: string): Promise<boolean> {
+  const key = `followup:v1:${leadId}:${stepId}`;
+  if (useKV) {
+    try {
+      return (await kv.set(key, new Date().toISOString(), { nx: true })) === 'OK';
+    } catch (err) {
+      console.error('Follow-up KV claim failed:', err);
+      return false;
+    }
+  }
+  if (useRedis && redisClient) {
+    try {
+      return (await redisClient.set(key, new Date().toISOString(), 'NX')) === 'OK';
+    } catch (err) {
+      console.error('Follow-up Redis claim failed:', err);
+      return false;
+    }
+  }
+  // No persistent atomic store: never send from serverless instance local state.
+  console.error('Automated follow-ups require KV or Redis for safe delivery.');
+  return false;
+}
+
 export async function getLeads(): Promise<Lead[]> {
   await ensureDbInitialized();
   const leads = await getDbKey<Lead[]>('leads', DB_FILE);
