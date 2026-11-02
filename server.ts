@@ -21,7 +21,6 @@ import {
   getAnalyticsEvents,
   AnalyticEvent
 } from "./src/services/dbService.js";
-import { runAutomations } from "./src/services/automationService.js";
 import { GoogleGenAI } from "@google/genai";
 import { getMatchedConcepts, calculatePackageRange } from "./src/data/designCatalog.js";
 import { kv } from "@vercel/kv";
@@ -35,15 +34,8 @@ const stripe = new Stripe(stripeSecretKey, {
   apiVersion: "2025-02-02" as any
 });
 
-// Start Automation Service
-setInterval(() => {
-  runAutomations();
-}, 60 * 60 * 1000); // Run every hour
-
-// Run once on startup (with slight delay to let db init)
-setTimeout(() => {
-  runAutomations();
-}, 5000);
+// Automated follow-ups are paused until delivery can be claimed atomically per lead.
+// Serverless instances may start concurrently; startup timers can send duplicates.
 
 // Create Nodemailer transporter safely
 let transporter: any;
