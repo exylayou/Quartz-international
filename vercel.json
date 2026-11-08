@@ -1,6 +1,21 @@
 {
   "redirects": [
     {
+      "source": "/product-page/k9917",
+      "destination": "/slab/kasa-k9917",
+      "permanent": true
+    },
+    {
+      "source": "/product-page/tce4026",
+      "destination": "/slab/tce-4026",
+      "permanent": true
+    },
+    {
+      "source": "/product-page/tce2031",
+      "destination": "/slab/tce-2031",
+      "permanent": true
+    },
+    {
       "source": "/kitchen-cabinets",
       "destination": "/cabinets",
       "permanent": true
